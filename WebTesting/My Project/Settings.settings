@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="DaysInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="TimeRefresh" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="LookAndFeel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Blue</Value>
+    </Setting>
+    <Setting Name="SpeechEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AppName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ConsultaNaves</Value>
+    </Setting>
+    <Setting Name="PaintStyle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ExplorerBar</Value>
+    </Setting>
+    <Setting Name="pathpdfFacturas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\30.0.0.10\FacturacionElectronica\pdf\Facturas\</Value>
+    </Setting>
+    <Setting Name="pathpdfBoletas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\30.0.0.10\FacturacionElectronica\pdf\Boletas\</Value>
+    </Setting>
+    <Setting Name="pathpdfNotasCredito" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\30.0.0.10\FacturacionElectronica\pdf\NotasCredito\</Value>
+    </Setting>
+    <Setting Name="TaxCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">20516667550</Value>
+    </Setting>
+    <Setting Name="pathpdfRecibos" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\30.0.0.10\FacturacionElectronica\pdf\Recibos\</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

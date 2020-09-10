@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9105EA66-F15D-44F4-ADD9-632B81642ADA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WebTesting.My.MyApplication</StartupObject>
+    <RootNamespace>WebTesting</RootNamespace>
+    <AssemblyName>WebSolutionProject</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>\\30.0.0.10\inetpub\DeployApps\WebSolutionProject\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://apps.delfingroupco.com.pe:755/WebSolutionProject/</InstallUrl>
+    <ProductName>Web Solution Project</ProductName>
+    <PublisherName>Delfin Group CO SAC</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WebSolutionProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WebSolutionProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Light Disc %28Blue%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>05194ADE30532268936F849256E3745D77284338</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v18.2.Drawing, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPdfViewer.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CargoAddressingRequestForm.Designer.vb">
+      <DependentUpon>CargoAddressingRequestForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CargoAddressingRequestForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargoAddressingRequestInsertForm.designer.vb">
+      <DependentUpon>CargoAddressingRequestInsertForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CargoAddressingRequestInsertForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargoNoticeQueryForm.Designer.vb">
+      <DependentUpon>CargoNoticeQueryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CargoNoticeQueryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperationalTrackingForm.Designer.vb">
+      <DependentUpon>OperationalTrackingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OperationalTrackingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class1.vb" />
+    <Compile Include="Connected Services\OnlineService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerStatementQueryForm.Designer.vb">
+      <DependentUpon>CustomerStatementQueryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerStatementQueryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerDebtQueryForm.Designer.vb">
+      <DependentUpon>CustomerDebtQueryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDebtQueryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerRegisterForm.Designer.vb">
+      <DependentUpon>CustomerRegisterForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegisterForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactUsForm.Designer.vb">
+      <DependentUpon>ContactUsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerAuthorizationForm.Designer.vb">
+      <DependentUpon>CustomerAuthorizationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerAuthorizationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomValidationRule.vb" />
+    <Compile Include="GetQuoteForm.Designer.vb">
+      <DependentUpon>GetQuoteForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GetQuoteForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HBLIssuedQueryForm.Designer.vb">
+      <DependentUpon>HBLIssuedQueryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HBLIssuedQueryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HBLStatusQueryForm.Designer.vb">
+      <DependentUpon>HBLStatusQueryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HBLStatusQueryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterDataList.vb" />
+    <Compile Include="PdfViewerForm.Designer.vb">
+      <DependentUpon>PdfViewerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PdfViewerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoicingQueryForm.Designer.vb">
+      <DependentUpon>InvoicingQueryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InvoicingQueryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateFileFromCrystalReport.vb" />
+    <Compile Include="QuoteRequestForm.Designer.vb">
+      <DependentUpon>QuoteRequestForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteRequestForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatedCompanyRequestForm.Designer.vb">
+      <DependentUpon>RelatedCompanyRequestForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RelatedCompanyRequestForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SharedModule.vb" />
+    <Compile Include="TestForm.Designer.vb">
+      <DependentUpon>TestForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ucPanelAutoriza001.Designer.vb">
+      <DependentUpon>ucPanelAutoriza001.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucPanelAutoriza001.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VoyageQueryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VoyageQueryForm.Designer.vb">
+      <DependentUpon>VoyageQueryForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WaitForm.Designer.vb">
+      <DependentUpon>WaitForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraForm1.Designer.vb">
+      <DependentUpon>XtraForm1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraForm1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OnlineService\WebTesting.OnlineService.EntidadDireccionamiento_BE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Resources\nuevo.png" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\eliminar16x16.png" />
+    <None Include="Resources\eliminar.png" />
+    <None Include="Connected Services\OnlineService\OnLineService.wsdl" />
+    <None Include="Connected Services\OnlineService\OnLineService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OnlineService\OnLineService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OnlineService\OnLineService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OnlineService\OnLineService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OnlineService\OnLineService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OnlineService\OnLineService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OnlineService\OnLineService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\OnlineService\WebTesting.OnlineService.EntidadVinculada_BE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\OnlineService\WebTesting.OnlineService.VoyageQueryDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="Resources\add_16x16.png" />
+    <None Include="Resources\save_32x32.png" />
+    <EmbeddedResource Include="CargoAddressingRequestForm.resx">
+      <DependentUpon>CargoAddressingRequestForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargoAddressingRequestInsertForm.resx">
+      <DependentUpon>CargoAddressingRequestInsertForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargoNoticeQueryForm.resx">
+      <DependentUpon>CargoNoticeQueryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationalTrackingForm.resx">
+      <DependentUpon>OperationalTrackingForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerStatementQueryForm.resx">
+      <DependentUpon>CustomerStatementQueryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerDebtQueryForm.resx">
+      <DependentUpon>CustomerDebtQueryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerRegisterForm.resx">
+      <DependentUpon>CustomerRegisterForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactUsForm.resx">
+      <DependentUpon>ContactUsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerAuthorizationForm.resx">
+      <DependentUpon>CustomerAuthorizationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetQuoteForm.resx">
+      <DependentUpon>GetQuoteForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HBLIssuedQueryForm.resx">
+      <DependentUpon>HBLIssuedQueryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HBLStatusQueryForm.resx">
+      <DependentUpon>HBLStatusQueryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfViewerForm.resx">
+      <DependentUpon>PdfViewerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoicingQueryForm.resx">
+      <DependentUpon>InvoicingQueryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Connected Services\OnlineService\OnLineService.disco" />
+    <Content Include="Light Disc %28Blue%29.ico" />
+    <Content Include="Reports\AvisoArriboAereo.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AvisoArriboMaritimo.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AvisoZarpeMaritimo.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="QuoteRequestForm.resx">
+      <DependentUpon>QuoteRequestForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatedCompanyRequestForm.resx">
+      <DependentUpon>RelatedCompanyRequestForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ucPanelAutoriza001.resx">
+      <DependentUpon>ucPanelAutoriza001.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VoyageQueryForm.resx">
+      <DependentUpon>VoyageQueryForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraForm1.resx">
+      <DependentUpon>XtraForm1.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OnlineService\WebTesting.OnlineService.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\System.Data.DataSet.datasource" />
+    <None Include="My Project\DataSources\System.Data.DataTable.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\OnlineService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OnlineService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OnlineService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OnlineService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="SAP.CrystalReports14.NET.2.0">
+      <Visible>False</Visible>
+      <ProductName>SAP Crystal Reports Runtime Engine for .NET Framework</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

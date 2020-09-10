@@ -42,8 +42,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "OnLine.WebServices", "OnLin
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WebTesting", "WebTesting\WebTesting.vbproj", "{9105EA66-F15D-44F4-ADD9-632B81642ADA}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Integration.WebServices", "Integration.WebServices\Rest\Integration.WebServices.vbproj", "{9977FA31-E144-4D09-A411-B24FA9E95076}"
-EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ReportingServices.InformesTacna", "ReportingServices.ConsultasTacna\ReportingServices.InformesTacna.rptproj", "{CD48FDDE-CB94-4038-A91D-2262DFA2A8DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extranet", "Extranet", "{206BA759-FC71-4C24-A23A-3223F7259A7E}"
@@ -97,6 +95,8 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Application.UserInterface", "Application.UserInterface\Application.UserInterface.vbproj", "{908DDE54-D3A5-4781-8F7F-2378D04BA4B5}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AppNet.Notificaciones", "Notificaciones\AppNet.Notificaciones.vbproj", "{204ECBC9-52F1-4F34-B250-47964442AF9C}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Integration.Rest", "Integration.WebServices\Integration.Rest.vbproj", "{9977FA31-E144-4D09-A411-B24FA9E95076}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -248,18 +248,6 @@ Global
 		{9105EA66-F15D-44F4-ADD9-632B81642ADA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9105EA66-F15D-44F4-ADD9-632B81642ADA}.Release|x86.ActiveCfg = Release|Any CPU
 		{9105EA66-F15D-44F4-ADD9-632B81642ADA}.Release|x86.Build.0 = Release|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.Debug|x86.Build.0 = Debug|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.DebugLocal|x86.ActiveCfg = Debug|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.DebugLocal|x86.Build.0 = Debug|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.Release|x86.ActiveCfg = Release|Any CPU
-		{9977FA31-E144-4D09-A411-B24FA9E95076}.Release|x86.Build.0 = Release|Any CPU
 		{CD48FDDE-CB94-4038-A91D-2262DFA2A8DF}.Debug|Any CPU.ActiveCfg = Debug
 		{CD48FDDE-CB94-4038-A91D-2262DFA2A8DF}.Debug|Any CPU.Build.0 = Debug
 		{CD48FDDE-CB94-4038-A91D-2262DFA2A8DF}.Debug|Any CPU.Deploy.0 = Debug
@@ -552,6 +540,18 @@ Global
 		{204ECBC9-52F1-4F34-B250-47964442AF9C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{204ECBC9-52F1-4F34-B250-47964442AF9C}.Release|x86.ActiveCfg = Release|Any CPU
 		{204ECBC9-52F1-4F34-B250-47964442AF9C}.Release|x86.Build.0 = Release|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.Debug|x86.Build.0 = Debug|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.DebugLocal|x86.ActiveCfg = Debug|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.DebugLocal|x86.Build.0 = Debug|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.Release|x86.ActiveCfg = Release|Any CPU
+		{9977FA31-E144-4D09-A411-B24FA9E95076}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
