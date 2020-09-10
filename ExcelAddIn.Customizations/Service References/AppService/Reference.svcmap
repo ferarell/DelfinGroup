@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="966f410b-5280-4af2-b951-44fcf721ac88" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:38230/DelfinService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DelfinService.wsdl" MetadataType="Wsdl" ID="d856d871-64c5-424e-ac3a-62961621feec" SourceId="1" SourceUrl="http://localhost:38230/DelfinService.svc?wsdl" />
+    <MetadataFile FileName="DelfinService3.xsd" MetadataType="Schema" ID="525dc3e4-5c5b-4c59-9cbe-dd283a4e9d5f" SourceId="1" SourceUrl="http://localhost:38230/DelfinService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DelfinService.disco" MetadataType="Disco" ID="1211cd72-c921-4be1-9171-eec2816bc68e" SourceId="1" SourceUrl="http://localhost:38230/DelfinService.svc?disco" />
+    <MetadataFile FileName="DelfinService1.xsd" MetadataType="Schema" ID="f5fc5a5d-f90b-44db-94ad-c717a7c475b0" SourceId="1" SourceUrl="http://localhost:38230/DelfinService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DelfinService2.xsd" MetadataType="Schema" ID="5267dc40-ee3e-4534-8eef-48bc4c9a3b58" SourceId="1" SourceUrl="http://localhost:38230/DelfinService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DelfinService.xsd" MetadataType="Schema" ID="29568fd6-4fc2-4c31-a365-dbba8c889fe8" SourceId="1" SourceUrl="http://localhost:38230/DelfinService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

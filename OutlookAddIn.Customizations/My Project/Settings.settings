@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="RootPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Portico</Value>
+    </Setting>
+    <Setting Name="WebServiceURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://apps.delfingroupco.com.pe:766/DelfinService.svc</Value>
+    </Setting>
+    <Setting Name="ProcessedPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Portico\Procesados</Value>
+    </Setting>
+    <Setting Name="LogFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Portico\Eventos</Value>
+    </Setting>
+    <Setting Name="QueuePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Portico\Pendientes</Value>
+    </Setting>
+    <Setting Name="LayoutPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Portico\Plantillas</Value>
+    </Setting>
+    <Setting Name="MailSupport" Type="System.String" Scope="User">
+      <Value Profile="(Default)">itsupport@delfingroupco.com.pe</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,874 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{908DDE54-D3A5-4781-8F7F-2378D04BA4B5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ApplicationForm.My.MyApplication</StartupObject>
+    <RootNamespace>ApplicationForm</RootNamespace>
+    <AssemblyName>ApplicationForm</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\30.0.0.10\inetpub\DeployApps\ApplicationForm%28DX%29\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://apps.delfingroupco.com.pe:755/ApplicationForm%28DX%29/</InstallUrl>
+    <ProductName>Prototipo Nuevo ERP</ProductName>
+    <PublisherName>Delfin Group Co SAC</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.4.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ApplicationForm.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ApplicationForm.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ApplicationDXForm.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3D601BB27B7531D3AC432FE5B1F220B5686CE40A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>My Computer .ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Application.UserInterface_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Dialogs.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v18.2.Drawing, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.PdfViewer.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraDialogs.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPdfViewer.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="eFactDelfin">
+      <HintPath>..\eFactDelfin\bin\Debug\eFactDelfin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountingInterfaces.vb" />
+    <Compile Include="AccountingTransferForm.Designer.vb">
+      <DependentUpon>AccountingTransferForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AccountingTransferForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BreakdownForm.designer.vb">
+      <DependentUpon>BreakdownForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BreakdownForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateFileFromCrystalReport.vb" />
+    <Compile Include="CreateMailItem.vb" />
+    <Compile Include="CustomValidationRule.vb" />
+    <Compile Include="ElectronicInvoicingForm.Designer.vb">
+      <DependentUpon>ElectronicInvoicingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ElectronicInvoicingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventManagementForm.Designer.vb">
+      <DependentUpon>EventManagementForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EventManagementForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventUpdate.vb" />
+    <Compile Include="GetHtmlTable.vb" />
+    <Compile Include="JournalRegister.vb" />
+    <Compile Include="LoadingListForm.Designer.vb">
+      <DependentUpon>LoadingListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogisticOperationRegisterForm.Designer.vb">
+      <DependentUpon>LogisticOperationRegisterForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogisticOperationRegisterForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogisticsServiceUpdatePopupForm.Designer.vb">
+      <DependentUpon>LogisticsServiceUpdatePopupForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogisticsServiceUpdatePopupForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MailCargoNoticeForm.Designer.vb">
+      <DependentUpon>MailCargoNoticeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MailCargoNoticeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterDataList.vb" />
+    <Compile Include="My Project\Application1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="CargoAddressingForm.Designer.vb">
+      <DependentUpon>CargoAddressingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CargoAddressingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PdfViewerForm.designer.vb">
+      <DependentUpon>PdfViewerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PdfViewerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatedCompanyRequestForm.Designer.vb">
+      <DependentUpon>RelatedCompanyRequestForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RelatedCompanyRequestForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoutingOrderServiceAssignForm.Designer.vb">
+      <DependentUpon>RoutingOrderServiceAssignForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RoutingOrderServiceAssignForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesLogisticOperationForm.Designer.vb">
+      <DependentUpon>SalesLogisticOperationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SalesLogisticOperationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Service References\AppService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\IntegrationService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NextSoftService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OnLineService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SharedModule.vb" />
+    <Compile Include="LogisticOperationQueryForm.Designer.vb">
+      <DependentUpon>LogisticOperationQueryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogisticOperationQueryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarifario\ClasesCliente\AttributeClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\BusinessUnitClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\CompanyClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\COM_ServicioClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\ConceptClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\ConditionClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\ConstantesClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\GroupClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\LayoutAttributeClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\LayoutClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\PackClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\PackConceptClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\ServicioClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\TariffClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\TariffDetailClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\TiposCliente.vb" />
+    <Compile Include="Tarifario\ClasesCliente\UnitClient.vb" />
+    <Compile Include="Tarifario\ClasesCliente\uspValueAttributes_ResultClient.vb" />
+    <Compile Include="Tarifario\Controls\AttributeForm.designer.vb">
+      <DependentUpon>AttributeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\AttributeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarifario\Controls\BusinessUnitForm.designer.vb">
+      <DependentUpon>BusinessUnitForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\BusinessUnitForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarifario\Controls\CompanyForm.designer.vb">
+      <DependentUpon>CompanyForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\CompanyForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarifario\Controls\ConceptForm.designer.vb">
+      <DependentUpon>ConceptForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\ConceptForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarifario\Controls\ConditionForm.designer.vb">
+      <DependentUpon>ConditionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\ConditionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarifario\Controls\GroupForm.designer.vb">
+      <DependentUpon>GroupForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\GroupForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarifario\Controls\LayoutForm.designer.vb">
+      <DependentUpon>LayoutForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\LayoutForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarifario\Controls\PackForm.designer.vb">
+      <DependentUpon>PackForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\PackForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarifario\Controls\TariffForm.designer.vb">
+      <DependentUpon>TariffForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\TariffForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarifario\Controls\TariffInquiryForm.Designer.vb">
+      <DependentUpon>TariffInquiryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\TariffInquiryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarifario\Controls\ucAuditPanel.designer.vb">
+      <DependentUpon>ucAuditPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\ucAuditPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tarifario\Controls\UnitForm.designer.vb">
+      <DependentUpon>UnitForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\UnitForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsolidatedInquiryForm.Designer.vb">
+      <DependentUpon>ConsolidatedInquiryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsolidatedInquiryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendorDocumentQueryForm.Designer.vb">
+      <DependentUpon>VendorDocumentQueryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VendorDocumentQueryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendorDocumentRegisterForm.Designer.vb">
+      <DependentUpon>VendorDocumentRegisterForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VendorDocumentRegisterForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerticalViewerOVForm.Designer.vb">
+      <DependentUpon>VerticalViewerOVForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VerticalViewerOVForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.Designer.vb">
+      <DependentUpon>WaitForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemurrageForm.Designer.vb">
+      <DependentUpon>DemurrageForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DemurrageForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerRegisterRequestForm.Designer.vb">
+      <DependentUpon>CustomerRegisterRequestForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRegisterRequestForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraForm1.Designer.vb">
+      <DependentUpon>XtraForm1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraForm1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Plantillas\ContenidoCorreoAvisosExpoAereo.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosExpoFcl.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosExpoLcl.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosImpoAereo.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosImpoFcl_CLARI.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\VoBo HBL-HAWB ELECTRONICO.PDF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\COMUNICADO No.10 - VoBo HBL-HAWB ELECTRONICO.PDF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\COMUNICADO No.08.PDF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\IntegrationService\IntegradorSBO1.disco" />
+    <None Include="Service References\IntegrationService\ApplicationForm.IntegrationService.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntegrationService\IntegradorSBO1.wsdl" />
+    <None Include="Service References\IntegrationService\IntegradorSBO4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IntegrationService\IntegradorSBO41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IntegrationService\IntegradorSBO42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IntegrationService\IntegradorSBO43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IntegrationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\IntegrationService\configuration.svcinfo" />
+    <None Include="Service References\IntegrationService\configuration91.svcinfo" />
+    <None Include="Service References\AppService\ApplicationForm.AppService.COM_Det_Cotizacion_OV_EventosTareas_BE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AppService\DelfinService.disco" />
+    <EmbeddedResource Include="AccountingTransferForm.resx">
+      <DependentUpon>AccountingTransferForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BreakdownForm.resx">
+      <DependentUpon>BreakdownForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElectronicInvoicingForm.resx">
+      <DependentUpon>ElectronicInvoicingForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventManagementForm.resx">
+      <DependentUpon>EventManagementForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingListForm.resx">
+      <DependentUpon>LoadingListForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogisticOperationRegisterForm.resx">
+      <DependentUpon>LogisticOperationRegisterForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogisticsServiceUpdatePopupForm.resx">
+      <DependentUpon>LogisticsServiceUpdatePopupForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailCargoNoticeForm.resx">
+      <DependentUpon>MailCargoNoticeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargoAddressingForm.resx">
+      <DependentUpon>CargoAddressingForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PdfViewerForm.resx">
+      <DependentUpon>PdfViewerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatedCompanyRequestForm.resx">
+      <DependentUpon>RelatedCompanyRequestForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Plantillas\ContenidoCorreoAvisosImpoLcl.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosImpoFcl.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoArriboAereo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboAereo1.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoArriboMaritimoFcl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboMaritimoFcl1.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoArriboMaritimoLcl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboMaritimoLcl1.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoSalidaAereo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoSalidaAereo.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoZarpeMaritimoFcl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoZarpeMaritimoFcl.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoZarpeMaritimoLcl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoZarpeMaritimoLcl.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoArriboMaritimoFcl_CLARI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboMaritimoFcl_CLARI.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="RoutingOrderServiceAssignForm.resx">
+      <DependentUpon>RoutingOrderServiceAssignForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogisticOperationQueryForm.resx">
+      <DependentUpon>LogisticOperationQueryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesLogisticOperationForm.resx">
+      <DependentUpon>SalesLogisticOperationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\AttributeForm.resx">
+      <DependentUpon>AttributeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\BusinessUnitForm.resx">
+      <DependentUpon>BusinessUnitForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\CompanyForm.resx">
+      <DependentUpon>CompanyForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\ConceptForm.resx">
+      <DependentUpon>ConceptForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\ConditionForm.resx">
+      <DependentUpon>ConditionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\GroupForm.resx">
+      <DependentUpon>GroupForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\LayoutForm.resx">
+      <DependentUpon>LayoutForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\PackForm.resx">
+      <DependentUpon>PackForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\TariffForm.resx">
+      <DependentUpon>TariffForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\TariffInquiryForm.resx">
+      <DependentUpon>TariffInquiryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\ucAuditPanel.resx">
+      <DependentUpon>ucAuditPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\UnitForm.resx">
+      <DependentUpon>UnitForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsolidatedInquiryForm.resx">
+      <DependentUpon>ConsolidatedInquiryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorDocumentQueryForm.resx">
+      <DependentUpon>VendorDocumentQueryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorDocumentRegisterForm.resx">
+      <DependentUpon>VendorDocumentRegisterForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerticalViewerOVForm.resx">
+      <DependentUpon>VerticalViewerOVForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemurrageForm.resx">
+      <DependentUpon>DemurrageForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerRegisterRequestForm.resx">
+      <DependentUpon>CustomerRegisterRequestForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraForm1.resx">
+      <DependentUpon>XtraForm1.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppDataSet.xsc">
+      <DependentUpon>AppDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AppDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AppDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="AppDataSet.xss">
+      <DependentUpon>AppDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Application.UserInterface_TemporaryKey.pfx" />
+    <None Include="ApplicationDXForm.snk" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\System.Data.DataSet.datasource" />
+    <None Include="My Project\DataSources\System.Data.DataTable.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Plantillas\RECOJO_DE_BL.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Plantillas\VoBo HBL ELECTRONICO-OLD.PDF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\AppService\DelfinService.wsdl" />
+    <None Include="Service References\AppService\DelfinService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\ApplicationForm.NextSoftService.COM_DetSobrestadia_BE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NextSoftService\ApplicationForm.NextSoftService.COM_Sobrestadia_BE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService.wsdl" />
+    <None Include="Service References\NextSoftService\NextSoftService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\ApplicationForm.OnLineService.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OnLineService\ApplicationForm.OnLineService.EntidadVinculada_BE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OnLineService\ApplicationForm.OnLineService.VoyageQueryDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AppService\" />
+    <WCFMetadataStorage Include="Service References\IntegrationService\" />
+    <WCFMetadataStorage Include="Service References\NextSoftService\" />
+    <WCFMetadataStorage Include="Service References\OnLineService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AppService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AppService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AppService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="My Computer .ico" />
+    <None Include="Service References\OnLineService\OnLineService.disco" />
+    <None Include="Service References\NextSoftService\NextSoftService.disco" />
+    <None Include="Service References\NextSoftService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\NextSoftService\configuration.svcinfo" />
+    <None Include="Service References\NextSoftService\configuration91.svcinfo" />
+    <None Include="Service References\OnLineService\OnLineService.wsdl" />
+    <None Include="Service References\OnLineService\OnLineService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\OnLineService\configuration.svcinfo" />
+    <None Include="Service References\OnLineService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

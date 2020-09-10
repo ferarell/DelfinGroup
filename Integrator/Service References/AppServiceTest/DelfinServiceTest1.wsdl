@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DelfinServiceTest" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDelfinServiceTest_ExecuteSQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQL" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_ExecuteSQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_NewExecuteSQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewExecuteSQL" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_NewExecuteSQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewExecuteSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_ExecuteSQLNonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_ExecuteSQLNonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_NewExecuteSQLNonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewExecuteSQLNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_NewExecuteSQLNonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewExecuteSQLNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_GetActiveDirectoryObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveDirectoryObjects" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_GetActiveDirectoryObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveDirectoryObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_UserValidation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserValidation" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_UserValidation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserValidationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_GenerateNextSisVoucherBCopy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNextSisVoucherBCopy" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_GenerateNextSisVoucherBCopy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNextSisVoucherBCopyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_GenerateNextSisVoucher_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNextSisVoucher" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_GenerateNextSisVoucher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNextSisVoucherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_GenerateNextSoftVoucher_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNextSoftVoucher" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_GenerateNextSoftVoucher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateNextSoftVoucherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_InsertarContribuyente_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarContribuyente" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_InsertarContribuyente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarContribuyenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_ActualizarContribuyente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarContribuyente" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinServiceTest_ActualizarContribuyente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarContribuyenteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDelfinServiceTest">
+    <wsdl:operation name="ExecuteSQL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinServiceTest/ExecuteSQL" message="tns:IDelfinServiceTest_ExecuteSQL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinServiceTest/ExecuteSQLResponse" message="tns:IDelfinServiceTest_ExecuteSQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewExecuteSQL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinServiceTest/NewExecuteSQL" message="tns:IDelfinServiceTest_NewExecuteSQL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinServiceTest/NewExecuteSQLResponse" message="tns:IDelfinServiceTest_NewExecuteSQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQLNonQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinServiceTest/ExecuteSQLNonQuery" message="tns:IDelfinServiceTest_ExecuteSQLNonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinServiceTest/ExecuteSQLNonQueryResponse" message="tns:IDelfinServiceTest_ExecuteSQLNonQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewExecuteSQLNonQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinServiceTest/NewExecuteSQLNonQuery" message="tns:IDelfinServiceTest_NewExecuteSQLNonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinServiceTest/NewExecuteSQLNonQueryResponse" message="tns:IDelfinServiceTest_NewExecuteSQLNonQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveDirectoryObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinServiceTest/GetActiveDirectoryObjects" message="tns:IDelfinServiceTest_GetActiveDirectoryObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinServiceTest/GetActiveDirectoryObjectsResponse" message="tns:IDelfinServiceTest_GetActiveDirectoryObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserValidation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinServiceTest/UserValidation" message="tns:IDelfinServiceTest_UserValidation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinServiceTest/UserValidationResponse" message="tns:IDelfinServiceTest_UserValidation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNextSisVoucherBCopy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinServiceTest/GenerateNextSisVoucherBCopy" message="tns:IDelfinServiceTest_GenerateNextSisVoucherBCopy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinServiceTest/GenerateNextSisVoucherBCopyResponse" message="tns:IDelfinServiceTest_GenerateNextSisVoucherBCopy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNextSisVoucher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinServiceTest/GenerateNextSisVoucher" message="tns:IDelfinServiceTest_GenerateNextSisVoucher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinServiceTest/GenerateNextSisVoucherResponse" message="tns:IDelfinServiceTest_GenerateNextSisVoucher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNextSoftVoucher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinServiceTest/GenerateNextSoftVoucher" message="tns:IDelfinServiceTest_GenerateNextSoftVoucher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinServiceTest/GenerateNextSoftVoucherResponse" message="tns:IDelfinServiceTest_GenerateNextSoftVoucher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarContribuyente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinServiceTest/InsertarContribuyente" message="tns:IDelfinServiceTest_InsertarContribuyente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinServiceTest/InsertarContribuyenteResponse" message="tns:IDelfinServiceTest_InsertarContribuyente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContribuyente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinServiceTest/ActualizarContribuyente" message="tns:IDelfinServiceTest_ActualizarContribuyente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinServiceTest/ActualizarContribuyenteResponse" message="tns:IDelfinServiceTest_ActualizarContribuyente_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDelfinServiceTest" type="tns:IDelfinServiceTest">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteSQL">
+      <soap:operation soapAction="http://tempuri.org/IDelfinServiceTest/ExecuteSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewExecuteSQL">
+      <soap:operation soapAction="http://tempuri.org/IDelfinServiceTest/NewExecuteSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQLNonQuery">
+      <soap:operation soapAction="http://tempuri.org/IDelfinServiceTest/ExecuteSQLNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewExecuteSQLNonQuery">
+      <soap:operation soapAction="http://tempuri.org/IDelfinServiceTest/NewExecuteSQLNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveDirectoryObjects">
+      <soap:operation soapAction="http://tempuri.org/IDelfinServiceTest/GetActiveDirectoryObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserValidation">
+      <soap:operation soapAction="http://tempuri.org/IDelfinServiceTest/UserValidation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNextSisVoucherBCopy">
+      <soap:operation soapAction="http://tempuri.org/IDelfinServiceTest/GenerateNextSisVoucherBCopy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNextSisVoucher">
+      <soap:operation soapAction="http://tempuri.org/IDelfinServiceTest/GenerateNextSisVoucher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateNextSoftVoucher">
+      <soap:operation soapAction="http://tempuri.org/IDelfinServiceTest/GenerateNextSoftVoucher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarContribuyente">
+      <soap:operation soapAction="http://tempuri.org/IDelfinServiceTest/InsertarContribuyente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarContribuyente">
+      <soap:operation soapAction="http://tempuri.org/IDelfinServiceTest/ActualizarContribuyente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DelfinServiceTest">
+    <wsdl:port name="BasicHttpBinding_IDelfinServiceTest" binding="tns:BasicHttpBinding_IDelfinServiceTest">
+      <soap:address location="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

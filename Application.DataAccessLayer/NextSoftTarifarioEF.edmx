@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NextSoftTarifarioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="COM_Servicio">
+          <Key>
+            <PropertyRef Name="SERV_Codigo" />
+          </Key>
+          <Property Name="SERV_Codigo" Type="int" Nullable="false" />
+          <Property Name="SERV_Nombre_SPA" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SERV_Nombre_ENG" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SERV_AfeIgv" Type="bit" />
+          <Property Name="SERV_Flete" Type="bit" />
+          <Property Name="SERV_AfeDet" Type="bit" />
+          <Property Name="CONS_TabVia" Type="char" MaxLength="3" />
+          <Property Name="CONS_CodVia" Type="char" MaxLength="3" />
+          <Property Name="SERV_Activo" Type="bit" Nullable="false" />
+          <Property Name="SERV_CueVta" Type="varchar" MaxLength="20" />
+          <Property Name="SERV_CueGas" Type="varchar" MaxLength="20" />
+          <Property Name="SERV_Agrup1" Type="varchar" MaxLength="5" />
+          <Property Name="SERV_Agrup2" Type="varchar" MaxLength="5" />
+          <Property Name="SERV_PorDet" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="SERV_Tipo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="SERV_Valor" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="SERV_CobMin" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="SERV_Autom" Type="bit" />
+          <Property Name="SERV_FrecFac" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="TIPO_TabUNT" Type="char" MaxLength="3" />
+          <Property Name="TIPO_CodUNT" Type="char" MaxLength="3" />
+          <Property Name="AUDI_UsrCrea" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AUDI_FecCrea" Type="datetime" Nullable="false" />
+          <Property Name="AUDI_UsrMod" Type="varchar" MaxLength="20" />
+          <Property Name="AUDI_FecMod" Type="varchar" MaxLength="25" />
+          <Property Name="CONS_TabRGM" Type="char" MaxLength="3" />
+          <Property Name="CONS_CodRGM" Type="char" MaxLength="3" />
+          <Property Name="SERV_CuenIngreso" Type="varchar" MaxLength="20" />
+          <Property Name="SERV_CuenCosto" Type="varchar" MaxLength="20" />
+          <Property Name="SERV_CuenPuente" Type="varchar" MaxLength="20" />
+          <Property Name="TIPO_TabDET" Type="char" MaxLength="3" />
+          <Property Name="TIPO_CodDET" Type="char" MaxLength="3" />
+          <Property Name="SERV_NombreCorto" Type="varchar" MaxLength="20" />
+          <Property Name="SERV_Glosa" Type="varchar" MaxLength="1000" />
+          <Property Name="SERV_Observaciones" Type="varchar" MaxLength="100" />
+          <Property Name="SERV_TipoMov" Type="char" MaxLength="1" />
+          <Property Name="CONS_TabBAS" Type="char" MaxLength="3" />
+          <Property Name="CONS_CodBAS" Type="char" MaxLength="3" />
+          <Property Name="TIPO_TabMND" Type="char" MaxLength="3" />
+          <Property Name="TIPO_CodMND" Type="char" MaxLength="3" />
+          <Property Name="CONS_TabLNG" Type="char" MaxLength="3" />
+          <Property Name="CONS_CodLNG" Type="char" MaxLength="3" />
+          <Property Name="SERV_DefinidoPor" Type="varchar" MaxLength="50" />
+          <Property Name="SERV_ExcesoFlete" Type="bit" Nullable="false" />
+          <Property Name="CENT_Ano" Type="char" MaxLength="4" />
+          <Property Name="CENT_Codigo" Type="varchar" MaxLength="17" />
+          <Property Name="TIPO_TabOPE" Type="char" MaxLength="3" />
+          <Property Name="TIPO_CodOPE" Type="char" MaxLength="3" />
+          <Property Name="TIPO_TabOPE_Costo" Type="char" MaxLength="3" />
+          <Property Name="TIPO_CodOPE_Costo" Type="char" MaxLength="3" />
+          <Property Name="SERV_Agrupado" Type="bit" />
+        </EntityType>
+        <EntityType Name="Constantes">
+          <Key>
+            <PropertyRef Name="CONS_CodTabla" />
+            <PropertyRef Name="CONS_CodTipo" />
+          </Key>
+          <Property Name="CONS_CodTabla" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="CONS_CodTipo" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="CONS_Desc_SPA" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CONS_Desc_ENG" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipos">
+          <Key>
+            <PropertyRef Name="TIPO_CodTabla" />
+            <PropertyRef Name="TIPO_CodTipo" />
+          </Key>
+          <Property Name="TIPO_CodTabla" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="TIPO_CodTipo" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="TIPO_Desc1" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TIPO_Desc2" Type="varchar" MaxLength="100" />
+          <Property Name="TIPO_DescC" Type="varchar" MaxLength="20" />
+          <Property Name="TIPO_Num1" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="TIPO_Num2" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="TIPO_Num3" Type="smallint" />
+          <Property Name="TIPO_Num4" Type="smallint" />
+          <Property Name="TIPO_Activo" Type="bit" />
+          <Property Name="TIPO_Mascara" Type="varchar" MaxLength="50" />
+          <Property Name="AUDI_UsrCrea" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="AUDI_FecCrea" Type="datetime" Nullable="false" />
+          <Property Name="AUDI_UsrMod" Type="varchar" MaxLength="20" />
+          <Property Name="AUDI_FecMod" Type="datetime" />
+          <Property Name="TIPO_CodTablaHijo" Type="char" MaxLength="3" />
+          <Property Name="TIPO_CodTipoHijo" Type="char" MaxLength="3" />
+          <Property Name="TIPO_Desc3" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="COM_SERVFK_CONS_LNG">
+          <End Role="Constantes" Type="Self.Constantes" Multiplicity="0..1" />
+          <End Role="COM_Servicio" Type="Self.COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Constantes">
+              <PropertyRef Name="CONS_CodTabla" />
+              <PropertyRef Name="CONS_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="CONS_TabLNG" />
+              <PropertyRef Name="CONS_CodLNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="COM_SERVFK_CONS_RGM">
+          <End Role="Constantes" Type="Self.Constantes" Multiplicity="0..1" />
+          <End Role="COM_Servicio" Type="Self.COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Constantes">
+              <PropertyRef Name="CONS_CodTabla" />
+              <PropertyRef Name="CONS_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="CONS_TabRGM" />
+              <PropertyRef Name="CONS_CodRGM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="COM_SERVFK_CONS_VIA">
+          <End Role="Constantes" Type="Self.Constantes" Multiplicity="0..1" />
+          <End Role="COM_Servicio" Type="Self.COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Constantes">
+              <PropertyRef Name="CONS_CodTabla" />
+              <PropertyRef Name="CONS_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="CONS_TabVia" />
+              <PropertyRef Name="CONS_CodVia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="COM_SERVFK_TIPO_DET">
+          <End Role="Tipos" Type="Self.Tipos" Multiplicity="0..1" />
+          <End Role="COM_Servicio" Type="Self.COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos">
+              <PropertyRef Name="TIPO_CodTabla" />
+              <PropertyRef Name="TIPO_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="TIPO_TabDET" />
+              <PropertyRef Name="TIPO_CodDET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ServiciosFK_TiposMND">
+          <End Role="Tipos" Type="Self.Tipos" Multiplicity="0..1" />
+          <End Role="COM_Servicio" Type="Self.COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos">
+              <PropertyRef Name="TIPO_CodTabla" />
+              <PropertyRef Name="TIPO_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="TIPO_TabMND" />
+              <PropertyRef Name="TIPO_CodMND" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ServioFK_ConstantesBAS">
+          <End Role="Constantes" Type="Self.Constantes" Multiplicity="0..1" />
+          <End Role="COM_Servicio" Type="Self.COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Constantes">
+              <PropertyRef Name="CONS_CodTabla" />
+              <PropertyRef Name="CONS_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="CONS_TabBAS" />
+              <PropertyRef Name="CONS_CodBAS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TIPOFK_TIPO_PADRE">
+          <End Role="Tipos" Type="Self.Tipos" Multiplicity="0..1" />
+          <End Role="Tipos1" Type="Self.Tipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos">
+              <PropertyRef Name="TIPO_CodTabla" />
+              <PropertyRef Name="TIPO_CodTipo" />
+            </Principal>
+            <Dependent Role="Tipos1">
+              <PropertyRef Name="TIPO_CodTablaHijo" />
+              <PropertyRef Name="TIPO_CodTipoHijo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NextSoftTarifarioModelStoreContainer">
+          <EntitySet Name="COM_Servicio" EntityType="Self.COM_Servicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Constantes" EntityType="Self.Constantes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipos" EntityType="Self.Tipos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="COM_SERVFK_CONS_LNG" Association="Self.COM_SERVFK_CONS_LNG">
+            <End Role="Constantes" EntitySet="Constantes" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="COM_SERVFK_CONS_RGM" Association="Self.COM_SERVFK_CONS_RGM">
+            <End Role="Constantes" EntitySet="Constantes" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="COM_SERVFK_CONS_VIA" Association="Self.COM_SERVFK_CONS_VIA">
+            <End Role="Constantes" EntitySet="Constantes" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="COM_SERVFK_TIPO_DET" Association="Self.COM_SERVFK_TIPO_DET">
+            <End Role="Tipos" EntitySet="Tipos" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="ServiciosFK_TiposMND" Association="Self.ServiciosFK_TiposMND">
+            <End Role="Tipos" EntitySet="Tipos" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="ServioFK_ConstantesBAS" Association="Self.ServioFK_ConstantesBAS">
+            <End Role="Constantes" EntitySet="Constantes" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="TIPOFK_TIPO_PADRE" Association="Self.TIPOFK_TIPO_PADRE">
+            <End Role="Tipos" EntitySet="Tipos" />
+            <End Role="Tipos1" EntitySet="Tipos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NextSoftTarifarioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="COM_Servicio">
+          <Key>
+            <PropertyRef Name="SERV_Codigo" />
+          </Key>
+          <Property Name="SERV_Codigo" Type="Int32" Nullable="false" />
+          <Property Name="SERV_Nombre_SPA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SERV_Nombre_ENG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SERV_AfeIgv" Type="Boolean" />
+          <Property Name="SERV_Flete" Type="Boolean" />
+          <Property Name="SERV_AfeDet" Type="Boolean" />
+          <Property Name="CONS_TabVia" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="CONS_CodVia" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="SERV_Activo" Type="Boolean" Nullable="false" />
+          <Property Name="SERV_CueVta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_CueGas" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_Agrup1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_Agrup2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_PorDet" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="SERV_Tipo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SERV_Valor" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="SERV_CobMin" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="SERV_Autom" Type="Boolean" />
+          <Property Name="SERV_FrecFac" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_TabUNT" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_CodUNT" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="AUDI_UsrCrea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AUDI_FecCrea" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AUDI_UsrMod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AUDI_FecMod" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_TabRGM" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="CONS_CodRGM" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="SERV_CuenIngreso" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_CuenCosto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_CuenPuente" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_TabDET" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_CodDET" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="SERV_NombreCorto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_Glosa" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_Observaciones" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_TipoMov" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CONS_TabBAS" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="CONS_CodBAS" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_TabMND" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_CodMND" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="CONS_TabLNG" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="CONS_CodLNG" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="SERV_DefinidoPor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SERV_ExcesoFlete" Type="Boolean" Nullable="false" />
+          <Property Name="CENT_Ano" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="CENT_Codigo" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_TabOPE" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_CodOPE" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_TabOPE_Costo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_CodOPE_Costo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="SERV_Agrupado" Type="Boolean" />
+          <NavigationProperty Name="Tipos" Relationship="Self.COM_SERVFK_TIPO_DET" FromRole="COM_Servicio" ToRole="Tipos" />
+          <NavigationProperty Name="Tipos1" Relationship="Self.ServiciosFK_TiposMND" FromRole="COM_Servicio" ToRole="Tipos" />
+          <NavigationProperty Name="Constantes" Relationship="NextSoftTarifarioModel.COM_SERVFK_CONS_LNG" FromRole="COM_Servicio" ToRole="Constantes" />
+          <NavigationProperty Name="Constantes1" Relationship="NextSoftTarifarioModel.COM_SERVFK_CONS_RGM" FromRole="COM_Servicio" ToRole="Constantes" />
+          <NavigationProperty Name="Constantes2" Relationship="NextSoftTarifarioModel.COM_SERVFK_CONS_VIA" FromRole="COM_Servicio" ToRole="Constantes" />
+          <NavigationProperty Name="Constantes3" Relationship="NextSoftTarifarioModel.ServioFK_ConstantesBAS" FromRole="COM_Servicio" ToRole="Constantes" />
+        </EntityType>
+        <EntityType Name="Tipos">
+          <Key>
+            <PropertyRef Name="TIPO_CodTabla" />
+            <PropertyRef Name="TIPO_CodTipo" />
+          </Key>
+          <Property Name="TIPO_CodTabla" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_CodTipo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_Desc1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_Desc2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_DescC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_Num1" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="TIPO_Num2" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="TIPO_Num3" Type="Int16" />
+          <Property Name="TIPO_Num4" Type="Int16" />
+          <Property Name="TIPO_Activo" Type="Boolean" />
+          <Property Name="TIPO_Mascara" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AUDI_UsrCrea" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AUDI_FecCrea" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AUDI_UsrMod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AUDI_FecMod" Type="DateTime" Precision="3" />
+          <Property Name="TIPO_CodTablaHijo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_CodTipoHijo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="TIPO_Desc3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tipos1" Relationship="Self.TIPOFK_TIPO_PADRE" FromRole="Tipos" ToRole="Tipos1" />
+          <NavigationProperty Name="Tipos2" Relationship="Self.TIPOFK_TIPO_PADRE" FromRole="Tipos1" ToRole="Tipos" />
+        </EntityType>
+        <Association Name="COM_SERVFK_TIPO_DET">
+          <End Role="Tipos" Type="Self.Tipos" Multiplicity="0..1" />
+          <End Role="COM_Servicio" Type="Self.COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos">
+              <PropertyRef Name="TIPO_CodTabla" />
+              <PropertyRef Name="TIPO_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="TIPO_TabDET" />
+              <PropertyRef Name="TIPO_CodDET" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ServiciosFK_TiposMND">
+          <End Role="Tipos" Type="Self.Tipos" Multiplicity="0..1" />
+          <End Role="COM_Servicio" Type="Self.COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos">
+              <PropertyRef Name="TIPO_CodTabla" />
+              <PropertyRef Name="TIPO_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="TIPO_TabMND" />
+              <PropertyRef Name="TIPO_CodMND" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TIPOFK_TIPO_PADRE">
+          <End Role="Tipos" Type="Self.Tipos" Multiplicity="0..1" />
+          <End Role="Tipos1" Type="Self.Tipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos">
+              <PropertyRef Name="TIPO_CodTabla" />
+              <PropertyRef Name="TIPO_CodTipo" />
+            </Principal>
+            <Dependent Role="Tipos1">
+              <PropertyRef Name="TIPO_CodTablaHijo" />
+              <PropertyRef Name="TIPO_CodTipoHijo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NextSoftTarifarioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="COM_Servicio" EntityType="Self.COM_Servicio" />
+          <EntitySet Name="Tipos" EntityType="Self.Tipos" />
+          <AssociationSet Name="COM_SERVFK_TIPO_DET" Association="Self.COM_SERVFK_TIPO_DET">
+            <End Role="Tipos" EntitySet="Tipos" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="ServiciosFK_TiposMND" Association="Self.ServiciosFK_TiposMND">
+            <End Role="Tipos" EntitySet="Tipos" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="TIPOFK_TIPO_PADRE" Association="Self.TIPOFK_TIPO_PADRE">
+            <End Role="Tipos" EntitySet="Tipos" />
+            <End Role="Tipos1" EntitySet="Tipos" />
+          </AssociationSet>
+          <EntitySet Name="Constantes" EntityType="NextSoftTarifarioModel.Constantes" />
+          <AssociationSet Name="COM_SERVFK_CONS_LNG" Association="NextSoftTarifarioModel.COM_SERVFK_CONS_LNG">
+            <End Role="Constantes" EntitySet="Constantes" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="COM_SERVFK_CONS_RGM" Association="NextSoftTarifarioModel.COM_SERVFK_CONS_RGM">
+            <End Role="Constantes" EntitySet="Constantes" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="COM_SERVFK_CONS_VIA" Association="NextSoftTarifarioModel.COM_SERVFK_CONS_VIA">
+            <End Role="Constantes" EntitySet="Constantes" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+          <AssociationSet Name="ServioFK_ConstantesBAS" Association="NextSoftTarifarioModel.ServioFK_ConstantesBAS">
+            <End Role="Constantes" EntitySet="Constantes" />
+            <End Role="COM_Servicio" EntitySet="COM_Servicio" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Constantes">
+          <Key>
+            <PropertyRef Name="CONS_CodTabla" />
+            <PropertyRef Name="CONS_CodTipo" />
+          </Key>
+          <Property Name="CONS_CodTabla" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="CONS_CodTipo" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="CONS_Desc_SPA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CONS_Desc_ENG" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="COM_SERVFK_CONS_LNG">
+          <End Type="NextSoftTarifarioModel.Constantes" Role="Constantes" Multiplicity="0..1" />
+          <End Type="NextSoftTarifarioModel.COM_Servicio" Role="COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Constantes">
+              <PropertyRef Name="CONS_CodTabla" />
+              <PropertyRef Name="CONS_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="CONS_TabLNG" />
+              <PropertyRef Name="CONS_CodLNG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="COM_SERVFK_CONS_RGM">
+          <End Type="NextSoftTarifarioModel.Constantes" Role="Constantes" Multiplicity="0..1" />
+          <End Type="NextSoftTarifarioModel.COM_Servicio" Role="COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Constantes">
+              <PropertyRef Name="CONS_CodTabla" />
+              <PropertyRef Name="CONS_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="CONS_TabRGM" />
+              <PropertyRef Name="CONS_CodRGM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="COM_SERVFK_CONS_VIA">
+          <End Type="NextSoftTarifarioModel.Constantes" Role="Constantes" Multiplicity="0..1" />
+          <End Type="NextSoftTarifarioModel.COM_Servicio" Role="COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Constantes">
+              <PropertyRef Name="CONS_CodTabla" />
+              <PropertyRef Name="CONS_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="CONS_TabVia" />
+              <PropertyRef Name="CONS_CodVia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ServioFK_ConstantesBAS">
+          <End Type="NextSoftTarifarioModel.Constantes" Role="Constantes" Multiplicity="0..1" />
+          <End Type="NextSoftTarifarioModel.COM_Servicio" Role="COM_Servicio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Constantes">
+              <PropertyRef Name="CONS_CodTabla" />
+              <PropertyRef Name="CONS_CodTipo" />
+            </Principal>
+            <Dependent Role="COM_Servicio">
+              <PropertyRef Name="CONS_TabBAS" />
+              <PropertyRef Name="CONS_CodBAS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NextSoftTarifarioModelStoreContainer" CdmEntityContainer="NextSoftTarifarioEntities">
+          <EntitySetMapping Name="COM_Servicio">
+            <EntityTypeMapping TypeName="NextSoftTarifarioModel.COM_Servicio">
+              <MappingFragment StoreEntitySet="COM_Servicio">
+                <ScalarProperty Name="SERV_Codigo" ColumnName="SERV_Codigo" />
+                <ScalarProperty Name="SERV_Nombre_SPA" ColumnName="SERV_Nombre_SPA" />
+                <ScalarProperty Name="SERV_Nombre_ENG" ColumnName="SERV_Nombre_ENG" />
+                <ScalarProperty Name="SERV_AfeIgv" ColumnName="SERV_AfeIgv" />
+                <ScalarProperty Name="SERV_Flete" ColumnName="SERV_Flete" />
+                <ScalarProperty Name="SERV_AfeDet" ColumnName="SERV_AfeDet" />
+                <ScalarProperty Name="CONS_TabVia" ColumnName="CONS_TabVia" />
+                <ScalarProperty Name="CONS_CodVia" ColumnName="CONS_CodVia" />
+                <ScalarProperty Name="SERV_Activo" ColumnName="SERV_Activo" />
+                <ScalarProperty Name="SERV_CueVta" ColumnName="SERV_CueVta" />
+                <ScalarProperty Name="SERV_CueGas" ColumnName="SERV_CueGas" />
+                <ScalarProperty Name="SERV_Agrup1" ColumnName="SERV_Agrup1" />
+                <ScalarProperty Name="SERV_Agrup2" ColumnName="SERV_Agrup2" />
+                <ScalarProperty Name="SERV_PorDet" ColumnName="SERV_PorDet" />
+                <ScalarProperty Name="SERV_Tipo" ColumnName="SERV_Tipo" />
+                <ScalarProperty Name="SERV_Valor" ColumnName="SERV_Valor" />
+                <ScalarProperty Name="SERV_CobMin" ColumnName="SERV_CobMin" />
+                <ScalarProperty Name="SERV_Autom" ColumnName="SERV_Autom" />
+                <ScalarProperty Name="SERV_FrecFac" ColumnName="SERV_FrecFac" />
+                <ScalarProperty Name="TIPO_TabUNT" ColumnName="TIPO_TabUNT" />
+                <ScalarProperty Name="TIPO_CodUNT" ColumnName="TIPO_CodUNT" />
+                <ScalarProperty Name="AUDI_UsrCrea" ColumnName="AUDI_UsrCrea" />
+                <ScalarProperty Name="AUDI_FecCrea" ColumnName="AUDI_FecCrea" />
+                <ScalarProperty Name="AUDI_UsrMod" ColumnName="AUDI_UsrMod" />
+                <ScalarProperty Name="AUDI_FecMod" ColumnName="AUDI_FecMod" />
+                <ScalarProperty Name="CONS_TabRGM" ColumnName="CONS_TabRGM" />
+                <ScalarProperty Name="CONS_CodRGM" ColumnName="CONS_CodRGM" />
+                <ScalarProperty Name="SERV_CuenIngreso" ColumnName="SERV_CuenIngreso" />
+                <ScalarProperty Name="SERV_CuenCosto" ColumnName="SERV_CuenCosto" />
+                <ScalarProperty Name="SERV_CuenPuente" ColumnName="SERV_CuenPuente" />
+                <ScalarProperty Name="TIPO_TabDET" ColumnName="TIPO_TabDET" />
+                <ScalarProperty Name="TIPO_CodDET" ColumnName="TIPO_CodDET" />
+                <ScalarProperty Name="SERV_NombreCorto" ColumnName="SERV_NombreCorto" />
+                <ScalarProperty Name="SERV_Glosa" ColumnName="SERV_Glosa" />
+                <ScalarProperty Name="SERV_Observaciones" ColumnName="SERV_Observaciones" />
+                <ScalarProperty Name="SERV_TipoMov" ColumnName="SERV_TipoMov" />
+                <ScalarProperty Name="CONS_TabBAS" ColumnName="CONS_TabBAS" />
+                <ScalarProperty Name="CONS_CodBAS" ColumnName="CONS_CodBAS" />
+                <ScalarProperty Name="TIPO_TabMND" ColumnName="TIPO_TabMND" />
+                <ScalarProperty Name="TIPO_CodMND" ColumnName="TIPO_CodMND" />
+                <ScalarProperty Name="CONS_TabLNG" ColumnName="CONS_TabLNG" />
+                <ScalarProperty Name="CONS_CodLNG" ColumnName="CONS_CodLNG" />
+                <ScalarProperty Name="SERV_DefinidoPor" ColumnName="SERV_DefinidoPor" />
+                <ScalarProperty Name="SERV_ExcesoFlete" ColumnName="SERV_ExcesoFlete" />
+                <ScalarProperty Name="CENT_Ano" ColumnName="CENT_Ano" />
+                <ScalarProperty Name="CENT_Codigo" ColumnName="CENT_Codigo" />
+                <ScalarProperty Name="TIPO_TabOPE" ColumnName="TIPO_TabOPE" />
+                <ScalarProperty Name="TIPO_CodOPE" ColumnName="TIPO_CodOPE" />
+                <ScalarProperty Name="TIPO_TabOPE_Costo" ColumnName="TIPO_TabOPE_Costo" />
+                <ScalarProperty Name="TIPO_CodOPE_Costo" ColumnName="TIPO_CodOPE_Costo" />
+                <ScalarProperty Name="SERV_Agrupado" ColumnName="SERV_Agrupado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipos">
+            <EntityTypeMapping TypeName="NextSoftTarifarioModel.Tipos">
+              <MappingFragment StoreEntitySet="Tipos">
+                <ScalarProperty Name="TIPO_CodTabla" ColumnName="TIPO_CodTabla" />
+                <ScalarProperty Name="TIPO_CodTipo" ColumnName="TIPO_CodTipo" />
+                <ScalarProperty Name="TIPO_Desc1" ColumnName="TIPO_Desc1" />
+                <ScalarProperty Name="TIPO_Desc2" ColumnName="TIPO_Desc2" />
+                <ScalarProperty Name="TIPO_DescC" ColumnName="TIPO_DescC" />
+                <ScalarProperty Name="TIPO_Num1" ColumnName="TIPO_Num1" />
+                <ScalarProperty Name="TIPO_Num2" ColumnName="TIPO_Num2" />
+                <ScalarProperty Name="TIPO_Num3" ColumnName="TIPO_Num3" />
+                <ScalarProperty Name="TIPO_Num4" ColumnName="TIPO_Num4" />
+                <ScalarProperty Name="TIPO_Activo" ColumnName="TIPO_Activo" />
+                <ScalarProperty Name="TIPO_Mascara" ColumnName="TIPO_Mascara" />
+                <ScalarProperty Name="AUDI_UsrCrea" ColumnName="AUDI_UsrCrea" />
+                <ScalarProperty Name="AUDI_FecCrea" ColumnName="AUDI_FecCrea" />
+                <ScalarProperty Name="AUDI_UsrMod" ColumnName="AUDI_UsrMod" />
+                <ScalarProperty Name="AUDI_FecMod" ColumnName="AUDI_FecMod" />
+                <ScalarProperty Name="TIPO_CodTablaHijo" ColumnName="TIPO_CodTablaHijo" />
+                <ScalarProperty Name="TIPO_CodTipoHijo" ColumnName="TIPO_CodTipoHijo" />
+                <ScalarProperty Name="TIPO_Desc3" ColumnName="TIPO_Desc3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Constantes">
+            <EntityTypeMapping TypeName="NextSoftTarifarioModel.Constantes">
+              <MappingFragment StoreEntitySet="Constantes">
+                <ScalarProperty Name="CONS_Desc_ENG" ColumnName="CONS_Desc_ENG" />
+                <ScalarProperty Name="CONS_Desc_SPA" ColumnName="CONS_Desc_SPA" />
+                <ScalarProperty Name="CONS_CodTipo" ColumnName="CONS_CodTipo" />
+                <ScalarProperty Name="CONS_CodTabla" ColumnName="CONS_CodTabla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

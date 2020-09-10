@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="22581a44-f6ed-4e4e-a609-784b3716bc90" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://apps.delfingroupco.com.pe:766/Portico.svc " Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Portico.xsd" MetadataType="Schema" ID="9c12effe-a912-4dd6-a127-9af0f5fd5bae" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd3" />
+    <MetadataFile FileName="Portico1.xsd" MetadataType="Schema" ID="36e3b1b2-53ba-484d-a548-780b86c94357" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd0" />
+    <MetadataFile FileName="Portico.disco" MetadataType="Disco" ID="89085ed3-a067-422c-9319-4dabc79e1fda" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/Portico.svc?disco" />
+    <MetadataFile FileName="Portico.wsdl" MetadataType="Wsdl" ID="2fc587ca-3dd3-4087-bbe4-577ceca440f7" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/Portico.svc?wsdl" />
+    <MetadataFile FileName="Portico2.xsd" MetadataType="Schema" ID="ebd388bc-aea2-4f88-a4c1-572ffc67d389" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd1" />
+    <MetadataFile FileName="Portico3.xsd" MetadataType="Schema" ID="db600791-e006-4aab-94d2-ee7241b95cc5" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd4" />
+    <MetadataFile FileName="Portico4.xsd" MetadataType="Schema" ID="2d816828-6cb2-4a4b-b353-7b3a816c77b8" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd5" />
+    <MetadataFile FileName="Portico5.xsd" MetadataType="Schema" ID="803e6fdd-2968-4a88-bc16-ae36891e961a" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

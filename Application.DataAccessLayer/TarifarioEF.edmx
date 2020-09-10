@@ -1,0 +1,925 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TarifarioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Attribute">
+          <Key>
+            <PropertyRef Name="IdAttribute" />
+          </Key>
+          <Property Name="IdAttribute" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AttributeCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="AttributeDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdBusinessUnit" Type="int" Nullable="false" />
+          <Property Name="SourceDatabase" Type="varchar" MaxLength="50" />
+          <Property Name="SourceTable" Type="varchar" MaxLength="50" />
+          <Property Name="SourceField" Type="varchar" MaxLength="50" />
+          <Property Name="FieldType" Type="varchar" MaxLength="30" />
+          <Property Name="FieldValue" Type="varchar" MaxLength="30" />
+          <Property Name="TargetDatabase" Type="varchar" MaxLength="30" />
+          <Property Name="TargetTable" Type="varchar" MaxLength="30" />
+          <Property Name="TargetField" Type="varchar" MaxLength="20" />
+          <Property Name="AttributeStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DateCreate" Type="datetime" Nullable="false" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BusinessUnit">
+          <Key>
+            <PropertyRef Name="IdBusinessUnit" />
+          </Key>
+          <Property Name="IdBusinessUnit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BusinessUnitCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="BusinessUnitDescription" Type="varchar" MaxLength="150" />
+          <Property Name="IdCompany" Type="int" Nullable="false" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+          <Property Name="BusinessUnitStatus" Type="char" MaxLength="1" />
+          <Property Name="EquivalentCode" Type="char" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="IdCompany" />
+          </Key>
+          <Property Name="IdCompany" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="CompanyDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CompanyTaxCode" Type="varchar" MaxLength="20" />
+          <Property Name="IdGroup" Type="int" Nullable="false" />
+          <Property Name="CompanyStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="EquivalentCode" Type="int" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Concept">
+          <Key>
+            <PropertyRef Name="IdConcept" />
+          </Key>
+          <Property Name="IdConcept" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConceptCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ConceptDescription" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ConceptShortDescription" Type="varchar" MaxLength="50" />
+          <Property Name="ConceptSource" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="ConceptStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+          <Property Name="EquivalentCode" Type="int" />
+        </EntityType>
+        <EntityType Name="Condition">
+          <Key>
+            <PropertyRef Name="IdCondition" />
+          </Key>
+          <Property Name="IdCondition" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ConditionCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ConditionDescription" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="ConditionStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="IdUnit" Type="smallint" Nullable="false" />
+          <Property Name="MaxValue" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="MinValue" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+          <Property Name="IdBusinessUnit" Type="int" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="IdGroup" />
+          </Key>
+          <Property Name="IdGroup" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="GroupDescription" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="GrouopStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Layout">
+          <Key>
+            <PropertyRef Name="IdLayout" />
+          </Key>
+          <Property Name="IdLayout" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LayoutCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="LayoutDescription" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="IdConcept" Type="int" />
+          <Property Name="IdPack" Type="int" />
+          <Property Name="IdCondition" Type="smallint" />
+          <Property Name="LayoutStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+          <Property Name="IdBusinessUnit" Type="int" />
+        </EntityType>
+        <EntityType Name="LayoutAttribute">
+          <Key>
+            <PropertyRef Name="IdLayoutAttribute" />
+          </Key>
+          <Property Name="IdLayoutAttribute" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdLayout" Type="int" Nullable="false" />
+          <Property Name="IdAttribute" Type="int" Nullable="false" />
+          <Property Name="Value" Type="varchar(max)" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Pack">
+          <Key>
+            <PropertyRef Name="IdPack" />
+          </Key>
+          <Property Name="IdPack" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PackCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PackDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PackStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+          <Property Name="IdBusinessUnit" Type="int" />
+        </EntityType>
+        <EntityType Name="PackConcept">
+          <Key>
+            <PropertyRef Name="IdPackConcept" />
+          </Key>
+          <Property Name="IdPackConcept" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPack" Type="int" Nullable="false" />
+          <Property Name="IdConcept" Type="int" Nullable="false" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tariff">
+          <Key>
+            <PropertyRef Name="IdTariff" />
+          </Key>
+          <Property Name="IdTariff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TariffType" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="IdLayout" Type="int" Nullable="false" />
+          <Property Name="Currency" Type="char" MaxLength="3" />
+          <Property Name="ValidFrom" Type="datetime" Nullable="false" />
+          <Property Name="ValidTo" Type="datetime" Nullable="false" />
+          <Property Name="Remarks" Type="varchar" MaxLength="500" />
+          <Property Name="TariffStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TariffDetail">
+          <Key>
+            <PropertyRef Name="IdTariffDetail" />
+          </Key>
+          <Property Name="IdTariffDetail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTariff" Type="int" Nullable="false" />
+          <Property Name="IdConcept" Type="int" Nullable="false" />
+          <Property Name="IdUnit" Type="smallint" Nullable="false" />
+          <Property Name="Currency" Type="char" MaxLength="3" />
+          <Property Name="SalesAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CostsAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ContributionMargin" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="IdUnit" />
+          </Key>
+          <Property Name="IdUnit" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnitCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="UnitDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UnitStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
+          <Property Name="DateUpdate" Type="datetime" />
+          <Property Name="EquivalentCode" Type="char" MaxLength="3" />
+        </EntityType>
+        <Association Name="FK_LayoutAttribute_Attribute">
+          <End Role="Attribute" Type="Self.Attribute" Multiplicity="1" />
+          <End Role="LayoutAttribute" Type="Self.LayoutAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attribute">
+              <PropertyRef Name="IdAttribute" />
+            </Principal>
+            <Dependent Role="LayoutAttribute">
+              <PropertyRef Name="IdAttribute" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LayoutAttribute_Layout1">
+          <End Role="Layout" Type="Self.Layout" Multiplicity="1" />
+          <End Role="LayoutAttribute" Type="Self.LayoutAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout">
+              <PropertyRef Name="IdLayout" />
+            </Principal>
+            <Dependent Role="LayoutAttribute">
+              <PropertyRef Name="IdLayout" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PackConcept_Concept">
+          <End Role="Concept" Type="Self.Concept" Multiplicity="1" />
+          <End Role="PackConcept" Type="Self.PackConcept" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Concept">
+              <PropertyRef Name="IdConcept" />
+            </Principal>
+            <Dependent Role="PackConcept">
+              <PropertyRef Name="IdConcept" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PackConcept_Pack">
+          <End Role="Pack" Type="Self.Pack" Multiplicity="1" />
+          <End Role="PackConcept" Type="Self.PackConcept" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pack">
+              <PropertyRef Name="IdPack" />
+            </Principal>
+            <Dependent Role="PackConcept">
+              <PropertyRef Name="IdPack" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TariffDetail_Tariff">
+          <End Role="Tariff" Type="Self.Tariff" Multiplicity="1" />
+          <End Role="TariffDetail" Type="Self.TariffDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tariff">
+              <PropertyRef Name="IdTariff" />
+            </Principal>
+            <Dependent Role="TariffDetail">
+              <PropertyRef Name="IdTariff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="upGeAttributeValue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="tar">
+          <Parameter Name="BdDestino" Type="varchar" Mode="In" />
+          <Parameter Name="TbDestino" Type="varchar" Mode="In" />
+          <Parameter Name="CampoDestino" Type="varchar" Mode="In" />
+          <Parameter Name="Valor" Type="varchar" Mode="In" />
+          <Parameter Name="ValorBl" Type="char" Mode="In" />
+          <Parameter Name="Retornavalor" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="upGetAttributeDescription" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="tar">
+          <Parameter Name="idAttribute" Type="int" Mode="In" />
+          <Parameter Name="value" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="uspValueAttributes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="tar">
+          <Parameter Name="IdAttribute" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="TarifarioModelStoreContainer">
+          <EntitySet Name="Attribute" EntityType="Self.Attribute" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="BusinessUnit" EntityType="Self.BusinessUnit" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="Concept" EntityType="Self.Concept" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="Condition" EntityType="Self.Condition" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="Group" EntityType="Self.Group" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="Layout" EntityType="Self.Layout" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="LayoutAttribute" EntityType="Self.LayoutAttribute" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="Pack" EntityType="Self.Pack" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="PackConcept" EntityType="Self.PackConcept" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="Tariff" EntityType="Self.Tariff" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="TariffDetail" EntityType="Self.TariffDetail" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="Unit" EntityType="Self.Unit" Schema="tar" store:Type="Tables" />
+          <AssociationSet Name="FK_LayoutAttribute_Attribute" Association="Self.FK_LayoutAttribute_Attribute">
+            <End Role="Attribute" EntitySet="Attribute" />
+            <End Role="LayoutAttribute" EntitySet="LayoutAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LayoutAttribute_Layout1" Association="Self.FK_LayoutAttribute_Layout1">
+            <End Role="Layout" EntitySet="Layout" />
+            <End Role="LayoutAttribute" EntitySet="LayoutAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PackConcept_Concept" Association="Self.FK_PackConcept_Concept">
+            <End Role="Concept" EntitySet="Concept" />
+            <End Role="PackConcept" EntitySet="PackConcept" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PackConcept_Pack" Association="Self.FK_PackConcept_Pack">
+            <End Role="Pack" EntitySet="Pack" />
+            <End Role="PackConcept" EntitySet="PackConcept" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TariffDetail_Tariff" Association="Self.FK_TariffDetail_Tariff">
+            <End Role="Tariff" EntitySet="Tariff" />
+            <End Role="TariffDetail" EntitySet="TariffDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TarifarioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TarifarioEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="uspValueAttributes" ReturnType="Collection(TarifarioModel.uspValueAttributes_Result)">
+          <Parameter Name="IdAttribute" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="upGetAttributeDescription" ReturnType="Collection(String)">
+            <Parameter Name="idAttribute" Mode="In" Type="Int32" />
+            <Parameter Name="value" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Attribute" EntityType="TarifarioModel.Attribute" />
+          <EntitySet Name="BusinessUnit" EntityType="TarifarioModel.BusinessUnit" />
+          <EntitySet Name="Condition" EntityType="TarifarioModel.Condition" />
+          <EntitySet Name="Layout" EntityType="TarifarioModel.Layout" />
+          <EntitySet Name="LayoutAttribute" EntityType="TarifarioModel.LayoutAttribute" />
+          <EntitySet Name="Pack" EntityType="TarifarioModel.Pack" />
+          <EntitySet Name="PackConcept" EntityType="TarifarioModel.PackConcept" />
+          <EntitySet Name="TariffDetail" EntityType="TarifarioModel.TariffDetail" />
+          <EntitySet Name="Unit" EntityType="TarifarioModel.Unit" />
+          <AssociationSet Name="FK_LayoutAttribute_Attribute" Association="TarifarioModel.FK_LayoutAttribute_Attribute">
+            <End Role="Attribute" EntitySet="Attribute" />
+            <End Role="LayoutAttribute" EntitySet="LayoutAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LayoutAttribute_Layout1" Association="TarifarioModel.FK_LayoutAttribute_Layout1">
+            <End Role="Layout" EntitySet="Layout" />
+            <End Role="LayoutAttribute" EntitySet="LayoutAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PackConcept_Pack" Association="TarifarioModel.FK_PackConcept_Pack">
+            <End Role="Pack" EntitySet="Pack" />
+            <End Role="PackConcept" EntitySet="PackConcept" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TariffDetail_Unit" Association="TarifarioModel.FK_TariffDetail_Unit">
+            <End Role="Unit" EntitySet="Unit" />
+            <End Role="TariffDetail" EntitySet="TariffDetail" />
+          </AssociationSet>
+          <EntitySet Name="Company" EntityType="TarifarioModel.Company" />
+          <EntitySet Name="Group" EntityType="TarifarioModel.Group" />
+          <AssociationSet Name="FK_Company_Group" Association="TarifarioModel.FK_Company_Group">
+            <End Role="Group" EntitySet="Group" />
+            <End Role="Company" EntitySet="Company" />
+          </AssociationSet>
+          <EntitySet Name="Concept" EntityType="TarifarioModel.Concept" />
+          <AssociationSet Name="FK_PackConcept_Concept" Association="TarifarioModel.FK_PackConcept_Concept">
+            <End Role="Concept" EntitySet="Concept" />
+            <End Role="PackConcept" EntitySet="PackConcept" />
+          </AssociationSet>
+          <EntitySet Name="Tariff" EntityType="TarifarioModel.Tariff" />
+          <AssociationSet Name="FK_TariffDetail_Tariff" Association="TarifarioModel.FK_TariffDetail_Tariff">
+            <End Role="Tariff" EntitySet="Tariff" />
+            <End Role="TariffDetail" EntitySet="TariffDetail" />
+          </AssociationSet>
+        </EntityContainer>
+        <ComplexType Name="uspValueAttributes_Result">
+          <Property Type="String" Name="codigo" Nullable="false" MaxLength="7" />
+          <Property Type="String" Name="descripcion" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <EntityType Name="Attribute">
+          <Key>
+            <PropertyRef Name="IdAttribute" />
+          </Key>
+          <Property Name="IdAttribute" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AttributeCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AttributeDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IdBusinessUnit" Type="Int32" Nullable="false" />
+          <Property Name="SourceDatabase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SourceTable" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SourceField" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FieldType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FieldValue" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TargetDatabase" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TargetTable" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TargetField" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AttributeStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UserCreate" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BusinessUnit">
+          <Key>
+            <PropertyRef Name="IdBusinessUnit" />
+          </Key>
+          <Property Name="IdBusinessUnit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessUnitCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessUnitDescription" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="IdCompany" Type="Int32" Nullable="false" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+          <Property Name="BusinessUnitStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="EquivalentCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Condition">
+          <Key>
+            <PropertyRef Name="IdCondition" />
+          </Key>
+          <Property Name="IdCondition" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConditionCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ConditionDescription" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ConditionStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="IdUnit" Type="Int16" Nullable="false" />
+          <Property Name="MaxValue" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="MinValue" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+          <Property Name="IdBusinessUnit" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Layout">
+          <Key>
+            <PropertyRef Name="IdLayout" />
+          </Key>
+          <Property Name="IdLayout" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LayoutCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LayoutDescription" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IdConcept" Type="Int32" />
+          <Property Name="IdPack" Type="Int32" />
+          <Property Name="IdCondition" Type="Int16" />
+          <Property Name="LayoutStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+          <Property Name="IdBusinessUnit" Type="Int32" />
+          <NavigationProperty Name="LayoutAttribute" Relationship="TarifarioModel.FK_LayoutAttribute_Layout1" FromRole="Layout" ToRole="LayoutAttribute" />
+        </EntityType>
+        <EntityType Name="LayoutAttribute">
+          <Key>
+            <PropertyRef Name="IdLayoutAttribute" />
+          </Key>
+          <Property Name="IdLayoutAttribute" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLayout" Type="Int32" Nullable="false" />
+          <Property Name="IdAttribute" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Pack">
+          <Key>
+            <PropertyRef Name="IdPack" />
+          </Key>
+          <Property Name="IdPack" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PackCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PackDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PackStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+          <Property Name="IdBusinessUnit" Type="Int32" />
+          <NavigationProperty Name="PackConcept" Relationship="TarifarioModel.FK_PackConcept_Pack" FromRole="Pack" ToRole="PackConcept" />
+        </EntityType>
+        <EntityType Name="PackConcept">
+          <Key>
+            <PropertyRef Name="IdPackConcept" />
+          </Key>
+          <Property Name="IdPackConcept" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPack" Type="Int32" Nullable="false" />
+          <Property Name="IdConcept" Type="Int32" Nullable="false" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Concept" Relationship="TarifarioModel.FK_PackConcept_Concept" FromRole="PackConcept" ToRole="Concept" />
+        </EntityType>
+        <EntityType Name="TariffDetail">
+          <Key>
+            <PropertyRef Name="IdTariffDetail" />
+          </Key>
+          <Property Name="IdTariffDetail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTariff" Type="Int32" Nullable="false" />
+          <Property Name="IdConcept" Type="Int32" Nullable="false" />
+          <Property Name="IdUnit" Type="Int16" Nullable="false" />
+          <Property Name="Currency" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="SalesAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CostsAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ContributionMargin" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="IdUnit" />
+          </Key>
+          <Property Name="IdUnit" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="UnitDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UnitStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+          <Property Name="EquivalentCode" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_LayoutAttribute_Attribute">
+          <End Type="TarifarioModel.Attribute" Role="Attribute" Multiplicity="1" />
+          <End Type="TarifarioModel.LayoutAttribute" Role="LayoutAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attribute">
+              <PropertyRef Name="IdAttribute" />
+            </Principal>
+            <Dependent Role="LayoutAttribute">
+              <PropertyRef Name="IdAttribute" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LayoutAttribute_Layout1">
+          <End Type="TarifarioModel.Layout" Role="Layout" Multiplicity="1" />
+          <End Type="TarifarioModel.LayoutAttribute" Role="LayoutAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Layout">
+              <PropertyRef Name="IdLayout" />
+            </Principal>
+            <Dependent Role="LayoutAttribute">
+              <PropertyRef Name="IdLayout" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PackConcept_Pack">
+          <End Type="TarifarioModel.Pack" Role="Pack" Multiplicity="1" />
+          <End Type="TarifarioModel.PackConcept" Role="PackConcept" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pack">
+              <PropertyRef Name="IdPack" />
+            </Principal>
+            <Dependent Role="PackConcept">
+              <PropertyRef Name="IdPack" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TariffDetail_Unit">
+          <End Type="TarifarioModel.Unit" Role="Unit" Multiplicity="1" />
+          <End Type="TarifarioModel.TariffDetail" Role="TariffDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="IdUnit" />
+            </Principal>
+            <Dependent Role="TariffDetail">
+              <PropertyRef Name="IdUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="IdCompany" />
+          </Key>
+          <Property Name="IdCompany" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyTaxCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IdGroup" Type="Int32" Nullable="false" />
+          <Property Name="CompanyStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="EquivalentCode" Type="Int32" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Group" Relationship="TarifarioModel.FK_Company_Group" FromRole="Company" ToRole="Group" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="IdGroup" />
+          </Key>
+          <Property Name="IdGroup" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="GroupDescription" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="GrouopStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_Company_Group">
+          <End Type="TarifarioModel.Group" Role="Group" Multiplicity="1" />
+          <End Type="TarifarioModel.Company" Role="Company" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="IdGroup" />
+            </Principal>
+            <Dependent Role="Company">
+              <PropertyRef Name="IdGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Concept">
+          <Key>
+            <PropertyRef Name="IdConcept" />
+          </Key>
+          <Property Name="IdConcept" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ConceptCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ConceptDescription" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ConceptShortDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConceptSource" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ConceptStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+          <Property Name="EquivalentCode" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_PackConcept_Concept">
+          <End Type="TarifarioModel.Concept" Role="Concept" Multiplicity="1" />
+          <End Type="TarifarioModel.PackConcept" Role="PackConcept" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Concept">
+              <PropertyRef Name="IdConcept" />
+            </Principal>
+            <Dependent Role="PackConcept">
+              <PropertyRef Name="IdConcept" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tariff">
+          <Key>
+            <PropertyRef Name="IdTariff" />
+          </Key>
+          <Property Name="IdTariff" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TariffType" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="IdLayout" Type="Int32" Nullable="false" />
+          <Property Name="Currency" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TariffStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TariffDetail" Relationship="TarifarioModel.FK_TariffDetail_Tariff" FromRole="Tariff" ToRole="TariffDetail" />
+        </EntityType>
+        <Association Name="FK_TariffDetail_Tariff">
+          <End Type="TarifarioModel.Tariff" Role="Tariff" Multiplicity="1" />
+          <End Type="TarifarioModel.TariffDetail" Role="TariffDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tariff">
+              <PropertyRef Name="IdTariff" />
+            </Principal>
+            <Dependent Role="TariffDetail">
+              <PropertyRef Name="IdTariff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TarifarioModelStoreContainer" CdmEntityContainer="TarifarioEntities">
+          <FunctionImportMapping FunctionImportName="uspValueAttributes" FunctionName="TarifarioModel.Store.uspValueAttributes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TarifarioModel.uspValueAttributes_Result">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="upGetAttributeDescription" FunctionName="TarifarioModel.Store.upGetAttributeDescription" />
+          <EntitySetMapping Name="Attribute">
+            <EntityTypeMapping TypeName="TarifarioModel.Attribute">
+              <MappingFragment StoreEntitySet="Attribute">
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="AttributeStatus" ColumnName="AttributeStatus" />
+                <ScalarProperty Name="TargetField" ColumnName="TargetField" />
+                <ScalarProperty Name="TargetTable" ColumnName="TargetTable" />
+                <ScalarProperty Name="TargetDatabase" ColumnName="TargetDatabase" />
+                <ScalarProperty Name="FieldValue" ColumnName="FieldValue" />
+                <ScalarProperty Name="FieldType" ColumnName="FieldType" />
+                <ScalarProperty Name="SourceField" ColumnName="SourceField" />
+                <ScalarProperty Name="SourceTable" ColumnName="SourceTable" />
+                <ScalarProperty Name="SourceDatabase" ColumnName="SourceDatabase" />
+                <ScalarProperty Name="IdBusinessUnit" ColumnName="IdBusinessUnit" />
+                <ScalarProperty Name="AttributeDescription" ColumnName="AttributeDescription" />
+                <ScalarProperty Name="AttributeCode" ColumnName="AttributeCode" />
+                <ScalarProperty Name="IdAttribute" ColumnName="IdAttribute" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessUnit">
+            <EntityTypeMapping TypeName="TarifarioModel.BusinessUnit">
+              <MappingFragment StoreEntitySet="BusinessUnit">
+                <ScalarProperty Name="EquivalentCode" ColumnName="EquivalentCode" />
+                <ScalarProperty Name="BusinessUnitStatus" ColumnName="BusinessUnitStatus" />
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+                <ScalarProperty Name="BusinessUnitDescription" ColumnName="BusinessUnitDescription" />
+                <ScalarProperty Name="BusinessUnitCode" ColumnName="BusinessUnitCode" />
+                <ScalarProperty Name="IdBusinessUnit" ColumnName="IdBusinessUnit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Condition">
+            <EntityTypeMapping TypeName="TarifarioModel.Condition">
+              <MappingFragment StoreEntitySet="Condition">
+                <ScalarProperty Name="IdBusinessUnit" ColumnName="IdBusinessUnit" />
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="MinValue" ColumnName="MinValue" />
+                <ScalarProperty Name="MaxValue" ColumnName="MaxValue" />
+                <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+                <ScalarProperty Name="ConditionStatus" ColumnName="ConditionStatus" />
+                <ScalarProperty Name="ConditionDescription" ColumnName="ConditionDescription" />
+                <ScalarProperty Name="ConditionCode" ColumnName="ConditionCode" />
+                <ScalarProperty Name="IdCondition" ColumnName="IdCondition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Layout">
+            <EntityTypeMapping TypeName="TarifarioModel.Layout">
+              <MappingFragment StoreEntitySet="Layout">
+                <ScalarProperty Name="IdBusinessUnit" ColumnName="IdBusinessUnit" />
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="LayoutStatus" ColumnName="LayoutStatus" />
+                <ScalarProperty Name="IdCondition" ColumnName="IdCondition" />
+                <ScalarProperty Name="IdPack" ColumnName="IdPack" />
+                <ScalarProperty Name="IdConcept" ColumnName="IdConcept" />
+                <ScalarProperty Name="LayoutDescription" ColumnName="LayoutDescription" />
+                <ScalarProperty Name="LayoutCode" ColumnName="LayoutCode" />
+                <ScalarProperty Name="IdLayout" ColumnName="IdLayout" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LayoutAttribute">
+            <EntityTypeMapping TypeName="TarifarioModel.LayoutAttribute">
+              <MappingFragment StoreEntitySet="LayoutAttribute">
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="IdAttribute" ColumnName="IdAttribute" />
+                <ScalarProperty Name="IdLayout" ColumnName="IdLayout" />
+                <ScalarProperty Name="IdLayoutAttribute" ColumnName="IdLayoutAttribute" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pack">
+            <EntityTypeMapping TypeName="TarifarioModel.Pack">
+              <MappingFragment StoreEntitySet="Pack">
+                <ScalarProperty Name="IdBusinessUnit" ColumnName="IdBusinessUnit" />
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="PackStatus" ColumnName="PackStatus" />
+                <ScalarProperty Name="PackDescription" ColumnName="PackDescription" />
+                <ScalarProperty Name="PackCode" ColumnName="PackCode" />
+                <ScalarProperty Name="IdPack" ColumnName="IdPack" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackConcept">
+            <EntityTypeMapping TypeName="TarifarioModel.PackConcept">
+              <MappingFragment StoreEntitySet="PackConcept">
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="IdConcept" ColumnName="IdConcept" />
+                <ScalarProperty Name="IdPack" ColumnName="IdPack" />
+                <ScalarProperty Name="IdPackConcept" ColumnName="IdPackConcept" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TariffDetail">
+            <EntityTypeMapping TypeName="TarifarioModel.TariffDetail">
+              <MappingFragment StoreEntitySet="TariffDetail">
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="ContributionMargin" ColumnName="ContributionMargin" />
+                <ScalarProperty Name="CostsAmount" ColumnName="CostsAmount" />
+                <ScalarProperty Name="SalesAmount" ColumnName="SalesAmount" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+                <ScalarProperty Name="IdConcept" ColumnName="IdConcept" />
+                <ScalarProperty Name="IdTariff" ColumnName="IdTariff" />
+                <ScalarProperty Name="IdTariffDetail" ColumnName="IdTariffDetail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Unit">
+            <EntityTypeMapping TypeName="TarifarioModel.Unit">
+              <MappingFragment StoreEntitySet="Unit">
+                <ScalarProperty Name="EquivalentCode" ColumnName="EquivalentCode" />
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="UnitStatus" ColumnName="UnitStatus" />
+                <ScalarProperty Name="UnitDescription" ColumnName="UnitDescription" />
+                <ScalarProperty Name="UnitCode" ColumnName="UnitCode" />
+                <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Company">
+            <EntityTypeMapping TypeName="TarifarioModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="EquivalentCode" ColumnName="EquivalentCode" />
+                <ScalarProperty Name="CompanyStatus" ColumnName="CompanyStatus" />
+                <ScalarProperty Name="IdGroup" ColumnName="IdGroup" />
+                <ScalarProperty Name="CompanyTaxCode" ColumnName="CompanyTaxCode" />
+                <ScalarProperty Name="CompanyDescription" ColumnName="CompanyDescription" />
+                <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+                <ScalarProperty Name="IdCompany" ColumnName="IdCompany" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Group">
+            <EntityTypeMapping TypeName="TarifarioModel.Group">
+              <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="GrouopStatus" ColumnName="GrouopStatus" />
+                <ScalarProperty Name="GroupDescription" ColumnName="GroupDescription" />
+                <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+                <ScalarProperty Name="IdGroup" ColumnName="IdGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Concept">
+            <EntityTypeMapping TypeName="TarifarioModel.Concept">
+              <MappingFragment StoreEntitySet="Concept">
+                <ScalarProperty Name="EquivalentCode" ColumnName="EquivalentCode" />
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="ConceptStatus" ColumnName="ConceptStatus" />
+                <ScalarProperty Name="ConceptSource" ColumnName="ConceptSource" />
+                <ScalarProperty Name="ConceptShortDescription" ColumnName="ConceptShortDescription" />
+                <ScalarProperty Name="ConceptDescription" ColumnName="ConceptDescription" />
+                <ScalarProperty Name="ConceptCode" ColumnName="ConceptCode" />
+                <ScalarProperty Name="IdConcept" ColumnName="IdConcept" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tariff">
+            <EntityTypeMapping TypeName="TarifarioModel.Tariff">
+              <MappingFragment StoreEntitySet="Tariff">
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="TariffStatus" ColumnName="TariffStatus" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="IdLayout" ColumnName="IdLayout" />
+                <ScalarProperty Name="TariffType" ColumnName="TariffType" />
+                <ScalarProperty Name="IdTariff" ColumnName="IdTariff" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

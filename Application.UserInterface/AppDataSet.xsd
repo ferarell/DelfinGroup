@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AppDataSet" targetNamespace="http://tempuri.org/AppDataSet.xsd" xmlns:mstns="http://tempuri.org/AppDataSet.xsd" xmlns="http://tempuri.org/AppDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AppDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AppDataSet" msprop:Generator_UserDSName="AppDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LoadingListDetallado" msprop:Generator_TableClassName="LoadingListDetalladoDataTable" msprop:Generator_TableVarName="tableLoadingListDetallado" msprop:Generator_TablePropName="LoadingListDetallado" msprop:Generator_RowDeletingName="LoadingListDetalladoRowDeleting" msprop:Generator_RowChangingName="LoadingListDetalladoRowChanging" msprop:Generator_RowEvHandlerName="LoadingListDetalladoRowChangeEventHandler" msprop:Generator_RowDeletedName="LoadingListDetalladoRowDeleted" msprop:Generator_UserTableName="LoadingListDetallado" msprop:Generator_RowChangedName="LoadingListDetalladoRowChanged" msprop:Generator_RowEvArgName="LoadingListDetalladoRowChangeEvent" msprop:Generator_RowClassName="LoadingListDetalladoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LOAD_RONOUP" msprop:Generator_ColumnVarNameInTable="columnLOAD_RONOUP" msprop:Generator_ColumnPropNameInRow="LOAD_RONOUP" msprop:Generator_ColumnPropNameInTable="LOAD_RONOUPColumn" msprop:Generator_UserColumnName="LOAD_RONOUP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_FOLLOWUP" msprop:Generator_ColumnVarNameInTable="columnLOAD_FOLLOWUP" msprop:Generator_ColumnPropNameInRow="LOAD_FOLLOWUP" msprop:Generator_ColumnPropNameInTable="LOAD_FOLLOWUPColumn" msprop:Generator_UserColumnName="LOAD_FOLLOWUP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_SHIPPER" msprop:Generator_ColumnVarNameInTable="columnLOAD_SHIPPER" msprop:Generator_ColumnPropNameInRow="LOAD_SHIPPER" msprop:Generator_ColumnPropNameInTable="LOAD_SHIPPERColumn" msprop:Generator_UserColumnName="LOAD_SHIPPER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_CONSIGNEE" msprop:Generator_ColumnVarNameInTable="columnLOAD_CONSIGNEE" msprop:Generator_ColumnPropNameInRow="LOAD_CONSIGNEE" msprop:Generator_ColumnPropNameInTable="LOAD_CONSIGNEEColumn" msprop:Generator_UserColumnName="LOAD_CONSIGNEE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_NOTIFY" msprop:Generator_ColumnVarNameInTable="columnLOAD_NOTIFY" msprop:Generator_ColumnPropNameInRow="LOAD_NOTIFY" msprop:Generator_ColumnPropNameInTable="LOAD_NOTIFYColumn" msprop:Generator_UserColumnName="LOAD_NOTIFY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_POL" msprop:Generator_ColumnVarNameInTable="columnLOAD_POL" msprop:Generator_ColumnPropNameInRow="LOAD_POL" msprop:Generator_ColumnPropNameInTable="LOAD_POLColumn" msprop:Generator_UserColumnName="LOAD_POL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_POLNAME" msprop:Generator_ColumnVarNameInTable="columnLOAD_POLNAME" msprop:Generator_ColumnPropNameInRow="LOAD_POLNAME" msprop:Generator_ColumnPropNameInTable="LOAD_POLNAMEColumn" msprop:Generator_UserColumnName="LOAD_POLNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_POD" msprop:Generator_ColumnVarNameInTable="columnLOAD_POD" msprop:Generator_ColumnPropNameInRow="LOAD_POD" msprop:Generator_ColumnPropNameInTable="LOAD_PODColumn" msprop:Generator_UserColumnName="LOAD_POD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_PODNAME" msprop:Generator_ColumnVarNameInTable="columnLOAD_PODNAME" msprop:Generator_ColumnPropNameInRow="LOAD_PODNAME" msprop:Generator_ColumnPropNameInTable="LOAD_PODNAMEColumn" msprop:Generator_UserColumnName="LOAD_PODNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_CARRIER" msprop:Generator_ColumnVarNameInTable="columnLOAD_CARRIER" msprop:Generator_ColumnPropNameInRow="LOAD_CARRIER" msprop:Generator_ColumnPropNameInTable="LOAD_CARRIERColumn" msprop:Generator_UserColumnName="LOAD_CARRIER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_BOOKING" msprop:Generator_ColumnVarNameInTable="columnLOAD_BOOKING" msprop:Generator_ColumnPropNameInRow="LOAD_BOOKING" msprop:Generator_ColumnPropNameInTable="LOAD_BOOKINGColumn" msprop:Generator_UserColumnName="LOAD_BOOKING" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_MBL" msprop:Generator_ColumnVarNameInTable="columnLOAD_MBL" msprop:Generator_ColumnPropNameInRow="LOAD_MBL" msprop:Generator_ColumnPropNameInTable="LOAD_MBLColumn" msprop:Generator_UserColumnName="LOAD_MBL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_HBL" msprop:Generator_ColumnVarNameInTable="columnLOAD_HBL" msprop:Generator_ColumnPropNameInRow="LOAD_HBL" msprop:Generator_ColumnPropNameInTable="LOAD_HBLColumn" msprop:Generator_UserColumnName="LOAD_HBL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_ETD" msprop:Generator_ColumnVarNameInTable="columnLOAD_ETD" msprop:Generator_ColumnPropNameInRow="LOAD_ETD" msprop:Generator_ColumnPropNameInTable="LOAD_ETDColumn" msprop:Generator_UserColumnName="LOAD_ETD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LOAD_ETA" msprop:Generator_ColumnVarNameInTable="columnLOAD_ETA" msprop:Generator_ColumnPropNameInRow="LOAD_ETA" msprop:Generator_ColumnPropNameInTable="LOAD_ETAColumn" msprop:Generator_UserColumnName="LOAD_ETA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LODE_TIPOCNT" msprop:Generator_ColumnVarNameInTable="columnLODE_TIPOCNT" msprop:Generator_ColumnPropNameInRow="LODE_TIPOCNT" msprop:Generator_ColumnPropNameInTable="LODE_TIPOCNTColumn" msprop:Generator_UserColumnName="LODE_TIPOCNT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LODE_TAMANIOCNTR" msprop:Generator_ColumnVarNameInTable="columnLODE_TAMANIOCNTR" msprop:Generator_ColumnPropNameInRow="LODE_TAMANIOCNTR" msprop:Generator_ColumnPropNameInTable="LODE_TAMANIOCNTRColumn" msprop:Generator_UserColumnName="LODE_TAMANIOCNTR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LODE_NUMEROCNTR" msprop:Generator_ColumnVarNameInTable="columnLODE_NUMEROCNTR" msprop:Generator_ColumnPropNameInRow="LODE_NUMEROCNTR" msprop:Generator_ColumnPropNameInTable="LODE_NUMEROCNTRColumn" msprop:Generator_UserColumnName="LODE_NUMEROCNTR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LODE_PRECINTO" msprop:Generator_ColumnVarNameInTable="columnLODE_PRECINTO" msprop:Generator_ColumnPropNameInRow="LODE_PRECINTO" msprop:Generator_ColumnPropNameInTable="LODE_PRECINTOColumn" msprop:Generator_UserColumnName="LODE_PRECINTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LODE_CARGAPELIGROSA" msprop:Generator_ColumnVarNameInTable="columnLODE_CARGAPELIGROSA" msprop:Generator_ColumnPropNameInRow="LODE_CARGAPELIGROSA" msprop:Generator_ColumnPropNameInTable="LODE_CARGAPELIGROSAColumn" msprop:Generator_UserColumnName="LODE_CARGAPELIGROSA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LODE_IMOCLASS" msprop:Generator_ColumnVarNameInTable="columnLODE_IMOCLASS" msprop:Generator_ColumnPropNameInRow="LODE_IMOCLASS" msprop:Generator_ColumnPropNameInTable="LODE_IMOCLASSColumn" msprop:Generator_UserColumnName="LODE_IMOCLASS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LODE_PESOBRUTO" msprop:Generator_ColumnVarNameInTable="columnLODE_PESOBRUTO" msprop:Generator_ColumnPropNameInRow="LODE_PESOBRUTO" msprop:Generator_ColumnPropNameInTable="LODE_PESOBRUTOColumn" msprop:Generator_UserColumnName="LODE_PESOBRUTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LODE_PACKTYPE" msprop:Generator_ColumnVarNameInTable="columnLODE_PACKTYPE" msprop:Generator_ColumnPropNameInRow="LODE_PACKTYPE" msprop:Generator_ColumnPropNameInTable="LODE_PACKTYPEColumn" msprop:Generator_UserColumnName="LODE_PACKTYPE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LODE_CANTBULTOS" msprop:Generator_ColumnVarNameInTable="columnLODE_CANTBULTOS" msprop:Generator_ColumnPropNameInRow="LODE_CANTBULTOS" msprop:Generator_ColumnPropNameInTable="LODE_CANTBULTOSColumn" msprop:Generator_UserColumnName="LODE_CANTBULTOS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LODE_VOLUMEN" msprop:Generator_ColumnVarNameInTable="columnLODE_VOLUMEN" msprop:Generator_ColumnPropNameInRow="LODE_VOLUMEN" msprop:Generator_ColumnPropNameInTable="LODE_VOLUMENColumn" msprop:Generator_UserColumnName="LODE_VOLUMEN" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LODE_DESCCARGA" msprop:Generator_ColumnVarNameInTable="columnLODE_DESCCARGA" msprop:Generator_ColumnPropNameInRow="LODE_DESCCARGA" msprop:Generator_ColumnPropNameInTable="LODE_DESCCARGAColumn" msprop:Generator_UserColumnName="LODE_DESCCARGA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LODE_MARCASNUMEROS" msprop:Generator_ColumnVarNameInTable="columnLODE_MARCASNUMEROS" msprop:Generator_ColumnPropNameInRow="LODE_MARCASNUMEROS" msprop:Generator_ColumnPropNameInTable="LODE_MARCASNUMEROSColumn" msprop:Generator_UserColumnName="LODE_MARCASNUMEROS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_CONTRACTCODE" msprop:Generator_ColumnVarNameInTable="columnLOAD_CONTRACTCODE" msprop:Generator_ColumnPropNameInRow="LOAD_CONTRACTCODE" msprop:Generator_ColumnPropNameInTable="LOAD_CONTRACTCODEColumn" msprop:Generator_UserColumnName="LOAD_CONTRACTCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ERROR_DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnERROR_DESCRIPTION" msprop:Generator_ColumnPropNameInRow="ERROR_DESCRIPTION" msprop:Generator_ColumnPropNameInTable="ERROR_DESCRIPTIONColumn" msprop:Generator_UserColumnName="ERROR_DESCRIPTION" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LoadingListResumido" msprop:Generator_TableClassName="LoadingListResumidoDataTable" msprop:Generator_TableVarName="tableLoadingListResumido" msprop:Generator_RowChangedName="LoadingListResumidoRowChanged" msprop:Generator_TablePropName="LoadingListResumido" msprop:Generator_RowDeletingName="LoadingListResumidoRowDeleting" msprop:Generator_RowChangingName="LoadingListResumidoRowChanging" msprop:Generator_RowEvHandlerName="LoadingListResumidoRowChangeEventHandler" msprop:Generator_RowDeletedName="LoadingListResumidoRowDeleted" msprop:Generator_RowClassName="LoadingListResumidoRow" msprop:Generator_UserTableName="LoadingListResumido" msprop:Generator_RowEvArgName="LoadingListResumidoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LOAD_POL" msprop:Generator_ColumnVarNameInTable="columnLOAD_POL" msprop:Generator_ColumnPropNameInRow="LOAD_POL" msprop:Generator_ColumnPropNameInTable="LOAD_POLColumn" msprop:Generator_UserColumnName="LOAD_POL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_MV" msprop:Generator_ColumnVarNameInTable="columnLOAD_MV" msprop:Generator_ColumnPropNameInRow="LOAD_MV" msprop:Generator_ColumnPropNameInTable="LOAD_MVColumn" msprop:Generator_UserColumnName="LOAD_MV" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_ETD" msprop:Generator_ColumnVarNameInTable="columnLOAD_ETD" msprop:Generator_ColumnPropNameInRow="LOAD_ETD" msprop:Generator_ColumnPropNameInTable="LOAD_ETDColumn" msprop:Generator_UserColumnName="LOAD_ETD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LOAD_CARRIER" msprop:Generator_ColumnVarNameInTable="columnLOAD_CARRIER" msprop:Generator_ColumnPropNameInRow="LOAD_CARRIER" msprop:Generator_ColumnPropNameInTable="LOAD_CARRIERColumn" msprop:Generator_UserColumnName="LOAD_CARRIER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_BOOKING" msprop:Generator_ColumnVarNameInTable="columnLOAD_BOOKING" msprop:Generator_ColumnPropNameInRow="LOAD_BOOKING" msprop:Generator_ColumnPropNameInTable="LOAD_BOOKINGColumn" msprop:Generator_UserColumnName="LOAD_BOOKING" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_MBL" msprop:Generator_ColumnVarNameInTable="columnLOAD_MBL" msprop:Generator_ColumnPropNameInRow="LOAD_MBL" msprop:Generator_ColumnPropNameInTable="LOAD_MBLColumn" msprop:Generator_UserColumnName="LOAD_MBL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_HBL" msprop:Generator_ColumnVarNameInTable="columnLOAD_HBL" msprop:Generator_ColumnPropNameInRow="LOAD_HBL" msprop:Generator_ColumnPropNameInTable="LOAD_HBLColumn" msprop:Generator_UserColumnName="LOAD_HBL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_POD" msprop:Generator_ColumnVarNameInTable="columnLOAD_POD" msprop:Generator_ColumnPropNameInRow="LOAD_POD" msprop:Generator_ColumnPropNameInTable="LOAD_PODColumn" msprop:Generator_UserColumnName="LOAD_POD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_OFTERM" msprop:Generator_ColumnVarNameInTable="columnLOAD_OFTERM" msprop:Generator_ColumnPropNameInRow="LOAD_OFTERM" msprop:Generator_ColumnPropNameInTable="LOAD_OFTERMColumn" msprop:Generator_UserColumnName="LOAD_OFTERM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_CNTR" msprop:Generator_ColumnVarNameInTable="columnLOAD_CNTR" msprop:Generator_ColumnPropNameInRow="LOAD_CNTR" msprop:Generator_ColumnPropNameInTable="LOAD_CNTRColumn" msprop:Generator_UserColumnName="LOAD_CNTR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_SHIPPER" msprop:Generator_ColumnVarNameInTable="columnLOAD_SHIPPER" msprop:Generator_ColumnPropNameInRow="LOAD_SHIPPER" msprop:Generator_ColumnPropNameInTable="LOAD_SHIPPERColumn" msprop:Generator_UserColumnName="LOAD_SHIPPER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_CONSIGNEE" msprop:Generator_ColumnVarNameInTable="columnLOAD_CONSIGNEE" msprop:Generator_ColumnPropNameInRow="LOAD_CONSIGNEE" msprop:Generator_ColumnPropNameInTable="LOAD_CONSIGNEEColumn" msprop:Generator_UserColumnName="LOAD_CONSIGNEE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LOAD_CODE" msprop:Generator_ColumnVarNameInTable="columnLOAD_CODE" msprop:Generator_ColumnPropNameInRow="LOAD_CODE" msprop:Generator_ColumnPropNameInTable="LOAD_CODEColumn" msprop:Generator_UserColumnName="LOAD_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ERROR_DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnERROR_DESCRIPTION" msprop:Generator_ColumnPropNameInRow="ERROR_DESCRIPTION" msprop:Generator_ColumnPropNameInTable="ERROR_DESCRIPTIONColumn" msprop:Generator_UserColumnName="ERROR_DESCRIPTION" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

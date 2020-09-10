@@ -1,0 +1,88 @@
+﻿Imports Microsoft.VisualBasic
+
+Public Class CrmZohoDTO
+
+ID CRM
+Régimen
+Vía
+Línea de Negocio
+Fecha de emisión
+Cliente (Código o RUC)
+Tráfico
+Fecha de vencimiento
+Seguro
+Servicio Logístico
+Puerto de origen
+País de origen
+Puerto destino 
+País de destino
+Condición Embarque
+Condición Pago MBL
+Condición Pago HBL
+Número de contrato
+Referencia
+Observaciones
+Usuario
+Moneda
+Tipo de contenedor
+Cantidad 
+Numero de Cotización
+Versión=1
+
+
+
+    Public Property CallSign() As String
+    Public Property ClienteDireccion() As String
+    Public Property ClienteIdentificacion() As String
+    Public Property ClienteNombre() As String
+    Public Property ClienteTipoIdentificacion() As String
+    Public Property CondicionExportacion() As String
+    Public Property CondicionImportacion() As String
+    Public Property DPvoyage() As String
+    Public Property DepositoVacioCodigoLocalidad() As String
+    Public Property DepositoVacioDireccion() As String
+    Public Property DepositoVacioIdentificacion() As String
+    Public Property DepositoVacioNombre() As String
+    Public Property DepositoVacioPais() As String
+    Public Property DetalleAduanas() As String
+    Public Property EmailContacto() As String
+    Public Property Estado() As String
+    Public Property FechaEmision() As Date
+    Public Property FechaEstimadaArribo() As Date
+    Public Property FechaEstimadaZarpe() As Date
+    Public Property ForwarderDireccion() As String
+    Public Property ForwarderIdentificacion() As String
+    Public Property ForwarderNombre() As String
+    Public Property ForwarderTipoIdentificacion() As String
+    Public Property Numero() As String
+    Public Property IndicadorDG() As String
+    Public Property IndicadorOOG() As String
+    Public Property IndicadorSOW() As String
+    Public Property IndicadorTemp() As String
+    Public Property NombreContacto() As String
+    Public Property NombreNave() As String
+    Public Property NroContrato() As String
+    Public Property NroIMONave() As String
+    Public Property NroViaje() As String
+    Public Property NumeroBL() As String
+    Public Property Observaciones() As String
+    Public Property PuertoDestino() As String
+    Public Property PuertoOrigen() As String
+    Public Property ReferenciaExterna() As String
+    Public Property TExportacionCodigoLocalidad() As String
+    Public Property TExportacionDireccion() As String
+    Public Property TExportacionIdentificacion() As String
+    Public Property TExportacionNombre() As String
+    Public Property TExportacionPais() As String
+    Public Property TImportacionCodigoLocalidad() As String
+    Public Property TImportacionDireccion() As String
+    Public Property TImportacionIdentificacion() As String
+    Public Property TImportacionNombre() As String
+    Public Property TImportacionPais() As String
+    Public Property TelefonoContacto() As String
+    Public Property TerminosLegales() As String
+    Public Property VersionDocumento() As String
+    Public Property ContenedorList As New List(Of ContenedorDTO)
+    Public Property PlazoList As New List(Of PlazoDTO)
+
+End Class

@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>MailBot.Entidades</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>MailBot.BusinessEntities</AssemblyName>
+  </PropertyGroup>
+
+</Project>

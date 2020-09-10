@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IntegrationServicesRest" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IntegrationServicesRest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfRespuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Respuesta" nillable="true" type="tns:Respuesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRespuesta" nillable="true" type="tns:ArrayOfRespuesta" />
+  <xs:complexType name="Respuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfResponse" />
+      <xs:element minOccurs="0" name="ResponseStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RespuestaNexsoft" type="xs:int" />
+      <xs:element minOccurs="0" name="RespuestaSAP" type="xs:int" />
+      <xs:element minOccurs="0" name="SWW" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Respuesta" nillable="true" type="tns:Respuesta" />
+  <xs:complexType name="ArrayOfResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Response" nillable="true" type="tns:Response" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResponse" nillable="true" type="tns:ArrayOfResponse" />
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="error" nillable="true" type="tns:Wrong" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Response" nillable="true" type="tns:Response" />
+  <xs:complexType name="Wrong">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Wrong" nillable="true" type="tns:Wrong" />
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+</xs:schema>

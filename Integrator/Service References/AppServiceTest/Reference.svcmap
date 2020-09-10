@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="23a00651-fa93-4cbc-8081-a91af207800b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DelfinServiceTest5.xsd" MetadataType="Schema" ID="ca6a96ad-c1b0-4fd5-9db2-1245f7770d6b" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?xsd=xsd2" />
+    <MetadataFile FileName="DelfinServiceTest51.xsd" MetadataType="Schema" ID="f9092675-6cb9-47f3-8118-33e4b629d2bb" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?xsd=xsd3" />
+    <MetadataFile FileName="DelfinServiceTest1.wsdl" MetadataType="Wsdl" ID="cda14e49-2ab9-43cb-bda6-f0355797b172" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?wsdl" />
+    <MetadataFile FileName="DelfinServiceTest52.xsd" MetadataType="Schema" ID="8d91dd2e-b861-4efd-ab84-dc4150b50b8d" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?xsd=xsd4" />
+    <MetadataFile FileName="DelfinServiceTest1.disco" MetadataType="Disco" ID="cd65d216-5186-4f92-ae65-78d33f3eab2b" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?disco" />
+    <MetadataFile FileName="DelfinServiceTest53.xsd" MetadataType="Schema" ID="52016742-0476-4de9-8ed0-42f1c568b900" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?xsd=xsd1" />
+    <MetadataFile FileName="DelfinServiceTest54.xsd" MetadataType="Schema" ID="d9c9f213-08ce-49d2-aafa-5f4a3de215ab" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinServiceTest.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

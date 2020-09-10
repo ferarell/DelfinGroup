@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Portico" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/MailBot.Entidades" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:766/Portico.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPortico_ExecuteSQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQL" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_ExecuteSQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_NewExecuteSQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewExecuteSQL" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_NewExecuteSQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewExecuteSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_ExecuteSQLNonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_ExecuteSQLNonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_NewExecuteSQLNonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewExecuteSQLNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_NewExecuteSQLNonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewExecuteSQLNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertInputConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInputConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertInputConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInputConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateInputConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInputConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateInputConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInputConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteInputConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInputConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteInputConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInputConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllInputConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllInputConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllInputConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllInputConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableInputConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableInputConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableInputConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableInputConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertInputSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInputSubject" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertInputSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInputSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateInputSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInputSubject" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateInputSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInputSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteInputSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInputSubject" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteInputSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInputSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllInputSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllInputSubject" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllInputSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllInputSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableInputSubject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableInputSubject" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableInputSubject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableInputSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertInputType_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInputType" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertInputType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertInputTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateInputType_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInputType" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateInputType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInputTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteInputType_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInputType" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteInputType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteInputTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllInputType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllInputType" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllInputType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllInputTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableInputType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableInputType" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableInputType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableInputTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertMessageConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMessageConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertMessageConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMessageConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateMessageConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessageConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateMessageConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessageConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteMessageConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessageConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteMessageConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessageConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllMessageConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessageConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllMessageConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessageConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableMessageConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableMessageConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableMessageConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableMessageConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertMessageLayout_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMessageLayout" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertMessageLayout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMessageLayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateMessageLayout_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessageLayout" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateMessageLayout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessageLayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteMessageLayout_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessageLayout" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteMessageLayout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessageLayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllMessageLayout_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessageLayout" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllMessageLayout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessageLayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableMessageLayout_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableMessageLayout" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableMessageLayout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableMessageLayoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertMessageStructure_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMessageStructure" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_InsertMessageStructure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMessageStructureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateMessageStructure_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessageStructure" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_UpdateMessageStructure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessageStructureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteMessageStructure_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessageStructure" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_DeleteMessageStructure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessageStructureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllMessageStructure_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessageStructure" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllMessageStructure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMessageStructureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableMessageStructure_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableMessageStructure" />
+  </wsdl:message>
+  <wsdl:message name="IPortico_GetAllDataTableMessageStructure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllDataTableMessageStructureResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPortico">
+    <wsdl:operation name="ExecuteSQL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/ExecuteSQL" message="tns:IPortico_ExecuteSQL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/ExecuteSQLResponse" message="tns:IPortico_ExecuteSQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewExecuteSQL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/NewExecuteSQL" message="tns:IPortico_NewExecuteSQL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/NewExecuteSQLResponse" message="tns:IPortico_NewExecuteSQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQLNonQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/ExecuteSQLNonQuery" message="tns:IPortico_ExecuteSQLNonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/ExecuteSQLNonQueryResponse" message="tns:IPortico_ExecuteSQLNonQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewExecuteSQLNonQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/NewExecuteSQLNonQuery" message="tns:IPortico_NewExecuteSQLNonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/NewExecuteSQLNonQueryResponse" message="tns:IPortico_NewExecuteSQLNonQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInputConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/InsertInputConfiguration" message="tns:IPortico_InsertInputConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/InsertInputConfigurationResponse" message="tns:IPortico_InsertInputConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInputConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/UpdateInputConfiguration" message="tns:IPortico_UpdateInputConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/UpdateInputConfigurationResponse" message="tns:IPortico_UpdateInputConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInputConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/DeleteInputConfiguration" message="tns:IPortico_DeleteInputConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/DeleteInputConfigurationResponse" message="tns:IPortico_DeleteInputConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInputConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllInputConfiguration" message="tns:IPortico_GetAllInputConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllInputConfigurationResponse" message="tns:IPortico_GetAllInputConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableInputConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableInputConfiguration" message="tns:IPortico_GetAllDataTableInputConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableInputConfigurationResponse" message="tns:IPortico_GetAllDataTableInputConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInputSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/InsertInputSubject" message="tns:IPortico_InsertInputSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/InsertInputSubjectResponse" message="tns:IPortico_InsertInputSubject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInputSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/UpdateInputSubject" message="tns:IPortico_UpdateInputSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/UpdateInputSubjectResponse" message="tns:IPortico_UpdateInputSubject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInputSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/DeleteInputSubject" message="tns:IPortico_DeleteInputSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/DeleteInputSubjectResponse" message="tns:IPortico_DeleteInputSubject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInputSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllInputSubject" message="tns:IPortico_GetAllInputSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllInputSubjectResponse" message="tns:IPortico_GetAllInputSubject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableInputSubject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableInputSubject" message="tns:IPortico_GetAllDataTableInputSubject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableInputSubjectResponse" message="tns:IPortico_GetAllDataTableInputSubject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertInputType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/InsertInputType" message="tns:IPortico_InsertInputType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/InsertInputTypeResponse" message="tns:IPortico_InsertInputType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInputType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/UpdateInputType" message="tns:IPortico_UpdateInputType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/UpdateInputTypeResponse" message="tns:IPortico_UpdateInputType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInputType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/DeleteInputType" message="tns:IPortico_DeleteInputType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/DeleteInputTypeResponse" message="tns:IPortico_DeleteInputType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInputType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllInputType" message="tns:IPortico_GetAllInputType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllInputTypeResponse" message="tns:IPortico_GetAllInputType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableInputType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableInputType" message="tns:IPortico_GetAllDataTableInputType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableInputTypeResponse" message="tns:IPortico_GetAllDataTableInputType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessageConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/InsertMessageConfiguration" message="tns:IPortico_InsertMessageConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/InsertMessageConfigurationResponse" message="tns:IPortico_InsertMessageConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessageConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/UpdateMessageConfiguration" message="tns:IPortico_UpdateMessageConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/UpdateMessageConfigurationResponse" message="tns:IPortico_UpdateMessageConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessageConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/DeleteMessageConfiguration" message="tns:IPortico_DeleteMessageConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/DeleteMessageConfigurationResponse" message="tns:IPortico_DeleteMessageConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllMessageConfiguration" message="tns:IPortico_GetAllMessageConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllMessageConfigurationResponse" message="tns:IPortico_GetAllMessageConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableMessageConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableMessageConfiguration" message="tns:IPortico_GetAllDataTableMessageConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableMessageConfigurationResponse" message="tns:IPortico_GetAllDataTableMessageConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessageLayout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/InsertMessageLayout" message="tns:IPortico_InsertMessageLayout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/InsertMessageLayoutResponse" message="tns:IPortico_InsertMessageLayout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessageLayout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/UpdateMessageLayout" message="tns:IPortico_UpdateMessageLayout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/UpdateMessageLayoutResponse" message="tns:IPortico_UpdateMessageLayout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessageLayout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/DeleteMessageLayout" message="tns:IPortico_DeleteMessageLayout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/DeleteMessageLayoutResponse" message="tns:IPortico_DeleteMessageLayout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageLayout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllMessageLayout" message="tns:IPortico_GetAllMessageLayout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllMessageLayoutResponse" message="tns:IPortico_GetAllMessageLayout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableMessageLayout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableMessageLayout" message="tns:IPortico_GetAllDataTableMessageLayout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableMessageLayoutResponse" message="tns:IPortico_GetAllDataTableMessageLayout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessageStructure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/InsertMessageStructure" message="tns:IPortico_InsertMessageStructure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/InsertMessageStructureResponse" message="tns:IPortico_InsertMessageStructure_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessageStructure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/UpdateMessageStructure" message="tns:IPortico_UpdateMessageStructure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/UpdateMessageStructureResponse" message="tns:IPortico_UpdateMessageStructure_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessageStructure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/DeleteMessageStructure" message="tns:IPortico_DeleteMessageStructure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/DeleteMessageStructureResponse" message="tns:IPortico_DeleteMessageStructure_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageStructure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllMessageStructure" message="tns:IPortico_GetAllMessageStructure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllMessageStructureResponse" message="tns:IPortico_GetAllMessageStructure_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableMessageStructure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableMessageStructure" message="tns:IPortico_GetAllDataTableMessageStructure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPortico/GetAllDataTableMessageStructureResponse" message="tns:IPortico_GetAllDataTableMessageStructure_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPortico" type="tns:IPortico">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteSQL">
+      <soap:operation soapAction="http://tempuri.org/IPortico/ExecuteSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewExecuteSQL">
+      <soap:operation soapAction="http://tempuri.org/IPortico/NewExecuteSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQLNonQuery">
+      <soap:operation soapAction="http://tempuri.org/IPortico/ExecuteSQLNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewExecuteSQLNonQuery">
+      <soap:operation soapAction="http://tempuri.org/IPortico/NewExecuteSQLNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInputConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPortico/InsertInputConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInputConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPortico/UpdateInputConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInputConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPortico/DeleteInputConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInputConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllInputConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableInputConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllDataTableInputConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInputSubject">
+      <soap:operation soapAction="http://tempuri.org/IPortico/InsertInputSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInputSubject">
+      <soap:operation soapAction="http://tempuri.org/IPortico/UpdateInputSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInputSubject">
+      <soap:operation soapAction="http://tempuri.org/IPortico/DeleteInputSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInputSubject">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllInputSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableInputSubject">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllDataTableInputSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertInputType">
+      <soap:operation soapAction="http://tempuri.org/IPortico/InsertInputType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInputType">
+      <soap:operation soapAction="http://tempuri.org/IPortico/UpdateInputType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInputType">
+      <soap:operation soapAction="http://tempuri.org/IPortico/DeleteInputType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllInputType">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllInputType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableInputType">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllDataTableInputType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessageConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPortico/InsertMessageConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessageConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPortico/UpdateMessageConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessageConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPortico/DeleteMessageConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllMessageConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableMessageConfiguration">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllDataTableMessageConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessageLayout">
+      <soap:operation soapAction="http://tempuri.org/IPortico/InsertMessageLayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessageLayout">
+      <soap:operation soapAction="http://tempuri.org/IPortico/UpdateMessageLayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessageLayout">
+      <soap:operation soapAction="http://tempuri.org/IPortico/DeleteMessageLayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageLayout">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllMessageLayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableMessageLayout">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllDataTableMessageLayout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMessageStructure">
+      <soap:operation soapAction="http://tempuri.org/IPortico/InsertMessageStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessageStructure">
+      <soap:operation soapAction="http://tempuri.org/IPortico/UpdateMessageStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessageStructure">
+      <soap:operation soapAction="http://tempuri.org/IPortico/DeleteMessageStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessageStructure">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllMessageStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDataTableMessageStructure">
+      <soap:operation soapAction="http://tempuri.org/IPortico/GetAllDataTableMessageStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Portico">
+    <wsdl:port name="BasicHttpBinding_IPortico" binding="tns:BasicHttpBinding_IPortico">
+      <soap:address location="http://apps.delfingroupco.com.pe:766/Portico.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

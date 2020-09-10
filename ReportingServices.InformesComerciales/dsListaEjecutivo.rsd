@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Description />
+  <DataSet Name="ListaEjecutivo">
+    <Query>
+      <DataSourceReference>Reportes</DataSourceReference>
+      <CommandText>SELECT NULL AS CodigoEjecutivo,'(Todos)' AS DescripcionEjecutivo
+UNION ALL
+	SELECT T0.ENTC_Codigo,
+		   T0.ENTC_NomCompleto
+	  FROM NextSoft..Entidad T0 (NOLOCK) 
+	  JOIN NextSoft..FuncionEntidad T1 (NOLOCK) ON T1.ENTC_Codigo = T0.ENTC_Codigo
+	 WHERE T1.TIPE_Codigo = 3
+	   AND T0.ENTC_Activo = 1
+ORDER BY 2</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="CodigoEjecutivo">
+        <DataField>CodigoEjecutivo</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="DescripcionEjecutivo">
+        <DataField>DescripcionEjecutivo</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

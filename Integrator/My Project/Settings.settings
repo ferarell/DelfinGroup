@@ -1,0 +1,54 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WebServiceURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LookAndFeel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">VS2010</Value>
+    </Setting>
+    <Setting Name="PaintStyle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ExplorerBar</Value>
+    </Setting>
+    <Setting Name="LastUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LastDomain" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MessageLogOnError" Type="System.String" Scope="User">
+      <Value Profile="(Default)">El usuario o la contraseña no son válidos, por favor verifique y trate nuevamente.</Value>
+    </Setting>
+    <Setting Name="SpeechEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="RoundingDebit" Type="System.String" Scope="User">
+      <Value Profile="(Default)">65.9.5.02</Value>
+    </Setting>
+    <Setting Name="RoundingCredit" Type="System.String" Scope="User">
+      <Value Profile="(Default)">75.9.9.03</Value>
+    </Setting>
+    <Setting Name="ExchangeRateDebit" Type="System.String" Scope="User">
+      <Value Profile="(Default)">77.6.1.01</Value>
+    </Setting>
+    <Setting Name="ExchangeRateCredit" Type="System.String" Scope="User">
+      <Value Profile="(Default)">67.6.1.01</Value>
+    </Setting>
+    <Setting Name="FunctionDebit" Type="System.String" Scope="User">
+      <Value Profile="(Default)">97.2</Value>
+    </Setting>
+    <Setting Name="FunctionCredit" Type="System.String" Scope="User">
+      <Value Profile="(Default)">79.1.1.02</Value>
+    </Setting>
+    <Setting Name="ResultDebit" Type="System.String" Scope="User">
+      <Value Profile="(Default)">59.1.1.01</Value>
+    </Setting>
+    <Setting Name="ResultCredit" Type="System.String" Scope="User">
+      <Value Profile="(Default)">59.2.1.01</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
