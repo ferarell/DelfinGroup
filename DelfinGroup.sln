@@ -86,17 +86,17 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AppNet.Notificaciones", "No
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Integration.Rest", "Integration.WebServices\Integration.Rest.vbproj", "{9977FA31-E144-4D09-A411-B24FA9E95076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.BusinessLogic", "NextSoftR2\1. Business Tier\Delfin.BusinessLogic\Delfin.BusinessLogic.csproj", "{C100EA87-7438-4439-AC79-FAE48BAB42E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.BusinessLogic", "NextSoft\Business Tier\Delfin.BusinessLogic\Delfin.BusinessLogic.csproj", "{C100EA87-7438-4439-AC79-FAE48BAB42E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.Entities", "NextSoftR2\1. Business Tier\Delfin.Entities\Delfin.Entities.csproj", "{F32CDD23-0D2E-4B37-99FC-7A072BE8B5F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.Entities", "NextSoft\Business Tier\Delfin.Entities\Delfin.Entities.csproj", "{F32CDD23-0D2E-4B37-99FC-7A072BE8B5F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.ServiceContracts", "NextSoftR2\2. Services Tier\Delfin.ServiceContracts\Delfin.ServiceContracts.csproj", "{15B3E0D2-6217-493A-A690-158C497F5318}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.FacturacionElectronica", "NextSoft\FacturacionElectronica\Delfin.FacturacionElectronica.csproj", "{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.ServiceProxy", "NextSoftR2\2. Services Tier\Delfin.ServiceProxy\Delfin.ServiceProxy.csproj", "{E6205C17-C9DA-42C9-81E7-721505073E2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.Principal", "NextSoft\Presentation Tier\Delfin.Principal\Delfin.Principal.csproj", "{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.Principal", "NextSoftR2\3. Presentation Tier\Delfin.Principal\Delfin.Principal.csproj", "{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.ServiceContracts", "NextSoft\Services Tier\Delfin.ServiceContracts\Delfin.ServiceContracts.csproj", "{15B3E0D2-6217-493A-A690-158C497F5318}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.FacturacionElectronica", "NextSoftR2\FacturacionElectronica\Delfin.FacturacionElectronica.csproj", "{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.ServiceProxy", "NextSoft\Services Tier\Delfin.ServiceProxy\Delfin.ServiceProxy.csproj", "{E6205C17-C9DA-42C9-81E7-721505073E2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -504,6 +504,30 @@ Global
 		{F32CDD23-0D2E-4B37-99FC-7A072BE8B5F5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F32CDD23-0D2E-4B37-99FC-7A072BE8B5F5}.Release|x86.ActiveCfg = Release|x86
 		{F32CDD23-0D2E-4B37-99FC-7A072BE8B5F5}.Release|x86.Build.0 = Release|x86
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Debug|x86.Build.0 = Debug|Any CPU
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.DebugLocal|x86.ActiveCfg = Debug|Any CPU
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.DebugLocal|x86.Build.0 = Debug|Any CPU
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Release|x86.ActiveCfg = Release|Any CPU
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Release|x86.Build.0 = Release|Any CPU
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Debug|x86.ActiveCfg = Debug|x86
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Debug|x86.Build.0 = Debug|x86
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.DebugLocal|x86.ActiveCfg = Debug|x86
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.DebugLocal|x86.Build.0 = Debug|x86
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Release|x86.ActiveCfg = Release|x86
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Release|x86.Build.0 = Release|x86
 		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|x86.ActiveCfg = Debug|x86
@@ -528,30 +552,6 @@ Global
 		{E6205C17-C9DA-42C9-81E7-721505073E2D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E6205C17-C9DA-42C9-81E7-721505073E2D}.Release|x86.ActiveCfg = Release|x86
 		{E6205C17-C9DA-42C9-81E7-721505073E2D}.Release|x86.Build.0 = Release|x86
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Debug|x86.ActiveCfg = Debug|x86
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Debug|x86.Build.0 = Debug|x86
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.DebugLocal|x86.ActiveCfg = Debug|x86
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.DebugLocal|x86.Build.0 = Debug|x86
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Release|x86.ActiveCfg = Release|x86
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}.Release|x86.Build.0 = Release|x86
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Debug|x86.Build.0 = Debug|Any CPU
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.DebugLocal|x86.ActiveCfg = Debug|Any CPU
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.DebugLocal|x86.Build.0 = Debug|Any CPU
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Release|x86.ActiveCfg = Release|Any CPU
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -569,10 +569,10 @@ Global
 		{16DE34BE-9808-447B-8420-30210480AA9D} = {759F1562-3881-476C-98E5-52FE8D9DA208}
 		{C100EA87-7438-4439-AC79-FAE48BAB42E2} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
 		{F32CDD23-0D2E-4B37-99FC-7A072BE8B5F5} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
+		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
+		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
 		{15B3E0D2-6217-493A-A690-158C497F5318} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
 		{E6205C17-C9DA-42C9-81E7-721505073E2D} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
-		{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
-		{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22787EE7-60C2-4619-A295-33D926CD4F31}
