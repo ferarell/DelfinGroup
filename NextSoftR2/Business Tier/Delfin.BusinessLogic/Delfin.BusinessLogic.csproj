@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C100EA87-7438-4439-AC79-FAE48BAB42E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Delfin.BusinessLogic</RootNamespace>
+    <AssemblyName>Delfin.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DelfinCert.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="eFactDelfin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\eFactDelfin\bin\Debug\eFactDelfin.dll</HintPath>
+    </Reference>
+    <Reference Include="Infrastructure.Aspect, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Infrastructure.Aspect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data.SqlCe">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cryptography">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Validation">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="NextAdmin.BusinessLogic">
+      <HintPath>..\..\LibreriasAdmin\NextAdmin.BusinessLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="NextAdmin.Entities">
+      <HintPath>..\..\Librerias\NextAdmin.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgMaritimoEntidad\BusinessLogic\BLAgMaritimoEntidad.cs" />
+    <Compile Include="AgMaritimoEntidad\BusinessLogic\BLAgMaritimoEntidad.partial.cs" />
+    <Compile Include="AgMaritimoEntidad\BusinessLogic\IBLAgMaritimoEntidad.cs" />
+    <Compile Include="AgMaritimoEntidad\BusinessLogic\IBLAgMaritimoEntidad.partial.cs" />
+    <Compile Include="AgMaritimoEntidad\DataAccess\DAAgMaritimoEntidad.cs" />
+    <Compile Include="AgMaritimoEntidad\DataAccess\DAAgMaritimoEntidad.partial.cs" />
+    <Compile Include="Anexos\BusinessLogic\BLAnexos.cs" />
+    <Compile Include="Anexos\BusinessLogic\BLAnexos.partial.cs" />
+    <Compile Include="Anexos\BusinessLogic\IBLAnexos.cs" />
+    <Compile Include="Anexos\BusinessLogic\IBLAnexos.partial.cs" />
+    <Compile Include="Anexos\DataAccess\DAAnexos.cs" />
+    <Compile Include="Anexos\DataAccess\DAAnexos.partial.cs" />
+    <Compile Include="Auditoria\BusinessLogic\BLAuditoria.cs" />
+    <Compile Include="Auditoria\BusinessLogic\IBLAuditoria.cs" />
+    <Compile Include="Auditoria\DataAccess\DAAuditoria.cs" />
+    <Compile Include="CabPerfilAsientos\BusinessLogic\BLCabPerfilAsientos.cs" />
+    <Compile Include="CabPerfilAsientos\BusinessLogic\BLCabPerfilAsientos.partial.cs" />
+    <Compile Include="CabPerfilAsientos\BusinessLogic\IBLCabPerfilAsientos.cs" />
+    <Compile Include="CabPerfilAsientos\BusinessLogic\IBLCabPerfilAsientos.partial.cs" />
+    <Compile Include="CabPerfilAsientos\DataAccess\DACabPerfilAsientos.cs" />
+    <Compile Include="CabPerfilAsientos\DataAccess\DACabPerfilAsientos.partial.cs" />
+    <Compile Include="Cab_Cotizacion\BusinessLogic\BLCab_Cotizacion.cs" />
+    <Compile Include="Cab_Cotizacion\BusinessLogic\BLCab_Cotizacion.partial.cs" />
+    <Compile Include="Cab_Cotizacion\BusinessLogic\IBLCab_Cotizacion.cs" />
+    <Compile Include="Cab_Cotizacion\BusinessLogic\IBLCab_Cotizacion.partial.cs" />
+    <Compile Include="Cab_Cotizacion\DataAccess\DACab_Cotizacion.cs" />
+    <Compile Include="Cab_Cotizacion\DataAccess\DACab_Cotizacion.partial.cs" />
+    <Compile Include="Cab_Cotizacion_OV\BusinessLogic\BLCab_Cotizacion_OV.cs" />
+    <Compile Include="Cab_Cotizacion_OV\BusinessLogic\BLCab_Cotizacion_OV.partial.cs" />
+    <Compile Include="Cab_Cotizacion_OV\BusinessLogic\BLCab_Cotizacion_OV.operacion.cs" />
+    <Compile Include="Cab_Cotizacion_OV\BusinessLogic\IBLCab_Cotizacion_OV.operacion.cs" />
+    <Compile Include="Cab_Cotizacion_OV\BusinessLogic\IBLCab_Cotizacion_OV.cs" />
+    <Compile Include="Cab_Cotizacion_OV\BusinessLogic\IBLCab_Cotizacion_OV.partial.cs" />
+    <Compile Include="Cab_Cotizacion_OV\DataAccess\DACab_Cotizacion_OV.operacion.cs" />
+    <Compile Include="Cab_Cotizacion_OV\DataAccess\DACab_Cotizacion_OV.cs" />
+    <Compile Include="Cab_Cotizacion_OV\DataAccess\DACab_Cotizacion_OV.partial.cs" />
+    <Compile Include="Cab_Direccionamiento\BusinessLogic\BLCab_Direccionamiento.cs" />
+    <Compile Include="Cab_Direccionamiento\BusinessLogic\BLCab_Direccionamiento.partial.cs" />
+    <Compile Include="Cab_Direccionamiento\BusinessLogic\IBLCab_Direccionamiento.cs" />
+    <Compile Include="Cab_Direccionamiento\BusinessLogic\IBLCab_Direccionamiento.partial.cs" />
+    <Compile Include="Cab_Direccionamiento\DataAccess\DACab_Direccionamiento.cs" />
+    <Compile Include="Cab_Direccionamiento\DataAccess\DACab_Direccionamiento.partial.cs" />
+    <Compile Include="Cab_MBL\BusinessLogic\BLCab_MBL.cs" />
+    <Compile Include="Cab_MBL\BusinessLogic\BLCab_MBL.partial.cs" />
+    <Compile Include="Cab_MBL\BusinessLogic\IBLCab_MBL.cs" />
+    <Compile Include="Cab_MBL\BusinessLogic\IBLCab_MBL.partial.cs" />
+    <Compile Include="Cab_MBL\DataAccess\DACab_MBL.cs" />
+    <Compile Include="Cab_MBL\DataAccess\DACab_MBL.partial.cs" />
+    <Compile Include="Cab_Operacion\BusinessLogic\BLCab_Operacion.cs" />
+    <Compile Include="Cab_Operacion\BusinessLogic\BLCab_Operacion.partial.cs" />
+    <Compile Include="Cab_Operacion\BusinessLogic\IBLCab_Operacion.cs" />
+    <Compile Include="Cab_Operacion\BusinessLogic\IBLCab_Operacion.partial.cs" />
+    <Compile Include="Cab_Operacion\DataAccess\DACab_Operacion.cs" />
+    <Compile Include="Cab_Operacion\DataAccess\DACab_Operacion.partial.cs" />
+    <Compile Include="Cab_Seguimientos\BusinessLogic\BLCab_Seguimientos.cs" />
+    <Compile Include="Cab_Seguimientos\BusinessLogic\BLCab_Seguimientos.partial.cs" />
+    <Compile Include="Cab_Seguimientos\BusinessLogic\IBLCab_Seguimientos.cs" />
+    <Compile Include="Cab_Seguimientos\BusinessLogic\IBLCab_Seguimientos.partial.cs" />
+    <Compile Include="Cab_Seguimientos\DataAccess\DACab_Seguimientos.cs" />
+    <Compile Include="Cab_Seguimientos\DataAccess\DACab_Seguimientos.partial.cs" />
+    <Compile Include="Cab_Tarifa\BusinessLogic\BLCab_Tarifa.cs" />
+    <Compile Include="Cab_Tarifa\BusinessLogic\BLCab_Tarifa.partial.cs" />
+    <Compile Include="Cab_Tarifa\BusinessLogic\IBLCab_Tarifa.cs" />
+    <Compile Include="Cab_Tarifa\BusinessLogic\IBLCab_Tarifa.partial.cs" />
+    <Compile Include="Cab_Tarifa\DataAccess\DACab_Tarifa.cs" />
+    <Compile Include="Cab_Tarifa\DataAccess\DACab_Tarifa.partial.cs" />
+    <Compile Include="Cab_Tarjas\BusinessLogic\BLCab_Tarjas.cs" />
+    <Compile Include="Cab_Tarjas\BusinessLogic\BLCab_Tarjas.partial.cs" />
+    <Compile Include="Cab_Tarjas\BusinessLogic\IBLCab_Tarjas.cs" />
+    <Compile Include="Cab_Tarjas\BusinessLogic\IBLCab_Tarjas.partial.cs" />
+    <Compile Include="Cab_Tarjas\DataAccess\DACab_Tarjas.cs" />
+    <Compile Include="Cab_Tarjas\DataAccess\DACab_Tarjas.partial.cs" />
+    <Compile Include="CGeneral\CGeneral.cs" />
+    <Compile Include="CGeneral\ICGeneral.cs" />
+    <Compile Include="Chequera\BusinessLogic\BLChequera.cs" />
+    <Compile Include="Chequera\BusinessLogic\BLChequera.partial.cs" />
+    <Compile Include="Chequera\BusinessLogic\IBLChequera.cs" />
+    <Compile Include="Chequera\BusinessLogic\IBLChequera.partial.cs" />
+    <Compile Include="Chequera\DataAccess\DAChequera.cs" />
+    <Compile Include="Chequera\DataAccess\DAChequera.partial.cs" />
+    <Compile Include="CierresChangeControl\BusinessLogic\BLCierresChangeControl.cs" />
+    <Compile Include="CierresChangeControl\BusinessLogic\BLCierresChangeControl.partial.cs" />
+    <Compile Include="CierresChangeControl\BusinessLogic\IBLCierresChangeControl.cs" />
+    <Compile Include="CierresChangeControl\BusinessLogic\IBLCierresChangeControl.partial.cs" />
+    <Compile Include="CierresChangeControl\DataAccess\DACierresChangeControl.cs" />
+    <Compile Include="CierresChangeControl\DataAccess\DACierresChangeControl.partial.cs" />
+    <Compile Include="Comision\BusinessLogic\BLComision.cs" />
+    <Compile Include="Comision\BusinessLogic\BLComision.partial.cs" />
+    <Compile Include="Comision\BusinessLogic\IBLComision.cs" />
+    <Compile Include="Comision\BusinessLogic\IBLComision.partial.cs" />
+    <Compile Include="Comision\DataAccess\DAComision.cs" />
+    <Compile Include="Comision\DataAccess\DAComision.partial.cs" />
+    <Compile Include="Conciliacion\BusinessLogic\BLConciliacion.cs" />
+    <Compile Include="Conciliacion\BusinessLogic\BLConciliacion.partial.cs" />
+    <Compile Include="Conciliacion\BusinessLogic\IBLConciliacion.cs" />
+    <Compile Include="Conciliacion\BusinessLogic\IBLConciliacion.partial.cs" />
+    <Compile Include="Conciliacion\DataAccess\DAConciliacion.cs" />
+    <Compile Include="Conciliacion\DataAccess\DAConciliacion.partial.cs" />
+    <Compile Include="Constantes\BusinessLogic\BLConstantes.cs" />
+    <Compile Include="Constantes\BusinessLogic\BLConstantes.partial.cs" />
+    <Compile Include="Constantes\BusinessLogic\IBLConstantes.cs" />
+    <Compile Include="Constantes\BusinessLogic\IBLConstantes.partial.cs" />
+    <Compile Include="Constantes\DataAccess\DAConstantes.cs" />
+    <Compile Include="Constantes\DataAccess\DAConstantes.partial.cs" />
+    <Compile Include="Contrato\BusinessLogic\BLContrato.cs" />
+    <Compile Include="Contrato\BusinessLogic\BLContrato.partial.cs" />
+    <Compile Include="Contrato\BusinessLogic\IBLContrato.cs" />
+    <Compile Include="Contrato\BusinessLogic\IBLContrato.partial.cs" />
+    <Compile Include="Contrato\DataAccess\DAContrato.cs" />
+    <Compile Include="Contrato\DataAccess\DAContrato.partial.cs" />
+    <Compile Include="Contrato_Comodity\BusinessLogic\BLContrato_Comodity.cs" />
+    <Compile Include="Contrato_Comodity\BusinessLogic\BLContrato_Comodity.partial.cs" />
+    <Compile Include="Contrato_Comodity\BusinessLogic\IBLContrato_Comodity.cs" />
+    <Compile Include="Contrato_Comodity\BusinessLogic\IBLContrato_Comodity.partial.cs" />
+    <Compile Include="Contrato_Comodity\DataAccess\DAContrato_Comodity.cs" />
+    <Compile Include="Contrato_Comodity\DataAccess\DAContrato_Comodity.partial.cs" />
+    <Compile Include="correlativos\BusinessLogic\BLcorrelativos.cs" />
+    <Compile Include="correlativos\BusinessLogic\BLcorrelativos.partial.cs" />
+    <Compile Include="correlativos\BusinessLogic\IBLcorrelativos.cs" />
+    <Compile Include="correlativos\BusinessLogic\IBLcorrelativos.partial.cs" />
+    <Compile Include="correlativos\DataAccess\DAcorrelativos.cs" />
+    <Compile Include="correlativos\DataAccess\DAcorrelativos.partial.cs" />
+    <Compile Include="CtaCte\BusinessLogic\BLCtaCte.cs" />
+    <Compile Include="CtaCte\BusinessLogic\BLCtaCte.partial.cs" />
+    <Compile Include="CtaCte\BusinessLogic\IBLCtaCte.cs" />
+    <Compile Include="CtaCte\BusinessLogic\IBLCtaCte.partial.cs" />
+    <Compile Include="CtaCte\DataAccess\DACtaCte.cs" />
+    <Compile Include="CtaCte\DataAccess\DACtaCte.partial.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\BusinessLogic\BLCtaCte_Det_Operaciones.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\BusinessLogic\BLCtaCte_Det_Operaciones.partial.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\BusinessLogic\IBLCtaCte_Det_Operaciones.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\BusinessLogic\IBLCtaCte_Det_Operaciones.partial.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\DataAccess\DACtaCte_Det_Operaciones.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\DataAccess\DACtaCte_Det_Operaciones.partial.cs" />
+    <Compile Include="CuentasBancariasUsuarios\BusinessLogic\BLCuentasBancariasUsuarios.cs" />
+    <Compile Include="CuentasBancariasUsuarios\BusinessLogic\BLCuentasBancariasUsuarios.partial.cs" />
+    <Compile Include="CuentasBancariasUsuarios\BusinessLogic\IBLCuentasBancariasUsuarios.cs" />
+    <Compile Include="CuentasBancariasUsuarios\BusinessLogic\IBLCuentasBancariasUsuarios.partial.cs" />
+    <Compile Include="CuentasBancariasUsuarios\DataAccess\DACuentasBancariasUsuarios.cs" />
+    <Compile Include="CuentasBancariasUsuarios\DataAccess\DACuentasBancariasUsuarios.partial.cs" />
+    <Compile Include="CuentasBancarias\BusinessLogic\BLCuentasBancarias.cs" />
+    <Compile Include="CuentasBancarias\BusinessLogic\BLCuentasBancarias.partial.cs" />
+    <Compile Include="CuentasBancarias\BusinessLogic\IBLCuentasBancarias.cs" />
+    <Compile Include="CuentasBancarias\BusinessLogic\IBLCuentasBancarias.partial.cs" />
+    <Compile Include="CuentasBancarias\DataAccess\DACuentasBancarias.cs" />
+    <Compile Include="CuentasBancarias\DataAccess\DACuentasBancarias.partial.cs" />
+    <Compile Include="DepVacioEntidad\BusinessLogic\BLDepVacioEntidad.cs" />
+    <Compile Include="DepVacioEntidad\BusinessLogic\BLDepVacioEntidad.partial.cs" />
+    <Compile Include="DepVacioEntidad\BusinessLogic\IBLDepVacioEntidad.cs" />
+    <Compile Include="DepVacioEntidad\BusinessLogic\IBLDepVacioEntidad.partial.cs" />
+    <Compile Include="DepVacioEntidad\DataAccess\DADepVacioEntidad.cs" />
+    <Compile Include="DepVacioEntidad\DataAccess\DADepVacioEntidad.partial.cs" />
+    <Compile Include="DetCtaCteAsientos\BusinessLogic\BLDetCtaCteAsientos.cs" />
+    <Compile Include="DetCtaCteAsientos\BusinessLogic\BLDetCtaCteAsientos.partial.cs" />
+    <Compile Include="DetCtaCteAsientos\BusinessLogic\IBLDetCtaCteAsientos.cs" />
+    <Compile Include="DetCtaCteAsientos\BusinessLogic\IBLDetCtaCteAsientos.partial.cs" />
+    <Compile Include="DetCtaCteAsientos\DataAccess\DADetCtaCteAsientos.cs" />
+    <Compile Include="DetCtaCteAsientos\DataAccess\DADetCtaCteAsientos.partial.cs" />
+    <Compile Include="DetCtaCte\BusinessLogic\BLDetCtaCte.cs" />
+    <Compile Include="DetCtaCte\BusinessLogic\BLDetCtaCte.partial.cs" />
+    <Compile Include="DetCtaCte\BusinessLogic\IBLDetCtaCte.cs" />
+    <Compile Include="DetCtaCte\BusinessLogic\IBLDetCtaCte.partial.cs" />
+    <Compile Include="DetCtaCte\DataAccess\DADetCtaCte.cs" />
+    <Compile Include="DetCtaCte\DataAccess\DADetCtaCte.partial.cs" />
+    <Compile Include="DetDocsVta\BusinessLogic\BLDetDocsVta.cs" />
+    <Compile Include="DetDocsVta\BusinessLogic\BLDetDocsVta.partial.cs" />
+    <Compile Include="DetDocsVta\BusinessLogic\IBLDetDocsVta.cs" />
+    <Compile Include="DetDocsVta\BusinessLogic\IBLDetDocsVta.partial.cs" />
+    <Compile Include="DetDocsVta\DataAccess\DADetDocsVta.cs" />
+    <Compile Include="DetDocsVta\DataAccess\DADetDocsVta.partial.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\BusinessLogic\BLDetDocsVta_Det_Operacion.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\BusinessLogic\BLDetDocsVta_Det_Operacion.partial.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\BusinessLogic\IBLDetDocsVta_Det_Operacion.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\BusinessLogic\IBLDetDocsVta_Det_Operacion.partial.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\DataAccess\DADetDocsVta_Det_Operacion.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\DataAccess\DADetDocsVta_Det_Operacion.partial.cs" />
+    <Compile Include="DetMovimiento\BusinessLogic\BLDetMovimiento.cs" />
+    <Compile Include="DetMovimiento\BusinessLogic\BLDetMovimiento.partial.cs" />
+    <Compile Include="DetMovimiento\BusinessLogic\IBLDetMovimiento.cs" />
+    <Compile Include="DetMovimiento\BusinessLogic\IBLDetMovimiento.partial.cs" />
+    <Compile Include="DetMovimiento\DataAccess\DADetMovimiento.cs" />
+    <Compile Include="DetMovimiento\DataAccess\DADetMovimiento.partial.cs" />
+    <Compile Include="DetPerfilAsientos\BusinessLogic\BLDetPerfilAsientos.cs" />
+    <Compile Include="DetPerfilAsientos\BusinessLogic\BLDetPerfilAsientos.partial.cs" />
+    <Compile Include="DetPerfilAsientos\BusinessLogic\IBLDetPerfilAsientos.cs" />
+    <Compile Include="DetPerfilAsientos\BusinessLogic\IBLDetPerfilAsientos.partial.cs" />
+    <Compile Include="DetPerfilAsientos\DataAccess\DADetPerfilAsientos.cs" />
+    <Compile Include="DetPerfilAsientos\DataAccess\DADetPerfilAsientos.partial.cs" />
+    <Compile Include="Det_CNTR\BusinessLogic\BLDet_CNTR.cs" />
+    <Compile Include="Det_CNTR\BusinessLogic\BLDet_CNTR.partial.cs" />
+    <Compile Include="Det_CNTR\BusinessLogic\IBLDet_CNTR.cs" />
+    <Compile Include="Det_CNTR\BusinessLogic\IBLDet_CNTR.partial.cs" />
+    <Compile Include="Det_CNTR\DataAccess\DADet_CNTR.cs" />
+    <Compile Include="Det_CNTR\DataAccess\DADet_CNTR.partial.cs" />
+    <Compile Include="Det_Comision\BusinessLogic\BLDet_Comision.cs" />
+    <Compile Include="Det_Comision\BusinessLogic\BLDet_Comision.partial.cs" />
+    <Compile Include="Det_Comision\BusinessLogic\IBLDet_Comision.cs" />
+    <Compile Include="Det_Comision\BusinessLogic\IBLDet_Comision.partial.cs" />
+    <Compile Include="Det_Comision\DataAccess\DADet_Comision.cs" />
+    <Compile Include="Det_Comision\DataAccess\DADet_Comision.partial.cs" />
+    <Compile Include="Det_Cotizacion\BusinessLogic\BLDet_Cotizacion.cs" />
+    <Compile Include="Det_Cotizacion\BusinessLogic\BLDet_Cotizacion.partial.cs" />
+    <Compile Include="Det_Cotizacion\BusinessLogic\IBLDet_Cotizacion.cs" />
+    <Compile Include="Det_Cotizacion\BusinessLogic\IBLDet_Cotizacion.partial.cs" />
+    <Compile Include="Det_Cotizacion\DataAccess\DADet_Cotizacion.cs" />
+    <Compile Include="Det_Cotizacion\DataAccess\DADet_Cotizacion.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\BusinessLogic\BLDet_Cotizacion_OV_EventosTareas.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\BusinessLogic\BLDet_Cotizacion_OV_EventosTareas.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\BusinessLogic\IBLDet_Cotizacion_OV_EventosTareas.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\BusinessLogic\IBLDet_Cotizacion_OV_EventosTareas.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\DataAccess\DADet_Cotizacion_OV_EventosTareas.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\DataAccess\DADet_Cotizacion_OV_EventosTareas.partial.cs" />
+    <Compile Include="DetNaveViaje\BusinessLogic\BLDetNaveViaje.cs" />
+    <Compile Include="DetNaveViaje\BusinessLogic\BLDetNaveViaje.partial.cs" />
+    <Compile Include="DetNaveViaje\BusinessLogic\IBLDetNaveViaje.cs" />
+    <Compile Include="DetNaveViaje\BusinessLogic\IBLDetNaveViaje.partial.cs" />
+    <Compile Include="DetNaveViaje\DataAccess\DADetNaveViaje.cs" />
+    <Compile Include="DetNaveViaje\DataAccess\DADetNaveViaje.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\BusinessLogic\BLDet_Cotizacion_OV_Archivo.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\BusinessLogic\BLDet_Cotizacion_OV_Archivo.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\BusinessLogic\IBLDet_Cotizacion_OV_Archivo.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\BusinessLogic\IBLDet_Cotizacion_OV_Archivo.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\DataAccess\DADet_Cotizacion_OV_Archivo.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\DataAccess\DADet_Cotizacion_OV_Archivo.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\BusinessLogic\BLDet_Cotizacion_OV_Documento.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\BusinessLogic\BLDet_Cotizacion_OV_Documento.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\BusinessLogic\IBLDet_Cotizacion_OV_Documento.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\BusinessLogic\IBLDet_Cotizacion_OV_Documento.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\DataAccess\DADet_Cotizacion_OV_Documento.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\DataAccess\DADet_Cotizacion_OV_Documento.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\BusinessLogic\BLDet_Cotizacion_OV_Flete.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\BusinessLogic\BLDet_Cotizacion_OV_Flete.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\BusinessLogic\IBLDet_Cotizacion_OV_Flete.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\BusinessLogic\IBLDet_Cotizacion_OV_Flete.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\DataAccess\DADet_Cotizacion_OV_Flete.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\DataAccess\DADet_Cotizacion_OV_Flete.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\BusinessLogic\BLDet_Cotizacion_OV_Novedad.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\BusinessLogic\BLDet_Cotizacion_OV_Novedad.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\BusinessLogic\IBLDet_Cotizacion_OV_Novedad.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\BusinessLogic\IBLDet_Cotizacion_OV_Novedad.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\DataAccess\DADet_Cotizacion_OV_Novedad.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\DataAccess\DADet_Cotizacion_OV_Novedad.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\BusinessLogic\BLDet_Cotizacion_OV_Servicio.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\BusinessLogic\BLDet_Cotizacion_OV_Servicio.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\BusinessLogic\IBLDet_Cotizacion_OV_Servicio.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\BusinessLogic\IBLDet_Cotizacion_OV_Servicio.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\DataAccess\DADet_Cotizacion_OV_Servicio.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\DataAccess\DADet_Cotizacion_OV_Servicio.partial.cs" />
+    <Compile Include="Det_Cotizacion_Servicio\BusinessLogic\BLDet_Cotizacion_Servicio.cs" />
+    <Compile Include="Det_Cotizacion_Servicio\BusinessLogic\BLDet_Cotizacion_Servicio.partial.cs" />
+    <Compile Include="Det_Cotizacion_Servicio\BusinessLogic\IBLDet_Cotizacion_Servicio.cs" />
+    <Compile Include="Det_Cotizacion_Servicio\BusinessLogic\IBLDet_Cotizacion_Servicio.partial.cs" />
+    <Compile Include="Det_Cotizacion_Servicio\DataAccess\DADet_Cotizacion_Servicio.cs" />
+    <Compile Include="Det_Cotizacion_Servicio\DataAccess\DADet_Cotizacion_Servicio.partial.cs" />
+    <Compile Include="Det_Direccionamiento\BusinessLogic\BLDet_Direccionamiento.cs" />
+    <Compile Include="Det_Direccionamiento\BusinessLogic\BLDet_Direccionamiento.partial.cs" />
+    <Compile Include="Det_Direccionamiento\BusinessLogic\IBLDet_Direccionamiento.cs" />
+    <Compile Include="Det_Direccionamiento\BusinessLogic\IBLDet_Direccionamiento.partial.cs" />
+    <Compile Include="Det_Direccionamiento\DataAccess\DADet_Direccionamiento.cs" />
+    <Compile Include="Det_Direccionamiento\DataAccess\DADet_Direccionamiento.partial.cs" />
+    <Compile Include="Det_Operacion\BusinessLogic\BLDet_Operacion.cs" />
+    <Compile Include="Det_Operacion\BusinessLogic\BLDet_Operacion.partial.cs" />
+    <Compile Include="Det_Operacion\BusinessLogic\IBLDet_Operacion.cs" />
+    <Compile Include="Det_Operacion\BusinessLogic\IBLDet_Operacion.partial.cs" />
+    <Compile Include="Det_Operacion\DataAccess\DADet_Operacion.cs" />
+    <Compile Include="Det_Operacion\DataAccess\DADet_Operacion.partial.cs" />
+    <Compile Include="Det_Operacion_Servicio\BusinessLogic\BLDet_Operacion_Servicio.cs" />
+    <Compile Include="Det_Operacion_Servicio\BusinessLogic\BLDet_Operacion_Servicio.partial.cs" />
+    <Compile Include="Det_Operacion_Servicio\BusinessLogic\IBLDet_Operacion_Servicio.cs" />
+    <Compile Include="Det_Operacion_Servicio\BusinessLogic\IBLDet_Operacion_Servicio.partial.cs" />
+    <Compile Include="Det_Operacion_Servicio\DataAccess\DADet_Operacion_Servicio.cs" />
+    <Compile Include="Det_Operacion_Servicio\DataAccess\DADet_Operacion_Servicio.partial.cs" />
+    <Compile Include="Det_Seguimientos\BusinessLogic\BLDet_Seguimientos.cs" />
+    <Compile Include="Det_Seguimientos\BusinessLogic\BLDet_Seguimientos.partial.cs" />
+    <Compile Include="Det_Seguimientos\BusinessLogic\IBLDet_Seguimientos.cs" />
+    <Compile Include="Det_Seguimientos\BusinessLogic\IBLDet_Seguimientos.partial.cs" />
+    <Compile Include="Det_Seguimientos\DataAccess\DADet_Seguimientos.cs" />
+    <Compile Include="Det_Seguimientos\DataAccess\DADet_Seguimientos.partial.cs" />
+    <Compile Include="Det_Tarifa\BusinessLogic\BLDet_Tarifa.cs" />
+    <Compile Include="Det_Tarifa\BusinessLogic\BLDet_Tarifa.partial.cs" />
+    <Compile Include="Det_Tarifa\BusinessLogic\IBLDet_Tarifa.cs" />
+    <Compile Include="Det_Tarifa\BusinessLogic\IBLDet_Tarifa.partial.cs" />
+    <Compile Include="Det_Tarifa\DataAccess\DADet_Tarifa.cs" />
+    <Compile Include="Det_Tarifa\DataAccess\DADet_Tarifa.partial.cs" />
+    <Compile Include="Det_Tarifa_Servicio\BusinessLogic\BLDet_Tarifa_Servicio.cs" />
+    <Compile Include="Det_Tarifa_Servicio\BusinessLogic\BLDet_Tarifa_Servicio.partial.cs" />
+    <Compile Include="Det_Tarifa_Servicio\BusinessLogic\IBLDet_Tarifa_Servicio.cs" />
+    <Compile Include="Det_Tarifa_Servicio\BusinessLogic\IBLDet_Tarifa_Servicio.partial.cs" />
+    <Compile Include="Det_Tarifa_Servicio\DataAccess\DADet_Tarifa_Servicio.cs" />
+    <Compile Include="Det_Tarifa_Servicio\DataAccess\DADet_Tarifa_Servicio.partial.cs" />
+    <Compile Include="Det_Tarjas\BusinessLogic\BLDet_Tarjas.cs" />
+    <Compile Include="Det_Tarjas\BusinessLogic\BLDet_Tarjas.partial.cs" />
+    <Compile Include="Det_Tarjas\BusinessLogic\IBLDet_Tarjas.cs" />
+    <Compile Include="Det_Tarjas\BusinessLogic\IBLDet_Tarjas.partial.cs" />
+    <Compile Include="Det_Tarjas\DataAccess\DADet_Tarjas.cs" />
+    <Compile Include="Det_Tarjas\DataAccess\DADet_Tarjas.partial.cs" />
+    <Compile Include="DirecENTC\BusinessLogic\BLDirecENTC.cs" />
+    <Compile Include="DirecENTC\BusinessLogic\BLDirecENTC.partial.cs" />
+    <Compile Include="DirecENTC\BusinessLogic\IBLDirecENTC.cs" />
+    <Compile Include="DirecENTC\BusinessLogic\IBLDirecENTC.partial.cs" />
+    <Compile Include="DirecENTC\DataAccess\DADirecENTC.cs" />
+    <Compile Include="DirecENTC\DataAccess\DADirecENTC.partial.cs" />
+    <Compile Include="DocsVta\BusinessLogic\BLDocsVta.cs" />
+    <Compile Include="DocsVta\BusinessLogic\BLDocsVta.partial.cs" />
+    <Compile Include="DocsVta\BusinessLogic\IBLDocsVta.cs" />
+    <Compile Include="DocsVta\BusinessLogic\IBLDocsVta.partial.cs" />
+    <Compile Include="DocsVta\DataAccess\DADocsVta.cs" />
+    <Compile Include="DocsVta\DataAccess\DADocsVta.partial.cs" />
+    <Compile Include="Empresa\BusinessLogic\BLEmpresa.cs" />
+    <Compile Include="Empresa\BusinessLogic\BLEmpresa.partial.cs" />
+    <Compile Include="Empresa\BusinessLogic\IBLEmpresa.cs" />
+    <Compile Include="Empresa\BusinessLogic\IBLEmpresa.partial.cs" />
+    <Compile Include="Empresa\DataAccess\DAEmpresa.cs" />
+    <Compile Include="Empresa\DataAccess\DAEmpresa.partial.cs" />
+    <Compile Include="EntidadCuentaBancaria\BusinessLogic\BLEntidadCuentaBancaria.cs" />
+    <Compile Include="EntidadCuentaBancaria\BusinessLogic\BLEntidadCuentaBancaria.partial.cs" />
+    <Compile Include="EntidadCuentaBancaria\BusinessLogic\IBLEntidadCuentaBancaria.cs" />
+    <Compile Include="EntidadCuentaBancaria\BusinessLogic\IBLEntidadCuentaBancaria.partial.cs" />
+    <Compile Include="EntidadCuentaBancaria\DataAccess\DAEntidadCuentaBancaria.cs" />
+    <Compile Include="EntidadCuentaBancaria\DataAccess\DAEntidadCuentaBancaria.partial.cs" />
+    <Compile Include="EntidadLimiteCredito\BusinessLogic\BLEntidadLimiteCredito.cs" />
+    <Compile Include="EntidadLimiteCredito\BusinessLogic\BLEntidadLimiteCredito.partial.cs" />
+    <Compile Include="EntidadLimiteCredito\BusinessLogic\IBLEntidadLimiteCredito.cs" />
+    <Compile Include="EntidadLimiteCredito\BusinessLogic\IBLEntidadLimiteCredito.partial.cs" />
+    <Compile Include="EntidadLimiteCredito\DataAccess\DAEntidadLimiteCredito.cs" />
+    <Compile Include="EntidadLimiteCredito\DataAccess\DAEntidadLimiteCredito.partial.cs" />
+    <Compile Include="Entidad\BusinessLogic\BLEntidad.cs" />
+    <Compile Include="Entidad\BusinessLogic\BLEntidad.partial.cs" />
+    <Compile Include="Entidad\BusinessLogic\IBLEntidad.cs" />
+    <Compile Include="Entidad\BusinessLogic\IBLEntidad.partial.cs" />
+    <Compile Include="Entidad\DataAccess\DAEntidad.cs" />
+    <Compile Include="Entidad\DataAccess\DAEntidad.partial.cs" />
+    <Compile Include="Entidad_Acuerdo\BusinessLogic\BLEntidad_Acuerdo.cs" />
+    <Compile Include="Entidad_Acuerdo\BusinessLogic\BLEntidad_Acuerdo.partial.cs" />
+    <Compile Include="Entidad_Acuerdo\BusinessLogic\IBLEntidad_Acuerdo.cs" />
+    <Compile Include="Entidad_Acuerdo\BusinessLogic\IBLEntidad_Acuerdo.partial.cs" />
+    <Compile Include="Entidad_Acuerdo\DataAccess\DAEntidad_Acuerdo.cs" />
+    <Compile Include="Entidad_Acuerdo\DataAccess\DAEntidad_Acuerdo.partial.cs" />
+    <Compile Include="Entidad_Relacionados\BusinessLogic\BLEntidad_Relacionados.cs" />
+    <Compile Include="Entidad_Relacionados\BusinessLogic\BLEntidad_Relacionados.partial.cs" />
+    <Compile Include="Entidad_Relacionados\BusinessLogic\IBLEntidad_Relacionados.cs" />
+    <Compile Include="Entidad_Relacionados\BusinessLogic\IBLEntidad_Relacionados.partial.cs" />
+    <Compile Include="Entidad_Relacionados\DataAccess\DAEntidad_Relacionados.cs" />
+    <Compile Include="Entidad_Relacionados\DataAccess\DAEntidad_Relacionados.partial.cs" />
+    <Compile Include="Entidad_Servicio\BusinessLogic\BLEntidad_Servicio.cs" />
+    <Compile Include="Entidad_Servicio\BusinessLogic\BLEntidad_Servicio.partial.cs" />
+    <Compile Include="Entidad_Servicio\BusinessLogic\IBLEntidad_Servicio.cs" />
+    <Compile Include="Entidad_Servicio\BusinessLogic\IBLEntidad_Servicio.partial.cs" />
+    <Compile Include="Entidad_Servicio\DataAccess\DAEntidad_Servicio.cs" />
+    <Compile Include="Entidad_Servicio\DataAccess\DAEntidad_Servicio.partial.cs" />
+    <Compile Include="Excepciones\BusinessLogic\BLExcepciones.cs" />
+    <Compile Include="Excepciones\BusinessLogic\BLExcepciones.partial.cs" />
+    <Compile Include="Excepciones\BusinessLogic\IBLExcepciones.cs" />
+    <Compile Include="Excepciones\BusinessLogic\IBLExcepciones.partial.cs" />
+    <Compile Include="Excepciones\DataAccess\DAExcepciones.cs" />
+    <Compile Include="Excepciones\DataAccess\DAExcepciones.partial.cs" />
+    <Compile Include="Files\BusinessLogic\BLFiles.cs" />
+    <Compile Include="Files\BusinessLogic\BLFiles.partial.cs" />
+    <Compile Include="Files\BusinessLogic\IBLFiles.cs" />
+    <Compile Include="Files\BusinessLogic\IBLFiles.partial.cs" />
+    <Compile Include="Files\DataAccess\DAFiles.cs" />
+    <Compile Include="Files\DataAccess\DAFiles.partial.cs" />
+    <Compile Include="Firmas\BusinessLogic\BLFirmas.cs" />
+    <Compile Include="Firmas\BusinessLogic\BLFirmas.partial.cs" />
+    <Compile Include="Firmas\BusinessLogic\IBLFirmas.cs" />
+    <Compile Include="Firmas\BusinessLogic\IBLFirmas.partial.cs" />
+    <Compile Include="Firmas\DataAccess\DAFirmas.cs" />
+    <Compile Include="Firmas\DataAccess\DAFirmas.partial.cs" />
+    <Compile Include="Flujo\BusinessLogic\BLFlujo.cs" />
+    <Compile Include="Flujo\BusinessLogic\BLFlujo.partial.cs" />
+    <Compile Include="Flujo\BusinessLogic\IBLFlujo.cs" />
+    <Compile Include="Flujo\BusinessLogic\IBLFlujo.partial.cs" />
+    <Compile Include="Flujo\DataAccess\DAFlujo.cs" />
+    <Compile Include="Flujo\DataAccess\DAFlujo.partial.cs" />
+    <Compile Include="FuncionEntidad\BusinessLogic\BLFuncionEntidad.cs" />
+    <Compile Include="FuncionEntidad\BusinessLogic\BLFuncionEntidad.partial.cs" />
+    <Compile Include="FuncionEntidad\BusinessLogic\IBLFuncionEntidad.cs" />
+    <Compile Include="FuncionEntidad\BusinessLogic\IBLFuncionEntidad.partial.cs" />
+    <Compile Include="FuncionEntidad\DataAccess\DAFuncionEntidad.cs" />
+    <Compile Include="FuncionEntidad\DataAccess\DAFuncionEntidad.partial.cs" />
+    <Compile Include="Asientos\GAsientos.cs" />
+    <Compile Include="GastosBancarios\BusinessLogic\BLGastosBancarios.cs" />
+    <Compile Include="GastosBancarios\BusinessLogic\BLGastosBancarios.partial.cs" />
+    <Compile Include="GastosBancarios\BusinessLogic\IBLGastosBancarios.cs" />
+    <Compile Include="GastosBancarios\BusinessLogic\IBLGastosBancarios.partial.cs" />
+    <Compile Include="GastosBancarios\DataAccess\DAGastosBancarios.cs" />
+    <Compile Include="GastosBancarios\DataAccess\DAGastosBancarios.partial.cs" />
+    <Compile Include="GestionVentas\BusinessLogic\BLGestionVentas.cs" />
+    <Compile Include="GestionVentas\BusinessLogic\BLGestionVentas.partial.cs" />
+    <Compile Include="GestionVentas\BusinessLogic\IBLGestionVentas.cs" />
+    <Compile Include="GestionVentas\BusinessLogic\IBLGestionVentas.partial.cs" />
+    <Compile Include="GestionVentas\DataAccess\DAGestionVentas.cs" />
+    <Compile Include="GestionVentas\DataAccess\DAGestionVentas.partial.cs" />
+    <Compile Include="GRR\BusinessLogic\BLGRR.cs" />
+    <Compile Include="GRR\BusinessLogic\BLGRR.partial.cs" />
+    <Compile Include="GRR\BusinessLogic\IBLGRR.cs" />
+    <Compile Include="GRR\BusinessLogic\IBLGRR.partial.cs" />
+    <Compile Include="GRR\DataAccess\DAGRR.cs" />
+    <Compile Include="GRR\DataAccess\DAGRR.partial.cs" />
+    <Compile Include="GRR_Contrato\BusinessLogic\BLGRR_Contrato.cs" />
+    <Compile Include="GRR_Contrato\BusinessLogic\BLGRR_Contrato.partial.cs" />
+    <Compile Include="GRR_Contrato\BusinessLogic\IBLGRR_Contrato.cs" />
+    <Compile Include="GRR_Contrato\BusinessLogic\IBLGRR_Contrato.partial.cs" />
+    <Compile Include="GRR_Contrato\DataAccess\DAGRR_Contrato.cs" />
+    <Compile Include="GRR_Contrato\DataAccess\DAGRR_Contrato.partial.cs" />
+    <Compile Include="GRR_Paquetes\BusinessLogic\BLGRR_Paquetes.cs" />
+    <Compile Include="GRR_Paquetes\BusinessLogic\BLGRR_Paquetes.partial.cs" />
+    <Compile Include="GRR_Paquetes\BusinessLogic\IBLGRR_Paquetes.cs" />
+    <Compile Include="GRR_Paquetes\BusinessLogic\IBLGRR_Paquetes.partial.cs" />
+    <Compile Include="GRR_Paquetes\DataAccess\DAGRR_Paquetes.cs" />
+    <Compile Include="GRR_Paquetes\DataAccess\DAGRR_Paquetes.partial.cs" />
+    <Compile Include="LiqCtaCte\BusinessLogic\BLLiqCtaCte.cs" />
+    <Compile Include="LiqCtaCte\BusinessLogic\BLLiqCtaCte.partial.cs" />
+    <Compile Include="LiqCtaCte\BusinessLogic\IBLLiqCtaCte.cs" />
+    <Compile Include="LiqCtaCte\BusinessLogic\IBLLiqCtaCte.partial.cs" />
+    <Compile Include="LiqCtaCte\DataAccess\DALiqCtaCte.cs" />
+    <Compile Include="LiqCtaCte\DataAccess\DALiqCtaCte.partial.cs" />
+    <Compile Include="Liquidacion\BusinessLogic\BLLiquidacion.cs" />
+    <Compile Include="Liquidacion\BusinessLogic\BLLiquidacion.partial.cs" />
+    <Compile Include="Liquidacion\BusinessLogic\IBLLiquidacion.cs" />
+    <Compile Include="Liquidacion\BusinessLogic\IBLLiquidacion.partial.cs" />
+    <Compile Include="Liquidacion\DataAccess\DALiquidacion.cs" />
+    <Compile Include="Liquidacion\DataAccess\DALiquidacion.partial.cs" />
+    <Compile Include="LoadingListDetalle\BusinessLogic\BLLoadingListDetalle.cs" />
+    <Compile Include="LoadingListDetalle\BusinessLogic\IBLLoadingListDetalle.cs" />
+    <Compile Include="LoadingListDetalle\DataAccess\DALoadingListDetalle.cs" />
+    <Compile Include="LoadingList\BusinessLogic\BLLoadingList.cs" />
+    <Compile Include="LoadingList\BusinessLogic\BLLoadingList.partial.cs" />
+    <Compile Include="LoadingList\BusinessLogic\IBLLoadingList.cs" />
+    <Compile Include="LoadingList\BusinessLogic\IBLLoadingList.partial.cs" />
+    <Compile Include="LoadingList\DataAccess\DALoadingList.cs" />
+    <Compile Include="LoadingList\DataAccess\DALoadingList.partial.cs" />
+    <Compile Include="LoadingList_Files\BusinessLogic\BLLoadingList_Files.cs" />
+    <Compile Include="LoadingList_Files\BusinessLogic\BLLoadingList_Files.partial.cs" />
+    <Compile Include="LoadingList_Files\BusinessLogic\IBLLoadingList_Files.cs" />
+    <Compile Include="LoadingList_Files\BusinessLogic\IBLLoadingList_Files.partial.cs" />
+    <Compile Include="LoadingList_Files\DataAccess\DALoadingList_Files.cs" />
+    <Compile Include="LoadingList_Files\DataAccess\DALoadingList_Files.partial.cs" />
+    <Compile Include="MovimientoFlujo\BusinessLogic\BLMovimientoFlujo.cs" />
+    <Compile Include="MovimientoFlujo\BusinessLogic\BLMovimientoFlujo.partial.cs" />
+    <Compile Include="MovimientoFlujo\BusinessLogic\IBLMovimientoFlujo.cs" />
+    <Compile Include="MovimientoFlujo\BusinessLogic\IBLMovimientoFlujo.partial.cs" />
+    <Compile Include="MovimientoFlujo\DataAccess\DAMovimientoFlujo.cs" />
+    <Compile Include="MovimientoFlujo\DataAccess\DAMovimientoFlujo.partial.cs" />
+    <Compile Include="Movimiento\BusinessLogic\BLMovimiento.cs" />
+    <Compile Include="Movimiento\BusinessLogic\BLMovimiento.partial.cs" />
+    <Compile Include="Movimiento\BusinessLogic\IBLMovimiento.cs" />
+    <Compile Include="Movimiento\BusinessLogic\IBLMovimiento.partial.cs" />
+    <Compile Include="Movimiento\DataAccess\DAMovimiento.cs" />
+    <Compile Include="Movimiento\DataAccess\DAMovimiento.partial.cs" />
+    <Compile Include="NaveViaje\BusinessLogic\BLNaveViaje.cs" />
+    <Compile Include="NaveViaje\BusinessLogic\BLNaveViaje.partial.cs" />
+    <Compile Include="NaveViaje\BusinessLogic\IBLNaveViaje.cs" />
+    <Compile Include="NaveViaje\BusinessLogic\IBLNaveViaje.partial.cs" />
+    <Compile Include="NaveViaje\DataAccess\DANaveViaje.cs" />
+    <Compile Include="NaveViaje\DataAccess\DANaveViaje.partial.cs" />
+    <Compile Include="NAVE\BusinessLogic\BLNave.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NAVE\BusinessLogic\BLNave.partial.cs" />
+    <Compile Include="NAVE\BusinessLogic\IBLNave.cs" />
+    <Compile Include="NAVE\BusinessLogic\IBLNave.partial.cs" />
+    <Compile Include="NAVE\DataAccess\DANave.cs" />
+    <Compile Include="NAVE\DataAccess\DANave.partial.cs" />
+    <Compile Include="Paquete\BusinessLogic\BLPaquete.cs" />
+    <Compile Include="Paquete\BusinessLogic\BLPaquete.partial.cs" />
+    <Compile Include="Paquete\BusinessLogic\IBLPaquete.cs" />
+    <Compile Include="Paquete\BusinessLogic\IBLPaquete.partial.cs" />
+    <Compile Include="Paquete\DataAccess\DAPaquete.cs" />
+    <Compile Include="Paquete\DataAccess\DAPaquete.partial.cs" />
+    <Compile Include="Parametros\BusinessLogic\BLParametros.cs" />
+    <Compile Include="Parametros\BusinessLogic\BLParametros.partial.cs" />
+    <Compile Include="Parametros\BusinessLogic\IBLParametros.cs" />
+    <Compile Include="Parametros\BusinessLogic\IBLParametros.partial.cs" />
+    <Compile Include="Parametros\DataAccess\DAParametros.cs" />
+    <Compile Include="Parametros\DataAccess\DAParametros.partial.cs" />
+    <Compile Include="Planillas\BusinessLogic\BLPlanillas.cs" />
+    <Compile Include="Planillas\BusinessLogic\BLPlanillas.partial.cs" />
+    <Compile Include="Planillas\BusinessLogic\IBLPlanillas.cs" />
+    <Compile Include="Planillas\BusinessLogic\IBLPlanillas.partial.cs" />
+    <Compile Include="Planillas\DataAccess\DAPlanillas.cs" />
+    <Compile Include="Planillas\DataAccess\DAPlanillas.partial.cs" />
+    <Compile Include="PreDetDocsVta\BusinessLogic\BLPreDetDocsVta.cs" />
+    <Compile Include="PreDetDocsVta\BusinessLogic\BLPreDetDocsVta.partial.cs" />
+    <Compile Include="PreDetDocsVta\BusinessLogic\IBLPreDetDocsVta.cs" />
+    <Compile Include="PreDetDocsVta\BusinessLogic\IBLPreDetDocsVta.partial.cs" />
+    <Compile Include="PreDetDocsVta\DataAccess\DAPreDetDocsVta.cs" />
+    <Compile Include="PreDetDocsVta\DataAccess\DAPreDetDocsVta.partial.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\BusinessLogic\BLPreDetDocsVta_Det_Operacion.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\BusinessLogic\BLPreDetDocsVta_Det_Operacion.partial.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\BusinessLogic\IBLPreDetDocsVta_Det_Operacion.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\BusinessLogic\IBLPreDetDocsVta_Det_Operacion.partial.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\DataAccess\DAPreDetDocsVta_Det_Operacion.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\DataAccess\DAPreDetDocsVta_Det_Operacion.partial.cs" />
+    <Compile Include="PreDocsVta\BusinessLogic\BLPreDocsVta.cs" />
+    <Compile Include="PreDocsVta\BusinessLogic\BLPreDocsVta.partial.cs" />
+    <Compile Include="PreDocsVta\BusinessLogic\IBLPreDocsVta.cs" />
+    <Compile Include="PreDocsVta\BusinessLogic\IBLPreDocsVta.partial.cs" />
+    <Compile Include="PreDocsVta\DataAccess\DAPreDocsVta.cs" />
+    <Compile Include="PreDocsVta\DataAccess\DAPreDocsVta.partial.cs" />
+    <Compile Include="PreFacturacion\BusinessLogic\BLPreFacturacion.cs" />
+    <Compile Include="PreFacturacion\BusinessLogic\BLPreFacturacion.partial.cs" />
+    <Compile Include="PreFacturacion\BusinessLogic\IBLPreFacturacion.cs" />
+    <Compile Include="PreFacturacion\BusinessLogic\IBLPreFacturacion.partial.cs" />
+    <Compile Include="PreFacturacion\DataAccess\DAPreFacturacion.cs" />
+    <Compile Include="PreFacturacion\DataAccess\DAPreFacturacion.partial.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prospecto\BusinessLogic\BLProspecto.cs" />
+    <Compile Include="Prospecto\BusinessLogic\BLProspecto.partial.cs" />
+    <Compile Include="Prospecto\BusinessLogic\IBLProspecto.cs" />
+    <Compile Include="Prospecto\BusinessLogic\IBLProspecto.partial.cs" />
+    <Compile Include="Prospecto\DataAccess\DAProspecto.cs" />
+    <Compile Include="Prospecto\DataAccess\DAProspecto.partial.cs" />
+    <Compile Include="Puerto\BusinessLogic\BLPuerto.cs" />
+    <Compile Include="Puerto\BusinessLogic\BLPuerto.partial.cs" />
+    <Compile Include="Puerto\BusinessLogic\IBLPuerto.cs" />
+    <Compile Include="Puerto\BusinessLogic\IBLPuerto.partial.cs" />
+    <Compile Include="Puerto\DataAccess\DAPuerto.cs" />
+    <Compile Include="Puerto\DataAccess\DAPuerto.partial.cs" />
+    <Compile Include="ResultGestion\BusinessLogic\BLResultGestion.cs" />
+    <Compile Include="ResultGestion\BusinessLogic\BLResultGestion.partial.cs" />
+    <Compile Include="ResultGestion\BusinessLogic\IBLResultGestion.cs" />
+    <Compile Include="ResultGestion\BusinessLogic\IBLResultGestion.partial.cs" />
+    <Compile Include="ResultGestion\DataAccess\DAResultGestion.cs" />
+    <Compile Include="ResultGestion\DataAccess\DAResultGestion.partial.cs" />
+    <Compile Include="Series\BusinessLogic\BLSeries.cs" />
+    <Compile Include="Series\BusinessLogic\BLSeries.partial.cs" />
+    <Compile Include="Series\BusinessLogic\IBLSeries.cs" />
+    <Compile Include="Series\BusinessLogic\IBLSeries.partial.cs" />
+    <Compile Include="Series\DataAccess\DASeries.cs" />
+    <Compile Include="Series\DataAccess\DASeries.partial.cs" />
+    <Compile Include="ServiciosDocumentos\BusinessLogic\BLServiciosDocumentos.cs" />
+    <Compile Include="ServiciosDocumentos\BusinessLogic\BLServiciosDocumentos.partial.cs" />
+    <Compile Include="ServiciosDocumentos\BusinessLogic\IBLServiciosDocumentos.cs" />
+    <Compile Include="ServiciosDocumentos\BusinessLogic\IBLServiciosDocumentos.partial.cs" />
+    <Compile Include="ServiciosDocumentos\DataAccess\DAServiciosDocumentos.cs" />
+    <Compile Include="ServiciosDocumentos\DataAccess\DAServiciosDocumentos.partial.cs" />
+    <Compile Include="ServiciosLineaNegocio\BusinessLogic\BLServiciosLineaNegocio.cs" />
+    <Compile Include="ServiciosLineaNegocio\BusinessLogic\BLServiciosLineaNegocio.partial.cs" />
+    <Compile Include="ServiciosLineaNegocio\BusinessLogic\IBLServiciosLineaNegocio.cs" />
+    <Compile Include="ServiciosLineaNegocio\BusinessLogic\IBLServiciosLineaNegocio.partial.cs" />
+    <Compile Include="ServiciosLineaNegocio\DataAccess\DAServiciosLineaNegocio.cs" />
+    <Compile Include="ServiciosLineaNegocio\DataAccess\DAServiciosLineaNegocio.partial.cs" />
+    <Compile Include="ServiciosRegimenVia\BusinessLogic\BLServiciosRegimenVia.cs" />
+    <Compile Include="ServiciosRegimenVia\BusinessLogic\BLServiciosRegimenVia.partial.cs" />
+    <Compile Include="ServiciosRegimenVia\BusinessLogic\IBLServiciosRegimenVia.cs" />
+    <Compile Include="ServiciosRegimenVia\BusinessLogic\IBLServiciosRegimenVia.partial.cs" />
+    <Compile Include="ServiciosRegimenVia\DataAccess\DAServiciosRegimenVia.cs" />
+    <Compile Include="ServiciosRegimenVia\DataAccess\DAServiciosRegimenVia.partial.cs" />
+    <Compile Include="Servicio\BusinessLogic\BLServicio.cs" />
+    <Compile Include="Servicio\BusinessLogic\BLServicio.partial.cs" />
+    <Compile Include="Servicio\BusinessLogic\IBLServicio.cs" />
+    <Compile Include="Servicio\BusinessLogic\IBLServicio.partial.cs" />
+    <Compile Include="Servicio\DataAccess\DAServicio.cs" />
+    <Compile Include="Servicio\DataAccess\DAServicio.partial.cs" />
+    <Compile Include="Servicio_Via\BusinessLogic\BLServicio_Via.cs" />
+    <Compile Include="Servicio_Via\BusinessLogic\BLServicio_Via.partial.cs" />
+    <Compile Include="Servicio_Via\BusinessLogic\IBLServicio_Via.cs" />
+    <Compile Include="Servicio_Via\BusinessLogic\IBLServicio_Via.partial.cs" />
+    <Compile Include="Servicio_Via\DataAccess\DAServicio_Via.cs" />
+    <Compile Include="Servicio_Via\DataAccess\DAServicio_Via.partial.cs" />
+    <Compile Include="SobreEstadia\BusinessLogic\BLSobreEstadia.cs" />
+    <Compile Include="SobreEstadia\BusinessLogic\BLSobreEstadia.partial.cs" />
+    <Compile Include="SobreEstadia\BusinessLogic\IBLSobreEstadia.cs" />
+    <Compile Include="SobreEstadia\BusinessLogic\IBLSobreEstadia.partial.cs" />
+    <Compile Include="SobreEstadia\DataAccess\DASobreEstadia.cs" />
+    <Compile Include="SobreEstadia\DataAccess\DASobreEstadia.partial.cs" />
+    <Compile Include="Sucursales\BusinessLogic\BLSucursales.cs" />
+    <Compile Include="Sucursales\BusinessLogic\BLSucursales.partial.cs" />
+    <Compile Include="Sucursales\BusinessLogic\IBLSucursales.cs" />
+    <Compile Include="Sucursales\BusinessLogic\IBLSucursales.partial.cs" />
+    <Compile Include="Sucursales\DataAccess\DASucursales.cs" />
+    <Compile Include="Sucursales\DataAccess\DASucursales.partial.cs" />
+    <Compile Include="Tarifa\BusinessLogic\BLTarifa.cs" />
+    <Compile Include="Tarifa\BusinessLogic\BLTarifa.partial.cs" />
+    <Compile Include="Tarifa\BusinessLogic\IBLTarifa.cs" />
+    <Compile Include="Tarifa\BusinessLogic\IBLTarifa.partial.cs" />
+    <Compile Include="Tarifa\DataAccess\DATarifa.cs" />
+    <Compile Include="Tarifa\DataAccess\DATarifa.partial.cs" />
+    <Compile Include="Tipificaciones\BusinessLogic\BLTipificaciones.cs" />
+    <Compile Include="Tipificaciones\BusinessLogic\BLTipificaciones.partial.cs" />
+    <Compile Include="Tipificaciones\BusinessLogic\IBLTipificaciones.cs" />
+    <Compile Include="Tipificaciones\BusinessLogic\IBLTipificaciones.partial.cs" />
+    <Compile Include="Tipificaciones\DataAccess\DATipificaciones.cs" />
+    <Compile Include="Tipificaciones\DataAccess\DATipificaciones.partial.cs" />
+    <Compile Include="TiposCambio\BusinessLogic\BLTiposCambio.cs" />
+    <Compile Include="TiposCambio\BusinessLogic\IBLTiposCambio.cs" />
+    <Compile Include="TiposCambio\DataAccess\DATiposCambio.cs" />
+    <Compile Include="TiposEntidad\BusinessLogic\BLTiposEntidad.cs" />
+    <Compile Include="TiposEntidad\BusinessLogic\BLTiposEntidad.partial.cs" />
+    <Compile Include="TiposEntidad\BusinessLogic\IBLTiposEntidad.cs" />
+    <Compile Include="TiposEntidad\BusinessLogic\IBLTiposEntidad.partial.cs" />
+    <Compile Include="TiposEntidad\DataAccess\DATiposEntidad.cs" />
+    <Compile Include="TiposEntidad\DataAccess\DATiposEntidad.partial.cs" />
+    <Compile Include="Tipos\BusinessLogic\BLTipos.cs" />
+    <Compile Include="Tipos\BusinessLogic\BLTipos.partial.cs" />
+    <Compile Include="Tipos\BusinessLogic\IBLTipos.cs" />
+    <Compile Include="Tipos\BusinessLogic\IBLTipos.partial.cs" />
+    <Compile Include="Tipos\DataAccess\DATipos.cs" />
+    <Compile Include="Tipos\DataAccess\DATipos.partial.cs" />
+    <Compile Include="Transferencia\BusinessLogic\BLTransferencia.cs" />
+    <Compile Include="Transferencia\BusinessLogic\BLTransferencia.partial.cs" />
+    <Compile Include="Transferencia\BusinessLogic\IBLTransferencia.cs" />
+    <Compile Include="Transferencia\BusinessLogic\IBLTransferencia.partial.cs" />
+    <Compile Include="Transferencia\DataAccess\DATransferencia.cs" />
+    <Compile Include="Transferencia\DataAccess\DATransferencia.partial.cs" />
+    <Compile Include="Ubigeos\BusinessLogic\BLUbigeos.cs" />
+    <Compile Include="Ubigeos\BusinessLogic\BLUbigeos.partial.cs" />
+    <Compile Include="Ubigeos\BusinessLogic\IBLUbigeos.cs" />
+    <Compile Include="Ubigeos\BusinessLogic\IBLUbigeos.partial.cs" />
+    <Compile Include="Ubigeos\DataAccess\DAUbigeos.cs" />
+    <Compile Include="Ubigeos\DataAccess\DAUbigeos.partial.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Delfin.Entities\Delfin.Entities.csproj">
+      <Project>{f32cdd23-0d2e-4b37-99fc-7a072be8b5f5}</Project>
+      <Name>Delfin.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DelfinCert.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F32CDD23-0D2E-4B37-99FC-7A072BE8B5F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Delfin.Entities</RootNamespace>
+    <AssemblyName>Delfin.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DelfinCert.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infrastructure.Aspect">
+      <HintPath>..\..\Librerias\Infrastructure.Aspect.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgMaritimoEntidad\AgMaritimoEntidad.cs" />
+    <Compile Include="AgMaritimoEntidad\AgMaritimoEntidad.partial.cs" />
+    <Compile Include="AgMaritimoEntidad\AgMaritimoEntidad.validation.cs" />
+    <Compile Include="Anexos\Anexos.cs" />
+    <Compile Include="Anexos\Anexos.partial.cs" />
+    <Compile Include="Anexos\Anexos.related.cs" />
+    <Compile Include="Anexos\Anexos.validation.cs" />
+    <Compile Include="CabPerfilAsientos\CabPerfilAsientos.cs" />
+    <Compile Include="CabPerfilAsientos\CabPerfilAsientos.partial.cs" />
+    <Compile Include="CabPerfilAsientos\CabPerfilAsientos.validation.cs" />
+    <Compile Include="Cab_Cotizacion\Cab_Cotizacion.cs" />
+    <Compile Include="Cab_Cotizacion\Cab_Cotizacion.partial.cs" />
+    <Compile Include="Cab_Cotizacion\Cab_Cotizacion.validation.cs" />
+    <Compile Include="Cab_Cotizacion_OV\Cab_Cotizacion_OV.cs" />
+    <Compile Include="Cab_Cotizacion_OV\Cab_Cotizacion_OV.importacion.cs" />
+    <Compile Include="Cab_Cotizacion_OV\Cab_Cotizacion_OV.operacion.cs" />
+    <Compile Include="Cab_Cotizacion_OV\Cab_Cotizacion_OV.partial.cs" />
+    <Compile Include="Cab_Cotizacion_OV\Cab_Cotizacion_OV.related.cs" />
+    <Compile Include="Cab_Cotizacion_OV\Cab_Cotizacion_OV.validation.cs" />
+    <Compile Include="Cab_Direccionamiento\Cab_Direccionamiento.cs" />
+    <Compile Include="Cab_Direccionamiento\Cab_Direccionamiento.partial.cs" />
+    <Compile Include="Cab_Direccionamiento\Cab_Direccionamiento.validation.cs" />
+    <Compile Include="Cab_MBL\Cab_MBL.cs" />
+    <Compile Include="Cab_MBL\Cab_MBL.partial.cs" />
+    <Compile Include="Cab_MBL\Cab_MBL.related.cs" />
+    <Compile Include="Cab_MBL\Cab_MBL.validation.cs" />
+    <Compile Include="Cab_Operacion\Cab_Operacion.cs" />
+    <Compile Include="Cab_Operacion\Cab_Operacion.partial.cs" />
+    <Compile Include="Cab_Operacion\Cab_Operacion.related.cs" />
+    <Compile Include="Cab_Operacion\Cab_Operacion.validation.cs" />
+    <Compile Include="Cab_Seguimientos\Cab_Seguimientos.cs" />
+    <Compile Include="Cab_Seguimientos\Cab_Seguimientos.partial.cs" />
+    <Compile Include="Cab_Seguimientos\Cab_Seguimientos.related.cs" />
+    <Compile Include="Cab_Seguimientos\Cab_Seguimientos.validation.cs" />
+    <Compile Include="Cab_Tarifa\Cab_Tarifa.cs" />
+    <Compile Include="Cab_Tarifa\Cab_Tarifa.partial.cs" />
+    <Compile Include="Cab_Tarifa\Cab_Tarifa.related.cs" />
+    <Compile Include="Cab_Tarifa\Cab_Tarifa.validation.cs" />
+    <Compile Include="Cab_Tarjas\Cab_Tarjas.cs" />
+    <Compile Include="Cab_Tarjas\Cab_Tarjas.partial.cs" />
+    <Compile Include="Cab_Tarjas\Cab_Tarjas.validation.cs" />
+    <Compile Include="Chequera\Chequera.cs" />
+    <Compile Include="Chequera\Chequera.partial.cs" />
+    <Compile Include="Chequera\Chequera.related.cs" />
+    <Compile Include="Chequera\Chequera.validation.cs" />
+    <Compile Include="CierresChangeControl\CierresChangeControl.cs" />
+    <Compile Include="CierresChangeControl\CierresChangeControl.partial.cs" />
+    <Compile Include="CierresChangeControl\CierresChangeControl.related.cs" />
+    <Compile Include="CierresChangeControl\CierresChangeControl.validation.cs" />
+    <Compile Include="Comision\Comision.cs" />
+    <Compile Include="Comision\Comision.partial.cs" />
+    <Compile Include="Comision\Comision.related.cs" />
+    <Compile Include="Comision\Comision.validation.cs" />
+    <Compile Include="Conciliacion\Conciliacion.cs" />
+    <Compile Include="Conciliacion\Conciliacion.partial.cs" />
+    <Compile Include="Conciliacion\Conciliacion.related.cs" />
+    <Compile Include="Conciliacion\Conciliacion.validation.cs" />
+    <Compile Include="Constantes\Constantes.cs" />
+    <Compile Include="Constantes\Constantes.partial.cs" />
+    <Compile Include="Constantes\Constantes.validation.cs" />
+    <Compile Include="Contrato\Contrato.cs" />
+    <Compile Include="Contrato\Contrato.partial.cs" />
+    <Compile Include="Contrato\Contrato.related.cs" />
+    <Compile Include="Contrato\Contrato.validation.cs" />
+    <Compile Include="Contrato_Comodity\Contrato_Comodity.cs" />
+    <Compile Include="Contrato_Comodity\Contrato_Comodity.partial.cs" />
+    <Compile Include="Contrato_Comodity\Contrato_Comodity.related.cs" />
+    <Compile Include="Contrato_Comodity\Contrato_Comodity.validation.cs" />
+    <Compile Include="correlativos\correlativos.cs" />
+    <Compile Include="correlativos\correlativos.partial.cs" />
+    <Compile Include="correlativos\correlativos.validation.cs" />
+    <Compile Include="CtaCte\CtaCte.cs" />
+    <Compile Include="CtaCte\CtaCte.partial.cs" />
+    <Compile Include="CtaCte\CtaCte.related.cs" />
+    <Compile Include="CtaCte\CtaCte.validation.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\CtaCte_Det_Operaciones.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\CtaCte_Det_Operaciones.partial.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\CtaCte_Det_Operaciones.related.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\CtaCte_Det_Operaciones.validation.cs" />
+    <Compile Include="CuentasBancariasUsuarios\CuentasBancariasUsuarios.cs" />
+    <Compile Include="CuentasBancariasUsuarios\CuentasBancariasUsuarios.partial.cs" />
+    <Compile Include="CuentasBancariasUsuarios\CuentasBancariasUsuarios.related.cs" />
+    <Compile Include="CuentasBancariasUsuarios\CuentasBancariasUsuarios.validation.cs" />
+    <Compile Include="CuentasBancarias\CuentasBancarias.cs" />
+    <Compile Include="CuentasBancarias\CuentasBancarias.partial.cs" />
+    <Compile Include="CuentasBancarias\CuentasBancarias.related.cs" />
+    <Compile Include="CuentasBancarias\CuentasBancarias.validation.cs" />
+    <Compile Include="DepVacioEntidad\DepVacioEntidad.cs" />
+    <Compile Include="DepVacioEntidad\DepVacioEntidad.partial.cs" />
+    <Compile Include="DepVacioEntidad\DepVacioEntidad.validation.cs" />
+    <Compile Include="DetCtaCteAsientos\DetCtaCteAsientos.cs" />
+    <Compile Include="DetCtaCteAsientos\DetCtaCteAsientos.partial.cs" />
+    <Compile Include="DetCtaCteAsientos\DetCtaCteAsientos.validation.cs" />
+    <Compile Include="DetCtaCte\DetCtaCte.cs" />
+    <Compile Include="DetCtaCte\DetCtaCte.partial.cs" />
+    <Compile Include="DetCtaCte\DetCtaCte.related.cs" />
+    <Compile Include="DetCtaCte\DetCtaCte.validation.cs" />
+    <Compile Include="DetDocsVta\DetDocsVta.cs" />
+    <Compile Include="DetDocsVta\DetDocsVta.partial.cs" />
+    <Compile Include="DetDocsVta\DetDocsVta.validation.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\DetDocsVta_Det_Operacion.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\DetDocsVta_Det_Operacion.partial.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\DetDocsVta_Det_Operacion.related.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\DetDocsVta_Det_Operacion.validation.cs" />
+    <Compile Include="DetMovimiento\DetMovimiento.cs" />
+    <Compile Include="DetMovimiento\DetMovimiento.partial.cs" />
+    <Compile Include="DetMovimiento\DetMovimiento.validation.cs" />
+    <Compile Include="DetPerfilAsientos\DetPerfilAsientos.cs" />
+    <Compile Include="DetPerfilAsientos\DetPerfilAsientos.partial.cs" />
+    <Compile Include="DetPerfilAsientos\DetPerfilAsientos.validation.cs" />
+    <Compile Include="Det_CNTR\Det_CNTR.cs" />
+    <Compile Include="Det_CNTR\Det_CNTR.partial.cs" />
+    <Compile Include="Det_CNTR\Det_CNTR.related.cs" />
+    <Compile Include="Det_CNTR\Det_CNTR.validation.cs" />
+    <Compile Include="Det_Comision\Det_Comision.cs" />
+    <Compile Include="Det_Comision\Det_Comision.partial.cs" />
+    <Compile Include="Det_Comision\Det_Comision.related.cs" />
+    <Compile Include="Det_Comision\Det_Comision.validation.cs" />
+    <Compile Include="Det_Cotizacion\Det_Cotizacion.cs" />
+    <Compile Include="Det_Cotizacion\Det_Cotizacion.partial.cs" />
+    <Compile Include="Det_Cotizacion\Det_Cotizacion.validation.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\Det_Cotizacion_OV_EventosTareas.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\Det_Cotizacion_OV_EventosTareas.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\Det_Cotizacion_OV_EventosTareas.related.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\Det_Cotizacion_OV_EventosTareas.validation.cs" />
+    <Compile Include="DetNaveViaje\DetNaveViaje.cs" />
+    <Compile Include="DetNaveViaje\DetNaveViaje.partial.cs" />
+    <Compile Include="DetNaveViaje\DetNaveViaje.related.cs" />
+    <Compile Include="DetNaveViaje\DetNaveViaje.validation.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\Det_Cotizacion_OV_Archivo.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\Det_Cotizacion_OV_Archivo.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\Det_Cotizacion_OV_Archivo.related.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\Det_Cotizacion_OV_Archivo.validation.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\Det_Cotizacion_OV_Documento.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\Det_Cotizacion_OV_Documento.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\Det_Cotizacion_OV_Documento.related.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\Det_Cotizacion_OV_Documento.validation.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\Det_Cotizacion_OV_Flete.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\Det_Cotizacion_OV_Flete.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\Det_Cotizacion_OV_Flete.related.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\Det_Cotizacion_OV_Flete.validation.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\Det_Cotizacion_OV_Novedad.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\Det_Cotizacion_OV_Novedad.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\Det_Cotizacion_OV_Novedad.related.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\Det_Cotizacion_OV_Novedad.validation.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\Det_Cotizacion_OV_Servicio.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\Det_Cotizacion_OV_Servicio.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\Det_Cotizacion_OV_Servicio.related.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\Det_Cotizacion_OV_Servicio.validation.cs" />
+    <Compile Include="Det_Cotizacion_Servicio\Det_Cotizacion_Servicio.cs" />
+    <Compile Include="Det_Cotizacion_Servicio\Det_Cotizacion_Servicio.partial.cs" />
+    <Compile Include="Det_Cotizacion_Servicio\Det_Cotizacion_Servicio.validation.cs" />
+    <Compile Include="Det_Direccionamiento\Det_Direccionamiento.cs" />
+    <Compile Include="Det_Direccionamiento\Det_Direccionamiento.partial.cs" />
+    <Compile Include="Det_Direccionamiento\Det_Direccionamiento.related.cs" />
+    <Compile Include="Det_Direccionamiento\Det_Direccionamiento.validation.cs" />
+    <Compile Include="Det_Operacion\Det_Operacion.cs" />
+    <Compile Include="Det_Operacion\Det_Operacion.partial.cs" />
+    <Compile Include="Det_Operacion\Det_Operacion.related.cs" />
+    <Compile Include="Det_Operacion\Det_Operacion.validation.cs" />
+    <Compile Include="Det_Operacion_Servicio\Det_Operacion_Servicio.cs" />
+    <Compile Include="Det_Operacion_Servicio\Det_Operacion_Servicio.partial.cs" />
+    <Compile Include="Det_Operacion_Servicio\Det_Operacion_Servicio.related.cs" />
+    <Compile Include="Det_Operacion_Servicio\Det_Operacion_Servicio.validation.cs" />
+    <Compile Include="Det_Seguimientos\Det_Seguimientos.cs" />
+    <Compile Include="Det_Seguimientos\Det_Seguimientos.partial.cs" />
+    <Compile Include="Det_Seguimientos\Det_Seguimientos.related.cs" />
+    <Compile Include="Det_Seguimientos\Det_Seguimientos.validation.cs" />
+    <Compile Include="Det_Tarifa\Det_Tarifa.cs" />
+    <Compile Include="Det_Tarifa\Det_Tarifa.partial.cs" />
+    <Compile Include="Det_Tarifa\Det_Tarifa.related.cs" />
+    <Compile Include="Det_Tarifa\Det_Tarifa.validation.cs" />
+    <Compile Include="Det_Tarifa_Servicio\Det_Tarifa_Servicio.cs" />
+    <Compile Include="Det_Tarifa_Servicio\Det_Tarifa_Servicio.partial.cs" />
+    <Compile Include="Det_Tarifa_Servicio\Det_Tarifa_Servicio.related.cs" />
+    <Compile Include="Det_Tarifa_Servicio\Det_Tarifa_Servicio.validation.cs" />
+    <Compile Include="Det_Tarjas\Det_Tarjas.cs" />
+    <Compile Include="Det_Tarjas\Det_Tarjas.partial.cs" />
+    <Compile Include="Det_Tarjas\Det_Tarjas.related.cs" />
+    <Compile Include="Det_Tarjas\Det_Tarjas.validation.cs" />
+    <Compile Include="DirecENTC\DirecENTC.cs" />
+    <Compile Include="DirecENTC\DirecENTC.partial.cs" />
+    <Compile Include="DirecENTC\DirecENTC.related.cs" />
+    <Compile Include="DirecENTC\DirecENTC.validation.cs" />
+    <Compile Include="DocsVta\DocsVta.cs" />
+    <Compile Include="DocsVta\DocsVta.partial.cs" />
+    <Compile Include="DocsVta\DocsVta.validation.cs" />
+    <Compile Include="Empresa\Empresa.cs" />
+    <Compile Include="Empresa\Empresa.partial.cs" />
+    <Compile Include="Empresa\Empresa.validation.cs" />
+    <Compile Include="EntidadCuentaBancaria\EntidadCuentaBancaria.cs" />
+    <Compile Include="EntidadCuentaBancaria\EntidadCuentaBancaria.partial.cs" />
+    <Compile Include="EntidadCuentaBancaria\EntidadCuentaBancaria.related.cs" />
+    <Compile Include="EntidadCuentaBancaria\EntidadCuentaBancaria.validation.cs" />
+    <Compile Include="EntidadLimiteCredito\EntidadLimiteCredito.cs" />
+    <Compile Include="EntidadLimiteCredito\EntidadLimiteCredito.partial.cs" />
+    <Compile Include="EntidadLimiteCredito\EntidadLimiteCredito.related.cs" />
+    <Compile Include="EntidadLimiteCredito\EntidadLimiteCredito.validation.cs" />
+    <Compile Include="Entidad\Entidad.cs" />
+    <Compile Include="Entidad\Entidad.partial.cs" />
+    <Compile Include="Entidad\Entidad.validation.cs" />
+    <Compile Include="Entidad_Acuerdo\Entidad_Acuerdo.cs" />
+    <Compile Include="Entidad_Acuerdo\Entidad_Acuerdo.partial.cs" />
+    <Compile Include="Entidad_Acuerdo\Entidad_Acuerdo.related.cs" />
+    <Compile Include="Entidad_Acuerdo\Entidad_Acuerdo.validation.cs" />
+    <Compile Include="Entidad_Relacionados\Entidad_Relacionados.cs" />
+    <Compile Include="Entidad_Relacionados\Entidad_Relacionados.partial.cs" />
+    <Compile Include="Entidad_Relacionados\Entidad_Relacionados.validation.cs" />
+    <Compile Include="Entidad_Servicio\Entidad_Servicio.cs" />
+    <Compile Include="Entidad_Servicio\Entidad_Servicio.partial.cs" />
+    <Compile Include="Entidad_Servicio\Entidad_Servicio.related.cs" />
+    <Compile Include="Entidad_Servicio\Entidad_Servicio.validation.cs" />
+    <Compile Include="Excepciones\Excepciones.cs" />
+    <Compile Include="Excepciones\Excepciones.partial.cs" />
+    <Compile Include="Excepciones\Excepciones.related.cs" />
+    <Compile Include="Excepciones\Excepciones.validation.cs" />
+    <Compile Include="Files\Files.cs" />
+    <Compile Include="Files\Files.partial.cs" />
+    <Compile Include="Files\Files.validation.cs" />
+    <Compile Include="Firmas\Firmas.cs" />
+    <Compile Include="Firmas\Firmas.partial.cs" />
+    <Compile Include="Firmas\Firmas.related.cs" />
+    <Compile Include="Firmas\Firmas.validation.cs" />
+    <Compile Include="Flujo\Flujo.cs" />
+    <Compile Include="Flujo\Flujo.partial.cs" />
+    <Compile Include="Flujo\Flujo.validation.cs" />
+    <Compile Include="FuncionEntidad\FuncionEntidad.cs" />
+    <Compile Include="FuncionEntidad\FuncionEntidad.partial.cs" />
+    <Compile Include="FuncionEntidad\FuncionEntidad.related.cs" />
+    <Compile Include="FuncionEntidad\FuncionEntidad.validation.cs" />
+    <Compile Include="GastosBancarios\GastosBancarios.cs" />
+    <Compile Include="GastosBancarios\GastosBancarios.partial.cs" />
+    <Compile Include="GastosBancarios\GastosBancarios.related.cs" />
+    <Compile Include="GastosBancarios\GastosBancarios.validation.cs" />
+    <Compile Include="GestionVentas\GestionVentas.cs" />
+    <Compile Include="GestionVentas\GestionVentas.partial.cs" />
+    <Compile Include="GestionVentas\GestionVentas.related.cs" />
+    <Compile Include="GestionVentas\GestionVentas.validation.cs" />
+    <Compile Include="GRR\GRR.cs" />
+    <Compile Include="GRR\GRR.partial.cs" />
+    <Compile Include="GRR\GRR.related.cs" />
+    <Compile Include="GRR\GRR.validation.cs" />
+    <Compile Include="GRR_Contrato\GRR_Contrato.cs" />
+    <Compile Include="GRR_Contrato\GRR_Contrato.partial.cs" />
+    <Compile Include="GRR_Contrato\GRR_Contrato.related.cs" />
+    <Compile Include="GRR_Contrato\GRR_Contrato.validation.cs" />
+    <Compile Include="GRR_Paquetes\GRR_Paquetes.cs" />
+    <Compile Include="GRR_Paquetes\GRR_Paquetes.partial.cs" />
+    <Compile Include="GRR_Paquetes\GRR_Paquetes.related.cs" />
+    <Compile Include="GRR_Paquetes\GRR_Paquetes.validation.cs" />
+    <Compile Include="LiqCtaCte\LiqCtaCte.cs" />
+    <Compile Include="LiqCtaCte\LiqCtaCte.partial.cs" />
+    <Compile Include="LiqCtaCte\LiqCtaCte.related.cs" />
+    <Compile Include="LiqCtaCte\LiqCtaCte.validation.cs" />
+    <Compile Include="Liquidacion\Liquidacion.cs" />
+    <Compile Include="Liquidacion\Liquidacion.partial.cs" />
+    <Compile Include="Liquidacion\Liquidacion.related.cs" />
+    <Compile Include="Liquidacion\Liquidacion.validation.cs" />
+    <Compile Include="LoadingListDetalle\LoadingListDetalle.cs" />
+    <Compile Include="LoadingListDetalle\LoadingListDetalle.partial.cs" />
+    <Compile Include="LoadingListDetalle\LoadingListDetalle.related.cs" />
+    <Compile Include="LoadingListDetalle\LoadingListDetalle.validation.cs" />
+    <Compile Include="LoadingList\LoadingList.cs" />
+    <Compile Include="LoadingList\LoadingList.partial.cs" />
+    <Compile Include="LoadingList\LoadingList.related.cs" />
+    <Compile Include="LoadingList\LoadingList.validation.cs" />
+    <Compile Include="LoadingList\LoadingListDetallado.cs" />
+    <Compile Include="LoadingList\LoadingListResumido.cs" />
+    <Compile Include="LoadingList_Files\LoadingList_Files.cs" />
+    <Compile Include="LoadingList_Files\LoadingList_Files.partial.cs" />
+    <Compile Include="LoadingList_Files\LoadingList_Files.validation.cs" />
+    <Compile Include="MovimientoFlujo\MovimientoFlujo.cs" />
+    <Compile Include="MovimientoFlujo\MovimientoFlujo.partial.cs" />
+    <Compile Include="MovimientoFlujo\MovimientoFlujo.validation.cs" />
+    <Compile Include="Movimiento\Movimiento.cs" />
+    <Compile Include="Movimiento\Movimiento.partial.cs" />
+    <Compile Include="Movimiento\Movimiento.related.cs" />
+    <Compile Include="Movimiento\Movimiento.validation.cs" />
+    <Compile Include="NaveViaje\NaveViaje.cs" />
+    <Compile Include="NaveViaje\NaveViaje.partial.cs" />
+    <Compile Include="NaveViaje\NaveViaje.related.cs" />
+    <Compile Include="NaveViaje\NaveViaje.validation.cs" />
+    <Compile Include="Nave\NAVE.cs" />
+    <Compile Include="Nave\NAVE.partial.cs" />
+    <Compile Include="Nave\NAVE.validation.cs" />
+    <Compile Include="Paquete\Paquete.cs" />
+    <Compile Include="Paquete\Paquete.partial.cs" />
+    <Compile Include="Paquete\Paquete.validation.cs" />
+    <Compile Include="Parametros\Parametros.cs" />
+    <Compile Include="Parametros\Parametros.partial.cs" />
+    <Compile Include="Parametros\Parametros.validation.cs" />
+    <Compile Include="Planillas\Planillas.cs" />
+    <Compile Include="Planillas\Planillas.partial.cs" />
+    <Compile Include="Planillas\Planillas.validation.cs" />
+    <Compile Include="PreDetDocsVta\PreDetDocsVta.cs" />
+    <Compile Include="PreDetDocsVta\PreDetDocsVta.partial.cs" />
+    <Compile Include="PreDetDocsVta\PreDetDocsVta.validation.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\PreDetDocsVta_Det_Operacion.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\PreDetDocsVta_Det_Operacion.partial.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\PreDetDocsVta_Det_Operacion.related.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\PreDetDocsVta_Det_Operacion.validation.cs" />
+    <Compile Include="PreDocsVta\PreDocsVta.cs" />
+    <Compile Include="PreDocsVta\PreDocsVta.partial.cs" />
+    <Compile Include="PreDocsVta\PreDocsVta.validation.cs" />
+    <Compile Include="PreFacturacion\PreFacturacion.cs" />
+    <Compile Include="PreFacturacion\PreFacturacion.partial.cs" />
+    <Compile Include="PreFacturacion\PreFacturacion.related.cs" />
+    <Compile Include="PreFacturacion\PreFacturacion.validation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prospecto\Prospecto.cs" />
+    <Compile Include="Prospecto\Prospecto.partial.cs" />
+    <Compile Include="Prospecto\Prospecto.related.cs" />
+    <Compile Include="Prospecto\Prospecto.validation.cs" />
+    <Compile Include="Puerto\Puerto.cs" />
+    <Compile Include="Puerto\Puerto.partial.cs" />
+    <Compile Include="Puerto\Puerto.validation.cs" />
+    <Compile Include="ResultGestion\ResultGestion.cs" />
+    <Compile Include="ResultGestion\ResultGestion.partial.cs" />
+    <Compile Include="ResultGestion\ResultGestion.related.cs" />
+    <Compile Include="ResultGestion\ResultGestion.validation.cs" />
+    <Compile Include="Series\Series.cs" />
+    <Compile Include="Series\Series.partial.cs" />
+    <Compile Include="Series\Series.validation.cs" />
+    <Compile Include="ServiciosDocumentos\ServiciosDocumentos.cs" />
+    <Compile Include="ServiciosDocumentos\ServiciosDocumentos.partial.cs" />
+    <Compile Include="ServiciosDocumentos\ServiciosDocumentos.related.cs" />
+    <Compile Include="ServiciosDocumentos\ServiciosDocumentos.validation.cs" />
+    <Compile Include="ServiciosLineaNegocio\ServiciosLineaNegocio.cs" />
+    <Compile Include="ServiciosLineaNegocio\ServiciosLineaNegocio.partial.cs" />
+    <Compile Include="ServiciosLineaNegocio\ServiciosLineaNegocio.related.cs" />
+    <Compile Include="ServiciosLineaNegocio\ServiciosLineaNegocio.validation.cs" />
+    <Compile Include="ServiciosRegimenVia\ServiciosRegimenVia.cs" />
+    <Compile Include="ServiciosRegimenVia\ServiciosRegimenVia.partial.cs" />
+    <Compile Include="ServiciosRegimenVia\ServiciosRegimenVia.related.cs" />
+    <Compile Include="ServiciosRegimenVia\ServiciosRegimenVia.validation.cs" />
+    <Compile Include="Servicio\Servicio.cs" />
+    <Compile Include="Servicio\Servicio.partial.cs" />
+    <Compile Include="Servicio\Servicio.validation.cs" />
+    <Compile Include="Servicio_Via\Servicio_Via.cs" />
+    <Compile Include="Servicio_Via\Servicio_Via.partial.cs" />
+    <Compile Include="Servicio_Via\Servicio_Via.related.cs" />
+    <Compile Include="Servicio_Via\Servicio_Via.validation.cs" />
+    <Compile Include="SobreEstadia\SobreEstadia.cs" />
+    <Compile Include="SobreEstadia\SobreEstadia.partial.cs" />
+    <Compile Include="SobreEstadia\SobreEstadia.related.cs" />
+    <Compile Include="SobreEstadia\SobreEstadia.validation.cs" />
+    <Compile Include="Sucursales\Sucursales.cs" />
+    <Compile Include="Sucursales\Sucursales.partial.cs" />
+    <Compile Include="Sucursales\Sucursales.related.cs" />
+    <Compile Include="Sucursales\Sucursales.validation.cs" />
+    <Compile Include="Tarifa\Tarifa.cs" />
+    <Compile Include="Tarifa\Tarifa.partial.cs" />
+    <Compile Include="Tarifa\Tarifa.related.cs" />
+    <Compile Include="Tarifa\Tarifa.validation.cs" />
+    <Compile Include="Tipificaciones\Tipificaciones.cs" />
+    <Compile Include="Tipificaciones\Tipificaciones.partial.cs" />
+    <Compile Include="Tipificaciones\Tipificaciones.validation.cs" />
+    <Compile Include="TiposCambio\TiposCambio.cs" />
+    <Compile Include="TiposEntidad\TiposEntidad.cs" />
+    <Compile Include="TiposEntidad\TiposEntidad.partial.cs" />
+    <Compile Include="TiposEntidad\TiposEntidad.validation.cs" />
+    <Compile Include="Tipos\Tipos.cs" />
+    <Compile Include="Tipos\Tipos.partial.cs" />
+    <Compile Include="Tipos\Tipos.validation.cs" />
+    <Compile Include="Transferencia\Transferencia.cs" />
+    <Compile Include="Transferencia\Transferencia.partial.cs" />
+    <Compile Include="Transferencia\Transferencia.related.cs" />
+    <Compile Include="Transferencia\Transferencia.validation.cs" />
+    <Compile Include="Ubigeos\Ubigeos.cs" />
+    <Compile Include="Ubigeos\Ubigeos.partial.cs" />
+    <Compile Include="Ubigeos\Ubigeos.related.cs" />
+    <Compile Include="Ubigeos\Ubigeos.validation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DelfinCert.pfx" />
+    <None Include="DelfinCert.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Delfin.Principal.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CrmUpdateUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://solucionesm4g.site:8443/crm/producto2/obtener/</Value>
+    </Setting>
+    <Setting Name="CrmUpdateUrlOld" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://134.209.219.220:8080/producto2/obtener/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

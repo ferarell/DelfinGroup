@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2e7ca92b-e9dd-49c9-a344-168c5d2f57d1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.103.13:768/Soap/IntegradorSBO.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IntegradorSBO.disco" MetadataType="Disco" ID="9cba75bc-11c9-492b-99aa-b465ffcfa375" SourceId="1" SourceUrl="http://192.168.103.13:768/Soap/IntegradorSBO.svc?disco" />
+    <MetadataFile FileName="IntegradorSBO.wsdl" MetadataType="Wsdl" ID="38206e1f-9fcf-4a85-a7ed-6423da09087c" SourceId="1" SourceUrl="http://192.168.103.13:768/Soap/IntegradorSBO.svc?wsdl" />
+    <MetadataFile FileName="IntegradorSBO.xsd" MetadataType="Schema" ID="d1b4a0e3-6ea0-410d-ac91-6393926fae8d" SourceId="1" SourceUrl="http://192.168.103.13:768/Soap/IntegradorSBO.svc?xsd=xsd3" />
+    <MetadataFile FileName="IntegradorSBO1.xsd" MetadataType="Schema" ID="6daebd85-56f4-4f42-92d0-4e6dd72fda45" SourceId="1" SourceUrl="http://192.168.103.13:768/Soap/IntegradorSBO.svc?xsd=xsd2" />
+    <MetadataFile FileName="IntegradorSBO2.xsd" MetadataType="Schema" ID="3e3d56b5-c95e-42c1-88fe-c4f20cfccb65" SourceId="1" SourceUrl="http://192.168.103.13:768/Soap/IntegradorSBO.svc?xsd=xsd1" />
+    <MetadataFile FileName="IntegradorSBO3.xsd" MetadataType="Schema" ID="4d1b63e4-b7d5-4add-bdcf-4ea5b336541b" SourceId="1" SourceUrl="http://192.168.103.13:768/Soap/IntegradorSBO.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

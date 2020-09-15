@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="edff4902-00ee-4003-93cf-e30d7f43d42c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://apps.delfingroupco.com.pe:767/OnLineService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OnLineService.xsd" MetadataType="Schema" ID="599b35a2-0740-4e69-8bd4-f91fab0a239d" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd3" />
+    <MetadataFile FileName="OnLineService.disco" MetadataType="Disco" ID="7ad4ebe5-3063-4443-95e5-6d5f0bb0cdb3" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:767/OnLineService.svc?disco" />
+    <MetadataFile FileName="OnLineService.wsdl" MetadataType="Wsdl" ID="02fb8df4-2e85-4652-bd78-3e4e6f57d457" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:767/OnLineService.svc?wsdl" />
+    <MetadataFile FileName="OnLineService1.xsd" MetadataType="Schema" ID="e915504c-7fe6-4259-ac7e-42889e02bd1b" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd6" />
+    <MetadataFile FileName="OnLineService2.xsd" MetadataType="Schema" ID="b959f0b7-d650-490a-8d8b-863d7f72bb4b" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd0" />
+    <MetadataFile FileName="OnLineService3.xsd" MetadataType="Schema" ID="8e1a2c97-dcb4-4c4a-a56a-45fde065019f" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd5" />
+    <MetadataFile FileName="OnLineService4.xsd" MetadataType="Schema" ID="122c9a0a-522e-41a2-98cb-ada8d15e218b" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OnLineService5.xsd" MetadataType="Schema" ID="e71e9b9b-d4b0-47fe-aede-417f8f98e961" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd4" />
+    <MetadataFile FileName="OnLineService6.xsd" MetadataType="Schema" ID="1c792c21-693e-4bb0-b5a2-f17c9365cf72" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:767/OnLineService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

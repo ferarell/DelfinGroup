@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E6205C17-C9DA-42C9-81E7-721505073E2D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Delfin.ServiceProxy</RootNamespace>
+    <AssemblyName>Delfin.ServiceProxy</AssemblyName>
+    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <XsdCodeGenEnabled>True</XsdCodeGenEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DelfinCert.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infrastructure.Aspect, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Infrastructure.Aspect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgMaritimoEntidad\DelfinServicesProxy.AgMaritimoEntidad.cs" />
+    <Compile Include="AgMaritimoEntidad\DelfinServicesProxy.AgMaritimoEntidad.partial.cs" />
+    <Compile Include="Anexos\DelfinServicesProxy.Anexos.cs" />
+    <Compile Include="Anexos\DelfinServicesProxy.Anexos.partial.cs" />
+    <Compile Include="Auditoria\DelfinServicesProxy.Auditoria.cs" />
+    <Compile Include="CabPerfilAsientos\DelfinServicesProxy.CabPerfilAsientos.cs" />
+    <Compile Include="CabPerfilAsientos\DelfinServicesProxy.CabPerfilAsientos.partial.cs" />
+    <Compile Include="Cab_Cotizacion\DelfinServices.Cab_Cotizacion.cs" />
+    <Compile Include="Cab_Cotizacion\DelfinServices.Cab_Cotizacion.partial.cs" />
+    <Compile Include="Cab_Cotizacion_OV\DelfinServices.Cab_Cotizacion_OV.operacion.cs" />
+    <Compile Include="Cab_Cotizacion_OV\DelfinServices.Cab_Cotizacion_OV.cs" />
+    <Compile Include="Cab_Cotizacion_OV\DelfinServices.Cab_Cotizacion_OV.partial.cs" />
+    <Compile Include="Cab_Direccionamiento\DelfinServices.Cab_Direccionamiento.cs" />
+    <Compile Include="Cab_Direccionamiento\DelfinServices.Cab_Direccionamiento.partial.cs" />
+    <Compile Include="Cab_MBL\DelfinServicesProxy.Cab_MBL.cs" />
+    <Compile Include="Cab_MBL\DelfinServicesProxy.Cab_MBL.partial.cs" />
+    <Compile Include="Cab_Operacion\DelfinServices.Cab_Operacion.cs" />
+    <Compile Include="Cab_Operacion\DelfinServices.Cab_Operacion.partial.cs" />
+    <Compile Include="Cab_Seguimientos\DelfinServices.Cab_Seguimientos.cs" />
+    <Compile Include="Cab_Seguimientos\DelfinServices.Cab_Seguimientos.partial.cs" />
+    <Compile Include="Cab_Tarifa\DelfinServices.Cab_Tarifa.cs" />
+    <Compile Include="Cab_Tarifa\DelfinServices.Cab_Tarifa.partial.cs" />
+    <Compile Include="Cab_Tarjas\DelfinServices.Cab_Tarjas.cs" />
+    <Compile Include="Cab_Tarjas\DelfinServices.Cab_Tarjas.partial.cs" />
+    <Compile Include="CGeneral\CGeneral.cs" />
+    <Compile Include="Chequera\DelfinServicesProxy.Chequera.cs" />
+    <Compile Include="Chequera\DelfinServicesProxy.Chequera.partial.cs" />
+    <Compile Include="CierresChangeControl\DelfinServicesProxy.CierresChangeControl.cs" />
+    <Compile Include="CierresChangeControl\DelfinServicesProxy.CierresChangeControl.partial.cs" />
+    <Compile Include="Comision\DelfinServicesProxy.Comision.cs" />
+    <Compile Include="Comision\DelfinServicesProxy.Comision.partial.cs" />
+    <Compile Include="Conciliacion\DelfinServicesProxy.Conciliacion.cs" />
+    <Compile Include="Conciliacion\DelfinServicesProxy.Conciliacion.partial.cs" />
+    <Compile Include="Constantes\DelfinServices.Constantes.cs" />
+    <Compile Include="Constantes\DelfinServices.Constantes.partial.cs" />
+    <Compile Include="Contrato\DelfinServices.Contrato.cs" />
+    <Compile Include="Contrato\DelfinServices.Contrato.partial.cs" />
+    <Compile Include="Contrato_Comodity\DelfinServicesProxy.Contrato_Comodity.cs" />
+    <Compile Include="Contrato_Comodity\DelfinServicesProxy.Contrato_Comodity.partial.cs" />
+    <Compile Include="correlativos\DelfinServices.correlativos.cs" />
+    <Compile Include="correlativos\DelfinServices.correlativos.partial.cs" />
+    <Compile Include="CtaCte\DelfinServices.CtaCte.cs" />
+    <Compile Include="CtaCte\DelfinServices.CtaCte.partial.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\DelfinServices.CtaCte_Det_Operaciones.cs" />
+    <Compile Include="CtaCte_Det_Operaciones\DelfinServices.CtaCte_Det_Operaciones.partial.cs" />
+    <Compile Include="CuentasBancariasUsuarios\DelfinServicesProxy.CuentasBancariasUsuarios.cs" />
+    <Compile Include="CuentasBancariasUsuarios\DelfinServicesProxy.CuentasBancariasUsuarios.partial.cs" />
+    <Compile Include="CuentasBancarias\DelfinServicesProxy.CuentasBancarias.cs" />
+    <Compile Include="CuentasBancarias\DelfinServicesProxy.CuentasBancarias.partial.cs" />
+    <Compile Include="DelfinServices.cs" />
+    <Compile Include="DepVacioEntidad\DelfinServicesProxy.DepVacioEntidad.cs" />
+    <Compile Include="DepVacioEntidad\DelfinServicesProxy.DepVacioEntidad.partial.cs" />
+    <Compile Include="DetCtaCteAsientos\DelfinServicesProxy.DetCtaCteAsientos.cs" />
+    <Compile Include="DetCtaCteAsientos\DelfinServicesProxy.DetCtaCteAsientos.partial.cs" />
+    <Compile Include="DetCtaCte\DelfinServices.DetCtaCte.cs" />
+    <Compile Include="DetCtaCte\DelfinServices.DetCtaCte.partial.cs" />
+    <Compile Include="DetDocsVta\DelfinServices.DetDocsVta.cs" />
+    <Compile Include="DetDocsVta\DelfinServices.DetDocsVta.partial.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\DelfinServices.DetDocsVta_Det_Operacion.cs" />
+    <Compile Include="DetDocsVta_Det_Operacion\DelfinServices.DetDocsVta_Det_Operacion.partial.cs" />
+    <Compile Include="DetMovimiento\DelfinServicesProxy.DetMovimiento.cs" />
+    <Compile Include="DetMovimiento\DelfinServicesProxy.DetMovimiento.partial.cs" />
+    <Compile Include="DetPerfilAsientos\DelfinServicesProxy.DetPerfilAsientos.cs" />
+    <Compile Include="DetPerfilAsientos\DelfinServicesProxy.DetPerfilAsientos.partial.cs" />
+    <Compile Include="Det_CNTR\DelfinServicesProxy.Det_CNTR.cs" />
+    <Compile Include="Det_CNTR\DelfinServicesProxy.Det_CNTR.partial.cs" />
+    <Compile Include="Det_Comision\DelfinServicesProxy.Det_Comision.cs" />
+    <Compile Include="Det_Comision\DelfinServicesProxy.Det_Comision.partial.cs" />
+    <Compile Include="Det_Cotizacion\DelfinServices.Det_Cotizacion.cs" />
+    <Compile Include="Det_Cotizacion\DelfinServices.Det_Cotizacion.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\DelfinServices.Det_Cotizacion_OV_EventosTareas.cs" />
+    <Compile Include="Det_Cotizacion_OV_EventosTareas\DelfinServices.Det_Cotizacion_OV_EventosTareas.partial.cs" />
+    <Compile Include="DetNaveViaje\DelfinServices.DetNaveViaje.cs" />
+    <Compile Include="DetNaveViaje\DelfinServices.DetNaveViaje.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\DelfinServices.Det_Cotizacion_OV_Archivo.cs" />
+    <Compile Include="Det_Cotizacion_OV_Archivo\DelfinServices.Det_Cotizacion_OV_Archivo.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\DelfinServices.Det_Cotizacion_OV_Documento.cs" />
+    <Compile Include="Det_Cotizacion_OV_Documento\DelfinServices.Det_Cotizacion_OV_Documento.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\DelfinServices.Det_Cotizacion_OV_Flete.cs" />
+    <Compile Include="Det_Cotizacion_OV_Flete\DelfinServices.Det_Cotizacion_OV_Flete.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\DelfinServices.Det_Cotizacion_OV_Novedad.cs" />
+    <Compile Include="Det_Cotizacion_OV_Novedad\DelfinServices.Det_Cotizacion_OV_Novedad.partial.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\DelfinServices.Det_Cotizacion_OV_Servicio.cs" />
+    <Compile Include="Det_Cotizacion_OV_Servicio\DelfinServices.Det_Cotizacion_OV_Servicio.partial.cs" />
+    <Compile Include="Det_Cotizacion_Servicio\DelfinServices.Det_Cotizacion_Servicio.cs" />
+    <Compile Include="Det_Cotizacion_Servicio\DelfinServices.Det_Cotizacion_Servicio.partial.cs" />
+    <Compile Include="Det_Direccionamiento\DelfinServices.Det_Direccionamiento.cs" />
+    <Compile Include="Det_Direccionamiento\DelfinServices.Det_Direccionamiento.partial.cs" />
+    <Compile Include="Det_Operacion\DelfinServices.Det_Operacion.cs" />
+    <Compile Include="Det_Operacion\DelfinServices.Det_Operacion.partial.cs" />
+    <Compile Include="Det_Operacion_Servicio\DelfinServices.Det_Operacion_Servicio.cs" />
+    <Compile Include="Det_Operacion_Servicio\DelfinServices.Det_Operacion_Servicio.partial.cs" />
+    <Compile Include="Det_Seguimientos\DelfinServices.Det_Seguimientos.cs" />
+    <Compile Include="Det_Seguimientos\DelfinServices.Det_Seguimientos.partial.cs" />
+    <Compile Include="Det_Tarifa\DelfinServices.Det_Tarifa.cs" />
+    <Compile Include="Det_Tarifa\DelfinServices.Det_Tarifa.partial.cs" />
+    <Compile Include="Det_Tarifa_Servicio\DelfinServices.Det_Tarifa_Servicio.cs" />
+    <Compile Include="Det_Tarifa_Servicio\DelfinServices.Det_Tarifa_Servicio.partial.cs" />
+    <Compile Include="Det_Tarjas\DelfinServices.Det_Tarjas.cs" />
+    <Compile Include="Det_Tarjas\DelfinServices.Det_Tarjas.partial.cs" />
+    <Compile Include="DirecENTC\DelfinServices.DirecENTC.cs" />
+    <Compile Include="DirecENTC\DelfinServices.DirecENTC.partial.cs" />
+    <Compile Include="DocsVta\DelfinServices.DocsVta.cs" />
+    <Compile Include="DocsVta\DelfinServices.DocsVta.partial.cs" />
+    <Compile Include="Empresa\DelfinServices.Empresa.cs" />
+    <Compile Include="Empresa\DelfinServices.Empresa.partial.cs" />
+    <Compile Include="EntidadCuentaBancaria\DelfinServicesProxy.EntidadCuentaBancaria.cs" />
+    <Compile Include="EntidadCuentaBancaria\DelfinServicesProxy.EntidadCuentaBancaria.partial.cs" />
+    <Compile Include="EntidadLimiteCredito\DelfinServicesProxy.EntidadLimiteCredito.cs" />
+    <Compile Include="EntidadLimiteCredito\DelfinServicesProxy.EntidadLimiteCredito.partial.cs" />
+    <Compile Include="Entidad\DelfinServices.Entidad.cs" />
+    <Compile Include="Entidad\DelfinServices.Entidad.partial.cs" />
+    <Compile Include="Entidad_Acuerdo\DelfinServices.Entidad_Acuerdo.cs" />
+    <Compile Include="Entidad_Acuerdo\DelfinServices.Entidad_Acuerdo.partial.cs" />
+    <Compile Include="Entidad_Relacionados\DelfinServicesProxy.Entidad_Relacionados.cs" />
+    <Compile Include="Entidad_Relacionados\DelfinServicesProxy.Entidad_Relacionados.partial.cs" />
+    <Compile Include="Entidad_Servicio\DelfinServices.Entidad_Servicio.cs" />
+    <Compile Include="Entidad_Servicio\DelfinServices.Entidad_Servicio.partial.cs" />
+    <Compile Include="Excepciones\DelfinServicesProxy.Excepciones.cs" />
+    <Compile Include="Excepciones\DelfinServicesProxy.Excepciones.partial.cs" />
+    <Compile Include="Files\DelfinServicesProxy.Files.cs" />
+    <Compile Include="Files\DelfinServicesProxy.Files.partial.cs" />
+    <Compile Include="Firmas\DelfinServicesProxy.Firmas.cs" />
+    <Compile Include="Firmas\DelfinServicesProxy.Firmas.partial.cs" />
+    <Compile Include="Flujo\DelfinServicesProxy.Flujo.cs" />
+    <Compile Include="Flujo\DelfinServicesProxy.Flujo.partial.cs" />
+    <Compile Include="FuncionEntidad\DelfinServices.FuncionEntidad.cs" />
+    <Compile Include="FuncionEntidad\DelfinServices.FuncionEntidad.partial.cs" />
+    <Compile Include="GastosBancarios\DelfinServicesProxy.GastosBancarios.cs" />
+    <Compile Include="GastosBancarios\DelfinServicesProxy.GastosBancarios.partial.cs" />
+    <Compile Include="GestionVentas\DelfinServices.GestionVentas.cs" />
+    <Compile Include="GestionVentas\DelfinServices.GestionVentas.partial.cs" />
+    <Compile Include="GRR\DelfinServicesProxy.GRR.cs" />
+    <Compile Include="GRR\DelfinServicesProxy.GRR.partial.cs" />
+    <Compile Include="GRR_Contrato\DelfinServicesProxy.GRR_Contrato.cs" />
+    <Compile Include="GRR_Contrato\DelfinServicesProxy.GRR_Contrato.partial.cs" />
+    <Compile Include="GRR_Paquetes\DelfinServicesProxy.GRR_Paquetes.cs" />
+    <Compile Include="GRR_Paquetes\DelfinServicesProxy.GRR_Paquetes.partial.cs" />
+    <Compile Include="LiqCtaCte\DelfinServicesProxy.LiqCtaCte.cs" />
+    <Compile Include="LiqCtaCte\DelfinServicesProxy.LiqCtaCte.partial.cs" />
+    <Compile Include="Liquidacion\DelfinServicesProxy.Liquidacion.cs" />
+    <Compile Include="Liquidacion\DelfinServicesProxy.Liquidacion.partial.cs" />
+    <Compile Include="LoadingListDetalle\DelfinServicesProxy.LoadingListDetalle.cs" />
+    <Compile Include="LoadingListDetalle\DelfinServicesProxy.LoadingListDetalle.partial.cs" />
+    <Compile Include="LoadingList\DelfinServicesProxy.LoadingList.cs" />
+    <Compile Include="LoadingList\DelfinServicesProxy.LoadingList.partial.cs" />
+    <Compile Include="LoadingList_Files\DelfinServicesProxy.LoadingList_Files.cs" />
+    <Compile Include="LoadingList_Files\DelfinServicesProxy.LoadingList_Files.partial.cs" />
+    <Compile Include="MovimientoFlujo\DelfinServicesProxy.MovimientoFlujo.cs" />
+    <Compile Include="MovimientoFlujo\DelfinServicesProxy.MovimientoFlujo.partial.cs" />
+    <Compile Include="Movimiento\DelfinServicesProxy.Movimiento.cs" />
+    <Compile Include="Movimiento\DelfinServicesProxy.Movimiento.partial.cs" />
+    <Compile Include="NaveViaje\DelfinServices.NaveViaje.cs" />
+    <Compile Include="NaveViaje\DelfinServices.NaveViaje.partial.cs" />
+    <Compile Include="Nave\DelfinServices.Nave.cs" />
+    <Compile Include="Nave\DelfinServices.Nave.partial.cs" />
+    <Compile Include="Paquete\DelfinServices.Paquete.cs" />
+    <Compile Include="Paquete\DelfinServices.Paquete.partial.cs" />
+    <Compile Include="Parametros\DelfinServices.Parametros.cs" />
+    <Compile Include="Parametros\DelfinServices.Parametros.partial.cs" />
+    <Compile Include="Planillas\DelfinServicesProxy.Planillas.cs" />
+    <Compile Include="Planillas\DelfinServicesProxy.Planillas.partial.cs" />
+    <Compile Include="PreDetDocsVta\DelfinServices.PreDetDocsVta.cs" />
+    <Compile Include="PreDetDocsVta\DelfinServices.PreDetDocsVta.partial.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\DelfinServices.PreDetDocsVta_Det_Operacion.cs" />
+    <Compile Include="PreDetDocsVta_Det_Operacion\DelfinServices.PreDetDocsVta_Det_Operacion.partial.cs" />
+    <Compile Include="PreDocsVta\DelfinServices.PreDocsVta.cs" />
+    <Compile Include="PreDocsVta\DelfinServices.PreDocsVta.partial.cs" />
+    <Compile Include="PreFacturacion\DelfinServicesProxy.PreFacturacion.cs" />
+    <Compile Include="PreFacturacion\DelfinServicesProxy.PreFacturacion.partial.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prospecto\DelfinServices.Prospecto.cs" />
+    <Compile Include="Prospecto\DelfinServices.Prospecto.partial.cs" />
+    <Compile Include="Puerto\DelfinServices.Puerto.cs" />
+    <Compile Include="Puerto\DelfinServices.Puerto.partial.cs" />
+    <Compile Include="ResultGestion\DelfinServices.ResultGestion.cs" />
+    <Compile Include="ResultGestion\DelfinServices.ResultGestion.partial.cs" />
+    <Compile Include="Series\DelfinServicesProxy.Series.cs" />
+    <Compile Include="Series\DelfinServicesProxy.Series.partial.cs" />
+    <Compile Include="Servicio\DelfinServices.Servicio.cs" />
+    <Compile Include="Servicio\DelfinServices.Servicio.partial.cs" />
+    <Compile Include="Servicio_Via\DelfinServices.Servicio_Via.cs" />
+    <Compile Include="Servicio_Via\DelfinServices.Servicio_Via.partial.cs" />
+    <Compile Include="SobreEstadia\DelfinServicesProxy.SobreEstadia.cs" />
+    <Compile Include="SobreEstadia\DelfinServicesProxy.SobreEstadia.partial.cs" />
+    <Compile Include="Sucursales\DelfinServices.Sucursales.cs" />
+    <Compile Include="Sucursales\DelfinServices.Sucursales.partial.cs" />
+    <Compile Include="Tarifa\DelfinServices.Tarifa.cs" />
+    <Compile Include="Tarifa\DelfinServices.Tarifa.partial.cs" />
+    <Compile Include="Tipificaciones\DelfinServicesProxy.Tipificaciones.cs" />
+    <Compile Include="Tipificaciones\DelfinServicesProxy.Tipificaciones.partial.cs" />
+    <Compile Include="TiposCambio\DelfinServices.TiposCambio.cs" />
+    <Compile Include="TiposEntidad\DelfinServices.TiposEntidad.cs" />
+    <Compile Include="TiposEntidad\DelfinServices.TiposEntidad.partial.cs" />
+    <Compile Include="Tipos\DelfinServices.Tipos.cs" />
+    <Compile Include="Tipos\DelfinServices.Tipos.partial.cs" />
+    <Compile Include="Transferencia\DelfinServicesProxy.Transferencia.cs" />
+    <Compile Include="Transferencia\DelfinServicesProxy.Transferencia.partial.cs" />
+    <Compile Include="Ubigeos\DelfinServices.Ubigeos.cs" />
+    <Compile Include="Ubigeos\DelfinServices.Ubigeos.partial.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business Tier\Delfin.BusinessLogic\Delfin.BusinessLogic.csproj">
+      <Project>{c100ea87-7438-4439-ac79-fae48bab42e2}</Project>
+      <Name>Delfin.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business Tier\Delfin.Entities\Delfin.Entities.csproj">
+      <Project>{f32cdd23-0d2e-4b37-99fc-7a072be8b5f5}</Project>
+      <Name>Delfin.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Delfin.ServiceContracts\Delfin.ServiceContracts.csproj">
+      <Project>{15b3e0d2-6217-493a-a690-158c497f5318}</Project>
+      <Name>Delfin.ServiceContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DelfinCert.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
+        <WcfProjectProperties>
+          <AutoStart>True</AutoStart>
+        </WcfProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
