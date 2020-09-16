@@ -54,9 +54,9 @@
     <AssemblyOriginatorKeyFile>DelfinCert.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="eFactDelfin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="eFactDelfin, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\eFactDelfin\bin\Debug\eFactDelfin.dll</HintPath>
+      <HintPath>..\..\FacturacionElectronica\bin\Debug\eFactDelfin.dll</HintPath>
     </Reference>
     <Reference Include="Infrastructure.Aspect, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
