@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{15B3E0D2-6217-493A-A690-158C497F5318}</ProjectGuid>
+    <ProjectGuid>{9639899C-F591-47B5-BF00-A46DA6EB0536}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Delfin.ServiceContracts</RootNamespace>
@@ -69,6 +69,10 @@
     <AssemblyOriginatorKeyFile>DelfinCert.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Delfin.BusinessLogic, Version=2.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Business Tier\Delfin.BusinessLogic\bin\Debug\Delfin.BusinessLogic.dll</HintPath>
+    </Reference>
     <Reference Include="Infrastructure.Aspect, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Librerias\Infrastructure.Aspect.dll</HintPath>
@@ -289,16 +293,11 @@
     <None Include="DelfinCert.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Business Tier\Delfin.BusinessLogic\Delfin.BusinessLogic.csproj">
-      <Project>{c100ea87-7438-4439-ac79-fae48bab42e2}</Project>
-      <Name>Delfin.BusinessLogic</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Business Tier\Delfin.Entities\Delfin.Entities.csproj">
-      <Project>{f32cdd23-0d2e-4b37-99fc-7a072be8b5f5}</Project>
+      <Project>{985eea42-a5da-4766-80fe-6579516f7024}</Project>
       <Name>Delfin.Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

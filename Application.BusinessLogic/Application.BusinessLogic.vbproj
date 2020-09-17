@@ -44,13 +44,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Application.BusinessEntities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Application.Entities\bin\Debug\Application.BusinessEntities.dll</HintPath>
-    </Reference>
-    <Reference Include="Application.DataAccess">
-      <HintPath>..\Application.DataAccess\bin\Debug\Application.DataAccess.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -110,6 +103,16 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application.DataAccess\Application.DataAccess.vbproj">
+      <Project>{5c8e181f-7743-48fe-8a5a-30566b47e4e5}</Project>
+      <Name>Application.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Application.Entities\Application.BusinessEntities.vbproj">
+      <Project>{4a5ff929-730f-45ac-85fd-541228280740}</Project>
+      <Name>Application.BusinessEntities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

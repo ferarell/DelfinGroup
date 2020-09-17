@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0FFB205-D8ED-4AD2-850B-0718D4FC26F8}</ProjectGuid>
+    <ProjectGuid>{7D6147C7-EE51-4EB1-B1B9-98B78834187F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>eFactDelfin</RootNamespace>

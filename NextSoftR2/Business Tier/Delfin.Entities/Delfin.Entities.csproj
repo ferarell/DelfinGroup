@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F32CDD23-0D2E-4B37-99FC-7A072BE8B5F5}</ProjectGuid>
+    <ProjectGuid>{985EEA42-A5DA-4766-80FE-6579516F7024}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Delfin.Entities</RootNamespace>
