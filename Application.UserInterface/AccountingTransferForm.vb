@@ -1,14 +1,14 @@
 ﻿Imports DevExpress.XtraEditors
 Imports DevExpress.XtraGrid.Views.Grid
 Imports DevExpress.XtraSplashScreen
-
 Public Class AccountingTransferForm
     Dim oAppService As New AppService.DelfinServiceClient
     Dim oIntegrationService As New IntegrationService.IntegradorSBOClient
+    Public EMPR_Codigo, SUCR_Codigo As String
     Public AppUser As String = "sistemas"
 
     Private Sub AccountingTransferForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        gcVouchers.MainView.RestoreLayoutFromRegistry(IO.Directory.GetCurrentDirectory)
+        gcStatements.MainView.RestoreLayoutFromRegistry(IO.Directory.GetCurrentDirectory)
         SplitContainerControl2.SplitterPosition = SplitContainerControl2.Height * 0.8
         deDateFrom.EditValue = DateAdd(DateInterval.Day, -90, Now)
         deDateTo.EditValue = Now
@@ -27,11 +27,11 @@ Public Class AccountingTransferForm
         Dim dtSource As New DataTable
         dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneStatementsPorNaveViaje '" & Format(deDateFrom.EditValue, "yyyyMMdd") & "','" & Format(deDateTo.EditValue, "yyyyMMdd") & "'").Tables(0)
         dtSource.Columns.Add("Checked", GetType(Boolean)).DefaultValue = False
-        gcVouchers.DataSource = dtSource
+        gcStatements.DataSource = dtSource
         GridView1.BestFitColumns()
     End Sub
 
-    Private Sub bbiTransfer_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiStatements.ItemClick
+    Private Sub bbiTransfer_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiStatementsGenerate.ItemClick
         Validate()
         If DevExpress.XtraEditors.XtraMessageBox.Show("Se generarán asientos de provisión de cada Nave/Viaje seleccionado, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
             Return
@@ -56,7 +56,7 @@ Public Class AccountingTransferForm
     End Sub
 
     Private Sub AccountingTransferForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        gcVouchers.MainView.SaveLayoutToRegistry(IO.Directory.GetCurrentDirectory)
+        gcStatements.MainView.SaveLayoutToRegistry(IO.Directory.GetCurrentDirectory)
     End Sub
 
     Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
@@ -78,7 +78,7 @@ Public Class AccountingTransferForm
         'GridView2.BestFitColumns()
     End Sub
 
-    Private Sub bbiReferences_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiReferences.ItemClick
+    Private Sub bbiReferences_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiReferencesSync.ItemClick
         Validate()
         If DevExpress.XtraEditors.XtraMessageBox.Show("Se actualizarán las referencias de cada HBL seleccionado, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
             Return
@@ -182,5 +182,17 @@ Public Class AccountingTransferForm
         'If IsDBNull(GridView2.GetFocusedRowCellValue("Checked")) Then
         '    GridView2.SetFocusedRowCellValue("Checked", False)
         'End If
+    End Sub
+
+    Private Sub bbiVoucherPreview_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiVoucherPreview.ItemClick
+        Dim dsQuery As New DataSet
+        Dim oForm As New VoucherViewerForm
+        EMPR_Codigo = 1
+        SUCR_Codigo = "01"
+        Dim NVIA_Codigo As Integer = GridView1.GetFocusedRowCellValue("NVIA_Codigo")
+        Dim CONS_CodLNG As String = GridView1.GetFocusedRowCellValue("CONS_CodLNG")
+        dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " & EMPR_Codigo & ",'" & SUCR_Codigo & "'," & NVIA_Codigo.ToString & ",'" & CONS_CodLNG & "', 0, '" & AppUser & "'")
+        oForm.dsVoucher = dsQuery
+        oForm.ShowDialog()
     End Sub
 End Class

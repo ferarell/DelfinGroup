@@ -80,11 +80,10 @@
     <ApplicationIcon>AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>DC87BEA73AE94F9E5FA32EDC6D10731FFDD9C858</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>4BCEA868F5D2EC0A2F3DDA96E59F2B19C582D468</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>AppNet.Integrador_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -101,11 +100,10 @@
     <OutputPath>bin\x86\Release\</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>AppNet.Integrador_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -697,6 +695,7 @@
     <Content Include="Resources\ToDoList_32x32.png" />
     <Content Include="Resources\Tomorrow_Flag.png" />
     <Content Include="Resources\Unknown-user.png" />
+    <None Include="AppNet.Integrador_TemporaryKey.pfx" />
     <None Include="ClassDiagram1.cd" />
     <Content Include="Reports\ImpresionVoucherConcar.rpt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

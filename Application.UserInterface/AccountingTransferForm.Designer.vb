@@ -21,14 +21,15 @@ Partial Class AccountingTransferForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AccountingTransferForm))
-        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip2 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipItem2 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip3 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipItem3 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip4 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipItem4 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
         Me.bbiSearch = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiStatements = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiReferences = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiVoucherPreview = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiStatementsGenerate = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiReferencesSync = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiExport = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiSendMessage = New DevExpress.XtraBars.BarButtonItem()
@@ -58,7 +59,7 @@ Partial Class AccountingTransferForm
         Me.deDateTo = New DevExpress.XtraEditors.DateEdit()
         Me.deDateFrom = New DevExpress.XtraEditors.DateEdit()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.gcVouchers = New DevExpress.XtraGrid.GridControl()
+        Me.gcStatements = New DevExpress.XtraGrid.GridControl()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SeleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeseleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -66,18 +67,18 @@ Partial Class AccountingTransferForm
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.gcListaHBL = New DevExpress.XtraGrid.GridControl()
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn31 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -99,7 +100,7 @@ Partial Class AccountingTransferForm
         CType(Me.deDateFrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl2.SuspendLayout()
-        CType(Me.gcVouchers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gcStatements, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,7 +116,7 @@ Partial Class AccountingTransferForm
         Me.brBarraAcciones.DockRow = 0
         Me.brBarraAcciones.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
         Me.brBarraAcciones.FloatLocation = New System.Drawing.Point(279, 188)
-        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSearch, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiStatements, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiReferences, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiExport, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
+        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSearch, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiVoucherPreview, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiStatementsGenerate, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiReferencesSync, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiExport, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
         Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
         Me.brBarraAcciones.OptionsBar.UseWholeRow = True
         Me.brBarraAcciones.Text = "Custom 5"
@@ -128,25 +129,32 @@ Partial Class AccountingTransferForm
         Me.bbiSearch.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.G))
         Me.bbiSearch.Name = "bbiSearch"
         '
-        'bbiStatements
+        'bbiVoucherPreview
         '
-        Me.bbiStatements.Caption = "&Generar Asientos"
-        Me.bbiStatements.Id = 23
-        Me.bbiStatements.ImageOptions.Image = CType(resources.GetObject("bbiStatements.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiStatements.Name = "bbiStatements"
-        ToolTipItem1.Text = "Generación de asientos contables en SAP"
-        SuperToolTip1.Items.Add(ToolTipItem1)
-        Me.bbiStatements.SuperTip = SuperToolTip1
+        Me.bbiVoucherPreview.Caption = "Asiento Preliminar"
+        Me.bbiVoucherPreview.Id = 27
+        Me.bbiVoucherPreview.ImageOptions.Image = CType(resources.GetObject("bbiVoucherPreview.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiVoucherPreview.Name = "bbiVoucherPreview"
         '
-        'bbiReferences
+        'bbiStatementsGenerate
         '
-        Me.bbiReferences.Caption = "&Sincronizar Referencias"
-        Me.bbiReferences.Id = 26
-        Me.bbiReferences.ImageOptions.Image = CType(resources.GetObject("bbiReferences.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiReferences.Name = "bbiReferences"
-        ToolTipItem2.Text = "Sincroniza las referencias asociadas al HBL"
-        SuperToolTip2.Items.Add(ToolTipItem2)
-        Me.bbiReferences.SuperTip = SuperToolTip2
+        Me.bbiStatementsGenerate.Caption = "&Generar Asientos"
+        Me.bbiStatementsGenerate.Id = 23
+        Me.bbiStatementsGenerate.ImageOptions.Image = CType(resources.GetObject("bbiStatementsGenerate.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiStatementsGenerate.Name = "bbiStatementsGenerate"
+        ToolTipItem3.Text = "Generación de asientos contables en SAP"
+        SuperToolTip3.Items.Add(ToolTipItem3)
+        Me.bbiStatementsGenerate.SuperTip = SuperToolTip3
+        '
+        'bbiReferencesSync
+        '
+        Me.bbiReferencesSync.Caption = "&Sincronizar Referencias"
+        Me.bbiReferencesSync.Id = 26
+        Me.bbiReferencesSync.ImageOptions.Image = CType(resources.GetObject("bbiReferencesSync.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiReferencesSync.Name = "bbiReferencesSync"
+        ToolTipItem4.Text = "Sincroniza las referencias asociadas al HBL"
+        SuperToolTip4.Items.Add(ToolTipItem4)
+        Me.bbiReferencesSync.SuperTip = SuperToolTip4
         '
         'bbiExport
         '
@@ -198,8 +206,8 @@ Partial Class AccountingTransferForm
         Me.bmActions.DockControls.Add(Me.BarDockControl3)
         Me.bmActions.DockControls.Add(Me.BarDockControl4)
         Me.bmActions.Form = Me
-        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.bbiSearch, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiReset, Me.bbiExport, Me.bbiStatements, Me.BarButtonItem5, Me.bbiSendMessage, Me.bbiReferences})
-        Me.bmActions.MaxItemId = 27
+        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.bbiSearch, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiReset, Me.bbiExport, Me.bbiStatementsGenerate, Me.BarButtonItem5, Me.bbiSendMessage, Me.bbiReferencesSync, Me.bbiVoucherPreview})
+        Me.bmActions.MaxItemId = 28
         Me.bmActions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rpiProceso, Me.RepositoryItemImageComboBox1})
         '
         'BarDockControl1
@@ -380,7 +388,7 @@ Partial Class AccountingTransferForm
         Me.SplitContainerControl2.Horizontal = False
         Me.SplitContainerControl2.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainerControl2.Name = "SplitContainerControl2"
-        Me.SplitContainerControl2.Panel1.Controls.Add(Me.gcVouchers)
+        Me.SplitContainerControl2.Panel1.Controls.Add(Me.gcStatements)
         Me.SplitContainerControl2.Panel1.Text = "Panel1"
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.gcListaHBL)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
@@ -388,23 +396,23 @@ Partial Class AccountingTransferForm
         Me.SplitContainerControl2.SplitterPosition = 171
         Me.SplitContainerControl2.TabIndex = 172
         '
-        'gcVouchers
+        'gcStatements
         '
-        Me.gcVouchers.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.gcVouchers.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcVouchers.EmbeddedNavigator.Buttons.Append.Visible = False
-        Me.gcVouchers.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
-        Me.gcVouchers.EmbeddedNavigator.Buttons.Edit.Visible = False
-        Me.gcVouchers.EmbeddedNavigator.Buttons.EndEdit.Visible = False
-        Me.gcVouchers.EmbeddedNavigator.Buttons.Remove.Visible = False
-        Me.gcVouchers.Location = New System.Drawing.Point(0, 0)
-        Me.gcVouchers.MainView = Me.GridView1
-        Me.gcVouchers.Name = "gcVouchers"
-        Me.gcVouchers.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
-        Me.gcVouchers.Size = New System.Drawing.Size(878, 171)
-        Me.gcVouchers.TabIndex = 171
-        Me.gcVouchers.UseEmbeddedNavigator = True
-        Me.gcVouchers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.gcStatements.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.gcStatements.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcStatements.EmbeddedNavigator.Buttons.Append.Visible = False
+        Me.gcStatements.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
+        Me.gcStatements.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.gcStatements.EmbeddedNavigator.Buttons.EndEdit.Visible = False
+        Me.gcStatements.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.gcStatements.Location = New System.Drawing.Point(0, 0)
+        Me.gcStatements.MainView = Me.GridView1
+        Me.gcStatements.Name = "gcStatements"
+        Me.gcStatements.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
+        Me.gcStatements.Size = New System.Drawing.Size(878, 171)
+        Me.gcStatements.TabIndex = 171
+        Me.gcStatements.UseEmbeddedNavigator = True
+        Me.gcStatements.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'ContextMenuStrip1
         '
@@ -437,7 +445,7 @@ Partial Class AccountingTransferForm
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn7, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn13, Me.GridColumn6, Me.GridColumn11, Me.GridColumn12})
-        Me.GridView1.GridControl = Me.gcVouchers
+        Me.GridView1.GridControl = Me.gcStatements
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsSelection.MultiSelect = True
@@ -462,6 +470,38 @@ Partial Class AccountingTransferForm
         Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
         Me.RepositoryItemCheckEdit1.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked
         Me.RepositoryItemCheckEdit1.ValueGrayed = False
+        '
+        'GridColumn8
+        '
+        Me.GridColumn8.Caption = "Línea de Negocio"
+        Me.GridColumn8.FieldName = "CONS_DescLNG"
+        Me.GridColumn8.Name = "GridColumn8"
+        Me.GridColumn8.Visible = True
+        Me.GridColumn8.VisibleIndex = 1
+        '
+        'GridColumn9
+        '
+        Me.GridColumn9.Caption = "Régimen"
+        Me.GridColumn9.FieldName = "CONS_DescRGM"
+        Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.Visible = True
+        Me.GridColumn9.VisibleIndex = 2
+        '
+        'GridColumn10
+        '
+        Me.GridColumn10.Caption = "Vía"
+        Me.GridColumn10.FieldName = "CONS_DescVIA"
+        Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.Visible = True
+        Me.GridColumn10.VisibleIndex = 3
+        '
+        'GridColumn7
+        '
+        Me.GridColumn7.Caption = "Transportista"
+        Me.GridColumn7.FieldName = "ENTC_NomTransp"
+        Me.GridColumn7.Name = "GridColumn7"
+        Me.GridColumn7.Visible = True
+        Me.GridColumn7.VisibleIndex = 4
         '
         'GridColumn2
         '
@@ -495,6 +535,14 @@ Partial Class AccountingTransferForm
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 8
         '
+        'GridColumn13
+        '
+        Me.GridColumn13.Caption = "Cantidad HBL"
+        Me.GridColumn13.FieldName = "Cantidad_HBL"
+        Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.Visible = True
+        Me.GridColumn13.VisibleIndex = 9
+        '
         'GridColumn6
         '
         Me.GridColumn6.Caption = "Estado"
@@ -502,38 +550,6 @@ Partial Class AccountingTransferForm
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 10
-        '
-        'GridColumn7
-        '
-        Me.GridColumn7.Caption = "Transportista"
-        Me.GridColumn7.FieldName = "ENTC_NomTransp"
-        Me.GridColumn7.Name = "GridColumn7"
-        Me.GridColumn7.Visible = True
-        Me.GridColumn7.VisibleIndex = 4
-        '
-        'GridColumn8
-        '
-        Me.GridColumn8.Caption = "Línea de Negocio"
-        Me.GridColumn8.FieldName = "CONS_DescLNG"
-        Me.GridColumn8.Name = "GridColumn8"
-        Me.GridColumn8.Visible = True
-        Me.GridColumn8.VisibleIndex = 1
-        '
-        'GridColumn9
-        '
-        Me.GridColumn9.Caption = "Régimen"
-        Me.GridColumn9.FieldName = "CONS_DescRGM"
-        Me.GridColumn9.Name = "GridColumn9"
-        Me.GridColumn9.Visible = True
-        Me.GridColumn9.VisibleIndex = 2
-        '
-        'GridColumn10
-        '
-        Me.GridColumn10.Caption = "Vía"
-        Me.GridColumn10.FieldName = "CONS_DescVIA"
-        Me.GridColumn10.Name = "GridColumn10"
-        Me.GridColumn10.Visible = True
-        Me.GridColumn10.VisibleIndex = 3
         '
         'GridColumn11
         '
@@ -550,14 +566,6 @@ Partial Class AccountingTransferForm
         Me.GridColumn12.Name = "GridColumn12"
         Me.GridColumn12.Visible = True
         Me.GridColumn12.VisibleIndex = 12
-        '
-        'GridColumn13
-        '
-        Me.GridColumn13.Caption = "Cantidad HBL"
-        Me.GridColumn13.FieldName = "Cantidad_HBL"
-        Me.GridColumn13.Name = "GridColumn13"
-        Me.GridColumn13.Visible = True
-        Me.GridColumn13.VisibleIndex = 9
         '
         'gcListaHBL
         '
@@ -677,7 +685,7 @@ Partial Class AccountingTransferForm
         CType(Me.deDateFrom.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl2.ResumeLayout(False)
-        CType(Me.gcVouchers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gcStatements, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -692,7 +700,7 @@ Partial Class AccountingTransferForm
     Private WithEvents brBarraAcciones As DevExpress.XtraBars.Bar
     Private WithEvents bbiSearch As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bbiExport As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents bbiStatements As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiStatementsGenerate As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bbiSendMessage As DevExpress.XtraBars.BarButtonItem
     Private WithEvents bbiClose As DevExpress.XtraBars.BarButtonItem
     Private WithEvents bar5 As DevExpress.XtraBars.Bar
@@ -716,7 +724,7 @@ Partial Class AccountingTransferForm
     Friend WithEvents RepositoryItemImageComboBox1 As DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox
     Friend WithEvents vpInputs As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
     Friend WithEvents SplitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
-    Friend WithEvents gcVouchers As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gcStatements As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
@@ -744,11 +752,12 @@ Partial Class AccountingTransferForm
     Friend WithEvents GridColumn19 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn20 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn22 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents bbiReferences As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiReferencesSync As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents SeleccionaTodosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeseleccionaTodosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InvertirSelecciónToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents bbiVoucherPreview As DevExpress.XtraBars.BarButtonItem
 End Class
