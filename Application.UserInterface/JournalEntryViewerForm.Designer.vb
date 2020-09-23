@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class VoucherViewerForm
+Partial Class JournalEntryViewerForm
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -20,7 +20,7 @@ Partial Class VoucherViewerForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VoucherViewerForm))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(JournalEntryViewerForm))
         Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
@@ -674,7 +674,7 @@ Partial Class VoucherViewerForm
         Me.GridColumn37.FieldName = "IdProyecto"
         Me.GridColumn37.Name = "GridColumn37"
         '
-        'VoucherViewerForm
+        'JournalEntryViewerForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -684,7 +684,7 @@ Partial Class VoucherViewerForm
         Me.Controls.Add(Me.BarDockControl4)
         Me.Controls.Add(Me.BarDockControl2)
         Me.Controls.Add(Me.BarDockControl1)
-        Me.Name = "VoucherViewerForm"
+        Me.Name = "JournalEntryViewerForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Vista Preliminar de Asiento Contable"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

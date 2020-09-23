@@ -245,12 +245,6 @@
     </Compile>
     <Compile Include="EventUpdate.vb" />
     <Compile Include="GetHtmlTable.vb" />
-    <Compile Include="JournalEntryViewerForm.Designer.vb">
-      <DependentUpon>JournalEntryViewerForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="JournalEntryViewerForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="JournalRegister.vb" />
     <Compile Include="LoadingListForm.Designer.vb">
       <DependentUpon>LoadingListForm.vb</DependentUpon>
@@ -561,9 +555,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EventManagementForm.resx">
       <DependentUpon>EventManagementForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JournalEntryViewerForm.resx">
-      <DependentUpon>JournalEntryViewerForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadingListForm.resx">
       <DependentUpon>LoadingListForm.vb</DependentUpon>

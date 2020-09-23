@@ -90,11 +90,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.Entities", "NextSoft
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.FacturacionElectronica", "NextSoftR2\FacturacionElectronica\Delfin.FacturacionElectronica.csproj", "{7D6147C7-EE51-4EB1-B1B9-98B78834187F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.Principal", "NextSoftR2\Presentation Tier\Delfin.Principal\Delfin.Principal.csproj", "{E83735B6-8168-4EB5-886D-A89925C48409}"
-	ProjectSection(ProjectDependencies) = postProject
-		{908DDE54-D3A5-4781-8F7F-2378D04BA4B5} = {908DDE54-D3A5-4781-8F7F-2378D04BA4B5}
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.ServiceContracts", "NextSoftR2\Services Tier\Delfin.ServiceContracts\Delfin.ServiceContracts.csproj", "{9639899C-F591-47B5-BF00-A46DA6EB0536}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.ServiceProxy", "NextSoftR2\Services Tier\Delfin.ServiceProxy\Delfin.ServiceProxy.csproj", "{A0718A25-B85D-4B4B-BC7A-21FA01D8B594}"
@@ -102,6 +97,8 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AppNet.Integrador", "Integrator\AppNet.Integrador.vbproj", "{E493BB93-33D0-44AE-A9A3-FD066D5D9723}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.BusinessLogic", "NextSoftR2\Business Tier\Delfin.BusinessLogic\Delfin.BusinessLogic.csproj", "{C100EA87-7438-4439-AC79-FAE48BAB42E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.Principal", "NextSoftR2\Presentation Tier\Delfin.Principal\Delfin.Principal.csproj", "{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -509,18 +506,6 @@ Global
 		{7D6147C7-EE51-4EB1-B1B9-98B78834187F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7D6147C7-EE51-4EB1-B1B9-98B78834187F}.Release|x86.ActiveCfg = Release|Any CPU
 		{7D6147C7-EE51-4EB1-B1B9-98B78834187F}.Release|x86.Build.0 = Release|Any CPU
-		{E83735B6-8168-4EB5-886D-A89925C48409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E83735B6-8168-4EB5-886D-A89925C48409}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E83735B6-8168-4EB5-886D-A89925C48409}.Debug|x86.ActiveCfg = Debug|x86
-		{E83735B6-8168-4EB5-886D-A89925C48409}.Debug|x86.Build.0 = Debug|x86
-		{E83735B6-8168-4EB5-886D-A89925C48409}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
-		{E83735B6-8168-4EB5-886D-A89925C48409}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
-		{E83735B6-8168-4EB5-886D-A89925C48409}.DebugLocal|x86.ActiveCfg = Debug|x86
-		{E83735B6-8168-4EB5-886D-A89925C48409}.DebugLocal|x86.Build.0 = Debug|x86
-		{E83735B6-8168-4EB5-886D-A89925C48409}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E83735B6-8168-4EB5-886D-A89925C48409}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E83735B6-8168-4EB5-886D-A89925C48409}.Release|x86.ActiveCfg = Release|x86
-		{E83735B6-8168-4EB5-886D-A89925C48409}.Release|x86.Build.0 = Release|x86
 		{9639899C-F591-47B5-BF00-A46DA6EB0536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9639899C-F591-47B5-BF00-A46DA6EB0536}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9639899C-F591-47B5-BF00-A46DA6EB0536}.Debug|x86.ActiveCfg = Debug|x86
@@ -569,6 +554,18 @@ Global
 		{C100EA87-7438-4439-AC79-FAE48BAB42E2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C100EA87-7438-4439-AC79-FAE48BAB42E2}.Release|x86.ActiveCfg = Release|x86
 		{C100EA87-7438-4439-AC79-FAE48BAB42E2}.Release|x86.Build.0 = Release|x86
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.Debug|x86.ActiveCfg = Debug|x86
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.Debug|x86.Build.0 = Debug|x86
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.DebugLocal|x86.ActiveCfg = Debug|x86
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.DebugLocal|x86.Build.0 = Debug|x86
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.Release|x86.ActiveCfg = Release|x86
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -586,10 +583,10 @@ Global
 		{16DE34BE-9808-447B-8420-30210480AA9D} = {759F1562-3881-476C-98E5-52FE8D9DA208}
 		{985EEA42-A5DA-4766-80FE-6579516F7024} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
 		{7D6147C7-EE51-4EB1-B1B9-98B78834187F} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
-		{E83735B6-8168-4EB5-886D-A89925C48409} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
 		{9639899C-F591-47B5-BF00-A46DA6EB0536} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
 		{A0718A25-B85D-4B4B-BC7A-21FA01D8B594} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
 		{C100EA87-7438-4439-AC79-FAE48BAB42E2} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
+		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB} = {CF7F0D5B-C805-4242-A9CE-8971BF841D49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22787EE7-60C2-4619-A295-33D926CD4F31}

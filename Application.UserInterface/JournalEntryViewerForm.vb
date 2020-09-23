@@ -1,8 +1,8 @@
 ﻿Imports DevExpress.XtraGrid.Views.Grid
 
-Public Class VoucherViewerForm
+Public Class JournalEntryViewerForm
     Friend dsVoucher As New DataSet
-    Private Sub VoucherViewerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub JournalEntryViewerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If dsVoucher Is Nothing Then
             Return
         End If

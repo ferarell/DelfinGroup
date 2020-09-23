@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4E3BB71B-1479-4FBC-920A-70F3EEBE07DC}</ProjectGuid>
+    <ProjectGuid>{E83735B6-8168-4EB5-886D-A89925C48409}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Delfin.Principal</RootNamespace>
     <AssemblyName>NextSoft</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>true</IsWebBootstrapper>
@@ -28,8 +28,8 @@
     <PublisherName>Delfin Group Co SAC</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>10</ApplicationRevision>
-    <ApplicationVersion>2.4.5.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.5.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -80,11 +80,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>DC87BEA73AE94F9E5FA32EDC6D10731FFDD9C858</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>950AB5AE4A7B32137D138467155A0F27DD7B6C00</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>Delfin.Principal_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -101,90 +100,100 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ApplicationForm">
-      <HintPath>..\..\Application.UserInterface\bin\Debug\ApplicationForm.exe</HintPath>
+      <HintPath>..\..\..\Application.UserInterface\bin\Debug\ApplicationForm.exe</HintPath>
     </Reference>
     <Reference Include="BigStick.Http">
       <HintPath>..\..\Librerias\BigStick.Http.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\DelfinGroup\Libraries\CrystalDecisions.ReportSource.dll</HintPath>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\CrystalDecisions.Shared\13.0.2000.0__692fbea5521e1304\CrystalDecisions.Shared.dll</HintPath>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\CrystalDecisions.Shared.1.0.0\lib\CrystalDecisions.Shared.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Delfin.Controls">
       <HintPath>..\..\Librerias\Delfin.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.BonusSkins.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="Delfin.Entities, Version=2.1.4.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Business Tier\Delfin.Entities\bin\Debug\Delfin.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Data.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="DevExpress.Office.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="DevExpress.XtraBars.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraPdfViewer.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v18.2.Drawing, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPdfViewer.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraVerticalGrid.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.Images.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
     <Reference Include="DotNetMagic">
-      <HintPath>..\..\..\NextSoft\Librerias\DotNetMagic.DLL</HintPath>
+      <HintPath>..\..\Librerias\DotNetMagic.DLL</HintPath>
+    </Reference>
+    <Reference Include="eFactDelfin">
+      <HintPath>..\..\FacturacionElectronica\bin\Debug\eFactDelfin.dll</HintPath>
     </Reference>
     <Reference Include="Impresion">
-      <HintPath>..\..\..\NextSoft\Librerias\Impresion.dll</HintPath>
+      <HintPath>..\..\Librerias\Impresion.dll</HintPath>
     </Reference>
     <Reference Include="Infrastructure.Aspect">
       <HintPath>..\..\Librerias\Infrastructure.Aspect.dll</HintPath>
@@ -193,14 +202,14 @@
       <HintPath>..\..\Librerias\Infrastructure.Client.dll</HintPath>
     </Reference>
     <Reference Include="Infrastructure.WinForms.Controls">
-      <HintPath>..\..\..\NextSoft\Librerias\Infrastructure.WinForms.Controls.dll</HintPath>
+      <HintPath>..\..\Librerias\Infrastructure.WinForms.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Infrastructure.WinFormsControls">
       <HintPath>..\..\Librerias\Infrastructure.WinFormsControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MessageSender">
-      <HintPath>..\..\..\HapagLloyd\MessageSender\bin\Debug\MessageSender.dll</HintPath>
+      <HintPath>..\..\..\..\DllsCrystalDecisions\MessageSender.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -242,11 +251,11 @@
     </Reference>
     <Reference Include="NextAdmin.BusinessLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LibreriasAdmin\NextAdmin.BusinessLogic.dll</HintPath>
+      <HintPath>..\..\Librerias\NextAdmin.BusinessLogic.dll</HintPath>
     </Reference>
     <Reference Include="NextAdmin.Views, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LibreriasAdmin\NextAdmin.Views.dll</HintPath>
+      <HintPath>..\..\Librerias\NextAdmin.Views.dll</HintPath>
     </Reference>
     <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -294,21 +303,21 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="TabControlEX">
-      <HintPath>..\..\..\NextSoft\Librerias\TabControlEX.dll</HintPath>
+      <HintPath>..\..\Librerias\TabControlEX.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.WinControls, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LibreriasAdmin\Telerik.WinControls.dll</HintPath>
+      <HintPath>..\..\Librerias\Telerik.WinControls.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.GridView, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LibreriasAdmin\Telerik.WinControls.GridView.dll</HintPath>
+      <HintPath>..\..\Librerias\Telerik.WinControls.GridView.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.UI, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LibreriasAdmin\Telerik.WinControls.UI.dll</HintPath>
+      <HintPath>..\..\Librerias\Telerik.WinControls.UI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.WinControls.UI.Design, Version=2011.2.11.712, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
@@ -331,6 +340,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009ViewTipoSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\MAN009Entidad\MAN009ViewTipoSocio.Designer.cs">
+      <DependentUpon>MAN009ViewTipoSocio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\Comercial\COM007Cotizacion\ActualizaOportunidadCrm.cs" />
     <Compile Include="DataSets\DSCabOperacion.cs">
       <DependentUpon>DSCabOperacion.xsd</DependentUpon>
@@ -1473,6 +1488,61 @@
     <Compile Include="Procesos\TiposCambio\MAN013Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\AvisoArriboAereo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvisoArriboAereo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\AvisoArriboMaritimoFcl.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvisoArriboMaritimoFcl.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\AvisoArriboMaritimoFcl_CLARI.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvisoArriboMaritimoFcl_CLARI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\AvisoArriboMaritimoLcl.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvisoArriboMaritimoLcl.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\AvisoSalidaAereo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvisoSalidaAereo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\AvisoZarpeMaritimo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvisoZarpeMaritimo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\AvisoZarpeMaritimoFcl.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvisoZarpeMaritimoFcl.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reportes\AvisoZarpeMaritimoLcl.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvisoZarpeMaritimoLcl.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Reportes\Comercial\DSCotizacionOV.Designer.cs">
       <DependentUpon>DSCotizacionOV.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1804,7 +1874,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\IntegrationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\NextSoftService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OnLineService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -1855,6 +1935,33 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Logo Delfin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosExpoAereo.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosExpoFcl.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosExpoLcl.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosFcl.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosImpoAereo.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosImpoFcl.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosImpoFcl_CLARI.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosImpoLcl.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\ContenidoCorreoAvisosLcl.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Plantillas\CuentasBancarias.html">
@@ -2132,6 +2239,9 @@
     <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009TView.resx">
       <DependentUpon>MAN009TView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009ViewTipoSocio.resx">
+      <DependentUpon>MAN009ViewTipoSocio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\MAN009Entidad\MAN009VViewHistorial.resx">
       <DependentUpon>MAN009VViewHistorial.cs</DependentUpon>
     </EmbeddedResource>
@@ -2302,6 +2412,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\Facturacion\PRO007RViewFE.resx">
       <DependentUpon>PRO007RViewFE.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\Facturacion\PRO007RViewRC.resx">
       <DependentUpon>PRO007RViewRC.cs</DependentUpon>
@@ -2513,6 +2624,47 @@
     <EmbeddedResource Include="Procesos\TiposCambio\MAN013MView.resx">
       <DependentUpon>MAN013MView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <Content Include="Reportes\AvisoArriboAereo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboAereo1.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoArriboMaritimoFcl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboMaritimoFcl1.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoArriboMaritimoLcl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboMaritimoLcl1.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoZarpeMaritimo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoZarpeMaritimo.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoArriboMaritimoFcl_CLARI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboMaritimoFcl_CLARI.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoSalidaAereo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoSalidaAereo.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoZarpeMaritimoFcl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoZarpeMaritimoFcl.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoZarpeMaritimoLcl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoZarpeMaritimoLcl.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\Finanzas\REP001AuxiliarBancos\REP001AuxiliarBancosLView.resx">
       <DependentUpon>REP001AuxiliarBancosLView.cs</DependentUpon>
     </EmbeddedResource>
@@ -2751,6 +2903,20 @@
     <None Include="DataSets\TarjaRebate.xss">
       <DependentUpon>TarjaRebate.xsd</DependentUpon>
     </None>
+    <None Include="Delfin.Principal_TemporaryKey.pfx" />
+    <Content Include="Plantillas\VoBo HBL ELECTRONICO.PDF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\VoBo HBL-HAWB ELECTRONICO.PDF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\COMUNICADO No.08.PDF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plantillas\COMUNICADO No.10 - VoBo HBL-HAWB ELECTRONICO.PDF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
     <None Include="Procesos\Finanzas\CAJ002IngresosEgresos\CAJ002IngresosEgresosPagos.xsc">
       <DependentUpon>CAJ002IngresosEgresosPagos.xsd</DependentUpon>
     </None>
@@ -2773,8 +2939,13 @@
     <None Include="Procesos\Finanzas\CAJ006LiquidacionAgentes\CAJ006LiquidacionAgentesDS.xss">
       <DependentUpon>CAJ006LiquidacionAgentesDS.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\ApplicationForm.AppService.COM_Det_Cotizacion_OV_EventosTareas_BE.datasource" />
+    <None Include="Properties\DataSources\ApplicationForm.IntegrationService.Respuesta.datasource" />
     <None Include="Properties\DataSources\ApplicationForm.NextSoftService.COM_DetSobrestadia_BE.datasource" />
     <None Include="Properties\DataSources\ApplicationForm.NextSoftService.COM_Sobrestadia_BE.datasource" />
+    <None Include="Properties\DataSources\ApplicationForm.OnLineService.CompositeType.datasource" />
+    <None Include="Properties\DataSources\ApplicationForm.OnLineService.EntidadVinculada_BE.datasource" />
+    <None Include="Properties\DataSources\ApplicationForm.OnLineService.VoyageQueryDTO.datasource" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <Content Include="Resources\abrir.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -2980,6 +3151,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\export.png" />
+    <None Include="Resources\Finanzas.png" />
     <Content Include="Resources\folder_closed_16x16.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -3199,6 +3371,7 @@
     <None Include="Resources\replace2.png" />
     <None Include="Resources\replace14x14.png" />
     <None Include="Resources\replace21.png" />
+    <None Include="Resources\Reportes.png" />
     <Content Include="Resources\Right_32x32.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -3264,6 +3437,8 @@
     <None Include="Resources\Sign 18.png" />
     <None Include="Resources\Sign 071.png" />
     <None Include="Resources\Sign 181.png" />
+    <None Include="Resources\ServicioLogistico.png" />
+    <None Include="Resources\Tarifario.png" />
     <Content Include="Resources\Transportista_32x32.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -3497,8 +3672,6 @@
     <None Include="Reportes\OPE001MatrizDraft\DSMatrizDraft.xss">
       <DependentUpon>DSMatrizDraft.xsd</DependentUpon>
     </None>
-    <None Include="Service References\AppService\configuration91.svcinfo" />
-    <None Include="Service References\AppService\configuration.svcinfo" />
     <None Include="Service References\AppService\DelfinService.wsdl" />
     <None Include="Service References\AppService\DelfinService.xsd">
       <SubType>Designer</SubType>
@@ -3515,40 +3688,72 @@
     <None Include="Service References\AppService\DelfinService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
+    <None Include="Service References\AppService\DelfinService5.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService.disco" />
-    <None Include="Service References\NextSoftService\configuration91.svcinfo" />
-    <None Include="Service References\NextSoftService\configuration.svcinfo" />
-    <None Include="Service References\NextSoftService\NextSoftService1.wsdl" />
+    <None Include="Service References\IntegrationService\IntegradorSBO.wsdl" />
+    <None Include="Service References\IntegrationService\IntegradorSBO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IntegrationService\IntegradorSBO1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IntegrationService\IntegradorSBO2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IntegrationService\IntegradorSBO3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\Write 09.png" />
+    <None Include="Resources\Write 11.png" />
+    <None Include="Resources\Write 10.png" />
+    <None Include="Service References\NextSoftService\NextSoftService.wsdl" />
+    <None Include="Service References\NextSoftService\NextSoftService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NextSoftService\NextSoftService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\NextSoftService\NextSoftService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NextSoftService\NextSoftService41.xsd">
+    <None Include="Service References\NextSoftService\NextSoftService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\NextSoftService\NextSoftService42.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Service References\IntegrationService\configuration91.svcinfo" />
+    <None Include="Service References\IntegrationService\configuration.svcinfo" />
+    <None Include="Service References\IntegrationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\NextSoftService\NextSoftService43.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\NextSoftService\NextSoftService44.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\NextSoftService\NextSoftService45.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Service References\IntegrationService\IntegradorSBO.disco" />
+    <None Include="Service References\NextSoftService\NextSoftService.disco" />
+    <None Include="Service References\NextSoftService\configuration91.svcinfo" />
+    <None Include="Service References\NextSoftService\configuration.svcinfo" />
     <None Include="Service References\NextSoftService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\NextSoftService\NextSoftService1.disco" />
-    <None Include="Resources\Write 09.png" />
-    <None Include="Resources\Write 11.png" />
-    <None Include="Resources\Write 10.png" />
+    <None Include="Service References\OnLineService\OnLineService.disco" />
+    <None Include="Service References\OnLineService\configuration91.svcinfo" />
+    <None Include="Service References\OnLineService\configuration.svcinfo" />
+    <None Include="Service References\OnLineService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AppService\DelfinService.disco" />
+    <None Include="Service References\AppService\configuration91.svcinfo" />
+    <None Include="Service References\AppService\configuration.svcinfo" />
+    <None Include="Service References\AppService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="SmtpMail.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -3685,6 +3890,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\OnLineService\OnLineService.wsdl" />
+    <None Include="Service References\OnLineService\OnLineService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OnLineService\OnLineService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -3692,9 +3919,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Data.Access.Components.2.8">
@@ -3737,24 +3964,6 @@
       <ProductName>SAP Crystal Reports Runtime Engine for .NET Framework</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\1. Business Tier\Delfin.BusinessLogic\Delfin.BusinessLogic.csproj">
-      <Project>{c100ea87-7438-4439-ac79-fae48bab42e2}</Project>
-      <Name>Delfin.BusinessLogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\1. Business Tier\Delfin.Entities\Delfin.Entities.csproj">
-      <Project>{f32cdd23-0d2e-4b37-99fc-7a072be8b5f5}</Project>
-      <Name>Delfin.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\2. Services Tier\Delfin.ServiceContracts\Delfin.ServiceContracts.csproj">
-      <Project>{15b3e0d2-6217-493a-a690-158c497f5318}</Project>
-      <Name>Delfin.ServiceContracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\2. Services Tier\Delfin.ServiceProxy\Delfin.ServiceProxy.csproj">
-      <Project>{e6205c17-c9da-42c9-81e7-721505073e2d}</Project>
-      <Name>Delfin.ServiceProxy</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\cube_blue.png">
@@ -3942,7 +4151,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.BonusSkins.v13.1">
+    <PublishFile Include="DevExpress.BonusSkins.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3952,7 +4161,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Data.v13.1">
+    <PublishFile Include="DevExpress.Data.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3962,7 +4171,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Office.v13.1.Core">
+    <PublishFile Include="DevExpress.Office.v18.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3972,7 +4181,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Pdf.v13.1.Core">
+    <PublishFile Include="DevExpress.Pdf.v18.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3982,7 +4191,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.PivotGrid.v13.1.Core">
+    <PublishFile Include="DevExpress.PivotGrid.v18.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3992,7 +4201,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Printing.v13.1.Core">
+    <PublishFile Include="DevExpress.Printing.v18.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4002,7 +4211,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.RichEdit.v13.1.Core">
+    <PublishFile Include="DevExpress.RichEdit.v18.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4012,7 +4221,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Sparkline.v13.1.Core">
+    <PublishFile Include="DevExpress.Sparkline.v18.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4022,7 +4231,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Utils.v13.1">
+    <PublishFile Include="DevExpress.Utils.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4032,7 +4241,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraBars.v13.1">
+    <PublishFile Include="DevExpress.XtraBars.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4042,7 +4251,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraEditors.v13.1">
+    <PublishFile Include="DevExpress.XtraEditors.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4052,7 +4261,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraGrid.v13.1">
+    <PublishFile Include="DevExpress.XtraGrid.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4062,7 +4271,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraLayout.v13.1">
+    <PublishFile Include="DevExpress.XtraLayout.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4072,7 +4281,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraPdfViewer.v13.1">
+    <PublishFile Include="DevExpress.XtraPdfViewer.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4082,7 +4291,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraPrinting.v13.1">
+    <PublishFile Include="DevExpress.XtraPrinting.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4092,7 +4301,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraRichEdit.v13.1">
+    <PublishFile Include="DevExpress.XtraRichEdit.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4102,7 +4311,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraTreeList.v13.1">
+    <PublishFile Include="DevExpress.XtraTreeList.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4112,7 +4321,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraVerticalGrid.v13.1">
+    <PublishFile Include="DevExpress.XtraVerticalGrid.v18.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -4428,13 +4637,25 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AppService\" />
+    <WCFMetadataStorage Include="Service References\IntegrationService\" />
     <WCFMetadataStorage Include="Service References\NextSoftService\" />
+    <WCFMetadataStorage Include="Service References\OnLineService\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Services Tier\Delfin.ServiceContracts\Delfin.ServiceContracts.csproj">
+      <Project>{9639899c-f591-47b5-bf00-a46da6eb0536}</Project>
+      <Name>Delfin.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services Tier\Delfin.ServiceProxy\Delfin.ServiceProxy.csproj">
+      <Project>{a0718a25-b85d-4b4b-bc7a-21fa01d8b594}</Project>
+      <Name>Delfin.ServiceProxy</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

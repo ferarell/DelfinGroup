@@ -12,7 +12,8 @@ Public Class AccountingTransferForm
         SplitContainerControl2.SplitterPosition = SplitContainerControl2.Height * 0.8
         deDateFrom.EditValue = DateAdd(DateInterval.Day, -90, Now)
         deDateTo.EditValue = Now
-        'LoadBusinessUnit()
+        EMPR_Codigo = 1
+        SUCR_Codigo = "01"
     End Sub
 
     'Private Sub LoadBusinessUnit()
@@ -36,14 +37,42 @@ Public Class AccountingTransferForm
         If DevExpress.XtraEditors.XtraMessageBox.Show("Se generarán asientos de provisión de cada Nave/Viaje seleccionado, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
             Return
         End If
+        Dim iCurrentRow As Integer = 0
+        Dim iSelected As Integer = RowSelectedCount(GridView1)
         For r = 0 To GridView1.DataRowCount - 1
             Dim oRow As DataRow = GridView1.GetDataRow(r)
-            If oRow("Checked") = False Then
-                Continue For
-            End If
-            'Interfaz de Asiento Diario
-
+            Dim dsJournalEntry As New DataSet
+            Try
+                If IsDBNull(oRow("Checked")) Then
+                    oRow("Checked") = False
+                End If
+                If oRow("Checked") = False Then
+                    Continue For
+                End If
+                iCurrentRow = +1
+                SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+                SplashScreenManager.Default.SetWaitFormDescription("Sincronizando (" & iCurrentRow.ToString & " de " & iSelected.ToString & ") Código de Viaje:  " & oRow("NVIA_Codigo"))
+                'EMPR_Codigo = 1
+                'SUCR_Codigo = "01"
+                Dim NVIA_Codigo As Integer = GridView1.GetFocusedRowCellValue("NVIA_Codigo")
+                Dim CONS_CodLNG As String = GridView1.GetFocusedRowCellValue("CONS_CodLNG")
+                dsJournalEntry = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " & EMPR_Codigo & ",'" & SUCR_Codigo & "'," & NVIA_Codigo.ToString & ",'" & CONS_CodLNG & "', 0, '" & AppUser & "', 'S'")
+                If dsJournalEntry.Tables(0).Rows.Count = 0 Then
+                    XtraMessageBox.Show("El código de viaje " & NVIA_Codigo.ToString & " no tiene datos asociados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+                'Interfaz de Asiento Diario
+                Dim aRespuesta As New ArrayList
+                aRespuesta.AddRange(oIntegrationService.InsertarActualizarJournalEntry(dsJournalEntry))
+                If aRespuesta(0).RespuestaSAP = 0 Then
+                    XtraMessageBox.Show("Ocurrió un error al actualizar el código de viaje " & NVIA_Codigo.ToString & " en SAP" & vbCrLf & DirectCast(aRespuesta(0), ApplicationForm.IntegrationService.Respuesta).Response(0).[error].Message.Value, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Catch ex As Exception
+                'SplashScreenManager.CloseForm(False)
+                XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         Next
+        SplashScreenManager.CloseForm(False)
 
     End Sub
 
@@ -63,11 +92,11 @@ Public Class AccountingTransferForm
         'If IsDBNull(GridView1.GetFocusedRowCellValue("Checked")) Then
         '    GridView1.SetFocusedRowCellValue("Checked", False)
         'End If
-        If GridView1.GetFocusedRowCellValue("NVIA_Codigo") Is Nothing Then
+        If GridView1.GetFocusedRowCellValue("NVIA_Codigo") Is Nothing Or GridView1.GetFocusedRowCellValue("CONS_CodLNG") Is Nothing Then
             Return
         End If
         Dim dtQuery As New DataTable
-        dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneListaOvPorFiltros NULL, " & GridView1.GetFocusedRowCellValue("NVIA_Codigo").ToString & ", NULL, NULL").Tables(0)
+        dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneListaOvPorFiltros NULL, " & GridView1.GetFocusedRowCellValue("NVIA_Codigo").ToString & ",'" & GridView1.GetFocusedRowCellValue("CONS_CodLNG").ToString & "', NULL, NULL").Tables(0)
         If dtQuery.Rows.Count = 0 Then
             Return
         End If
@@ -86,17 +115,21 @@ Public Class AccountingTransferForm
         Dim dsReferences As New DataSet
         Dim TipoReferencia, HBL As String
         TipoReferencia = GridView1.GetFocusedRowCellValue("Origen")
+        Dim iCurrentRow As Integer = 0
+        Dim iSelected As Integer = RowSelectedCount(GridView2)
         For r = 0 To GridView2.DataRowCount - 1
             Dim oRow As DataRow = GridView2.GetDataRow(r)
             Try
-                SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-                SplashScreenManager.Default.SetWaitFormDescription("Sincronizando (" & (r + 1).ToString & " de " & (GridView2.DataRowCount).ToString & ") HBL:  " & oRow("HBL"))
                 If IsDBNull(oRow("Checked")) Then
                     oRow("Checked") = False
                 End If
                 If oRow("Checked") = False Then
                     Continue For
                 End If
+                iCurrentRow = +1
+                SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+                SplashScreenManager.Default.SetWaitFormDescription("Sincronizando (" & iCurrentRow.ToString & " de " & iSelected.ToString & ") HBL:  " & oRow("HBL"))
+
                 'Interfaz de Referncias
                 HBL = oRow("HBL")
                 dsReferences = oAppService.ExecuteSQL("NextSoft.sap.upGetDataForReferenciaInterface '" & TipoReferencia & "','" & HBL & "','" & AppUser & "'")
@@ -123,7 +156,7 @@ Public Class AccountingTransferForm
             DevExpress.XtraEditors.XtraMessageBox.Show("No puede generar la provisión de una Nave/Viaje que aún no se ha pre-facturado. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
         If GridView1.GetFocusedRowCellValue("AsientoContable").ToString.Length > 0 Then
-            GridView1.SetFocusedRowCellValue("Checked", False)
+            'GridView1.SetFocusedRowCellValue("Checked", False)
         End If
     End Sub
 
@@ -186,13 +219,27 @@ Public Class AccountingTransferForm
 
     Private Sub bbiVoucherPreview_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiVoucherPreview.ItemClick
         Dim dsQuery As New DataSet
-        Dim oForm As New VoucherViewerForm
-        EMPR_Codigo = 1
-        SUCR_Codigo = "01"
+        Dim oForm As New JournalEntryViewerForm
+        'EMPR_Codigo = 1
+        'SUCR_Codigo = "01"
         Dim NVIA_Codigo As Integer = GridView1.GetFocusedRowCellValue("NVIA_Codigo")
         Dim CONS_CodLNG As String = GridView1.GetFocusedRowCellValue("CONS_CodLNG")
-        dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " & EMPR_Codigo & ",'" & SUCR_Codigo & "'," & NVIA_Codigo.ToString & ",'" & CONS_CodLNG & "', 0, '" & AppUser & "'")
+        dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " & EMPR_Codigo & ",'" & SUCR_Codigo & "'," & NVIA_Codigo.ToString & ",'" & CONS_CodLNG & "', 0, '" & AppUser & "', 'P'")
         oForm.dsVoucher = dsQuery
         oForm.ShowDialog()
     End Sub
+
+    'Friend Function RowSelectedCount(oGridView As GridView) As Integer
+    '    Dim iChecked As Integer = 0
+    '    For i = 0 To oGridView.RowCount - 1
+    '        If IsDBNull(oGridView.GetRowCellValue(i, "Checked")) Then
+    '            Continue For
+    '        End If
+    '        If oGridView.GetRowCellValue(i, "Checked") Then
+    '            iChecked += 1
+    '        End If
+    '    Next
+    '    Return iChecked
+    'End Function
+
 End Class

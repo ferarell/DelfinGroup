@@ -26,6 +26,12 @@
   <wsdl:message name="IIntegradorSBO_InsertarActualizarReferencias_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertarActualizarReferenciasResponse" />
   </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarJournalEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarJournalEntry" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarJournalEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarJournalEntryResponse" />
+  </wsdl:message>
   <wsdl:portType name="IIntegradorSBO">
     <wsdl:operation name="InsertarActualizarServicio">
       <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarServicio" message="tns:IIntegradorSBO_InsertarActualizarServicio_InputMessage" />
@@ -38,6 +44,10 @@
     <wsdl:operation name="InsertarActualizarReferencias">
       <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarReferencias" message="tns:IIntegradorSBO_InsertarActualizarReferencias_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarReferenciasResponse" message="tns:IIntegradorSBO_InsertarActualizarReferencias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarJournalEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry" message="tns:IIntegradorSBO_InsertarActualizarJournalEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntryResponse" message="tns:IIntegradorSBO_InsertarActualizarJournalEntry_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IIntegradorSBO" type="tns:IIntegradorSBO">
@@ -62,6 +72,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertarActualizarReferencias">
       <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarReferencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarJournalEntry">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -32,6 +32,12 @@ namespace Delfin.Principal.IntegrationService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarReferencias", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarReferenciasResponse")]
         System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarReferenciasAsync(System.Data.DataSet dsReferencias);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntryResponse")]
+        ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarJournalEntry(System.Data.DataSet dsInvoiceBill);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntryResponse")]
+        System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarJournalEntryAsync(System.Data.DataSet dsInvoiceBill);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +89,14 @@ namespace Delfin.Principal.IntegrationService {
         
         public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarReferenciasAsync(System.Data.DataSet dsReferencias) {
             return base.Channel.InsertarActualizarReferenciasAsync(dsReferencias);
+        }
+        
+        public ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarJournalEntry(System.Data.DataSet dsInvoiceBill) {
+            return base.Channel.InsertarActualizarJournalEntry(dsInvoiceBill);
+        }
+        
+        public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarJournalEntryAsync(System.Data.DataSet dsInvoiceBill) {
+            return base.Channel.InsertarActualizarJournalEntryAsync(dsInvoiceBill);
         }
     }
 }

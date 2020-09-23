@@ -1460,6 +1460,7 @@
             this.bindingNavigatorPositionItem1.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -1501,12 +1502,12 @@
             this.cmsItems.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.insertarEventoToolStripMenuItem});
             this.cmsItems.Name = "cmsItems";
-            this.cmsItems.Size = new System.Drawing.Size(181, 48);
+            this.cmsItems.Size = new System.Drawing.Size(153, 26);
             // 
             // insertarEventoToolStripMenuItem
             // 
             this.insertarEventoToolStripMenuItem.Name = "insertarEventoToolStripMenuItem";
-            this.insertarEventoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.insertarEventoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.insertarEventoToolStripMenuItem.Text = "&Insertar Evento";
             this.insertarEventoToolStripMenuItem.Click += new System.EventHandler(this.insertarEventoToolStripMenuItem_Click);
             // 

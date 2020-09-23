@@ -209,7 +209,7 @@ namespace Delfin.Principal
             grdItems.EnableGrouping = false;
             grdItems.MasterTemplate.EnableGrouping = false;
             grdItems.EnableSorting = false;
-            grdItems.MasterTemplate.EnableCustomSorting = false;
+            grdItems.MasterTemplate.EnableCustomSorting = false;               
 
             SeleccionarItem();
          }
@@ -329,7 +329,12 @@ namespace Delfin.Principal
             grdItems.MasterTemplate.EnableGrouping = false;
             grdItems.EnableSorting = false;
             grdItems.MasterTemplate.EnableCustomSorting = false;
-         }
+
+                ExpressionFormattingObject obj = new ExpressionFormattingObject("MyCondition", "Bloqueado = 1", true);
+                //obj.CellForeColor = Color.Red;
+                obj.RowBackColor = Color.Red;
+                this.grdItems.Columns["Bloqueado"].ConditionalFormattingObjectList.Add(obj);
+            }
          catch (Exception ex)
          { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Presenter.Title, Infrastructure.Aspect.Constants.Mensajes.FormatDataGridView, ex); }
       }
@@ -741,6 +746,11 @@ namespace Delfin.Principal
                 oEventManagementForm.bInsert = true;
                 oEventManagementForm.Show();
             }
+        }
+
+        private void grdItems_RowPaint(object sender, GridViewRowPaintEventArgs e)
+        {
+            this.grdItems.TableElement.BackColor = Color.Red;
         }
     }
 }

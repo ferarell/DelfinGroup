@@ -171,6 +171,12 @@ Namespace IntegrationService
         Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private DocEntryField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private DocNumField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private errorField As IntegrationService.Wrong
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
@@ -180,6 +186,32 @@ Namespace IntegrationService
             End Get
             Set
                 Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property DocEntry() As Integer
+            Get
+                Return Me.DocEntryField
+            End Get
+            Set
+                If (Me.DocEntryField.Equals(value) <> true) Then
+                    Me.DocEntryField = value
+                    Me.RaisePropertyChanged("DocEntry")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property DocNum() As Integer
+            Get
+                Return Me.DocNumField
+            End Get
+            Set
+                If (Me.DocNumField.Equals(value) <> true) Then
+                    Me.DocNumField = value
+                    Me.RaisePropertyChanged("DocNum")
+                End If
             End Set
         End Property
         
@@ -353,6 +385,12 @@ Namespace IntegrationService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarReferencias", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarReferenciasResponse")>  _
         Function InsertarActualizarReferenciasAsync(ByVal dsReferencias As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntryResponse")>  _
+        Function InsertarActualizarJournalEntry(ByVal dsInvoiceBill As System.Data.DataSet) As IntegrationService.Respuesta()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntryResponse")>  _
+        Function InsertarActualizarJournalEntryAsync(ByVal dsInvoiceBill As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -408,6 +446,14 @@ Namespace IntegrationService
         
         Public Function InsertarActualizarReferenciasAsync(ByVal dsReferencias As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta()) Implements IntegrationService.IIntegradorSBO.InsertarActualizarReferenciasAsync
             Return MyBase.Channel.InsertarActualizarReferenciasAsync(dsReferencias)
+        End Function
+        
+        Public Function InsertarActualizarJournalEntry(ByVal dsInvoiceBill As System.Data.DataSet) As IntegrationService.Respuesta() Implements IntegrationService.IIntegradorSBO.InsertarActualizarJournalEntry
+            Return MyBase.Channel.InsertarActualizarJournalEntry(dsInvoiceBill)
+        End Function
+        
+        Public Function InsertarActualizarJournalEntryAsync(ByVal dsInvoiceBill As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta()) Implements IntegrationService.IIntegradorSBO.InsertarActualizarJournalEntryAsync
+            Return MyBase.Channel.InsertarActualizarJournalEntryAsync(dsInvoiceBill)
         End Function
     End Class
 End Namespace

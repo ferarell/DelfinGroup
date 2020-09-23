@@ -26,6 +26,8 @@
   <xs:element name="ArrayOfResponse" nillable="true" type="tns:ArrayOfResponse" />
   <xs:complexType name="Response">
     <xs:sequence>
+      <xs:element minOccurs="0" name="DocEntry" type="xs:int" />
+      <xs:element minOccurs="0" name="DocNum" type="xs:int" />
       <xs:element minOccurs="0" name="error" nillable="true" type="tns:Wrong" />
     </xs:sequence>
   </xs:complexType>

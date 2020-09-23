@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="Windows-1252"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <FullPath>Debug</FullPath>
     <OutputPath>bin\Debug</OutputPath>
@@ -37,7 +37,7 @@
     <Platform>Win32</Platform>
     <TargetReportFolder>ReportingServices.InformesOperativos</TargetReportFolder>
     <TargetDatasetFolder>Conjuntos de datos</TargetDatasetFolder>
-    <TargetDatasourceFolder>Orígenes de datos</TargetDatasourceFolder>
+    <TargetDatasourceFolder>Or?genes de datos</TargetDatasourceFolder>
     <TargetReportPartFolder>Elementos de informe</TargetReportPartFolder>
   </PropertyGroup>
   <PropertyGroup>
