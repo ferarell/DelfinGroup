@@ -28,26 +28,27 @@
       /// </summary>
       private void InitializeComponent()
       {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Documento de Transporte");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Manifiesto de Carga");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Documento Nacional de Identidad - DNI");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Registro Único de Contribuyente - RUC");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Comunicación de Origen Proveedor");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Comunicación de Origen Embarcador");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Acta de Reconocimiento Previo");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Factura Comercial / Declaración Jurada");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Especificaciones Técnicas");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Liquidación de Cobranza Cancelada");
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("Volante de Despacho");
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("Declaración Aduanera Autenticada");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("Nota de tarja / Tarja al Detalle");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("Lista de Embarque");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Documento de Puerto / Aereopuerto / Terminal");
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Certificado de Peso");
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Ticket de Balanza");
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("Otros");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OPE001MView));
-            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem("Documento de Transporte");
-            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem("Manifiesto de Carga");
-            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem("Documento Nacional de Identidad - DNI");
-            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem("Registro Único de Contribuyente - RUC");
-            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem("Comunicación de Origen Proveedor");
-            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem("Comunicación de Origen Embarcador");
-            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem("Acta de Reconocimiento Previo");
-            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem("Factura Comercial / Declaración Jurada");
-            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem("Especificaciones Técnicas");
-            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem("Liquidación de Cobranza Cancelada");
-            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem("Volante de Despacho");
-            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem("Declaración Aduanera Autenticada");
-            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem("Nota de tarja / Tarja al Detalle");
-            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem("Lista de Embarque");
-            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem("Documento de Puerto / Aereopuerto / Terminal");
-            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem("Certificado de Peso");
-            System.Windows.Forms.ListViewItem listViewItem53 = new System.Windows.Forms.ListViewItem("Ticket de Balanza");
-            System.Windows.Forms.ListViewItem listViewItem54 = new System.Windows.Forms.ListViewItem("Otros");
-            this.errorProviderCab_Cotizacion_OV = new System.Windows.Forms.ErrorProvider();
+            this.errorProviderCab_Cotizacion_OV = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabCab_Cotizacion_OV = new Dotnetrix.Controls.TabControlEX();
             this.pageGenerales = new Dotnetrix.Controls.TabPageEX();
             this.tableDatosGenerales = new System.Windows.Forms.TableLayoutPanel();
@@ -64,7 +65,7 @@
             this.lblCONS_CodESTOV = new System.Windows.Forms.Label();
             this.cmbCONS_CodESTOV = new Delfin.Controls.Tipos.ComboBoxConstantes();
             this.lblENTC_CodCliente = new System.Windows.Forms.Label();
-            this.txaENTC_CodCliente = new Delfin.Controls.Entidad();
+            this.txaENTC_CodCliente = new Delfin.Controls.Entidad(this.components);
             this.mdtCCOT_FecVcto = new Infrastructure.WinForms.Controls.MaskDateTime();
             this.lblCCOT_FecVcto = new System.Windows.Forms.Label();
             this.mdtCCOT_FecEmi = new Infrastructure.WinForms.Controls.MaskDateTime();
@@ -78,11 +79,11 @@
             this.label29 = new System.Windows.Forms.Label();
             this.chkCCOT_DiferenciaFlete = new System.Windows.Forms.CheckBox();
             this.lblENTC_CodAgente = new System.Windows.Forms.Label();
-            this.txaENTC_CodAgente = new Delfin.Controls.Entidad();
+            this.txaENTC_CodAgente = new Delfin.Controls.Entidad(this.components);
             this.lblENTC_CodEjecutivo = new System.Windows.Forms.Label();
-            this.txaENTC_CodEjecutivo = new Delfin.Controls.Entidad();
+            this.txaENTC_CodEjecutivo = new Delfin.Controls.Entidad(this.components);
             this.lblENTC_CodBroker = new System.Windows.Forms.Label();
-            this.txaENTC_CodBroker = new Delfin.Controls.Entidad();
+            this.txaENTC_CodBroker = new Delfin.Controls.Entidad(this.components);
             this.label28 = new System.Windows.Forms.Label();
             this.chkCCOT_VBLogistico = new System.Windows.Forms.CheckBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -108,13 +109,13 @@
             this.lblCCOT_FecAprueba = new System.Windows.Forms.Label();
             this.mdtCCOT_FecAprueba = new Infrastructure.WinForms.Controls.MaskDateTime();
             this.lblENTC_CodCustomer = new System.Windows.Forms.Label();
-            this.txaENTC_CodCustomer = new Delfin.Controls.Entidad();
+            this.txaENTC_CodCustomer = new Delfin.Controls.Entidad(this.components);
             this.label43 = new System.Windows.Forms.Label();
-            this.txaENTC_CodShipper = new Delfin.Controls.Entidad();
+            this.txaENTC_CodShipper = new Delfin.Controls.Entidad(this.components);
             this.label44 = new System.Windows.Forms.Label();
-            this.txaENTC_CodConsignee = new Delfin.Controls.Entidad();
+            this.txaENTC_CodConsignee = new Delfin.Controls.Entidad(this.components);
             this.label45 = new System.Windows.Forms.Label();
-            this.txaENTC_CodNotify = new Delfin.Controls.Entidad();
+            this.txaENTC_CodNotify = new Delfin.Controls.Entidad(this.components);
             this.lblTIPO_CodINC = new System.Windows.Forms.Label();
             this.cmbTIPO_CodINC = new Delfin.Controls.Tipos.ComboBoxTipos();
             this.lblDOOV_CodReferencia = new System.Windows.Forms.Label();
@@ -145,9 +146,9 @@
             this.grdItemsFlete = new Telerik.WinControls.UI.RadGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblCCOT_PagoMBL = new System.Windows.Forms.Label();
-            this.cmbCCOT_PagoMBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
+            this.cmbCCOT_PagoMBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
             this.lblCCOT_PagoHBL = new System.Windows.Forms.Label();
-            this.cmbCCOT_PagoHBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
+            this.cmbCCOT_PagoHBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
             this.lblDCOT_Importe = new System.Windows.Forms.Label();
             this.txnDCOT_Importe = new Infrastructure.WinForms.Controls.TextBoxNumerico();
             this.lblDCOT_Rentabilidad = new System.Windows.Forms.Label();
@@ -158,11 +159,11 @@
             this.btnAddFlete = new System.Windows.Forms.Button();
             this.panelCaption4 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.txaENTC_CodTransportista = new Delfin.Controls.Entidad();
+            this.txaENTC_CodTransportista = new Delfin.Controls.Entidad(this.components);
             this.lblENTC_CodTransportista = new System.Windows.Forms.Label();
             this.lblCONT_Numero = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txaCONT_Numero = new Infrastructure.WinForms.Controls.TextBoxAyuda();
+            this.txaCONT_Numero = new Infrastructure.WinForms.Controls.TextBoxAyuda(this.components);
             this.btnCambiarContrato = new System.Windows.Forms.Button();
             this.txtCONT_Descrip = new System.Windows.Forms.TextBox();
             this.lblPUER_CodOrigen = new System.Windows.Forms.Label();
@@ -218,7 +219,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCCOT_Observaciones = new System.Windows.Forms.TextBox();
             this.panelCaption9 = new Infrastructure.WinForms.Controls.PanelCaption();
-            this.navItemsArchivos = new System.Windows.Forms.BindingNavigator();
+            this.navItemsArchivos = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
@@ -233,12 +234,12 @@
             this.pageDatosDocumento = new Dotnetrix.Controls.TabPageEX();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label39 = new System.Windows.Forms.Label();
-            this.txaENTC_CodNotifyNieto = new Delfin.Controls.Entidad();
+            this.txaENTC_CodNotifyNieto = new Delfin.Controls.Entidad(this.components);
             this.chkDDOV_HBLNieto = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txaENTC_CodShipperNieto = new Delfin.Controls.Entidad();
+            this.txaENTC_CodShipperNieto = new Delfin.Controls.Entidad(this.components);
             this.label11 = new System.Windows.Forms.Label();
-            this.txaENTC_CodConsigneeNieto = new Delfin.Controls.Entidad();
+            this.txaENTC_CodConsigneeNieto = new Delfin.Controls.Entidad(this.components);
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDOOV_NumeroBLNieto = new System.Windows.Forms.TextBox();
@@ -275,7 +276,7 @@
             this.lblNAVE_Nombre = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.txtNVIA_NroViaje = new System.Windows.Forms.TextBox();
-            this.txaNVIA_Codigo = new Infrastructure.WinForms.Controls.TextBoxAyuda();
+            this.txaNVIA_Codigo = new Infrastructure.WinForms.Controls.TextBoxAyuda(this.components);
             this.label58 = new System.Windows.Forms.Label();
             this.cmbTIPO_CodTRF = new Delfin.Controls.Tipos.ComboBoxTipos();
             this.lblDOOV_FecETDFeeder_IMPO = new System.Windows.Forms.Label();
@@ -293,7 +294,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnCMBL_Numero = new System.Windows.Forms.Button();
             this.txtDOOV_MBL = new System.Windows.Forms.TextBox();
-            this.txaENTC_CodDepTemporal = new Delfin.Controls.Entidad();
+            this.txaENTC_CodDepTemporal = new Delfin.Controls.Entidad(this.components);
             this.txtDOOV_Cntr = new System.Windows.Forms.TextBox();
             this.lblDOOV_Cntr = new System.Windows.Forms.Label();
             this.lblDOOV_MBL = new System.Windows.Forms.Label();
@@ -339,7 +340,7 @@
             this.btnExportarMatrizDraft = new System.Windows.Forms.ToolStripButton();
             this.btnImportarMatrizDraft = new System.Windows.Forms.ToolStripButton();
             this.btnImprimirMatrizDraft = new System.Windows.Forms.ToolStripButton();
-            this.navItemsCNTR = new System.Windows.Forms.BindingNavigator();
+            this.navItemsCNTR = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
@@ -390,7 +391,7 @@
             this.lblEVEN_Usuario = new System.Windows.Forms.Label();
             this.EVEN_Usuario = new System.Windows.Forms.TextBox();
             this.panelEventoTarea = new Infrastructure.WinForms.Controls.PanelCaption();
-            this.navItemsEventos = new System.Windows.Forms.BindingNavigator();
+            this.navItemsEventos = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -429,12 +430,12 @@
             this.rbtANEX_TipoI = new System.Windows.Forms.RadioButton();
             this.rbtANEX_TipoR = new System.Windows.Forms.RadioButton();
             this.lblANEX_TipoRectificacion = new System.Windows.Forms.Label();
-            this.cmbANEX_TipoRectificacion = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
+            this.cmbANEX_TipoRectificacion = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
             this.label25 = new System.Windows.Forms.Label();
             this.lblANEX_Funadamentos = new System.Windows.Forms.Label();
             this.pageListRectificaciones = new Dotnetrix.Controls.TabPageEX();
             this.grdItemsAnexos = new Telerik.WinControls.UI.RadGridView();
-            this.navItemsAnexos = new System.Windows.Forms.BindingNavigator();
+            this.navItemsAnexos = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -450,9 +451,9 @@
             this.btnDeshacerAnexo = new System.Windows.Forms.ToolStripButton();
             this.btnImprimirAnexo = new System.Windows.Forms.ToolStripButton();
             this.panelCaption18 = new Infrastructure.WinForms.Controls.PanelCaption();
-            this.errorProviderDet_Cotizacion_OV_Novedad = new System.Windows.Forms.ErrorProvider();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
-            this.errorEventoTarea = new System.Windows.Forms.ErrorProvider();
+            this.errorProviderDet_Cotizacion_OV_Novedad = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.errorEventoTarea = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
@@ -471,7 +472,8 @@
             this.btnCargoManifest = new System.Windows.Forms.ToolStripButton();
             this.btnEtiqueta = new System.Windows.Forms.ToolStripButton();
             this.btnAuditoriaCab_Cotizacion_OV = new System.Windows.Forms.ToolStripButton();
-            this.errorAnexo = new System.Windows.Forms.ErrorProvider();
+            this.errorAnexo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnEnviarProvisionSAP = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCab_Cotizacion_OV)).BeginInit();
             this.tabCab_Cotizacion_OV.SuspendLayout();
             this.pageGenerales.SuspendLayout();
@@ -568,7 +570,7 @@
             this.tabCab_Cotizacion_OV.Location = new System.Drawing.Point(0, 38);
             this.tabCab_Cotizacion_OV.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabCab_Cotizacion_OV.Name = "tabCab_Cotizacion_OV";
-            this.tabCab_Cotizacion_OV.SelectedIndex = 3;
+            this.tabCab_Cotizacion_OV.SelectedIndex = 1;
             this.tabCab_Cotizacion_OV.SelectedTabColor = System.Drawing.Color.SteelBlue;
             this.tabCab_Cotizacion_OV.Size = new System.Drawing.Size(1113, 523);
             this.tabCab_Cotizacion_OV.TabIndex = 1;
@@ -1691,11 +1693,10 @@
             // 
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.BackColor = System.Drawing.Color.Transparent;
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.Image = global::Delfin.Principal.Properties.Resources.businessman_view;
-            this.btnAuditoriaDet_Cotizacion_OV_Servicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAuditoriaDet_Cotizacion_OV_Servicio.Location = new System.Drawing.Point(346, 1);
+            this.btnAuditoriaDet_Cotizacion_OV_Servicio.Location = new System.Drawing.Point(402, 1);
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.Name = "btnAuditoriaDet_Cotizacion_OV_Servicio";
-            this.btnAuditoriaDet_Cotizacion_OV_Servicio.Size = new System.Drawing.Size(25, 25);
+            this.btnAuditoriaDet_Cotizacion_OV_Servicio.Size = new System.Drawing.Size(30, 25);
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.TabIndex = 4;
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnAuditoriaDet_Cotizacion_OV_Servicio, "Auditoria Detalle Servicio");
@@ -1705,11 +1706,10 @@
             // 
             this.btnAddServicio.BackColor = System.Drawing.Color.Transparent;
             this.btnAddServicio.Image = global::Delfin.Principal.Properties.Resources.add16x16;
-            this.btnAddServicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddServicio.Location = new System.Drawing.Point(288, 1);
+            this.btnAddServicio.Location = new System.Drawing.Point(333, 1);
             this.btnAddServicio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAddServicio.Name = "btnAddServicio";
-            this.btnAddServicio.Size = new System.Drawing.Size(25, 25);
+            this.btnAddServicio.Size = new System.Drawing.Size(30, 25);
             this.btnAddServicio.TabIndex = 1;
             this.btnAddServicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnAddServicio, "Nuevo Servicio");
@@ -1735,11 +1735,10 @@
             // 
             this.btnDelServicio.BackColor = System.Drawing.Color.Transparent;
             this.btnDelServicio.Image = global::Delfin.Principal.Properties.Resources.delete1;
-            this.btnDelServicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelServicio.Location = new System.Drawing.Point(317, 1);
+            this.btnDelServicio.Location = new System.Drawing.Point(367, 1);
             this.btnDelServicio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDelServicio.Name = "btnDelServicio";
-            this.btnDelServicio.Size = new System.Drawing.Size(25, 25);
+            this.btnDelServicio.Size = new System.Drawing.Size(30, 25);
             this.btnDelServicio.TabIndex = 2;
             this.btnDelServicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnDelServicio, "Eliminar Servicio");
@@ -1762,6 +1761,7 @@
             // 
             // pageChangeControl
             // 
+            this.pageChangeControl.Controls.Add(this.btnEnviarProvisionSAP);
             this.pageChangeControl.Controls.Add(this.btnEnviarFinanzasChangeControl);
             this.pageChangeControl.Controls.Add(this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl);
             this.pageChangeControl.Controls.Add(this.grdItemsServiciosChangeControl);
@@ -1779,11 +1779,10 @@
             // 
             this.btnEnviarFinanzasChangeControl.BackColor = System.Drawing.Color.Transparent;
             this.btnEnviarFinanzasChangeControl.Image = global::Delfin.Principal.Properties.Resources.money2;
-            this.btnEnviarFinanzasChangeControl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEnviarFinanzasChangeControl.Location = new System.Drawing.Point(346, 1);
+            this.btnEnviarFinanzasChangeControl.Location = new System.Drawing.Point(406, 1);
             this.btnEnviarFinanzasChangeControl.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEnviarFinanzasChangeControl.Name = "btnEnviarFinanzasChangeControl";
-            this.btnEnviarFinanzasChangeControl.Size = new System.Drawing.Size(25, 25);
+            this.btnEnviarFinanzasChangeControl.Size = new System.Drawing.Size(30, 25);
             this.btnEnviarFinanzasChangeControl.TabIndex = 15;
             this.btnEnviarFinanzasChangeControl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnEnviarFinanzasChangeControl, "Enviar Servicio a Finanzas");
@@ -1793,11 +1792,10 @@
             // 
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.BackColor = System.Drawing.Color.Transparent;
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Image = global::Delfin.Principal.Properties.Resources.businessman_view;
-            this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Location = new System.Drawing.Point(375, 1);
+            this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Location = new System.Drawing.Point(476, 1);
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Name = "btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl";
-            this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Size = new System.Drawing.Size(25, 25);
+            this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Size = new System.Drawing.Size(30, 25);
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.TabIndex = 14;
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl, "Auditoria Detalle Servicio - Change Control");
@@ -1823,13 +1821,11 @@
             // 
             this.btnAddServicioChangeControl.BackColor = System.Drawing.Color.Transparent;
             this.btnAddServicioChangeControl.Image = global::Delfin.Principal.Properties.Resources.add16x16;
-            this.btnAddServicioChangeControl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddServicioChangeControl.Location = new System.Drawing.Point(288, 1);
+            this.btnAddServicioChangeControl.Location = new System.Drawing.Point(336, 1);
             this.btnAddServicioChangeControl.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAddServicioChangeControl.Name = "btnAddServicioChangeControl";
-            this.btnAddServicioChangeControl.Size = new System.Drawing.Size(25, 25);
+            this.btnAddServicioChangeControl.Size = new System.Drawing.Size(30, 25);
             this.btnAddServicioChangeControl.TabIndex = 11;
-            this.btnAddServicioChangeControl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnAddServicioChangeControl, "Nuevo Servicio");
             this.btnAddServicioChangeControl.UseVisualStyleBackColor = false;
             // 
@@ -1837,11 +1833,10 @@
             // 
             this.btnDelServicioChangeControl.BackColor = System.Drawing.Color.Transparent;
             this.btnDelServicioChangeControl.Image = global::Delfin.Principal.Properties.Resources.delete1;
-            this.btnDelServicioChangeControl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelServicioChangeControl.Location = new System.Drawing.Point(317, 1);
+            this.btnDelServicioChangeControl.Location = new System.Drawing.Point(371, 1);
             this.btnDelServicioChangeControl.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDelServicioChangeControl.Name = "btnDelServicioChangeControl";
-            this.btnDelServicioChangeControl.Size = new System.Drawing.Size(25, 25);
+            this.btnDelServicioChangeControl.Size = new System.Drawing.Size(30, 25);
             this.btnDelServicioChangeControl.TabIndex = 12;
             this.btnDelServicioChangeControl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnDelServicioChangeControl, "Eliminar Servicio");
@@ -3113,6 +3108,7 @@
             this.toolStripTextBox3.AccessibleName = "Posición";
             this.toolStripTextBox3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox3.AutoSize = false;
+            this.toolStripTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox3.Name = "toolStripTextBox3";
             this.toolStripTextBox3.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox3.Text = "0";
@@ -4680,6 +4676,7 @@
             this.bindingNavigatorPositionItem1.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -5371,6 +5368,7 @@
             this.toolStripTextBox1.AccessibleName = "Posición";
             this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -5525,43 +5523,43 @@
             this.lvwANEX_Documentos.CheckBoxes = true;
             this.tableAnexo.SetColumnSpan(this.lvwANEX_Documentos, 7);
             this.lvwANEX_Documentos.HideSelection = false;
-            listViewItem37.StateImageIndex = 0;
-            listViewItem38.StateImageIndex = 0;
-            listViewItem39.StateImageIndex = 0;
-            listViewItem40.StateImageIndex = 0;
-            listViewItem41.StateImageIndex = 0;
-            listViewItem42.StateImageIndex = 0;
-            listViewItem43.StateImageIndex = 0;
-            listViewItem44.StateImageIndex = 0;
-            listViewItem45.StateImageIndex = 0;
-            listViewItem46.StateImageIndex = 0;
-            listViewItem47.StateImageIndex = 0;
-            listViewItem48.StateImageIndex = 0;
-            listViewItem49.StateImageIndex = 0;
-            listViewItem50.StateImageIndex = 0;
-            listViewItem51.StateImageIndex = 0;
-            listViewItem52.StateImageIndex = 0;
-            listViewItem53.StateImageIndex = 0;
-            listViewItem54.StateImageIndex = 0;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
+            listViewItem4.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
+            listViewItem6.StateImageIndex = 0;
+            listViewItem7.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
+            listViewItem9.StateImageIndex = 0;
+            listViewItem10.StateImageIndex = 0;
+            listViewItem11.StateImageIndex = 0;
+            listViewItem12.StateImageIndex = 0;
+            listViewItem13.StateImageIndex = 0;
+            listViewItem14.StateImageIndex = 0;
+            listViewItem15.StateImageIndex = 0;
+            listViewItem16.StateImageIndex = 0;
+            listViewItem17.StateImageIndex = 0;
+            listViewItem18.StateImageIndex = 0;
             this.lvwANEX_Documentos.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem37,
-            listViewItem38,
-            listViewItem39,
-            listViewItem40,
-            listViewItem41,
-            listViewItem42,
-            listViewItem43,
-            listViewItem44,
-            listViewItem45,
-            listViewItem46,
-            listViewItem47,
-            listViewItem48,
-            listViewItem49,
-            listViewItem50,
-            listViewItem51,
-            listViewItem52,
-            listViewItem53,
-            listViewItem54});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18});
             this.lvwANEX_Documentos.Location = new System.Drawing.Point(152, 300);
             this.lvwANEX_Documentos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lvwANEX_Documentos.Name = "lvwANEX_Documentos";
@@ -5969,6 +5967,7 @@
             this.toolStripTextBox2.AccessibleName = "Posición";
             this.toolStripTextBox2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox2.AutoSize = false;
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox2.Text = "0";
@@ -6260,6 +6259,16 @@
             // errorAnexo
             // 
             this.errorAnexo.ContainerControl = this;
+            // 
+            // btnEnviarProvisionSAP
+            // 
+            this.btnEnviarProvisionSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnEnviarProvisionSAP.Location = new System.Drawing.Point(441, 1);
+            this.btnEnviarProvisionSAP.Name = "btnEnviarProvisionSAP";
+            this.btnEnviarProvisionSAP.Size = new System.Drawing.Size(30, 25);
+            this.btnEnviarProvisionSAP.TabIndex = 16;
+            this.btnEnviarProvisionSAP.Text = "simpleButton1";
+            this.toolTip1.SetToolTip(this.btnEnviarProvisionSAP, "Enviar Servicio a SAP");
             // 
             // OPE001MView
             // 
@@ -6825,5 +6834,6 @@
       private System.Windows.Forms.Button btnShowFileStream;
       private System.Windows.Forms.Label lbl_FecEmiDoc;
       private Infrastructure.WinForms.Controls.MaskDateTime mdtCCOT_FecEmiDoc;
-   }
+        private DevExpress.XtraEditors.SimpleButton btnEnviarProvisionSAP;
+    }
 }

@@ -67,6 +67,7 @@ Public Class AccountingTransferForm
                 If aRespuesta(0).RespuestaSAP = 0 Then
                     XtraMessageBox.Show("Ocurrió un error al actualizar el código de viaje " & NVIA_Codigo.ToString & " en SAP" & vbCrLf & DirectCast(aRespuesta(0), ApplicationForm.IntegrationService.Respuesta).Response(0).[error].Message.Value, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
+                bbiSearch.PerformClick()
             Catch ex As Exception
                 'SplashScreenManager.CloseForm(False)
                 XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -85,6 +86,8 @@ Public Class AccountingTransferForm
     End Sub
 
     Private Sub AccountingTransferForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        GridView1.ActiveFilterEnabled = False
+        GridView1.ClearSorting()
         gcStatements.MainView.SaveLayoutToRegistry(IO.Directory.GetCurrentDirectory)
     End Sub
 
@@ -155,8 +158,8 @@ Public Class AccountingTransferForm
             GridView1.SetFocusedRowCellValue("Checked", False)
             DevExpress.XtraEditors.XtraMessageBox.Show("No puede generar la provisión de una Nave/Viaje que aún no se ha pre-facturado. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
-        If GridView1.GetFocusedRowCellValue("AsientoContable").ToString.Length > 0 Then
-            'GridView1.SetFocusedRowCellValue("Checked", False)
+        If GridView1.GetFocusedRowCellValue("DocumentoSAP").ToString.Length > 0 Then
+            GridView1.SetFocusedRowCellValue("Checked", False)
         End If
     End Sub
 
@@ -180,7 +183,9 @@ Public Class AccountingTransferForm
                 row("Checked") = False
             End If
             If SelectType = 0 Then
-                row("Checked") = True
+                If row("DocumentoSAP").ToString.Length = 0 Then
+                    row("Checked") = True
+                End If
             End If
             If SelectType = 1 Then
                 row("Checked") = False
@@ -189,9 +194,11 @@ Public Class AccountingTransferForm
                 If row("Checked") Then
                     row("Checked") = False
                 Else
-                    row("Checked") = True
+                    If row("DocumentoSAP").ToString.Length = 0 Then
+                        row("Checked") = True
+                    End If
                 End If
-            End If
+                End If
             Validate()
         Next
     End Sub
