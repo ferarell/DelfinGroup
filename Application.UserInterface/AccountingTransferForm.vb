@@ -183,7 +183,11 @@ Public Class AccountingTransferForm
                 row("Checked") = False
             End If
             If SelectType = 0 Then
-                If row("DocumentoSAP").ToString.Length = 0 Then
+                If oGridView.Name = "GridView1" Then
+                    If row("DocumentoSAP").ToString.Length = 0 Then
+                        row("Checked") = True
+                    End If
+                Else
                     row("Checked") = True
                 End If
             End If
@@ -194,11 +198,15 @@ Public Class AccountingTransferForm
                 If row("Checked") Then
                     row("Checked") = False
                 Else
-                    If row("DocumentoSAP").ToString.Length = 0 Then
+                    If oGridView.Name = "GridView1" Then
+                        If row("DocumentoSAP").ToString.Length = 0 Then
+                            row("Checked") = True
+                        End If
+                    Else
                         row("Checked") = True
                     End If
                 End If
-                End If
+            End If
             Validate()
         Next
     End Sub
