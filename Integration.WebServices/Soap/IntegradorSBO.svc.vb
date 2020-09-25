@@ -267,7 +267,7 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
         Dim dsRespuestaDelfin As DataSet = New DataSet()
         'Dim dsServicio As DataSet = New DataSet()
         Dim listRespuestas As List(Of Respuesta) = New List(Of Respuesta)()
-
+        Dim dtAdicionales As DataTable = New DataTable()
         Dim UrlJournalEntryRest As String = ConfigurationManager.AppSettings("urlSAPPOSTJournalEntry")
 
         Dim client As HttpClient = New HttpClient
@@ -281,7 +281,7 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
             If dsJournalEntry.Tables.Count > 0 Then
                 dtCabecera = dsJournalEntry.Tables(0)
                 dtDetalle = dsJournalEntry.Tables(1)
-
+                dtAdicionales = dsJournalEntry.Tables(2)
             End If
         End If
 
@@ -328,23 +328,24 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
                 oRespuesta.RespuestaSAP = 0
             End If
             oRespuesta.RespuestaNexsoft = 1
-            'Dim ENTC_Codigo As String = "" 'dtAdicionales.Rows(0).Item("ENTC_Codigo").ToString()
-            'Dim TIPE_Codigo As String = "" 'dtAdicionales.Rows(0).Item("TIPE_Codigo").ToString()
-            'Dim ENTC_CodSAP As String = "" ' dtCliente.Rows(0).Item("CardCode").ToString()
-
-            'If oRespuesta.RespuestaSAP = 1 Then
-            '    Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedPartner " & ENTC_Codigo & " ," & TIPE_Codigo & " , '" & ENTC_CodSAP & "' , '" & Format(DateTime.Now, "yyyyMMdd HH:mm") & "' , " & oRespuesta.RespuestaSAP
-            '    Dim bResult As Boolean = Nothing
-            '    bResult = oDelfinService.ExecuteSQLNonQuery(Query)
-            '    If bResult Then
-            '        oRespuesta.RespuestaNexsoft = 1
-            '    Else
-            '        oRespuesta.RespuestaNexsoft = 0
-            '    End If
-            'Else
-            '    oRespuesta.RespuestaNexsoft = 0
-            'End If
-
+            Dim InterfaceName As String = dtAdicionales.Rows(0).Item("InterfaceName").ToString()
+            Dim TableName As String = dtAdicionales.Rows(0).Item("TableName").ToString()
+            Dim NVIA_Codigo As String = dtAdicionales.Rows(0).Item("NVIA_Codigo").ToString()
+            Dim CONS_CodLNG As String = dtAdicionales.Rows(0).Item("CONS_CodLNG").ToString()
+            Dim CCOT_Codigo As String = dtAdicionales.Rows(0).Item("CCOT_Codigo").ToString()
+            Dim AUDI_Usuario As String = dtAdicionales.Rows(0).Item("AUDI_Usuario").ToString()
+            If oRespuesta.RespuestaSAP = 1 Then
+                Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedJournalEntry '" & oRespuesta.Response.Item(0).DocEntry.ToString() & "' ," & "'" & InterfaceName & "'" & " , '" & TableName & "' , " & NVIA_Codigo & " ,  '" & CONS_CodLNG & "' , " & CCOT_Codigo & ", '" & AUDI_Usuario & "'"
+                Dim bResult As Boolean = Nothing
+                bResult = oDelfinService.ExecuteSQLNonQuery(Query)
+                If bResult Then
+                    oRespuesta.RespuestaNexsoft = 1
+                Else
+                    oRespuesta.RespuestaNexsoft = 0
+                End If
+            Else
+                oRespuesta.RespuestaNexsoft = 0
+            End If
             listRespuestas.Add(oRespuesta)
         Next
         Return listRespuestas
