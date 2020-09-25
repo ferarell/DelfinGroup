@@ -56,7 +56,7 @@ Public Class AccountingTransferForm
                 'SUCR_Codigo = "01"
                 Dim NVIA_Codigo As Integer = GridView1.GetFocusedRowCellValue("NVIA_Codigo")
                 Dim CONS_CodLNG As String = GridView1.GetFocusedRowCellValue("CONS_CodLNG")
-                dsJournalEntry = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " & EMPR_Codigo & ",'" & SUCR_Codigo & "'," & NVIA_Codigo.ToString & ",'" & CONS_CodLNG & "', 0, '" & AppUser & "', 'S'")
+                dsJournalEntry = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " & EMPR_Codigo & ",'" & SUCR_Codigo & "'," & NVIA_Codigo.ToString & ",'" & CONS_CodLNG & "', NULL, NULL, 0, NULL, NULL, '" & AppUser & "', 'S'")
                 If dsJournalEntry.Tables(0).Rows.Count = 0 Then
                     XtraMessageBox.Show("El código de viaje " & NVIA_Codigo.ToString & " no tiene datos asociados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
@@ -231,22 +231,9 @@ Public Class AccountingTransferForm
         'SUCR_Codigo = "01"
         Dim NVIA_Codigo As Integer = GridView1.GetFocusedRowCellValue("NVIA_Codigo")
         Dim CONS_CodLNG As String = GridView1.GetFocusedRowCellValue("CONS_CodLNG")
-        dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " & EMPR_Codigo & ",'" & SUCR_Codigo & "'," & NVIA_Codigo.ToString & ",'" & CONS_CodLNG & "', 0, '" & AppUser & "', 'P'")
+        dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " & EMPR_Codigo & ",'" & SUCR_Codigo & "'," & NVIA_Codigo.ToString & ",'" & CONS_CodLNG & "', NULL, NULL, 0, NULL, NULL, '" & AppUser & "', 'P'")
         oForm.dsVoucher = dsQuery
         oForm.ShowDialog()
     End Sub
-
-    'Friend Function RowSelectedCount(oGridView As GridView) As Integer
-    '    Dim iChecked As Integer = 0
-    '    For i = 0 To oGridView.RowCount - 1
-    '        If IsDBNull(oGridView.GetRowCellValue(i, "Checked")) Then
-    '            Continue For
-    '        End If
-    '        If oGridView.GetRowCellValue(i, "Checked") Then
-    '            iChecked += 1
-    '        End If
-    '    Next
-    '    Return iChecked
-    'End Function
 
 End Class
