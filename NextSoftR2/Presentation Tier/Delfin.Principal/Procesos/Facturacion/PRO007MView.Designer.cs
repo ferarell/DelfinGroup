@@ -28,7 +28,6 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PRO007MView));
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -36,8 +35,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.PCEncabezado = new Infrastructure.WinFormsControls.PanelCaption();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.miniToolStrip = new System.Windows.Forms.BindingNavigator(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
+            this.miniToolStrip = new System.Windows.Forms.BindingNavigator();
             this.TLPanelDatos = new System.Windows.Forms.TableLayoutPanel();
             this.txaSeries = new Delfin.Controls.Serie.SeriesLarge();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +54,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.CmbDOCV_Estado = new Delfin.Controls.Tipos.ComboBoxConstantes();
             this.PanelCliente = new System.Windows.Forms.Panel();
-            this.AyudaENTC_Cliente = new Delfin.Controls.Entidad(this.components);
+            this.AyudaENTC_Cliente = new Delfin.Controls.Entidad();
             this.lblENTC_Codigo = new System.Windows.Forms.Label();
             this.lblDOCV_TipoCambio = new System.Windows.Forms.Label();
             this.NUDPDOV_TipoCambio = new System.Windows.Forms.NumericUpDown();
@@ -69,7 +68,7 @@
             this.TxtDOCV_Notas = new System.Windows.Forms.TextBox();
             this.TabPageServicios = new Dotnetrix.Controls.TabPageEX();
             this.grdItemsServicios = new Telerik.WinControls.UI.RadGridView();
-            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItems = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -717,6 +716,7 @@
             // 
             this.toolStripTextBox1.AccessibleName = "Posición";
             this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
