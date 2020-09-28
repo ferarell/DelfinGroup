@@ -67,7 +67,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.TxtDOCV_Notas = new System.Windows.Forms.TextBox();
             this.TabPageServicios = new Dotnetrix.Controls.TabPageEX();
-            this.grdItemsServicios = new Telerik.WinControls.UI.RadGridView();
+            this.btnSincronizarSAP = new Telerik.WinControls.UI.RadGridView();
             this.navItems = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -99,8 +99,8 @@
             this.TabPageNotas.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.TabPageServicios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdItemsServicios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdItemsServicios.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSincronizarSAP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSincronizarSAP.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navItems)).BeginInit();
             this.TabDetalleDocVenta.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -131,7 +131,7 @@
             this.btnSalir.Location = new System.Drawing.Point(240, 0);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(51, 50);
+            this.btnSalir.Size = new System.Drawing.Size(71, 50);
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -632,7 +632,7 @@
             // 
             // TabPageServicios
             // 
-            this.TabPageServicios.Controls.Add(this.grdItemsServicios);
+            this.TabPageServicios.Controls.Add(this.btnSincronizarSAP);
             this.TabPageServicios.Controls.Add(this.navItems);
             this.TabPageServicios.Location = new System.Drawing.Point(4, 25);
             this.TabPageServicios.Name = "TabPageServicios";
@@ -640,15 +640,15 @@
             this.TabPageServicios.TabIndex = 0;
             this.TabPageServicios.Text = "Servicios";
             // 
-            // grdItemsServicios
+            // btnSincronizarSAP
             // 
-            this.grdItemsServicios.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.grdItemsServicios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdItemsServicios.Location = new System.Drawing.Point(0, 0);
-            this.grdItemsServicios.Name = "grdItemsServicios";
-            this.grdItemsServicios.Size = new System.Drawing.Size(1076, 213);
-            this.grdItemsServicios.TabIndex = 9;
-            this.grdItemsServicios.TabStop = false;
+            this.btnSincronizarSAP.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSincronizarSAP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSincronizarSAP.Location = new System.Drawing.Point(0, 0);
+            this.btnSincronizarSAP.Name = "btnSincronizarSAP";
+            this.btnSincronizarSAP.Size = new System.Drawing.Size(1076, 213);
+            this.btnSincronizarSAP.TabIndex = 9;
+            this.btnSincronizarSAP.TabStop = false;
             // 
             // navItems
             // 
@@ -908,8 +908,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.TabPageServicios.ResumeLayout(false);
             this.TabPageServicios.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdItemsServicios.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdItemsServicios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSincronizarSAP.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSincronizarSAP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navItems)).EndInit();
             this.TabDetalleDocVenta.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -954,7 +954,7 @@
       private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
       private System.Windows.Forms.Label label11;
       private System.Windows.Forms.TextBox TxtDOCV_Notas;
-      private Telerik.WinControls.UI.RadGridView grdItemsServicios;
+      private Telerik.WinControls.UI.RadGridView btnSincronizarSAP;
       private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
       private System.Windows.Forms.Label label5;
       private System.Windows.Forms.Label label2;
@@ -981,5 +981,5 @@
       private System.Windows.Forms.Label lblTIPE_Codigo;
       private Controls.ComboBoxTipoEntidad cmbTIPE_Codigo;
       private Controls.Serie.SeriesLarge txaSeries;
-   }
+    }
 }

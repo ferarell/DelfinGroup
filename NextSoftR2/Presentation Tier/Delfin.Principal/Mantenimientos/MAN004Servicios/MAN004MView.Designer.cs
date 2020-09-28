@@ -28,27 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MAN004MView));
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMAN_SyncSAP = new System.Windows.Forms.Button();
             this.btnAuditoria = new System.Windows.Forms.Button();
             this.btnMAN_salir = new System.Windows.Forms.Button();
             this.btnMAN_guardar = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
             this.SERV_Nombre_ENG = new System.Windows.Forms.TextBox();
             this.lblSERV_Nombre_ENG = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.SERV_Agrupado = new System.Windows.Forms.CheckBox();
-            this.cmbTIPO_CodOPE_Costo = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
+            this.cmbTIPO_CodOPE_Costo = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txaCENT_Desc = new Infrastructure.WinForms.Controls.TextBoxAyuda(this.components);
+            this.txaCENT_Desc = new Infrastructure.WinForms.Controls.TextBoxAyuda();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbCENT_Ano = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
-            this.txaCENT_Codigo = new Infrastructure.WinForms.Controls.TextBoxAyuda(this.components);
+            this.cmbCENT_Ano = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
+            this.txaCENT_Codigo = new Infrastructure.WinForms.Controls.TextBoxAyuda();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSERV_Codigo = new System.Windows.Forms.Label();
             this.SERV_Codigo = new System.Windows.Forms.TextBox();
@@ -100,15 +99,15 @@
             this.chkSERV_ExcesoFlete = new System.Windows.Forms.CheckBox();
             this.lblSERV_ExcesoFlete = new System.Windows.Forms.Label();
             this.SERV_Flete = new System.Windows.Forms.CheckBox();
-            this.cmbTIPO_CodOPE = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
+            this.cmbTIPO_CodOPE = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
             this.lblTIPO_CodOPE = new System.Windows.Forms.Label();
             this.lblSERV_CodUnificador = new System.Windows.Forms.Label();
             this.lblSERV_CodAgrupador = new System.Windows.Forms.Label();
             this.lblSERV_Agrupado = new System.Windows.Forms.Label();
             this.lblSERV_Tipo = new System.Windows.Forms.Label();
-            this.cmbSERV_Tipo = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
-            this.cmbSERV_CodUnificador = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
-            this.cmbSERV_CodAgrupador = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
+            this.cmbSERV_Tipo = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
+            this.cmbSERV_CodUnificador = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
+            this.cmbSERV_CodAgrupador = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
             this.btnAddDocumentos = new System.Windows.Forms.Button();
             this.btnDeleteDocumentos = new System.Windows.Forms.Button();
             this.grdItemsDocumentos = new Telerik.WinControls.UI.RadGridView();
