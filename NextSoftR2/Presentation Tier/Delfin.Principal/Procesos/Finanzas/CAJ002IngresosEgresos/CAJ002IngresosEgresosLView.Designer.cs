@@ -692,6 +692,7 @@
             this.btnSyncSAP.Size = new System.Drawing.Size(70, 50);
             this.btnSyncSAP.TabIndex = 11;
             this.btnSyncSAP.Text = "Sincronizar";
+            this.btnSyncSAP.Visible = false;
             // 
             // CAJ002IngresosEgresosLView
             // 

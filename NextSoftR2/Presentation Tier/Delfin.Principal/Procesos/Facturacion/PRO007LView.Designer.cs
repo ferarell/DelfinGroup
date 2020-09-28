@@ -155,7 +155,7 @@
             this.btnNuevoFactLibre.ForeColor = System.Drawing.Color.Black;
             this.btnNuevoFactLibre.Image = global::Delfin.Principal.Properties.Resources.add2_24x24;
             this.btnNuevoFactLibre.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevoFactLibre.Location = new System.Drawing.Point(235, 0);
+            this.btnNuevoFactLibre.Location = new System.Drawing.Point(280, 0);
             this.btnNuevoFactLibre.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevoFactLibre.Name = "btnNuevoFactLibre";
             this.btnNuevoFactLibre.Size = new System.Drawing.Size(104, 50);
@@ -174,10 +174,10 @@
             this.btnDeshacer.ForeColor = System.Drawing.Color.Black;
             this.btnDeshacer.Image = global::Delfin.Principal.Properties.Resources.undo;
             this.btnDeshacer.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeshacer.Location = new System.Drawing.Point(170, 0);
+            this.btnDeshacer.Location = new System.Drawing.Point(210, 0);
             this.btnDeshacer.Margin = new System.Windows.Forms.Padding(0);
             this.btnDeshacer.Name = "btnDeshacer";
-            this.btnDeshacer.Size = new System.Drawing.Size(65, 50);
+            this.btnDeshacer.Size = new System.Drawing.Size(70, 50);
             this.btnDeshacer.TabIndex = 4;
             this.btnDeshacer.Text = "&Deshacer";
             this.btnDeshacer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -192,10 +192,10 @@
             this.btnExportar.ForeColor = System.Drawing.Color.Black;
             this.btnExportar.Image = global::Delfin.Principal.Properties.Resources.export;
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(112, 0);
+            this.btnExportar.Location = new System.Drawing.Point(140, 0);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(0);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(58, 50);
+            this.btnExportar.Size = new System.Drawing.Size(70, 50);
             this.btnExportar.TabIndex = 3;
             this.btnExportar.Text = "&Exportar";
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -210,10 +210,10 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.Image = global::Delfin.Principal.Properties.Resources.search;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(57, 0);
+            this.btnBuscar.Location = new System.Drawing.Point(70, 0);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(0);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(55, 50);
+            this.btnBuscar.Size = new System.Drawing.Size(70, 50);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -231,7 +231,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(0, 0);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(57, 50);
+            this.btnNuevo.Size = new System.Drawing.Size(70, 50);
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -838,9 +838,9 @@
             this.btnSyncSAP.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSyncSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSyncSAP.ImageOptions.Image")));
             this.btnSyncSAP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSyncSAP.Location = new System.Drawing.Point(339, 0);
+            this.btnSyncSAP.Location = new System.Drawing.Point(384, 0);
             this.btnSyncSAP.Name = "btnSyncSAP";
-            this.btnSyncSAP.Size = new System.Drawing.Size(73, 50);
+            this.btnSyncSAP.Size = new System.Drawing.Size(70, 50);
             this.btnSyncSAP.TabIndex = 7;
             this.btnSyncSAP.Text = "Sincronizar";
             // 

@@ -1,8 +1,9 @@
 ﻿Imports DevExpress.XtraEditors
 Imports DevExpress.XtraGrid.Views.Grid
 
-Public Class JournalEntryViewerForm
+Public Class InvoiceBillsViewerForm
     Public dsVoucher As New DataSet
+    Public sInterfaceName As String
     Dim oIntegrationService As New IntegrationService.IntegradorSBOClient
     Private Sub JournalEntryViewerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If dsVoucher Is Nothing Then
@@ -49,9 +50,21 @@ Public Class JournalEntryViewerForm
         If DevExpress.XtraEditors.XtraMessageBox.Show("Se generará el asiento de provisión, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
             Return
         End If
+        If sInterfaceName = "JournalEntry" Then
+            JournalEntryGenerate()
+        End If
+        If sInterfaceName = "InvoiceBills" Then
+            InvoiceBillsGenerate()
+        End If
+        If sInterfaceName = "PurchaseInvoice" Then
+            PurchaseInvoiceGenerate()
+        End If
+
+    End Sub
+
+    Private Sub JournalEntryGenerate()
         Try
             'Interfaz de Asiento Diario
-            TableColumnsVoid()
             Dim aRespuesta As New ArrayList
             aRespuesta.AddRange(oIntegrationService.InsertarActualizarJournalEntry(dsVoucher))
             If aRespuesta(0).RespuestaSAP = 0 Then
@@ -62,12 +75,27 @@ Public Class JournalEntryViewerForm
         End Try
     End Sub
 
-    Private Sub TableColumnsVoid()
-        If dsVoucher.Tables(1).Columns.Contains("PartnerName") Then
-            dsVoucher.Tables(1).Columns.Remove("PartnerName")
-        End If
-        If dsVoucher.Tables(1).Columns.Contains("MoveType") Then
-            dsVoucher.Tables(1).Columns.Remove("MoveType")
-        End If
+    Private Sub InvoiceBillsGenerate()
+        Try
+            Dim aRespuesta As New ArrayList
+            'aRespuesta.AddRange(oIntegrationService.InsertarActualizarJournalEntry(dsVoucher))
+            If aRespuesta(0).RespuestaSAP = 0 Then
+                XtraMessageBox.Show("Ocurrió un error al generar el asiento en SAP" & vbCrLf & DirectCast(aRespuesta(0), ApplicationForm.IntegrationService.Respuesta).Response(0).[error].Message.Value, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub PurchaseInvoiceGenerate()
+        Try
+            Dim aRespuesta As New ArrayList
+            'aRespuesta.AddRange(oIntegrationService.InsertarActualizarJournalEntry(dsVoucher))
+            If aRespuesta(0).RespuestaSAP = 0 Then
+                XtraMessageBox.Show("Ocurrió un error al generar el asiento en SAP" & vbCrLf & DirectCast(aRespuesta(0), ApplicationForm.IntegrationService.Respuesta).Response(0).[error].Message.Value, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class

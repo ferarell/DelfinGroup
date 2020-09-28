@@ -4175,6 +4175,8 @@ namespace Delfin.Principal
 
             this.grdItemsServicio.Columns.Add("TIPO_TabMnd", "Tipo Tabla Moneda", "TIPO_TabMnd");
             this.grdItemsServicio.Columns.Add("CONS_TabBas", "Tipo Tabla Documento", "CONS_TabBas");
+            //Codigo Interno
+            this.grdItemsServicio.Columns.Add("CCCT_Codigo", "Código CtaCte", "CCCT_Codigo");
 
             //Edicion del Servicio
             //this.grdItemsServicio.Columns.Add("SCOT_Editable", "Editable", "SCOT_Editable");
@@ -8483,7 +8485,7 @@ namespace Delfin.Principal
             ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();
             int _CCCT_Codigo = Convert.ToInt32(grdItemsServiciosChangeControl.CurrentRow.Cells["CCCT_Codigo"].Value);
             DateTime _SCOT_FechaOperacion = Convert.ToDateTime(grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
-            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserCodigo + "', 'S'");
+            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserCodigo + "', 'P'");
             oJournalEntryViewerForm.dsVoucher = dsQuery;
             oJournalEntryViewerForm.ShowDialog();
         }

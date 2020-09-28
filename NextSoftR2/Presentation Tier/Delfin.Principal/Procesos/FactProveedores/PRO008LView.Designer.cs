@@ -584,6 +584,7 @@
             this.btnSyncSAP.Size = new System.Drawing.Size(70, 50);
             this.btnSyncSAP.TabIndex = 8;
             this.btnSyncSAP.Text = "Sincronizar";
+            this.btnSyncSAP.Click += new System.EventHandler(this.btnSyncSAP_Click);
             // 
             // PRO008LView
             // 
