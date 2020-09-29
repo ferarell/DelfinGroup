@@ -106,6 +106,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delfin.Principal", "NextSof
 		{7D6147C7-EE51-4EB1-B1B9-98B78834187F} = {7D6147C7-EE51-4EB1-B1B9-98B78834187F}
 	EndProjectSection
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "App.Net.ConsultaNaves", "ConsultaNaves\App.Net.ConsultaNaves.vbproj", "{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -572,6 +574,18 @@ Global
 		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.Release|x86.ActiveCfg = Release|x86
 		{19DC714E-B2B6-4763-A4A1-E5DC2AAF06BB}.Release|x86.Build.0 = Release|x86
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.Debug|x86.Build.0 = Debug|Any CPU
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.DebugLocal|x86.ActiveCfg = Debug|Any CPU
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.DebugLocal|x86.Build.0 = Debug|Any CPU
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.Release|x86.ActiveCfg = Release|Any CPU
+		{B9267A20-7CD3-4375-A8E0-6C8BE1234C28}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
