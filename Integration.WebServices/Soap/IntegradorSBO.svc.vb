@@ -330,12 +330,30 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
             oRespuesta.RespuestaNexsoft = 1
             Dim InterfaceName As String = dtAdicionales.Rows(0).Item("InterfaceName").ToString()
             Dim TableName As String = dtAdicionales.Rows(0).Item("TableName").ToString()
-            Dim NVIA_Codigo As String = dtAdicionales.Rows(0).Item("NVIA_Codigo").ToString()
-            Dim CONS_CodLNG As String = dtAdicionales.Rows(0).Item("CONS_CodLNG").ToString()
-            Dim CCOT_Codigo As String = dtAdicionales.Rows(0).Item("CCOT_Codigo").ToString()
+            Dim NVIA_Codigo As String = ""
+            If IsDBNull(dtAdicionales.Rows(0).Item("NVIA_Codigo")) Then
+                NVIA_Codigo = "NULL"
+            Else
+                NVIA_Codigo = "'" & dtAdicionales.Rows(0).Item("NVIA_Codigo").ToString() & "'"
+            End If
+
+            Dim CONS_CodLNG As String = ""
+            If IsDBNull(dtAdicionales.Rows(0).Item("CONS_CodLNG")) Then
+                CONS_CodLNG = "NULL"
+            Else
+                CONS_CodLNG = "'" & dtAdicionales.Rows(0).Item("CONS_CodLNG").ToString() & "'"
+            End If
+
+
+            Dim CCCT_Codigo As String = ""
+            If IsDBNull(dtAdicionales.Rows(0).Item("CCCT_Codigo")) Then
+                CCCT_Codigo = "NULL"
+            Else
+                CCCT_Codigo = dtAdicionales.Rows(0).Item("CCCT_Codigo").ToString()
+            End If
             Dim AUDI_Usuario As String = dtAdicionales.Rows(0).Item("AUDI_Usuario").ToString()
             If oRespuesta.RespuestaSAP = 1 Then
-                Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedJournalEntry '" & oRespuesta.Response.Item(0).DocEntry.ToString() & "' ," & "'" & InterfaceName & "'" & " , '" & TableName & "' , " & NVIA_Codigo & " ,  '" & CONS_CodLNG & "' , " & CCOT_Codigo & ", '" & AUDI_Usuario & "'"
+                Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedJournalEntry '" & oRespuesta.Response.Item(0).Number.ToString() & "' ," & "'" & InterfaceName & "'" & " , '" & TableName & "' , " & NVIA_Codigo & " ,  " & CONS_CodLNG & " , " & CCCT_Codigo & ", " & AUDI_Usuario & "'"
                 Dim bResult As Boolean = Nothing
                 bResult = oDelfinService.ExecuteSQLNonQuery(Query)
                 If bResult Then
@@ -350,5 +368,198 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
         Next
         Return listRespuestas
     End Function
+
+
+
+    Public Function InsertarActualizarInvoiceBills(dsInvoiceBills As DataSet) As List(Of Respuesta) Implements IIntegradorSBO.InsertarActualizarInvoiceBills
+        Dim dsRespuestaDelfin As DataSet = New DataSet()
+        'Dim dsServicio As DataSet = New DataSet()
+        Dim listRespuestas As List(Of Respuesta) = New List(Of Respuesta)()
+        Dim dtAdicionales As DataTable = New DataTable()
+        Dim UrlInvoiceBillsRest As String = ConfigurationManager.AppSettings("urlSAPPOSTInvoiceBills")
+
+        Dim client As HttpClient = New HttpClient
+        Dim dtCabecera As DataTable = New DataTable()
+        Dim dtDetalle As DataTable = New DataTable()
+
+        Dim jsonSerialiceCabecera As String = ""
+        Dim jsonSerialiceDetalle As String = ""
+
+        If dsInvoiceBills IsNot Nothing Then
+            If dsInvoiceBills.Tables.Count > 0 Then
+                dtCabecera = dsInvoiceBills.Tables(0)
+                dtDetalle = dsInvoiceBills.Tables(1)
+                dtAdicionales = dsInvoiceBills.Tables(2)
+            End If
+        End If
+
+        For Each item As DataRow In dtCabecera.Rows
+            Dim dictionaryCabecera = item.Table.Columns.Cast(Of DataColumn)().ToDictionary(Function(col) col.ColumnName, Function(col) item(col.ColumnName))
+            jsonSerialiceCabecera = JsonConvert.SerializeObject(dictionaryCabecera, Xml.Formatting.Indented)
+
+            Dim contador As Integer = 1
+            For Each itemDetalle As DataRow In dtDetalle.Rows
+
+                Dim dictionaryDetalle = itemDetalle.Table.Columns.Cast(Of DataColumn)().ToDictionary(Function(col) col.ColumnName, Function(col) itemDetalle(col.ColumnName))
+
+
+                If contador < dtDetalle.Rows.Count Then
+                    jsonSerialiceDetalle = jsonSerialiceDetalle + JsonConvert.SerializeObject(dictionaryDetalle, Xml.Formatting.Indented) + " , "
+
+                Else
+                    jsonSerialiceDetalle = jsonSerialiceDetalle + JsonConvert.SerializeObject(dictionaryDetalle, Xml.Formatting.Indented)
+                End If
+
+                contador = contador + 1
+
+            Next
+
+            jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999999", "[" & jsonSerialiceDetalle & "]")
+            'jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999998", "[" & "]")
+            'jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999997", "[" & "]")
+
+
+
+            Dim content As StringContent = New StringContent(jsonSerialiceCabecera, Encoding.UTF8, "application/json")
+            Dim URL As String = UrlInvoiceBillsRest
+            Dim response2 As HttpResponseMessage = client.PostAsync(URL, content).Result
+            Dim receiveStream As String = response2.Content.ReadAsStringAsync().Result
+            Dim oRespuesta As Respuesta = New Respuesta()
+            oRespuesta = JsonConvert.DeserializeObject(Of Respuesta)(receiveStream)
+
+
+
+
+            If oRespuesta.ResponseStatus = "MessageSuccess" Then
+                oRespuesta.RespuestaSAP = 1
+            Else
+                oRespuesta.RespuestaSAP = 0
+            End If
+            oRespuesta.RespuestaNexsoft = 1
+            Dim InterfaceName As String = dtAdicionales.Rows(0).Item("InterfaceName").ToString()
+            Dim TableName As String = dtAdicionales.Rows(0).Item("TableName").ToString()
+
+
+            Dim CCCT_Codigo As String = ""
+            If IsDBNull(dtAdicionales.Rows(0).Item("CCCT_Codigo")) Then
+                CCCT_Codigo = "NULL"
+            Else
+                CCCT_Codigo = dtAdicionales.Rows(0).Item("CCCT_Codigo").ToString()
+            End If
+            Dim AUDI_Usuario As String = dtAdicionales.Rows(0).Item("AUDI_Usuario").ToString()
+            If oRespuesta.RespuestaSAP = 1 Then
+                Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedInvoiceBills '" & oRespuesta.Response.Item(0).Number.ToString() & "' ," & "'" & InterfaceName & "'" & " , '" & TableName & "' , " & CCCT_Codigo & ", " & AUDI_Usuario & "'"
+                Dim bResult As Boolean = Nothing
+                bResult = oDelfinService.ExecuteSQLNonQuery(Query)
+                If bResult Then
+                    oRespuesta.RespuestaNexsoft = 1
+                Else
+                    oRespuesta.RespuestaNexsoft = 0
+                End If
+            Else
+                oRespuesta.RespuestaNexsoft = 0
+            End If
+            listRespuestas.Add(oRespuesta)
+        Next
+        Return listRespuestas
+    End Function
+
+
+
+    Public Function InsertarActualizarCreditMemo(dsCreditMemo As DataSet) As List(Of Respuesta) Implements IIntegradorSBO.InsertarActualizarCreditMemo
+        Dim dsRespuestaDelfin As DataSet = New DataSet()
+        'Dim dsServicio As DataSet = New DataSet()
+        Dim listRespuestas As List(Of Respuesta) = New List(Of Respuesta)()
+        Dim dtAdicionales As DataTable = New DataTable()
+        Dim UrlCreditMemoRest As String = ConfigurationManager.AppSettings("urlSAPPOSTCreditMemo")
+
+        Dim client As HttpClient = New HttpClient
+        Dim dtCabecera As DataTable = New DataTable()
+        Dim dtDetalle As DataTable = New DataTable()
+
+        Dim jsonSerialiceCabecera As String = ""
+        Dim jsonSerialiceDetalle As String = ""
+
+        If dsCreditMemo IsNot Nothing Then
+            If dsCreditMemo.Tables.Count > 0 Then
+                dtCabecera = dsCreditMemo.Tables(0)
+                dtDetalle = dsCreditMemo.Tables(1)
+                dtAdicionales = dsCreditMemo.Tables(2)
+            End If
+        End If
+
+        For Each item As DataRow In dtCabecera.Rows
+            Dim dictionaryCabecera = item.Table.Columns.Cast(Of DataColumn)().ToDictionary(Function(col) col.ColumnName, Function(col) item(col.ColumnName))
+            jsonSerialiceCabecera = JsonConvert.SerializeObject(dictionaryCabecera, Xml.Formatting.Indented)
+
+            Dim contador As Integer = 1
+            For Each itemDetalle As DataRow In dtDetalle.Rows
+
+                Dim dictionaryDetalle = itemDetalle.Table.Columns.Cast(Of DataColumn)().ToDictionary(Function(col) col.ColumnName, Function(col) itemDetalle(col.ColumnName))
+
+
+                If contador < dtDetalle.Rows.Count Then
+                    jsonSerialiceDetalle = jsonSerialiceDetalle + JsonConvert.SerializeObject(dictionaryDetalle, Xml.Formatting.Indented) + " , "
+
+                Else
+                    jsonSerialiceDetalle = jsonSerialiceDetalle + JsonConvert.SerializeObject(dictionaryDetalle, Xml.Formatting.Indented)
+                End If
+
+                contador = contador + 1
+
+            Next
+
+            jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999999", "[" & jsonSerialiceDetalle & "]")
+            'jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999998", "[" & "]")
+            'jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999997", "[" & "]")
+
+
+
+            Dim content As StringContent = New StringContent(jsonSerialiceCabecera, Encoding.UTF8, "application/json")
+            Dim URL As String = UrlCreditMemoRest
+            Dim response2 As HttpResponseMessage = client.PostAsync(URL, content).Result
+            Dim receiveStream As String = response2.Content.ReadAsStringAsync().Result
+            Dim oRespuesta As Respuesta = New Respuesta()
+            oRespuesta = JsonConvert.DeserializeObject(Of Respuesta)(receiveStream)
+
+
+
+
+            If oRespuesta.ResponseStatus = "MessageSuccess" Then
+                oRespuesta.RespuestaSAP = 1
+            Else
+                oRespuesta.RespuestaSAP = 0
+            End If
+            oRespuesta.RespuestaNexsoft = 1
+            Dim InterfaceName As String = dtAdicionales.Rows(0).Item("InterfaceName").ToString()
+            Dim TableName As String = dtAdicionales.Rows(0).Item("TableName").ToString()
+
+
+            Dim CCCT_Codigo As String = ""
+            If IsDBNull(dtAdicionales.Rows(0).Item("CCCT_Codigo")) Then
+                CCCT_Codigo = "NULL"
+            Else
+                CCCT_Codigo = dtAdicionales.Rows(0).Item("CCCT_Codigo").ToString()
+            End If
+            Dim AUDI_Usuario As String = dtAdicionales.Rows(0).Item("AUDI_Usuario").ToString()
+            If oRespuesta.RespuestaSAP = 1 Then
+                Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedInvoiceBills '" & oRespuesta.Response.Item(0).Number.ToString() & "' ," & "'" & InterfaceName & "'" & " , '" & TableName & "' , " & CCCT_Codigo & ", " & AUDI_Usuario & "'"
+                Dim bResult As Boolean = Nothing
+                bResult = oDelfinService.ExecuteSQLNonQuery(Query)
+                If bResult Then
+                    oRespuesta.RespuestaNexsoft = 1
+                Else
+                    oRespuesta.RespuestaNexsoft = 0
+                End If
+            Else
+                oRespuesta.RespuestaNexsoft = 0
+            End If
+            listRespuestas.Add(oRespuesta)
+        Next
+        Return listRespuestas
+    End Function
+
+
+
 
 End Class

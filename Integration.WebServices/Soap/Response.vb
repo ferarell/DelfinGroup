@@ -2,6 +2,7 @@
     Dim _error As Wrong
     Dim _DocEntry As Integer
     Dim _DocNum As Integer
+    Dim _Number As Integer
 
     Public Property [error] As Wrong
         Get
@@ -28,6 +29,15 @@
         End Get
         Set(value As Integer)
             _DocNum = value
+        End Set
+    End Property
+
+    Public Property Number As Integer
+        Get
+            Return _Number
+        End Get
+        Set(value As Integer)
+            _Number = value
         End Set
     End Property
 End Class
