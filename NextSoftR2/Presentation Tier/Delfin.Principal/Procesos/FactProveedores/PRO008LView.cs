@@ -17,8 +17,10 @@ namespace Delfin.Principal
 {
    public partial class PRO008LView : UserControl, IPRO008LView
    {
-       #region [ Constructor ]
-       public PRO008LView(RadPageViewPage x_tabPageControl)
+        Principal.AppService.DelfinServiceClient oAppService = new Principal.AppService.DelfinServiceClient();
+
+        #region [ Constructor ]
+        public PRO008LView(RadPageViewPage x_tabPageControl)
        {
            InitializeComponent();
            try
@@ -488,9 +490,19 @@ namespace Delfin.Principal
          }
       }
       public event FormCloseEventArgs.FormCloseEventHandler CloseForm;
-      #endregion
 
 
-      
-   }
+        #endregion
+
+        private void btnSyncSAP_Click(object sender, EventArgs e)
+        {
+            DataSet dsQuery = new DataSet();
+            ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();
+            int _CCCT_Codigo = Convert.ToInt32(grdItems.CurrentRow.Cells["CCCT_Codigo"].Value);
+            //DateTime _SCOT_FechaOperacion = DateTime.Now;//Convert.ToDateTime(grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
+            //dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserCodigo + "', 'S'");
+            oJournalEntryViewerForm.dsVoucher = dsQuery;
+            oJournalEntryViewerForm.ShowDialog();
+        }
+    }
 }

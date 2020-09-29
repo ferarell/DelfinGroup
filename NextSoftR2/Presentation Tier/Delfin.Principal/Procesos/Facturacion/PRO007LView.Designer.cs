@@ -28,9 +28,8 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PRO007LView));
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmColumnas = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +65,7 @@
             this.tpgDocMandato = new Crownwood.DotNetMagic.Controls.TabPage();
             this.grdItemsDocMandato = new Telerik.WinControls.UI.RadGridView();
             this.panelCaption3 = new Infrastructure.WinFormsControls.PanelCaption();
-            this.navItemsDocMandato = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsDocMandato = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -76,7 +75,7 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItems = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
@@ -87,6 +86,7 @@
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.TitleView = new Infrastructure.WinFormsControls.FormTitle();
+            this.btnSyncSAP = new DevExpress.XtraEditors.SimpleButton();
             this.cmsMenu.SuspendLayout();
             this.pnBotones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -133,6 +133,7 @@
             // pnBotones
             // 
             this.pnBotones.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pnBotones.Controls.Add(this.btnSyncSAP);
             this.pnBotones.Controls.Add(this.btnNuevoFactLibre);
             this.pnBotones.Controls.Add(this.btnDeshacer);
             this.pnBotones.Controls.Add(this.btnExportar);
@@ -154,7 +155,7 @@
             this.btnNuevoFactLibre.ForeColor = System.Drawing.Color.Black;
             this.btnNuevoFactLibre.Image = global::Delfin.Principal.Properties.Resources.add2_24x24;
             this.btnNuevoFactLibre.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevoFactLibre.Location = new System.Drawing.Point(235, 0);
+            this.btnNuevoFactLibre.Location = new System.Drawing.Point(280, 0);
             this.btnNuevoFactLibre.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevoFactLibre.Name = "btnNuevoFactLibre";
             this.btnNuevoFactLibre.Size = new System.Drawing.Size(104, 50);
@@ -173,10 +174,10 @@
             this.btnDeshacer.ForeColor = System.Drawing.Color.Black;
             this.btnDeshacer.Image = global::Delfin.Principal.Properties.Resources.undo;
             this.btnDeshacer.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeshacer.Location = new System.Drawing.Point(170, 0);
+            this.btnDeshacer.Location = new System.Drawing.Point(210, 0);
             this.btnDeshacer.Margin = new System.Windows.Forms.Padding(0);
             this.btnDeshacer.Name = "btnDeshacer";
-            this.btnDeshacer.Size = new System.Drawing.Size(65, 50);
+            this.btnDeshacer.Size = new System.Drawing.Size(70, 50);
             this.btnDeshacer.TabIndex = 4;
             this.btnDeshacer.Text = "&Deshacer";
             this.btnDeshacer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -191,10 +192,10 @@
             this.btnExportar.ForeColor = System.Drawing.Color.Black;
             this.btnExportar.Image = global::Delfin.Principal.Properties.Resources.export;
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(112, 0);
+            this.btnExportar.Location = new System.Drawing.Point(140, 0);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(0);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(58, 50);
+            this.btnExportar.Size = new System.Drawing.Size(70, 50);
             this.btnExportar.TabIndex = 3;
             this.btnExportar.Text = "&Exportar";
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -209,10 +210,10 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.Image = global::Delfin.Principal.Properties.Resources.search;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(57, 0);
+            this.btnBuscar.Location = new System.Drawing.Point(70, 0);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(0);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(55, 50);
+            this.btnBuscar.Size = new System.Drawing.Size(70, 50);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -230,7 +231,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(0, 0);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(57, 50);
+            this.btnNuevo.Size = new System.Drawing.Size(70, 50);
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -679,6 +680,7 @@
             // 
             this.toolStripTextBox2.AccessibleName = "Posición";
             this.toolStripTextBox2.AutoSize = false;
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox2.Text = "0";
@@ -779,6 +781,7 @@
             this.bindingNavigatorPositionItem1.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -829,6 +832,17 @@
             this.TitleView.Name = "TitleView";
             this.TitleView.Size = new System.Drawing.Size(1099, 26);
             this.TitleView.TabIndex = 0;
+            // 
+            // btnSyncSAP
+            // 
+            this.btnSyncSAP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSyncSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSyncSAP.ImageOptions.Image")));
+            this.btnSyncSAP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnSyncSAP.Location = new System.Drawing.Point(384, 0);
+            this.btnSyncSAP.Name = "btnSyncSAP";
+            this.btnSyncSAP.Size = new System.Drawing.Size(70, 50);
+            this.btnSyncSAP.TabIndex = 7;
+            this.btnSyncSAP.Text = "Sincronizar";
             // 
             // PRO007LView
             // 
@@ -926,7 +940,6 @@
       private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem1;
       private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem1;
       private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator4;
-      
-
-   }
+        private DevExpress.XtraEditors.SimpleButton btnSyncSAP;
+    }
 }

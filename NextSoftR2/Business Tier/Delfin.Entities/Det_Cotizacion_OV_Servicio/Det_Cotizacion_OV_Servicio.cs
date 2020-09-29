@@ -47,6 +47,7 @@ namespace Delfin.Entities
 		private DateTime m_audi_feccrea;
 		private String m_audi_usrmod;
 		private Nullable<DateTime> m_audi_fecmod;
+		private Nullable<int> m_ccct_codigo;
 		#endregion
 
 		#region [ Constructores ]
@@ -563,6 +564,22 @@ namespace Delfin.Entities
 				}
 			}
 		}
+		/// <summary>
+		/// Gets or sets el valor de: SCOT_Cantidad.
+		/// </summary>
+		[DataMember]
+		public Nullable<int> CCCT_Codigo
+		{
+			get { return m_ccct_codigo; }
+			set
+			{
+				if (m_ccct_codigo != value)
+				{
+					m_ccct_codigo = value;
+					OnPropertyChanged("CCCT_Codigo");
+				}
+			}
+		}
 		#endregion
 
 		#region [ CopyTo ]
@@ -614,6 +631,7 @@ namespace Delfin.Entities
             Item.AUDI_FecCrea = this.AUDI_FecCrea;
             Item.AUDI_UsrMod = this.AUDI_UsrMod;
             Item.AUDI_FecMod = this.AUDI_FecMod;
+			Item.CCCT_Codigo = this.CCCT_Codigo;
 
          }
          catch (Exception ex)

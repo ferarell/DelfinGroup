@@ -29,6 +29,7 @@
       private void InitializeComponent()
       {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OPE001MView));
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Documento de Transporte");
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Manifiesto de Carga");
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Documento Nacional de Identidad - DNI");
@@ -47,7 +48,6 @@
             System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Certificado de Peso");
             System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Ticket de Balanza");
             System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("Otros");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OPE001MView));
             this.errorProviderCab_Cotizacion_OV = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabCab_Cotizacion_OV = new Dotnetrix.Controls.TabControlEX();
             this.pageGenerales = new Dotnetrix.Controls.TabPageEX();
@@ -136,6 +136,7 @@
             this.btnDelServicio = new System.Windows.Forms.Button();
             this.panelCaption5 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.pageChangeControl = new Dotnetrix.Controls.TabPageEX();
+            this.btnEnviarProvisionSAP = new DevExpress.XtraEditors.SimpleButton();
             this.btnEnviarFinanzasChangeControl = new System.Windows.Forms.Button();
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl = new System.Windows.Forms.Button();
             this.grdItemsServiciosChangeControl = new Telerik.WinControls.UI.RadGridView();
@@ -473,7 +474,6 @@
             this.btnEtiqueta = new System.Windows.Forms.ToolStripButton();
             this.btnAuditoriaCab_Cotizacion_OV = new System.Windows.Forms.ToolStripButton();
             this.errorAnexo = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnEnviarProvisionSAP = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCab_Cotizacion_OV)).BeginInit();
             this.tabCab_Cotizacion_OV.SuspendLayout();
             this.pageGenerales.SuspendLayout();
@@ -1775,6 +1775,16 @@
             this.pageChangeControl.TabIndex = 1;
             this.pageChangeControl.Text = "Servicios Change Control";
             // 
+            // btnEnviarProvisionSAP
+            // 
+            this.btnEnviarProvisionSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEnviarProvisionSAP.ImageOptions.Image")));
+            this.btnEnviarProvisionSAP.Location = new System.Drawing.Point(441, 1);
+            this.btnEnviarProvisionSAP.Name = "btnEnviarProvisionSAP";
+            this.btnEnviarProvisionSAP.Size = new System.Drawing.Size(30, 25);
+            this.btnEnviarProvisionSAP.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.btnEnviarProvisionSAP, "Enviar Servicio a SAP");
+            this.btnEnviarProvisionSAP.Click += new System.EventHandler(this.btnEnviarProvisionSAP_Click);
+            // 
             // btnEnviarFinanzasChangeControl
             // 
             this.btnEnviarFinanzasChangeControl.BackColor = System.Drawing.Color.Transparent;
@@ -2053,11 +2063,10 @@
             // 
             this.btnAuditoriaDet_Cotizacion_OV_Flete.BackColor = System.Drawing.Color.Transparent;
             this.btnAuditoriaDet_Cotizacion_OV_Flete.Image = global::Delfin.Principal.Properties.Resources.businessman_view;
-            this.btnAuditoriaDet_Cotizacion_OV_Flete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAuditoriaDet_Cotizacion_OV_Flete.Location = new System.Drawing.Point(350, 1);
+            this.btnAuditoriaDet_Cotizacion_OV_Flete.Location = new System.Drawing.Point(413, 1);
             this.btnAuditoriaDet_Cotizacion_OV_Flete.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAuditoriaDet_Cotizacion_OV_Flete.Name = "btnAuditoriaDet_Cotizacion_OV_Flete";
-            this.btnAuditoriaDet_Cotizacion_OV_Flete.Size = new System.Drawing.Size(25, 25);
+            this.btnAuditoriaDet_Cotizacion_OV_Flete.Size = new System.Drawing.Size(30, 25);
             this.btnAuditoriaDet_Cotizacion_OV_Flete.TabIndex = 3;
             this.btnAuditoriaDet_Cotizacion_OV_Flete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnAuditoriaDet_Cotizacion_OV_Flete, "Auditoria Detalle Flete");
@@ -2067,11 +2076,10 @@
             // 
             this.btnDelFlete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelFlete.Image = global::Delfin.Principal.Properties.Resources.delete1;
-            this.btnDelFlete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelFlete.Location = new System.Drawing.Point(321, 1);
+            this.btnDelFlete.Location = new System.Drawing.Point(378, 1);
             this.btnDelFlete.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDelFlete.Name = "btnDelFlete";
-            this.btnDelFlete.Size = new System.Drawing.Size(25, 25);
+            this.btnDelFlete.Size = new System.Drawing.Size(30, 25);
             this.btnDelFlete.TabIndex = 2;
             this.btnDelFlete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnDelFlete, "Eliminar Servicio Flete");
@@ -2082,11 +2090,10 @@
             // 
             this.btnAddFlete.BackColor = System.Drawing.Color.Transparent;
             this.btnAddFlete.Image = global::Delfin.Principal.Properties.Resources.add16x16;
-            this.btnAddFlete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddFlete.Location = new System.Drawing.Point(292, 1);
+            this.btnAddFlete.Location = new System.Drawing.Point(344, 1);
             this.btnAddFlete.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAddFlete.Name = "btnAddFlete";
-            this.btnAddFlete.Size = new System.Drawing.Size(25, 25);
+            this.btnAddFlete.Size = new System.Drawing.Size(30, 25);
             this.btnAddFlete.TabIndex = 1;
             this.btnAddFlete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnAddFlete, "Nuevo Servicio Flete");
@@ -6259,15 +6266,6 @@
             // errorAnexo
             // 
             this.errorAnexo.ContainerControl = this;
-            // 
-            // btnEnviarProvisionSAP
-            // 
-            this.btnEnviarProvisionSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnEnviarProvisionSAP.Location = new System.Drawing.Point(441, 1);
-            this.btnEnviarProvisionSAP.Name = "btnEnviarProvisionSAP";
-            this.btnEnviarProvisionSAP.Size = new System.Drawing.Size(30, 25);
-            this.btnEnviarProvisionSAP.TabIndex = 16;
-            this.toolTip1.SetToolTip(this.btnEnviarProvisionSAP, "Enviar Servicio a SAP");
             // 
             // OPE001MView
             // 

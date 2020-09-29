@@ -3059,45 +3059,7 @@ namespace Delfin.Principal
                   Entities.Servicio _itemServicio = Presenter.ListServicio.Where(serv => serv.SERV_Codigo == _SERV_Codigo).FirstOrDefault();
 
                   if (_itemServicio != null)
-                  {
-                     //grdItemsServicio.Rows[rowIndex].Cells["SCOT_PrecioUni"].Value = _itemServicio.SERV_Valor;
-                     //grdItemsServicio.Rows[rowIndex].Cells["SERV_AfeIgv"].Value = _itemServicio.SERV_AfeIgv;
-                     //grdItemsServicio.Rows[rowIndex].Cells["SERV_AfeDet"].Value = _itemServicio.SERV_AfeDet;
-                     //grdItemsServicio.Rows[rowIndex].Cells["SCOT_PreSugerido"].Value = _itemServicio.SERV_Valor;
-
-                     //switch (_itemServicio.SERV_TipoMov)
-                     //{
-                     //   case "A":
-                     //      grdItemsServicio.Rows[rowIndex].Cells["CCOT_IngresoGasto"].Value = null;
-                     //      break;
-                     //   case "C":
-                     //      grdItemsServicio.Rows[rowIndex].Cells["CCOT_IngresoGasto"].Value = "E";
-                     //      break;
-                     //   case "I":
-                     //      grdItemsServicio.Rows[rowIndex].Cells["CCOT_IngresoGasto"].Value = "I";
-                     //      break;
-                     //}
-
-                     //if (grdItemsServicio.Rows[rowIndex].Cells["CCOT_IngresoGasto"].Value != null)
-                     //{
-                     //   String _movimiento = grdItemsServicio.Rows[rowIndex].Cells["CCOT_IngresoGasto"].Value.ToString();
-                     //   if (_movimiento == "E") { _movimiento = "C"; }
-
-                     //   ObservableCollection<Entities.ServiciosDocumentos> _serviciosDocumento = Presenter.Client.GetAllServiciosDocumentosByServCodigo(_itemServicio.SERV_Codigo).ToObservableCollection();//.Where(doc => doc.SEDO_Seleccionar == 1)
-                     //   ObservableCollection<Entities.Tipos> _tiposTDO = (from tdo in Presenter.ListTiposTDO
-                     //                                                     join doc in _serviciosDocumento on tdo.TIPO_CodTipo equals doc.TIPO_CodTDO
-                     //                                                     where doc.SEDO_Tipo == _movimiento
-                     //                                                     select tdo).ToObservableCollection();
-
-                     //   if (_tiposTDO.Count > 0)
-                     //   {
-                     //      grdItemsServicio.Rows[rowIndex].Cells["TIPO_TabTDO"].Value = _tiposTDO[0].TIPO_CodTabla;
-                     //      grdItemsServicio.Rows[rowIndex].Cells["TIPO_CodTDO"].Value = _tiposTDO[0].TIPO_CodTipo;
-                     //      grdItemsServicio.Rows[rowIndex].Cells["TIPO_DescTDO"].Value = _tiposTDO[0].TIPO_Desc1;
-                     //   }
-                     //}
-
-
+                  {                     
                      switch (_itemServicio.SERV_TipoMov)
                      {
                         case "A":
@@ -3118,15 +3080,7 @@ namespace Delfin.Principal
                      }
 
                      if (_itemServicio.SERV_AfeIgv.HasValue)
-                     {
-                        //if (grdItemsServicio.Rows[rowIndex].Cells["ENTC_Domiciliado"].Value != DBNull.Value)
-                        //{
-                        //   if ((Boolean)grdItemsServicio.Rows[rowIndex].Cells["ENTC_Domiciliado"].Value)
-                        //   { grdItemsServicio.Rows[rowIndex].Cells["SERV_AfeIgv"].Value = false; }
-                        //   else
-                        //   { grdItemsServicio.Rows[rowIndex].Cells["SERV_AfeIgv"].Value = _itemServicio.SERV_AfeIgv.Value; }
-                        //}
-                        //else
+                     {    
                         grdItemsServicio.Rows[rowIndex].Cells["SERV_AfeIgv"].Value = _itemServicio.SERV_AfeIgv.Value;
                         grdItemsServicio.Rows[rowIndex].Cells["SERV_AfeIgvServicio"].Value = _itemServicio.SERV_AfeIgv.Value;
                      }
@@ -3139,7 +3093,7 @@ namespace Delfin.Principal
                      grdItemsServicio.Rows[rowIndex].Cells["TIPO_TabMnd"].Value = _itemServicio.TIPO_TabMND;
                      grdItemsServicio.Rows[rowIndex].Cells["TIPO_CodMnd"].Value = _itemServicio.TIPO_CodMND;
                      grdItemsServicio.Rows[rowIndex].Cells["CONS_TabBas"].Value = _itemServicio.CONS_TabBAS;
-                     grdItemsServicio.Rows[rowIndex].Cells["CONS_CodBas"].Value = _itemServicio.CONS_CodBAS;
+                     grdItemsServicio.Rows[rowIndex].Cells["CONS_CodBas"].Value = _itemServicio.CONS_CodBAS;                     
 
                      Decimal _SCOT_Cantidad = (Decimal)1.00;
                      Nullable<Decimal> _DCOT_Peso = (Decimal)0.00;
@@ -3283,7 +3237,7 @@ namespace Delfin.Principal
                      grdItemsServiciosChangeControl.Rows[rowIndex].Cells["CONS_TabBas"].Value = _itemServicio.CONS_TabBAS;
                      grdItemsServiciosChangeControl.Rows[rowIndex].Cells["CONS_CodBas"].Value = _itemServicio.CONS_CodBAS;
 
-                     Decimal _SCOT_Cantidad = (Decimal)1.00;
+                     Decimal _SCOT_Cantidad = (Decimal)1.00;                     
                      Nullable<Decimal> _DCOT_Peso = (Decimal)0.00;
                      Nullable<Decimal> _DCOT_Volumen = (Decimal)0.00;
 
@@ -3319,6 +3273,7 @@ namespace Delfin.Principal
                      ObservableCollection<Entities.ServiciosDocumentos> _serviciosDocumento = Presenter.Client.GetAllServiciosDocumentosByServCodigo(_itemServicio.SERV_Codigo).ToObservableCollection();//.Where(doc => doc.SEDO_Seleccionar == 1)
 
                      String _movimiento = (grdItemsServiciosChangeControl.Rows[rowIndex].Cells["CCOT_IngresoGasto"].Value != null ? grdItemsServiciosChangeControl.Rows[rowIndex].Cells["CCOT_IngresoGasto"].Value.ToString() : null);
+
                      if (!String.IsNullOrEmpty(_movimiento))
                      {
                         SetTipoDocumentoServicio(IsChangeControl, rowIndex);
@@ -4220,6 +4175,8 @@ namespace Delfin.Principal
 
             this.grdItemsServicio.Columns.Add("TIPO_TabMnd", "Tipo Tabla Moneda", "TIPO_TabMnd");
             this.grdItemsServicio.Columns.Add("CONS_TabBas", "Tipo Tabla Documento", "CONS_TabBas");
+            //Codigo Interno
+            this.grdItemsServicio.Columns.Add("CCCT_Codigo", "Código CtaCte", "CCCT_Codigo");
 
             //Edicion del Servicio
             //this.grdItemsServicio.Columns.Add("SCOT_Editable", "Editable", "SCOT_Editable");
@@ -4714,6 +4671,16 @@ namespace Delfin.Principal
             _fechaOperacion.FormatString = "{0:d}";
             this.grdItemsServiciosChangeControl.Columns.Add(_fechaOperacion);
 
+            //Codigo Interno
+            this.grdItemsServiciosChangeControl.Columns.Add("CCCT_Codigo", "Código CtaCte", "CCCT_Codigo");
+
+            //    Telerik.WinControls.UI.GridViewDataColumn _ccctCodigo = new Telerik.WinControls.UI.GridViewDataColumn();
+            //_ccctCodigo.Name = "CCCT_Codigo";
+            //_ccctCodigo.HeaderText = "Código CtaCte";
+            //_ccctCodigo.FieldName = "CCCT_Codigo";
+            ////_ccctCodigo.Minimum = (int)0;
+            //this.grdItemsServiciosChangeControl.Columns.Add(_ccctCodigo);
+
             //Editable 
             Telerik.WinControls.UI.GridViewCheckBoxColumn _editable = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             _editable.Name = "SCOT_Editable";
@@ -4785,6 +4752,8 @@ namespace Delfin.Principal
             this.grdItemsServiciosChangeControl.Columns["SCOT_Origen"].IsVisible = false;
             this.grdItemsServiciosChangeControl.Columns["SCOT_FechaOperacion"].ReadOnly = false;
             this.grdItemsServiciosChangeControl.Columns["SCOT_FechaOperacion"].Width = 100;
+
+            this.grdItemsServiciosChangeControl.Columns["CCCT_Codigo"].ReadOnly = false;
 
             this.grdItemsServiciosChangeControl.Columns["SCOT_Editable"].ReadOnly = true;
             this.grdItemsServiciosChangeControl.Columns["SCOT_Editable"].IsVisible = false;
@@ -8509,5 +8478,16 @@ namespace Delfin.Principal
       {
           ShowFileStream();
       }
-   }
+
+        private void btnEnviarProvisionSAP_Click(object sender, EventArgs e)
+        {
+            DataSet dsQuery = new DataSet();
+            ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();
+            int _CCCT_Codigo = Convert.ToInt32(grdItemsServiciosChangeControl.CurrentRow.Cells["CCCT_Codigo"].Value);
+            DateTime _SCOT_FechaOperacion = Convert.ToDateTime(grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
+            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserCodigo + "', 'P'");
+            oJournalEntryViewerForm.dsVoucher = dsQuery;
+            oJournalEntryViewerForm.ShowDialog();
+        }
+    }
 }

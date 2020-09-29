@@ -245,6 +245,18 @@
     </Compile>
     <Compile Include="EventUpdate.vb" />
     <Compile Include="GetHtmlTable.vb" />
+    <Compile Include="InvoiceBillsViewerForm.Designer.vb">
+      <DependentUpon>InvoiceBillsViewerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceBillsViewerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseInvoiceViewerForm.Designer.vb">
+      <DependentUpon>PurchaseInvoiceViewerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseInvoiceViewerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="JournalEntryViewerForm.Designer.vb">
       <DependentUpon>JournalEntryViewerForm.vb</DependentUpon>
     </Compile>
@@ -561,6 +573,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EventManagementForm.resx">
       <DependentUpon>EventManagementForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceBillsViewerForm.resx">
+      <DependentUpon>InvoiceBillsViewerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseInvoiceViewerForm.resx">
+      <DependentUpon>PurchaseInvoiceViewerForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JournalEntryViewerForm.resx">
       <DependentUpon>JournalEntryViewerForm.vb</DependentUpon>

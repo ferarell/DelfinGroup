@@ -50,7 +50,7 @@ namespace Delfin.Principal
             /* Detalle Facturacion */
             BSItems = new BindingSource();
             BSItems.CurrentItemChanged += BSItems_CurrentItemChanged;
-            grdItemsServicios.ValueChanged += grdItemsServicios_ValueChanged;
+            btnSincronizarSAP.ValueChanged += grdItemsServicios_ValueChanged;
             cmbTIPE_Codigo.SelectedIndexChanged += cmbTIPE_Codigo_SelectedIndexChanged;
             txaSeries.SelectedItemSerieChanged += txaSeries_SelectedItemSerieChanged;
             txtPDOV_Observaciones.TextChanged += txtPDOV_Observaciones_TextChanged;
@@ -563,10 +563,10 @@ namespace Delfin.Principal
                      break;
                }
             }
-            grdItemsServicios.DataSource = BSItems;
+            btnSincronizarSAP.DataSource = BSItems;
             navItems.BindingSource = BSItems;
             BSItems.ResetBindings(true);
-            grdItemsServicios.Enabled = grdItemsServicios.RowCount > 0;
+            btnSincronizarSAP.Enabled = btnSincronizarSAP.RowCount > 0;
          }
          catch (Exception ex)
          { Dialogos.MostrarMensajeError(Presenter.Title, Mensajes.ShowItems, ex); }
@@ -707,44 +707,44 @@ namespace Delfin.Principal
          try
          {
             RadGridLocalizationProvider.CurrentProvider = new MySpanishRadGridLocalizationProvider();
-            grdItemsServicios.Columns.Clear();
-            grdItemsServicios.EnableHotTracking = true;
-            grdItemsServicios.EnableAlternatingRowColor = false;
-            grdItemsServicios.ShowFilteringRow = false;
-            grdItemsServicios.ShowHeaderCellButtons = false;
-            grdItemsServicios.TableElement.RowSpacing = 0;
-            grdItemsServicios.TableElement.CellSpacing = 0;
-            grdItemsServicios.EnableFiltering = false;
-            grdItemsServicios.MasterTemplate.EnableFiltering = false;
-            grdItemsServicios.AllowColumnHeaderContextMenu = false;
-            grdItemsServicios.AllowCellContextMenu = false;
-            grdItemsServicios.AllowAddNewRow = false;
-            grdItemsServicios.AllowDeleteRow = false;
-            grdItemsServicios.AllowEditRow = true;
-            grdItemsServicios.AutoGenerateColumns = false;
-            grdItemsServicios.AllowMultiColumnSorting = false;
-            grdItemsServicios.AllowRowResize = false;
-            grdItemsServicios.AllowColumnResize = true;
-            grdItemsServicios.ShowGroupPanel = false;
+            btnSincronizarSAP.Columns.Clear();
+            btnSincronizarSAP.EnableHotTracking = true;
+            btnSincronizarSAP.EnableAlternatingRowColor = false;
+            btnSincronizarSAP.ShowFilteringRow = false;
+            btnSincronizarSAP.ShowHeaderCellButtons = false;
+            btnSincronizarSAP.TableElement.RowSpacing = 0;
+            btnSincronizarSAP.TableElement.CellSpacing = 0;
+            btnSincronizarSAP.EnableFiltering = false;
+            btnSincronizarSAP.MasterTemplate.EnableFiltering = false;
+            btnSincronizarSAP.AllowColumnHeaderContextMenu = false;
+            btnSincronizarSAP.AllowCellContextMenu = false;
+            btnSincronizarSAP.AllowAddNewRow = false;
+            btnSincronizarSAP.AllowDeleteRow = false;
+            btnSincronizarSAP.AllowEditRow = true;
+            btnSincronizarSAP.AutoGenerateColumns = false;
+            btnSincronizarSAP.AllowMultiColumnSorting = false;
+            btnSincronizarSAP.AllowRowResize = false;
+            btnSincronizarSAP.AllowColumnResize = true;
+            btnSincronizarSAP.ShowGroupPanel = false;
 
             GridViewCheckBoxColumn chkFacturar = new GridViewCheckBoxColumn();
             chkFacturar.Name = "Agregar";
             chkFacturar.HeaderText = @"Facturar";
             chkFacturar.FieldName = "Agregar";
-            grdItemsServicios.Columns.Add(chkFacturar);
-            grdItemsServicios.Columns["Agregar"].Width = 50;
-            grdItemsServicios.Columns["Agregar"].ReadOnly = false;
+            btnSincronizarSAP.Columns.Add(chkFacturar);
+            btnSincronizarSAP.Columns["Agregar"].Width = 50;
+            btnSincronizarSAP.Columns["Agregar"].ReadOnly = false;
 
-            grdItemsServicios.Columns.Add("Servicio", "Descripción", "Servicio");
-            grdItemsServicios.Columns["Servicio"].Width = 590;
-            grdItemsServicios.Columns["Servicio"].TextAlignment = ContentAlignment.MiddleLeft;
-            grdItemsServicios.Columns["Servicio"].ReadOnly = true;
+            btnSincronizarSAP.Columns.Add("Servicio", "Descripción", "Servicio");
+            btnSincronizarSAP.Columns["Servicio"].Width = 590;
+            btnSincronizarSAP.Columns["Servicio"].TextAlignment = ContentAlignment.MiddleLeft;
+            btnSincronizarSAP.Columns["Servicio"].ReadOnly = true;
 
-            grdItemsServicios.Columns.Add("Moneda", "Moneda", "Moneda");
-            grdItemsServicios.Columns["Moneda"].Width = 150;
-            grdItemsServicios.Columns["Moneda"].TextAlignment = ContentAlignment.MiddleLeft;
-            grdItemsServicios.Columns["Moneda"].ReadOnly = true;
-            grdItemsServicios.Columns["Moneda"].IsVisible = false;
+            btnSincronizarSAP.Columns.Add("Moneda", "Moneda", "Moneda");
+            btnSincronizarSAP.Columns["Moneda"].Width = 150;
+            btnSincronizarSAP.Columns["Moneda"].TextAlignment = ContentAlignment.MiddleLeft;
+            btnSincronizarSAP.Columns["Moneda"].ReadOnly = true;
+            btnSincronizarSAP.Columns["Moneda"].IsVisible = false;
 
             switch (Presenter.TInicio)
             {
@@ -754,11 +754,11 @@ namespace Delfin.Principal
                   break;
                case PRO007Presenter.TipoInicio.NuevoPreFactura:
                case PRO007Presenter.TipoInicio.EditarPreFactura:
-                  grdItemsServicios.Columns.Add("Importe", "Valor Costo", "Importe");
-                  grdItemsServicios.Columns["Importe"].Width = 100;
-                  grdItemsServicios.Columns["Importe"].FormatString = @"{0:###,##0.00}";
-                  grdItemsServicios.Columns["Importe"].TextAlignment = ContentAlignment.MiddleRight;
-                  grdItemsServicios.Columns["Importe"].ReadOnly = true;
+                  btnSincronizarSAP.Columns.Add("Importe", "Valor Costo", "Importe");
+                  btnSincronizarSAP.Columns["Importe"].Width = 100;
+                  btnSincronizarSAP.Columns["Importe"].FormatString = @"{0:###,##0.00}";
+                  btnSincronizarSAP.Columns["Importe"].TextAlignment = ContentAlignment.MiddleRight;
+                  btnSincronizarSAP.Columns["Importe"].ReadOnly = true;
                   break;
                case PRO007Presenter.TipoInicio.EditarNotaCredito:
                   break;
@@ -766,26 +766,26 @@ namespace Delfin.Principal
                   break;
             }
 
-            grdItemsServicios.Columns.Add("DDOV_ValorVenta", "Valor Venta", "DDOV_ValorVenta");
-            grdItemsServicios.Columns["DDOV_ValorVenta"].Width = 100;
-            grdItemsServicios.Columns["DDOV_ValorVenta"].FormatString = @"{0:###,##0.00}";
-            grdItemsServicios.Columns["DDOV_ValorVenta"].AutoSizeMode = BestFitColumnMode.DisplayedCells;
-            grdItemsServicios.Columns["DDOV_ValorVenta"].TextAlignment = ContentAlignment.MiddleRight;
-            grdItemsServicios.Columns["DDOV_ValorVenta"].ReadOnly = true;
+            btnSincronizarSAP.Columns.Add("DDOV_ValorVenta", "Valor Venta", "DDOV_ValorVenta");
+            btnSincronizarSAP.Columns["DDOV_ValorVenta"].Width = 100;
+            btnSincronizarSAP.Columns["DDOV_ValorVenta"].FormatString = @"{0:###,##0.00}";
+            btnSincronizarSAP.Columns["DDOV_ValorVenta"].AutoSizeMode = BestFitColumnMode.DisplayedCells;
+            btnSincronizarSAP.Columns["DDOV_ValorVenta"].TextAlignment = ContentAlignment.MiddleRight;
+            btnSincronizarSAP.Columns["DDOV_ValorVenta"].ReadOnly = true;
 
-            grdItemsServicios.Columns.Add("DDOV_Impuesto", "Impuesto", "DDOV_Impuesto1");
-            grdItemsServicios.Columns["DDOV_Impuesto"].Width = 100;
-            grdItemsServicios.Columns["DDOV_Impuesto"].FormatString = @"{0:###,##0.00}";
-            grdItemsServicios.Columns["DDOV_Impuesto"].AutoSizeMode = BestFitColumnMode.DisplayedCells;
-            grdItemsServicios.Columns["DDOV_Impuesto"].TextAlignment = ContentAlignment.MiddleRight;
-            grdItemsServicios.Columns["DDOV_Impuesto"].ReadOnly = true;
+            btnSincronizarSAP.Columns.Add("DDOV_Impuesto", "Impuesto", "DDOV_Impuesto1");
+            btnSincronizarSAP.Columns["DDOV_Impuesto"].Width = 100;
+            btnSincronizarSAP.Columns["DDOV_Impuesto"].FormatString = @"{0:###,##0.00}";
+            btnSincronizarSAP.Columns["DDOV_Impuesto"].AutoSizeMode = BestFitColumnMode.DisplayedCells;
+            btnSincronizarSAP.Columns["DDOV_Impuesto"].TextAlignment = ContentAlignment.MiddleRight;
+            btnSincronizarSAP.Columns["DDOV_Impuesto"].ReadOnly = true;
 
-            grdItemsServicios.Columns.Add("DDOV_ImporteTotal", "Total Venta", "DDOV_ValorTotal");
-            grdItemsServicios.Columns["DDOV_ImporteTotal"].Width = 100;
-            grdItemsServicios.Columns["DDOV_ImporteTotal"].FormatString = @"{0:###,##0.00}";
-            grdItemsServicios.Columns["DDOV_ImporteTotal"].AutoSizeMode = BestFitColumnMode.DisplayedCells;
-            grdItemsServicios.Columns["DDOV_ImporteTotal"].TextAlignment = ContentAlignment.MiddleRight;
-            grdItemsServicios.Columns["DDOV_ImporteTotal"].ReadOnly = true;
+            btnSincronizarSAP.Columns.Add("DDOV_ImporteTotal", "Total Venta", "DDOV_ValorTotal");
+            btnSincronizarSAP.Columns["DDOV_ImporteTotal"].Width = 100;
+            btnSincronizarSAP.Columns["DDOV_ImporteTotal"].FormatString = @"{0:###,##0.00}";
+            btnSincronizarSAP.Columns["DDOV_ImporteTotal"].AutoSizeMode = BestFitColumnMode.DisplayedCells;
+            btnSincronizarSAP.Columns["DDOV_ImporteTotal"].TextAlignment = ContentAlignment.MiddleRight;
+            btnSincronizarSAP.Columns["DDOV_ImporteTotal"].ReadOnly = true;
 
          }
          catch (Exception ex)
@@ -933,7 +933,7 @@ namespace Delfin.Principal
                ClearItemsDetalles();
                Presenter.ServiciosOperacion(CbTIPO_CodMND.TiposSelectedValue, NUDPDOV_TipoCambio.Value);
                ShowItemsDetalles();
-               grdItemsServicios.Columns["Agregar"].ReadOnly = false;
+               btnSincronizarSAP.Columns["Agregar"].ReadOnly = false;
                if (Presenter.Entc_CodigoCliente > 0)
                {
                   cmbTIPE_Codigo.TipoEntidadSelectedValue = Convert.ToInt16(TiposEntidad.TIPE_Cliente);
@@ -1043,9 +1043,9 @@ namespace Delfin.Principal
       #region [ Detalle Facturacion ]
       void grdItemsServicios_ValueChanged(object sender, EventArgs e)
       {
-         if (!(grdItemsServicios.ActiveEditor is RadCheckBoxEditor)) return;
-         grdItemsServicios.EndEdit();
-         grdItemsServicios.EndUpdate();
+         if (!(btnSincronizarSAP.ActiveEditor is RadCheckBoxEditor)) return;
+         btnSincronizarSAP.EndEdit();
+         btnSincronizarSAP.EndUpdate();
          BSItems.EndEdit();
          if (!String.IsNullOrEmpty(Presenter.TipoDocumentoVenta))
          {

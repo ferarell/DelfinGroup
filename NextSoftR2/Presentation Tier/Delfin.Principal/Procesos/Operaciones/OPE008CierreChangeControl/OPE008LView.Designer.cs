@@ -28,7 +28,6 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OPE008LView));
             this.TitleView = new Infrastructure.WinForms.Controls.FormTitle();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -48,9 +47,9 @@
             this.panelCaption1 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblCHAN_Anio = new System.Windows.Forms.Label();
-            this.cmbCHAN_Anio = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
+            this.cmbCHAN_Anio = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
             this.panelCaption2 = new Infrastructure.WinForms.Controls.PanelCaption();
-            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItems = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
@@ -61,9 +60,10 @@
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.grdItems = new Telerik.WinControls.UI.RadGridView();
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmColumnas = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSyncSAP = new DevExpress.XtraEditors.SimpleButton();
             this.pnBotones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navItems)).BeginInit();
@@ -127,6 +127,7 @@
             this.toolStripTextBox1.AccessibleName = "Posición";
             this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -166,6 +167,7 @@
             // pnBotones
             // 
             this.pnBotones.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pnBotones.Controls.Add(this.btnSyncSAP);
             this.pnBotones.Controls.Add(this.btnDeshacer);
             this.pnBotones.Controls.Add(this.btnExportar);
             this.pnBotones.Controls.Add(this.btnNuevo);
@@ -186,10 +188,10 @@
             this.btnDeshacer.ForeColor = System.Drawing.Color.Black;
             this.btnDeshacer.Image = global::Delfin.Principal.Properties.Resources.undo;
             this.btnDeshacer.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeshacer.Location = new System.Drawing.Point(218, 0);
+            this.btnDeshacer.Location = new System.Drawing.Point(210, 0);
             this.btnDeshacer.Margin = new System.Windows.Forms.Padding(0);
             this.btnDeshacer.Name = "btnDeshacer";
-            this.btnDeshacer.Size = new System.Drawing.Size(90, 50);
+            this.btnDeshacer.Size = new System.Drawing.Size(70, 50);
             this.btnDeshacer.TabIndex = 3;
             this.btnDeshacer.Text = "&Deshacer";
             this.btnDeshacer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -204,10 +206,10 @@
             this.btnExportar.ForeColor = System.Drawing.Color.Black;
             this.btnExportar.Image = global::Delfin.Principal.Properties.Resources.export;
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(137, 0);
+            this.btnExportar.Location = new System.Drawing.Point(140, 0);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(0);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(81, 50);
+            this.btnExportar.Size = new System.Drawing.Size(70, 50);
             this.btnExportar.TabIndex = 2;
             this.btnExportar.Text = "&Exportar";
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -222,10 +224,10 @@
             this.btnNuevo.ForeColor = System.Drawing.Color.Black;
             this.btnNuevo.Image = global::Delfin.Principal.Properties.Resources.add;
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(71, 0);
+            this.btnNuevo.Location = new System.Drawing.Point(70, 0);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(66, 50);
+            this.btnNuevo.Size = new System.Drawing.Size(70, 50);
             this.btnNuevo.TabIndex = 0;
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -244,7 +246,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(0, 0);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(0);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(71, 50);
+            this.btnBuscar.Size = new System.Drawing.Size(70, 50);
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -355,8 +357,8 @@
             // 
             this.bindingNavigatorCountItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
-            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem1.Text = "of {0}";
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem1.Text = "de {0}";
             this.bindingNavigatorCountItem1.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorMoveLastItem1
@@ -390,6 +392,7 @@
             this.bindingNavigatorPositionItem1.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -460,6 +463,18 @@
             this.tsmColumnas.Size = new System.Drawing.Size(128, 22);
             this.tsmColumnas.Text = "Columnas";
             // 
+            // btnSyncSAP
+            // 
+            this.btnSyncSAP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSyncSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSyncSAP.ImageOptions.Image")));
+            this.btnSyncSAP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnSyncSAP.Location = new System.Drawing.Point(280, 0);
+            this.btnSyncSAP.Name = "btnSyncSAP";
+            this.btnSyncSAP.Size = new System.Drawing.Size(70, 50);
+            this.btnSyncSAP.TabIndex = 10;
+            this.btnSyncSAP.Text = "Sincronizar";
+            this.btnSyncSAP.Click += new System.EventHandler(this.btnSyncSAP_Click);
+            // 
             // OPE008LView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,6 +540,6 @@
       private System.Windows.Forms.ContextMenuStrip cmsMenu;
       private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem tsmColumnas;
-
-   }
+        private DevExpress.XtraEditors.SimpleButton btnSyncSAP;
+    }
 }

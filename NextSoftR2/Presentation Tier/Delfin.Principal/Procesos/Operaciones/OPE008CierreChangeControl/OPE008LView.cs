@@ -15,33 +15,35 @@ namespace Delfin.Principal
 {
    public partial class OPE008LView : UserControl, IOPE008LView
    {
-      #region [ Variables ]
+        Principal.AppService.DelfinServiceClient oAppService = new Principal.AppService.DelfinServiceClient();
 
-      #endregion
+    #region [ Variables ]
 
-      #region [ Formulario ]
-      public OPE008LView(Telerik.WinControls.UI.RadPageViewPage x_tabPageControl)
-      {
-         InitializeComponent();
-         try
-         {
-            TabPageControl = x_tabPageControl;
+    #endregion
 
-            btnBuscar.Click += new EventHandler(btnBuscar_Click);
-            btnDeshacer.Click += new EventHandler(btnDeshacer_Click);
-            TitleView.FormClose += new EventHandler(View_FormClose);
+    #region [ Formulario ]
+    public OPE008LView(Telerik.WinControls.UI.RadPageViewPage x_tabPageControl)
+    {
+        InitializeComponent();
+        try
+        {
+        TabPageControl = x_tabPageControl;
 
-            BSItems = new BindingSource();
-            grdItems.DataSource = BSItems;
-            navItems.BindingSource = BSItems;
+        btnBuscar.Click += new EventHandler(btnBuscar_Click);
+        btnDeshacer.Click += new EventHandler(btnDeshacer_Click);
+        TitleView.FormClose += new EventHandler(View_FormClose);
 
-            grdItems.CellFormatting += grdItems_CellFormatting;
-            grdItems.CommandCellClick += grdItems_CommandCellClick;
-         }
-         catch (Exception ex)
-         { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Presenter.Title, "Ha ocurrido un error al crear la vista.", ex); }
-      }
-      #endregion
+        BSItems = new BindingSource();
+        grdItems.DataSource = BSItems;
+        navItems.BindingSource = BSItems;
+
+        grdItems.CellFormatting += grdItems_CellFormatting;
+        grdItems.CommandCellClick += grdItems_CommandCellClick;
+        }
+        catch (Exception ex)
+        { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Presenter.Title, "Ha ocurrido un error al crear la vista.", ex); }
+    }
+    #endregion
 
       #region [ Propiedades ]
       public Telerik.WinControls.UI.RadPageViewPage TabPageControl { get; set; }
@@ -326,7 +328,17 @@ namespace Delfin.Principal
          { CloseForm(null, new Infrastructure.Client.FormClose.FormCloseEventArgs(this.TabPageControl, Presenter.CUS)); }
       }
       public event Infrastructure.Client.FormClose.FormCloseEventArgs.FormCloseEventHandler CloseForm;
-      #endregion
+        #endregion
 
-   }
+        private void btnSyncSAP_Click(object sender, EventArgs e)
+        {
+            DataSet dsQuery = new DataSet();
+            ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();
+            int _CCCT_Codigo = 0;
+            DateTime _SCOT_FechaOperacion = DateTime.Now;
+            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 0,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserCodigo + "', 'S'");
+            oJournalEntryViewerForm.dsVoucher = dsQuery;
+            oJournalEntryViewerForm.ShowDialog();
+        }
+    }
 }
