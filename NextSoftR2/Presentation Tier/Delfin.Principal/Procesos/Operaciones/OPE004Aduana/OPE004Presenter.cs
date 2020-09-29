@@ -65,6 +65,8 @@ namespace Delfin.Principal
         public Entities.Parametros PARA_PUERTO_CALLAO { get; set; }
         public Entities.Parametros PARA_EMISION_SDA { get; set; }
         public Entities.Parametros PARA_EMISION_TELEDESPACHO { get; set; }
+        public Entities.Parametros PARA_EMISION_RESERVA { get; set; }
+
         public void LoadParameteres()
         {
             try
@@ -75,6 +77,7 @@ namespace Delfin.Principal
                 PARA_PUERTO_CALLAO = ItemsPARAMETRO.FirstOrDefault(para => para.PARA_Clave == "PUERTO_CALLAO");
                 PARA_EMISION_SDA = ItemsPARAMETRO.FirstOrDefault(para => para.PARA_Clave == "EMISION_SDA");
                 PARA_EMISION_TELEDESPACHO = ItemsPARAMETRO.FirstOrDefault(para => para.PARA_Clave == "EMISION_TELEDESPACHO");
+                PARA_EMISION_RESERVA = ItemsPARAMETRO.FirstOrDefault(para => para.PARA_Clave == "EMISION_RESERVA");
             }
             catch (Exception)
             { }
@@ -123,13 +126,7 @@ namespace Delfin.Principal
 
                             String _path = String.Empty;
 
-                            if (String.IsNullOrEmpty(ItemNaveViaje.NAVE_Nombre))
 
-                            { _path = _Ruta + "\\" + "CargaNet_Manifiesto_CargaSueltaSDA_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
-
-                            else
-
-                            { _path = _Ruta + "\\" + "CargaNet_Manifiesto_CargaSueltaSDA_" + ItemNaveViaje.NAVE_Nombre.Trim() + "_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
 
                             using (StreamWriter _writer = new StreamWriter(_path))
 
@@ -138,6 +135,14 @@ namespace Delfin.Principal
                                 if (Formato != "0471" && Formato != "0171")
 
                                 {
+
+                                    if (String.IsNullOrEmpty(ItemNaveViaje.NAVE_Nombre))
+
+                                    { _path = _Ruta + "\\" + "CargaNet_Manifiesto_CargaSueltaSDA_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
+
+                                    else
+
+                                    { _path = _Ruta + "\\" + "CargaNet_Manifiesto_CargaSueltaSDA_" + ItemNaveViaje.NAVE_Nombre.Trim() + "_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
 
                                     _writer.WriteLine(dsEmision.Tables["CAB"].Rows[0]["Valor"].ToString());
 
@@ -189,11 +194,25 @@ namespace Delfin.Principal
 
                                     }
 
+                                    System.Diagnostics.ProcessStartInfo _app = new System.Diagnostics.ProcessStartInfo(_path, "");
+
+                                    System.Diagnostics.Process.Start(_app);
+
+                                    GenerarEventosTareas("Se Generó Archivo para la Emisión de SDA", PARA_EMISION_SDA.PARA_Valor, dsEmision.Tables["OVs"]);
+
                                 }
 
                                 else
 
                                 {
+
+                                    if (String.IsNullOrEmpty(ItemNaveViaje.NAVE_Nombre))
+
+                                    { _path = _Ruta + "\\" + "CargaNet_ReservaCarga_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
+
+                                    else
+
+                                    { _path = _Ruta + "\\" + "CargaNet_ReservaCarga_" + ItemNaveViaje.NAVE_Nombre.Trim() + "_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
 
                                     _writer.WriteLine(dsEmision.Tables["CAB"].Rows[0]["Valor"].ToString());
 
@@ -243,6 +262,11 @@ namespace Delfin.Principal
 
                                     }
 
+                                    System.Diagnostics.ProcessStartInfo _app = new System.Diagnostics.ProcessStartInfo(_path, "");
+
+                                    System.Diagnostics.Process.Start(_app);
+
+                                    GenerarEventosTareas("Se Generó Archivo para la Reserva de Carga", PARA_EMISION_RESERVA.PARA_Valor, dsEmision.Tables["OVs"]);
 
 
                                 }
@@ -251,11 +275,7 @@ namespace Delfin.Principal
 
                             }
 
-                            System.Diagnostics.ProcessStartInfo _app = new System.Diagnostics.ProcessStartInfo(_path, "");
 
-                            System.Diagnostics.Process.Start(_app);
-
-                            GenerarEventosTareas("Se Generó Archivo para la Emisión de SDA", PARA_EMISION_SDA.PARA_Valor, dsEmision.Tables["OVs"]);
 
                         }
 

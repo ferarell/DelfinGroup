@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Delfin.Entities;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -15,14 +16,21 @@ namespace Delfin.Principal
       public Microsoft.Reporting.WinForms.ReportDataSource RepDataSourceService { get; set; }
       public String ReportPath { get; set; }
       public Microsoft.Reporting.WinForms.ReportParameter[] Parameters { get; set; }
-      #endregion
 
-      #region [ Metodo Impresion ]
-      public void Imprimir()
+        public Det_Cotizacion_OV_EventosTareas ItemEventoTarea { get; set; }
+        public Entities.Parametros PARA_BOOKING_GENERADO { get; set; }
+        #endregion
+
+        #region [ Metodo Impresion ]
+        public void Imprimir()
       {
          try
          {
-            if (ItemLView.CCOT_Tipo == Delfin.Controls.variables.CCOT_TipoCotizacion)
+
+                var ItemsPARAMETRO = Client.GetAllParametros();
+                PARA_BOOKING_GENERADO = ItemsPARAMETRO.FirstOrDefault(para => para.PARA_Clave == "BOOKING_GENERADO");
+
+                if (ItemLView.CCOT_Tipo == Delfin.Controls.variables.CCOT_TipoCotizacion)
             {
                if (ItemLView.CONS_CodEST == Delfin.Controls.variables.CONS_ESTCOTAUTORIZADA || ItemLView.CONS_CodEST == Delfin.Controls.variables.CONS_ESTCOTCONFIRMADA)
                { CargarReporteCotizacion(); }
@@ -272,7 +280,8 @@ namespace Delfin.Principal
             Parameters[17] = new Microsoft.Reporting.WinForms.ReportParameter("ENTC_NomEjecutivo", Item.ENTC_NomEjecutivo);
 
             RView.ShowItems();
-         }
+                GenerarEventosTareas("Se Imprime Booking", PARA_BOOKING_GENERADO.PARA_Valor, Item);
+            }
          catch (Exception ex)
          { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Title, "Ha ocurrido un error cargando el reporte.", ex); }
       }
@@ -289,6 +298,69 @@ namespace Delfin.Principal
          catch (Exception ex)
          { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Title, "Ha ocurrido un error limpiando el reporte.", ex); }
       }
-      #endregion
-   }
+
+
+        public void GenerarEventosTareas(String Observacion_Evento, String Codigo_Evento, Cab_Cotizacion_OV oItem)
+        {
+            try
+            {
+                //ItemsEventosTareas = new ObservableCollection<Det_Cotizacion_OV_EventosTareas>();
+                //int pos = 1;
+                //Int32 _CCOT_NumActual = 0;
+
+                //if (DT_OV != null && DT_OV.Rows.Count > 0)
+                //{
+                //    foreach (System.Data.DataRow drOV in DT_OV.Rows)
+                //    {
+                //        if ((Convert.ToInt32(drOV["CCOT_Numero"])) != _CCOT_NumActual)
+                //        {
+                //            _CCOT_NumActual = (Convert.ToInt32(drOV["CCOT_Numero"]));
+
+                ItemEventoTarea = new Det_Cotizacion_OV_EventosTareas();
+                ItemEventoTarea.CCOT_Numero = oItem.CCOT_Numero;
+                ItemEventoTarea.CCOT_Tipo = oItem.CCOT_Tipo;
+                ItemEventoTarea.EVEN_Fecha = DateTime.Now;
+                ItemEventoTarea.EVEN_Cumplida = true;
+                ItemEventoTarea.EVEN_Usuario = Session.UserName;
+                ItemEventoTarea.EVEN_Observaciones = Observacion_Evento;
+                ItemEventoTarea.TIPO_TabEVE = "EVE";
+                ItemEventoTarea.TIPO_CodEVE = Codigo_Evento;
+                if (ListConstantesMOD != null && ListConstantesMOD.Count > 0 && ListConstantesMOD.First() != null)
+                {
+                    ItemEventoTarea.CONS_TabMOD = ListConstantesMOD.First().CONS_CodTabla;
+                    ItemEventoTarea.CONS_CodMOD = ListConstantesMOD.First().CONS_CodTipo;
+                }
+                ItemEventoTarea.EVEN_Manual = false;
+
+                ItemEventoTarea.AUDI_UsrCrea = Session.UserName;
+                ItemEventoTarea.AUDI_FecCrea = Session.Fecha;
+
+                ItemEventoTarea.Instance = Infrastructure.Aspect.BusinessEntity.InstanceEntity.Added;
+                Client.SaveDet_Cotizacion_OV_EventosTareas(ItemEventoTarea);
+                // ItemsEventosTareas.Add(ItemEventoTarea);
+                //        }
+                //        else
+                //        { _CCOT_NumActual = (Convert.ToInt32(drOV["CCOT_Numero"])); }
+                //        if (DT_OV.Rows.Count == pos)
+                //        {
+                //            if ((Client.SaveDet_Cotizacion_OV_EventosTareas(ItemsEventosTareas)))
+                //            {
+                //                //Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeInformacion(Title, "Se han Generado Eventos");
+                //            }
+                //        }
+                //        pos++;
+                //    }
+                //}
+                //else
+                //{ Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeInformacion(Title, "No hay Ordenes de venta para generar eventos."); }
+
+            }
+            catch (Exception ex)
+            {
+                Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Title, "Error al momento de generar Eventos", ex);
+            }
+        }
+
+        #endregion
+    }
 }
