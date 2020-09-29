@@ -14,7 +14,13 @@ Public Interface IIntegradorSBO
     Function InsertarActualizarReferencias(dsReferencias As DataSet) As List(Of Respuesta)
 
     <OperationContract()>
-    Function InsertarActualizarJournalEntry(dsInvoiceBill As DataSet) As List(Of Respuesta)
+    Function InsertarActualizarJournalEntry(dsJournalEntry As DataSet) As List(Of Respuesta)
+
+    <OperationContract()>
+    Function InsertarActualizarInvoiceBills(dsInvoiceBills As DataSet) As List(Of Respuesta)
+
+    <OperationContract()>
+    Function InsertarActualizarCreditMemo(dsCreditMemo As DataSet) As List(Of Respuesta)
 
 
 

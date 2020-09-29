@@ -355,50 +355,51 @@ namespace Delfin.BusinessLogic
                 DataAccessEnterpriseSQL.DAAgregarParametro("@pintNVIA_Codigo", NVIA_Codigo, SqlDbType.Int, 4, ParameterDirection.Input);
                 DataAccessEnterpriseSQL.DAAgregarParametro("@Structure", Formato, SqlDbType.Char, 4, ParameterDirection.Input);
                 _ds = DataAccessEnterpriseSQL.DAExecuteDataSet();
-                if (_ds != null && _ds.Tables.Count == 8)
+                //if (_ds != null && _ds.Tables.Count == 8)
+                //{
+                if (Formato != "0471" && Formato != "0171")
                 {
-                    if (Formato != "0471" && Formato != "0171")
-                    {
-                        //CAB
-                        _ds.Tables[0].TableName = "CAB";
-                        //MAN
-                        _ds.Tables[1].TableName = "MAN";
-                        //BLM
-                        _ds.Tables[2].TableName = "BLM";
-                        //BLH
-                        _ds.Tables[3].TableName = "BLH";
-                        //ENT
-                        _ds.Tables[4].TableName = "ENT";
-                        //FLE-- YA NO VA
-                        //_ds.Tables[5].TableName = "FLE";
-                        //PTR -->NO VA
-                        //TRA -->NO VA
-                        //DET
+                    //CAB
+                    _ds.Tables[0].TableName = "CAB";
+                    //MAN
+                    _ds.Tables[1].TableName = "MAN";
+                    //BLM
+                    _ds.Tables[2].TableName = "BLM";
+                    //BLH
+                    _ds.Tables[3].TableName = "BLH";
+                    //ENT
+                    _ds.Tables[4].TableName = "ENT";
+                    //FLE-- YA NO VA
+                    //_ds.Tables[5].TableName = "FLE";
+                    //PTR -->NO VA
+                    //TRA -->NO VA
+                    //DET
 
-                        _ds.Tables[5].TableName = "DET";
-                        _ds.Tables[6].TableName = "OVs";
-                        _ds.Tables[7].TableName = "MSM";
-                    }
-                    else
-                    {
-                        //CAB
-                        _ds.Tables[0].TableName = "CAB";
-                        //MAN
-                        _ds.Tables[1].TableName = "RVC";
-                        //BLM
-                        _ds.Tables[2].TableName = "PIN";
-                        //BLH
-                        _ds.Tables[3].TableName = "BLS";
-                        //ENT
-                        _ds.Tables[4].TableName = "ENT";
-
-                        _ds.Tables[5].TableName = "CNT";
-                        _ds.Tables[6].TableName = "TMP";
-                        _ds.Tables[7].TableName = "MSM";
-                    }
-
-                    return _ds;
+                    _ds.Tables[5].TableName = "DET";
+                    _ds.Tables[6].TableName = "OVs";
+                    _ds.Tables[7].TableName = "MSM";
                 }
+                else
+                {
+                    //CAB
+                    _ds.Tables[0].TableName = "CAB";
+                    //MAN
+                    _ds.Tables[1].TableName = "RVC";
+                    //BLM
+                    _ds.Tables[2].TableName = "PIN";
+                    //BLH
+                    _ds.Tables[3].TableName = "BLS";
+                    //ENT
+                    _ds.Tables[4].TableName = "ENT";
+
+                    _ds.Tables[5].TableName = "CNT";
+                    _ds.Tables[6].TableName = "TMP";
+                    _ds.Tables[7].TableName = "MSM";
+                    _ds.Tables[8].TableName = "OVs";
+                }
+
+                return _ds;
+                //}
                 return null;
             }
             catch (Exception ex)
