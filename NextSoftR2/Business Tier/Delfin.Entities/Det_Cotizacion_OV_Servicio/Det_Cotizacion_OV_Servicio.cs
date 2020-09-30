@@ -48,6 +48,7 @@ namespace Delfin.Entities
 		private String m_audi_usrmod;
 		private Nullable<DateTime> m_audi_fecmod;
 		private Nullable<int> m_ccct_codigo;
+		private Nullable<int> m_documentosap;
 		#endregion
 
 		#region [ Constructores ]
@@ -565,7 +566,7 @@ namespace Delfin.Entities
 			}
 		}
 		/// <summary>
-		/// Gets or sets el valor de: SCOT_Cantidad.
+		/// Gets or sets el valor de: CCCT_Codigo.
 		/// </summary>
 		[DataMember]
 		public Nullable<int> CCCT_Codigo
@@ -580,6 +581,23 @@ namespace Delfin.Entities
 				}
 			}
 		}
+		/// <summary>
+		/// Gets or sets el valor de: DocumentoSAP.
+		/// </summary>
+		[DataMember]
+		public Nullable<int> DocumentoSAP
+		{
+			get { return m_documentosap; }
+			set
+			{
+				if (m_documentosap != value)
+				{
+					m_documentosap = value;
+					OnPropertyChanged("DocumentoSAP");
+				}
+			}
+		}
+		
 		#endregion
 
 		#region [ CopyTo ]
@@ -632,6 +650,7 @@ namespace Delfin.Entities
             Item.AUDI_UsrMod = this.AUDI_UsrMod;
             Item.AUDI_FecMod = this.AUDI_FecMod;
 			Item.CCCT_Codigo = this.CCCT_Codigo;
+			Item.DocumentoSAP = this.DocumentoSAP;
 
          }
          catch (Exception ex)

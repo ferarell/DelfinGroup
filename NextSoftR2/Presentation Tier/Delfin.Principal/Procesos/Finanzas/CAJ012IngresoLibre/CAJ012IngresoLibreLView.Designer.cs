@@ -28,12 +28,14 @@
       /// </summary>
       private void InitializeComponent()
       {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CAJ012IngresoLibreLView));
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmColumnas = new System.Windows.Forms.ToolStripMenuItem();
             this.pnBotones = new System.Windows.Forms.Panel();
+            this.btnSyncSAP = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeshacer = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -42,7 +44,7 @@
             this.panelCaption2 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.grdItems = new Telerik.WinControls.UI.RadGridView();
             this.TitleView = new Infrastructure.WinForms.Controls.FormTitle();
-            this.navItems = new System.Windows.Forms.BindingNavigator();
+            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
@@ -81,8 +83,7 @@
             this.txtNumDoc = new System.Windows.Forms.TextBox();
             this.lblNVIA_Codigo = new System.Windows.Forms.Label();
             this.txaNVIA_Codigo = new Delfin.Controls.AyudaViaje();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
-            this.btnSyncSAP = new DevExpress.XtraEditors.SimpleButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.cmsMenu.SuspendLayout();
             this.pnBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdItems)).BeginInit();
@@ -133,6 +134,17 @@
             this.pnBotones.Name = "pnBotones";
             this.pnBotones.Size = new System.Drawing.Size(1097, 50);
             this.pnBotones.TabIndex = 1;
+            // 
+            // btnSyncSAP
+            // 
+            this.btnSyncSAP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSyncSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSyncSAP.ImageOptions.Image")));
+            this.btnSyncSAP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnSyncSAP.Location = new System.Drawing.Point(280, 0);
+            this.btnSyncSAP.Name = "btnSyncSAP";
+            this.btnSyncSAP.Size = new System.Drawing.Size(70, 50);
+            this.btnSyncSAP.TabIndex = 9;
+            this.btnSyncSAP.Text = "Sincronizar";
             // 
             // btnDeshacer
             // 
@@ -732,17 +744,6 @@
             this.txaNVIA_Codigo.Tipo = Infrastructure.WinForms.Controls.TextBoxAyuda.TipoTextBoxAyuda.Numerico;
             this.txaNVIA_Codigo.TipoAyudaNaveViaje = Delfin.Controls.AyudaViaje.TipoAyuda.Codigo;
             this.txaNVIA_Codigo.Value = null;
-            // 
-            // btnSyncSAP
-            // 
-            this.btnSyncSAP.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSyncSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSyncSAP.ImageOptions.Image")));
-            this.btnSyncSAP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSyncSAP.Location = new System.Drawing.Point(280, 0);
-            this.btnSyncSAP.Name = "btnSyncSAP";
-            this.btnSyncSAP.Size = new System.Drawing.Size(70, 50);
-            this.btnSyncSAP.TabIndex = 9;
-            this.btnSyncSAP.Text = "Sincronizar";
             // 
             // CAJ012IngresoLibreLView
             // 

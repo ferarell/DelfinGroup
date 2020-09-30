@@ -4177,6 +4177,8 @@ namespace Delfin.Principal
             this.grdItemsServicio.Columns.Add("CONS_TabBas", "Tipo Tabla Documento", "CONS_TabBas");
             //Codigo Interno
             this.grdItemsServicio.Columns.Add("CCCT_Codigo", "Código CtaCte", "CCCT_Codigo");
+            //Documento SAP
+            this.grdItemsServicio.Columns.Add("DocumentoSAP", "Documento SAP", "DocumentoSAP");
 
             //Edicion del Servicio
             //this.grdItemsServicio.Columns.Add("SCOT_Editable", "Editable", "SCOT_Editable");
@@ -4673,6 +4675,8 @@ namespace Delfin.Principal
 
             //Codigo Interno
             this.grdItemsServiciosChangeControl.Columns.Add("CCCT_Codigo", "Código CtaCte", "CCCT_Codigo");
+            //Documento SAP
+            this.grdItemsServiciosChangeControl.Columns.Add("DocumentoSAP", "Documento SAP", "DocumentoSAP");
 
             //    Telerik.WinControls.UI.GridViewDataColumn _ccctCodigo = new Telerik.WinControls.UI.GridViewDataColumn();
             //_ccctCodigo.Name = "CCCT_Codigo";
@@ -8481,6 +8485,8 @@ namespace Delfin.Principal
 
         private void btnEnviarProvisionSAP_Click(object sender, EventArgs e)
         {
+            if (grdItemsServiciosChangeControl.RowCount == 0 )
+            { return; }
             DataSet dsQuery = new DataSet();
             ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();
             int _CCCT_Codigo = Convert.ToInt32(grdItemsServiciosChangeControl.CurrentRow.Cells["CCCT_Codigo"].Value);

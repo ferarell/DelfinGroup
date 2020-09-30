@@ -28,12 +28,14 @@
       /// </summary>
       private void InitializeComponent()
       {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CAJ002IngresosEgresosLView));
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmColumnas = new System.Windows.Forms.ToolStripMenuItem();
             this.pnBotones = new System.Windows.Forms.Panel();
+            this.btnSyncSAP = new DevExpress.XtraEditors.SimpleButton();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnDeshacer = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -50,7 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpMOVI_FecEmision_Fin = new Infrastructure.WinForms.Controls.MaskTime();
             this.label5 = new System.Windows.Forms.Label();
-            this.txaCUBA_Codigo = new Delfin.Controls.CuentaBancaria();
+            this.txaCUBA_Codigo = new Delfin.Controls.CuentaBancaria(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.cmbTIPO_CodMND = new Delfin.Controls.Tipos.ComboBoxTipos();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,7 +67,7 @@
             this.panelCaption2 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.panelCaption1 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.TitleView = new Infrastructure.WinForms.Controls.FormTitle();
-            this.navItems = new System.Windows.Forms.BindingNavigator();
+            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
@@ -76,8 +78,7 @@
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.pdocPrinter = new System.Drawing.Printing.PrintDocument();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
-            this.btnSyncSAP = new DevExpress.XtraEditors.SimpleButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.cmsMenu.SuspendLayout();
             this.pnBotones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -128,6 +129,18 @@
             this.pnBotones.Name = "pnBotones";
             this.pnBotones.Size = new System.Drawing.Size(1099, 50);
             this.pnBotones.TabIndex = 1;
+            // 
+            // btnSyncSAP
+            // 
+            this.btnSyncSAP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSyncSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSyncSAP.ImageOptions.Image")));
+            this.btnSyncSAP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnSyncSAP.Location = new System.Drawing.Point(280, 0);
+            this.btnSyncSAP.Name = "btnSyncSAP";
+            this.btnSyncSAP.Size = new System.Drawing.Size(70, 50);
+            this.btnSyncSAP.TabIndex = 11;
+            this.btnSyncSAP.Text = "Sincronizar";
+            this.btnSyncSAP.Visible = false;
             // 
             // btnExportar
             // 
@@ -681,18 +694,6 @@
             // 
             this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
             this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnSyncSAP
-            // 
-            this.btnSyncSAP.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSyncSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSyncSAP.ImageOptions.Image")));
-            this.btnSyncSAP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSyncSAP.Location = new System.Drawing.Point(280, 0);
-            this.btnSyncSAP.Name = "btnSyncSAP";
-            this.btnSyncSAP.Size = new System.Drawing.Size(70, 50);
-            this.btnSyncSAP.TabIndex = 11;
-            this.btnSyncSAP.Text = "Sincronizar";
-            this.btnSyncSAP.Visible = false;
             // 
             // CAJ002IngresosEgresosLView
             // 
