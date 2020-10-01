@@ -141,6 +141,7 @@
             this.btnSyncSAP.TabIndex = 11;
             this.btnSyncSAP.Text = "Sincronizar";
             this.btnSyncSAP.Visible = false;
+            this.btnSyncSAP.Click += new System.EventHandler(this.btnSyncSAP_Click);
             // 
             // btnExportar
             // 

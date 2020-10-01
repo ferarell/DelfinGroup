@@ -17,14 +17,16 @@ namespace Delfin.Principal
 {
    public partial class CAJ012IngresoLibreLView : UserControl, ICAJ012IngresoLibreLView
    {
-      #region [ Variables ]
-      //private String m_sortColumnName;
-      //private Boolean m_sortAscending = false;
-      #endregion
+        Principal.AppService.DelfinServiceClient oAppService = new Principal.AppService.DelfinServiceClient();
 
-      #region [ Formulario ]
-      
-      public CAJ012IngresoLibreLView(Telerik.WinControls.UI.RadPageViewPage x_tabPageControl)
+        #region [ Variables ]
+        //private String m_sortColumnName;
+        //private Boolean m_sortAscending = false;
+        #endregion
+
+        #region [ Formulario ]
+
+        public CAJ012IngresoLibreLView(Telerik.WinControls.UI.RadPageViewPage x_tabPageControl)
       {
          InitializeComponent();
          try
@@ -192,6 +194,7 @@ namespace Delfin.Principal
             this.grdItems.Columns["SendAsiento"].AllowFiltering = false;
 
             this.grdItems.Columns.Add("AsientoContable", "Nro. Asiento", "AsientoContable");
+            this.grdItems.Columns.Add("DocumentoSAP", "Documento SAP", "DocumentoSAP");
             /* Desvincular Asiento Inicial*/
             Telerik.WinControls.UI.GridViewCommandColumn commandColumnAP = new Telerik.WinControls.UI.GridViewCommandColumn();
             commandColumnAP.Name = "DAsientoContable";
@@ -671,6 +674,32 @@ namespace Delfin.Principal
          }
       }
       public event Infrastructure.Client.FormClose.FormCloseEventArgs.FormCloseEventHandler CloseForm;
-      #endregion
-   }
+        #endregion
+
+        private void btnSyncSAP_Click(object sender, EventArgs e)
+        {
+            if (grdItems.RowCount == 0)
+            { return; }
+            int _CCCT_Codigo = Convert.ToInt32(grdItems.CurrentRow.Cells["CCCT_Codigo"].Value);
+            if (_CCCT_Codigo == 0)
+            { return; }
+            DataSet dsQuery = new DataSet();
+            ApplicationForm.PurchaseInvoiceViewerForm oPurchaseInvoiceViewerForm = new ApplicationForm.PurchaseInvoiceViewerForm();
+            //DateTime _SCOT_FechaOperacion = Convert.ToDateTime(grdItems.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
+            //dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForInvoiceBillsInterface " + Presenter.ItemCtaCte.EMPR_Codigo + ",'" + Presenter.ItemCtaCte.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserName + "', 'P'");
+            if (grdItems.CurrentRow.Cells["TIPO_TDO"].Value.ToString().Contains("CREDITO"))
+            {
+                dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForPurchaseCreditMemoInterface " + "1, 1, " + _CCCT_Codigo.ToString() + ", '" + Presenter.Session.UserName + "', 'P'");
+                oPurchaseInvoiceViewerForm.sInterfaceName = "PurchaseCreditMemo";
+            }
+            else
+            {
+                dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForPurchaseInvoiceInterface " + "1, 1, " + _CCCT_Codigo.ToString() + ", '" + Presenter.Session.UserName + "', 'P'");
+                oPurchaseInvoiceViewerForm.sInterfaceName = "PurchaseInvoice";
+            }
+            oPurchaseInvoiceViewerForm.dsVoucher = dsQuery;
+            oPurchaseInvoiceViewerForm.ShowDialog();
+            grdItems.CurrentRow.Cells["DocumentoSAP"].Value = oPurchaseInvoiceViewerForm.sDocSAP;
+        }
+    }
 }

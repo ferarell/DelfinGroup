@@ -18,13 +18,15 @@ namespace Delfin.Principal
 {
    public partial class CAJ002IngresosEgresosLView : UserControl, ICAJ002IngresosEgresosLView
    {
-      #region [ Variables ]
-      //private String m_sortColumnName;
-      //private Boolean m_sortAscending = false;
-      #endregion
+        Principal.AppService.DelfinServiceClient oAppService = new Principal.AppService.DelfinServiceClient();
 
-      #region [ Formulario ]
-      public CAJ002IngresosEgresosLView(Telerik.WinControls.UI.RadPageViewPage x_tabPageControl)
+        #region [ Variables ]
+        //private String m_sortColumnName;
+        //private Boolean m_sortAscending = false;
+        #endregion
+
+        #region [ Formulario ]
+        public CAJ002IngresosEgresosLView(Telerik.WinControls.UI.RadPageViewPage x_tabPageControl)
       {
          InitializeComponent();
          try
@@ -743,6 +745,11 @@ namespace Delfin.Principal
          { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Presenter.Title, "Ha ocurrido un error al cerrar el modulo.", ex); }
       }
       public event Infrastructure.Client.FormClose.FormCloseEventArgs.FormCloseEventHandler CloseForm;
-      #endregion
-   }
+        #endregion
+
+        private void btnSyncSAP_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
