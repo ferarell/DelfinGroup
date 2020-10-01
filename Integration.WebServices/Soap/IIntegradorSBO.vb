@@ -22,7 +22,11 @@ Public Interface IIntegradorSBO
     <OperationContract()>
     Function InsertarActualizarCreditMemo(dsCreditMemo As DataSet) As List(Of Respuesta)
 
+    <OperationContract()>
+    Function InsertarActualizarPurchaseInvoice(dsPurchaseInvoice As DataSet) As List(Of Respuesta)
 
+    <OperationContract()>
+    Function InsertarActualizarPurchaseCreditMemo(PurchaseCreditMemo As DataSet) As List(Of Respuesta)
 
 
 End Interface

@@ -125,7 +125,29 @@ namespace Delfin.Principal
                         {
 
                             String _path = String.Empty;
+                            if (Formato != "0471" && Formato != "0171")
+                            {
+                                if (String.IsNullOrEmpty(ItemNaveViaje.NAVE_Nombre))
 
+                                { _path = _Ruta + "\\" + "CargaNet_Manifiesto_CargaSueltaSDA_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
+
+                                else
+
+                                { _path = _Ruta + "\\" + "CargaNet_Manifiesto_CargaSueltaSDA_" + ItemNaveViaje.NAVE_Nombre.Trim() + "_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
+
+                            }
+                            else
+                            {
+                                if (String.IsNullOrEmpty(ItemNaveViaje.NAVE_Nombre))
+
+                                { _path = _Ruta + "\\" + "CargaNet_ReservaCarga_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
+
+                                else
+
+                                { _path = _Ruta + "\\" + "CargaNet_ReservaCarga_" + ItemNaveViaje.NAVE_Nombre.Trim() + "_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
+
+
+                            }
 
 
                             using (StreamWriter _writer = new StreamWriter(_path))
@@ -136,14 +158,7 @@ namespace Delfin.Principal
 
                                 {
 
-                                    if (String.IsNullOrEmpty(ItemNaveViaje.NAVE_Nombre))
-
-                                    { _path = _Ruta + "\\" + "CargaNet_Manifiesto_CargaSueltaSDA_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
-
-                                    else
-
-                                    { _path = _Ruta + "\\" + "CargaNet_Manifiesto_CargaSueltaSDA_" + ItemNaveViaje.NAVE_Nombre.Trim() + "_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
-
+                                    
                                     _writer.WriteLine(dsEmision.Tables["CAB"].Rows[0]["Valor"].ToString());
 
                                     _writer.WriteLine(dsEmision.Tables["MAN"].Rows[0]["Valor"].ToString());
@@ -206,14 +221,7 @@ namespace Delfin.Principal
 
                                 {
 
-                                    if (String.IsNullOrEmpty(ItemNaveViaje.NAVE_Nombre))
-
-                                    { _path = _Ruta + "\\" + "CargaNet_ReservaCarga_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
-
-                                    else
-
-                                    { _path = _Ruta + "\\" + "CargaNet_ReservaCarga_" + ItemNaveViaje.NAVE_Nombre.Trim() + "_" + ItemNaveViaje.NVIA_NroViaje.Trim() + ".txt"; }
-
+                                    
                                     _writer.WriteLine(dsEmision.Tables["CAB"].Rows[0]["Valor"].ToString());
 
                                     // _writer.WriteLine(dsEmision.Tables["MAN"].Rows[0]["Valor"].ToString());
