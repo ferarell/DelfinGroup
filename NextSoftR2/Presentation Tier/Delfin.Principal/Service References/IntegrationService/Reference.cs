@@ -50,6 +50,18 @@ namespace Delfin.Principal.IntegrationService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemo", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemoResponse")]
         System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarCreditMemoAsync(System.Data.DataSet dsCreditMemo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseInvoice", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseInvoiceResponse")]
+        ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarPurchaseInvoice(System.Data.DataSet dsPurchaseInvoice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseInvoice", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseInvoiceResponse")]
+        System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarPurchaseInvoiceAsync(System.Data.DataSet dsPurchaseInvoice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemo", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemoResponse")]
+        ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarPurchaseCreditMemo(System.Data.DataSet PurchaseCreditMemo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemo", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemoResponse")]
+        System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarPurchaseCreditMemoAsync(System.Data.DataSet PurchaseCreditMemo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -125,6 +137,22 @@ namespace Delfin.Principal.IntegrationService {
         
         public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarCreditMemoAsync(System.Data.DataSet dsCreditMemo) {
             return base.Channel.InsertarActualizarCreditMemoAsync(dsCreditMemo);
+        }
+        
+        public ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarPurchaseInvoice(System.Data.DataSet dsPurchaseInvoice) {
+            return base.Channel.InsertarActualizarPurchaseInvoice(dsPurchaseInvoice);
+        }
+        
+        public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarPurchaseInvoiceAsync(System.Data.DataSet dsPurchaseInvoice) {
+            return base.Channel.InsertarActualizarPurchaseInvoiceAsync(dsPurchaseInvoice);
+        }
+        
+        public ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarPurchaseCreditMemo(System.Data.DataSet PurchaseCreditMemo) {
+            return base.Channel.InsertarActualizarPurchaseCreditMemo(PurchaseCreditMemo);
+        }
+        
+        public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarPurchaseCreditMemoAsync(System.Data.DataSet PurchaseCreditMemo) {
+            return base.Channel.InsertarActualizarPurchaseCreditMemoAsync(PurchaseCreditMemo);
         }
     }
 }

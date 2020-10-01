@@ -419,6 +419,18 @@ Namespace IntegrationService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemo", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemoResponse")>  _
         Function InsertarActualizarCreditMemoAsync(ByVal dsCreditMemo As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseInvoice", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseInvoiceResponse")>  _
+        Function InsertarActualizarPurchaseInvoice(ByVal dsPurchaseInvoice As System.Data.DataSet) As IntegrationService.Respuesta()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseInvoice", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseInvoiceResponse")>  _
+        Function InsertarActualizarPurchaseInvoiceAsync(ByVal dsPurchaseInvoice As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemo", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemoResponse")>  _
+        Function InsertarActualizarPurchaseCreditMemo(ByVal PurchaseCreditMemo As System.Data.DataSet) As IntegrationService.Respuesta()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemo", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemoResponse")>  _
+        Function InsertarActualizarPurchaseCreditMemoAsync(ByVal PurchaseCreditMemo As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -498,6 +510,22 @@ Namespace IntegrationService
         
         Public Function InsertarActualizarCreditMemoAsync(ByVal dsCreditMemo As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta()) Implements IntegrationService.IIntegradorSBO.InsertarActualizarCreditMemoAsync
             Return MyBase.Channel.InsertarActualizarCreditMemoAsync(dsCreditMemo)
+        End Function
+        
+        Public Function InsertarActualizarPurchaseInvoice(ByVal dsPurchaseInvoice As System.Data.DataSet) As IntegrationService.Respuesta() Implements IntegrationService.IIntegradorSBO.InsertarActualizarPurchaseInvoice
+            Return MyBase.Channel.InsertarActualizarPurchaseInvoice(dsPurchaseInvoice)
+        End Function
+        
+        Public Function InsertarActualizarPurchaseInvoiceAsync(ByVal dsPurchaseInvoice As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta()) Implements IntegrationService.IIntegradorSBO.InsertarActualizarPurchaseInvoiceAsync
+            Return MyBase.Channel.InsertarActualizarPurchaseInvoiceAsync(dsPurchaseInvoice)
+        End Function
+        
+        Public Function InsertarActualizarPurchaseCreditMemo(ByVal PurchaseCreditMemo As System.Data.DataSet) As IntegrationService.Respuesta() Implements IntegrationService.IIntegradorSBO.InsertarActualizarPurchaseCreditMemo
+            Return MyBase.Channel.InsertarActualizarPurchaseCreditMemo(PurchaseCreditMemo)
+        End Function
+        
+        Public Function InsertarActualizarPurchaseCreditMemoAsync(ByVal PurchaseCreditMemo As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta()) Implements IntegrationService.IIntegradorSBO.InsertarActualizarPurchaseCreditMemoAsync
+            Return MyBase.Channel.InsertarActualizarPurchaseCreditMemoAsync(PurchaseCreditMemo)
         End Function
     End Class
 End Namespace
