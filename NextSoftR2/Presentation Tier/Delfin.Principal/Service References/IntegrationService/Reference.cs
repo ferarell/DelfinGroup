@@ -34,10 +34,22 @@ namespace Delfin.Principal.IntegrationService {
         System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarReferenciasAsync(System.Data.DataSet dsReferencias);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntryResponse")]
-        ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarJournalEntry(System.Data.DataSet dsInvoiceBill);
+        ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarJournalEntry(System.Data.DataSet dsJournalEntry);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntryResponse")]
-        System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarJournalEntryAsync(System.Data.DataSet dsInvoiceBill);
+        System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarJournalEntryAsync(System.Data.DataSet dsJournalEntry);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBills", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBillsResponse")]
+        ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarInvoiceBills(System.Data.DataSet dsInvoiceBills);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBills", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBillsResponse")]
+        System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarInvoiceBillsAsync(System.Data.DataSet dsInvoiceBills);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemo", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemoResponse")]
+        ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarCreditMemo(System.Data.DataSet dsCreditMemo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemo", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemoResponse")]
+        System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarCreditMemoAsync(System.Data.DataSet dsCreditMemo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -91,12 +103,28 @@ namespace Delfin.Principal.IntegrationService {
             return base.Channel.InsertarActualizarReferenciasAsync(dsReferencias);
         }
         
-        public ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarJournalEntry(System.Data.DataSet dsInvoiceBill) {
-            return base.Channel.InsertarActualizarJournalEntry(dsInvoiceBill);
+        public ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarJournalEntry(System.Data.DataSet dsJournalEntry) {
+            return base.Channel.InsertarActualizarJournalEntry(dsJournalEntry);
         }
         
-        public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarJournalEntryAsync(System.Data.DataSet dsInvoiceBill) {
-            return base.Channel.InsertarActualizarJournalEntryAsync(dsInvoiceBill);
+        public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarJournalEntryAsync(System.Data.DataSet dsJournalEntry) {
+            return base.Channel.InsertarActualizarJournalEntryAsync(dsJournalEntry);
+        }
+        
+        public ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarInvoiceBills(System.Data.DataSet dsInvoiceBills) {
+            return base.Channel.InsertarActualizarInvoiceBills(dsInvoiceBills);
+        }
+        
+        public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarInvoiceBillsAsync(System.Data.DataSet dsInvoiceBills) {
+            return base.Channel.InsertarActualizarInvoiceBillsAsync(dsInvoiceBills);
+        }
+        
+        public ApplicationForm.IntegrationService.Respuesta[] InsertarActualizarCreditMemo(System.Data.DataSet dsCreditMemo) {
+            return base.Channel.InsertarActualizarCreditMemo(dsCreditMemo);
+        }
+        
+        public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarCreditMemoAsync(System.Data.DataSet dsCreditMemo) {
+            return base.Channel.InsertarActualizarCreditMemoAsync(dsCreditMemo);
         }
     }
 }

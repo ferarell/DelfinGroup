@@ -8487,13 +8487,16 @@ namespace Delfin.Principal
         {
             if (grdItemsServiciosChangeControl.RowCount == 0 )
             { return; }
-            DataSet dsQuery = new DataSet();
-            ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();
             int _CCCT_Codigo = Convert.ToInt32(grdItemsServiciosChangeControl.CurrentRow.Cells["CCCT_Codigo"].Value);
+            if (_CCCT_Codigo == 0)
+            { return; }
+            DataSet dsQuery = new DataSet();
+            ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();           
             DateTime _SCOT_FechaOperacion = Convert.ToDateTime(grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
             dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserCodigo + "', 'P'");
             oJournalEntryViewerForm.dsVoucher = dsQuery;
             oJournalEntryViewerForm.ShowDialog();
+            grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value = oJournalEntryViewerForm.sDocSAP;
         }
     }
 }

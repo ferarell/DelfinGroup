@@ -32,6 +32,18 @@
   <wsdl:message name="IIntegradorSBO_InsertarActualizarJournalEntry_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertarActualizarJournalEntryResponse" />
   </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarInvoiceBills_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarInvoiceBills" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarInvoiceBills_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarInvoiceBillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarCreditMemo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarCreditMemo" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarCreditMemo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarCreditMemoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IIntegradorSBO">
     <wsdl:operation name="InsertarActualizarServicio">
       <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarServicio" message="tns:IIntegradorSBO_InsertarActualizarServicio_InputMessage" />
@@ -48,6 +60,14 @@
     <wsdl:operation name="InsertarActualizarJournalEntry">
       <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry" message="tns:IIntegradorSBO_InsertarActualizarJournalEntry_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntryResponse" message="tns:IIntegradorSBO_InsertarActualizarJournalEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarInvoiceBills">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBills" message="tns:IIntegradorSBO_InsertarActualizarInvoiceBills_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBillsResponse" message="tns:IIntegradorSBO_InsertarActualizarInvoiceBills_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarCreditMemo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemo" message="tns:IIntegradorSBO_InsertarActualizarCreditMemo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemoResponse" message="tns:IIntegradorSBO_InsertarActualizarCreditMemo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IIntegradorSBO" type="tns:IIntegradorSBO">
@@ -81,6 +101,24 @@
     </wsdl:operation>
     <wsdl:operation name="InsertarActualizarJournalEntry">
       <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarInvoiceBills">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarCreditMemo">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

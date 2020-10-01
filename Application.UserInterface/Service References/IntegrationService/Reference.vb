@@ -177,6 +177,9 @@ Namespace IntegrationService
         Private DocNumField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private NumberField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private errorField As IntegrationService.Wrong
         
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
@@ -211,6 +214,19 @@ Namespace IntegrationService
                 If (Me.DocNumField.Equals(value) <> true) Then
                     Me.DocNumField = value
                     Me.RaisePropertyChanged("DocNum")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Number() As Integer
+            Get
+                Return Me.NumberField
+            End Get
+            Set
+                If (Me.NumberField.Equals(value) <> true) Then
+                    Me.NumberField = value
+                    Me.RaisePropertyChanged("Number")
                 End If
             End Set
         End Property
@@ -387,10 +403,22 @@ Namespace IntegrationService
         Function InsertarActualizarReferenciasAsync(ByVal dsReferencias As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntryResponse")>  _
-        Function InsertarActualizarJournalEntry(ByVal dsInvoiceBill As System.Data.DataSet) As IntegrationService.Respuesta()
+        Function InsertarActualizarJournalEntry(ByVal dsJournalEntry As System.Data.DataSet) As IntegrationService.Respuesta()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntryResponse")>  _
-        Function InsertarActualizarJournalEntryAsync(ByVal dsInvoiceBill As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
+        Function InsertarActualizarJournalEntryAsync(ByVal dsJournalEntry As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBills", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBillsResponse")>  _
+        Function InsertarActualizarInvoiceBills(ByVal dsInvoiceBills As System.Data.DataSet) As IntegrationService.Respuesta()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBills", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBillsResponse")>  _
+        Function InsertarActualizarInvoiceBillsAsync(ByVal dsInvoiceBills As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemo", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemoResponse")>  _
+        Function InsertarActualizarCreditMemo(ByVal dsCreditMemo As System.Data.DataSet) As IntegrationService.Respuesta()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemo", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemoResponse")>  _
+        Function InsertarActualizarCreditMemoAsync(ByVal dsCreditMemo As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -448,12 +476,28 @@ Namespace IntegrationService
             Return MyBase.Channel.InsertarActualizarReferenciasAsync(dsReferencias)
         End Function
         
-        Public Function InsertarActualizarJournalEntry(ByVal dsInvoiceBill As System.Data.DataSet) As IntegrationService.Respuesta() Implements IntegrationService.IIntegradorSBO.InsertarActualizarJournalEntry
-            Return MyBase.Channel.InsertarActualizarJournalEntry(dsInvoiceBill)
+        Public Function InsertarActualizarJournalEntry(ByVal dsJournalEntry As System.Data.DataSet) As IntegrationService.Respuesta() Implements IntegrationService.IIntegradorSBO.InsertarActualizarJournalEntry
+            Return MyBase.Channel.InsertarActualizarJournalEntry(dsJournalEntry)
         End Function
         
-        Public Function InsertarActualizarJournalEntryAsync(ByVal dsInvoiceBill As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta()) Implements IntegrationService.IIntegradorSBO.InsertarActualizarJournalEntryAsync
-            Return MyBase.Channel.InsertarActualizarJournalEntryAsync(dsInvoiceBill)
+        Public Function InsertarActualizarJournalEntryAsync(ByVal dsJournalEntry As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta()) Implements IntegrationService.IIntegradorSBO.InsertarActualizarJournalEntryAsync
+            Return MyBase.Channel.InsertarActualizarJournalEntryAsync(dsJournalEntry)
+        End Function
+        
+        Public Function InsertarActualizarInvoiceBills(ByVal dsInvoiceBills As System.Data.DataSet) As IntegrationService.Respuesta() Implements IntegrationService.IIntegradorSBO.InsertarActualizarInvoiceBills
+            Return MyBase.Channel.InsertarActualizarInvoiceBills(dsInvoiceBills)
+        End Function
+        
+        Public Function InsertarActualizarInvoiceBillsAsync(ByVal dsInvoiceBills As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta()) Implements IntegrationService.IIntegradorSBO.InsertarActualizarInvoiceBillsAsync
+            Return MyBase.Channel.InsertarActualizarInvoiceBillsAsync(dsInvoiceBills)
+        End Function
+        
+        Public Function InsertarActualizarCreditMemo(ByVal dsCreditMemo As System.Data.DataSet) As IntegrationService.Respuesta() Implements IntegrationService.IIntegradorSBO.InsertarActualizarCreditMemo
+            Return MyBase.Channel.InsertarActualizarCreditMemo(dsCreditMemo)
+        End Function
+        
+        Public Function InsertarActualizarCreditMemoAsync(ByVal dsCreditMemo As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta()) Implements IntegrationService.IIntegradorSBO.InsertarActualizarCreditMemoAsync
+            Return MyBase.Channel.InsertarActualizarCreditMemoAsync(dsCreditMemo)
         End Function
     End Class
 End Namespace
