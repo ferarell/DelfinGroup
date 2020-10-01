@@ -31,7 +31,8 @@ namespace Delfin.Entities
       private String m_ccct_serie;
       private String m_ccct_numero;
       private String m_ccct_asientocontable;
-      private Nullable<DateTime> m_ccct_fechaemision;
+        private String m_documentosap;
+        private Nullable<DateTime> m_ccct_fechaemision;
       private Nullable<Decimal> m_ccct_tipocambio;
       private Nullable<DateTime> m_ccct_fecharecepcion;
       private Nullable<DateTime> m_ccct_fechavcto;
@@ -392,10 +393,26 @@ namespace Delfin.Entities
             }
          }
       }
-      /// <summary>
-      /// Gets or sets el valor de: CCCT_FechaEmision.
-      /// </summary>
-      [DataMember]
+        /// <summary>
+        /// Gets or sets el valor de: DocumentoSAP.
+        /// </summary>
+        [DataMember]
+        public string DocumentoSAP
+        {
+            get { return m_documentosap; }
+            set
+            {
+                if (m_documentosap != value)
+                {
+                    m_documentosap = value;
+                    OnPropertyChanged("DocumentoSAP");
+                }
+            }
+        }
+        /// <summary>
+        /// Gets or sets el valor de: CCCT_FechaEmision.
+        /// </summary>
+        [DataMember]
       public Nullable<DateTime> CCCT_FechaEmision
       {
          get { return m_ccct_fechaemision; }

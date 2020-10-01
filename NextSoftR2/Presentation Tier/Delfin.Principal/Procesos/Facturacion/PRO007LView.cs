@@ -543,6 +543,7 @@ namespace Delfin.Principal
 
                   grdItems.Columns.Add("CCCT_Glosa", "Concepto", "CCCT_Glosa");
                   grdItems.Columns.Add("AsientoContable", "Nro. Asiento", "AsientoContable");
+                  grdItems.Columns.Add("DocumentoSAP", "Documento SAP", "DocumentoSAP");
 
                   grdItems.Columns.Add("Base", "Base Imponible", "Base");
                   grdItems.Columns.Add("IGV", "IGV", "IGV");
@@ -565,7 +566,7 @@ namespace Delfin.Principal
 
                   //grdItems.Columns.Add("TipoCambio", "Tipo Cambio", "TipoCambio");
 
-                  grdItems.Columns.Add("DOCV_Codigo", "Interno", "DOCV_Codigo");
+                  grdItems.Columns.Add("DOCV_Codigo", "Interno", "DOCV_Codigo");                  
                   break;
 
             }
@@ -1359,7 +1360,7 @@ namespace Delfin.Principal
             dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForInvoiceBillsInterface " + "1, 1, " + _DOCV_Codigo.ToString() + ", '" + Presenter.Session.UserName + "', 'P'");
             oInvoiceBillsViewerForm.dsVoucher = dsQuery;
             oInvoiceBillsViewerForm.ShowDialog();
-            //grdItems.CurrentRow.Cells["DocumentoSAP"].Value = oJournalEntryViewerForm.sDocSAP;
+            grdItems.CurrentRow.Cells["DocumentoSAP"].Value = oInvoiceBillsViewerForm.sDocSAP;
         }
     }
 }

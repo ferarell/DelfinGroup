@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PRO008LView));
             this.panelCaption2 = new Infrastructure.WinFormsControls.PanelCaption();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,21 +45,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.RbFechaRegistro = new System.Windows.Forms.RadioButton();
             this.RbFechaEmision = new System.Windows.Forms.RadioButton();
-            this.Proveedor = new Delfin.Controls.Entidad();
+            this.Proveedor = new Delfin.Controls.Entidad(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.grdItems = new Telerik.WinControls.UI.RadGridView();
             this.pnBotones = new System.Windows.Forms.Panel();
+            this.btnSyncSAP = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeshacer = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmColumnas = new System.Windows.Forms.ToolStripMenuItem();
             this.TitleView = new Infrastructure.WinFormsControls.FormTitle();
             this.panelCaption1 = new Infrastructure.WinFormsControls.PanelCaption();
-            this.navItems = new System.Windows.Forms.BindingNavigator();
+            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
@@ -68,7 +70,6 @@
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnSyncSAP = new DevExpress.XtraEditors.SimpleButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdItems)).BeginInit();
@@ -342,6 +343,18 @@
             this.pnBotones.Size = new System.Drawing.Size(1101, 50);
             this.pnBotones.TabIndex = 49;
             // 
+            // btnSyncSAP
+            // 
+            this.btnSyncSAP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSyncSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSyncSAP.ImageOptions.Image")));
+            this.btnSyncSAP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.btnSyncSAP.Location = new System.Drawing.Point(280, 0);
+            this.btnSyncSAP.Name = "btnSyncSAP";
+            this.btnSyncSAP.Size = new System.Drawing.Size(70, 50);
+            this.btnSyncSAP.TabIndex = 8;
+            this.btnSyncSAP.Text = "Sincronizar";
+            this.btnSyncSAP.Click += new System.EventHandler(this.btnSyncSAP_Click);
+            // 
             // btnDeshacer
             // 
             this.btnDeshacer.AutoSize = true;
@@ -573,18 +586,6 @@
             // 
             this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
             this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnSyncSAP
-            // 
-            this.btnSyncSAP.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSyncSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSyncSAP.ImageOptions.Image")));
-            this.btnSyncSAP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.btnSyncSAP.Location = new System.Drawing.Point(280, 0);
-            this.btnSyncSAP.Name = "btnSyncSAP";
-            this.btnSyncSAP.Size = new System.Drawing.Size(70, 50);
-            this.btnSyncSAP.TabIndex = 8;
-            this.btnSyncSAP.Text = "Sincronizar";
-            this.btnSyncSAP.Click += new System.EventHandler(this.btnSyncSAP_Click);
             // 
             // PRO008LView
             // 

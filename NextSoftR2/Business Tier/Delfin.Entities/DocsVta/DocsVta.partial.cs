@@ -94,8 +94,11 @@ namespace Delfin.Entities
       [DataMember]
       public String emailFE { get; set; }
 
+    [DataMember]
+    public String DocumentoSAP { get; set; }
 
-      [DataMember]
+
+        [DataMember]
       public Decimal Base { get; set; }
       [DataMember]
       public Decimal IGV { get; set; }
