@@ -1357,7 +1357,16 @@ namespace Delfin.Principal
             ApplicationForm.InvoiceBillsViewerForm oInvoiceBillsViewerForm = new ApplicationForm.InvoiceBillsViewerForm();
             //DateTime _SCOT_FechaOperacion = Convert.ToDateTime(grdItems.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
             //dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForInvoiceBillsInterface " + Presenter.ItemCtaCte.EMPR_Codigo + ",'" + Presenter.ItemCtaCte.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserName + "', 'P'");
-            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForInvoiceBillsInterface " + "1, 1, " + _DOCV_Codigo.ToString() + ", '" + Presenter.Session.UserName + "', 'P'");
+            if (grdItems.CurrentRow.Cells["TIPO_TDO"].Value.ToString().Contains("CREDITO"))
+            { 
+                dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForCreditMemoInterface " + "1, 1, " + _DOCV_Codigo.ToString() + ", '" + Presenter.Session.UserName + "', 'P'");
+                oInvoiceBillsViewerForm.sInterfaceName = "CreditMemo";
+            }
+            else 
+            { 
+                dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForInvoiceBillsInterface " + "1, 1, " + _DOCV_Codigo.ToString() + ", '" + Presenter.Session.UserName + "', 'P'");
+                oInvoiceBillsViewerForm.sInterfaceName = "InvoiceBills";
+            }
             oInvoiceBillsViewerForm.dsVoucher = dsQuery;
             oInvoiceBillsViewerForm.ShowDialog();
             grdItems.CurrentRow.Cells["DocumentoSAP"].Value = oInvoiceBillsViewerForm.sDocSAP;
