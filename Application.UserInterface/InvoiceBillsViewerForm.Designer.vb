@@ -19,12 +19,12 @@ Partial Class InvoiceBillsViewerForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(JournalEntryViewerForm))
-        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InvoiceBillsViewerForm))
+        Me.bmActions = New DevExpress.XtraBars.BarManager()
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
+        Me.bbiVoucherGenerate = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiExport = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
@@ -93,7 +93,6 @@ Partial Class InvoiceBillsViewerForm
         Me.GridColumn18 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn19 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn37 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.bbiVoucherGenerate = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -154,6 +153,13 @@ Partial Class InvoiceBillsViewerForm
         Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
         Me.brBarraAcciones.OptionsBar.UseWholeRow = True
         Me.brBarraAcciones.Text = "Custom 5"
+        '
+        'bbiVoucherGenerate
+        '
+        Me.bbiVoucherGenerate.Caption = "&Generar Asiento"
+        Me.bbiVoucherGenerate.Id = 25
+        Me.bbiVoucherGenerate.ImageOptions.Image = CType(resources.GetObject("bbiVoucherGenerate.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiVoucherGenerate.Name = "bbiVoucherGenerate"
         '
         'bbiExport
         '
@@ -675,14 +681,7 @@ Partial Class InvoiceBillsViewerForm
         Me.GridColumn37.FieldName = "IdProyecto"
         Me.GridColumn37.Name = "GridColumn37"
         '
-        'bbiVoucherGenerate
-        '
-        Me.bbiVoucherGenerate.Caption = "&Generar Asiento"
-        Me.bbiVoucherGenerate.Id = 25
-        Me.bbiVoucherGenerate.ImageOptions.Image = CType(resources.GetObject("bbiVoucherGenerate.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiVoucherGenerate.Name = "bbiVoucherGenerate"
-        '
-        'JournalEntryViewerForm
+        'InvoiceBillsViewerForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -692,9 +691,9 @@ Partial Class InvoiceBillsViewerForm
         Me.Controls.Add(Me.BarDockControl4)
         Me.Controls.Add(Me.BarDockControl2)
         Me.Controls.Add(Me.BarDockControl1)
-        Me.Name = "JournalEntryViewerForm"
+        Me.Name = "InvoiceBillsViewerForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Vista Preliminar de Asiento Contable"
+        Me.Text = "Vista Preliminar del Documento de Venta"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).EndInit()

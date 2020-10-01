@@ -18,13 +18,15 @@ namespace Delfin.Principal
 {
    public partial class PRO007LView : UserControl, IPRO007LView
    {
-      #region [ Variables ]
+        Principal.AppService.DelfinServiceClient oAppService = new Principal.AppService.DelfinServiceClient();
 
-      #endregion
+        #region [ Variables ]
 
-      #region [ Formulario ]
+        #endregion
 
-      public PRO007LView(RadPageViewPage x_tabPageControl)
+        #region [ Formulario ]
+
+        public PRO007LView(RadPageViewPage x_tabPageControl)
       {
          InitializeComponent();
          try
@@ -1341,6 +1343,23 @@ namespace Delfin.Principal
          }
       }
       public event FormCloseEventArgs.FormCloseEventHandler CloseForm;
-      #endregion
-   }
+        #endregion
+
+        private void btnSyncSAP_Click(object sender, EventArgs e)
+        {
+            if (grdItems.RowCount == 0)
+            { return; }
+            int _DOCV_Codigo = Convert.ToInt32(grdItems.CurrentRow.Cells["DOCV_Codigo"].Value);
+            if (_DOCV_Codigo == 0)
+            { return; }
+            DataSet dsQuery = new DataSet();
+            ApplicationForm.InvoiceBillsViewerForm oInvoiceBillsViewerForm = new ApplicationForm.InvoiceBillsViewerForm();
+            //DateTime _SCOT_FechaOperacion = Convert.ToDateTime(grdItems.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
+            //dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForInvoiceBillsInterface " + Presenter.ItemCtaCte.EMPR_Codigo + ",'" + Presenter.ItemCtaCte.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserName + "', 'P'");
+            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForInvoiceBillsInterface " + "1, 1, " + _DOCV_Codigo.ToString() + ", '" + Presenter.Session.UserName + "', 'P'");
+            oInvoiceBillsViewerForm.dsVoucher = dsQuery;
+            oInvoiceBillsViewerForm.ShowDialog();
+            //grdItems.CurrentRow.Cells["DocumentoSAP"].Value = oJournalEntryViewerForm.sDocSAP;
+        }
+    }
 }

@@ -4,6 +4,7 @@ Imports DevExpress.XtraGrid.Views.Grid
 Public Class JournalEntryViewerForm
     Public dsVoucher As New DataSet
     Public sDocSAP As String
+
     Dim oIntegrationService As New IntegrationService.IntegradorSBOClient
     Private Sub JournalEntryViewerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If dsVoucher Is Nothing Then

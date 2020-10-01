@@ -8493,7 +8493,7 @@ namespace Delfin.Principal
             DataSet dsQuery = new DataSet();
             ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();           
             DateTime _SCOT_FechaOperacion = Convert.ToDateTime(grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
-            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserCodigo + "', 'P'");
+            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserName + "', 'P'");
             oJournalEntryViewerForm.dsVoucher = dsQuery;
             oJournalEntryViewerForm.ShowDialog();
             grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value = oJournalEntryViewerForm.sDocSAP;
