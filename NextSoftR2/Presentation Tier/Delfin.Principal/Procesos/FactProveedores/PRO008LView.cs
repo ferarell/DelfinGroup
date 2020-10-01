@@ -321,7 +321,8 @@ namespace Delfin.Principal
             grdItems.Columns.Add("TIPO_DET", "Tipo Detracción", "TIPO_DET");
 
             grdItems.Columns.Add("AsientoContable", "Nro. Asiento", "AsientoContable");
-            
+            grdItems.Columns.Add("DocumentoSAP", "Documento SAP", "DocumentoSAP");
+
             grdItems.Columns.Add("CCCT_Codigo", "Código Interno", "CCCT_Codigo");
             grdItems.BestFitColumns();
 
@@ -496,13 +497,28 @@ namespace Delfin.Principal
 
         private void btnSyncSAP_Click(object sender, EventArgs e)
         {
-            DataSet dsQuery = new DataSet();
-            ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();
+            if (grdItems.RowCount == 0)
+            { return; }
             int _CCCT_Codigo = Convert.ToInt32(grdItems.CurrentRow.Cells["CCCT_Codigo"].Value);
-            //DateTime _SCOT_FechaOperacion = DateTime.Now;//Convert.ToDateTime(grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
-            //dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserCodigo + "', 'S'");
-            oJournalEntryViewerForm.dsVoucher = dsQuery;
-            oJournalEntryViewerForm.ShowDialog();
+            if (_CCCT_Codigo == 0)
+            { return; }
+            DataSet dsQuery = new DataSet();
+            ApplicationForm.PurchaseInvoiceViewerForm oPurchaseInvoiceViewerForm = new ApplicationForm.PurchaseInvoiceViewerForm();
+            //DateTime _SCOT_FechaOperacion = Convert.ToDateTime(grdItems.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
+            //dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForInvoiceBillsInterface " + Presenter.ItemCtaCte.EMPR_Codigo + ",'" + Presenter.ItemCtaCte.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserName + "', 'P'");
+            if (grdItems.CurrentRow.Cells["TIPO_Documento"].Value.ToString().Contains("CREDITO"))
+            {
+                dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForPurchaseCreditMemoInterface " + "1, 1, " + _CCCT_Codigo.ToString() + ", '" + Presenter.Session.UserName + "', 'P'");
+                oPurchaseInvoiceViewerForm.sInterfaceName = "PurchaseCreditMemo";
+            }
+            else
+            {
+                dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForPurchaseInvoiceInterface " + "1, 1, " + _CCCT_Codigo.ToString() + ", '" + Presenter.Session.UserName + "', 'P'");
+                oPurchaseInvoiceViewerForm.sInterfaceName = "PurchaseInvoice";
+            }
+            oPurchaseInvoiceViewerForm.dsVoucher = dsQuery;
+            oPurchaseInvoiceViewerForm.ShowDialog();
+            grdItems.CurrentRow.Cells["DocumentoSAP"].Value = oPurchaseInvoiceViewerForm.sDocSAP;
         }
     }
 }
