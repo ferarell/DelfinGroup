@@ -59,6 +59,10 @@ Public Class MasterDataList
             QueryText = "EXEC NextSoft.dgp.paListaEvento"
         ElseIf TableName = "BusinessUnit" Then
             QueryText = "EXEC NextSoft.dgp.paListaLineaNegocio"
+        ElseIf TableName = "BaseUnit" Then
+            QueryText = "EXEC NextSoft.dgp.paListaUnidadBase"
+        ElseIf TableName = "Regimen" Then
+            QueryText = "EXEC NextSoft.dgp.paListaRegimen"
         End If
         Try
             If Not Params Is Nothing Then

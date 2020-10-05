@@ -224,7 +224,7 @@ Partial Class VendorDocumentQueryForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(929, 45)
+        Me.BarDockControl1.Size = New System.Drawing.Size(929, 47)
         '
         'BarDockControl2
         '
@@ -238,17 +238,17 @@ Partial Class VendorDocumentQueryForm
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 45)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 392)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 390)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(929, 45)
+        Me.BarDockControl4.Location = New System.Drawing.Point(929, 47)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 392)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 390)
         '
         'BarButtonItem1
         '
@@ -338,7 +338,7 @@ Partial Class VendorDocumentQueryForm
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 45)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.Label3)
@@ -352,7 +352,7 @@ Partial Class VendorDocumentQueryForm
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(929, 392)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(929, 390)
         Me.SplitContainerControl1.SplitterPosition = 76
         Me.SplitContainerControl1.TabIndex = 6
         '
@@ -455,7 +455,7 @@ Partial Class VendorDocumentQueryForm
         Me.SplitContainerControl2.Panel1.Text = "Panel1"
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.gcVendorService)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(929, 310)
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(929, 309)
         Me.SplitContainerControl2.SplitterPosition = 267
         Me.SplitContainerControl2.TabIndex = 172
         '
@@ -483,7 +483,6 @@ Partial Class VendorDocumentQueryForm
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
-        Me.GridView1.OptionsView.BestFitMaxRowCount = 10
         Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways

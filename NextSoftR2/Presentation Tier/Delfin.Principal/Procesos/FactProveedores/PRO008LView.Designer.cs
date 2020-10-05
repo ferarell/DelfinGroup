@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PRO008LView));
             this.panelCaption2 = new Infrastructure.WinFormsControls.PanelCaption();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,7 +44,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.RbFechaRegistro = new System.Windows.Forms.RadioButton();
             this.RbFechaEmision = new System.Windows.Forms.RadioButton();
-            this.Proveedor = new Delfin.Controls.Entidad(this.components);
+            this.Proveedor = new Delfin.Controls.Entidad();
             this.label6 = new System.Windows.Forms.Label();
             this.grdItems = new Telerik.WinControls.UI.RadGridView();
             this.pnBotones = new System.Windows.Forms.Panel();
@@ -54,13 +53,13 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmColumnas = new System.Windows.Forms.ToolStripMenuItem();
             this.TitleView = new Infrastructure.WinFormsControls.FormTitle();
             this.panelCaption1 = new Infrastructure.WinFormsControls.PanelCaption();
-            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItems = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();

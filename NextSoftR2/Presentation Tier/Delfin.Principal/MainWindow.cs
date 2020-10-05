@@ -1521,6 +1521,7 @@ namespace Delfin.Principal
             OPE014_mview = null;
             OPE015_mview = null;
             LOG006_mview = null;
+            LOG007_mview = null;
             LOG009_mview = null;
             COM013_mview = null;
             COM014_mview = null;
@@ -6128,9 +6129,12 @@ namespace Delfin.Principal
              case "LogisticOperationQueryForm":
                  LOG006_mview = null;
                     break;
-             case "CargoAddressingForm":
-                 LOG009_mview = null;
-                 break;
+            case "VendorDocumentQueryForm":
+                LOG007_mview = null;
+                break;
+            case "CargoAddressingForm":
+                LOG009_mview = null;
+                break;
              case "DemurrageForm":
                  COM013_mview = null;
                  break;
@@ -7201,11 +7205,41 @@ namespace Delfin.Principal
             }
             catch (Exception ex)
             {
-                Dialogos.MostrarMensajeError(Text, "Ha Ocurrido un error al llamar la vista: Direccionamiento de Carga", ex);
+                Dialogos.MostrarMensajeError(Text, "Ha Ocurrido un error al llamar la vista: Registro de Operaciones Logísticas", ex);
             }
             tabViews.SelectedPage = _pageView;
         }
 
+        ApplicationForm.VendorDocumentQueryForm LOG007_mview;
+
+        private void LOG007DocumentosProveedor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (LOG007_mview == null)
+                {
+                    LOG007_mview = new ApplicationForm.VendorDocumentQueryForm();
+                    LOG007_mview.AppUser = ItemUsuario.USUA_CodUsr;
+                    LOG007_mview.TopLevel = false;
+                    LOG007_mview.Dock = DockStyle.Fill;
+                    LOG007_mview.FormBorderStyle = FormBorderStyle.None;
+                    _pageView = new RadPageViewPage();
+                    LOG007_mview.Parent = _pageView;
+                    _pageView.Controls.Add(LOG007_mview);
+                    _pageView.Text = LOG007_mview.Text;
+                    _pageView.Tag = ((System.Windows.Forms.ToolStripItem)(sender)).Tag;
+                    tabViews.Pages.Add(_pageView);
+                    LOG007_mview.Show();
+                }
+                else
+                { tabViews.SelectedPage = _pageView; }
+            }
+            catch (Exception ex)
+            {
+                Dialogos.MostrarMensajeError(Text, "Ha Ocurrido un error al llamar la vista: Registro de Documentos de Proveedores", ex);
+            }
+            tabViews.SelectedPage = _pageView;
+        }
 
         //ApplicationForm.CargoAddressingForm LOG0091_mview;
 

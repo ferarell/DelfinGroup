@@ -495,6 +495,7 @@
             resources.ApplyResources(this.LOG007DocumentosProveedor, "LOG007DocumentosProveedor");
             this.LOG007DocumentosProveedor.Name = "LOG007DocumentosProveedor";
             this.LOG007DocumentosProveedor.Tag = "LOG007";
+            this.LOG007DocumentosProveedor.Click += new System.EventHandler(this.LOG007DocumentosProveedor_Click);
             // 
             // SEP009
             // 

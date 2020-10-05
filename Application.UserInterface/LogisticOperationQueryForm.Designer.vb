@@ -105,6 +105,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn19 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn46 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn18 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn39 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -139,7 +140,6 @@ Partial Class LogisticOperationQueryForm
         Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.VGridControl1 = New DevExpress.XtraVerticalGrid.VGridControl()
-        Me.GridColumn46 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -306,6 +306,7 @@ Partial Class LogisticOperationQueryForm
         Me.bbiPreInvoicing.Id = 29
         Me.bbiPreInvoicing.ImageOptions.Image = CType(resources.GetObject("bbiPreInvoicing.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiPreInvoicing.Name = "bbiPreInvoicing"
+        Me.bbiPreInvoicing.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'bbiClose
         '
@@ -871,6 +872,14 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn16.Visible = True
         Me.GridColumn16.VisibleIndex = 17
         '
+        'GridColumn46
+        '
+        Me.GridColumn46.Caption = "Ejecutivo Comercial"
+        Me.GridColumn46.FieldName = "EjecutivoComercial"
+        Me.GridColumn46.Name = "GridColumn46"
+        Me.GridColumn46.Visible = True
+        Me.GridColumn46.VisibleIndex = 18
+        '
         'GridColumn17
         '
         Me.GridColumn17.Caption = "Provisión Costo"
@@ -1126,14 +1135,6 @@ Partial Class LogisticOperationQueryForm
         Me.VGridControl1.ScrollVisibility = DevExpress.XtraVerticalGrid.ScrollVisibility.Vertical
         Me.VGridControl1.Size = New System.Drawing.Size(200, 315)
         Me.VGridControl1.TabIndex = 9
-        '
-        'GridColumn46
-        '
-        Me.GridColumn46.Caption = "Ejecutivo Comercial"
-        Me.GridColumn46.FieldName = "EjecutivoComercial"
-        Me.GridColumn46.Name = "GridColumn46"
-        Me.GridColumn46.Visible = True
-        Me.GridColumn46.VisibleIndex = 18
         '
         'LogisticOperationQueryForm
         '

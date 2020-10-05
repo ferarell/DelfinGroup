@@ -28,9 +28,8 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CAJ002IngresosEgresosLView));
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmColumnas = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpMOVI_FecEmision_Fin = new Infrastructure.WinForms.Controls.MaskTime();
             this.label5 = new System.Windows.Forms.Label();
-            this.txaCUBA_Codigo = new Delfin.Controls.CuentaBancaria(this.components);
+            this.txaCUBA_Codigo = new Delfin.Controls.CuentaBancaria();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbTIPO_CodMND = new Delfin.Controls.Tipos.ComboBoxTipos();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,7 +66,7 @@
             this.panelCaption2 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.panelCaption1 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.TitleView = new Infrastructure.WinForms.Controls.FormTitle();
-            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItems = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
@@ -78,7 +77,7 @@
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.pdocPrinter = new System.Drawing.Printing.PrintDocument();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
             this.cmsMenu.SuspendLayout();
             this.pnBotones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();

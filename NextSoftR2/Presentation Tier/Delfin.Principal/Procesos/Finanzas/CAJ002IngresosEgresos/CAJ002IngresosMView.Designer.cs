@@ -28,7 +28,6 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CAJ002IngresosEgresosMView));
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnRediferir = new System.Windows.Forms.Button();
@@ -38,13 +37,13 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.errorProviderMovimiento = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderMovimiento = new System.Windows.Forms.ErrorProvider();
             this.tabIngresos = new Dotnetrix.Controls.TabControlEX();
             this.pageGenerales = new Dotnetrix.Controls.TabPageEX();
             this.tbcDetalle = new System.Windows.Forms.TabControl();
             this.tpgDetalle = new System.Windows.Forms.TabPage();
             this.grdItemsDocumentos = new Telerik.WinControls.UI.RadGridView();
-            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItems = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel8 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton29 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton30 = new System.Windows.Forms.ToolStripButton();
@@ -72,7 +71,7 @@
             this.txtNroCtaCte = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbTIPO_CodDES = new Delfin.Controls.Tipos.ComboBoxTipos();
-            this.navItemsTipificacion = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsTipificacion = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel9 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton33 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton34 = new System.Windows.Forms.ToolStripButton();
@@ -105,7 +104,7 @@
             this.lblMOVI_Numero = new System.Windows.Forms.Label();
             this.txtMOVI_NroOficina = new System.Windows.Forms.TextBox();
             this.lbltxtMOVI_NroOficina = new System.Windows.Forms.Label();
-            this.txaCUBA_NroCuenta = new Delfin.Controls.CuentaBancaria(this.components);
+            this.txaCUBA_NroCuenta = new Delfin.Controls.CuentaBancaria();
             this.lblMOVI_Referencia = new System.Windows.Forms.Label();
             this.txtMOVI_Referencia = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -157,7 +156,7 @@
             this.panelCaption6 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.pageConciliacion = new Dotnetrix.Controls.TabPageEX();
             this.grdItemsConciliacion = new Telerik.WinControls.UI.RadGridView();
-            this.navItemsConciliacion = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsConciliacion = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -166,7 +165,7 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.panelCaption4 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.pageFlujo = new Dotnetrix.Controls.TabPageEX();
-            this.navItemsFlujo = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsFlujo = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel10 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton37 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton38 = new System.Windows.Forms.ToolStripButton();
@@ -257,9 +256,9 @@
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.errorProviderDet_Cotizacion_OV_Novedad = new System.Windows.Forms.ErrorProvider(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.errorEventoTarea = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderDet_Cotizacion_OV_Novedad = new System.Windows.Forms.ErrorProvider();
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
+            this.errorEventoTarea = new System.Windows.Forms.ErrorProvider();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMovimiento)).BeginInit();
             this.tabIngresos.SuspendLayout();
@@ -580,6 +579,7 @@
             this.toolStripTextBox8.AccessibleName = "Posición";
             this.toolStripTextBox8.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox8.AutoSize = false;
+            this.toolStripTextBox8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox8.Name = "toolStripTextBox8";
             this.toolStripTextBox8.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox8.Text = "0";
@@ -918,6 +918,7 @@
             this.toolStripTextBox9.AccessibleName = "Posición";
             this.toolStripTextBox9.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox9.AutoSize = false;
+            this.toolStripTextBox9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox9.Name = "toolStripTextBox9";
             this.toolStripTextBox9.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox9.Text = "0";
@@ -2051,6 +2052,7 @@
             this.toolStripTextBox1.AccessibleName = "Posición";
             this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -2149,6 +2151,7 @@
             this.toolStripTextBox10.AccessibleName = "Posición";
             this.toolStripTextBox10.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox10.AutoSize = false;
+            this.toolStripTextBox10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox10.Name = "toolStripTextBox10";
             this.toolStripTextBox10.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox10.Text = "0";
@@ -2418,6 +2421,7 @@
             this.toolStripTextBox7.AccessibleName = "Posición";
             this.toolStripTextBox7.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox7.AutoSize = false;
+            this.toolStripTextBox7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox7.Name = "toolStripTextBox7";
             this.toolStripTextBox7.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox7.Text = "0";
@@ -2476,6 +2480,7 @@
             this.toolStripTextBox2.AccessibleName = "Posición";
             this.toolStripTextBox2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox2.AutoSize = false;
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox2.Text = "0";
@@ -2551,6 +2556,7 @@
             this.toolStripTextBox6.AccessibleName = "Posición";
             this.toolStripTextBox6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox6.AutoSize = false;
+            this.toolStripTextBox6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox6.Name = "toolStripTextBox6";
             this.toolStripTextBox6.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox6.Text = "0";
@@ -2626,6 +2632,7 @@
             this.toolStripTextBox5.AccessibleName = "Posición";
             this.toolStripTextBox5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox5.AutoSize = false;
+            this.toolStripTextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox5.Name = "toolStripTextBox5";
             this.toolStripTextBox5.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox5.Text = "0";
@@ -2709,6 +2716,7 @@
             this.toolStripTextBox3.AccessibleName = "Posición";
             this.toolStripTextBox3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox3.AutoSize = false;
+            this.toolStripTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox3.Name = "toolStripTextBox3";
             this.toolStripTextBox3.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox3.Text = "0";
@@ -2767,6 +2775,7 @@
             this.toolStripTextBox4.AccessibleName = "Posición";
             this.toolStripTextBox4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox4.AutoSize = false;
+            this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox4.Name = "toolStripTextBox4";
             this.toolStripTextBox4.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox4.Text = "0";
@@ -2842,6 +2851,7 @@
             this.bindingNavigatorPositionItem1.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
