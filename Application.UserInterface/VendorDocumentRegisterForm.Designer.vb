@@ -330,7 +330,7 @@ Partial Class VendorDocumentRegisterForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(936, 45)
+        Me.BarDockControl1.Size = New System.Drawing.Size(936, 47)
         '
         'BarDockControl2
         '
@@ -344,17 +344,17 @@ Partial Class VendorDocumentRegisterForm
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 45)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 476)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 474)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(936, 45)
+        Me.BarDockControl4.Location = New System.Drawing.Point(936, 47)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 476)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 474)
         '
         'BarButtonItem1
         '
@@ -456,11 +456,11 @@ Partial Class VendorDocumentRegisterForm
         Me.NavBarControl1.Controls.Add(Me.NavBarGroupControlContainer5)
         Me.NavBarControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.NavBarControl1.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.NavBarGroup1, Me.NavBarGroup2, Me.NavBarGroup3, Me.NavBarGroup4, Me.NavBarGroup5})
-        Me.NavBarControl1.Location = New System.Drawing.Point(0, 45)
+        Me.NavBarControl1.Location = New System.Drawing.Point(0, 47)
         Me.NavBarControl1.Name = "NavBarControl1"
         Me.NavBarControl1.OptionsLayout.StoreAppearance = True
         Me.NavBarControl1.OptionsNavPane.ExpandedWidth = 936
-        Me.NavBarControl1.Size = New System.Drawing.Size(936, 476)
+        Me.NavBarControl1.Size = New System.Drawing.Size(936, 474)
         Me.NavBarControl1.TabIndex = 4
         Me.NavBarControl1.Text = "NavBarControl1"
         '
@@ -1069,7 +1069,7 @@ Partial Class VendorDocumentRegisterForm
         Me.NavBarGroupControlContainer3.Appearance.Options.UseBackColor = True
         Me.NavBarGroupControlContainer3.Controls.Add(Me.LayoutControl3)
         Me.NavBarGroupControlContainer3.Name = "NavBarGroupControlContainer3"
-        Me.NavBarGroupControlContainer3.Size = New System.Drawing.Size(934, 82)
+        Me.NavBarGroupControlContainer3.Size = New System.Drawing.Size(928, 82)
         Me.NavBarGroupControlContainer3.TabIndex = 2
         '
         'LayoutControl3
@@ -1084,7 +1084,7 @@ Partial Class VendorDocumentRegisterForm
         Me.LayoutControl3.Name = "LayoutControl3"
         Me.LayoutControl3.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(446, 127, 650, 400)
         Me.LayoutControl3.Root = Me.LayoutControlGroup2
-        Me.LayoutControl3.Size = New System.Drawing.Size(934, 81)
+        Me.LayoutControl3.Size = New System.Drawing.Size(928, 81)
         Me.LayoutControl3.TabIndex = 0
         Me.LayoutControl3.Text = "LayoutControl3"
         '
@@ -1095,23 +1095,23 @@ Partial Class VendorDocumentRegisterForm
         Me.lueTipoDocumentoRef.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueTipoDocumentoRef.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoTipoDocumento", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionTipoDocumento", "Descripción")})
         Me.lueTipoDocumentoRef.Properties.NullText = ""
-        Me.lueTipoDocumentoRef.Size = New System.Drawing.Size(187, 20)
+        Me.lueTipoDocumentoRef.Size = New System.Drawing.Size(185, 20)
         Me.lueTipoDocumentoRef.StyleController = Me.LayoutControl3
         Me.lueTipoDocumentoRef.TabIndex = 0
         '
         'teSerieDocumentoRef
         '
-        Me.teSerieDocumentoRef.Location = New System.Drawing.Point(421, 12)
+        Me.teSerieDocumentoRef.Location = New System.Drawing.Point(419, 12)
         Me.teSerieDocumentoRef.Name = "teSerieDocumentoRef"
-        Me.teSerieDocumentoRef.Size = New System.Drawing.Size(188, 20)
+        Me.teSerieDocumentoRef.Size = New System.Drawing.Size(186, 20)
         Me.teSerieDocumentoRef.StyleController = Me.LayoutControl3
         Me.teSerieDocumentoRef.TabIndex = 1
         '
         'teNumeroDocumentoRef
         '
-        Me.teNumeroDocumentoRef.Location = New System.Drawing.Point(726, 12)
+        Me.teNumeroDocumentoRef.Location = New System.Drawing.Point(722, 12)
         Me.teNumeroDocumentoRef.Name = "teNumeroDocumentoRef"
-        Me.teNumeroDocumentoRef.Size = New System.Drawing.Size(188, 20)
+        Me.teNumeroDocumentoRef.Size = New System.Drawing.Size(186, 20)
         Me.teNumeroDocumentoRef.StyleController = Me.LayoutControl3
         Me.teNumeroDocumentoRef.TabIndex = 2
         '
@@ -1124,16 +1124,16 @@ Partial Class VendorDocumentRegisterForm
         Me.deFechaEmisionRef.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deFechaEmisionRef.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deFechaEmisionRef.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret
-        Me.deFechaEmisionRef.Size = New System.Drawing.Size(187, 20)
+        Me.deFechaEmisionRef.Size = New System.Drawing.Size(185, 20)
         Me.deFechaEmisionRef.StyleController = Me.LayoutControl3
         Me.deFechaEmisionRef.TabIndex = 3
         '
         'teCodigoInternoRef
         '
         Me.teCodigoInternoRef.EditValue = ""
-        Me.teCodigoInternoRef.Location = New System.Drawing.Point(726, 42)
+        Me.teCodigoInternoRef.Location = New System.Drawing.Point(722, 42)
         Me.teCodigoInternoRef.Name = "teCodigoInternoRef"
-        Me.teCodigoInternoRef.Size = New System.Drawing.Size(188, 20)
+        Me.teCodigoInternoRef.Size = New System.Drawing.Size(186, 20)
         Me.teCodigoInternoRef.StyleController = Me.LayoutControl3
         Me.teCodigoInternoRef.TabIndex = 4
         '
@@ -1156,7 +1156,7 @@ Partial Class VendorDocumentRegisterForm
         RowDefinition8.Height = 30.0R
         RowDefinition8.SizeType = System.Windows.Forms.SizeType.Absolute
         Me.LayoutControlGroup2.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition7, RowDefinition8})
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(934, 81)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(928, 81)
         Me.LayoutControlGroup2.TextVisible = False
         '
         'LayoutControlItem21
@@ -1166,7 +1166,7 @@ Partial Class VendorDocumentRegisterForm
         Me.LayoutControlItem21.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem21.Name = "LayoutControlItem21"
         Me.LayoutControlItem21.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem21.Size = New System.Drawing.Size(304, 30)
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(302, 30)
         Me.LayoutControlItem21.Text = "Tipo de Documento"
         Me.LayoutControlItem21.TextSize = New System.Drawing.Size(94, 13)
         '
@@ -1174,22 +1174,22 @@ Partial Class VendorDocumentRegisterForm
         '
         Me.LayoutControlItem22.Control = Me.teSerieDocumentoRef
         Me.LayoutControlItem22.CustomizationFormText = "Serie Documento"
-        Me.LayoutControlItem22.Location = New System.Drawing.Point(304, 0)
+        Me.LayoutControlItem22.Location = New System.Drawing.Point(302, 0)
         Me.LayoutControlItem22.Name = "LayoutControlItem22"
         Me.LayoutControlItem22.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem22.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem22.Size = New System.Drawing.Size(305, 30)
+        Me.LayoutControlItem22.Size = New System.Drawing.Size(303, 30)
         Me.LayoutControlItem22.Text = "Serie Documento"
         Me.LayoutControlItem22.TextSize = New System.Drawing.Size(94, 13)
         '
         'LayoutControlItem23
         '
         Me.LayoutControlItem23.Control = Me.teNumeroDocumentoRef
-        Me.LayoutControlItem23.Location = New System.Drawing.Point(609, 0)
+        Me.LayoutControlItem23.Location = New System.Drawing.Point(605, 0)
         Me.LayoutControlItem23.Name = "LayoutControlItem23"
         Me.LayoutControlItem23.OptionsTableLayoutItem.ColumnIndex = 2
         Me.LayoutControlItem23.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem23.Size = New System.Drawing.Size(305, 30)
+        Me.LayoutControlItem23.Size = New System.Drawing.Size(303, 30)
         Me.LayoutControlItem23.Text = "Número Documento"
         Me.LayoutControlItem23.TextSize = New System.Drawing.Size(94, 13)
         '
@@ -1200,7 +1200,7 @@ Partial Class VendorDocumentRegisterForm
         Me.LayoutControlItem24.Name = "LayoutControlItem24"
         Me.LayoutControlItem24.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem24.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem24.Size = New System.Drawing.Size(304, 31)
+        Me.LayoutControlItem24.Size = New System.Drawing.Size(302, 31)
         Me.LayoutControlItem24.Text = "Fecha Emisión"
         Me.LayoutControlItem24.TextSize = New System.Drawing.Size(94, 13)
         '
@@ -1208,12 +1208,12 @@ Partial Class VendorDocumentRegisterForm
         '
         Me.LayoutControlItem25.Control = Me.teCodigoInternoRef
         Me.LayoutControlItem25.Enabled = False
-        Me.LayoutControlItem25.Location = New System.Drawing.Point(609, 30)
+        Me.LayoutControlItem25.Location = New System.Drawing.Point(605, 30)
         Me.LayoutControlItem25.Name = "LayoutControlItem25"
         Me.LayoutControlItem25.OptionsTableLayoutItem.ColumnIndex = 2
         Me.LayoutControlItem25.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem25.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem25.Size = New System.Drawing.Size(305, 31)
+        Me.LayoutControlItem25.Size = New System.Drawing.Size(303, 31)
         Me.LayoutControlItem25.Text = "Código Interno"
         Me.LayoutControlItem25.TextSize = New System.Drawing.Size(94, 13)
         '
@@ -1223,7 +1223,7 @@ Partial Class VendorDocumentRegisterForm
         Me.NavBarGroupControlContainer4.Appearance.Options.UseBackColor = True
         Me.NavBarGroupControlContainer4.Controls.Add(Me.LayoutControl4)
         Me.NavBarGroupControlContainer4.Name = "NavBarGroupControlContainer4"
-        Me.NavBarGroupControlContainer4.Size = New System.Drawing.Size(934, 85)
+        Me.NavBarGroupControlContainer4.Size = New System.Drawing.Size(928, 85)
         Me.NavBarGroupControlContainer4.TabIndex = 3
         '
         'LayoutControl4
@@ -1238,7 +1238,7 @@ Partial Class VendorDocumentRegisterForm
         Me.LayoutControl4.Name = "LayoutControl4"
         Me.LayoutControl4.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(511, 203, 650, 400)
         Me.LayoutControl4.Root = Me.LayoutControlGroup3
-        Me.LayoutControl4.Size = New System.Drawing.Size(934, 85)
+        Me.LayoutControl4.Size = New System.Drawing.Size(928, 85)
         Me.LayoutControl4.TabIndex = 0
         Me.LayoutControl4.Text = "LayoutControl4"
         '
@@ -1248,15 +1248,15 @@ Partial Class VendorDocumentRegisterForm
         Me.lueNumeroOperacion.Name = "lueNumeroOperacion"
         Me.lueNumeroOperacion.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueNumeroOperacion.Properties.NullText = ""
-        Me.lueNumeroOperacion.Size = New System.Drawing.Size(192, 20)
+        Me.lueNumeroOperacion.Size = New System.Drawing.Size(190, 20)
         Me.lueNumeroOperacion.StyleController = Me.LayoutControl4
         Me.lueNumeroOperacion.TabIndex = 0
         '
         'teNumeroHblOperacion
         '
-        Me.teNumeroHblOperacion.Location = New System.Drawing.Point(416, 42)
+        Me.teNumeroHblOperacion.Location = New System.Drawing.Point(414, 42)
         Me.teNumeroHblOperacion.Name = "teNumeroHblOperacion"
-        Me.teNumeroHblOperacion.Size = New System.Drawing.Size(193, 20)
+        Me.teNumeroHblOperacion.Size = New System.Drawing.Size(191, 20)
         Me.teNumeroHblOperacion.StyleController = Me.LayoutControl4
         Me.teNumeroHblOperacion.TabIndex = 3
         '
@@ -1269,25 +1269,25 @@ Partial Class VendorDocumentRegisterForm
         Me.deFechaEmisionOperacion.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deFechaEmisionOperacion.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deFechaEmisionOperacion.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret
-        Me.deFechaEmisionOperacion.Size = New System.Drawing.Size(192, 20)
+        Me.deFechaEmisionOperacion.Size = New System.Drawing.Size(190, 20)
         Me.deFechaEmisionOperacion.StyleController = Me.LayoutControl4
         Me.deFechaEmisionOperacion.TabIndex = 2
         '
         'teCodigoInternoOperacion
         '
         Me.teCodigoInternoOperacion.EditValue = ""
-        Me.teCodigoInternoOperacion.Location = New System.Drawing.Point(713, 42)
+        Me.teCodigoInternoOperacion.Location = New System.Drawing.Point(709, 42)
         Me.teCodigoInternoOperacion.Name = "teCodigoInternoOperacion"
-        Me.teCodigoInternoOperacion.Size = New System.Drawing.Size(209, 20)
+        Me.teCodigoInternoOperacion.Size = New System.Drawing.Size(207, 20)
         Me.teCodigoInternoOperacion.StyleController = Me.LayoutControl4
         Me.teCodigoInternoOperacion.TabIndex = 4
         '
         'teClienteOperacion
         '
-        Me.teClienteOperacion.Location = New System.Drawing.Point(416, 12)
+        Me.teClienteOperacion.Location = New System.Drawing.Point(414, 12)
         Me.teClienteOperacion.MenuManager = Me.bmActions
         Me.teClienteOperacion.Name = "teClienteOperacion"
-        Me.teClienteOperacion.Size = New System.Drawing.Size(498, 20)
+        Me.teClienteOperacion.Size = New System.Drawing.Size(494, 20)
         Me.teClienteOperacion.StyleController = Me.LayoutControl4
         Me.teClienteOperacion.TabIndex = 5
         '
@@ -1310,7 +1310,7 @@ Partial Class VendorDocumentRegisterForm
         RowDefinition10.Height = 30.0R
         RowDefinition10.SizeType = System.Windows.Forms.SizeType.Absolute
         Me.LayoutControlGroup3.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition9, RowDefinition10})
-        Me.LayoutControlGroup3.Size = New System.Drawing.Size(934, 85)
+        Me.LayoutControlGroup3.Size = New System.Drawing.Size(928, 85)
         Me.LayoutControlGroup3.TextVisible = False
         '
         'LayoutControlItem26
@@ -1319,7 +1319,7 @@ Partial Class VendorDocumentRegisterForm
         Me.LayoutControlItem26.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem26.Name = "LayoutControlItem26"
         Me.LayoutControlItem26.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem26.Size = New System.Drawing.Size(304, 30)
+        Me.LayoutControlItem26.Size = New System.Drawing.Size(302, 30)
         Me.LayoutControlItem26.Text = "Número Operación"
         Me.LayoutControlItem26.TextSize = New System.Drawing.Size(89, 13)
         '
@@ -1330,19 +1330,19 @@ Partial Class VendorDocumentRegisterForm
         Me.LayoutControlItem28.Name = "LayoutControlItem28"
         Me.LayoutControlItem28.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem28.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem28.Size = New System.Drawing.Size(304, 35)
+        Me.LayoutControlItem28.Size = New System.Drawing.Size(302, 35)
         Me.LayoutControlItem28.Text = "Fecha Emisión"
         Me.LayoutControlItem28.TextSize = New System.Drawing.Size(89, 13)
         '
         'LayoutControlItem29
         '
         Me.LayoutControlItem29.Control = Me.teNumeroHblOperacion
-        Me.LayoutControlItem29.Location = New System.Drawing.Point(304, 30)
+        Me.LayoutControlItem29.Location = New System.Drawing.Point(302, 30)
         Me.LayoutControlItem29.Name = "LayoutControlItem29"
         Me.LayoutControlItem29.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem29.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem29.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem29.Size = New System.Drawing.Size(305, 35)
+        Me.LayoutControlItem29.Size = New System.Drawing.Size(303, 35)
         Me.LayoutControlItem29.Text = "Número HBL"
         Me.LayoutControlItem29.TextSize = New System.Drawing.Size(89, 13)
         '
@@ -1350,23 +1350,23 @@ Partial Class VendorDocumentRegisterForm
         '
         Me.LayoutControlItem30.Control = Me.teCodigoInternoOperacion
         Me.LayoutControlItem30.Enabled = False
-        Me.LayoutControlItem30.Location = New System.Drawing.Point(609, 30)
+        Me.LayoutControlItem30.Location = New System.Drawing.Point(605, 30)
         Me.LayoutControlItem30.Name = "LayoutControlItem30"
         Me.LayoutControlItem30.OptionsTableLayoutItem.ColumnIndex = 2
         Me.LayoutControlItem30.OptionsTableLayoutItem.RowIndex = 1
-        Me.LayoutControlItem30.Size = New System.Drawing.Size(305, 35)
+        Me.LayoutControlItem30.Size = New System.Drawing.Size(303, 35)
         Me.LayoutControlItem30.Text = "Código Interno"
         Me.LayoutControlItem30.TextSize = New System.Drawing.Size(89, 13)
         '
         'LayoutControlItem27
         '
         Me.LayoutControlItem27.Control = Me.teClienteOperacion
-        Me.LayoutControlItem27.Location = New System.Drawing.Point(304, 0)
+        Me.LayoutControlItem27.Location = New System.Drawing.Point(302, 0)
         Me.LayoutControlItem27.Name = "LayoutControlItem27"
         Me.LayoutControlItem27.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem27.OptionsTableLayoutItem.ColumnSpan = 2
         Me.LayoutControlItem27.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem27.Size = New System.Drawing.Size(610, 30)
+        Me.LayoutControlItem27.Size = New System.Drawing.Size(606, 30)
         Me.LayoutControlItem27.Text = "Cliente"
         Me.LayoutControlItem27.TextSize = New System.Drawing.Size(89, 13)
         '

@@ -1,9 +1,12 @@
-﻿Imports DevExpress.XtraEditors.DXErrorProvider
+﻿Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.DXErrorProvider
+Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class LogisticOperationQueryForm
     Dim oAppService As New AppService.DelfinServiceClient
     Dim oMasterDataList As New MasterDataList
     Public AppUser As String = "sistemas"
+    Friend _EMPR_Codigo, _SUCR_Codigo As Integer
 
     Public Sub New()
 
@@ -21,8 +24,10 @@ Public Class LogisticOperationQueryForm
         SplitContainerControl2.Collapsed = Not tsShowRO.EditValue
         Dim iHeight As Integer = SplitContainerControl3.Size.Height
         SplitContainerControl3.SplitterPosition = (iHeight / 2) + 50
-        ButtonEnabled()
+        ButtonEnabled(GridView1, 0)
         LoadEntityType()
+        _EMPR_Codigo = 1
+        _SUCR_Codigo = 1
     End Sub
 
     Private Sub LoadEntityType()
@@ -46,25 +51,43 @@ Public Class LogisticOperationQueryForm
     Private Sub bbiAdd1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiAdd1.ItemClick
         Dim oNewForm As New LogisticOperationRegisterForm
         oNewForm.InternalCode = -1
-        oNewForm.HBL = GridView1.GetFocusedRowCellValue("COPE_HBL")
+        oNewForm.drSource = GridView2.GetFocusedDataRow
+        oNewForm._EMPR_Codigo = _EMPR_Codigo
+        oNewForm._SUCR_Codigo = _SUCR_Codigo
         oNewForm.ShowDialog()
+        bbiSearch.PerformClick()
     End Sub
 
     Private Sub bbiAdd2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiAdd2.ItemClick
         Dim oNewForm As New LogisticOperationRegisterForm
         oNewForm.InternalCode = -1
-        oNewForm.HBL = ""
         oNewForm.ShowDialog()
+        bbiSearch.PerformClick()
     End Sub
 
     Private Sub bbiEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEdit.ItemClick
         Dim oEditForm As New LogisticOperationRegisterForm
         oEditForm.InternalCode = GridView1.GetFocusedRowCellValue("COPE_Codigo")
+        oEditForm.drSource = GridView1.GetFocusedDataRow
+        oEditForm._EMPR_Codigo = _EMPR_Codigo
+        oEditForm._SUCR_Codigo = _SUCR_Codigo
         oEditForm.ShowDialog()
+        'bbiSearch.PerformClick()
     End Sub
 
     Private Sub bbiVoid_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiVoid.ItemClick
-
+        If XtraMessageBox.Show("Está seguro de anular la operación seleccionada?", "Confirmación", MessageBoxButtons.YesNo) <> DialogResult.Yes Then
+            Return
+        End If
+        Try
+            If oAppService.ExecuteSQLNonQuery("EXEC NextSoft.dgp.paActualizaEstadoOperacionLogistica " & GridView1.GetFocusedRowCellValue("COPE_Codigo").ToString & ", " & GridView1.GetFocusedRowCellValue("COPE_Version").ToString & ", '004'") Then
+                XtraMessageBox.Show("La operación ha sido anulada satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                XtraMessageBox.Show("Ocurrió un error al anular la operación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            XtraMessageBox.Show("Ocurrió un error al anular la operación." & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub bbiSearch_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSearch.ItemClick
@@ -76,7 +99,7 @@ Public Class LogisticOperationQueryForm
         Dim sParams As String = ""
         sParams = IIf(lueEntity.EditValue Is Nothing, "NULL", lueEntity.EditValue)
         sParams += ", " & IIf(teOperationNumber.Text.Trim = "", "NULL", "'" & teOperationNumber.Text & "'")
-        sParams += ", " & IIf(teHBL.Text.Trim = "", "NULL", "'" & teHBL.Text & "'")
+            sParams += ", " & IIf(teHBL.Text.Trim = "", "NULL", "'" & teHBL.Text & "'")
         If teOperationNumber.Text.Trim = "" And teHBL.Text.Trim = "" Then
             sParams += ", '" & IIf(deDateFrom.EditValue = Nothing, "NULL", Format(deDateFrom.EditValue, "yyyyMMdd")) & "'"
             sParams += ", '" & IIf(deDateTo.EditValue = Nothing, "NULL", Format(deDateTo.EditValue, "yyyyMMdd")) & "'"
@@ -93,8 +116,8 @@ Public Class LogisticOperationQueryForm
             End If
             GridView1.BestFitColumns()
             GridView2.BestFitColumns()
-            ButtonEnabled()
-            End If
+            ButtonEnabled(GridView1, 0)
+        End If
     End Sub
 
     Private Sub bbiExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiExport.ItemClick
@@ -114,23 +137,29 @@ Public Class LogisticOperationQueryForm
         gcRegistered.MainView.SaveLayoutToRegistry(IO.Directory.GetCurrentDirectory)
     End Sub
 
-    Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
-        If e.FocusedRowHandle = -1 Or SplitContainerControl2.Collapsed = True Then
-            Return
-        End If
-        ButtonEnabled()
-        ShowRoutingOrder()
+    Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged, GridView2.FocusedRowChanged
+        'If e.FocusedRowHandle = -1 Then 'Or SplitContainerControl2.Collapsed = True Then
+        '    Return
+        'End If
+        ButtonEnabled(sender, e.FocusedRowHandle)
+        ShowRoutingOrder(sender)
     End Sub
 
     Private Sub lueEntityType_EditValueChanged(sender As Object, e As EventArgs) Handles lueEntityType.EditValueChanged
         LoadEntityByType()
     End Sub
 
-    Private Sub ShowRoutingOrder()
+    Private Sub ShowRoutingOrder(oGridView As DevExpress.XtraGrid.Views.Grid.GridView)
+        If IsDBNull(oGridView.GetFocusedRowCellValue("COPE_HBL")) Then
+            Return
+        End If
+        If SplitContainerControl2.Collapsed Then
+            Return
+        End If
         Dim OVForm As New VerticalViewerOVForm
         OVForm.bbiClose.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         OVForm.bbiFileViewer.Visibility = DevExpress.XtraBars.BarItemVisibility.Always
-        OVForm.sHBL = GridView1.GetFocusedRowCellValue("COPE_HBL")
+        OVForm.sHBL = oGridView.GetFocusedRowCellValue("COPE_HBL")
         OVForm.TopLevel = False
         OVForm.FormBorderStyle = FormBorderStyle.None
         OVForm.Dock = DockStyle.Fill
@@ -160,21 +189,44 @@ Public Class LogisticOperationQueryForm
         End If
     End Sub
 
-    Private Sub ButtonEnabled()
-        If GridView1.RowCount = 0 Then
-            bbiEdit.Enabled = False
-            bbiVoid.Enabled = False
-            bbiExport.Enabled = False
-            tsShowRO.Enabled = False
+    Private Sub ButtonEnabled(oGridView As DevExpress.XtraGrid.Views.Grid.GridView, RowHandle As Integer)
+        bbiAdd1.Enabled = False
+        bbiEdit.Enabled = False
+        bbiVoid.Enabled = False
+        bbiExport.Enabled = False
+        bbiSendMailTo.Enabled = False
+        bbiPreInvoicing.Enabled = False
+        tsShowRO.Enabled = False
+        If RowHandle < 0 Or oGridView.RowCount = 0 Then
             Return
+        Else
+            bbiExport.Enabled = True
         End If
-        If GridView1.RowCount > 0 Then
-            tsShowRO.Enabled = True
+        If GridView1.RowCount > 0 And GridView1.IsFocusedView Then
             For b = 0 To bmActions.Items.Count - 1
                 If bmActions.Items(b).Name.Contains("bbi") Then
+                    If oGridView.GetFocusedRowCellValue("COPE_HBL").ToString.Length = 0 Then
+                        If bmActions.Items(b).Name.Contains({"bbiSendMailTo", "bbiPreInvoicing"}) Then
+                            Continue For
+                        End If
+                    End If
                     bmActions.Items(b).Enabled = True
                 End If
             Next
+        End If
+        If oGridView.GetFocusedRowCellValue("COPE_HBL").ToString.Length > 0 Then
+            tsShowRO.Enabled = True
+        End If
+        If oGridView.Name = "GridView2" Then
+            bbiAdd1.Enabled = True
+        End If
+        If GridView1.GetFocusedRowCellValue("CONS_CodEstado") <> "001" Then
+            bbiEdit.Enabled = False
+            bbiVoid.Enabled = False
+            bbiPreInvoicing.Enabled = False
+            If GridView1.GetFocusedRowCellValue("CONS_CodEstado") = "004" Then
+                bbiSendMailTo.Enabled = False
+            End If
         End If
     End Sub
 
@@ -182,12 +234,18 @@ Public Class LogisticOperationQueryForm
         Validate()
         SplitContainerControl2.Collapsed = Not tsShowRO.EditValue
         If tsShowRO.EditValue Then
-            ShowRoutingOrder()
+            If GridView1.IsFocusedView Then
+                ShowRoutingOrder(GridView1)
+            ElseIf GridView2.IsFocusedView Then
+                ShowRoutingOrder(GridView2)
+            End If
         End If
     End Sub
 
     Private Sub GridView1_DoubleClick(sender As Object, e As EventArgs) Handles GridView1.DoubleClick
-        bbiEdit.PerformClick()
+        If GridView1.GetFocusedRowCellValue("CONS_CodEstado") = "001" Then
+            bbiEdit.PerformClick()
+        End If
     End Sub
 
     Private Sub gcRegistered_Enter(sender As Object, e As EventArgs) Handles gcRegistered.Enter
@@ -214,7 +272,40 @@ Public Class LogisticOperationQueryForm
     End Sub
 
     Private Sub bbiPreInvoicing_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiPreInvoicing.ItemClick
+        If GridView1.RowCount = 0 Then
+            Return
+        End If
+        Dim bError As Boolean = False
+        For r = 0 To GridView1.RowCount - 1
+            If GridView1.GetRowCellValue(r, "HBL") Then
 
+            End If
+        Next
+        If bError Then
+
+            Return
+        End If
     End Sub
+
+    Private Sub GridView1_RowClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowClickEventArgs) Handles GridView1.RowClick, GridView2.RowClick
+        ButtonEnabled(sender, e.RowHandle)
+        'ShowRoutingOrder(sender)
+    End Sub
+
+    Private Sub GridView1_RowStyle(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs) Handles GridView1.RowStyle
+        Dim View As GridView = sender
+        If (e.RowHandle >= 0) Then
+            Dim _Status As String = View.GetRowCellDisplayText(e.RowHandle, View.Columns("CONS_CodEstado"))
+            If _Status <> "001" Then
+                e.Appearance.ForeColor = Color.Blue
+            End If
+            If _Status = "004" Then
+                e.Appearance.ForeColor = Color.Black
+                e.Appearance.BackColor = Color.Salmon
+                e.Appearance.BackColor2 = Color.SeaShell
+            End If
+        End If
+    End Sub
+
 
 End Class

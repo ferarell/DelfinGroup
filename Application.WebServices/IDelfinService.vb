@@ -64,4 +64,10 @@ Public Interface IDelfinService
 
 #End Region
 
+    <OperationContract>
+    Function InsertLogisticOperation(dsLogisticOperation As DataSet) As ArrayList
+
+    <OperationContract>
+    Function UpdateLogisticOperation(dsLogisticOperation As DataSet, dtOriginalDetail As DataTable) As ArrayList
+
 End Interface

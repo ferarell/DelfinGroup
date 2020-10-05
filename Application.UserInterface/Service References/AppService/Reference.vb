@@ -450,6 +450,26 @@ Namespace AppService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/DeleteEvento", ReplyAction:="http://tempuri.org/IDelfinService/DeleteEventoResponse")>  _
         Function DeleteEventoAsync(ByVal oEvento As AppService.COM_Det_Cotizacion_OV_EventosTareas_BE) As System.Threading.Tasks.Task
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/InsertLogisticOperation", ReplyAction:="http://tempuri.org/IDelfinService/InsertLogisticOperationResponse"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+        Function InsertLogisticOperation(ByVal dsLogisticOperation As System.Data.DataSet) As Object()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/InsertLogisticOperation", ReplyAction:="http://tempuri.org/IDelfinService/InsertLogisticOperationResponse")>  _
+        Function InsertLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet) As System.Threading.Tasks.Task(Of Object())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdateLogisticOperation", ReplyAction:="http://tempuri.org/IDelfinService/UpdateLogisticOperationResponse"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+        Function UpdateLogisticOperation(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable) As Object()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdateLogisticOperation", ReplyAction:="http://tempuri.org/IDelfinService/UpdateLogisticOperationResponse")>  _
+        Function UpdateLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object())
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -625,6 +645,22 @@ Namespace AppService
         
         Public Function DeleteEventoAsync(ByVal oEvento As AppService.COM_Det_Cotizacion_OV_EventosTareas_BE) As System.Threading.Tasks.Task Implements AppService.IDelfinService.DeleteEventoAsync
             Return MyBase.Channel.DeleteEventoAsync(oEvento)
+        End Function
+        
+        Public Function InsertLogisticOperation(ByVal dsLogisticOperation As System.Data.DataSet) As Object() Implements AppService.IDelfinService.InsertLogisticOperation
+            Return MyBase.Channel.InsertLogisticOperation(dsLogisticOperation)
+        End Function
+        
+        Public Function InsertLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet) As System.Threading.Tasks.Task(Of Object()) Implements AppService.IDelfinService.InsertLogisticOperationAsync
+            Return MyBase.Channel.InsertLogisticOperationAsync(dsLogisticOperation)
+        End Function
+        
+        Public Function UpdateLogisticOperation(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable) As Object() Implements AppService.IDelfinService.UpdateLogisticOperation
+            Return MyBase.Channel.UpdateLogisticOperation(dsLogisticOperation, dtOriginalDetail)
+        End Function
+        
+        Public Function UpdateLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object()) Implements AppService.IDelfinService.UpdateLogisticOperationAsync
+            Return MyBase.Channel.UpdateLogisticOperationAsync(dsLogisticOperation, dtOriginalDetail)
         End Function
     End Class
 End Namespace

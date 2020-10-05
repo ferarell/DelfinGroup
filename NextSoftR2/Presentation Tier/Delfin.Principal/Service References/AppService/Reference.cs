@@ -158,6 +158,26 @@ namespace Delfin.Principal.AppService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDelfinService/DeleteEvento", ReplyAction="http://tempuri.org/IDelfinService/DeleteEventoResponse")]
         System.Threading.Tasks.Task DeleteEventoAsync(ApplicationForm.AppService.COM_Det_Cotizacion_OV_EventosTareas_BE oEvento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDelfinService/InsertLogisticOperation", ReplyAction="http://tempuri.org/IDelfinService/InsertLogisticOperationResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationForm.AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[][]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
+        object[] InsertLogisticOperation(System.Data.DataSet dsLogisticOperation);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDelfinService/InsertLogisticOperation", ReplyAction="http://tempuri.org/IDelfinService/InsertLogisticOperationResponse")]
+        System.Threading.Tasks.Task<object[]> InsertLogisticOperationAsync(System.Data.DataSet dsLogisticOperation);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDelfinService/UpdateLogisticOperation", ReplyAction="http://tempuri.org/IDelfinService/UpdateLogisticOperationResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationForm.AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[][]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
+        object[] UpdateLogisticOperation(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDelfinService/UpdateLogisticOperation", ReplyAction="http://tempuri.org/IDelfinService/UpdateLogisticOperationResponse")]
+        System.Threading.Tasks.Task<object[]> UpdateLogisticOperationAsync(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -329,6 +349,22 @@ namespace Delfin.Principal.AppService {
         
         public System.Threading.Tasks.Task DeleteEventoAsync(ApplicationForm.AppService.COM_Det_Cotizacion_OV_EventosTareas_BE oEvento) {
             return base.Channel.DeleteEventoAsync(oEvento);
+        }
+        
+        public object[] InsertLogisticOperation(System.Data.DataSet dsLogisticOperation) {
+            return base.Channel.InsertLogisticOperation(dsLogisticOperation);
+        }
+        
+        public System.Threading.Tasks.Task<object[]> InsertLogisticOperationAsync(System.Data.DataSet dsLogisticOperation) {
+            return base.Channel.InsertLogisticOperationAsync(dsLogisticOperation);
+        }
+        
+        public object[] UpdateLogisticOperation(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail) {
+            return base.Channel.UpdateLogisticOperation(dsLogisticOperation, dtOriginalDetail);
+        }
+        
+        public System.Threading.Tasks.Task<object[]> UpdateLogisticOperationAsync(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail) {
+            return base.Channel.UpdateLogisticOperationAsync(dsLogisticOperation, dtOriginalDetail);
         }
     }
 }

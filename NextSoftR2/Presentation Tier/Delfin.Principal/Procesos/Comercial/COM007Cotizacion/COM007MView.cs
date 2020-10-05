@@ -140,7 +140,7 @@ namespace Delfin.Principal
             salesLogistic.teAgenciaMaritima.Text = "";
             salesLogistic.teAlmacen.Text = txaENTC_CodDepTemporal.Text;
             salesLogistic.teCondicionEmbarque.Text = "";
-            salesLogistic.teHBL.Text = DOOV_HBL.Text;
+            //salesLogistic.teHBL.Text = DOOV_HBL.Text;
             salesLogistic.teNumeroOperacion.Text = "";
             salesLogistic.teTerminalPortuario.Text = "";
             salesLogistic.teTransportista.Text = ENTC_CodTransportista.Text;

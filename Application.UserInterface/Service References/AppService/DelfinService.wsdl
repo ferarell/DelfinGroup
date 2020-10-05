@@ -118,6 +118,18 @@
   <wsdl:message name="IDelfinService_DeleteEvento_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteEventoResponse" />
   </wsdl:message>
+  <wsdl:message name="IDelfinService_InsertLogisticOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLogisticOperation" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinService_InsertLogisticOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLogisticOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinService_UpdateLogisticOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLogisticOperation" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinService_UpdateLogisticOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLogisticOperationResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDelfinService">
     <wsdl:operation name="ExecuteSQL">
       <wsdl:input wsaw:Action="http://tempuri.org/IDelfinService/ExecuteSQL" message="tns:IDelfinService_ExecuteSQL_InputMessage" />
@@ -190,6 +202,14 @@
     <wsdl:operation name="DeleteEvento">
       <wsdl:input wsaw:Action="http://tempuri.org/IDelfinService/DeleteEvento" message="tns:IDelfinService_DeleteEvento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDelfinService/DeleteEventoResponse" message="tns:IDelfinService_DeleteEvento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLogisticOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinService/InsertLogisticOperation" message="tns:IDelfinService_InsertLogisticOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinService/InsertLogisticOperationResponse" message="tns:IDelfinService_InsertLogisticOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLogisticOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinService/UpdateLogisticOperation" message="tns:IDelfinService_UpdateLogisticOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinService/UpdateLogisticOperationResponse" message="tns:IDelfinService_UpdateLogisticOperation_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDelfinService" type="tns:IDelfinService">
@@ -349,6 +369,24 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteEvento">
       <soap:operation soapAction="http://tempuri.org/IDelfinService/DeleteEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLogisticOperation">
+      <soap:operation soapAction="http://tempuri.org/IDelfinService/InsertLogisticOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLogisticOperation">
+      <soap:operation soapAction="http://tempuri.org/IDelfinService/UpdateLogisticOperation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

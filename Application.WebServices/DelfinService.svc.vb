@@ -675,4 +675,314 @@ Public Class DelfinService
 
 #End Region
 
+#Region "ServicioLogistico"
+    Public Function InsertLogisticOperation(dsLogisticOperation As DataSet) As ArrayList Implements IDelfinService.InsertLogisticOperation
+        Dim aResult As New ArrayList
+        Dim dtHeader As DataTable = dsLogisticOperation.Tables("Header")
+        Dim dtDetail As DataTable = dsLogisticOperation.Tables("Detail")
+        Dim _CodOper As String = ""
+        aResult.AddRange({2, ""})
+        Using connection As New SqlConnection(ConfigurationManager.AppSettings("dbSolution"))
+            connection.Open()
+            Dim Command As New SqlCommand
+            Dim transaction As SqlTransaction
+            transaction = connection.BeginTransaction("LogisticOperation")
+            Command.Connection = connection
+            Command.Transaction = transaction
+            Try
+                'Cabecera
+                Dim oRowH As DataRow = dtHeader.Rows(0)
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "NextSoft.dgp.SLI_COPESI_Unreg"
+                Command.Parameters.Clear()
+                With Command.Parameters
+                    .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowH("COPE_Codigo")
+                    .Add("@pvchCOPE_NumDoc", SqlDbType.VarChar, 11).Value = oRowH("COPE_NumDoc")
+                    .Add("@pdtmCOPE_FecEmi", SqlDbType.DateTime).Value = oRowH("COPE_FecEmi")
+                    .Add("@pvchCOPE_Observacion", SqlDbType.VarChar, 1024).Value = oRowH("COPE_Observacion")
+                    .Add("@pvchCOPE_HBL", SqlDbType.VarChar, 20).Value = oRowH("COPE_HBL")
+                    .Add("@pintCCOT_Codigo", SqlDbType.Int).Value = oRowH("CCOT_Codigo")
+                    .Add("@pintENTC_CodCliente", SqlDbType.Int).Value = oRowH("ENTC_CodCliente")
+                    .Add("@pintENTC_CodTransporte", SqlDbType.Int).Value = oRowH("ENTC_CodTransporte")
+                    .Add("@pintENTC_CodAgente", SqlDbType.Int).Value = oRowH("ENTC_CodAgente")
+                    .Add("@pchrCONS_CodEstado", SqlDbType.Char, 3).Value = oRowH("CONS_CodEstado")
+                    .Add("@pchrCONS_TabEstado", SqlDbType.Char, 3).Value = oRowH("CONS_TabEstado")
+                    .Add("@pbitCOPE_Excepcion", SqlDbType.Bit).Value = oRowH("COPE_Excepcion")
+                    .Add(New SqlParameter("@pdecCOPE_Fob", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Fob")
+                    .Add(New SqlParameter("@pdecCOPE_Seguro", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Seguro")
+                    .Add(New SqlParameter("@pdecCOPE_Flete", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Flete")
+                    .Add(New SqlParameter("@pdecCOPE_Cif", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Cif")
+                    .Add(New SqlParameter("@pdecCOPE_PartArancelaria", SqlDbType.Decimal) With {.Precision = 5, .Scale = 2}).Value = oRowH("COPE_PartArancelaria")
+                    .Add(New SqlParameter("@pdecCOPE_Ipm", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Ipm")
+                    .Add(New SqlParameter("@pdecCOPE_Igv", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Igv")
+                    .Add(New SqlParameter("@pdecCOPE_Percepcion", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Percepcion")
+                    .Add(New SqlParameter("@pdecCOPE_TasaDespacho", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_TasaDespacho")
+                    .Add(New SqlParameter("@pdecCOPE_AdValorem", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_AdValorem")
+                    .Add("@pbitCOPE_1erEmbarque", SqlDbType.Bit).Value = oRowH("COPE_1erEmbarque")
+                    .Add("@pvchAUDI_UsrCrea", SqlDbType.VarChar, 20).Value = oRowH("AUDI_UsrCrea")
+                    .Add("@pchrTIPO_TabMND", SqlDbType.Char, 3).Value = oRowH("TIPO_TabMND")
+                    .Add("@pchrTIPO_CodMND", SqlDbType.Char, 3).Value = oRowH("TIPO_CodMND")
+                    .Add("@pchrCONS_CodCRG", SqlDbType.Char, 3).Value = oRowH("CONS_CodCRG")
+                    .Add("@pchrCONS_TabCRG", SqlDbType.Char, 3).Value = oRowH("CONS_TabCRG")
+                    .Add("@pintCCOT_CodAduana", SqlDbType.Int).Value = oRowH("CCOT_CodAduana")
+                    .Add("@pintCCOT_CodLogistico", SqlDbType.Int).Value = oRowH("CCOT_CodLogistico")
+                    .Add("@pintCCOT_CodTransporte", SqlDbType.Int).Value = oRowH("CCOT_CodTransporte")
+                    .Add("@pvchCOPE_Nave", SqlDbType.VarChar, 20).Value = oRowH("COPE_Nave")
+                    .Add("@pvchCOPE_Viaje", SqlDbType.VarChar, 20).Value = oRowH("COPE_Viaje")
+                    .Add("@pvchCOPE_MBL", SqlDbType.VarChar, 20).Value = oRowH("COPE_MBL")
+                    .Add("@pdtmCOPE_FechaArribo", SqlDbType.DateTime).Value = oRowH("COPE_FechaArribo")
+                    .Add("@psinCOPE_CantidadDias", SqlDbType.SmallInt).Value = oRowH("COPE_CantidadDias")
+                    .Add(New SqlParameter("@pdecCOPE_Kilos", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Kilos")
+                    .Add(New SqlParameter("@pdecCOPE_Volumen", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Volumen")
+                    .Add("@pbitCOPE_PrecioSada", SqlDbType.Bit).Value = oRowH("COPE_PrecioSada")
+                    .Add("@pintENTC_CodAgenPort", SqlDbType.Int).Value = oRowH("ENTC_CodAgenPort")
+                    .Add("@pintENTC_CodTermPort", SqlDbType.Int).Value = oRowH("ENTC_CodTermPort")
+                    .Add("@pintENTC_CodDepTemporal", SqlDbType.Int).Value = oRowH("ENTC_CodDepTemporal")
+                    .Add("@pintENTC_CodTransTerre", SqlDbType.Int).Value = oRowH("ENTC_CodTransTerre")
+                    .Add("@pintCTAR_Codigo", SqlDbType.Int).Value = oRowH("CTAR_Codigo")
+                    .Add("@pintCTAR_Version", SqlDbType.SmallInt).Value = oRowH("CTAR_Version")
+                End With
+                _CodOper = Command.ExecuteScalar
+                aResult(1) = _CodOper
+                'aResult(2) = oRowH("COPE_NumDoc")
+                'Detalle
+                For r = 0 To dtDetail.Rows.Count - 1
+                    Dim oRowD As DataRow = dtDetail.Rows(r)
+                    Command.CommandType = CommandType.StoredProcedure
+                    Command.CommandText = "NextSoft.dgp.SLI_DOPESI_Unreg"
+                    With Command.Parameters
+                        .Clear()
+                        .Add("@pintDOPE_Item", SqlDbType.Int).Value = oRowD("DOPE_Item")
+                        .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = _CodOper
+                        .Add("@psinDTAR_Item", SqlDbType.SmallInt).Value = oRowD("DTAR_Item")
+                        .Add("@pintCTAR_Codigo", SqlDbType.Int).Value = oRowD("CTAR_Codigo")
+                        .Add("@pchrCTAR_Tipo", SqlDbType.Char, 1).Value = oRowD("CTAR_Tipo")
+                        .Add("@pintPACK_Codigo", SqlDbType.Int).Value = oRowD("PACK_Codigo")
+                        .Add("@pchrCONS_CodBas", SqlDbType.Char, 3).Value = oRowD("CONS_CodBas")
+                        .Add("@pchrCONS_TabBas", SqlDbType.Char, 3).Value = oRowD("CONS_TabBas")
+                        .Add("@psinDOPE_Cantidad", SqlDbType.SmallInt).Value = oRowD("DOPE_Cantidad")
+                        .Add(New SqlParameter("@pdecDOPE_PrecioUnitCosto", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioUnitCosto")
+                        .Add(New SqlParameter("@pdecDOPE_PrecioTotCosto", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioTotCosto")
+                        .Add(New SqlParameter("@pdecDOPE_PrecioUnitVta", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioUnitVta")
+                        .Add(New SqlParameter("@pdecDOPE_PrecioTotVta", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioTotVta")
+                        .Add(New SqlParameter("@pdecDOPE_Minimo", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_Minimo")
+                        .Add(New SqlParameter("@pnumDOPE_Peso", SqlDbType.Decimal) With {.Precision = 12, .Scale = 4}).Value = oRowD("DOPE_Peso")
+                        .Add(New SqlParameter("@pnumDOPE_Volumen", SqlDbType.Decimal) With {.Precision = 12, .Scale = 4}).Value = oRowD("DOPE_Volumen")
+                        .Add("@pvchAUDI_UsrCrea", SqlDbType.VarChar, 20).Value = oRowD("AUDI_UsrCrea")
+                        .Add(New SqlParameter("@pdecDOPE_CostoSada", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_CostoSada")
+                        .Add(New SqlParameter("@pdecDOPE_Costo", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_Costo")
+                        .Add(New SqlParameter("@pdecDOPE_VentaSada", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_VentaSada")
+                        .Add(New SqlParameter("@pdecDOPE_Venta", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_Venta")
+                        .Add("@pchrTIPO_TabZON", SqlDbType.Char, 3).Value = oRowD("TIPO_TabZON")
+                        .Add("@pchrTIPO_CodZONOrigen", SqlDbType.Char, 3).Value = oRowD("TIPO_CodZONOrigen")
+                        .Add("@pchrCONS_CodTRA", SqlDbType.Char, 3).Value = oRowD("CONS_CodTRA")
+                        .Add("@pchrCONS_TabTRA", SqlDbType.Char, 3).Value = oRowD("CONS_TabTRA")
+                        .Add("@pchrTIPO_CodZONDestino", SqlDbType.Char, 3).Value = oRowD("TIPO_CodZONDestino")
+                        .Add("@psinTIPE_Codigo", SqlDbType.SmallInt).Value = oRowD("TIPE_Codigo")
+                        .Add("@pintENTC_Codigo", SqlDbType.Int).Value = oRowD("ENTC_Codigo")
+                        .Add("@pchrCONS_CodEST", SqlDbType.Char, 3).Value = oRowD("CONS_CodEST")
+                        .Add("@pchrCONS_TabEST", SqlDbType.Char, 3).Value = oRowD("CONS_TabEST")
+                        .Add("@pintSERV_Codigo", SqlDbType.Int, 3).Value = oRowD("SERV_Codigo")
+                    End With
+                    Command.ExecuteNonQuery()
+                Next
+                transaction.Commit()
+            Catch ex As Exception
+                aResult(0) = 0
+                aResult(1) = ex.Message
+                transaction.Rollback()
+            Finally
+                connection.Close()
+            End Try
+            Return aResult
+        End Using
+        Return aResult
+    End Function
+
+    Public Function UpdateLogisticOperation(dsLogisticOperation As DataSet, dtOriginalDetail As DataTable) As ArrayList Implements IDelfinService.UpdateLogisticOperation
+        Dim aResult As New ArrayList
+        Dim dtHeader As DataTable = dsLogisticOperation.Tables("Header")
+        Dim dtDetail As DataTable = dsLogisticOperation.Tables("Detail")
+        Dim _CodOper As String = ""
+        aResult.AddRange({1, ""})
+        Using connection As New SqlConnection(ConfigurationManager.AppSettings("dbSolution"))
+            connection.Open()
+            Dim Command As New SqlCommand
+            Dim transaction As SqlTransaction
+            transaction = connection.BeginTransaction("LogisticOperation")
+            Command.Connection = connection
+            Command.Transaction = transaction
+            Try
+                'Cabecera
+                Dim oRowH As DataRow = dtHeader.Rows(0)
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "NextSoft.dgp.SLI_COPESU_Unreg"
+                Command.Parameters.Clear()
+                With Command.Parameters
+                    .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowH("COPE_Codigo")
+                    .Add("@pvchCOPE_NumDoc", SqlDbType.VarChar, 11).Value = oRowH("COPE_NumDoc")
+                    .Add("@pdtmCOPE_FecEmi", SqlDbType.DateTime).Value = oRowH("COPE_FecEmi")
+                    .Add("@pvchCOPE_Observacion", SqlDbType.VarChar, 1024).Value = oRowH("COPE_Observacion")
+                    .Add("@pvchCOPE_HBL", SqlDbType.VarChar, 20).Value = oRowH("COPE_HBL")
+                    .Add("@pintCCOT_Codigo", SqlDbType.Int).Value = oRowH("CCOT_Codigo")
+                    .Add("@pintENTC_CodCliente", SqlDbType.Int).Value = oRowH("ENTC_CodCliente")
+                    .Add("@pintENTC_CodTransporte", SqlDbType.Int).Value = oRowH("ENTC_CodTransporte")
+                    .Add("@pintENTC_CodAgente", SqlDbType.Int).Value = oRowH("ENTC_CodAgente")
+                    .Add("@pchrCONS_CodEstado", SqlDbType.Char, 3).Value = oRowH("CONS_CodEstado")
+                    .Add("@pchrCONS_TabEstado", SqlDbType.Char, 3).Value = oRowH("CONS_TabEstado")
+                    .Add("@pbitCOPE_Excepcion", SqlDbType.Bit).Value = oRowH("COPE_Excepcion")
+                    .Add(New SqlParameter("@pdecCOPE_Fob", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Fob")
+                    .Add(New SqlParameter("@pdecCOPE_Seguro", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Seguro")
+                    .Add(New SqlParameter("@pdecCOPE_Flete", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Flete")
+                    .Add(New SqlParameter("@pdecCOPE_Cif", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Cif")
+                    .Add(New SqlParameter("@pdecCOPE_PartArancelaria", SqlDbType.Decimal) With {.Precision = 5, .Scale = 2}).Value = oRowH("COPE_PartArancelaria")
+                    .Add(New SqlParameter("@pdecCOPE_Ipm", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Ipm")
+                    .Add(New SqlParameter("@pdecCOPE_Igv", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Igv")
+                    .Add(New SqlParameter("@pdecCOPE_Percepcion", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Percepcion")
+                    .Add(New SqlParameter("@pdecCOPE_TasaDespacho", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_TasaDespacho")
+                    .Add(New SqlParameter("@pdecCOPE_AdValorem", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_AdValorem")
+                    .Add("@pbitCOPE_1erEmbarque", SqlDbType.Bit).Value = oRowH("COPE_1erEmbarque")
+                    .Add("@pvchAUDI_UsrMod", SqlDbType.VarChar, 20).Value = oRowH("AUDI_UsrMod")
+                    .Add("@pchrTIPO_TabMND", SqlDbType.Char, 3).Value = oRowH("TIPO_TabMND")
+                    .Add("@pchrTIPO_CodMND", SqlDbType.Char, 3).Value = oRowH("TIPO_CodMND")
+                    .Add("@pchrCONS_CodCRG", SqlDbType.Char, 3).Value = oRowH("CONS_CodCRG")
+                    .Add("@pchrCONS_TabCRG", SqlDbType.Char, 3).Value = oRowH("CONS_TabCRG")
+                    .Add("@pintCCOT_CodAduana", SqlDbType.Int).Value = oRowH("CCOT_CodAduana")
+                    .Add("@pintCCOT_CodLogistico", SqlDbType.Int).Value = oRowH("CCOT_CodLogistico")
+                    .Add("@pintCCOT_CodTransporte", SqlDbType.Int).Value = oRowH("CCOT_CodTransporte")
+                    .Add("@pvchCOPE_Nave", SqlDbType.VarChar, 20).Value = oRowH("COPE_Nave")
+                    .Add("@pvchCOPE_Viaje", SqlDbType.VarChar, 20).Value = oRowH("COPE_Viaje")
+                    .Add("@pvchCOPE_MBL", SqlDbType.VarChar, 20).Value = oRowH("COPE_MBL")
+                    .Add("@pdtmCOPE_FechaArribo", SqlDbType.DateTime).Value = oRowH("COPE_FechaArribo")
+                    .Add("@psinCOPE_CantidadDias", SqlDbType.SmallInt).Value = oRowH("COPE_CantidadDias")
+                    .Add(New SqlParameter("@pdecCOPE_Kilos", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Kilos")
+                    .Add(New SqlParameter("@pdecCOPE_Volumen", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("COPE_Volumen")
+                    .Add("@pbitCOPE_PrecioSada", SqlDbType.Bit).Value = oRowH("COPE_PrecioSada")
+                    .Add("@pintENTC_CodAgenPort", SqlDbType.Int).Value = oRowH("ENTC_CodAgenPort")
+                    .Add("@pintENTC_CodTermPort", SqlDbType.Int).Value = oRowH("ENTC_CodTermPort")
+                    .Add("@pintENTC_CodDepTemporal", SqlDbType.Int).Value = oRowH("ENTC_CodDepTemporal")
+                    .Add("@pintENTC_CodTransTerre", SqlDbType.Int).Value = oRowH("ENTC_CodTransTerre")
+                    .Add("@pintCTAR_Codigo", SqlDbType.Int).Value = oRowH("CTAR_Codigo")
+                    .Add("@pintCTAR_Version", SqlDbType.SmallInt).Value = oRowH("CTAR_Version")
+                End With
+                Command.ExecuteNonQuery()
+                aResult(1) = oRowH("COPE_Codigo")
+                'aResult(2) = oRowH("COPE_NumDoc")
+                'Detalle
+                '(Delete)
+                For s = 0 To dtOriginalDetail.Rows.Count - 1
+                    Dim oRowA As DataRow = dtOriginalDetail.Rows(s)
+                    If oRowA("DOPE_Item").ToString() = "" Then
+                        Continue For
+                    End If
+                    Dim CodigoFilaActual As String = oRowA("DOPE_Item").ToString()
+                    'Dim result() As DataRow = 
+                    If dtDetail.Select("DOPE_Item = " + CodigoFilaActual).Length = 0 Then
+                        Command.CommandType = CommandType.StoredProcedure
+                        Command.CommandText = "NextSoft.dgp.SLI_DOPESD_UnReg"
+                        With Command.Parameters
+                            .Clear()
+                            .Add("@pintDOPE_Item", SqlDbType.Int).Value = oRowA("DOPE_Item")
+                            .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowA("COPE_Codigo")
+                        End With
+                        Command.ExecuteNonQuery()
+                    End If
+                Next
+                '(Insert/Update)
+                For r = 0 To dtDetail.Rows.Count - 1
+                    If dtDetail.Rows(r).RowState = DataRowState.Deleted Then
+                        Continue For
+                    End If
+                    Dim oRowD As DataRow = dtDetail.Rows(r)
+                    If oRowD("DOPE_Item").ToString() = "" And oRowD("COPE_Codigo").ToString() <> "" Then
+                        Command.CommandType = CommandType.StoredProcedure
+                        Command.CommandText = "NextSoft.dgp.SLI_DOPESI_Unreg"
+                        With Command.Parameters
+                            .Clear()
+                            .Add("@pintDOPE_Item", SqlDbType.Int).Value = oRowD("DOPE_Item")
+                            .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowD("COPE_Codigo")
+                            .Add("@psinDTAR_Item", SqlDbType.SmallInt).Value = oRowD("DTAR_Item")
+                            .Add("@pintCTAR_Codigo", SqlDbType.Int).Value = oRowD("CTAR_Codigo")
+                            .Add("@pchrCTAR_Tipo", SqlDbType.Char, 1).Value = oRowD("CTAR_Tipo")
+                            .Add("@pintPACK_Codigo", SqlDbType.Int).Value = oRowD("PACK_Codigo")
+                            .Add("@pchrCONS_CodBas", SqlDbType.Char, 3).Value = oRowD("CONS_CodBas")
+                            .Add("@pchrCONS_TabBas", SqlDbType.Char, 3).Value = oRowD("CONS_TabBas")
+                            .Add("@psinDOPE_Cantidad", SqlDbType.SmallInt).Value = oRowD("DOPE_Cantidad")
+                            .Add(New SqlParameter("@pdecDOPE_PrecioUnitCosto", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioUnitCosto")
+                            .Add(New SqlParameter("@pdecDOPE_PrecioTotCosto", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioTotCosto")
+                            .Add(New SqlParameter("@pdecDOPE_PrecioUnitVta", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioUnitVta")
+                            .Add(New SqlParameter("@pdecDOPE_PrecioTotVta", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioTotVta")
+                            .Add(New SqlParameter("@pdecDOPE_Minimo", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_Minimo")
+                            .Add(New SqlParameter("@pnumDOPE_Peso", SqlDbType.Decimal) With {.Precision = 12, .Scale = 4}).Value = oRowD("DOPE_Peso")
+                            .Add(New SqlParameter("@pnumDOPE_Volumen", SqlDbType.Decimal) With {.Precision = 12, .Scale = 4}).Value = oRowD("DOPE_Volumen")
+                            .Add("@pvchAUDI_UsrCrea", SqlDbType.VarChar, 20).Value = oRowD("AUDI_UsrCrea")
+                            .Add(New SqlParameter("@pdecDOPE_CostoSada", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_CostoSada")
+                            .Add(New SqlParameter("@pdecDOPE_Costo", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_Costo")
+                            .Add(New SqlParameter("@pdecDOPE_VentaSada", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_VentaSada")
+                            .Add(New SqlParameter("@pdecDOPE_Venta", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_Venta")
+                            .Add("@pchrTIPO_TabZON", SqlDbType.Char, 3).Value = oRowD("TIPO_TabZON")
+                            .Add("@pchrTIPO_CodZONOrigen", SqlDbType.Char, 3).Value = oRowD("TIPO_CodZONOrigen")
+                            .Add("@pchrCONS_CodTRA", SqlDbType.Char, 3).Value = oRowD("CONS_CodTRA")
+                            .Add("@pchrCONS_TabTRA", SqlDbType.Char, 3).Value = oRowD("CONS_TabTRA")
+                            .Add("@pchrTIPO_CodZONDestino", SqlDbType.Char, 3).Value = oRowD("TIPO_CodZONDestino")
+                            .Add("@psinTIPE_Codigo", SqlDbType.SmallInt).Value = oRowD("TIPE_Codigo")
+                            .Add("@pintENTC_Codigo", SqlDbType.Int).Value = oRowD("ENTC_Codigo")
+                            .Add("@pchrCONS_CodEST", SqlDbType.Char, 3).Value = oRowD("CONS_CodEST")
+                            .Add("@pchrCONS_TabEST", SqlDbType.Char, 3).Value = oRowD("CONS_TabEST")
+                            .Add("@pintSERV_Codigo", SqlDbType.Int, 3).Value = oRowD("SERV_Codigo")
+                        End With
+                    Else
+                        Command.CommandType = CommandType.StoredProcedure
+                        Command.CommandText = "NextSoft.dgp.SLI_DOPESU_Unreg"
+                        With Command.Parameters
+                            .Clear()
+                            .Add("@pintDOPE_Item", SqlDbType.Int).Value = oRowD("DOPE_Item")
+                            .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowD("COPE_Codigo")
+                            .Add("@psinDTAR_Item", SqlDbType.SmallInt).Value = oRowD("DTAR_Item")
+                            .Add("@pintCTAR_Codigo", SqlDbType.Int).Value = oRowD("CTAR_Codigo")
+                            .Add("@pchrCTAR_Tipo", SqlDbType.Char, 1).Value = oRowD("CTAR_Tipo")
+                            .Add("@pintPACK_Codigo", SqlDbType.Int).Value = oRowD("PACK_Codigo")
+                            .Add("@pchrCONS_CodBas", SqlDbType.Char, 3).Value = oRowD("CONS_CodBas")
+                            .Add("@pchrCONS_TabBas", SqlDbType.Char, 3).Value = oRowD("CONS_TabBas")
+                            .Add("@psinDOPE_Cantidad", SqlDbType.SmallInt).Value = oRowD("DOPE_Cantidad")
+                            .Add(New SqlParameter("@pdecDOPE_PrecioUnitCosto", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioUnitCosto")
+                            .Add(New SqlParameter("@pdecDOPE_PrecioTotCosto", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioTotCosto")
+                            .Add(New SqlParameter("@pdecDOPE_PrecioUnitVta", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioUnitVta")
+                            .Add(New SqlParameter("@pdecDOPE_PrecioTotVta", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_PrecioTotVta")
+                            .Add(New SqlParameter("@pdecDOPE_Minimo", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_Minimo")
+                            .Add(New SqlParameter("@pnumDOPE_Peso", SqlDbType.Decimal) With {.Precision = 12, .Scale = 4}).Value = oRowD("DOPE_Peso")
+                            .Add(New SqlParameter("@pnumDOPE_Volumen", SqlDbType.Decimal) With {.Precision = 12, .Scale = 4}).Value = oRowD("DOPE_Volumen")
+                            .Add("@pvchUSR_UsrMod", SqlDbType.VarChar, 20).Value = oRowD("USR_UsrMod")
+                            .Add(New SqlParameter("@pdecDOPE_CostoSada", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_CostoSada")
+                            .Add(New SqlParameter("@pdecDOPE_Costo", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_Costo")
+                            .Add(New SqlParameter("@pdecDOPE_VentaSada", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_VentaSada")
+                            .Add(New SqlParameter("@pdecDOPE_Venta", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DOPE_Venta")
+                            .Add("@pchrTIPO_TabZON", SqlDbType.Char, 3).Value = oRowD("TIPO_TabZON")
+                            .Add("@pchrTIPO_CodZONOrigen", SqlDbType.Char, 3).Value = oRowD("TIPO_CodZONOrigen")
+                            .Add("@pchrCONS_CodTRA", SqlDbType.Char, 3).Value = oRowD("CONS_CodTRA")
+                            .Add("@pchrCONS_TabTRA", SqlDbType.Char, 3).Value = oRowD("CONS_TabTRA")
+                            .Add("@pchrTIPO_CodZONDestino", SqlDbType.Char, 3).Value = oRowD("TIPO_CodZONDestino")
+                            .Add("@psinTIPE_Codigo", SqlDbType.SmallInt).Value = oRowD("TIPE_Codigo")
+                            .Add("@pintENTC_Codigo", SqlDbType.Int).Value = oRowD("ENTC_Codigo")
+                            .Add("@pchrCONS_CodEST", SqlDbType.Char, 3).Value = oRowD("CONS_CodEST")
+                            .Add("@pchrCONS_TabEST", SqlDbType.Char, 3).Value = oRowD("CONS_TabEST")
+                            .Add("@pintSERV_Codigo", SqlDbType.Int, 3).Value = oRowD("SERV_Codigo")
+                        End With
+                    End If
+                    Command.ExecuteNonQuery()
+                Next
+                transaction.Commit()
+            Catch ex As Exception
+                aResult(0) = 0
+                aResult(1) = ex.Message
+                transaction.Rollback()
+            Finally
+                connection.Close()
+            End Try
+            Return aResult
+        End Using
+        Return aResult
+    End Function
+#End Region
+
 End Class
