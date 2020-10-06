@@ -109,6 +109,9 @@ namespace Delfin.Principal
             this.grdItems.Columns.Add(commandColumnAperturar);
             this.grdItems.Columns["Aperturar"].AllowSort = false;
             this.grdItems.Columns["Aperturar"].AllowFiltering = false;
+                
+            this.grdItems.Columns.Add("CHAN_Mes", "No.Mes", "CHAN_Mes");
+            grdItems.Columns["CHAN_Mes"].IsVisible = false;
 
             this.grdItems.Columns.Add("CHAN_DescMes", "Mes", "CHAN_DescMes");
             this.grdItems.Columns.Add("CHAN_DescEstado", "Estado", "CHAN_DescEstado");
@@ -118,7 +121,7 @@ namespace Delfin.Principal
             this.grdItems.Columns.Add("CHAN_FechaApertura", "Fecha Última Apertura", "CHAN_FechaApertura");
 
             this.grdItems.Columns.Add("AsientoContable", "Asiento", "AsientoContable");
-
+            this.grdItems.Columns.Add("DocumentoSAP", "Documento SAP", "DocumentoSAP");
 
             grdItems.BestFitColumns();
 
@@ -334,9 +337,9 @@ namespace Delfin.Principal
         {
             DataSet dsQuery = new DataSet();
             ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();
-            int _CCCT_Codigo = 0;
+            int _CHAN_DescMes = Convert.ToInt32(grdItems.CurrentRow.Cells["CHAN_Mes"].Value);
             DateTime _SCOT_FechaOperacion = DateTime.Now;
-            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 0,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserCodigo + "', 'S'");
+            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterfaceChangeControlClose " + "1, 1, " + cmbCHAN_Anio.SelectedValue.ToString() + ", " + _CHAN_DescMes.ToString() + ", '" + Presenter.Session.UserName + "'");
             oJournalEntryViewerForm.dsVoucher = dsQuery;
             oJournalEntryViewerForm.ShowDialog();
         }
