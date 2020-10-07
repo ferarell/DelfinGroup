@@ -98,9 +98,9 @@ Public Class EventManagementForm
                 sQuery += "NULL"
             End If
             If Not lueVoyage.EditValue Is Nothing Then
-                sQuery += "," & lueVoyage.EditValue.ToString
+                sQuery += "," & lueVoyage.EditValue.ToString & ", NULL"
             Else
-                sQuery += ", NULL"
+                sQuery += ", NULL, NULL"
             End If
             If teHBL.Text.Trim <> "" Then
                 sQuery += ",'" & teHBL.Text.Trim & "'"
