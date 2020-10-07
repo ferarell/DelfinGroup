@@ -57,7 +57,7 @@ namespace Delfin.Principal
             RView.Presenter = this;
             ((COM007RView)RView).Show();
 
-            Item = Client.GetOneCab_Cotizacion_OV(Delfin.Controls.Entorno.ItemEmpresa.EMPR_Codigo, Delfin.Controls.Entorno.ItemSucursal.SUCR_Codigo, Item.CCOT_Numero, Item.CCOT_Tipo);
+            Item = Client.GetOneCab_Cotizacion_OV(Delfin.Controls.Entorno.ItemEmpresa.EMPR_Codigo, Delfin.Controls.Entorno.ItemSucursal.SUCR_Codigo, ItemLView.CCOT_Numero, ItemLView.CCOT_Tipo);
 
             System.Data.DataTable DTCotizacionFlete = new System.Data.DataTable("DTCotizacionFlete");
             DTCotizacionFlete.Columns.Add("Desc", Type.GetType("System.String"));
@@ -255,7 +255,9 @@ namespace Delfin.Principal
             RView.Presenter = this;
             ((COM007RView)RView).Show();
 
-            Item = Client.GetOneCab_Cotizacion_OV(Delfin.Controls.Entorno.ItemEmpresa.EMPR_Codigo, Delfin.Controls.Entorno.ItemSucursal.SUCR_Codigo, Item.CCOT_Numero, Item.CCOT_Tipo);
+                
+
+            Item = Client.GetOneCab_Cotizacion_OV(Delfin.Controls.Entorno.ItemEmpresa.EMPR_Codigo, Delfin.Controls.Entorno.ItemSucursal.SUCR_Codigo, ItemLView.CCOT_Numero, ItemLView.CCOT_Tipo);
 
             ReportPath = System.Windows.Forms.Application.StartupPath + @"\Reportes\rptCOM007OrdenVentaExpo.rdlc";
 
