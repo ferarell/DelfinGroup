@@ -34,11 +34,15 @@ Public Class AccountingTransferForm
 
     Private Sub bbiTransfer_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiStatementsGenerate.ItemClick
         Validate()
+        Dim iCurrentRow As Integer = 0
+        Dim iSelected As Integer = RowSelectedCount(GridView1)
+        If iSelected = 0 Then
+            XtraMessageBox.Show("Debe seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
         If DevExpress.XtraEditors.XtraMessageBox.Show("Se generarán asientos de provisión de cada Nave/Viaje seleccionado, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
             Return
         End If
-        Dim iCurrentRow As Integer = 0
-        Dim iSelected As Integer = RowSelectedCount(GridView1)
         For r = 0 To GridView1.DataRowCount - 1
             Dim oRow As DataRow = GridView1.GetDataRow(r)
             Dim dsJournalEntry As New DataSet
@@ -112,14 +116,18 @@ Public Class AccountingTransferForm
 
     Private Sub bbiReferences_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiReferencesSync.ItemClick
         Validate()
-        If DevExpress.XtraEditors.XtraMessageBox.Show("Se actualizarán las referencias de cada HBL seleccionado, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
-            Return
-        End If
         Dim dsReferences As New DataSet
         Dim TipoReferencia, HBL As String
         TipoReferencia = GridView1.GetFocusedRowCellValue("Origen")
         Dim iCurrentRow As Integer = 0
         Dim iSelected As Integer = RowSelectedCount(GridView2)
+        If iSelected = 0 Then
+            XtraMessageBox.Show("Debe seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+        If DevExpress.XtraEditors.XtraMessageBox.Show("Se actualizarán las referencias de cada HBL seleccionado, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            Return
+        End If
         For r = 0 To GridView2.DataRowCount - 1
             Dim oRow As DataRow = GridView2.GetDataRow(r)
             Try
@@ -129,7 +137,7 @@ Public Class AccountingTransferForm
                 If oRow("Checked") = False Then
                     Continue For
                 End If
-                iCurrentRow = +1
+                iCurrentRow += 1
                 SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
                 SplashScreenManager.Default.SetWaitFormDescription("Sincronizando (" & iCurrentRow.ToString & " de " & iSelected.ToString & ") HBL:  " & oRow("HBL"))
 
@@ -239,9 +247,17 @@ Public Class AccountingTransferForm
         'SUCR_Codigo = "01"
         Dim NVIA_Codigo As Integer = GridView1.GetFocusedRowCellValue("NVIA_Codigo")
         Dim CONS_CodLNG As String = GridView1.GetFocusedRowCellValue("CONS_CodLNG")
+        Dim DocSAP As String = GridView1.GetFocusedRowCellValue("DocumentoSAP").ToString
         dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " & EMPR_Codigo & ",'" & SUCR_Codigo & "'," & NVIA_Codigo.ToString & ",'" & CONS_CodLNG & "', NULL, NULL, 0, NULL, NULL, '" & AppUser & "', 'P'")
         oForm.dsVoucher = dsQuery
+        If DocSAP <> "" Then
+            oForm.bbiVoucherGenerate.Enabled = False
+        End If
         oForm.ShowDialog()
+        If oForm.sDocSAP <> "" Then
+            GridView1.SetFocusedRowCellValue("DocumentoSAP", oForm.sDocSAP)
+        End If
+
     End Sub
 
 End Class

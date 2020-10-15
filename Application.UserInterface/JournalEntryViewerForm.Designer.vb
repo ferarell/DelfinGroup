@@ -25,6 +25,7 @@ Partial Class JournalEntryViewerForm
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
+        Me.bbiVoucherGenerate = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiExport = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
@@ -93,7 +94,6 @@ Partial Class JournalEntryViewerForm
         Me.GridColumn18 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn19 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn37 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.bbiVoucherGenerate = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -154,6 +154,13 @@ Partial Class JournalEntryViewerForm
         Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
         Me.brBarraAcciones.OptionsBar.UseWholeRow = True
         Me.brBarraAcciones.Text = "Custom 5"
+        '
+        'bbiVoucherGenerate
+        '
+        Me.bbiVoucherGenerate.Caption = "&Generar Asiento"
+        Me.bbiVoucherGenerate.Id = 25
+        Me.bbiVoucherGenerate.ImageOptions.Image = CType(resources.GetObject("bbiVoucherGenerate.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiVoucherGenerate.Name = "bbiVoucherGenerate"
         '
         'bbiExport
         '
@@ -323,7 +330,6 @@ Partial Class JournalEntryViewerForm
         Me.GridView1.GridControl = Me.gcVoucherHeader
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsBehavior.Editable = False
         Me.GridView1.OptionsCustomization.AllowGroup = False
         Me.GridView1.OptionsMenu.EnableFooterMenu = False
         Me.GridView1.OptionsView.ColumnAutoWidth = False
@@ -509,7 +515,6 @@ Partial Class JournalEntryViewerForm
         Me.GridView2.GridControl = Me.gcVoucherDetail
         Me.GridView2.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsBehavior.Editable = False
         Me.GridView2.OptionsCustomization.AllowGroup = False
         Me.GridView2.OptionsView.ColumnAutoWidth = False
         Me.GridView2.OptionsView.ShowAutoFilterRow = True
@@ -674,13 +679,6 @@ Partial Class JournalEntryViewerForm
         Me.GridColumn37.Caption = "IdProyecto"
         Me.GridColumn37.FieldName = "IdProyecto"
         Me.GridColumn37.Name = "GridColumn37"
-        '
-        'bbiVoucherGenerate
-        '
-        Me.bbiVoucherGenerate.Caption = "&Generar Asiento"
-        Me.bbiVoucherGenerate.Id = 25
-        Me.bbiVoucherGenerate.ImageOptions.Image = CType(resources.GetObject("bbiVoucherGenerate.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiVoucherGenerate.Name = "bbiVoucherGenerate"
         '
         'JournalEntryViewerForm
         '

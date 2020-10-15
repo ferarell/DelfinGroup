@@ -3,7 +3,7 @@ Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class JournalEntryViewerForm
     Public dsVoucher As New DataSet
-    Public sDocSAP As String
+    Public sDocSAP As String = ""
 
     Dim oIntegrationService As New IntegrationService.IntegradorSBOClient
     Private Sub JournalEntryViewerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -13,9 +13,12 @@ Public Class JournalEntryViewerForm
         If dsVoucher.Tables.Count = 0 Then
             Return
         End If
-        gcVoucherHeader.DataSource = dsVoucher.Tables(0)
+        Dim dsVoucherViews As New DataSet
+        dsVoucherViews = dsVoucher.Copy
+        gcVoucherHeader.DataSource = dsVoucherViews.Tables(0)
+        FormatGridView(GridView1)
         GridView1.BestFitColumns()
-        gcVoucherDetail.DataSource = dsVoucher.Tables(1)
+        gcVoucherDetail.DataSource = dsVoucherViews.Tables(1)
         FormatGridView(GridView2)
         GridView2.BestFitColumns()
     End Sub
@@ -24,6 +27,7 @@ Public Class JournalEntryViewerForm
         'For r = 0 To oGridView.RowCount - 1
         '    Dim oRow As DataRow = oGridView.GetDataRow(r)
         For c = 0 To oGridView.Columns.Count - 1
+            oGridView.Columns(c).OptionsColumn.ReadOnly = True
             If oGridView.Columns(c).ColumnType = GetType(Decimal) Then
                 oGridView.Columns(c).DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
                 oGridView.Columns(c).DisplayFormat.FormatString = "###,###,##0.00"

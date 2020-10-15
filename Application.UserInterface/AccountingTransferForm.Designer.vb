@@ -19,6 +19,7 @@ Partial Class AccountingTransferForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AccountingTransferForm))
         Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
         Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
@@ -34,7 +35,7 @@ Partial Class AccountingTransferForm
         Me.bbiSendMessage = New DevExpress.XtraBars.BarButtonItem()
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
@@ -51,7 +52,7 @@ Partial Class AccountingTransferForm
         Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -59,7 +60,7 @@ Partial Class AccountingTransferForm
         Me.deDateFrom = New DevExpress.XtraEditors.DateEdit()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.gcStatements = New DevExpress.XtraGrid.GridControl()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SeleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeseleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InvertirSelecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -78,6 +79,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.gcListaHBL = New DevExpress.XtraGrid.GridControl()
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn31 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -87,7 +89,6 @@ Partial Class AccountingTransferForm
         Me.GridColumn20 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn22 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -476,6 +477,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn8.Caption = "Línea de Negocio"
         Me.GridColumn8.FieldName = "CONS_DescLNG"
         Me.GridColumn8.Name = "GridColumn8"
+        Me.GridColumn8.OptionsColumn.ReadOnly = True
         Me.GridColumn8.Visible = True
         Me.GridColumn8.VisibleIndex = 1
         '
@@ -484,6 +486,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn9.Caption = "Régimen"
         Me.GridColumn9.FieldName = "CONS_DescRGM"
         Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.OptionsColumn.ReadOnly = True
         Me.GridColumn9.Visible = True
         Me.GridColumn9.VisibleIndex = 2
         '
@@ -492,6 +495,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn10.Caption = "Vía"
         Me.GridColumn10.FieldName = "CONS_DescVIA"
         Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.OptionsColumn.ReadOnly = True
         Me.GridColumn10.Visible = True
         Me.GridColumn10.VisibleIndex = 3
         '
@@ -500,6 +504,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn7.Caption = "Transportista"
         Me.GridColumn7.FieldName = "ENTC_NomTransp"
         Me.GridColumn7.Name = "GridColumn7"
+        Me.GridColumn7.OptionsColumn.ReadOnly = True
         Me.GridColumn7.Visible = True
         Me.GridColumn7.VisibleIndex = 4
         '
@@ -508,6 +513,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn2.Caption = "Código Viaje"
         Me.GridColumn2.FieldName = "NVIA_Codigo"
         Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.OptionsColumn.ReadOnly = True
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 5
         '
@@ -516,6 +522,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn3.Caption = "Nave"
         Me.GridColumn3.FieldName = "NAVE_Nombre"
         Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.OptionsColumn.ReadOnly = True
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 6
         '
@@ -524,6 +531,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn4.Caption = "Viaje_Vuelo"
         Me.GridColumn4.FieldName = "NVIA_NroViaje"
         Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.OptionsColumn.ReadOnly = True
         Me.GridColumn4.Visible = True
         Me.GridColumn4.VisibleIndex = 7
         '
@@ -532,6 +540,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn5.Caption = "ETA_ETD"
         Me.GridColumn5.FieldName = "NVIA_FecETA_IMPO_ETD_EXPO"
         Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.OptionsColumn.ReadOnly = True
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 8
         '
@@ -540,6 +549,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn13.Caption = "Cantidad HBL"
         Me.GridColumn13.FieldName = "Cantidad_HBL"
         Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.OptionsColumn.ReadOnly = True
         Me.GridColumn13.Visible = True
         Me.GridColumn13.VisibleIndex = 9
         '
@@ -548,6 +558,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn6.Caption = "Estado"
         Me.GridColumn6.FieldName = "NVIA_DesEstado"
         Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.OptionsColumn.ReadOnly = True
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 10
         '
@@ -556,6 +567,7 @@ Partial Class AccountingTransferForm
         Me.GridColumn11.Caption = "Fecha Prefactura"
         Me.GridColumn11.FieldName = "NVIA_FecPreFactura"
         Me.GridColumn11.Name = "GridColumn11"
+        Me.GridColumn11.OptionsColumn.ReadOnly = True
         Me.GridColumn11.Visible = True
         Me.GridColumn11.VisibleIndex = 11
         '
@@ -564,8 +576,18 @@ Partial Class AccountingTransferForm
         Me.GridColumn12.Caption = "Asiento Contable"
         Me.GridColumn12.FieldName = "AsientoContable"
         Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.OptionsColumn.ReadOnly = True
         Me.GridColumn12.Visible = True
         Me.GridColumn12.VisibleIndex = 12
+        '
+        'GridColumn15
+        '
+        Me.GridColumn15.Caption = "Documento SAP"
+        Me.GridColumn15.FieldName = "DocumentoSAP"
+        Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.OptionsColumn.ReadOnly = True
+        Me.GridColumn15.Visible = True
+        Me.GridColumn15.VisibleIndex = 13
         '
         'gcListaHBL
         '
@@ -658,16 +680,9 @@ Partial Class AccountingTransferForm
         Me.GridColumn14.Caption = "TEUS"
         Me.GridColumn14.FieldName = "TEUS"
         Me.GridColumn14.Name = "GridColumn14"
+        Me.GridColumn14.OptionsColumn.ReadOnly = True
         Me.GridColumn14.Visible = True
         Me.GridColumn14.VisibleIndex = 5
-        '
-        'GridColumn15
-        '
-        Me.GridColumn15.Caption = "Documento SAP"
-        Me.GridColumn15.FieldName = "DocumentoSAP"
-        Me.GridColumn15.Name = "GridColumn15"
-        Me.GridColumn15.Visible = True
-        Me.GridColumn15.VisibleIndex = 13
         '
         'AccountingTransferForm
         '
