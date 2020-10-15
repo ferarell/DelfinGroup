@@ -150,6 +150,7 @@
             // btnSyncSAP
             // 
             this.btnSyncSAP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSyncSAP.Enabled = false;
             this.btnSyncSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSyncSAP.ImageOptions.Image")));
             this.btnSyncSAP.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnSyncSAP.Location = new System.Drawing.Point(384, 0);
@@ -528,6 +529,7 @@
             this.grdItems.Size = new System.Drawing.Size(1097, 164);
             this.grdItems.TabIndex = 1;
             this.grdItems.TabStop = false;
+            this.grdItems.SelectionChanged += new System.EventHandler(this.grdItems_SelectionChanged);
             // 
             // panelCaption2
             // 

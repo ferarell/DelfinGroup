@@ -19,6 +19,7 @@ Partial Class ConsolidatedInquiryForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ConsolidatedInquiryForm))
         Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
@@ -26,7 +27,7 @@ Partial Class ConsolidatedInquiryForm
         Dim ColumnDefinition4 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
@@ -53,7 +54,7 @@ Partial Class ConsolidatedInquiryForm
         Me.bbiVoid = New DevExpress.XtraBars.BarButtonItem()
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.lueBusinessUnit = New DevExpress.XtraEditors.LookUpEdit()
@@ -173,7 +174,7 @@ Partial Class ConsolidatedInquiryForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(914, 45)
+        Me.BarDockControl1.Size = New System.Drawing.Size(914, 47)
         '
         'BarDockControl2
         '
@@ -187,17 +188,17 @@ Partial Class ConsolidatedInquiryForm
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 45)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 336)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 334)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(914, 45)
+        Me.BarDockControl4.Location = New System.Drawing.Point(914, 47)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 336)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 334)
         '
         'BarButtonItem1
         '
@@ -308,14 +309,14 @@ Partial Class ConsolidatedInquiryForm
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 45)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LayoutControl1)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.gcConsolidatedInquiry)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(914, 336)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(914, 334)
         Me.SplitContainerControl1.SplitterPosition = 79
         Me.SplitContainerControl1.TabIndex = 4
         '
@@ -372,7 +373,7 @@ Partial Class ConsolidatedInquiryForm
         Me.cbeRefDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
         Me.cbeRefDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbeRefDate.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.cbeRefDate.Properties.Items.AddRange(New Object() {"ETA/ETD"})
+        Me.cbeRefDate.Properties.Items.AddRange(New Object() {"ETA/ETD", "EMISIÓN OV"})
         Me.cbeRefDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.cbeRefDate.Properties.UseReadOnlyAppearance = False
         Me.cbeRefDate.Size = New System.Drawing.Size(125, 20)
@@ -491,7 +492,7 @@ Partial Class ConsolidatedInquiryForm
         Me.gcConsolidatedInquiry.MainView = Me.GridView1
         Me.gcConsolidatedInquiry.Name = "gcConsolidatedInquiry"
         Me.gcConsolidatedInquiry.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit2, Me.RepositoryItemCheckEdit1, Me.RepositoryItemCheckEdit3})
-        Me.gcConsolidatedInquiry.Size = New System.Drawing.Size(914, 251)
+        Me.gcConsolidatedInquiry.Size = New System.Drawing.Size(914, 250)
         Me.gcConsolidatedInquiry.TabIndex = 172
         Me.gcConsolidatedInquiry.UseEmbeddedNavigator = True
         Me.gcConsolidatedInquiry.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})

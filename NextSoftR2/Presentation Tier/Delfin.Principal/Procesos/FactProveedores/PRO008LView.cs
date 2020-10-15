@@ -520,5 +520,14 @@ namespace Delfin.Principal
             oPurchaseInvoiceViewerForm.ShowDialog();
             grdItems.CurrentRow.Cells["DocumentoSAP"].Value = oPurchaseInvoiceViewerForm.sDocSAP;
         }
+
+        private void grdItems_SelectionChanged(object sender, EventArgs e)
+        {
+            if (grdItems.RowCount == 0)
+            { return; }
+            btnSyncSAP.Enabled = false;
+            if (grdItems.CurrentRow.Cells["DocumentoSAP"].Value != null)
+            { btnSyncSAP.Enabled = true; }
+        }
     }
 }

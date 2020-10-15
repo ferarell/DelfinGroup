@@ -8497,6 +8497,16 @@ namespace Delfin.Principal
             oJournalEntryViewerForm.dsVoucher = dsQuery;
             oJournalEntryViewerForm.ShowDialog();
             grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value = oJournalEntryViewerForm.sDocSAP;
+            grdItemsServiciosChangeControl_SelectionChanged(sender, e);
         }
+
+        private void grdItemsServiciosChangeControl_SelectionChanged(object sender, EventArgs e)
+        {
+            if (grdItemsServiciosChangeControl.RowCount == 0)
+            { return; }
+            btnEnviarProvisionSAP.Enabled = false;
+            if (grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value == null && Convert.ToBoolean(grdItemsServiciosChangeControl.CurrentRow.Cells["SERV_AfeIgv"].Value) == true)
+            { btnEnviarProvisionSAP.Enabled = true; }
+        }       
     }
 }
