@@ -53,10 +53,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DataAccessLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\NextSoft\Application.DataAccessLayer\bin\Debug\DataAccessLayer.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -421,6 +417,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\DelfinService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application.DataAccessLayer\Application.DataAccessLayer.vbproj">
+      <Project>{e8bc2fbb-f572-476d-9ecd-774fc211b4a0}</Project>
+      <Name>Application.DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
