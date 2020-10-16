@@ -353,7 +353,7 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
             End If
             Dim AUDI_Usuario As String = dtAdicionales.Rows(0).Item("AUDI_Usuario").ToString()
             If oRespuesta.RespuestaSAP = 1 Then
-                Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedJournalEntry '" & oRespuesta.Response.Item(0).Number.ToString() & "' ," & "'" & InterfaceName & "'" & " , '" & TableName & "' , " & NVIA_Codigo & " , " & CONS_CodLNG & " , " & CCCT_Codigo & ", '" & AUDI_Usuario & "'"
+                Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedJournalEntry '" & oRespuesta.Response.Item(0).JdtNum.ToString() & "' ," & "'" & InterfaceName & "'" & " , '" & TableName & "' , " & NVIA_Codigo & " , " & CONS_CodLNG & " , " & CCCT_Codigo & ", '" & AUDI_Usuario & "'"
                 Dim bResult As Boolean = Nothing
                 bResult = oDelfinService.ExecuteSQLNonQuery(Query)
                 If bResult Then
