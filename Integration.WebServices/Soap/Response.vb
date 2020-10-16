@@ -3,6 +3,7 @@
     Dim _DocEntry As Integer
     Dim _DocNum As Integer
     Dim _Number As Integer
+    Dim _JdtNum As Integer
 
     Public Property [error] As Wrong
         Get
@@ -38,6 +39,15 @@
         End Get
         Set(value As Integer)
             _Number = value
+        End Set
+    End Property
+
+    Public Property JdtNum As Integer
+        Get
+            Return _JdtNum
+        End Get
+        Set(value As Integer)
+            _JdtNum = value
         End Set
     End Property
 End Class
