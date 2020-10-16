@@ -131,6 +131,19 @@ namespace Delfin.Principal
         private void LoadSalesLogisticOperation()
         {
             //salesLogistic = new ApplicationForm.SalesLogisticOperationForm();
+            salesLogistic._EMPR_Codigo = Convert.ToInt32(Presenter.Item.EMPR_Codigo);
+            salesLogistic._SUCR_Codigo = Convert.ToInt32(Presenter.Item.SUCR_Codigo);
+            if (Convert.ToInt32(Presenter.Item.CCOT_NumPadre) > 0)
+            { salesLogistic._CCOT_Numero = Convert.ToInt32(Presenter.Item.CCOT_NumPadre); }
+            else
+            { salesLogistic._CCOT_Numero = Convert.ToInt32(Presenter.Item.CCOT_Numero); }
+            if (Convert.ToInt32(Presenter.Item.CCOT_TipoPadre) > 0)
+            { salesLogistic._CCOT_Tipo = Convert.ToInt32(Presenter.Item.CCOT_TipoPadre); }
+            else
+            { salesLogistic._CCOT_Tipo = Convert.ToInt32(Presenter.Item.CCOT_Tipo); }
+            salesLogistic.Item = Presenter.Item;
+            //if (salesLogistic.lueTransportistaTerrestre.Text != "")
+            //{ salesLogistic.Item.ENTC_CodTransportista = salesLogistic.lueTransportistaTerrestre.Text; }
             salesLogistic.TopLevel = false;
             salesLogistic.Dock = DockStyle.Fill;
             salesLogistic.FormBorderStyle = FormBorderStyle.None;
@@ -4848,6 +4861,43 @@ namespace Delfin.Principal
             if (oLogisticsServiceUpdatePopupForm.ShowDialog() == DialogResult.OK)
             {
                 Presenter.Editar();
+            }
+        }
+        private void tabCab_Cotizacion_OV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabCab_Cotizacion_OV.TabPages.Count == 0)
+            { return; }
+            if (tabCab_Cotizacion_OV.SelectedTab.Name == "pageServicioLogistico")
+            {
+                //salesLogistic = new ApplicationForm.SalesLogisticOperationForm();
+
+                if (ENTC_CodCliente.Text != "")
+                {
+                    salesLogistic.teCliente.Text = ENTC_CodCliente.Value.ENTC_RazonSocial.ToString();
+                    Presenter.Item.ENTC_CodCliente = ENTC_CodCliente.Value.ENTC_Codigo;
+                }
+                if (ENTC_CodTransportista.Text != "")
+                {
+                    salesLogistic.teTransportista.Text = ENTC_CodTransportista.Value.ENTC_RazonSocial.ToString();
+                    Presenter.Item.ENTC_CodTransportista = ENTC_CodTransportista.Value.ENTC_Codigo;
+                }
+                Presenter.Item.CONS_CodVia = cmbCONS_CodVia.SelectedValue.ToString();
+                salesLogistic.Item = Presenter.Item;
+                salesLogistic.LoadTariff();
+            }
+            if (tabCab_Cotizacion_OV.SelectedTab.Name == "pageServiciosTarifa")
+            {
+                if (cmbCONS_CodVia.SelectedValue.ToString() == "003")
+                {
+                    label4.Text = "Lugar Origen";
+                    label5.Text = "Lugar Destino";
+                }
+                else
+                {
+                    label4.Text = "Puerto Origen";
+                    label5.Text = "Puerto Destino";
+                }
+
             }
         }
     }

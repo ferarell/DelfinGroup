@@ -443,6 +443,12 @@
     <Compile Include="Tarifario\Controls\TariffForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Tarifario\Controls\TariffSelectingForm.Designer.vb">
+      <DependentUpon>TariffSelectingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifario\Controls\TariffSelectingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Tarifario\Controls\TariffInquiryForm.Designer.vb">
       <DependentUpon>TariffInquiryForm.vb</DependentUpon>
     </Compile>
@@ -690,6 +696,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tarifario\Controls\TariffForm.resx">
       <DependentUpon>TariffForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarifario\Controls\TariffSelectingForm.resx">
+      <DependentUpon>TariffSelectingForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tarifario\Controls\TariffInquiryForm.resx">
       <DependentUpon>TariffInquiryForm.vb</DependentUpon>

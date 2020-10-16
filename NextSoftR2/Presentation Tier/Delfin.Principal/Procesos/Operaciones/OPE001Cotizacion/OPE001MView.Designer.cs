@@ -28,27 +28,26 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OPE001MView));
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("Documento de Transporte");
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("Manifiesto de Carga");
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("Documento Nacional de Identidad - DNI");
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("Registro Único de Contribuyente - RUC");
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("Comunicación de Origen Proveedor");
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("Comunicación de Origen Embarcador");
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("Acta de Reconocimiento Previo");
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("Factura Comercial / Declaración Jurada");
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("Especificaciones Técnicas");
-            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem("Liquidación de Cobranza Cancelada");
-            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("Volante de Despacho");
-            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem("Declaración Aduanera Autenticada");
-            System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem("Nota de tarja / Tarja al Detalle");
-            System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem("Lista de Embarque");
-            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem("Documento de Puerto / Aereopuerto / Terminal");
-            System.Windows.Forms.ListViewItem listViewItem34 = new System.Windows.Forms.ListViewItem("Certificado de Peso");
-            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem("Ticket de Balanza");
-            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem("Otros");
-            this.errorProviderCab_Cotizacion_OV = new System.Windows.Forms.ErrorProvider(this.components);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Documento de Transporte");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Manifiesto de Carga");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Documento Nacional de Identidad - DNI");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Registro Único de Contribuyente - RUC");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Comunicación de Origen Proveedor");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Comunicación de Origen Embarcador");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Acta de Reconocimiento Previo");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Factura Comercial / Declaración Jurada");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Especificaciones Técnicas");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Liquidación de Cobranza Cancelada");
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("Volante de Despacho");
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("Declaración Aduanera Autenticada");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("Nota de tarja / Tarja al Detalle");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("Lista de Embarque");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Documento de Puerto / Aereopuerto / Terminal");
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Certificado de Peso");
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Ticket de Balanza");
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("Otros");
+            this.errorProviderCab_Cotizacion_OV = new System.Windows.Forms.ErrorProvider();
             this.tabCab_Cotizacion_OV = new Dotnetrix.Controls.TabControlEX();
             this.pageGenerales = new Dotnetrix.Controls.TabPageEX();
             this.tableDatosGenerales = new System.Windows.Forms.TableLayoutPanel();
@@ -65,7 +64,7 @@
             this.lblCONS_CodESTOV = new System.Windows.Forms.Label();
             this.cmbCONS_CodESTOV = new Delfin.Controls.Tipos.ComboBoxConstantes();
             this.lblENTC_CodCliente = new System.Windows.Forms.Label();
-            this.txaENTC_CodCliente = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodCliente = new Delfin.Controls.Entidad();
             this.mdtCCOT_FecVcto = new Infrastructure.WinForms.Controls.MaskDateTime();
             this.lblCCOT_FecVcto = new System.Windows.Forms.Label();
             this.mdtCCOT_FecEmi = new Infrastructure.WinForms.Controls.MaskDateTime();
@@ -79,11 +78,11 @@
             this.label29 = new System.Windows.Forms.Label();
             this.chkCCOT_DiferenciaFlete = new System.Windows.Forms.CheckBox();
             this.lblENTC_CodAgente = new System.Windows.Forms.Label();
-            this.txaENTC_CodAgente = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodAgente = new Delfin.Controls.Entidad();
             this.lblENTC_CodEjecutivo = new System.Windows.Forms.Label();
-            this.txaENTC_CodEjecutivo = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodEjecutivo = new Delfin.Controls.Entidad();
             this.lblENTC_CodBroker = new System.Windows.Forms.Label();
-            this.txaENTC_CodBroker = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodBroker = new Delfin.Controls.Entidad();
             this.label28 = new System.Windows.Forms.Label();
             this.chkCCOT_VBLogistico = new System.Windows.Forms.CheckBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -109,13 +108,13 @@
             this.lblCCOT_FecAprueba = new System.Windows.Forms.Label();
             this.mdtCCOT_FecAprueba = new Infrastructure.WinForms.Controls.MaskDateTime();
             this.lblENTC_CodCustomer = new System.Windows.Forms.Label();
-            this.txaENTC_CodCustomer = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodCustomer = new Delfin.Controls.Entidad();
             this.label43 = new System.Windows.Forms.Label();
-            this.txaENTC_CodShipper = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodShipper = new Delfin.Controls.Entidad();
             this.label44 = new System.Windows.Forms.Label();
-            this.txaENTC_CodConsignee = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodConsignee = new Delfin.Controls.Entidad();
             this.label45 = new System.Windows.Forms.Label();
-            this.txaENTC_CodNotify = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodNotify = new Delfin.Controls.Entidad();
             this.lblTIPO_CodINC = new System.Windows.Forms.Label();
             this.cmbTIPO_CodINC = new Delfin.Controls.Tipos.ComboBoxTipos();
             this.lblDOOV_CodReferencia = new System.Windows.Forms.Label();
@@ -147,9 +146,9 @@
             this.grdItemsFlete = new Telerik.WinControls.UI.RadGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblCCOT_PagoMBL = new System.Windows.Forms.Label();
-            this.cmbCCOT_PagoMBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
+            this.cmbCCOT_PagoMBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
             this.lblCCOT_PagoHBL = new System.Windows.Forms.Label();
-            this.cmbCCOT_PagoHBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
+            this.cmbCCOT_PagoHBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
             this.lblDCOT_Importe = new System.Windows.Forms.Label();
             this.txnDCOT_Importe = new Infrastructure.WinForms.Controls.TextBoxNumerico();
             this.lblDCOT_Rentabilidad = new System.Windows.Forms.Label();
@@ -160,11 +159,11 @@
             this.btnAddFlete = new System.Windows.Forms.Button();
             this.panelCaption4 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.txaENTC_CodTransportista = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodTransportista = new Delfin.Controls.Entidad();
             this.lblENTC_CodTransportista = new System.Windows.Forms.Label();
             this.lblCONT_Numero = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txaCONT_Numero = new Infrastructure.WinForms.Controls.TextBoxAyuda(this.components);
+            this.txaCONT_Numero = new Infrastructure.WinForms.Controls.TextBoxAyuda();
             this.btnCambiarContrato = new System.Windows.Forms.Button();
             this.txtCONT_Descrip = new System.Windows.Forms.TextBox();
             this.lblPUER_CodOrigen = new System.Windows.Forms.Label();
@@ -220,7 +219,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCCOT_Observaciones = new System.Windows.Forms.TextBox();
             this.panelCaption9 = new Infrastructure.WinForms.Controls.PanelCaption();
-            this.navItemsArchivos = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsArchivos = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
@@ -235,12 +234,12 @@
             this.pageDatosDocumento = new Dotnetrix.Controls.TabPageEX();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label39 = new System.Windows.Forms.Label();
-            this.txaENTC_CodNotifyNieto = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodNotifyNieto = new Delfin.Controls.Entidad();
             this.chkDDOV_HBLNieto = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txaENTC_CodShipperNieto = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodShipperNieto = new Delfin.Controls.Entidad();
             this.label11 = new System.Windows.Forms.Label();
-            this.txaENTC_CodConsigneeNieto = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodConsigneeNieto = new Delfin.Controls.Entidad();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDOOV_NumeroBLNieto = new System.Windows.Forms.TextBox();
@@ -277,7 +276,7 @@
             this.lblNAVE_Nombre = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.txtNVIA_NroViaje = new System.Windows.Forms.TextBox();
-            this.txaNVIA_Codigo = new Infrastructure.WinForms.Controls.TextBoxAyuda(this.components);
+            this.txaNVIA_Codigo = new Infrastructure.WinForms.Controls.TextBoxAyuda();
             this.label58 = new System.Windows.Forms.Label();
             this.cmbTIPO_CodTRF = new Delfin.Controls.Tipos.ComboBoxTipos();
             this.lblDOOV_FecETDFeeder_IMPO = new System.Windows.Forms.Label();
@@ -295,7 +294,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnCMBL_Numero = new System.Windows.Forms.Button();
             this.txtDOOV_MBL = new System.Windows.Forms.TextBox();
-            this.txaENTC_CodDepTemporal = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodDepTemporal = new Delfin.Controls.Entidad();
             this.txtDOOV_Cntr = new System.Windows.Forms.TextBox();
             this.lblDOOV_Cntr = new System.Windows.Forms.Label();
             this.lblDOOV_MBL = new System.Windows.Forms.Label();
@@ -341,7 +340,7 @@
             this.btnExportarMatrizDraft = new System.Windows.Forms.ToolStripButton();
             this.btnImportarMatrizDraft = new System.Windows.Forms.ToolStripButton();
             this.btnImprimirMatrizDraft = new System.Windows.Forms.ToolStripButton();
-            this.navItemsCNTR = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsCNTR = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
@@ -392,7 +391,7 @@
             this.lblEVEN_Usuario = new System.Windows.Forms.Label();
             this.EVEN_Usuario = new System.Windows.Forms.TextBox();
             this.panelEventoTarea = new Infrastructure.WinForms.Controls.PanelCaption();
-            this.navItemsEventos = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsEventos = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -431,12 +430,12 @@
             this.rbtANEX_TipoI = new System.Windows.Forms.RadioButton();
             this.rbtANEX_TipoR = new System.Windows.Forms.RadioButton();
             this.lblANEX_TipoRectificacion = new System.Windows.Forms.Label();
-            this.cmbANEX_TipoRectificacion = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
+            this.cmbANEX_TipoRectificacion = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.lblANEX_Funadamentos = new System.Windows.Forms.Label();
             this.pageListRectificaciones = new Dotnetrix.Controls.TabPageEX();
             this.grdItemsAnexos = new Telerik.WinControls.UI.RadGridView();
-            this.navItemsAnexos = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsAnexos = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -452,9 +451,9 @@
             this.btnDeshacerAnexo = new System.Windows.Forms.ToolStripButton();
             this.btnImprimirAnexo = new System.Windows.Forms.ToolStripButton();
             this.panelCaption18 = new Infrastructure.WinForms.Controls.PanelCaption();
-            this.errorProviderDet_Cotizacion_OV_Novedad = new System.Windows.Forms.ErrorProvider(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.errorEventoTarea = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderDet_Cotizacion_OV_Novedad = new System.Windows.Forms.ErrorProvider();
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
+            this.errorEventoTarea = new System.Windows.Forms.ErrorProvider();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnGuardar = new System.Windows.Forms.ToolStripButton();
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
@@ -473,7 +472,7 @@
             this.btnCargoManifest = new System.Windows.Forms.ToolStripButton();
             this.btnEtiqueta = new System.Windows.Forms.ToolStripButton();
             this.btnAuditoriaCab_Cotizacion_OV = new System.Windows.Forms.ToolStripButton();
-            this.errorAnexo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorAnexo = new System.Windows.Forms.ErrorProvider();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCab_Cotizacion_OV)).BeginInit();
             this.tabCab_Cotizacion_OV.SuspendLayout();
             this.pageGenerales.SuspendLayout();
@@ -5531,43 +5530,43 @@
             this.lvwANEX_Documentos.CheckBoxes = true;
             this.tableAnexo.SetColumnSpan(this.lvwANEX_Documentos, 7);
             this.lvwANEX_Documentos.HideSelection = false;
-            listViewItem19.StateImageIndex = 0;
-            listViewItem20.StateImageIndex = 0;
-            listViewItem21.StateImageIndex = 0;
-            listViewItem22.StateImageIndex = 0;
-            listViewItem23.StateImageIndex = 0;
-            listViewItem24.StateImageIndex = 0;
-            listViewItem25.StateImageIndex = 0;
-            listViewItem26.StateImageIndex = 0;
-            listViewItem27.StateImageIndex = 0;
-            listViewItem28.StateImageIndex = 0;
-            listViewItem29.StateImageIndex = 0;
-            listViewItem30.StateImageIndex = 0;
-            listViewItem31.StateImageIndex = 0;
-            listViewItem32.StateImageIndex = 0;
-            listViewItem33.StateImageIndex = 0;
-            listViewItem34.StateImageIndex = 0;
-            listViewItem35.StateImageIndex = 0;
-            listViewItem36.StateImageIndex = 0;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
+            listViewItem4.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
+            listViewItem6.StateImageIndex = 0;
+            listViewItem7.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
+            listViewItem9.StateImageIndex = 0;
+            listViewItem10.StateImageIndex = 0;
+            listViewItem11.StateImageIndex = 0;
+            listViewItem12.StateImageIndex = 0;
+            listViewItem13.StateImageIndex = 0;
+            listViewItem14.StateImageIndex = 0;
+            listViewItem15.StateImageIndex = 0;
+            listViewItem16.StateImageIndex = 0;
+            listViewItem17.StateImageIndex = 0;
+            listViewItem18.StateImageIndex = 0;
             this.lvwANEX_Documentos.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem19,
-            listViewItem20,
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24,
-            listViewItem25,
-            listViewItem26,
-            listViewItem27,
-            listViewItem28,
-            listViewItem29,
-            listViewItem30,
-            listViewItem31,
-            listViewItem32,
-            listViewItem33,
-            listViewItem34,
-            listViewItem35,
-            listViewItem36});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18});
             this.lvwANEX_Documentos.Location = new System.Drawing.Point(152, 300);
             this.lvwANEX_Documentos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lvwANEX_Documentos.Name = "lvwANEX_Documentos";

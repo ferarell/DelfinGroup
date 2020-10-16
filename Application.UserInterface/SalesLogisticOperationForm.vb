@@ -5,7 +5,7 @@ Imports DevExpress.XtraGrid.Views.Grid
 Public Class SalesLogisticOperationForm
     Public Item As Object
     Public dsLogisticOperation As New DataSet
-    Dim _EMPR_Codigo, _SUCR_Codigo, _CCOT_Numero, _CCOT_Tipo As Integer
+    Public _EMPR_Codigo, _SUCR_Codigo, _CCOT_Numero, _CCOT_Tipo, _ENTC_CodTransportista As Integer
     Dim oAppService As New AppService.DelfinServiceClient
     Dim oMasterDataList As New MasterDataList
 
@@ -26,8 +26,11 @@ Public Class SalesLogisticOperationForm
         '_SUCR_Codigo = 1
         '_CCOT_Numero = 30420
         '_CCOT_Tipo = 1
+        If dsLogisticOperation Is Nothing Then
+            GetSalesLogisticOperation()
+        End If
         LoadEntityDataList(5, "lueTransportistaTerrestre")
-        LoadTariff()
+        'LoadTariff()
         LoadService()
         LoadEntityType()
         LoadEntityByType()
@@ -53,10 +56,10 @@ Public Class SalesLogisticOperationForm
 
     Public Function GetSalesLogisticOperation() As DataSet
         'Dim dsResult As New DataSet
-        _EMPR_Codigo = Convert.ToUInt16(Item.EMPR_Codigo)
-        _SUCR_Codigo = Convert.ToUInt16(Item.SUCR_Codigo)
-        _CCOT_Numero = Item.CCOT_Numero
-        _CCOT_Tipo = Convert.ToUInt16(Item.CCOT_Tipo)
+        '_EMPR_Codigo = Convert.ToUInt16(Item.EMPR_Codigo)
+        '_SUCR_Codigo = Convert.ToUInt16(Item.SUCR_Codigo)
+        '_CCOT_Numero = Item.CCOT_Numero
+        '_CCOT_Tipo = Convert.ToUInt16(Item.CCOT_Tipo)
         dsLogisticOperation = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneServicioLogisticoPorCotizacion " & _EMPR_Codigo.ToString & "," & _SUCR_Codigo.ToString & "," & _CCOT_Numero.ToString & "," & _CCOT_Tipo.ToString)
         Return dsLogisticOperation
     End Function
@@ -79,7 +82,7 @@ Public Class SalesLogisticOperationForm
         teTerminalPortuario.EditValue = dsLogisticOperation.Tables(0).Rows(0)("ENTC_NombreTerminalPortuario")
         teCondicionEmbarque.EditValue = dsLogisticOperation.Tables(0).Rows(0)("DescripcionCondicionEmbarque")
 
-        lueTarifa.EditValue = dsLogisticOperation.Tables(0).Rows(0)("CTAR_Codigo")
+        beTarifa.EditValue = dsLogisticOperation.Tables(0).Rows(0)("CTAR_Codigo")
         LoadTariffDetail()
         gcServiceRelated.DataSource = dsLogisticOperation.Tables(5)
         GridView1.BestFitColumns()
@@ -104,53 +107,56 @@ Public Class SalesLogisticOperationForm
     End Sub
 
     Public Sub LoadTariff()
-        Dim dtQuery As New DataTable
-        Dim ValidityDate As String = Format(Date.Now, "yyyyMMdd")
-        Dim IdBusinessUnit As Integer = 2 'SLI
-        Dim IdTariff As Integer = Nothing
-        Dim ENTC_CodTransportista As String = "NULL"
-        Dim ENTC_CodCliente As String = "NULL"
-        Dim ENTC_CodAgenPort As String = "NULL"
-        Dim ENTC_CodTermPort As String = "NULL"
-        Dim ENTC_CodDepTemporal As String = "NULL"
-        Dim NVIA_Codigo As String = "NULL"
-        Dim COPE_HBL As String = "NULL"
-        Dim COPE_MBL As String = "NULL"
-        Dim CONS_CodVia As String = "NULL"
-        If dsLogisticOperation.Tables(0).Rows.Count > 0 Then
-            If Not IsDBNull(dsLogisticOperation.Tables(0).Rows(0)("CTAR_Codigo")) Then
-                IdTariff = dsLogisticOperation.Tables(0).Rows(0)("CTAR_Codigo")
-            End If
-            'If dsLogisticOperation.Tables(0).Rows(0)("ENTC_CodigoTransportista") > 0 Then
-            '    ENTC_CodTransportista = dsLogisticOperation.Tables(0).Rows(0)("ENTC_CodigoTransportista")
-            'End If
-        End If
-        If Not Item.ENTC_CodTransportista Is Nothing Then
-            ENTC_CodTransportista = Item.ENTC_CodTransportista
-        End If
-        If Not Item.ENTC_CodCliente Is Nothing Then
-            ENTC_CodCliente = Item.ENTC_CodCliente
-        End If
-        If Not Item.CONS_CodVia Is Nothing Then
-            CONS_CodVia = "'" & Item.CONS_CodVia & "'"
-        End If
-        Dim _Query As String = "EXEC NextSoft.tar.upGetTariffByFilter "
-        _Query += "'" & ValidityDate & "', "
-        _Query += IdBusinessUnit & ", "
-        _Query += IdTariff & ", "
-        _Query += ENTC_CodTransportista & ", "
-        _Query += ENTC_CodCliente & ", "
-        _Query += ENTC_CodAgenPort & ", "
-        _Query += ENTC_CodTermPort & ", "
-        _Query += ENTC_CodDepTemporal & ", "
-        _Query += NVIA_Codigo & ", "
-        _Query += COPE_HBL & ", "
-        _Query += COPE_MBL & ", "
-        _Query += CONS_CodVia
-        dtQuery = oAppService.ExecuteSQL(_Query).Tables(0)
-        lueTarifa.Properties.DataSource = dtQuery
-        lueTarifa.Properties.DisplayMember = "IdTariff"
-        lueTarifa.Properties.ValueMember = "IdTariff"
+        ''If dsLogisticOperation.Tables(0).Rows.Count = 0 Then
+        ''    Return
+        ''End If
+        'Dim dtQuery As New DataTable
+        'Dim ValidityDate As String = Format(Date.Now, "yyyyMMdd")
+        'Dim IdBusinessUnit As Integer = 2 'SLI
+        'Dim IdTariff As Integer = Nothing
+        'Dim ENTC_CodTransportista As String = "NULL"
+        'Dim ENTC_CodCliente As String = "NULL"
+        'Dim ENTC_CodAgenPort As String = "NULL"
+        'Dim ENTC_CodTermPort As String = "NULL"
+        'Dim ENTC_CodDepTemporal As String = "NULL"
+        'Dim NVIA_Codigo As String = "NULL"
+        'Dim COPE_HBL As String = "NULL"
+        'Dim COPE_MBL As String = "NULL"
+        'Dim CONS_CodVia As String = "NULL"
+        'If dsLogisticOperation.Tables(0).Rows.Count > 0 Then
+        '    If Not IsDBNull(dsLogisticOperation.Tables(0).Rows(0)("CTAR_Codigo")) Then
+        '        IdTariff = dsLogisticOperation.Tables(0).Rows(0)("CTAR_Codigo")
+        '    End If
+        '    'If dsLogisticOperation.Tables(0).Rows(0)("ENTC_CodigoTransportista") > 0 Then
+        '    '    ENTC_CodTransportista = dsLogisticOperation.Tables(0).Rows(0)("ENTC_CodigoTransportista")
+        '    'End If
+        'End If
+        'If Not Item.ENTC_CodTransportista Is Nothing Then
+        '    ENTC_CodTransportista = Item.ENTC_CodTransportista
+        'End If
+        'If Not Item.ENTC_CodCliente Is Nothing Then
+        '    ENTC_CodCliente = Item.ENTC_CodCliente
+        'End If
+        'If Not Item.CONS_CodVia Is Nothing Then
+        '    CONS_CodVia = "'" & Item.CONS_CodVia & "'"
+        'End If
+        'Dim _Query As String = "EXEC NextSoft.tar.upGetTariffByFilter "
+        '_Query += "'" & ValidityDate & "', "
+        '_Query += IdBusinessUnit & ", "
+        '_Query += IdTariff & ", "
+        '_Query += ENTC_CodTransportista & ", "
+        '_Query += ENTC_CodCliente & ", "
+        '_Query += ENTC_CodAgenPort & ", "
+        '_Query += ENTC_CodTermPort & ", "
+        '_Query += ENTC_CodDepTemporal & ", "
+        '_Query += NVIA_Codigo & ", "
+        '_Query += COPE_HBL & ", "
+        '_Query += COPE_MBL & ", "
+        '_Query += CONS_CodVia
+        'dtQuery = oAppService.ExecuteSQL(_Query).Tables(0)
+        'lueTarifa.Properties.DataSource = dtQuery
+        'lueTarifa.Properties.DisplayMember = "IdTariff"
+        'lueTarifa.Properties.ValueMember = "IdTariff"
     End Sub
 
     Private Sub LoadBaseUnit()
@@ -192,18 +198,20 @@ Public Class SalesLogisticOperationForm
     Private Sub LoadTariffDetail()
         gcTariff.DataSource = Nothing
         Dim dtTariffDetail As New DataTable
-        dtTariffDetail = oAppService.ExecuteSQL("EXEC NextSoft.tar.upGetTariffDetailById " & lueTarifa.EditValue.ToString).Tables(0)
+        dtTariffDetail = oAppService.ExecuteSQL("EXEC NextSoft.tar.upGetTariffDetailById " & beTarifa.EditValue.ToString).Tables(0)
         gcTariff.DataSource = dtTariffDetail
         GridView3.BestFitColumns()
-        teTipoTarifa.EditValue = IIf(lueTarifa.GetColumnValue("TariffType") = "B", "BASE", IIf(lueTarifa.GetColumnValue("TariffType") = "R", "REGULAR", IIf(lueTarifa.GetColumnValue("TariffType") = "E", "ESPECIAL", "")))
-        deVigenciaDesde.EditValue = lueTarifa.GetColumnValue("ValidFrom")
-        deVigenciaHasta.EditValue = lueTarifa.GetColumnValue("ValidTo")
-        meObservacionesTarifa.EditValue = lueTarifa.GetColumnValue("Remarks")
+        teTipoTarifa.EditValue = IIf(GridView3.GetRowCellValue(0, "TariffType") = "B", "BASE", IIf(GridView3.GetRowCellValue(0, "TariffType") = "R", "REGULAR", IIf(GridView3.GetRowCellValue(0, "TariffType") = "E", "ESPECIAL", "")))
+        deVigenciaDesde.EditValue = GridView3.GetRowCellValue(0, "ValidFrom")
+        deVigenciaHasta.EditValue = GridView3.GetRowCellValue(0, "ValidTo")
+        meObservacionesTarifa.EditValue = GridView3.GetRowCellValue(0, "Remarks")
+        LoadServiceRelated()
     End Sub
 
-    Private Sub lueTarifa_EditValueChanged(sender As Object, e As EventArgs)
-        If lueTarifa.ItemIndex = -1 Then
-            If teCodigoOperacion.Text = "0" Then
+    'Private Sub lueTarifa_EditValueChanged(sender As Object, e As EventArgs)
+    Private Sub LoadServiceRelated()
+        If beTarifa.EditValue.ToString = "" Then
+            If teCodigoOperacion.Text = "" Then
                 gcServiceRelated.DataSource = Nothing
                 gcTariff.DataSource = Nothing
                 teTipoTarifa.EditValue = Nothing
@@ -214,16 +222,17 @@ Public Class SalesLogisticOperationForm
             Return
         End If
         Dim dtServiceRelated As New DataTable
-        If dsLogisticOperation.Tables(5).Select("SERV_Tipo='REGULAR'").Length > 0 Then
-            If XtraMessageBox.Show("Ya existen servicios asociados a una tarifa, desea reemplazarlos", "Confirmación", MessageBoxButtons.YesNo) <> DialogResult.Yes Then
-                Return
+        If dsLogisticOperation.Tables(5).Rows.Count > 0 Then
+            If dsLogisticOperation.Tables(5).Select("SERV_Tipo='REGULAR'").Length > 0 Then
+                If XtraMessageBox.Show("Ya existen servicios asociados a una tarifa, desea reemplazarlos", "Confirmación", MessageBoxButtons.YesNo) <> DialogResult.Yes Then
+                    Return
+                End If
             End If
         End If
         gcServiceRelated.DataSource = Nothing
-        dtServiceRelated = oAppService.ExecuteSQL("EXEC NextSoft.tar.upGetServiceCalulatedByTariff " & lueTarifa.EditValue.ToString & "," & _CCOT_Numero.ToString & "," & _CCOT_Tipo.ToString).Tables(0)
+        dtServiceRelated = oAppService.ExecuteSQL("EXEC NextSoft.tar.upGetServiceCalulatedByTariff " & beTarifa.EditValue.ToString & "," & _CCOT_Numero.ToString & "," & _CCOT_Tipo.ToString).Tables(0)
         gcServiceRelated.DataSource = dtServiceRelated
         GridView1.BestFitColumns()
-        LoadTariffDetail()
     End Sub
 
     Private Sub gcServiceRelated_EmbeddedNavigator_ButtonClick(sender As Object, e As NavigatorButtonClickEventArgs) Handles gcServiceRelated.EmbeddedNavigator.ButtonClick
@@ -237,6 +246,26 @@ Public Class SalesLogisticOperationForm
             Dim view As GridView = TryCast(grid.FocusedView, GridView)
             view.DeleteSelectedRows()
         End If
+    End Sub
+
+    'Private Sub lueTarifa_Properties_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles lueTarifa.Properties.ButtonClick
+
+    'End Sub
+
+    'Private Sub lueTarifa_Properties_Enter(sender As Object, e As EventArgs) Handles lueTarifa.Properties.Enter
+    '    LoadTariff()
+    'End Sub
+
+    Private Sub beTarifa_Properties_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles beTarifa.Properties.ButtonClick
+        Dim oTariffSelecting As New TariffSelectingForm
+        If lueTransportistaTerrestre.EditValue Is Nothing Then
+            oTariffSelecting.ENTC_CodTransportista = Item.ENTC_CodTransportista
+        Else
+            oTariffSelecting.ENTC_CodTransportista = lueTransportistaTerrestre.EditValue
+        End If
+        oTariffSelecting.ShowDialog()
+        beTarifa.EditValue = oTariffSelecting.IdTariff
+        LoadTariffDetail()
     End Sub
 
     Private Sub RepositoryItemLookUpEdit2_EditValueChanged(sender As Object, e As EventArgs)
@@ -256,7 +285,7 @@ Public Class SalesLogisticOperationForm
         End If
     End Sub
 
-    Private Sub SalesLogisticOperationForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        AddHandler lueTarifa.EditValueChanged, AddressOf lueTarifa_EditValueChanged
-    End Sub
+    'Private Sub SalesLogisticOperationForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+    '    AddHandler beTarifa.EditValueChanged, AddressOf beTarifa_EditValueChanged
+    'End Sub
 End Class

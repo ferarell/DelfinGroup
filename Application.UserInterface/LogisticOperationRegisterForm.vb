@@ -637,6 +637,9 @@ Public Class LogisticOperationRegisterForm
     End Sub
 
     Private Sub RepositoryItemLookUpEdit1_Leave(sender As Object, e As EventArgs) Handles RepositoryItemLookUpEdit1.Leave
+        If GridView1.RowCount = 0 Then
+            Return
+        End If
         Try
             If DirectCast(sender, DevExpress.XtraEditors.LookUpEditBase).GetSelectedDataRow(2) = "REGULAR" Then
                 GridView1.Columns("DOPE_PrecioUnitVta").OptionsColumn.ReadOnly = True
