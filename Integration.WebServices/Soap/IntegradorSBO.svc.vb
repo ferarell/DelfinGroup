@@ -607,8 +607,8 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
             Next
 
             jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999999", "[" & jsonSerialiceDetalle & "]")
-            'jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999998", "[" & "]")
-            'jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999997", "[" & "]")
+            jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999998", "[" & "]")
+            jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999997", "[" & "]")
 
 
 
@@ -640,7 +640,7 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
             End If
             Dim AUDI_Usuario As String = dtAdicionales.Rows(0).Item("AUDI_Usuario").ToString()
             If oRespuesta.RespuestaSAP = 1 Then
-                Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedPurchaseInvoice '" & oRespuesta.Response.Item(0).Number.ToString() & "' ," & "'" & InterfaceName & "'" & " , '" & TableName & "' , " & CCCT_Codigo & ", " & AUDI_Usuario & "'"
+                Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedPurchaseInvoice '" & oRespuesta.Response.Item(0).DocEntry.ToString() & "' ," & "'" & InterfaceName & "'" & " , '" & TableName & "' , " & CCCT_Codigo & ", '" & AUDI_Usuario & "'"
                 Dim bResult As Boolean = Nothing
                 bResult = oDelfinService.ExecuteSQLNonQuery(Query)
                 If bResult Then
@@ -702,8 +702,8 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
             Next
 
             jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999999", "[" & jsonSerialiceDetalle & "]")
-            'jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999998", "[" & "]")
-            'jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999997", "[" & "]")
+            jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999998", "[" & "]")
+            jsonSerialiceCabecera = jsonSerialiceCabecera.Replace("-999997", "[" & "]")
 
 
 
@@ -735,7 +735,7 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
             End If
             Dim AUDI_Usuario As String = dtAdicionales.Rows(0).Item("AUDI_Usuario").ToString()
             If oRespuesta.RespuestaSAP = 1 Then
-                Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedPurchaseCreditMemo '" & oRespuesta.Response.Item(0).Number.ToString() & "' ," & "'" & InterfaceName & "'" & " , '" & TableName & "' , " & CCCT_Codigo & ", " & AUDI_Usuario & "'"
+                Dim Query As String = "EXEC NextSoft.sap.upUpdateSynchronizedPurchaseCreditMemo '" & oRespuesta.Response.Item(0).DocEntry.ToString() & "' ," & "'" & InterfaceName & "'" & " , '" & TableName & "' , " & CCCT_Codigo & ", '" & AUDI_Usuario & "'"
                 Dim bResult As Boolean = Nothing
                 bResult = oDelfinService.ExecuteSQLNonQuery(Query)
                 If bResult Then
