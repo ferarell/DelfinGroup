@@ -177,6 +177,9 @@ Namespace IntegrationService
         Private DocNumField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private JdtNumField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private NumberField As Integer
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -214,6 +217,19 @@ Namespace IntegrationService
                 If (Me.DocNumField.Equals(value) <> true) Then
                     Me.DocNumField = value
                     Me.RaisePropertyChanged("DocNum")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property JdtNum() As Integer
+            Get
+                Return Me.JdtNumField
+            End Get
+            Set
+                If (Me.JdtNumField.Equals(value) <> true) Then
+                    Me.JdtNumField = value
+                    Me.RaisePropertyChanged("JdtNum")
                 End If
             End Set
         End Property
