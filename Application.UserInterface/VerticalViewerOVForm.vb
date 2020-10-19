@@ -14,14 +14,16 @@ Public Class VerticalViewerOVForm
     End Sub
 
     Private Sub VerticalViewerOVForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim dtQuery, dtFiles, dtContainers As New DataTable
-        dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paConsultaOrdenVenta '" & sHBL & "'").Tables(0)
-        VGridControl1.DataSource = dtQuery
-        If dtQuery.Rows.Count > 0 Then
-            dtContainers = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneContenedoresPorOrdenVenta '" & dtQuery.Rows(0)("CCOT_Numero") & "'").Tables(0)
-            gcContainer.DataSource = dtContainers
-            dtFiles = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneArchivosPorOrdenVenta '" & dtQuery.Rows(0)("CCOT_Numero") & "'").Tables(0)
-            gcFileStream.DataSource = dtFiles
+        Dim dtFiles, dtContainers As New DataTable
+        Dim dsQuery As New DataSet
+        dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paConsultaOrdenVenta '" & sHBL & "'")
+        VGridControl1.DataSource = dsQuery.Tables(0)
+        If dsQuery.Tables(0).Rows.Count > 0 Then
+            'dtContainers = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneContenedoresPorOrdenVenta '" & dtQuery.Rows(0)("CCOT_Numero") & "'").Tables(0)
+            gcContainer.DataSource = dsQuery.Tables(2)
+            GridView3.BestFitColumns()
+            'dtFiles = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneArchivosPorOrdenVenta '" & dtQuery.Rows(0)("CCOT_Numero") & "'").Tables(0)
+            gcFileStream.DataSource = dsQuery.Tables(3) 'dtFiles
         End If
     End Sub
 

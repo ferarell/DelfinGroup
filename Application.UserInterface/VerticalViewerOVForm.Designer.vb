@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class VerticalViewerOVForm
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,10 +17,10 @@ Partial Class VerticalViewerOVForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
-        Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VerticalViewerOVForm))
         Me.CardView1 = New DevExpress.XtraGrid.Views.Card.CardView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -48,37 +48,22 @@ Partial Class VerticalViewerOVForm
         Me.GridColumn20 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn21 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn22 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.CardView2 = New DevExpress.XtraGrid.Views.Card.CardView()
-        Me.GridColumn23 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn24 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.VGridControl1 = New DevExpress.XtraVerticalGrid.VGridControl()
+        Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.gcContainer = New DevExpress.XtraGrid.GridControl()
+        Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn43 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn45 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn25 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn44 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn26 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn27 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn28 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn29 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn30 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn31 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn32 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn33 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn34 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn35 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn36 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn38 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn39 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn40 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn41 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn42 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.gcContainer = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GridColumn43 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn45 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn44 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.VGridControl1 = New DevExpress.XtraVerticalGrid.VGridControl()
-        Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.BarDockControl4 = New DevExpress.XtraBars.BarDockControl()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
-        Me.BarManager1 = New DevExpress.XtraBars.BarManager()
+        Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.bbiExcelExport = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiFileViewer = New DevExpress.XtraBars.BarButtonItem()
@@ -92,21 +77,19 @@ Partial Class VerticalViewerOVForm
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcFileStream, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CardView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gcContainer, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.VGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl2.SuspendLayout()
+        CType(Me.gcContainer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CardView1
         '
         Me.CardView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn16, Me.GridColumn17, Me.GridColumn18, Me.GridColumn19, Me.GridColumn37})
-        Me.CardView1.FocusedCardTopFieldIndex = 0
         Me.CardView1.GridControl = Me.gcFileStream
         Me.CardView1.Name = "CardView1"
         Me.CardView1.OptionsBehavior.Editable = False
@@ -312,152 +295,53 @@ Partial Class VerticalViewerOVForm
         Me.GridColumn22.VisibleIndex = 2
         Me.GridColumn22.Width = 187
         '
-        'CardView2
+        'SplitContainerControl1
         '
-        Me.CardView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn23, Me.GridColumn24, Me.GridColumn25, Me.GridColumn26, Me.GridColumn27, Me.GridColumn28, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn33, Me.GridColumn34, Me.GridColumn35, Me.GridColumn36, Me.GridColumn38, Me.GridColumn39, Me.GridColumn40, Me.GridColumn41, Me.GridColumn42})
-        Me.CardView2.FocusedCardTopFieldIndex = 0
-        Me.CardView2.GridControl = Me.gcContainer
-        Me.CardView2.Name = "CardView2"
-        Me.CardView2.OptionsBehavior.Editable = False
-        Me.CardView2.OptionsFind.AlwaysVisible = True
-        Me.CardView2.OptionsView.ShowQuickCustomizeButton = False
-        Me.CardView2.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.[Auto]
+        Me.SplitContainerControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.[Default]
+        Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2
+        Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl1.Horizontal = False
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 40)
+        Me.SplitContainerControl1.Name = "SplitContainerControl1"
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.VGridControl1)
+        Me.SplitContainerControl1.Panel1.Text = "Panel1"
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl2)
+        Me.SplitContainerControl1.Panel2.Text = "Panel2"
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(613, 598)
+        Me.SplitContainerControl1.SplitterPosition = 484
+        Me.SplitContainerControl1.TabIndex = 184
+        Me.SplitContainerControl1.Text = "SplitContainerControl1"
         '
-        'GridColumn23
+        'VGridControl1
         '
-        Me.GridColumn23.Caption = "Nombre Socio"
-        Me.GridColumn23.FieldName = "NombreSocio"
-        Me.GridColumn23.Name = "GridColumn23"
-        Me.GridColumn23.Visible = True
-        Me.GridColumn23.VisibleIndex = 0
+        Me.VGridControl1.AllowDrop = True
+        Me.VGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.VGridControl1.LayoutStyle = DevExpress.XtraVerticalGrid.LayoutViewStyle.SingleRecordView
+        Me.VGridControl1.Location = New System.Drawing.Point(0, 0)
+        Me.VGridControl1.Name = "VGridControl1"
+        Me.VGridControl1.OptionsBehavior.Editable = False
+        Me.VGridControl1.OptionsView.AutoScaleBands = True
+        Me.VGridControl1.OptionsView.MaxRowAutoHeight = 100
+        Me.VGridControl1.OptionsView.MinRowAutoHeight = 20
+        Me.VGridControl1.OptionsView.ShowHorzLines = False
+        Me.VGridControl1.ScrollVisibility = DevExpress.XtraVerticalGrid.ScrollVisibility.Vertical
+        Me.VGridControl1.Size = New System.Drawing.Size(609, 484)
+        Me.VGridControl1.TabIndex = 8
         '
-        'GridColumn24
+        'SplitContainerControl2
         '
-        Me.GridColumn24.Caption = "Nombre Proyecto"
-        Me.GridColumn24.FieldName = "NombreProyecto"
-        Me.GridColumn24.Name = "GridColumn24"
-        Me.GridColumn24.Visible = True
-        Me.GridColumn24.VisibleIndex = 1
-        '
-        'GridColumn25
-        '
-        Me.GridColumn25.Caption = "Manzana & Lote"
-        Me.GridColumn25.FieldName = "ManzanaLote"
-        Me.GridColumn25.Name = "GridColumn25"
-        Me.GridColumn25.Visible = True
-        Me.GridColumn25.VisibleIndex = 2
-        '
-        'GridColumn26
-        '
-        Me.GridColumn26.Caption = "IdContrato"
-        Me.GridColumn26.FieldName = "IdContrato"
-        Me.GridColumn26.Name = "GridColumn26"
-        '
-        'GridColumn27
-        '
-        Me.GridColumn27.Caption = "IdLote"
-        Me.GridColumn27.FieldName = "IdLote"
-        Me.GridColumn27.Name = "GridColumn27"
-        '
-        'GridColumn28
-        '
-        Me.GridColumn28.Caption = "Fecha Emisión"
-        Me.GridColumn28.FieldName = "FechaEmision"
-        Me.GridColumn28.Name = "GridColumn28"
-        Me.GridColumn28.Visible = True
-        Me.GridColumn28.VisibleIndex = 3
-        '
-        'GridColumn29
-        '
-        Me.GridColumn29.Caption = "Importe Inicial"
-        Me.GridColumn29.FieldName = "ImporteInicial"
-        Me.GridColumn29.Name = "GridColumn29"
-        Me.GridColumn29.Visible = True
-        Me.GridColumn29.VisibleIndex = 7
-        '
-        'GridColumn30
-        '
-        Me.GridColumn30.Caption = "Número Cuotas"
-        Me.GridColumn30.FieldName = "NumeroCuotas"
-        Me.GridColumn30.Name = "GridColumn30"
-        Me.GridColumn30.Visible = True
-        Me.GridColumn30.VisibleIndex = 8
-        '
-        'GridColumn31
-        '
-        Me.GridColumn31.Caption = "Valor Cuotas"
-        Me.GridColumn31.FieldName = "ValorCuotas"
-        Me.GridColumn31.Name = "GridColumn31"
-        Me.GridColumn31.Visible = True
-        Me.GridColumn31.VisibleIndex = 9
-        '
-        'GridColumn32
-        '
-        Me.GridColumn32.Caption = "Fecha Inicio"
-        Me.GridColumn32.FieldName = "FechaInicio"
-        Me.GridColumn32.Name = "GridColumn32"
-        Me.GridColumn32.Visible = True
-        Me.GridColumn32.VisibleIndex = 4
-        '
-        'GridColumn33
-        '
-        Me.GridColumn33.Caption = "Día Pago"
-        Me.GridColumn33.FieldName = "DiaPago"
-        Me.GridColumn33.Name = "GridColumn33"
-        Me.GridColumn33.Visible = True
-        Me.GridColumn33.VisibleIndex = 5
-        '
-        'GridColumn34
-        '
-        Me.GridColumn34.Caption = "Moneda"
-        Me.GridColumn34.FieldName = "CodigoMoneda"
-        Me.GridColumn34.Name = "GridColumn34"
-        Me.GridColumn34.Visible = True
-        Me.GridColumn34.VisibleIndex = 6
-        '
-        'GridColumn35
-        '
-        Me.GridColumn35.Caption = "IdMoneda"
-        Me.GridColumn35.FieldName = "IdMoneda"
-        Me.GridColumn35.Name = "GridColumn35"
-        '
-        'GridColumn36
-        '
-        Me.GridColumn36.Caption = "Importe Total"
-        Me.GridColumn36.FieldName = "ImporteTotal"
-        Me.GridColumn36.Name = "GridColumn36"
-        Me.GridColumn36.Visible = True
-        Me.GridColumn36.VisibleIndex = 10
-        '
-        'GridColumn38
-        '
-        Me.GridColumn38.Caption = "UsuarioCreacion"
-        Me.GridColumn38.FieldName = "UsuarioCreacion"
-        Me.GridColumn38.Name = "GridColumn38"
-        '
-        'GridColumn39
-        '
-        Me.GridColumn39.Caption = "FechaCreacion"
-        Me.GridColumn39.FieldName = "FechaCreacion"
-        Me.GridColumn39.Name = "GridColumn39"
-        '
-        'GridColumn40
-        '
-        Me.GridColumn40.Caption = "UsuarioModificacion"
-        Me.GridColumn40.FieldName = "UsuarioModificacion"
-        Me.GridColumn40.Name = "GridColumn40"
-        '
-        'GridColumn41
-        '
-        Me.GridColumn41.Caption = "FechaModificacion"
-        Me.GridColumn41.FieldName = "FechaModificacion"
-        Me.GridColumn41.Name = "GridColumn41"
-        '
-        'GridColumn42
-        '
-        Me.GridColumn42.Caption = "IdProyecto"
-        Me.GridColumn42.FieldName = "IdProyecto"
-        Me.GridColumn42.Name = "GridColumn42"
+        Me.SplitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl2.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl2.Name = "SplitContainerControl2"
+        Me.SplitContainerControl2.Panel1.Controls.Add(Me.gcContainer)
+        Me.SplitContainerControl2.Panel1.Text = "Panel1"
+        Me.SplitContainerControl2.Panel2.Controls.Add(Me.gcFileStream)
+        Me.SplitContainerControl2.Panel2.Text = "Panel2"
+        Me.SplitContainerControl2.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Panel1
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(609, 105)
+        Me.SplitContainerControl2.SplitterPosition = 232
+        Me.SplitContainerControl2.TabIndex = 177
+        Me.SplitContainerControl2.Text = "SplitContainerControl2"
         '
         'gcContainer
         '
@@ -467,27 +351,22 @@ Partial Class VerticalViewerOVForm
         Me.gcContainer.EmbeddedNavigator.Buttons.Edit.Visible = False
         Me.gcContainer.EmbeddedNavigator.Buttons.EndEdit.Visible = False
         Me.gcContainer.EmbeddedNavigator.Buttons.Remove.Visible = False
-        GridLevelNode2.LevelTemplate = Me.CardView2
-        GridLevelNode2.RelationName = "Level1"
-        Me.gcContainer.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
         Me.gcContainer.Location = New System.Drawing.Point(0, 0)
-        Me.gcContainer.MainView = Me.GridView2
+        Me.gcContainer.MainView = Me.GridView3
         Me.gcContainer.Name = "gcContainer"
-        Me.gcContainer.Size = New System.Drawing.Size(609, 117)
-        Me.gcContainer.TabIndex = 176
+        Me.gcContainer.Size = New System.Drawing.Size(609, 105)
+        Me.gcContainer.TabIndex = 173
         Me.gcContainer.UseEmbeddedNavigator = True
-        Me.gcContainer.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2, Me.CardView2})
+        Me.gcContainer.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
         '
-        'GridView2
+        'GridView3
         '
-        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn43, Me.GridColumn45, Me.GridColumn44})
-        Me.GridView2.GridControl = Me.gcContainer
-        Me.GridView2.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "###,###,###", New Decimal(New Integer() {0, 0, 0, 131072}))})
-        Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsBehavior.Editable = False
-        Me.GridView2.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
-        Me.GridView2.OptionsView.ShowFooter = True
-        Me.GridView2.OptionsView.ShowGroupPanel = False
+        Me.GridView3.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn43, Me.GridColumn45, Me.GridColumn25, Me.GridColumn44, Me.GridColumn26, Me.GridColumn27, Me.GridColumn28, Me.GridColumn29})
+        Me.GridView3.GridControl = Me.gcContainer
+        Me.GridView3.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "###,###,###", New Decimal(New Integer() {0, 0, 0, 131072}))})
+        Me.GridView3.Name = "GridView3"
+        Me.GridView3.OptionsBehavior.Editable = False
+        Me.GridView3.OptionsView.ShowGroupPanel = False
         '
         'GridColumn43
         '
@@ -507,6 +386,14 @@ Partial Class VerticalViewerOVForm
         Me.GridColumn45.VisibleIndex = 1
         Me.GridColumn45.Width = 402
         '
+        'GridColumn25
+        '
+        Me.GridColumn25.Caption = "Producto"
+        Me.GridColumn25.FieldName = "DHBL_DescProducto"
+        Me.GridColumn25.Name = "GridColumn25"
+        Me.GridColumn25.Visible = True
+        Me.GridColumn25.VisibleIndex = 2
+        '
         'GridColumn44
         '
         Me.GridColumn44.Caption = "Cantidad"
@@ -514,66 +401,56 @@ Partial Class VerticalViewerOVForm
         Me.GridColumn44.Name = "GridColumn44"
         Me.GridColumn44.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
         '
-        'SplitContainerControl1
+        'GridColumn26
         '
-        Me.SplitContainerControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.[Default]
-        Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2
-        Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 40)
-        Me.SplitContainerControl1.Name = "SplitContainerControl1"
-        Me.SplitContainerControl1.Panel1.Controls.Add(Me.VGridControl1)
-        Me.SplitContainerControl1.Panel1.Text = "Panel1"
-        Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl2)
-        Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(613, 598)
-        Me.SplitContainerControl1.SplitterPosition = 472
-        Me.SplitContainerControl1.TabIndex = 184
-        Me.SplitContainerControl1.Text = "SplitContainerControl1"
+        Me.GridColumn26.Caption = "Es IMO"
+        Me.GridColumn26.FieldName = "DHBL_EsIMO"
+        Me.GridColumn26.Name = "GridColumn26"
+        Me.GridColumn26.Visible = True
+        Me.GridColumn26.VisibleIndex = 3
         '
-        'VGridControl1
+        'GridColumn27
         '
-        Me.VGridControl1.AllowDrop = True
-        Me.VGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.VGridControl1.LayoutStyle = DevExpress.XtraVerticalGrid.LayoutViewStyle.SingleRecordView
-        Me.VGridControl1.Location = New System.Drawing.Point(0, 0)
-        Me.VGridControl1.Name = "VGridControl1"
-        Me.VGridControl1.OptionsBehavior.Editable = False
-        Me.VGridControl1.OptionsView.AutoScaleBands = True
-        Me.VGridControl1.OptionsView.MaxRowAutoHeight = 100
-        Me.VGridControl1.OptionsView.MinRowAutoHeight = 20
-        Me.VGridControl1.OptionsView.ShowHorzLines = False
-        Me.VGridControl1.ScrollVisibility = DevExpress.XtraVerticalGrid.ScrollVisibility.Vertical
-        Me.VGridControl1.Size = New System.Drawing.Size(609, 472)
-        Me.VGridControl1.TabIndex = 8
+        Me.GridColumn27.Caption = "Cantidad Bultos"
+        Me.GridColumn27.DisplayFormat.FormatString = "###,###,##0.000"
+        Me.GridColumn27.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn27.FieldName = "DHBL_CantBultos"
+        Me.GridColumn27.Name = "GridColumn27"
+        Me.GridColumn27.Visible = True
+        Me.GridColumn27.VisibleIndex = 4
         '
-        'SplitContainerControl2
+        'GridColumn28
         '
-        Me.SplitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainerControl2.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainerControl2.Name = "SplitContainerControl2"
-        Me.SplitContainerControl2.Panel1.Controls.Add(Me.gcContainer)
-        Me.SplitContainerControl2.Panel1.Text = "Panel1"
-        Me.SplitContainerControl2.Panel2.Controls.Add(Me.gcFileStream)
-        Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Panel1
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(609, 117)
-        Me.SplitContainerControl2.SplitterPosition = 232
-        Me.SplitContainerControl2.TabIndex = 177
-        Me.SplitContainerControl2.Text = "SplitContainerControl2"
+        Me.GridColumn28.Caption = "Peso"
+        Me.GridColumn28.DisplayFormat.FormatString = "###,###,##0.000"
+        Me.GridColumn28.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn28.FieldName = "DHBL_PesoBruto"
+        Me.GridColumn28.Name = "GridColumn28"
+        Me.GridColumn28.Visible = True
+        Me.GridColumn28.VisibleIndex = 5
+        '
+        'GridColumn29
+        '
+        Me.GridColumn29.Caption = "Volumen"
+        Me.GridColumn29.DisplayFormat.FormatString = "###,###,##0.000"
+        Me.GridColumn29.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.GridColumn29.FieldName = "DHBL_Volumen"
+        Me.GridColumn29.Name = "GridColumn29"
+        Me.GridColumn29.Visible = True
+        Me.GridColumn29.VisibleIndex = 6
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
         Me.BarDockControl4.Location = New System.Drawing.Point(613, 40)
+        Me.BarDockControl4.Manager = Nothing
         Me.BarDockControl4.Size = New System.Drawing.Size(0, 598)
         '
         'brsDescripcion
         '
         Me.brsDescripcion.Id = 30
         Me.brsDescripcion.Name = "brsDescripcion"
-        Me.brsDescripcion.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'BarManager1
         '
@@ -602,23 +479,23 @@ Partial Class VerticalViewerOVForm
         'bbiExcelExport
         '
         Me.bbiExcelExport.Caption = "Exportar"
-        Me.bbiExcelExport.Glyph = CType(resources.GetObject("bbiExcelExport.Glyph"), System.Drawing.Image)
         Me.bbiExcelExport.Id = 1
+        Me.bbiExcelExport.ImageOptions.Image = CType(resources.GetObject("bbiExcelExport.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiExcelExport.Name = "bbiExcelExport"
         '
         'bbiFileViewer
         '
         Me.bbiFileViewer.Caption = "Visor Adjuntos"
-        Me.bbiFileViewer.Glyph = CType(resources.GetObject("bbiFileViewer.Glyph"), System.Drawing.Image)
         Me.bbiFileViewer.Id = 2
+        Me.bbiFileViewer.ImageOptions.Image = CType(resources.GetObject("bbiFileViewer.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiFileViewer.Name = "bbiFileViewer"
         Me.bbiFileViewer.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'bbiClose
         '
         Me.bbiClose.Caption = "Cerrar"
-        Me.bbiClose.Glyph = CType(resources.GetObject("bbiClose.Glyph"), System.Drawing.Image)
         Me.bbiClose.Id = 3
+        Me.bbiClose.ImageOptions.Image = CType(resources.GetObject("bbiClose.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiClose.Name = "bbiClose"
         '
         'Bar3
@@ -638,6 +515,7 @@ Partial Class VerticalViewerOVForm
         Me.barDockControlTop.CausesValidation = False
         Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
+        Me.barDockControlTop.Manager = Me.BarManager1
         Me.barDockControlTop.Size = New System.Drawing.Size(613, 40)
         '
         'barDockControlBottom
@@ -645,6 +523,7 @@ Partial Class VerticalViewerOVForm
         Me.barDockControlBottom.CausesValidation = False
         Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.barDockControlBottom.Location = New System.Drawing.Point(0, 638)
+        Me.barDockControlBottom.Manager = Me.BarManager1
         Me.barDockControlBottom.Size = New System.Drawing.Size(613, 23)
         '
         'barDockControlLeft
@@ -652,6 +531,7 @@ Partial Class VerticalViewerOVForm
         Me.barDockControlLeft.CausesValidation = False
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
         Me.barDockControlLeft.Location = New System.Drawing.Point(0, 40)
+        Me.barDockControlLeft.Manager = Me.BarManager1
         Me.barDockControlLeft.Size = New System.Drawing.Size(0, 598)
         '
         'barDockControlRight
@@ -659,14 +539,15 @@ Partial Class VerticalViewerOVForm
         Me.barDockControlRight.CausesValidation = False
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
         Me.barDockControlRight.Location = New System.Drawing.Point(613, 40)
+        Me.barDockControlRight.Manager = Me.BarManager1
         Me.barDockControlRight.Size = New System.Drawing.Size(0, 598)
         '
         'bbiRefresh
         '
         Me.bbiRefresh.Caption = "Refrescar"
-        Me.bbiRefresh.Glyph = CType(resources.GetObject("bbiRefresh.Glyph"), System.Drawing.Image)
         Me.bbiRefresh.Id = 0
-        Me.bbiRefresh.LargeGlyph = CType(resources.GetObject("bbiRefresh.LargeGlyph"), System.Drawing.Image)
+        Me.bbiRefresh.ImageOptions.Image = CType(resources.GetObject("bbiRefresh.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiRefresh.ImageOptions.LargeImage = CType(resources.GetObject("bbiRefresh.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.bbiRefresh.Name = "bbiRefresh"
         '
         'VerticalViewerOVForm
@@ -687,16 +568,16 @@ Partial Class VerticalViewerOVForm
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcFileStream, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CardView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gcContainer, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
         CType(Me.VGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl2.ResumeLayout(False)
+        CType(Me.gcContainer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents SplitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
@@ -742,28 +623,13 @@ Partial Class VerticalViewerOVForm
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents SplitContainerControl2 As DevExpress.XtraEditors.SplitContainerControl
     Friend WithEvents gcContainer As DevExpress.XtraGrid.GridControl
-    Friend WithEvents CardView2 As DevExpress.XtraGrid.Views.Card.CardView
-    Friend WithEvents GridColumn23 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn24 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridView3 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn43 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn45 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn25 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn44 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn26 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn27 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn28 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn29 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn30 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn31 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn32 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn33 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn34 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn35 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn36 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn38 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn39 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn40 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn41 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn42 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GridColumn43 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn44 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn45 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

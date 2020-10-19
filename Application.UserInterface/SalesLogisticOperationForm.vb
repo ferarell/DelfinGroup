@@ -31,6 +31,7 @@ Public Class SalesLogisticOperationForm
         End If
         LoadEntityDataList(5, "lueTransportistaTerrestre")
         'LoadTariff()
+        LoadCurrency
         LoadService()
         LoadEntityType()
         LoadEntityByType()
@@ -54,6 +55,13 @@ Public Class SalesLogisticOperationForm
 
     End Sub
 
+    Private Sub LoadCurrency()
+        Dim dtQuery As New DataTable
+        dtQuery = oMasterDataList.LoadMasterData("Currency", Nothing)
+        RepositoryItemLookUpEdit5.DataSource = dtQuery
+        RepositoryItemLookUpEdit5.DisplayMember = "DescripcionMoneda"
+        RepositoryItemLookUpEdit5.ValueMember = "CodigoMoneda"
+    End Sub
     Public Function GetSalesLogisticOperation() As DataSet
         'Dim dsResult As New DataSet
         '_EMPR_Codigo = Convert.ToUInt16(Item.EMPR_Codigo)

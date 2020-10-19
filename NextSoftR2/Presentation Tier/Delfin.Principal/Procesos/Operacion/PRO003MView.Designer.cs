@@ -28,7 +28,6 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PRO003MView));
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -43,7 +42,7 @@
             this.TabControlDetalleCotizacion = new Dotnetrix.Controls.TabControlEX();
             this.TabPageLogistico = new Dotnetrix.Controls.TabPageEX();
             this.grdItemsLogistico = new Telerik.WinControls.UI.RadGridView();
-            this.navItemsLogistico = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsLogistico = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
@@ -55,7 +54,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.TabPageAduanero = new Dotnetrix.Controls.TabPageEX();
             this.grdItemsAduanero = new Telerik.WinControls.UI.RadGridView();
-            this.navItemsAduanero = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsAduanero = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
@@ -67,7 +66,7 @@
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.TabPageTransporte = new Dotnetrix.Controls.TabPageEX();
             this.grdItemsTransporte = new Telerik.WinControls.UI.RadGridView();
-            this.navItemsTransporte = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsTransporte = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -109,7 +108,7 @@
             this.PanelServicos = new System.Windows.Forms.Panel();
             this.grdItemsServicios = new Telerik.WinControls.UI.RadGridView();
             this.btnNuevoServicio = new System.Windows.Forms.Button();
-            this.navItemsServicios = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsServicios = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
@@ -123,7 +122,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCOPE_Observacion = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
             this.tlpDatosTarifas = new System.Windows.Forms.TableLayoutPanel();
             this.lblCONT_Numero = new System.Windows.Forms.Label();
             this.txtCOPE_NumDoc = new System.Windows.Forms.TextBox();
@@ -152,9 +151,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.AyudaOrdenVenta = new Infrastructure.WinFormsControls.TextBoxAyuda();
             this.label19 = new System.Windows.Forms.Label();
-            this.AyudaENTC_CodCliente = new Delfin.Controls.Entidad(this.components);
-            this.AyudaENTC_CodTransporte = new Delfin.Controls.Entidad(this.components);
-            this.AyudaENTC_CodAgente = new Delfin.Controls.Entidad(this.components);
+            this.AyudaENTC_CodCliente = new Delfin.Controls.Entidad();
+            this.AyudaENTC_CodTransporte = new Delfin.Controls.Entidad();
+            this.AyudaENTC_CodAgente = new Delfin.Controls.Entidad();
             this.ChkCOPE_Excepcion = new System.Windows.Forms.CheckBox();
             this.panel3.SuspendLayout();
             this.TabCotizacion.SuspendLayout();
@@ -447,6 +446,7 @@
             // 
             this.toolStripTextBox4.AccessibleName = "Posición";
             this.toolStripTextBox4.AutoSize = false;
+            this.toolStripTextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox4.Name = "toolStripTextBox4";
             this.toolStripTextBox4.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox4.Text = "0";
@@ -567,6 +567,7 @@
             // 
             this.toolStripTextBox5.AccessibleName = "Posición";
             this.toolStripTextBox5.AutoSize = false;
+            this.toolStripTextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox5.Name = "toolStripTextBox5";
             this.toolStripTextBox5.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox5.Text = "0";
@@ -687,6 +688,7 @@
             // 
             this.toolStripTextBox2.AccessibleName = "Posición";
             this.toolStripTextBox2.AutoSize = false;
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox2.Text = "0";
@@ -1308,6 +1310,7 @@
             // 
             this.toolStripTextBox3.AccessibleName = "Posición";
             this.toolStripTextBox3.AutoSize = false;
+            this.toolStripTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox3.Name = "toolStripTextBox3";
             this.toolStripTextBox3.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox3.Text = "0";
@@ -1631,7 +1634,7 @@
             this.dtpCOPE_FecEmi.NSActiveMsgFecha = false;
             this.dtpCOPE_FecEmi.NSChangeDate = true;
             this.dtpCOPE_FecEmi.NSDigitos = 4;
-            this.dtpCOPE_FecEmi.NSFecha = new System.DateTime(2020, 8, 12, 0, 0, 0, 0);
+            this.dtpCOPE_FecEmi.NSFecha = new System.DateTime(2020, 10, 19, 0, 0, 0, 0);
             this.dtpCOPE_FecEmi.NSSetDateNow = true;
             this.dtpCOPE_FecEmi.Size = new System.Drawing.Size(194, 22);
             this.dtpCOPE_FecEmi.TabIndex = 5;

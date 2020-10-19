@@ -21,21 +21,21 @@ Partial Class SalesLogisticOperationForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
-        Dim ColumnDefinition13 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition14 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition15 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim RowDefinition17 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition18 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition19 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition20 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition3 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition3 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition4 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SalesLogisticOperationForm))
-        Dim ColumnDefinition16 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition17 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition18 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim RowDefinition21 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition22 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition23 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition24 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim ColumnDefinition4 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition5 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition6 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim RowDefinition5 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition6 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition7 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition8 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Me.CardView1 = New DevExpress.XtraGrid.Views.Card.CardView()
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -60,6 +60,7 @@ Partial Class SalesLogisticOperationForm
         Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn25 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn51 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn34 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn50 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn54 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn26 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -94,6 +95,8 @@ Partial Class SalesLogisticOperationForm
         Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.GridColumn52 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn35 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -133,9 +136,6 @@ Partial Class SalesLogisticOperationForm
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.GridColumn34 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn35 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcTariff, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -168,6 +168,7 @@ Partial Class SalesLogisticOperationForm
         CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl2.SuspendLayout()
         CType(Me.LayoutControl3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -198,7 +199,6 @@ Partial Class SalesLogisticOperationForm
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CardView1
@@ -361,7 +361,7 @@ Partial Class SalesLogisticOperationForm
         Me.gcTariff.Location = New System.Drawing.Point(2, 20)
         Me.gcTariff.MainView = Me.GridView3
         Me.gcTariff.Name = "gcTariff"
-        Me.gcTariff.Size = New System.Drawing.Size(492, 144)
+        Me.gcTariff.Size = New System.Drawing.Size(456, 144)
         Me.gcTariff.TabIndex = 177
         Me.gcTariff.UseEmbeddedNavigator = True
         Me.gcTariff.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.CardView1})
@@ -395,6 +395,15 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn51.Visible = True
         Me.GridColumn51.VisibleIndex = 1
         Me.GridColumn51.Width = 134
+        '
+        'GridColumn34
+        '
+        Me.GridColumn34.Caption = "Moneda"
+        Me.GridColumn34.FieldName = "Currency"
+        Me.GridColumn34.Name = "GridColumn34"
+        Me.GridColumn34.OptionsColumn.ReadOnly = True
+        Me.GridColumn34.Visible = True
+        Me.GridColumn34.VisibleIndex = 2
         '
         'GridColumn50
         '
@@ -470,18 +479,18 @@ Partial Class SalesLogisticOperationForm
         'GroupControl5
         '
         Me.GroupControl5.Controls.Add(Me.gcTariff)
-        Me.GroupControl5.Location = New System.Drawing.Point(207, 7)
+        Me.GroupControl5.Location = New System.Drawing.Point(192, 7)
         Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(496, 166)
+        Me.GroupControl5.Size = New System.Drawing.Size(460, 166)
         Me.GroupControl5.TabIndex = 7
         Me.GroupControl5.Text = "Importes por Servicio y Unidad"
         '
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.meObservacionesTarifa)
-        Me.GroupControl2.Location = New System.Drawing.Point(709, 7)
+        Me.GroupControl2.Location = New System.Drawing.Point(658, 7)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(266, 166)
+        Me.GroupControl2.Size = New System.Drawing.Size(317, 166)
         Me.GroupControl2.TabIndex = 16
         Me.GroupControl2.Text = "Descripción"
         '
@@ -490,7 +499,7 @@ Partial Class SalesLogisticOperationForm
         Me.meObservacionesTarifa.Dock = System.Windows.Forms.DockStyle.Fill
         Me.meObservacionesTarifa.Location = New System.Drawing.Point(2, 20)
         Me.meObservacionesTarifa.Name = "meObservacionesTarifa"
-        Me.meObservacionesTarifa.Size = New System.Drawing.Size(262, 144)
+        Me.meObservacionesTarifa.Size = New System.Drawing.Size(313, 144)
         Me.meObservacionesTarifa.TabIndex = 0
         '
         'deVigenciaHasta
@@ -500,7 +509,7 @@ Partial Class SalesLogisticOperationForm
         Me.deVigenciaHasta.Name = "deVigenciaHasta"
         Me.deVigenciaHasta.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deVigenciaHasta.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.deVigenciaHasta.Size = New System.Drawing.Size(105, 20)
+        Me.deVigenciaHasta.Size = New System.Drawing.Size(90, 20)
         Me.deVigenciaHasta.StyleController = Me.LayoutControl1
         Me.deVigenciaHasta.TabIndex = 12
         '
@@ -511,7 +520,7 @@ Partial Class SalesLogisticOperationForm
         Me.deVigenciaDesde.Name = "deVigenciaDesde"
         Me.deVigenciaDesde.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deVigenciaDesde.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.deVigenciaDesde.Size = New System.Drawing.Size(105, 20)
+        Me.deVigenciaDesde.Size = New System.Drawing.Size(90, 20)
         Me.deVigenciaDesde.StyleController = Me.LayoutControl1
         Me.deVigenciaDesde.TabIndex = 13
         '
@@ -519,7 +528,7 @@ Partial Class SalesLogisticOperationForm
         '
         Me.teTipoTarifa.Location = New System.Drawing.Point(90, 32)
         Me.teTipoTarifa.Name = "teTipoTarifa"
-        Me.teTipoTarifa.Size = New System.Drawing.Size(105, 20)
+        Me.teTipoTarifa.Size = New System.Drawing.Size(90, 20)
         Me.teTipoTarifa.StyleController = Me.LayoutControl1
         Me.teTipoTarifa.TabIndex = 15
         '
@@ -528,7 +537,7 @@ Partial Class SalesLogisticOperationForm
         Me.beTarifa.Location = New System.Drawing.Point(90, 7)
         Me.beTarifa.Name = "beTarifa"
         Me.beTarifa.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.beTarifa.Size = New System.Drawing.Size(105, 20)
+        Me.beTarifa.Size = New System.Drawing.Size(90, 20)
         Me.beTarifa.StyleController = Me.LayoutControl1
         Me.beTarifa.TabIndex = 17
         '
@@ -539,22 +548,22 @@ Partial Class SalesLogisticOperationForm
         Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem19, Me.LayoutControlItem25, Me.LayoutControlItem20, Me.LayoutControlItem26, Me.LayoutControlItem21, Me.LayoutControlItem2})
         Me.LayoutControlGroup4.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.LayoutControlGroup4.Name = "Root"
-        ColumnDefinition13.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition13.Width = 28.571428571428573R
-        ColumnDefinition14.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition14.Width = 71.428571428571431R
-        ColumnDefinition15.SizeType = System.Windows.Forms.SizeType.AutoSize
-        ColumnDefinition15.Width = 274.0R
-        Me.LayoutControlGroup4.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition13, ColumnDefinition14, ColumnDefinition15})
-        RowDefinition17.Height = 25.0R
-        RowDefinition17.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition18.Height = 25.0R
-        RowDefinition18.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition19.Height = 25.0R
-        RowDefinition19.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition20.Height = 25.0R
-        RowDefinition20.SizeType = System.Windows.Forms.SizeType.Absolute
-        Me.LayoutControlGroup4.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition17, RowDefinition18, RowDefinition19, RowDefinition20})
+        ColumnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition1.Width = 28.571428571428573R
+        ColumnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition2.Width = 71.428571428571431R
+        ColumnDefinition3.SizeType = System.Windows.Forms.SizeType.AutoSize
+        ColumnDefinition3.Width = 325.0R
+        Me.LayoutControlGroup4.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition1, ColumnDefinition2, ColumnDefinition3})
+        RowDefinition1.Height = 25.0R
+        RowDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition2.Height = 25.0R
+        RowDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition3.Height = 25.0R
+        RowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition4.Height = 25.0R
+        RowDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute
+        Me.LayoutControlGroup4.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition1, RowDefinition2, RowDefinition3, RowDefinition4})
         Me.LayoutControlGroup4.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
         Me.LayoutControlGroup4.Size = New System.Drawing.Size(984, 180)
         Me.LayoutControlGroup4.TextVisible = False
@@ -562,12 +571,12 @@ Partial Class SalesLogisticOperationForm
         'LayoutControlItem19
         '
         Me.LayoutControlItem19.Control = Me.GroupControl2
-        Me.LayoutControlItem19.Location = New System.Drawing.Point(700, 0)
+        Me.LayoutControlItem19.Location = New System.Drawing.Point(649, 0)
         Me.LayoutControlItem19.Name = "LayoutControlItem19"
         Me.LayoutControlItem19.OptionsTableLayoutItem.ColumnIndex = 2
         Me.LayoutControlItem19.OptionsTableLayoutItem.RowSpan = 4
         Me.LayoutControlItem19.Padding = New DevExpress.XtraLayout.Utils.Padding(4, 4, 2, 2)
-        Me.LayoutControlItem19.Size = New System.Drawing.Size(274, 170)
+        Me.LayoutControlItem19.Size = New System.Drawing.Size(325, 170)
         Me.LayoutControlItem19.Text = "Descripción"
         Me.LayoutControlItem19.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem19.TextVisible = False
@@ -579,7 +588,7 @@ Partial Class SalesLogisticOperationForm
         Me.LayoutControlItem25.Name = "LayoutControlItem25"
         Me.LayoutControlItem25.OptionsTableLayoutItem.RowIndex = 3
         Me.LayoutControlItem25.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem25.Size = New System.Drawing.Size(200, 95)
+        Me.LayoutControlItem25.Size = New System.Drawing.Size(185, 95)
         Me.LayoutControlItem25.Text = "Vigencia Hasta"
         Me.LayoutControlItem25.TextSize = New System.Drawing.Size(72, 13)
         '
@@ -590,7 +599,7 @@ Partial Class SalesLogisticOperationForm
         Me.LayoutControlItem20.Name = "LayoutControlItem20"
         Me.LayoutControlItem20.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem20.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem20.Size = New System.Drawing.Size(200, 25)
+        Me.LayoutControlItem20.Size = New System.Drawing.Size(185, 25)
         Me.LayoutControlItem20.Text = "Tipo"
         Me.LayoutControlItem20.TextSize = New System.Drawing.Size(72, 13)
         '
@@ -601,18 +610,18 @@ Partial Class SalesLogisticOperationForm
         Me.LayoutControlItem26.Name = "LayoutControlItem26"
         Me.LayoutControlItem26.OptionsTableLayoutItem.RowIndex = 2
         Me.LayoutControlItem26.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem26.Size = New System.Drawing.Size(200, 25)
+        Me.LayoutControlItem26.Size = New System.Drawing.Size(185, 25)
         Me.LayoutControlItem26.Text = "Vigencia Desde"
         Me.LayoutControlItem26.TextSize = New System.Drawing.Size(72, 13)
         '
         'LayoutControlItem21
         '
         Me.LayoutControlItem21.Control = Me.GroupControl5
-        Me.LayoutControlItem21.Location = New System.Drawing.Point(200, 0)
+        Me.LayoutControlItem21.Location = New System.Drawing.Point(185, 0)
         Me.LayoutControlItem21.Name = "LayoutControlItem21"
         Me.LayoutControlItem21.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem21.OptionsTableLayoutItem.RowSpan = 4
-        Me.LayoutControlItem21.Size = New System.Drawing.Size(500, 170)
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(464, 170)
         Me.LayoutControlItem21.Text = "Importes"
         Me.LayoutControlItem21.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem21.TextVisible = False
@@ -624,7 +633,7 @@ Partial Class SalesLogisticOperationForm
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(200, 25)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(185, 25)
         Me.LayoutControlItem2.Text = "Tarifa"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(72, 13)
         '
@@ -769,6 +778,23 @@ Partial Class SalesLogisticOperationForm
         Me.RepositoryItemLookUpEdit3.Name = "RepositoryItemLookUpEdit3"
         Me.RepositoryItemLookUpEdit3.NullText = ""
         '
+        'GridColumn35
+        '
+        Me.GridColumn35.Caption = "Moneda"
+        Me.GridColumn35.ColumnEdit = Me.RepositoryItemLookUpEdit5
+        Me.GridColumn35.FieldName = "Currency"
+        Me.GridColumn35.Name = "GridColumn35"
+        Me.GridColumn35.Visible = True
+        Me.GridColumn35.VisibleIndex = 6
+        '
+        'RepositoryItemLookUpEdit5
+        '
+        Me.RepositoryItemLookUpEdit5.AutoHeight = False
+        Me.RepositoryItemLookUpEdit5.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit5.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoMoneda", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionMoneda", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoIsoMoneda", "Moneda", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.RepositoryItemLookUpEdit5.Name = "RepositoryItemLookUpEdit5"
+        Me.RepositoryItemLookUpEdit5.NullText = ""
+        '
         'GridColumn9
         '
         Me.GridColumn9.Caption = "Venta (Unidad)"
@@ -792,7 +818,7 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn6.FieldName = "DOPE_Cantidad"
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.Visible = True
-        Me.GridColumn6.VisibleIndex = 6
+        Me.GridColumn6.VisibleIndex = 7
         '
         'GridColumn10
         '
@@ -802,7 +828,7 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn10.OptionsColumn.ReadOnly = True
         Me.GridColumn10.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioTotVta", "{0:###,##0.00}")})
         Me.GridColumn10.Visible = True
-        Me.GridColumn10.VisibleIndex = 7
+        Me.GridColumn10.VisibleIndex = 8
         '
         'GridColumn5
         '
@@ -1037,22 +1063,22 @@ Partial Class SalesLogisticOperationForm
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem7, Me.LayoutControlItem15, Me.LayoutControlItem9, Me.LayoutControlItem16, Me.LayoutControlItem18, Me.LayoutControlItem6, Me.LayoutControlItem1, Me.LayoutControlItem22, Me.LayoutControlItem38, Me.LayoutControlItem8, Me.LayoutControlItem5, Me.LayoutControlItem3})
         Me.LayoutControlGroup2.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.LayoutControlGroup2.Name = "Root"
-        ColumnDefinition16.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition16.Width = 33.333333333333336R
-        ColumnDefinition17.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition17.Width = 33.333333333333336R
-        ColumnDefinition18.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition18.Width = 33.333333333333336R
-        Me.LayoutControlGroup2.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition16, ColumnDefinition17, ColumnDefinition18})
-        RowDefinition21.Height = 25.0R
-        RowDefinition21.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition22.Height = 25.0R
-        RowDefinition22.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition23.Height = 25.0R
-        RowDefinition23.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition24.Height = 25.0R
-        RowDefinition24.SizeType = System.Windows.Forms.SizeType.Absolute
-        Me.LayoutControlGroup2.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition21, RowDefinition22, RowDefinition23, RowDefinition24})
+        ColumnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition4.Width = 33.333333333333336R
+        ColumnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition5.Width = 33.333333333333336R
+        ColumnDefinition6.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition6.Width = 33.333333333333336R
+        Me.LayoutControlGroup2.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition4, ColumnDefinition5, ColumnDefinition6})
+        RowDefinition5.Height = 25.0R
+        RowDefinition5.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition6.Height = 25.0R
+        RowDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition7.Height = 25.0R
+        RowDefinition7.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition8.Height = 25.0R
+        RowDefinition8.SizeType = System.Windows.Forms.SizeType.Absolute
+        Me.LayoutControlGroup2.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition5, RowDefinition6, RowDefinition7, RowDefinition8})
         Me.LayoutControlGroup2.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(984, 119)
         Me.LayoutControlGroup2.TextVisible = False
@@ -1200,30 +1226,6 @@ Partial Class SalesLogisticOperationForm
         Me.LayoutControlItem3.Text = "Transportista (T)"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(97, 13)
         '
-        'GridColumn34
-        '
-        Me.GridColumn34.Caption = "Moneda"
-        Me.GridColumn34.FieldName = "Currency"
-        Me.GridColumn34.Name = "GridColumn34"
-        Me.GridColumn34.OptionsColumn.ReadOnly = True
-        Me.GridColumn34.Visible = True
-        Me.GridColumn34.VisibleIndex = 2
-        '
-        'GridColumn35
-        '
-        Me.GridColumn35.Caption = "Moneda"
-        Me.GridColumn35.ColumnEdit = Me.RepositoryItemLookUpEdit5
-        Me.GridColumn35.FieldName = "Currency"
-        Me.GridColumn35.Name = "GridColumn35"
-        Me.GridColumn35.Visible = True
-        Me.GridColumn35.VisibleIndex = 6
-        '
-        'RepositoryItemLookUpEdit5
-        '
-        Me.RepositoryItemLookUpEdit5.AutoHeight = False
-        Me.RepositoryItemLookUpEdit5.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit5.Name = "RepositoryItemLookUpEdit5"
-        '
         'SalesLogisticOperationForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1265,6 +1267,7 @@ Partial Class SalesLogisticOperationForm
         CType(Me.RepositoryItemLookUpEdit4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl2.ResumeLayout(False)
         CType(Me.LayoutControl3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1295,7 +1298,6 @@ Partial Class SalesLogisticOperationForm
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1395,9 +1397,9 @@ Partial Class SalesLogisticOperationForm
     Friend WithEvents GridColumn31 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn32 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn33 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents beTarifa As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents GridColumn34 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn35 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemLookUpEdit5 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Public WithEvents beTarifa As DevExpress.XtraEditors.ButtonEdit
 End Class

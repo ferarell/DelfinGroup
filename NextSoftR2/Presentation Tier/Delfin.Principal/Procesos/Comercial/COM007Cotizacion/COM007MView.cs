@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace Delfin.Principal
 
         #region [ Variables ]
         ApplicationForm.SalesLogisticOperationForm salesLogistic;
+        DataSet dsLogisticOperation = new DataSet();
+        DataTable dtServiceDetail = new DataTable();
         #endregion
 
         #region [ Formulario ]
@@ -164,12 +167,171 @@ namespace Delfin.Principal
 
         private void SaveSalesLogisticOperation()
         {
-            //SLI_Cab_Operacion_BE oSLI_Cab_Operacion_BE = new SLI_Cab_Operacion_BE();
-            //SLI_Det_Operacion_BE oSLI_Det_Operacion_BE = new SLI_Det_Operacion_BE();
-            //salesLogistic = new ApplicationForm.SalesLogisticOperationForm();
-            salesLogistic.teNumeroOperacion.Text = "2019-0";
+            string _Trans = "";
+            if (salesLogistic.teCodigoOperacion.Text == "0")
+            { _Trans = "I"; }
+            else
+            { _Trans = "U"; }
+            if (salesLogistic.beTarifa.Text != "") // && salesLogistic.gcServiceRelated.MainView.RowCount > 0)
+            {
+                LogisticOperationRegister(_Trans);
+                ArrayList _exception = new ArrayList();
+                if (_Trans == "I")
+                {
+                    try
+                    {
+                        _exception.AddRange(oAppService.InsertLogisticOperation(salesLogistic.dsLogisticOperation));
+                        if (_exception[0].Equals(0))
+                        {
+                            throw new System.ArgumentException(_exception[1].ToString());
+                        }
+                    }
+                    catch (Exception ex)
+                    { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError("Servicio Logístico", "Ha ocurrido un error al insertar la Operación Logística.", ex); }
+                    finally
+                    { salesLogistic.gcServiceRelated.RefreshDataSource(); }
+                }
+                else
+                {
+                    try
+                    {
+                        _exception.AddRange(oAppService.UpdateLogisticOperation(salesLogistic.dsLogisticOperation, dtServiceDetail));
+                        if (_exception[0].Equals(0))
+                        {
+                            throw new System.ArgumentException(_exception[1].ToString());
+                        }
+                        //else
+                        //{
+                        //    Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeSatisfactorio("Servicio Logístico", "La operación se actualizó correctamente.");
+                        //}
+                    }
+                    catch (Exception ex)
+                    { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError("Servicio Logístico", "Ha ocurrido un error al actualizar la Operación Logística.", ex); }
+                    finally
+                    { salesLogistic.gcServiceRelated.RefreshDataSource(); }
+                }
+            }
 
 
+        }
+
+        private void LogisticOperationRegister(string type)
+        {
+            Validate();
+            //Header
+            dsLogisticOperation.Tables[0].TableName = "Header";
+            if (type == "I" && dsLogisticOperation.Tables[0].Rows.Count == 0)
+            { salesLogistic.dsLogisticOperation.Tables[0].Rows.Add(); }
+            DataRow drHeader = dsLogisticOperation.Tables[0].Rows[0];
+            drHeader["COPE_Codigo"] = salesLogistic.teCodigoOperacion.EditValue;
+            drHeader["COPE_NumDoc"] = salesLogistic.teNumeroOperacion.EditValue;
+            drHeader["CCOT_Numero"] = Presenter.Item.CCOT_Numero;
+            drHeader["CCOT_Tipo"] = Presenter.Item.CCOT_Tipo;
+            drHeader["COPE_HBL"] = DOOV_HBL.Text;
+            drHeader["ENTC_CodCliente"] = ENTC_CodCliente.Value.ENTC_Codigo;
+            if (ENTC_CodTransportista.Value != null)
+            { drHeader["ENTC_CodTransporte"] = ENTC_CodTransportista.Value.ENTC_Codigo; }
+            if (salesLogistic.lueTransportistaTerrestre.ItemIndex >= 0)
+            { drHeader["ENTC_CodTransTerre"] = salesLogistic.lueTransportistaTerrestre.EditValue; }
+            if (cmbCONS_CodVia.SelectedValue.ToString() != "003")
+            {
+                drHeader["ENTC_CodAgente"] = txaENTC_CodAgente.Value.ENTC_Codigo;
+            }
+            drHeader["CONS_CodEstado"] = "001";
+            drHeader["CONS_TabEstado"] = "OPE";
+            drHeader["TIPO_TabMND"] = "MND";
+            drHeader["TIPO_CodMND"] = TIPO_CodMND.SelectedValue;
+            if (CONS_CodFLE.SelectedValue.ToString() == "003" || CONS_CodFLE.SelectedValue.ToString() == "004")
+            { drHeader["CONS_CodCRG"] = "001"; }
+            else
+            { drHeader["CONS_CodCRG"] = "002"; }
+            drHeader["CONS_TabCRG"] = "CRG";
+            drHeader["CTAR_Codigo"] = salesLogistic.beTarifa.EditValue;
+            drHeader["CTAR_Version"] = 1;
+            drHeader["COPE_Fob"] = 0;
+            drHeader["COPE_Seguro"] = 0;
+            drHeader["COPE_Flete"] = 0;
+            drHeader["COPE_Cif"] = 0;
+            drHeader["COPE_PartArancelaria"] = 0;
+            drHeader["COPE_Ipm"] = 0;
+            drHeader["COPE_Igv"] = 0;
+            drHeader["COPE_Percepcion"] = 0;
+            drHeader["COPE_TasaDespacho"] = 0;
+            drHeader["COPE_AdValorem"] = 0;
+            if (type == "I")
+            {
+                drHeader["AUDI_UsrCrea"] = Presenter.Session.UserName;
+                drHeader["COPE_FecEmi"] = DateTime.Today;
+            }
+            else
+            {
+                drHeader["AUDI_UsrMod"] = Presenter.Session.UserName;
+                drHeader["COPE_FecEmi"] = salesLogistic.deFechaEmision.EditValue;
+            }
+
+            //Detail
+            salesLogistic.dsLogisticOperation.Tables[5].TableName = "Detail";
+
+            for (int i = 0; i <= salesLogistic.GridView1.RowCount - 1; ++i)
+            {
+                //DataRow drDetail = salesLogistic.dsLogisticOperation.Tables[5].Rows[i];
+                //if (salesLogistic.GridView1.RowCount > 0 && dsLogisticOperation.Tables[5].Select("SERV_Codigo=" + salesLogistic.GridView1.GetRowCellValue(i, "SERV_Codigo")).Length>0)
+                //{ continue; }
+                if (type == "U" && salesLogistic.dsLogisticOperation.Tables[5].Rows.Count > 0)
+                {
+                    if (salesLogistic.dsLogisticOperation.Tables[5].Rows[i].RowState == DataRowState.Deleted)
+                    { continue; }
+                }
+                if (type == "I")
+                //if (type == "I" || salesLogistic.GridView1.RowCount != salesLogistic.dsLogisticOperation.Tables[5].Rows.Count)
+                {
+                    salesLogistic.dsLogisticOperation.Tables[5].Rows.Add();
+                }
+                if (type == "U" && salesLogistic.GridView1.RowCount > salesLogistic.dsLogisticOperation.Tables[5].Rows.Count)
+                {
+                    salesLogistic.dsLogisticOperation.Tables[5].Rows.Add();
+                }
+                DataRow drDetail = salesLogistic.dsLogisticOperation.Tables[5].Rows[i];
+                drDetail["COPE_Codigo"] = drHeader["COPE_Codigo"];
+                //drDetail["DTAR_Item"] = 0;
+                //drDetail["CTAR_Codigo"] = 0;
+                //drDetail["CTAR_Tipo"] = salesLogistic.lueTarifa.GetColumnValue("TariffType");
+                if (salesLogistic.GridView1.GetRowCellValue(i, "IdTariffDetail") != null && salesLogistic.GridView1.GetRowCellValue(i, "IdTariffDetail") != DBNull.Value)
+                {
+                    drDetail["DTAR_Item"] = salesLogistic.GridView1.GetRowCellValue(i, "IdTariffDetail");
+                    drDetail["CTAR_Codigo"] = salesLogistic.GridView1.GetRowCellValue(i, "IdTariff"); //salesLogistic.beTarifa.EditValue;
+                    //drDetail["CTAR_Tipo"] = salesLogistic.lueTarifa.GetColumnValue("TariffType");
+                }
+                drDetail["CTAR_Tipo"] = salesLogistic.GridView1.GetRowCellValue(i, "SERV_Tipo");
+                drDetail["CONS_CodBas"] = salesLogistic.GridView1.GetRowCellValue(i, "CONS_CodBas");
+                drDetail["CONS_TabBas"] = "BAS";
+                drDetail["DOPE_Cantidad"] = salesLogistic.GridView1.GetRowCellValue(i, "DOPE_Cantidad");
+                //if (salesLogistic.GridView1.GetRowCellValue(i, "DOPE_PrecioUnitCosto").ToString() != "")
+                //{
+                drDetail["DOPE_PrecioUnitCosto"] = salesLogistic.GridView1.GetRowCellValue(i, "DOPE_PrecioUnitCosto");
+                drDetail["DOPE_PrecioTotCosto"] = salesLogistic.GridView1.GetRowCellValue(i, "DOPE_PrecioTotCosto");
+                //drDetail["DOPE_PrecioTotCosto"] = Convert.ToDecimal(salesLogistic.GridView1.GetRowCellValue(i, "DOPE_PrecioUnitCosto")) * Convert.ToDecimal(salesLogistic.GridView1.GetRowCellValue(i, "DOPE_Cantidad"));
+                //}
+                drDetail["DOPE_PrecioUnitVta"] = salesLogistic.GridView1.GetRowCellValue(i, "DOPE_PrecioUnitVta");
+                drDetail["DOPE_PrecioTotVta"] = salesLogistic.GridView1.GetRowCellValue(i, "DOPE_PrecioTotVta");
+                drDetail["TIPE_Codigo"] = salesLogistic.GridView1.GetRowCellValue(i, "TIPE_Codigo");
+                drDetail["ENTC_Codigo"] = salesLogistic.GridView1.GetRowCellValue(i, "ENTC_Codigo");
+                drDetail["CONS_TabEST"] = "EDO";
+                drDetail["SERV_Codigo"] = salesLogistic.GridView1.GetRowCellValue(i, "SERV_Codigo");
+                drDetail["DOPE_Minimo"] = 0;
+                drDetail["DOPE_VentaSada"] = 0;
+                drDetail["DOPE_Venta"] = 0;
+                if (type == "I")
+                {
+                    drDetail["AUDI_UsrCrea"] = Presenter.Session.UserName;
+                    drDetail["CONS_CodEST"] = "001";
+                }
+                else
+                {
+                    drDetail["USR_UsrMod"] = Presenter.Session.UserName;
+                    drDetail["CONS_CodEST"] = salesLogistic.GridView1.GetRowCellValue(i, "CONS_CodEST"); ;
+                }
+            }
         }
 
         private void COM007MView_FormClosed(object sender, FormClosedEventArgs e)
