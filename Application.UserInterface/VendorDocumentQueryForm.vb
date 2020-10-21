@@ -47,6 +47,9 @@ Public Class VendorDocumentQueryForm
                 End If
             Next
         End If
+        If GridView1.GetFocusedRowCellValue("DocumentoSAP").ToString <> "" Then
+            bbiSyncSAP.Enabled = False
+        End If
     End Sub
 
     Private Sub bbiAdd_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiAdd.ItemClick
@@ -122,6 +125,7 @@ Public Class VendorDocumentQueryForm
         dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneServiciosPorOperacion " & GridView1.GetFocusedRowCellValue("COPE_Codigo")).Tables(0)
         gcVendorService.DataSource = dtQuery
         GridView2.BestFitColumns()
+        ButtonEnabled()
     End Sub
 
     Private Sub gcVendorItems_DoubleClick(sender As Object, e As EventArgs) Handles gcPurchaseInvoice.DoubleClick

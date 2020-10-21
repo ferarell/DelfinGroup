@@ -68,7 +68,7 @@ Public Class InvoiceBillsViewerForm
                 XtraMessageBox.Show("Ocurrió un error al generar el documento de venta en SAP" & vbCrLf & DirectCast(aRespuesta(0), ApplicationForm.IntegrationService.Respuesta).Response(0).[error].Message.Value, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End If
-            sDocSAP = DirectCast(aRespuesta(0), ApplicationForm.IntegrationService.Respuesta).Response(0).DocEntry.ToString
+            sDocSAP = DirectCast(aRespuesta(0), ApplicationForm.IntegrationService.Respuesta).Response(0).DocNum.ToString
             XtraMessageBox.Show("Se generó el documento SAP: " & sDocSAP, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Close()
         Catch ex As Exception
