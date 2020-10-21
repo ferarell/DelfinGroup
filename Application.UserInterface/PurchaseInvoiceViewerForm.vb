@@ -3,7 +3,8 @@ Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class PurchaseInvoiceViewerForm
     Public dsVoucher As New DataSet
-    Public sDocSAP, sInterfaceName As String
+    Public sDocSAP As String = ""
+    Public sInterfaceName As String = ""
 
     Dim oIntegrationService As New IntegrationService.IntegradorSBOClient
     Private Sub JournalEntryViewerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -167,50 +167,50 @@ namespace Delfin.Principal
 
         private void SaveSalesLogisticOperation()
         {
-            string _Trans = "";
-            if (salesLogistic.teCodigoOperacion.Text == "0")
-            { _Trans = "I"; }
-            else
-            { _Trans = "U"; }
-            if (salesLogistic.beTarifa.Text != "") // && salesLogistic.gcServiceRelated.MainView.RowCount > 0)
-            {
-                LogisticOperationRegister(_Trans);
-                ArrayList _exception = new ArrayList();
-                if (_Trans == "I")
-                {
-                    try
-                    {
-                        _exception.AddRange(oAppService.InsertLogisticOperation(salesLogistic.dsLogisticOperation));
-                        if (_exception[0].Equals(0))
-                        {
-                            throw new System.ArgumentException(_exception[1].ToString());
-                        }
-                    }
-                    catch (Exception ex)
-                    { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError("Servicio Logístico", "Ha ocurrido un error al insertar la Operación Logística.", ex); }
-                    finally
-                    { salesLogistic.gcServiceRelated.RefreshDataSource(); }
-                }
-                else
-                {
-                    try
-                    {
-                        _exception.AddRange(oAppService.UpdateLogisticOperation(salesLogistic.dsLogisticOperation, dtServiceDetail));
-                        if (_exception[0].Equals(0))
-                        {
-                            throw new System.ArgumentException(_exception[1].ToString());
-                        }
-                        //else
-                        //{
-                        //    Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeSatisfactorio("Servicio Logístico", "La operación se actualizó correctamente.");
-                        //}
-                    }
-                    catch (Exception ex)
-                    { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError("Servicio Logístico", "Ha ocurrido un error al actualizar la Operación Logística.", ex); }
-                    finally
-                    { salesLogistic.gcServiceRelated.RefreshDataSource(); }
-                }
-            }
+            //string _Trans = "";
+            //if (salesLogistic.teCodigoOperacion.Text == "0")
+            //{ _Trans = "I"; }
+            //else
+            //{ _Trans = "U"; }
+            //if (salesLogistic.beTarifa.Text != "") // && salesLogistic.gcServiceRelated.MainView.RowCount > 0)
+            //{
+            //    LogisticOperationRegister(_Trans);
+            //    ArrayList _exception = new ArrayList();
+            //    if (_Trans == "I")
+            //    {
+            //        try
+            //        {
+            //            _exception.AddRange(oAppService.InsertLogisticOperation(salesLogistic.dsLogisticOperation));
+            //            if (_exception[0].Equals(0))
+            //            {
+            //                throw new System.ArgumentException(_exception[1].ToString());
+            //            }
+            //        }
+            //        catch (Exception ex)
+            //        { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError("Servicio Logístico", "Ha ocurrido un error al insertar la Operación Logística.", ex); }
+            //        finally
+            //        { salesLogistic.gcServiceRelated.RefreshDataSource(); }
+            //    }
+            //    else
+            //    {
+            //        try
+            //        {
+            //            _exception.AddRange(oAppService.UpdateLogisticOperation(salesLogistic.dsLogisticOperation, dtServiceDetail));
+            //            if (_exception[0].Equals(0))
+            //            {
+            //                throw new System.ArgumentException(_exception[1].ToString());
+            //            }
+            //            //else
+            //            //{
+            //            //    Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeSatisfactorio("Servicio Logístico", "La operación se actualizó correctamente.");
+            //            //}
+            //        }
+            //        catch (Exception ex)
+            //        { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError("Servicio Logístico", "Ha ocurrido un error al actualizar la Operación Logística.", ex); }
+            //        finally
+            //        { salesLogistic.gcServiceRelated.RefreshDataSource(); }
+            //    }
+            //}
 
 
         }

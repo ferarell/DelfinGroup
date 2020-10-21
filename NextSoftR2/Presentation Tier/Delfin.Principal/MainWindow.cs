@@ -6131,6 +6131,7 @@ namespace Delfin.Principal
                     break;
             case "VendorDocumentQueryForm":
                 LOG007_mview = null;
+                FIN003_mview = null;
                 break;
             case "CargoAddressingForm":
                 LOG009_mview = null;
@@ -6709,7 +6710,7 @@ namespace Delfin.Principal
 
         ApplicationForm.ElectronicInvoicingForm FIN002_mview;
 
-        private void FIN002FacturacionElectronica_Click(object sender, EventArgs e)
+        private void FIN002FacturacionVentas_Click(object sender, EventArgs e)
         {
             try
             {
@@ -6733,11 +6734,41 @@ namespace Delfin.Principal
             }
             catch (Exception ex)
             {
-                Dialogos.MostrarMensajeError(Text, "Ha Ocurrido un error al llamar la vista: Facturación Electrónica", ex);
+                Dialogos.MostrarMensajeError(Text, "Ha Ocurrido un error al llamar la vista: Facturación Ventas", ex);
             }
             tabViews.SelectedPage = _pageView;
         }
 
+        ApplicationForm.VendorDocumentQueryForm FIN003_mview;
+
+        private void FIN003FacturacionCompras_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FIN003_mview == null)
+                {
+                    FIN003_mview = new ApplicationForm.VendorDocumentQueryForm();
+                    FIN003_mview.AppUser = ItemUsuario.USUA_CodUsr;
+                    FIN003_mview.TopLevel = false;
+                    FIN003_mview.Dock = DockStyle.Fill;
+                    FIN003_mview.FormBorderStyle = FormBorderStyle.None;
+                    _pageView = new RadPageViewPage();
+                    FIN003_mview.Parent = _pageView;
+                    _pageView.Controls.Add(FIN003_mview);
+                    _pageView.Text = FIN003_mview.Text;
+                    _pageView.Tag = ((System.Windows.Forms.ToolStripItem)(sender)).Tag;
+                    tabViews.Pages.Add(_pageView);
+                    FIN003_mview.Show();
+                }
+                else
+                { tabViews.SelectedPage = _pageView; }
+            }
+            catch (Exception ex)
+            {
+                Dialogos.MostrarMensajeError(Text, "Ha Ocurrido un error al llamar la vista: Facturación Compras", ex);
+            }
+            tabViews.SelectedPage = _pageView;
+        }
         #endregion
 
         #region [ Reportes - Finanzas ]
@@ -7641,6 +7672,9 @@ namespace Delfin.Principal
                     break;
                 case "FIN002":
                     FIN002_mview = null;
+                    break;
+                case "FIN003":
+                    FIN003_mview = null;
                     break;
                 case "OPE011":
                   OPE011_mview = null;

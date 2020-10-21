@@ -8,7 +8,8 @@ Public Class AccountingTransferForm
     Public AppUser As String = "sistemas"
 
     Private Sub AccountingTransferForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        gcStatements.MainView.RestoreLayoutFromRegistry(IO.Directory.GetCurrentDirectory)
+        'gcStatements.MainView.RestoreLayoutFromRegistry(IO.Directory.GetCurrentDirectory)
+        Me.StartPosition = FormStartPosition.CenterScreen
         SplitContainerControl2.SplitterPosition = SplitContainerControl2.Height * 0.8
         deDateFrom.EditValue = DateAdd(DateInterval.Day, -90, Now)
         deDateTo.EditValue = Now

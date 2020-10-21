@@ -450,7 +450,6 @@ Partial Class AccountingTransferForm
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsSelection.MultiSelect = True
-        Me.GridView1.OptionsView.BestFitMaxRowCount = 10
         Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways
@@ -695,7 +694,7 @@ Partial Class AccountingTransferForm
         Me.Controls.Add(Me.BarDockControl2)
         Me.Controls.Add(Me.BarDockControl1)
         Me.Name = "AccountingTransferForm"
-        Me.Text = "Generar Asientos de Provisión (SAP)"
+        Me.Text = "Asientos de Provisión"
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).EndInit()

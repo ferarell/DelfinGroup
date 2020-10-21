@@ -19,6 +19,7 @@ Partial Class ElectronicInvoicingForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ElectronicInvoicingForm))
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
         Me.bbiSearch = New DevExpress.XtraBars.BarButtonItem()
@@ -29,11 +30,11 @@ Partial Class ElectronicInvoicingForm
         Me.bbiGenerate = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiResend = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiReset = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiVoucherGenerate = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiSyncSAP = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
@@ -49,7 +50,7 @@ Partial Class ElectronicInvoicingForm
         Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -57,7 +58,7 @@ Partial Class ElectronicInvoicingForm
         Me.deDateFrom = New DevExpress.XtraEditors.DateEdit()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lueStatus = New DevExpress.XtraEditors.LookUpEdit()
-        Me.gcMainData = New DevExpress.XtraGrid.GridControl()
+        Me.gcSalesInvoice = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn29 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -102,7 +103,7 @@ Partial Class ElectronicInvoicingForm
         CType(Me.deDateFrom.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.deDateFrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lueStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gcMainData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gcSalesInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,7 +116,7 @@ Partial Class ElectronicInvoicingForm
         Me.brBarraAcciones.DockRow = 0
         Me.brBarraAcciones.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
         Me.brBarraAcciones.FloatLocation = New System.Drawing.Point(279, 188)
-        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSearch, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiExport, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiEdit, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiVoid, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiPreview, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiGenerate, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiResend, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiReset, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiVoucherGenerate, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
+        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSearch, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiExport, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiEdit, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiVoid, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiPreview, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiGenerate, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiResend, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiReset, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSyncSAP, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
         Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
         Me.brBarraAcciones.OptionsBar.UseWholeRow = True
         Me.brBarraAcciones.Text = "Custom 5"
@@ -177,12 +178,12 @@ Partial Class ElectronicInvoicingForm
         Me.bbiReset.ImageOptions.Image = CType(resources.GetObject("bbiReset.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiReset.Name = "bbiReset"
         '
-        'bbiVoucherGenerate
+        'bbiSyncSAP
         '
-        Me.bbiVoucherGenerate.Caption = "&Generar Asiento"
-        Me.bbiVoucherGenerate.Id = 30
-        Me.bbiVoucherGenerate.ImageOptions.Image = CType(resources.GetObject("bbiVoucherGenerate.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiVoucherGenerate.Name = "bbiVoucherGenerate"
+        Me.bbiSyncSAP.Caption = "&Sincronizar"
+        Me.bbiSyncSAP.Id = 30
+        Me.bbiSyncSAP.ImageOptions.Image = CType(resources.GetObject("bbiSyncSAP.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiSyncSAP.Name = "bbiSyncSAP"
         '
         'bbiClose
         '
@@ -220,7 +221,7 @@ Partial Class ElectronicInvoicingForm
         Me.bmActions.DockControls.Add(Me.BarDockControl3)
         Me.bmActions.DockControls.Add(Me.BarDockControl4)
         Me.bmActions.Form = Me
-        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.bbiSearch, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiExport, Me.bbiEdit, Me.BarButtonItem5, Me.bbiVoid, Me.bbiPreview, Me.bbiGenerate, Me.bbiResend, Me.bbiReset, Me.bbiVoucherGenerate})
+        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.bbiSearch, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiExport, Me.bbiEdit, Me.BarButtonItem5, Me.bbiVoid, Me.bbiPreview, Me.bbiGenerate, Me.bbiResend, Me.bbiReset, Me.bbiSyncSAP})
         Me.bmActions.MaxItemId = 31
         Me.bmActions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rpiProceso, Me.RepositoryItemImageComboBox1})
         '
@@ -230,7 +231,7 @@ Partial Class ElectronicInvoicingForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(1001, 45)
+        Me.BarDockControl1.Size = New System.Drawing.Size(1001, 47)
         '
         'BarDockControl2
         '
@@ -244,17 +245,17 @@ Partial Class ElectronicInvoicingForm
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 45)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 354)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 352)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(1001, 45)
+        Me.BarDockControl4.Location = New System.Drawing.Point(1001, 47)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 354)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 352)
         '
         'BarButtonItem1
         '
@@ -331,7 +332,7 @@ Partial Class ElectronicInvoicingForm
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 45)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.Label3)
@@ -341,9 +342,9 @@ Partial Class ElectronicInvoicingForm
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.Label4)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.lueStatus)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
-        Me.SplitContainerControl1.Panel2.Controls.Add(Me.gcMainData)
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.gcSalesInvoice)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(1001, 354)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1001, 352)
         Me.SplitContainerControl1.SplitterPosition = 53
         Me.SplitContainerControl1.TabIndex = 5
         '
@@ -413,31 +414,30 @@ Partial Class ElectronicInvoicingForm
         Me.lueStatus.Size = New System.Drawing.Size(98, 20)
         Me.lueStatus.TabIndex = 2
         '
-        'gcMainData
+        'gcSalesInvoice
         '
-        Me.gcMainData.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcMainData.EmbeddedNavigator.Buttons.Append.Visible = False
-        Me.gcMainData.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
-        Me.gcMainData.EmbeddedNavigator.Buttons.Edit.Visible = False
-        Me.gcMainData.EmbeddedNavigator.Buttons.EndEdit.Visible = False
-        Me.gcMainData.EmbeddedNavigator.Buttons.Remove.Visible = False
-        Me.gcMainData.Location = New System.Drawing.Point(0, 0)
-        Me.gcMainData.MainView = Me.GridView1
-        Me.gcMainData.Name = "gcMainData"
-        Me.gcMainData.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemCheckEdit2})
-        Me.gcMainData.Size = New System.Drawing.Size(1001, 295)
-        Me.gcMainData.TabIndex = 171
-        Me.gcMainData.UseEmbeddedNavigator = True
-        Me.gcMainData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.gcSalesInvoice.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcSalesInvoice.EmbeddedNavigator.Buttons.Append.Visible = False
+        Me.gcSalesInvoice.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
+        Me.gcSalesInvoice.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.gcSalesInvoice.EmbeddedNavigator.Buttons.EndEdit.Visible = False
+        Me.gcSalesInvoice.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.gcSalesInvoice.Location = New System.Drawing.Point(0, 0)
+        Me.gcSalesInvoice.MainView = Me.GridView1
+        Me.gcSalesInvoice.Name = "gcSalesInvoice"
+        Me.gcSalesInvoice.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemCheckEdit2})
+        Me.gcSalesInvoice.Size = New System.Drawing.Size(1001, 294)
+        Me.gcSalesInvoice.TabIndex = 171
+        Me.gcSalesInvoice.UseEmbeddedNavigator = True
+        Me.gcSalesInvoice.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn29, Me.GridColumn28, Me.GridColumn2, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15, Me.GridColumn16, Me.GridColumn17, Me.GridColumn18, Me.GridColumn30, Me.GridColumn19, Me.GridColumn20, Me.GridColumn21, Me.GridColumn22, Me.GridColumn23, Me.GridColumn24, Me.GridColumn25, Me.GridColumn26, Me.GridColumn27, Me.GridColumn3})
-        Me.GridView1.GridControl = Me.gcMainData
+        Me.GridView1.GridControl = Me.gcSalesInvoice
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
-        Me.GridView1.OptionsView.BestFitMaxRowCount = 10
         Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways
@@ -618,7 +618,7 @@ Partial Class ElectronicInvoicingForm
         'GridColumn30
         '
         Me.GridColumn30.Caption = "Documento SAP"
-        Me.GridColumn30.FieldName = "CCCT_DocSAP"
+        Me.GridColumn30.FieldName = "DocumentoSAP"
         Me.GridColumn30.Name = "GridColumn30"
         Me.GridColumn30.Visible = True
         Me.GridColumn30.VisibleIndex = 19
@@ -734,7 +734,7 @@ Partial Class ElectronicInvoicingForm
         Me.Controls.Add(Me.BarDockControl2)
         Me.Controls.Add(Me.BarDockControl1)
         Me.Name = "ElectronicInvoicingForm"
-        Me.Text = "Facturación Electrónica"
+        Me.Text = "Facturación Ventas"
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -746,7 +746,7 @@ Partial Class ElectronicInvoicingForm
         CType(Me.deDateFrom.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.deDateFrom.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lueStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gcMainData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gcSalesInvoice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -787,7 +787,7 @@ Partial Class ElectronicInvoicingForm
     Friend WithEvents deDateFrom As DevExpress.XtraEditors.DateEdit
     Friend WithEvents Label4 As Label
     Friend WithEvents lueStatus As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents gcMainData As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gcSalesInvoice As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents RepositoryItemCheckEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
@@ -824,6 +824,6 @@ Partial Class ElectronicInvoicingForm
     Friend WithEvents GridColumn27 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn29 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents bbiVoucherGenerate As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiSyncSAP As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents GridColumn30 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

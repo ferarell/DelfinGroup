@@ -30,6 +30,7 @@ Partial Class VendorDocumentQueryForm
         Me.bbiVoid = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiSearch = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiExport = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiSyncSAP = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
@@ -59,7 +60,7 @@ Partial Class VendorDocumentQueryForm
         Me.lueEntity = New DevExpress.XtraEditors.LookUpEdit()
         Me.lueEntityType = New DevExpress.XtraEditors.LookUpEdit()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.gcVendorItems = New DevExpress.XtraGrid.GridControl()
+        Me.gcPurchaseInvoice = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -84,8 +85,8 @@ Partial Class VendorDocumentQueryForm
         Me.RepositoryItemCheckEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.GridColumn31 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
-        Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn18 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn19 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn33 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.gcVendorService = New DevExpress.XtraGrid.GridControl()
@@ -118,7 +119,7 @@ Partial Class VendorDocumentQueryForm
         CType(Me.lueEntityType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl2.SuspendLayout()
-        CType(Me.gcVendorItems, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gcPurchaseInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,8 +139,8 @@ Partial Class VendorDocumentQueryForm
         Me.bmActions.DockControls.Add(Me.BarDockControl3)
         Me.bmActions.DockControls.Add(Me.BarDockControl4)
         Me.bmActions.Form = Me
-        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.bbiSearch, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiReset, Me.bbiExport, Me.bbiAdd, Me.BarButtonItem5, Me.bbiSendMessage, Me.bbiEdit, Me.bbiVoid})
-        Me.bmActions.MaxItemId = 28
+        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.bbiSearch, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiReset, Me.bbiExport, Me.bbiAdd, Me.BarButtonItem5, Me.bbiSendMessage, Me.bbiEdit, Me.bbiVoid, Me.bbiSyncSAP})
+        Me.bmActions.MaxItemId = 29
         Me.bmActions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rpiProceso, Me.RepositoryItemImageComboBox1})
         '
         'bar5
@@ -168,7 +169,7 @@ Partial Class VendorDocumentQueryForm
         Me.brBarraAcciones.DockRow = 0
         Me.brBarraAcciones.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
         Me.brBarraAcciones.FloatLocation = New System.Drawing.Point(279, 188)
-        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiAdd, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiEdit, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiVoid, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSearch, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiExport, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
+        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiAdd, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiEdit, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiVoid, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSearch, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiExport, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSyncSAP, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
         Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
         Me.brBarraAcciones.OptionsBar.UseWholeRow = True
         Me.brBarraAcciones.Text = "Custom 5"
@@ -208,6 +209,13 @@ Partial Class VendorDocumentQueryForm
         Me.bbiExport.Id = 22
         Me.bbiExport.ImageOptions.Image = CType(resources.GetObject("bbiExport.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiExport.Name = "bbiExport"
+        '
+        'bbiSyncSAP
+        '
+        Me.bbiSyncSAP.Caption = "Sincronizar"
+        Me.bbiSyncSAP.Id = 28
+        Me.bbiSyncSAP.ImageOptions.Image = CType(resources.GetObject("bbiSyncSAP.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiSyncSAP.Name = "bbiSyncSAP"
         '
         'bbiClose
         '
@@ -451,7 +459,7 @@ Partial Class VendorDocumentQueryForm
         Me.SplitContainerControl2.Horizontal = False
         Me.SplitContainerControl2.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainerControl2.Name = "SplitContainerControl2"
-        Me.SplitContainerControl2.Panel1.Controls.Add(Me.gcVendorItems)
+        Me.SplitContainerControl2.Panel1.Controls.Add(Me.gcPurchaseInvoice)
         Me.SplitContainerControl2.Panel1.Text = "Panel1"
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.gcVendorService)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
@@ -459,27 +467,27 @@ Partial Class VendorDocumentQueryForm
         Me.SplitContainerControl2.SplitterPosition = 267
         Me.SplitContainerControl2.TabIndex = 172
         '
-        'gcVendorItems
+        'gcPurchaseInvoice
         '
-        Me.gcVendorItems.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcVendorItems.EmbeddedNavigator.Buttons.Append.Visible = False
-        Me.gcVendorItems.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
-        Me.gcVendorItems.EmbeddedNavigator.Buttons.Edit.Visible = False
-        Me.gcVendorItems.EmbeddedNavigator.Buttons.EndEdit.Visible = False
-        Me.gcVendorItems.EmbeddedNavigator.Buttons.Remove.Visible = False
-        Me.gcVendorItems.Location = New System.Drawing.Point(0, 0)
-        Me.gcVendorItems.MainView = Me.GridView1
-        Me.gcVendorItems.Name = "gcVendorItems"
-        Me.gcVendorItems.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit2, Me.RepositoryItemCheckEdit1, Me.RepositoryItemCheckEdit3})
-        Me.gcVendorItems.Size = New System.Drawing.Size(929, 267)
-        Me.gcVendorItems.TabIndex = 171
-        Me.gcVendorItems.UseEmbeddedNavigator = True
-        Me.gcVendorItems.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.gcPurchaseInvoice.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcPurchaseInvoice.EmbeddedNavigator.Buttons.Append.Visible = False
+        Me.gcPurchaseInvoice.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
+        Me.gcPurchaseInvoice.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.gcPurchaseInvoice.EmbeddedNavigator.Buttons.EndEdit.Visible = False
+        Me.gcPurchaseInvoice.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.gcPurchaseInvoice.Location = New System.Drawing.Point(0, 0)
+        Me.gcPurchaseInvoice.MainView = Me.GridView1
+        Me.gcPurchaseInvoice.Name = "gcPurchaseInvoice"
+        Me.gcPurchaseInvoice.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit2, Me.RepositoryItemCheckEdit1, Me.RepositoryItemCheckEdit3})
+        Me.gcPurchaseInvoice.Size = New System.Drawing.Size(929, 267)
+        Me.gcPurchaseInvoice.TabIndex = 171
+        Me.gcPurchaseInvoice.UseEmbeddedNavigator = True
+        Me.gcPurchaseInvoice.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn9, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn10, Me.GridColumn30, Me.GridColumn11, Me.GridColumn12, Me.GridColumn15, Me.GridColumn13, Me.GridColumn14, Me.GridColumn16, Me.GridColumn29, Me.GridColumn32, Me.GridColumn31, Me.GridColumn17, Me.GridColumn18, Me.GridColumn19, Me.GridColumn33})
-        Me.GridView1.GridControl = Me.gcVendorItems
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn9, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn10, Me.GridColumn30, Me.GridColumn11, Me.GridColumn12, Me.GridColumn15, Me.GridColumn13, Me.GridColumn14, Me.GridColumn16, Me.GridColumn29, Me.GridColumn32, Me.GridColumn31, Me.GridColumn18, Me.GridColumn17, Me.GridColumn19, Me.GridColumn33})
+        Me.GridView1.GridControl = Me.gcPurchaseInvoice
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
@@ -655,7 +663,7 @@ Partial Class VendorDocumentQueryForm
         Me.GridColumn31.FieldName = "CCCT_RetencionIGV"
         Me.GridColumn31.Name = "GridColumn31"
         Me.GridColumn31.Visible = True
-        Me.GridColumn31.VisibleIndex = 18
+        Me.GridColumn31.VisibleIndex = 17
         '
         'RepositoryItemCheckEdit2
         '
@@ -663,19 +671,21 @@ Partial Class VendorDocumentQueryForm
         Me.RepositoryItemCheckEdit2.Caption = "Check"
         Me.RepositoryItemCheckEdit2.Name = "RepositoryItemCheckEdit2"
         '
-        'GridColumn17
-        '
-        Me.GridColumn17.Caption = "Provisión"
-        Me.GridColumn17.Name = "GridColumn17"
-        Me.GridColumn17.Visible = True
-        Me.GridColumn17.VisibleIndex = 17
-        '
         'GridColumn18
         '
         Me.GridColumn18.Caption = "Asiento Contable"
+        Me.GridColumn18.FieldName = "AsientoContable"
         Me.GridColumn18.Name = "GridColumn18"
         Me.GridColumn18.Visible = True
-        Me.GridColumn18.VisibleIndex = 19
+        Me.GridColumn18.VisibleIndex = 18
+        '
+        'GridColumn17
+        '
+        Me.GridColumn17.Caption = "Dcoumento SAP"
+        Me.GridColumn17.FieldName = "DocumentoSAP"
+        Me.GridColumn17.Name = "GridColumn17"
+        Me.GridColumn17.Visible = True
+        Me.GridColumn17.VisibleIndex = 19
         '
         'GridColumn19
         '
@@ -851,7 +861,7 @@ Partial Class VendorDocumentQueryForm
         Me.Controls.Add(Me.BarDockControl2)
         Me.Controls.Add(Me.BarDockControl1)
         Me.Name = "VendorDocumentQueryForm"
-        Me.Text = "Registro de Documentos (Proveedores)"
+        Me.Text = "Facturación Compras"
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -866,7 +876,7 @@ Partial Class VendorDocumentQueryForm
         CType(Me.lueEntityType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl2.ResumeLayout(False)
-        CType(Me.gcVendorItems, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gcPurchaseInvoice, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -916,7 +926,7 @@ Partial Class VendorDocumentQueryForm
     Friend WithEvents deDateFrom As DevExpress.XtraEditors.DateEdit
     Friend WithEvents Label4 As Label
     Friend WithEvents lueEntityType As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents gcVendorItems As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gcPurchaseInvoice As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents RepositoryItemCheckEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents Label2 As Label
@@ -938,7 +948,6 @@ Partial Class VendorDocumentQueryForm
     Friend WithEvents GridColumn15 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn16 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn17 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn18 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn19 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents SplitContainerControl2 As DevExpress.XtraEditors.SplitContainerControl
     Friend WithEvents gcVendorService As DevExpress.XtraGrid.GridControl
@@ -964,4 +973,6 @@ Partial Class VendorDocumentQueryForm
     Friend WithEvents GridColumn32 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemCheckEdit3 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents GridColumn33 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents bbiSyncSAP As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents GridColumn18 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

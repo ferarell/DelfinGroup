@@ -9,7 +9,8 @@ Public Class ElectronicInvoicingForm
     End Sub
 
     Private Sub ElectronicInvoicingForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        gcMainData.MainView.RestoreLayoutFromRegistry(IO.Directory.GetCurrentDirectory)
+        'gcSalesInvoice.MainView.RestoreLayoutFromRegistry(IO.Directory.GetCurrentDirectory)
+        Me.StartPosition = FormStartPosition.CenterScreen
         deDateFrom.EditValue = DateAdd(DateInterval.Day, -60, Now)
         deDateTo.EditValue = Now
         LoadStatus()
@@ -25,7 +26,7 @@ Public Class ElectronicInvoicingForm
     End Sub
 
     Private Sub bbiExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiExport.ItemClick
-        ExportToExcel(gcMainData)
+        ExportToExcel(gcSalesInvoice)
     End Sub
 
     Private Sub bbiEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEdit.ItemClick
@@ -75,7 +76,7 @@ Public Class ElectronicInvoicingForm
 
     Private Sub bbiSearch_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSearch.ItemClick
         Dim dtSource As New DataTable
-        gcMainData.DataSource = Nothing
+        gcSalesInvoice.DataSource = Nothing
         SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
         Try
             dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneDocumentosFacturacion 1, '" & Format(deDateFrom.EditValue, "yyyyMMdd") & "','" & Format(deDateTo.EditValue, "yyyyMMdd") & "','" & lueStatus.EditValue.ToString & "'").Tables(0)
@@ -83,13 +84,13 @@ Public Class ElectronicInvoicingForm
             SplashScreenManager.CloseForm(False)
             DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-        gcMainData.DataSource = dtSource
+        gcSalesInvoice.DataSource = dtSource
         GridView1.BestFitColumns()
         SplashScreenManager.CloseForm(False)
     End Sub
 
     Private Sub ElectronicInvoicingForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        gcMainData.MainView.SaveLayoutToRegistry(IO.Directory.GetCurrentDirectory)
+        gcSalesInvoice.MainView.SaveLayoutToRegistry(IO.Directory.GetCurrentDirectory)
     End Sub
 
     Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
@@ -107,17 +108,22 @@ Public Class ElectronicInvoicingForm
         If GridView1.GetFocusedRowCellValue("DOCV_Numero") = "" Then
             bbiPreview.Enabled = False
             bbiResend.Enabled = False
+            bbiSyncSAP.Enabled = False
         End If
         If GridView1.GetFocusedRowCellValue("DOCV_Numero") <> "" Then
             bbiEdit.Enabled = False
             bbiGenerate.Enabled = False
             bbiReset.Enabled = False
+            If GridView1.GetFocusedRowCellValue("DocumentoSAP").ToString <> "" Then
+                bbiSyncSAP.Enabled = False
+            End If
         End If
         If Mid(GridView1.GetFocusedRowCellValue("DOCV_EstadoStr"), 1, 1) = "A" Then
             bbiEdit.Enabled = False
             bbiPreview.Enabled = False
             bbiVoid.Enabled = False
             bbiGenerate.Enabled = False
+            bbiSyncSAP.Enabled = False
         Else
             bbiReset.Enabled = False
         End If
@@ -128,7 +134,25 @@ Public Class ElectronicInvoicingForm
 
     End Sub
 
-    Private Sub bbiVoucherGenerate_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiVoucherGenerate.ItemClick
-
+    Private Sub bbiVoucherGenerate_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSyncSAP.ItemClick
+        If GridView1.RowCount = 0 Then
+            Return
+        End If
+        Dim _DOCV_Codigo As Integer = Convert.ToInt32(GridView1.GetFocusedRowCellValue("DOCV_Codigo"))
+        If _DOCV_Codigo = 0 Then
+            Return
+        End If
+        Dim dsQuery As DataSet = New DataSet()
+        Dim oInvoiceBillsViewerForm As New InvoiceBillsViewerForm
+        If GridView1.GetFocusedRowCellValue("TIPO_TDO").ToString().Contains("CREDITO") Then
+            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForCreditMemoInterface " & "1, 1, " & _DOCV_Codigo.ToString() & ", '" & AppUser & "', 'P'")
+            oInvoiceBillsViewerForm.sInterfaceName = "CreditMemo"
+        Else
+            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForInvoiceBillsInterface " & "1, 1, " & _DOCV_Codigo.ToString() & ", '" & AppUser & "', 'P'")
+            oInvoiceBillsViewerForm.sInterfaceName = "InvoiceBills"
+        End If
+        oInvoiceBillsViewerForm.dsVoucher = dsQuery
+        oInvoiceBillsViewerForm.ShowDialog()
+        GridView1.SetFocusedRowCellValue("DocumentoSAP", oInvoiceBillsViewerForm.sDocSAP)
     End Sub
 End Class

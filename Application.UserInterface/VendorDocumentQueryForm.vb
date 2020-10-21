@@ -6,7 +6,8 @@ Public Class VendorDocumentQueryForm
     Public AppUser As String = "sistemas"
 
     Private Sub VendorDocumentQueryForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        gcVendorItems.MainView.RestoreLayoutFromRegistry(IO.Directory.GetCurrentDirectory)
+        'gcPurchaseInvoice.MainView.RestoreLayoutFromRegistry(IO.Directory.GetCurrentDirectory)
+        Me.StartPosition = FormStartPosition.CenterScreen
         SplitContainerControl2.Collapsed = True
         deDateFrom.EditValue = DateAdd(DateInterval.Day, -60, Now)
         deDateTo.EditValue = Now
@@ -75,17 +76,17 @@ Public Class VendorDocumentQueryForm
             sParams += ", '" & IIf(deDateFrom.EditValue = Nothing, "NULL", Format(deDateFrom.EditValue, "yyyyMMdd")) & "'"
             sParams += ", '" & IIf(deDateTo.EditValue = Nothing, "NULL", Format(deDateTo.EditValue, "yyyyMMdd")) & "'"
         End If
-        gcVendorItems.DataSource = Nothing
+        gcPurchaseInvoice.DataSource = Nothing
         dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneDocumentosProveedor " & sParams).Tables(0)
         If dtSource.Rows.Count > 0 Then
-            gcVendorItems.DataSource = dtSource
+            gcPurchaseInvoice.DataSource = dtSource
             GridView1.BestFitColumns()
             ButtonEnabled()
         End If
     End Sub
 
     Private Sub bbiExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiExport.ItemClick
-        ExportToExcel(gcVendorItems)
+        ExportToExcel(gcPurchaseInvoice)
     End Sub
 
     Private Sub bbiClose_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiClose.ItemClick
@@ -123,7 +124,29 @@ Public Class VendorDocumentQueryForm
         GridView2.BestFitColumns()
     End Sub
 
-    Private Sub gcVendorItems_DoubleClick(sender As Object, e As EventArgs) Handles gcVendorItems.DoubleClick
+    Private Sub gcVendorItems_DoubleClick(sender As Object, e As EventArgs) Handles gcPurchaseInvoice.DoubleClick
         bbiEdit.PerformClick()
+    End Sub
+
+    Private Sub bbiSyncSAP_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSyncSAP.ItemClick
+        If GridView1.RowCount = 0 Then
+            Return
+        End If
+        Dim _CCCT_Codigo As Integer = Convert.ToInt32(GridView1.GetFocusedRowCellValue("CCCT_Codigo"))
+        If _CCCT_Codigo = 0 Then
+            Return
+        End If
+        Dim dsQuery As DataSet = New DataSet()
+        Dim oPurchaseInvoiceViewerForm As New PurchaseInvoiceViewerForm
+        If GridView1.GetFocusedRowCellValue("TIPO_Documento").ToString().Contains("CREDITO") Then
+            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForPurchaseCreditMemoInterface " & "1, 1, " & _CCCT_Codigo.ToString() & ", '" & AppUser & "', 'P'")
+            oPurchaseInvoiceViewerForm.sInterfaceName = "PurchaseCreditMemo"
+        Else
+            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForPurchaseInvoiceInterface " & "1, 1, " & _CCCT_Codigo.ToString() & ", '" & AppUser & "', 'P'")
+            oPurchaseInvoiceViewerForm.sInterfaceName = "PurchaseInvoice"
+        End If
+        oPurchaseInvoiceViewerForm.dsVoucher = dsQuery
+        oPurchaseInvoiceViewerForm.ShowDialog()
+        GridView1.SetFocusedRowCellValue("DocumentoSAP", oPurchaseInvoiceViewerForm.sDocSAP)
     End Sub
 End Class
