@@ -1,4 +1,5 @@
 ﻿Imports DevExpress.XtraSplashScreen
+Imports eFactDelfin
 
 Public Class ElectronicInvoicingForm
     Dim oAppService As New AppService.DelfinServiceClient
@@ -34,7 +35,20 @@ Public Class ElectronicInvoicingForm
     End Sub
 
     Private Sub bbiVoid_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiVoid.ItemClick
-
+        If DevExpress.XtraEditors.XtraMessageBox.Show("La anulación del comprobante seleccionado generará un comunicado de baja en Sunat, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            Return
+        End If
+        If GridView1.GetFocusedRowCellValue("DOCV_Numero").ToString = "" Then
+            Return
+        End If
+        Dim facturacionElectronica As eFacturacionElectronica = New eFacturacionElectronica()
+        Dim dtResultadoFacturacionElectronica As DataTable = New DataTable()
+        dtResultadoFacturacionElectronica = facturacionElectronica.ProcesarBajaFacturacionElectronica(GridView1.GetFocusedRowCellValue("DOCV_Numero").ToString, AppUser)
+        Dim Resultado As String = dtResultadoFacturacionElectronica.Rows(0)("resultado").ToString()
+        Dim ResultadoDetalle As String = dtResultadoFacturacionElectronica.Rows(0)("mensajeerror").ToString()
+        If Resultado = "ERROR" Then
+            Throw New System.Exception(ResultadoDetalle)
+        End If
     End Sub
 
     Private Sub bbiPreview_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiPreview.ItemClick

@@ -29,7 +29,7 @@
       private void InitializeComponent()
       {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            Infrastructure.WinFormsControls.OutlookBarButton outlookBarButton2 = new Infrastructure.WinFormsControls.OutlookBarButton();
+            Infrastructure.WinFormsControls.OutlookBarButton outlookBarButton3 = new Infrastructure.WinFormsControls.OutlookBarButton();
             this.tabViews = new Telerik.WinControls.UI.RadPageView();
             this.splitMenuContainer = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -62,6 +62,7 @@
             this.toolFinanzas = new System.Windows.Forms.ToolStrip();
             this.FIN001AsientosProvision = new System.Windows.Forms.ToolStripButton();
             this.FIN002FacturacionVentas = new System.Windows.Forms.ToolStripButton();
+            this.FIN003FacturacionCompras = new System.Windows.Forms.ToolStripButton();
             this.tss10 = new System.Windows.Forms.ToolStripSeparator();
             this.CAJ001CuentasBancarias = new System.Windows.Forms.ToolStripButton();
             this.tss01 = new System.Windows.Forms.ToolStripSeparator();
@@ -249,7 +250,6 @@
             this.tslblVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslblServidor = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslblBD = new System.Windows.Forms.ToolStripStatusLabel();
-            this.FIN003FacturacionCompras = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabViews)).BeginInit();
             this.splitMenuContainer.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -581,6 +581,13 @@
             this.FIN002FacturacionVentas.Name = "FIN002FacturacionVentas";
             this.FIN002FacturacionVentas.Tag = "FIN002";
             this.FIN002FacturacionVentas.Click += new System.EventHandler(this.FIN002FacturacionVentas_Click);
+            // 
+            // FIN003FacturacionCompras
+            // 
+            resources.ApplyResources(this.FIN003FacturacionCompras, "FIN003FacturacionCompras");
+            this.FIN003FacturacionCompras.Name = "FIN003FacturacionCompras";
+            this.FIN003FacturacionCompras.Tag = "FIN003";
+            this.FIN003FacturacionCompras.Click += new System.EventHandler(this.FIN003FacturacionCompras_Click);
             // 
             // tss10
             // 
@@ -2117,11 +2124,11 @@
             this.olbMenuAlmafin.GradientButtonSelectedDark = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(150)))), ((int)(((byte)(21)))));
             this.olbMenuAlmafin.GradientButtonSelectedLight = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(230)))), ((int)(((byte)(148)))));
             this.olbMenuAlmafin.Name = "olbMenuAlmafin";
-            outlookBarButton2.Enabled = true;
-            outlookBarButton2.Image = null;
-            outlookBarButton2.Tag = null;
-            outlookBarButton2.Text = "";
-            this.olbMenuAlmafin.SelectedButton = outlookBarButton2;
+            outlookBarButton3.Enabled = true;
+            outlookBarButton3.Image = null;
+            outlookBarButton3.Tag = null;
+            outlookBarButton3.Text = "";
+            this.olbMenuAlmafin.SelectedButton = outlookBarButton3;
             this.olbMenuAlmafin.Click += new Infrastructure.WinFormsControls.OutlookBar.ButtonClickEventHandler(this.olbMenuAlmafin_Click);
             // 
             // statusStrip1
@@ -2177,13 +2184,6 @@
             this.tslblBD.Image = global::Delfin.Principal.Properties.Resources.data_connection_16x16;
             this.tslblBD.Name = "tslblBD";
             resources.ApplyResources(this.tslblBD, "tslblBD");
-            // 
-            // FIN003FacturacionCompras
-            // 
-            resources.ApplyResources(this.FIN003FacturacionCompras, "FIN003FacturacionCompras");
-            this.FIN003FacturacionCompras.Name = "FIN003FacturacionCompras";
-            this.FIN003FacturacionCompras.Tag = "FIN003";
-            this.FIN003FacturacionCompras.Click += new System.EventHandler(this.FIN003FacturacionCompras_Click);
             // 
             // MainWindow
             // 
