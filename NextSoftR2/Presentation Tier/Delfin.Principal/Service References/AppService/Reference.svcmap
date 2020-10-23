@@ -22,14 +22,14 @@
     <MetadataSource Address="http://apps.delfingroupco.com.pe:766/DelfinService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DelfinService.xsd" MetadataType="Schema" ID="535b7ee0-728f-47d1-8438-97a92a3f0602" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd5" />
-    <MetadataFile FileName="DelfinService.disco" MetadataType="Disco" ID="0a71c5ab-3aee-461b-aed3-9d49d439f5c0" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?disco" />
-    <MetadataFile FileName="DelfinService1.xsd" MetadataType="Schema" ID="d0cda140-d0a7-4af0-993a-89c00e4c71aa" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd1" />
-    <MetadataFile FileName="DelfinService2.xsd" MetadataType="Schema" ID="9c23e5de-e72d-4497-8ed6-53f4ba7c6302" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd4" />
-    <MetadataFile FileName="DelfinService3.xsd" MetadataType="Schema" ID="db2606d3-1ed2-415c-b021-d17e3ae92f0e" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd3" />
-    <MetadataFile FileName="DelfinService4.xsd" MetadataType="Schema" ID="2463a56f-5471-4172-9619-3eae274b753c" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd2" />
-    <MetadataFile FileName="DelfinService.wsdl" MetadataType="Wsdl" ID="79ba745a-6f9c-4daf-a767-794e85209bd4" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?wsdl" />
-    <MetadataFile FileName="DelfinService5.xsd" MetadataType="Schema" ID="429378df-b374-45a4-b0b6-839313ea3ccd" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DelfinService.xsd" MetadataType="Schema" ID="8d233e40-23c7-4676-a6c1-5cdcdb6ba847" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd5" />
+    <MetadataFile FileName="DelfinService.disco" MetadataType="Disco" ID="67853114-142a-4725-b25b-e4754eaf84e2" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?disco" />
+    <MetadataFile FileName="DelfinService1.xsd" MetadataType="Schema" ID="487dfe2d-3c88-4ba3-b208-7df73927dd6f" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DelfinService2.xsd" MetadataType="Schema" ID="f41bbd80-80fd-4dfe-8c5b-0c3e3e61e24f" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd4" />
+    <MetadataFile FileName="DelfinService3.xsd" MetadataType="Schema" ID="e879a7a2-8be9-4753-ab4f-c82607bb6670" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DelfinService4.xsd" MetadataType="Schema" ID="433a0117-fbc3-4d16-9cfd-8db97ec85bf6" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DelfinService.wsdl" MetadataType="Wsdl" ID="bc601910-9d07-440f-8235-984d9cbb68ca" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?wsdl" />
+    <MetadataFile FileName="DelfinService5.xsd" MetadataType="Schema" ID="1b91dfd7-519c-429b-a492-a5942a0d0151" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/DelfinService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

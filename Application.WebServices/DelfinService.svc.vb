@@ -697,6 +697,7 @@ Public Class DelfinService
                 Command.Parameters.Clear()
                 With Command.Parameters
                     .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowH("COPE_Codigo")
+                    .Add("@pintCOPE_Version", SqlDbType.SmallInt).Value = oRowH("COPE_Version")
                     .Add("@pvchCOPE_NumDoc", SqlDbType.VarChar, 11).Value = oRowH("COPE_NumDoc")
                     .Add("@pdtmCOPE_FecEmi", SqlDbType.DateTime).Value = oRowH("COPE_FecEmi")
                     .Add("@pvchCOPE_Observacion", SqlDbType.VarChar, 1024).Value = oRowH("COPE_Observacion")
@@ -754,6 +755,7 @@ Public Class DelfinService
                         .Clear()
                         .Add("@pintDOPE_Item", SqlDbType.Int).Value = oRowD("DOPE_Item")
                         .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = _CodOper
+                        .Add("@pintCOPE_Version", SqlDbType.SmallInt).Value = oRowH("COPE_Version")
                         .Add("@psinDTAR_Item", SqlDbType.SmallInt).Value = oRowD("DTAR_Item")
                         .Add("@pintCTAR_Codigo", SqlDbType.Int).Value = oRowD("CTAR_Codigo")
                         .Add("@pchrCTAR_Tipo", SqlDbType.Char, 1).Value = oRowD("CTAR_Tipo")
@@ -783,6 +785,8 @@ Public Class DelfinService
                         .Add("@pchrCONS_CodEST", SqlDbType.Char, 3).Value = oRowD("CONS_CodEST")
                         .Add("@pchrCONS_TabEST", SqlDbType.Char, 3).Value = oRowD("CONS_TabEST")
                         .Add("@pintSERV_Codigo", SqlDbType.Int, 3).Value = oRowD("SERV_Codigo")
+                        .Add("@pchrTIPO_TabMND", SqlDbType.Char, 3).Value = oRowD("TIPO_TabMND")
+                        .Add("@pchrTIPO_CodMND", SqlDbType.Char, 3).Value = oRowD("TIPO_CodMND")
                     End With
                     Command.ExecuteNonQuery()
                 Next
@@ -820,6 +824,7 @@ Public Class DelfinService
                 Command.Parameters.Clear()
                 With Command.Parameters
                     .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowH("COPE_Codigo")
+                    .Add("@pintCOPE_Version", SqlDbType.SmallInt).Value = oRowH("COPE_Version")
                     .Add("@pvchCOPE_NumDoc", SqlDbType.VarChar, 11).Value = oRowH("COPE_NumDoc")
                     .Add("@pdtmCOPE_FecEmi", SqlDbType.DateTime).Value = oRowH("COPE_FecEmi")
                     .Add("@pvchCOPE_Observacion", SqlDbType.VarChar, 1024).Value = oRowH("COPE_Observacion")
@@ -884,6 +889,7 @@ Public Class DelfinService
                             .Clear()
                             .Add("@pintDOPE_Item", SqlDbType.Int).Value = oRowA("DOPE_Item")
                             .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowA("COPE_Codigo")
+                            .Add("@pintCOPE_Version", SqlDbType.SmallInt).Value = oRowA("COPE_Version")
                         End With
                         Command.ExecuteNonQuery()
                     End If
@@ -901,6 +907,7 @@ Public Class DelfinService
                             .Clear()
                             .Add("@pintDOPE_Item", SqlDbType.Int).Value = oRowD("DOPE_Item")
                             .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowD("COPE_Codigo")
+                            .Add("@pintCOPE_Version", SqlDbType.SmallInt).Value = oRowD("COPE_Version")
                             .Add("@psinDTAR_Item", SqlDbType.SmallInt).Value = oRowD("DTAR_Item")
                             .Add("@pintCTAR_Codigo", SqlDbType.Int).Value = oRowD("CTAR_Codigo")
                             .Add("@pchrCTAR_Tipo", SqlDbType.Char, 1).Value = oRowD("CTAR_Tipo")
@@ -930,6 +937,8 @@ Public Class DelfinService
                             .Add("@pchrCONS_CodEST", SqlDbType.Char, 3).Value = oRowD("CONS_CodEST")
                             .Add("@pchrCONS_TabEST", SqlDbType.Char, 3).Value = oRowD("CONS_TabEST")
                             .Add("@pintSERV_Codigo", SqlDbType.Int, 3).Value = oRowD("SERV_Codigo")
+                            .Add("@pchrTIPO_TabMND", SqlDbType.Char, 3).Value = oRowD("TIPO_TabMND")
+                            .Add("@pchrTIPO_CodMND", SqlDbType.Char, 3).Value = oRowD("TIPO_CodMND")
                         End With
                     Else
                         Command.CommandType = CommandType.StoredProcedure
@@ -938,6 +947,7 @@ Public Class DelfinService
                             .Clear()
                             .Add("@pintDOPE_Item", SqlDbType.Int).Value = oRowD("DOPE_Item")
                             .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowD("COPE_Codigo")
+                            .Add("@pintCOPE_Version", SqlDbType.SmallInt).Value = oRowD("COPE_Version")
                             .Add("@psinDTAR_Item", SqlDbType.SmallInt).Value = oRowD("DTAR_Item")
                             .Add("@pintCTAR_Codigo", SqlDbType.Int).Value = oRowD("CTAR_Codigo")
                             .Add("@pchrCTAR_Tipo", SqlDbType.Char, 1).Value = oRowD("CTAR_Tipo")
@@ -967,6 +977,8 @@ Public Class DelfinService
                             .Add("@pchrCONS_CodEST", SqlDbType.Char, 3).Value = oRowD("CONS_CodEST")
                             .Add("@pchrCONS_TabEST", SqlDbType.Char, 3).Value = oRowD("CONS_TabEST")
                             .Add("@pintSERV_Codigo", SqlDbType.Int, 3).Value = oRowD("SERV_Codigo")
+                            .Add("@pchrTIPO_TabMND", SqlDbType.Char, 3).Value = oRowD("TIPO_TabMND")
+                            .Add("@pchrTIPO_CodMND", SqlDbType.Char, 3).Value = oRowD("TIPO_CodMND")
                         End With
                     End If
                     Command.ExecuteNonQuery()

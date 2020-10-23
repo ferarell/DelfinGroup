@@ -38,8 +38,8 @@ namespace Delfin.Principal
       void ShowNovedades();
       
       void ShowValidation();
-
-   }
+      void SaveSalesLogisticOperation();
+    }
    public interface ICOM007OView
    {
       COM007Presenter Presenter { get; set; }

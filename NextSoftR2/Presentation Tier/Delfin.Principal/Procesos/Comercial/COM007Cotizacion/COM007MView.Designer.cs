@@ -28,6 +28,7 @@
       /// </summary>
       private void InitializeComponent()
       {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(COM007MView));
             this.panel3 = new System.Windows.Forms.Panel();
             this.btActualizaServicioLogistico = new System.Windows.Forms.Button();
@@ -35,7 +36,7 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.errorProviderCab_Cotizacion_OV = new System.Windows.Forms.ErrorProvider();
+            this.errorProviderCab_Cotizacion_OV = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabCab_Cotizacion_OV = new Dotnetrix.Controls.TabControlEX();
             this.pageGenerales = new Dotnetrix.Controls.TabPageEX();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -74,15 +75,15 @@
             this.TIPO_CodINC = new Delfin.Controls.Tipos.ComboBoxTipos();
             this.lblTIPO_CodINC = new System.Windows.Forms.Label();
             this.lblENTC_CodCustomer = new System.Windows.Forms.Label();
-            this.ENTC_CodCustomer = new Delfin.Controls.Entidad();
-            this.ENTC_CodBroker = new Delfin.Controls.Entidad();
+            this.ENTC_CodCustomer = new Delfin.Controls.Entidad(this.components);
+            this.ENTC_CodBroker = new Delfin.Controls.Entidad(this.components);
             this.lblENTC_CodBroker = new System.Windows.Forms.Label();
-            this.ENTC_CodEjecutivo = new Delfin.Controls.Entidad();
+            this.ENTC_CodEjecutivo = new Delfin.Controls.Entidad(this.components);
             this.lblENTC_CodEjecutivo = new System.Windows.Forms.Label();
             this.lblENTC_CodAgente = new System.Windows.Forms.Label();
-            this.txaENTC_CodAgente = new Delfin.Controls.Entidad();
+            this.txaENTC_CodAgente = new Delfin.Controls.Entidad(this.components);
             this.lblENTC_CodCliente = new System.Windows.Forms.Label();
-            this.ENTC_CodCliente = new Delfin.Controls.Entidad();
+            this.ENTC_CodCliente = new Delfin.Controls.Entidad(this.components);
             this.lblCONS_CodLNG = new System.Windows.Forms.Label();
             this.cmbCONS_CodLNG = new Delfin.Controls.Tipos.ComboBoxConstantes();
             this.lblCCOT_FecEmi = new System.Windows.Forms.Label();
@@ -115,8 +116,8 @@
             this.btnAddFlete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.CCOT_PagoMBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
-            this.CCOT_PagoHBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
+            this.CCOT_PagoMBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
+            this.CCOT_PagoHBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
             this.DCOT_Importe = new Infrastructure.WinForms.Controls.TextBoxNumerico();
             this.lblDCOT_Importe = new System.Windows.Forms.Label();
             this.lblCCOT_PagoHBL = new System.Windows.Forms.Label();
@@ -135,10 +136,10 @@
             this.txaPUER_CodOrigen = new Delfin.Controls.AyudaPuerto();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.CONT_Numero = new Infrastructure.WinForms.Controls.TextBoxAyuda();
+            this.CONT_Numero = new Infrastructure.WinForms.Controls.TextBoxAyuda(this.components);
             this.btnCambiarContrato = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.ENTC_CodTransportista = new Delfin.Controls.Entidad();
+            this.ENTC_CodTransportista = new Delfin.Controls.Entidad(this.components);
             this.lblENTC_CodTransportista = new System.Windows.Forms.Label();
             this.lblTIPO_CodMND = new System.Windows.Forms.Label();
             this.lblCONS_CodFLE = new System.Windows.Forms.Label();
@@ -176,9 +177,9 @@
             this.lblENTC_CodNotify = new System.Windows.Forms.Label();
             this.lblENTC_CodShipper = new System.Windows.Forms.Label();
             this.lblENTC_CodConsignee = new System.Windows.Forms.Label();
-            this.ENTC_CodShipper = new Delfin.Controls.Entidad();
-            this.ENTC_CodConsignee = new Delfin.Controls.Entidad();
-            this.ENTC_CodNotify = new Delfin.Controls.Entidad();
+            this.ENTC_CodShipper = new Delfin.Controls.Entidad(this.components);
+            this.ENTC_CodConsignee = new Delfin.Controls.Entidad(this.components);
+            this.ENTC_CodNotify = new Delfin.Controls.Entidad(this.components);
             this.DOOV_CodReferencia = new System.Windows.Forms.TextBox();
             this.pageObservaciones = new Dotnetrix.Controls.TabPageEX();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -217,7 +218,7 @@
             this.lblNAVE_Nombre = new System.Windows.Forms.Label();
             this.NAVE_Nombre = new System.Windows.Forms.TextBox();
             this.lblNVIA_NroViaje = new System.Windows.Forms.Label();
-            this.NVIA_NroViaje = new Infrastructure.WinForms.Controls.TextBoxAyuda();
+            this.NVIA_NroViaje = new Infrastructure.WinForms.Controls.TextBoxAyuda(this.components);
             this.lblNVIA_FecETA = new System.Windows.Forms.Label();
             this.NVIA_FecETA = new Infrastructure.WinForms.Controls.MaskDateTime();
             this.DOOV_FecETDFeeder_IMPO = new Infrastructure.WinForms.Controls.MaskDateTime();
@@ -228,7 +229,7 @@
             this.DOOV_Cntr = new System.Windows.Forms.TextBox();
             this.txtDDOV_NroBooking = new System.Windows.Forms.TextBox();
             this.lblDOOV_Cntr = new System.Windows.Forms.Label();
-            this.txaENTC_CodDepTemporal = new Delfin.Controls.Entidad();
+            this.txaENTC_CodDepTemporal = new Delfin.Controls.Entidad(this.components);
             this.lblTIPO_CodDTM = new System.Windows.Forms.Label();
             this.lblDOOV_HBL = new System.Windows.Forms.Label();
             this.DOOV_HBL = new System.Windows.Forms.TextBox();
@@ -272,9 +273,9 @@
             this.EVEN_Usuario = new System.Windows.Forms.TextBox();
             this.panelEventoTarea = new Infrastructure.WinForms.Controls.PanelCaption();
             this.pageServicioLogistico = new Dotnetrix.Controls.TabPageEX();
-            this.errorProviderDet_Cotizacion_OV_Novedad = new System.Windows.Forms.ErrorProvider();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
-            this.errorEventoTarea = new System.Windows.Forms.ErrorProvider();
+            this.errorProviderDet_Cotizacion_OV_Novedad = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.errorEventoTarea = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCab_Cotizacion_OV)).BeginInit();
             this.tabCab_Cotizacion_OV.SuspendLayout();

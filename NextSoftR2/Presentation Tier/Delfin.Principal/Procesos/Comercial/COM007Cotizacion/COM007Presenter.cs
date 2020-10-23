@@ -910,7 +910,8 @@ namespace Delfin.Principal
                //{ Item = Client.SaveCab_Cotizacion_OV(Item, ref CCOT_MensajeError, Cab_Cotizacion_OV.TipoInterfaz.OVC_Prefacturada); }
                //else
                Item = Client.SaveCab_Cotizacion_OV(Item, ref CCOT_MensajeError);
-               if (Item != null && String.IsNullOrEmpty(CCOT_MensajeError))
+                MView.SaveSalesLogisticOperation();
+                if (Item != null && String.IsNullOrEmpty(CCOT_MensajeError))
                {
                   if (ShowMessage) { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeSatisfactorio(Title, "Se ha guardado satisfactoriamente"); }
 

@@ -17,7 +17,6 @@ namespace Delfin.Principal
    {
         Principal.AppService.DelfinServiceClient oAppService = new Principal.AppService.DelfinServiceClient();
 
-
         #region [ Variables ]
         ApplicationForm.SalesLogisticOperationForm salesLogistic;
         DataSet dsLogisticOperation = new DataSet();
@@ -131,7 +130,7 @@ namespace Delfin.Principal
          { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Presenter.Title, "Ha ocurrido un error inicializando el formulario MView.", ex); }
       }
 
-        private void LoadSalesLogisticOperation()
+        public void LoadSalesLogisticOperation()
         {
             //salesLogistic = new ApplicationForm.SalesLogisticOperationForm();
             salesLogistic._EMPR_Codigo = Convert.ToInt32(Presenter.Item.EMPR_Codigo);
@@ -143,74 +142,97 @@ namespace Delfin.Principal
             if (Convert.ToInt32(Presenter.Item.CCOT_TipoPadre) > 0)
             { salesLogistic._CCOT_Tipo = Convert.ToInt32(Presenter.Item.CCOT_TipoPadre); }
             else
-            { salesLogistic._CCOT_Tipo = Convert.ToInt32(Presenter.Item.CCOT_Tipo); }
-            salesLogistic.Item = Presenter.Item;
-            //if (salesLogistic.lueTransportistaTerrestre.Text != "")
-            //{ salesLogistic.Item.ENTC_CodTransportista = salesLogistic.lueTransportistaTerrestre.Text; }
+            { salesLogistic._CCOT_Tipo = Convert.ToInt32(Presenter.Item.CCOT_Tipo               ); }
+
+            ////if (salesLogistic.lueTransportistaTerrestre.Text != "")
+            ////{ salesLogistic.Item.ENTC_CodTransportista = salesLogistic.lueTransportistaTerrestre.Text; }
             salesLogistic.TopLevel = false;
             salesLogistic.Dock = DockStyle.Fill;
             salesLogistic.FormBorderStyle = FormBorderStyle.None;
             pageServicioLogistico.Controls.Add(salesLogistic);
-                        
-            salesLogistic.teCliente.Text = ENTC_CodCliente.Text;
-            salesLogistic.teAgenciaMaritima.Text = "";
-            salesLogistic.teAlmacen.Text = txaENTC_CodDepTemporal.Text;
-            salesLogistic.teCondicionEmbarque.Text = "";
-            //salesLogistic.teHBL.Text = DOOV_HBL.Text;
-            salesLogistic.teNumeroOperacion.Text = "";
-            salesLogistic.teTerminalPortuario.Text = "";
-            salesLogistic.teTransportista.Text = ENTC_CodTransportista.Text;
-            salesLogistic.deFechaEmision.DateTime = DateTime.Now;
+            salesLogistic.Item = Presenter.Item;
+            dsLogisticOperation = salesLogistic.GetSalesLogisticOperation();
+            dtServiceDetail = salesLogistic.dsLogisticOperation.Tables[5].Copy();
 
+            //salesLogistic.teCliente.Text = ENTC_CodCliente.Text;
+            //salesLogistic.teAgenciaMaritima.Text = "";
+            //salesLogistic.teAlmacen.Text = txaENTC_CodDepTemporal.Text;
+            //salesLogistic.teCondicionEmbarque.Text = "";
+            ////salesLogistic.teHBL.Text = DOOV_HBL.Text;
+            //salesLogistic.teNumeroOperacion.Text = "";
+            //salesLogistic.teTerminalPortuario.Text = "";
+            //salesLogistic.teTransportista.Text = ENTC_CodTransportista.Text;
+            //salesLogistic.deFechaEmision.DateTime = DateTime.Now;
+            if (dsLogisticOperation.Tables[0].Rows.Count == 0)
+            {
+                if (ENTC_CodCliente.Text != "")
+                { salesLogistic.teCliente.Text = ENTC_CodCliente.Value.ENTC_RazonSocial.ToString(); }
+                if (ENTC_CodTransportista.Text != "")
+                { salesLogistic.teTransportista.Text = ENTC_CodTransportista.Value.ENTC_RazonSocial.ToString(); }
+                salesLogistic.teCodigoOperacion.Text = "0";
+            }
+            else
+            {
+                { salesLogistic.Enabled = true; }
+                if (dsLogisticOperation.Tables[0].Rows[0]["CONS_CodEstado"].ToString() != "001")
+                { salesLogistic.Enabled = false; }
+                salesLogistic.teCliente.Text = ENTC_CodCliente.Value.ENTC_RazonSocial.ToString();
+                if (ENTC_CodTransportista.Text != "")
+                { salesLogistic.teTransportista.Text = ENTC_CodTransportista.Value.ENTC_RazonSocial.ToString(); }
+                salesLogistic.teCodigoOperacion.EditValue = dsLogisticOperation.Tables[0].Rows[0]["COPE_Codigo"];
+                salesLogistic.teNumeroOperacion.EditValue = dsLogisticOperation.Tables[0].Rows[0]["COPE_NumDoc"];
+                salesLogistic.deFechaEmision.EditValue = dsLogisticOperation.Tables[0].Rows[0]["COPE_FecEmi"];
+            }
+            salesLogistic.gcServiceRelated.RefreshDataSource();
             salesLogistic.Show();
         }
 
-        private void SaveSalesLogisticOperation()
+        public void SaveSalesLogisticOperation()
         {
-            //string _Trans = "";
-            //if (salesLogistic.teCodigoOperacion.Text == "0")
-            //{ _Trans = "I"; }
-            //else
-            //{ _Trans = "U"; }
-            //if (salesLogistic.beTarifa.Text != "") // && salesLogistic.gcServiceRelated.MainView.RowCount > 0)
-            //{
-            //    LogisticOperationRegister(_Trans);
-            //    ArrayList _exception = new ArrayList();
-            //    if (_Trans == "I")
-            //    {
-            //        try
-            //        {
-            //            _exception.AddRange(oAppService.InsertLogisticOperation(salesLogistic.dsLogisticOperation));
-            //            if (_exception[0].Equals(0))
-            //            {
-            //                throw new System.ArgumentException(_exception[1].ToString());
-            //            }
-            //        }
-            //        catch (Exception ex)
-            //        { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError("Servicio Logístico", "Ha ocurrido un error al insertar la Operación Logística.", ex); }
-            //        finally
-            //        { salesLogistic.gcServiceRelated.RefreshDataSource(); }
-            //    }
-            //    else
-            //    {
-            //        try
-            //        {
-            //            _exception.AddRange(oAppService.UpdateLogisticOperation(salesLogistic.dsLogisticOperation, dtServiceDetail));
-            //            if (_exception[0].Equals(0))
-            //            {
-            //                throw new System.ArgumentException(_exception[1].ToString());
-            //            }
-            //            //else
-            //            //{
-            //            //    Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeSatisfactorio("Servicio Logístico", "La operación se actualizó correctamente.");
-            //            //}
-            //        }
-            //        catch (Exception ex)
-            //        { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError("Servicio Logístico", "Ha ocurrido un error al actualizar la Operación Logística.", ex); }
-            //        finally
-            //        { salesLogistic.gcServiceRelated.RefreshDataSource(); }
-            //    }
-            //}
+            string _Trans = "";
+            if (salesLogistic.teCodigoOperacion.Text == "0")
+            { _Trans = "I"; }
+            else
+            { _Trans = "U"; }
+            if (salesLogistic.beTarifa.Text != "") // && salesLogistic.gcServiceRelated.MainView.RowCount > 0)
+            {
+                LogisticOperationRegister(_Trans);
+                ArrayList _exception = new ArrayList();
+                if (_Trans == "I")
+                {
+                    try
+                    {
+                        _exception.AddRange(oAppService.InsertLogisticOperation(salesLogistic.dsLogisticOperation));
+                        if (_exception[0].Equals(0))
+                        {
+                            throw new System.ArgumentException(_exception[1].ToString());
+                        }
+                    }
+                    catch (Exception ex)
+                    { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError("Servicio Logístico", "Ha ocurrido un error al insertar la Operación Logística.", ex); }
+                    finally
+                    { salesLogistic.gcServiceRelated.RefreshDataSource(); }
+                }
+                else
+                {
+                    try
+                    {
+                        _exception.AddRange(oAppService.UpdateLogisticOperation(salesLogistic.dsLogisticOperation, dtServiceDetail));
+                        if (_exception[0].Equals(0))
+                        {
+                            throw new System.ArgumentException(_exception[1].ToString());
+                        }
+                        //else
+                        //{
+                        //    Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeSatisfactorio("Servicio Logístico", "La operación se actualizó correctamente.");
+                        //}
+                    }
+                    catch (Exception ex)
+                    { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError("Servicio Logístico", "Ha ocurrido un error al actualizar la Operación Logística.", ex); }
+                    finally
+                    { salesLogistic.gcServiceRelated.RefreshDataSource(); }
+                }
+            }
 
 
         }
@@ -224,9 +246,10 @@ namespace Delfin.Principal
             { salesLogistic.dsLogisticOperation.Tables[0].Rows.Add(); }
             DataRow drHeader = dsLogisticOperation.Tables[0].Rows[0];
             drHeader["COPE_Codigo"] = salesLogistic.teCodigoOperacion.EditValue;
+            drHeader["COPE_Version"] = 1;
             drHeader["COPE_NumDoc"] = salesLogistic.teNumeroOperacion.EditValue;
-            drHeader["CCOT_Numero"] = Presenter.Item.CCOT_Numero;
-            drHeader["CCOT_Tipo"] = Presenter.Item.CCOT_Tipo;
+            drHeader["CCOT_Numero"] = salesLogistic._CCOT_Numero;
+            drHeader["CCOT_Tipo"] = salesLogistic._CCOT_Tipo;
             drHeader["COPE_HBL"] = DOOV_HBL.Text;
             drHeader["ENTC_CodCliente"] = ENTC_CodCliente.Value.ENTC_Codigo;
             if (ENTC_CodTransportista.Value != null)
@@ -293,16 +316,14 @@ namespace Delfin.Principal
                 }
                 DataRow drDetail = salesLogistic.dsLogisticOperation.Tables[5].Rows[i];
                 drDetail["COPE_Codigo"] = drHeader["COPE_Codigo"];
-                //drDetail["DTAR_Item"] = 0;
-                //drDetail["CTAR_Codigo"] = 0;
-                //drDetail["CTAR_Tipo"] = salesLogistic.lueTarifa.GetColumnValue("TariffType");
+                drDetail["COPE_Version"] = drHeader["COPE_Version"];
                 if (salesLogistic.GridView1.GetRowCellValue(i, "IdTariffDetail") != null && salesLogistic.GridView1.GetRowCellValue(i, "IdTariffDetail") != DBNull.Value)
                 {
                     drDetail["DTAR_Item"] = salesLogistic.GridView1.GetRowCellValue(i, "IdTariffDetail");
-                    drDetail["CTAR_Codigo"] = salesLogistic.GridView1.GetRowCellValue(i, "IdTariff"); //salesLogistic.beTarifa.EditValue;
+                    //drDetail["CTAR_Codigo"] = salesLogistic.GridView1.GetRowCellValue(i, "IdTariff"); //salesLogistic.beTarifa.EditValue;
                     //drDetail["CTAR_Tipo"] = salesLogistic.lueTarifa.GetColumnValue("TariffType");
                 }
-                drDetail["CTAR_Tipo"] = salesLogistic.GridView1.GetRowCellValue(i, "SERV_Tipo");
+                //drDetail["CTAR_Tipo"] = salesLogistic.GridView1.GetRowCellValue(i, "SERV_Tipo");
                 drDetail["CONS_CodBas"] = salesLogistic.GridView1.GetRowCellValue(i, "CONS_CodBas");
                 drDetail["CONS_TabBas"] = "BAS";
                 drDetail["DOPE_Cantidad"] = salesLogistic.GridView1.GetRowCellValue(i, "DOPE_Cantidad");
@@ -321,7 +342,9 @@ namespace Delfin.Principal
                 drDetail["DOPE_Minimo"] = 0;
                 drDetail["DOPE_VentaSada"] = 0;
                 drDetail["DOPE_Venta"] = 0;
-                if (type == "I")
+                drDetail["TIPO_TabMND"] = "MND";
+                drDetail["TIPO_CodMND"] = salesLogistic.GridView1.GetRowCellValue(i, "Currency");
+                if (salesLogistic.dsLogisticOperation.Tables[5].Rows[i].RowState == DataRowState.Added)
                 {
                     drDetail["AUDI_UsrCrea"] = Presenter.Session.UserName;
                     drDetail["CONS_CodEST"] = "001";
@@ -1262,7 +1285,7 @@ namespace Delfin.Principal
 
             #endregion
 
-            HashFormulario = Infrastructure.Client.FormClose.FormValidateChanges.iniciarComparacionFormulario(this);
+            //HashFormulario = Infrastructure.Client.FormClose.FormValidateChanges.iniciarComparacionFormulario(this);
          }
          catch (Exception ex)
          { Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Presenter.Title, "Ha ocurrido un error en SetItem.", ex); }
@@ -4604,7 +4627,7 @@ namespace Delfin.Principal
             Boolean EsProspecto = (ENTC_CodCliente.Value != null && ENTC_CodCliente.Value.ENTC_Prospecto.HasValue) ? ENTC_CodCliente.Value.ENTC_Prospecto.Value : false;
             if (Presenter.Guardar(EsProspecto, true))
             {
-                SaveSalesLogisticOperation();
+               //SaveSalesLogisticOperation();
                //this.FormClosing -= MView_FormClosing;
                //errorProviderCab_Cotizacion_OV.Dispose();
                //Presenter.Actualizar();

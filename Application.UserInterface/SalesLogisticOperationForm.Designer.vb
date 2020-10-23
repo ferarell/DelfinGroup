@@ -19,7 +19,6 @@ Partial Class SalesLogisticOperationForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
@@ -83,7 +82,7 @@ Partial Class SalesLogisticOperationForm
         Me.LayoutControlItem21 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.gcServiceRelated = New DevExpress.XtraGrid.GridControl()
-        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection(Me.components)
+        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -724,8 +723,6 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn2.FieldName = "SERV_Tipo"
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.OptionsColumn.ReadOnly = True
-        Me.GridColumn2.Visible = True
-        Me.GridColumn2.VisibleIndex = 1
         '
         'GridColumn3
         '
@@ -734,7 +731,7 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn3.FieldName = "CONS_CodBas"
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.Visible = True
-        Me.GridColumn3.VisibleIndex = 2
+        Me.GridColumn3.VisibleIndex = 1
         '
         'RepositoryItemLookUpEdit4
         '
@@ -751,7 +748,7 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn53.FieldName = "TIPE_Codigo"
         Me.GridColumn53.Name = "GridColumn53"
         Me.GridColumn53.Visible = True
-        Me.GridColumn53.VisibleIndex = 3
+        Me.GridColumn53.VisibleIndex = 2
         '
         'RepositoryItemLookUpEdit2
         '
@@ -768,7 +765,7 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn52.FieldName = "ENTC_Codigo"
         Me.GridColumn52.Name = "GridColumn52"
         Me.GridColumn52.Visible = True
-        Me.GridColumn52.VisibleIndex = 4
+        Me.GridColumn52.VisibleIndex = 3
         '
         'RepositoryItemLookUpEdit3
         '
@@ -785,7 +782,7 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn35.FieldName = "Currency"
         Me.GridColumn35.Name = "GridColumn35"
         Me.GridColumn35.Visible = True
-        Me.GridColumn35.VisibleIndex = 6
+        Me.GridColumn35.VisibleIndex = 5
         '
         'RepositoryItemLookUpEdit5
         '
@@ -802,7 +799,7 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn9.Name = "GridColumn9"
         Me.GridColumn9.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioUnitVta", "{0:###,##0.00}")})
         Me.GridColumn9.Visible = True
-        Me.GridColumn9.VisibleIndex = 5
+        Me.GridColumn9.VisibleIndex = 4
         '
         'GridColumn8
         '
@@ -818,7 +815,7 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn6.FieldName = "DOPE_Cantidad"
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.Visible = True
-        Me.GridColumn6.VisibleIndex = 7
+        Me.GridColumn6.VisibleIndex = 6
         '
         'GridColumn10
         '
@@ -828,7 +825,7 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn10.OptionsColumn.ReadOnly = True
         Me.GridColumn10.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioTotVta", "{0:###,##0.00}")})
         Me.GridColumn10.Visible = True
-        Me.GridColumn10.VisibleIndex = 8
+        Me.GridColumn10.VisibleIndex = 7
         '
         'GridColumn5
         '
@@ -850,8 +847,6 @@ Partial Class SalesLogisticOperationForm
         Me.GridColumn23.FieldName = "DocumentoSAP"
         Me.GridColumn23.Name = "GridColumn23"
         Me.GridColumn23.OptionsColumn.ReadOnly = True
-        Me.GridColumn23.Visible = True
-        Me.GridColumn23.VisibleIndex = 9
         '
         'GridColumn30
         '

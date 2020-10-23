@@ -26,9 +26,9 @@ Public Class SalesLogisticOperationForm
         '_SUCR_Codigo = 1
         '_CCOT_Numero = 30420
         '_CCOT_Tipo = 1
-        If dsLogisticOperation Is Nothing Then
-            GetSalesLogisticOperation()
-        End If
+        'If dsLogisticOperation Is Nothing Then
+        'GetSalesLogisticOperation()
+        'End If
         LoadEntityDataList(5, "lueTransportistaTerrestre")
         'LoadTariff()
         LoadCurrency
@@ -75,7 +75,9 @@ Public Class SalesLogisticOperationForm
     Public Sub LoadLogisticOperation()
         'dsLogisticOperation = Nothing
         'dsLogisticOperation = GetSalesLogisticOperation()
-
+        If dsLogisticOperation Is Nothing Then
+            Return
+        End If
         If dsLogisticOperation.Tables(0).Rows.Count = 0 Then
             Return
         End If
@@ -219,7 +221,7 @@ Public Class SalesLogisticOperationForm
     'Private Sub lueTarifa_EditValueChanged(sender As Object, e As EventArgs)
     Private Sub LoadServiceRelated()
         If beTarifa.EditValue.ToString = "" Then
-            If teCodigoOperacion.Text = "" Then
+            If teCodigoOperacion.Text = "0" Then
                 gcServiceRelated.DataSource = Nothing
                 gcTariff.DataSource = Nothing
                 teTipoTarifa.EditValue = Nothing
@@ -229,14 +231,16 @@ Public Class SalesLogisticOperationForm
             End If
             Return
         End If
+        'If Not dsLogisticOperation Is Nothing Then
+        '    If dsLogisticOperation.Tables(5).Rows.Count > 0 Then
+        '        If dsLogisticOperation.Tables(5).Select("SERV_Tipo='REGULAR'").Length > 0 Then
+        '            If XtraMessageBox.Show("Ya existen servicios asociados a una tarifa, desea reemplazarlos", "Confirmación", MessageBoxButtons.YesNo) <> DialogResult.Yes Then
+        '                Return
+        '            End If
+        '        End If
+        '    End If
+        'End If
         Dim dtServiceRelated As New DataTable
-        If dsLogisticOperation.Tables(5).Rows.Count > 0 Then
-            If dsLogisticOperation.Tables(5).Select("SERV_Tipo='REGULAR'").Length > 0 Then
-                If XtraMessageBox.Show("Ya existen servicios asociados a una tarifa, desea reemplazarlos", "Confirmación", MessageBoxButtons.YesNo) <> DialogResult.Yes Then
-                    Return
-                End If
-            End If
-        End If
         gcServiceRelated.DataSource = Nothing
         dtServiceRelated = oAppService.ExecuteSQL("EXEC NextSoft.tar.upGetServiceCalulatedByTariff " & beTarifa.EditValue.ToString & "," & _CCOT_Numero.ToString & "," & _CCOT_Tipo.ToString).Tables(0)
         gcServiceRelated.DataSource = dtServiceRelated
