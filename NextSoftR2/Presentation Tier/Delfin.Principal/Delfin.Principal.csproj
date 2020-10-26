@@ -3665,6 +3665,9 @@
     <None Include="Reportes\OPE001MatrizDraft\DSMatrizDraft.xss">
       <DependentUpon>DSMatrizDraft.xsd</DependentUpon>
     </None>
+    <None Include="Resources\Write 09.png" />
+    <None Include="Resources\Write 11.png" />
+    <None Include="Resources\Write 10.png" />
     <None Include="Service References\AppService\DelfinService.wsdl" />
     <None Include="Service References\AppService\DelfinService.xsd">
       <SubType>Designer</SubType>
@@ -3697,9 +3700,6 @@
     <None Include="Service References\IntegrationService\IntegradorSBO3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Resources\Write 09.png" />
-    <None Include="Resources\Write 11.png" />
-    <None Include="Resources\Write 10.png" />
     <None Include="Service References\NextSoftService\NextSoftService.wsdl" />
     <None Include="Service References\NextSoftService\NextSoftService.xsd">
       <SubType>Designer</SubType>
@@ -3725,7 +3725,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\IntegrationService\IntegradorSBO.disco" />
     <None Include="Service References\NextSoftService\NextSoftService.disco" />
     <None Include="Service References\NextSoftService\configuration91.svcinfo" />
     <None Include="Service References\NextSoftService\configuration.svcinfo" />
@@ -3746,6 +3745,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\IntegrationService\IntegradorSBO.disco" />
     <None Include="Service References\AppService\DelfinService.disco" />
     <Content Include="SmtpMail.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
