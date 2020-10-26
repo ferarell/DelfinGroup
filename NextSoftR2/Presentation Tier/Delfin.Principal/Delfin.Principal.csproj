@@ -28,7 +28,7 @@
     <PublisherName>Delfin Group Co SAC</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>2.5.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -3687,17 +3687,17 @@
     <None Include="Service References\AppService\DelfinService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\IntegrationService\IntegradorSBO.wsdl" />
-    <None Include="Service References\IntegrationService\IntegradorSBO.xsd">
+    <None Include="Service References\IntegrationService\IntegradorSBO1.wsdl" />
+    <None Include="Service References\IntegrationService\IntegradorSBO4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\IntegrationService\IntegradorSBO1.xsd">
+    <None Include="Service References\IntegrationService\IntegradorSBO41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\IntegrationService\IntegradorSBO2.xsd">
+    <None Include="Service References\IntegrationService\IntegradorSBO42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\IntegrationService\IntegradorSBO3.xsd">
+    <None Include="Service References\IntegrationService\IntegradorSBO43.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\NextSoftService\NextSoftService.wsdl" />
@@ -3745,8 +3745,8 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\IntegrationService\IntegradorSBO.disco" />
     <None Include="Service References\AppService\DelfinService.disco" />
+    <None Include="Service References\IntegrationService\IntegradorSBO1.disco" />
     <Content Include="SmtpMail.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

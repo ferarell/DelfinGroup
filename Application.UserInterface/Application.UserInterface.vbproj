@@ -541,21 +541,21 @@
     <Content Include="Plantillas\COMUNICADO No.08.PDF">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Service References\IntegrationService\IntegradorSBO1.disco" />
+    <None Include="Service References\IntegrationService\IntegradorSBO.disco" />
     <None Include="Service References\IntegrationService\ApplicationForm.IntegrationService.Respuesta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\IntegrationService\IntegradorSBO1.wsdl" />
-    <None Include="Service References\IntegrationService\IntegradorSBO4.xsd">
+    <None Include="Service References\IntegrationService\IntegradorSBO.wsdl" />
+    <None Include="Service References\IntegrationService\IntegradorSBO.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\IntegrationService\IntegradorSBO41.xsd">
+    <None Include="Service References\IntegrationService\IntegradorSBO1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\IntegrationService\IntegradorSBO42.xsd">
+    <None Include="Service References\IntegrationService\IntegradorSBO2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\IntegrationService\IntegradorSBO43.xsd">
+    <None Include="Service References\IntegrationService\IntegradorSBO3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\IntegrationService\Reference.svcmap">
