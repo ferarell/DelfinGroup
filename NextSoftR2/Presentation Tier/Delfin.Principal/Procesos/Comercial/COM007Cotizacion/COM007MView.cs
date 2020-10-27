@@ -203,7 +203,7 @@ namespace Delfin.Principal
                     try
                     {
                         _exception.AddRange(oAppService.InsertLogisticOperation(salesLogistic.dsLogisticOperation));
-                        if (_exception[0].Equals(0))
+                                        if (_exception[0].Equals(0))
                         {
                             throw new System.ArgumentException(_exception[1].ToString());
                         }
@@ -4994,7 +4994,7 @@ namespace Delfin.Principal
       private void CCOT_VoBo_GateIn_CheckedChanged(object sender, EventArgs e)
       {
             Validate();
-            pageServicioLogistico.Enabled = CCOT_VoBo_GateIn.Checked;
+            //pageServicioLogistico.Enabled = CCOT_VoBo_GateIn.Checked;
             if (CCOT_ServicioLogistico.Checked == true && CCOT_VoBo_GateIn.Checked == true)
             {
                 CCOT_ServicioLogistico.Checked = false;
@@ -5004,7 +5004,7 @@ namespace Delfin.Principal
       private void CCOT_ServicioLogistico_CheckedChanged(object sender, EventArgs e)
       {
             Validate();
-            pageServicioLogistico.Enabled = CCOT_ServicioLogistico.Checked;
+            //pageServicioLogistico.Enabled = CCOT_ServicioLogistico.Checked;
             if (CCOT_VoBo_GateIn.Checked == true && CCOT_ServicioLogistico.Checked == true)
             {
                 CCOT_VoBo_GateIn.Checked = false;

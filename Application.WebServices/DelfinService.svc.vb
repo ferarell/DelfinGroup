@@ -742,6 +742,8 @@ Public Class DelfinService
                     .Add("@pintENTC_CodTransTerre", SqlDbType.Int).Value = oRowH("ENTC_CodTransTerre")
                     .Add("@pintCTAR_Codigo", SqlDbType.Int).Value = oRowH("CTAR_Codigo")
                     .Add("@pintCTAR_Version", SqlDbType.SmallInt).Value = oRowH("CTAR_Version")
+                    .Add("@pintCCOT_Numero", SqlDbType.Int).Value = oRowH("CCOT_Numero")
+                    .Add("@pintCCOT_Tipo", SqlDbType.SmallInt).Value = oRowH("CCOT_Tipo")
                 End With
                 _CodOper = Command.ExecuteScalar
                 aResult(1) = _CodOper
