@@ -1635,7 +1635,7 @@
             this.dtpCOPE_FecEmi.NSActiveMsgFecha = false;
             this.dtpCOPE_FecEmi.NSChangeDate = true;
             this.dtpCOPE_FecEmi.NSDigitos = 4;
-            this.dtpCOPE_FecEmi.NSFecha = new System.DateTime(2020, 10, 26, 0, 0, 0, 0);
+            this.dtpCOPE_FecEmi.NSFecha = new System.DateTime(2020, 10, 28, 0, 0, 0, 0);
             this.dtpCOPE_FecEmi.NSSetDateNow = true;
             this.dtpCOPE_FecEmi.Size = new System.Drawing.Size(194, 22);
             this.dtpCOPE_FecEmi.TabIndex = 5;

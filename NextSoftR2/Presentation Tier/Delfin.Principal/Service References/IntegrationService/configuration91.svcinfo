@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="I/wEc7/Ieo5fQKioW69hYFjOpKYs7ZTwsLG6B1i/vhA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="cwWvozBwG7eVQuUwb54GZegE5fJ311dlz7e4QcZuBkU=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IIntegradorSBO">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IIntegradorSBO" contract="IntegrationService.IIntegradorSBO" bindingType="basicHttpBinding" address="http://192.168.103.13:768/Soap/IntegradorSBO.svc" bindingConfiguration="BasicHttpBinding_IIntegradorSBO">
+    <endpoint name="BasicHttpBinding_IIntegradorSBO" contract="IntegrationService.IIntegradorSBO" bindingType="basicHttpBinding" address="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc" bindingConfiguration="BasicHttpBinding_IIntegradorSBO">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.103.13:768/Soap/IntegradorSBO.svc</serializedValue>
+          <serializedValue>http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -242,6 +242,9 @@ Public Class AccountingTransferForm
     End Sub
 
     Private Sub bbiVoucherPreview_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiVoucherPreview.ItemClick
+        If GridView1.RowCount = 0 Then
+            Return
+        End If
         Dim dsQuery As New DataSet
         Dim oForm As New JournalEntryViewerForm
         'EMPR_Codigo = 1
