@@ -113,8 +113,9 @@ namespace Delfin.BusinessLogic
                DataAccessEnterpriseSQL.DAAgregarParametro("@pvchSCOT_NumeroTDO", item.SCOT_NumeroTDO, SqlDbType.VarChar, 20, ParameterDirection.Input);
                DataAccessEnterpriseSQL.DAAgregarParametro("@pvchSCOT_SerieTDO", item.SCOT_SerieTDO, SqlDbType.VarChar, 20, ParameterDirection.Input);
                DataAccessEnterpriseSQL.DAAgregarParametro("@pdtmSCOT_FechaOperacion", item.SCOT_FechaOperacion, SqlDbType.DateTime, 8, ParameterDirection.Input);
+				DataAccessEnterpriseSQL.DAAgregarParametro("@pintSCOT_ItemChangeControl", item.SCOT_ItemChangeControl, SqlDbType.Int, 4, ParameterDirection.Input);
 
-               DataAccessEnterpriseSQL.DAAgregarParametro("@pbitSCOT_EvniarFinanzas", item.SCOT_EnviarFinanzas, SqlDbType.Bit, 1, ParameterDirection.Input);
+			   DataAccessEnterpriseSQL.DAAgregarParametro("@pbitSCOT_EvniarFinanzas", item.SCOT_EnviarFinanzas, SqlDbType.Bit, 1, ParameterDirection.Input);
                
                // Autor-Fec.Mod.-Desc : Ysaacx - 13/03/2017 - Agregar el campo Fecha de Emisión -- Dinamica de Otros Traficos
                DataAccessEnterpriseSQL.DAAgregarParametro("@SCOT_FechaEmision", item.SCOT_FechaEmision, SqlDbType.DateTime, 8, ParameterDirection.Input);
@@ -170,8 +171,9 @@ namespace Delfin.BusinessLogic
                DataAccessEnterpriseSQL.DAAgregarParametro("@pvchSCOT_NumeroTDO", item.SCOT_NumeroTDO, SqlDbType.VarChar, 20, ParameterDirection.Input);
                DataAccessEnterpriseSQL.DAAgregarParametro("@pvchSCOT_SerieTDO", item.SCOT_SerieTDO, SqlDbType.VarChar, 20, ParameterDirection.Input);
                DataAccessEnterpriseSQL.DAAgregarParametro("@pdtmSCOT_FechaOperacion", item.SCOT_FechaOperacion, SqlDbType.DateTime, 8, ParameterDirection.Input);
+				//DataAccessEnterpriseSQL.DAAgregarParametro("@pintSCOT_ItemChangeControl", item.SCOT_ItemChangeControl, SqlDbType.Int, 4, ParameterDirection.InputOutput);
 
-               DataAccessEnterpriseSQL.DAAgregarParametro("@pbitSCOT_EvniarFinanzas", item.SCOT_EnviarFinanzas, SqlDbType.Bit, 1, ParameterDirection.Input);
+					DataAccessEnterpriseSQL.DAAgregarParametro("@pbitSCOT_EvniarFinanzas", item.SCOT_EnviarFinanzas, SqlDbType.Bit, 1, ParameterDirection.Input);
 
                // Autor-Fec.Mod.-Desc : Ysaacx - 13/03/2017 - Agregar el campo Fecha de Emisión -- Dinamica de Otros Traficos
                DataAccessEnterpriseSQL.DAAgregarParametro("@SCOT_FechaEmision", item.SCOT_FechaEmision, SqlDbType.DateTime, 8, ParameterDirection.Input);

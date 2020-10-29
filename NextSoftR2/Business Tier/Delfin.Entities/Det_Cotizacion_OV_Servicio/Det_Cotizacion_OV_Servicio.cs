@@ -19,6 +19,7 @@ namespace Delfin.Entities
 		private Int16 m_ccot_tipo;
 		private Int32 m_ccot_numero;
 		private Int32 m_scot_item;
+		private Int32 m_scot_itemchangecontrol; 
 		private String m_ccot_ingresogasto;
 		private Int32 m_serv_codigo;
 		private String m_scot_origen;
@@ -108,6 +109,22 @@ namespace Delfin.Entities
 				}
 			}
 		}
+		/// <summary>
+		/// Gets or sets el valor de: SCOT_ItemChangeControl.
+		/// </summary>
+		[DataMember]
+		public Int32 SCOT_ItemChangeControl
+		{
+			get { return m_scot_itemchangecontrol; }
+			set
+			{
+				if (m_scot_itemchangecontrol != value)
+				{
+					m_scot_itemchangecontrol = value;
+					OnPropertyChanged("SCOT_ItemChangeControl");
+				}
+			}
+		}		
 		/// <summary>
 		/// Gets or sets el valor de: CCOT_IngresoGasto.
 		/// </summary>
@@ -609,7 +626,8 @@ namespace Delfin.Entities
             Item.CCOT_Tipo = this.CCOT_Tipo;
             Item.CCOT_Numero = this.CCOT_Numero;
             Item.SCOT_Item = this.SCOT_Item;
-            Item.CCOT_IngresoGasto = this.CCOT_IngresoGasto;
+			Item.SCOT_ItemChangeControl = this.SCOT_ItemChangeControl;
+			Item.CCOT_IngresoGasto = this.CCOT_IngresoGasto;
             Item.SERV_Codigo = this.SERV_Codigo;
             Item.SCOT_Origen = this.SCOT_Origen;
             Item.SCOT_Cantidad = this.SCOT_Cantidad;

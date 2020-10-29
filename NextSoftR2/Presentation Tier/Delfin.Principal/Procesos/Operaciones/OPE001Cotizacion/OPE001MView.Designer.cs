@@ -29,7 +29,6 @@
       private void InitializeComponent()
       {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OPE001MView));
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Documento de Transporte");
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Manifiesto de Carga");
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Documento Nacional de Identidad - DNI");
@@ -48,6 +47,7 @@
             System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Certificado de Peso");
             System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Ticket de Balanza");
             System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("Otros");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OPE001MView));
             this.errorProviderCab_Cotizacion_OV = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabCab_Cotizacion_OV = new Dotnetrix.Controls.TabControlEX();
             this.pageGenerales = new Dotnetrix.Controls.TabPageEX();
@@ -474,6 +474,7 @@
             this.btnEtiqueta = new System.Windows.Forms.ToolStripButton();
             this.btnAuditoriaCab_Cotizacion_OV = new System.Windows.Forms.ToolStripButton();
             this.errorAnexo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnChangeControl = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCab_Cotizacion_OV)).BeginInit();
             this.tabCab_Cotizacion_OV.SuspendLayout();
             this.pageGenerales.SuspendLayout();
@@ -1669,7 +1670,7 @@
             this.tabServiciosAdicionales.Location = new System.Drawing.Point(0, 284);
             this.tabServiciosAdicionales.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabServiciosAdicionales.Name = "tabServiciosAdicionales";
-            this.tabServiciosAdicionales.SelectedIndex = 1;
+            this.tabServiciosAdicionales.SelectedIndex = 0;
             this.tabServiciosAdicionales.SelectedTabColor = System.Drawing.Color.SteelBlue;
             this.tabServiciosAdicionales.Size = new System.Drawing.Size(1105, 210);
             this.tabServiciosAdicionales.TabIndex = 2;
@@ -1677,6 +1678,7 @@
             // 
             // pageServicios
             // 
+            this.pageServicios.Controls.Add(this.btnChangeControl);
             this.pageServicios.Controls.Add(this.btnAuditoriaDet_Cotizacion_OV_Servicio);
             this.pageServicios.Controls.Add(this.btnAddServicio);
             this.pageServicios.Controls.Add(this.grdItemsServicio);
@@ -1693,7 +1695,7 @@
             // 
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.BackColor = System.Drawing.Color.Transparent;
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.Image = global::Delfin.Principal.Properties.Resources.businessman_view;
-            this.btnAuditoriaDet_Cotizacion_OV_Servicio.Location = new System.Drawing.Point(402, 1);
+            this.btnAuditoriaDet_Cotizacion_OV_Servicio.Location = new System.Drawing.Point(443, 1);
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.Name = "btnAuditoriaDet_Cotizacion_OV_Servicio";
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.Size = new System.Drawing.Size(30, 25);
@@ -1706,7 +1708,7 @@
             // 
             this.btnAddServicio.BackColor = System.Drawing.Color.Transparent;
             this.btnAddServicio.Image = global::Delfin.Principal.Properties.Resources.add16x16;
-            this.btnAddServicio.Location = new System.Drawing.Point(333, 1);
+            this.btnAddServicio.Location = new System.Drawing.Point(340, 1);
             this.btnAddServicio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAddServicio.Name = "btnAddServicio";
             this.btnAddServicio.Size = new System.Drawing.Size(30, 25);
@@ -1725,7 +1727,7 @@
             // 
             // 
             // 
-            this.grdItemsServicio.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 27, 240, 150);
+            this.grdItemsServicio.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 27, 1097, 154);
             this.grdItemsServicio.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.grdItemsServicio.Size = new System.Drawing.Size(1097, 154);
             this.grdItemsServicio.TabIndex = 3;
@@ -1735,7 +1737,7 @@
             // 
             this.btnDelServicio.BackColor = System.Drawing.Color.Transparent;
             this.btnDelServicio.Image = global::Delfin.Principal.Properties.Resources.delete1;
-            this.btnDelServicio.Location = new System.Drawing.Point(367, 1);
+            this.btnDelServicio.Location = new System.Drawing.Point(374, 1);
             this.btnDelServicio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDelServicio.Name = "btnDelServicio";
             this.btnDelServicio.Size = new System.Drawing.Size(30, 25);
@@ -2064,7 +2066,7 @@
             // 
             this.btnAuditoriaDet_Cotizacion_OV_Flete.BackColor = System.Drawing.Color.Transparent;
             this.btnAuditoriaDet_Cotizacion_OV_Flete.Image = global::Delfin.Principal.Properties.Resources.businessman_view;
-            this.btnAuditoriaDet_Cotizacion_OV_Flete.Location = new System.Drawing.Point(413, 1);
+            this.btnAuditoriaDet_Cotizacion_OV_Flete.Location = new System.Drawing.Point(412, 1);
             this.btnAuditoriaDet_Cotizacion_OV_Flete.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAuditoriaDet_Cotizacion_OV_Flete.Name = "btnAuditoriaDet_Cotizacion_OV_Flete";
             this.btnAuditoriaDet_Cotizacion_OV_Flete.Size = new System.Drawing.Size(30, 25);
@@ -6268,6 +6270,18 @@
             // 
             this.errorAnexo.ContainerControl = this;
             // 
+            // btnChangeControl
+            // 
+            this.btnChangeControl.Enabled = false;
+            this.btnChangeControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnChangeControl.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btnChangeControl.Location = new System.Drawing.Point(408, 1);
+            this.btnChangeControl.Name = "btnChangeControl";
+            this.btnChangeControl.Size = new System.Drawing.Size(30, 25);
+            this.btnChangeControl.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.btnChangeControl, "Crear Change Control");
+            this.btnChangeControl.Click += new System.EventHandler(this.btnChangeControl_Click);
+            // 
             // OPE001MView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6833,5 +6847,6 @@
       private System.Windows.Forms.Label lbl_FecEmiDoc;
       private Infrastructure.WinForms.Controls.MaskDateTime mdtCCOT_FecEmiDoc;
         private DevExpress.XtraEditors.SimpleButton btnEnviarProvisionSAP;
+        private DevExpress.XtraEditors.SimpleButton btnChangeControl;
     }
 }

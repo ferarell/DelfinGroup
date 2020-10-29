@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Infrastructure.Aspect.Collections;
 using System.IO;
 using System.Text.RegularExpressions;
+using Telerik.WinControls.UI;
+using DevExpress.XtraEditors;
 
 namespace Delfin.Principal
 {
@@ -226,16 +228,18 @@ namespace Delfin.Principal
          tabCab_Cotizacion_OV.TabPages.Add(pageAnexos);
 
          tabCab_Cotizacion_OV.SelectedTab = pageGenerales;
+         tabServiciosAdicionales.SelectedTab = pageServicios;
 
-         //grdItemsFlete.Enabled = true;
-         //grdItemsServicio.Enabled = true;
-         //if (Presenter.Item.CONS_CodEST == "007")
-         //{
-         //    grdItemsFlete.Enabled = false;
-         //    grdItemsServicio.Enabled = false;
-         //}
+            //grdItemsFlete.Enabled = true;
+            //grdItemsServicio.Enabled = true;
+            if (Presenter.Item.CONS_CodEST == "007")
+            {
+                btnChangeControl.Enabled = true;
+                //grdItemsFlete.Enabled = false;
+                //grdItemsServicio.Enabled = false;
+            }
 
-      }
+        }
       private void OPE001MView_FormClosed(object sender, FormClosedEventArgs e)
       {
          Presenter.IsClosedMView();
@@ -3992,7 +3996,12 @@ namespace Delfin.Principal
             this.grdItemsServicio.Columns.Clear();
             this.grdItemsServicio.AllowAddNewRow = false;
 
-            //Descripción del servicio
+            //Item del servicio
+            this.grdItemsServicio.Columns.Add("SCOT_Item", "Item", "SCOT_Item");
+            this.grdItemsServicio.Columns[0].ReadOnly = true;
+            this.grdItemsServicio.Columns[0].PinPosition = 0;
+
+            //Exoneración del servicio
             Telerik.WinControls.UI.GridViewCheckBoxColumn _exonerado = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             _exonerado.Name = "SCOT_Exonerado";
             _exonerado.HeaderText = "Exonerado";
@@ -4485,6 +4494,11 @@ namespace Delfin.Principal
             this.grdItemsServiciosChangeControl.Columns.Clear();
             this.grdItemsServiciosChangeControl.AllowAddNewRow = false;
 
+            //Item del servicio
+            this.grdItemsServiciosChangeControl.Columns.Add("SCOT_Item", "Item", "SCOT_Item");
+            this.grdItemsServiciosChangeControl.Columns[0].ReadOnly = true;
+            this.grdItemsServiciosChangeControl.Columns[0].PinPosition = PinnedColumnPosition.Right;
+
             //Descripción del servicio
             Telerik.WinControls.UI.GridViewCheckBoxColumn _exonerado = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             _exonerado.Name = "SCOT_Exonerado";
@@ -4677,16 +4691,18 @@ namespace Delfin.Principal
             this.grdItemsServiciosChangeControl.Columns.Add("CCCT_Codigo", "Código CtaCte", "CCCT_Codigo");
             //Documento SAP
             this.grdItemsServiciosChangeControl.Columns.Add("DocumentoSAP", "Documento SAP", "DocumentoSAP");
+            //Referencia a Item del servicio
+            this.grdItemsServiciosChangeControl.Columns.Add("SCOT_ItemChangeControl", "Item Referencia", "SCOT_ItemChangeControl");
+                
+                //    Telerik.WinControls.UI.GridViewDataColumn _ccctCodigo = new Telerik.WinControls.UI.GridViewDataColumn();
+                //_ccctCodigo.Name = "CCCT_Codigo";
+                //_ccctCodigo.HeaderText = "Código CtaCte";
+                //_ccctCodigo.FieldName = "CCCT_Codigo";
+                ////_ccctCodigo.Minimum = (int)0;
+                //this.grdItemsServiciosChangeControl.Columns.Add(_ccctCodigo);
 
-            //    Telerik.WinControls.UI.GridViewDataColumn _ccctCodigo = new Telerik.WinControls.UI.GridViewDataColumn();
-            //_ccctCodigo.Name = "CCCT_Codigo";
-            //_ccctCodigo.HeaderText = "Código CtaCte";
-            //_ccctCodigo.FieldName = "CCCT_Codigo";
-            ////_ccctCodigo.Minimum = (int)0;
-            //this.grdItemsServiciosChangeControl.Columns.Add(_ccctCodigo);
-
-            //Editable 
-            Telerik.WinControls.UI.GridViewCheckBoxColumn _editable = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+                //Editable 
+                Telerik.WinControls.UI.GridViewCheckBoxColumn _editable = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             _editable.Name = "SCOT_Editable";
             _editable.HeaderText = "Editable";
             _editable.FieldName = "SCOT_Editable";
@@ -4761,25 +4777,39 @@ namespace Delfin.Principal
 
             this.grdItemsServiciosChangeControl.Columns["SCOT_Editable"].ReadOnly = true;
             this.grdItemsServiciosChangeControl.Columns["SCOT_Editable"].IsVisible = false;
-            //this.grdServiciosChangeControl.Columns["SERV_Codigo"].TextAlignment = ContentAlignment.MiddleLeft;
 
-            this.grdItemsServiciosChangeControl.Columns["TIPE_Desc"].TextAlignment = ContentAlignment.MiddleLeft;
+            this.grdItemsServiciosChangeControl.Columns["CCCT_Codigo"].ReadOnly = true;
+            this.grdItemsServiciosChangeControl.Columns["DocumentoSAP"].ReadOnly = true;
+            this.grdItemsServiciosChangeControl.Columns["SCOT_ItemChangeControl"].ReadOnly = true;
+
+                //this.grdServiciosChangeControl.Columns["SERV_Codigo"].TextAlignment = ContentAlignment.MiddleLeft;
+
+                this.grdItemsServiciosChangeControl.Columns["TIPE_Desc"].TextAlignment = ContentAlignment.MiddleLeft;
          }
          catch (Exception ex)
          {
             Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Presenter.Title, Infrastructure.Aspect.Constants.Mensajes.FormatDataGridView + " (Grid Servicios)", ex);
          }
       }
-      private void AddServicioChangeControl()
+      private void AddServicioChangeControl(bool bValid)
       {
          try
          {
+            if (bValid == true)
+            { 
+                if (XtraMessageBox.Show("Esta opción es sólo para incluir un nuevo servicio, si necesita actualizar un servicio que ya existe debe usar el botón que está en la pestaña Servicios Adicionales, desea continuar? ", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                { return; }
+            }
             Entities.Det_Cotizacion_OV_Servicio _servicio = new Entities.Det_Cotizacion_OV_Servicio();
             Int32 _SCOT_Item = 0;
-            if (((ObservableCollection<Entities.Det_Cotizacion_OV_Servicio>)BSItemsServicioChangeControl.DataSource).Count > 0)
-            {
-               _SCOT_Item = ((ObservableCollection<Entities.Det_Cotizacion_OV_Servicio>)BSItemsServicioChangeControl.DataSource).Max(scot => scot.SCOT_Item);
-            }
+            if (((ObservableCollection<Entities.Det_Cotizacion_OV_Servicio>)BSItemsServicioChangeControl.DataSource).Count == 0)
+                {
+                   _SCOT_Item = ((ObservableCollection<Entities.Det_Cotizacion_OV_Servicio>)BSItemsServicio.DataSource).Max(scot => scot.SCOT_Item);
+                }
+            else
+                {
+                    _SCOT_Item = ((ObservableCollection<Entities.Det_Cotizacion_OV_Servicio>)BSItemsServicioChangeControl.DataSource).Max(scot => scot.SCOT_Item);
+                }
             _servicio.SCOT_Item = _SCOT_Item + 1;
             _servicio.SCOT_ChageControl = true;
             _servicio.SCOT_Origen = "D";
@@ -4987,7 +5017,7 @@ namespace Delfin.Principal
       }
       private void btnAddServicioChangeControl_Click(object sender, EventArgs e)
       {
-         AddServicioChangeControl();
+         AddServicioChangeControl(true);
       }
       private void btnDelServicioChangeControl_Click(object sender, EventArgs e)
       {
@@ -8507,6 +8537,28 @@ namespace Delfin.Principal
             btnEnviarProvisionSAP.Enabled = false;
             if (grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value == null && Convert.ToBoolean(grdItemsServiciosChangeControl.CurrentRow.Cells["SERV_AfeIgv"].Value) == true)
             { btnEnviarProvisionSAP.Enabled = true; }
-        }       
+        }
+
+        private void btnChangeControl_Click(object sender, EventArgs e)
+        {
+            //Object oServicio = grdItemsServicio.CurrentRow;    
+            //Entities.Det_Cotizacion_OV_Servicio _changecontrol = new Entities.Det_Cotizacion_OV_Servicio();
+            tabServiciosAdicionales.SelectedTab = pageChangeControl;
+            AddServicioChangeControl(false);
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Exonerado"].Value = grdItemsServicio.CurrentRow.Cells["SCOT_Exonerado"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SERV_Codigo"].Value = grdItemsServicio.CurrentRow.Cells["SERV_Codigo"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["CCOT_IngresoGasto"].Value = grdItemsServicio.CurrentRow.Cells["CCOT_IngresoGasto"].Value.ToString() == "E" ? "I" : "E";
+            grdItemsServiciosChangeControl.CurrentRow.Cells["TIPE_Codigo"].Value = grdItemsServicio.CurrentRow.Cells["TIPE_Codigo"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["ENTC_Codigo"].Value = grdItemsServicio.CurrentRow.Cells["ENTC_Codigo"].Value;
+            //grdItemsServiciosChangeControl.CurrentRow.Cells["CONS_TabBas"].Value = grdItemsServicio.CurrentRow.Cells["CONS_TabBas"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["CONS_CodBas"].Value = grdItemsServicio.CurrentRow.Cells["CONS_CodBas"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Cantidad"].Value = grdItemsServicio.CurrentRow.Cells["SCOT_Cantidad"].Value;
+            //grdItemsServiciosChangeControl.CurrentRow.Cells["TIPO_TabMnd"].Value = grdItemsServicio.CurrentRow.Cells["TIPO_TabMnd"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["TIPO_CodMnd"].Value = grdItemsServicio.CurrentRow.Cells["TIPO_CodMnd"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_PrecioUni"].Value = grdItemsServicio.CurrentRow.Cells["SCOT_PrecioUni"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Importe_Ingreso"].Value = Convert.ToDecimal(grdItemsServicio.CurrentRow.Cells["SCOT_Importe_Ingreso"].Value) == 0 ? grdItemsServicio.CurrentRow.Cells["SCOT_Importe_Egreso"].Value : 0;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Importe_Egreso"].Value = Convert.ToDecimal(grdItemsServicio.CurrentRow.Cells["SCOT_Importe_Egreso"].Value) == 0 ? grdItemsServicio.CurrentRow.Cells["SCOT_Importe_Ingreso"].Value : 0;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_ItemChangeControl"].Value = grdItemsServicio.CurrentRow.Cells["SCOT_Item"].Value;
+        }
     }
 }
