@@ -5,6 +5,7 @@ Imports System.Net
 Imports System.Threading
 Imports System.Web.Http
 Imports System.Web.Http.Results
+Imports IntegrationServicesRest.IntegrationServicesRest
 
 Namespace Controllers
     <RoutePrefix("api/Cotizacion")>
