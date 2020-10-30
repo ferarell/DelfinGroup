@@ -27,6 +27,7 @@ Partial Class MainForm
         Me.AccordionControlElement2 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement15 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement17 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement33 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement3 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement9 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement6 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
@@ -59,7 +60,6 @@ Partial Class MainForm
         Me.AccordionControlElement30 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlSeparator1 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager()
-        Me.AccordionControlElement33 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -111,6 +111,12 @@ Partial Class MainForm
         Me.AccordionControlElement17.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement17.Text = "Aprobación Empresa Vinculada"
         '
+        'AccordionControlElement33
+        '
+        Me.AccordionControlElement33.Name = "AccordionControlElement33"
+        Me.AccordionControlElement33.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement33.Text = "Consulta Integral"
+        '
         'AccordionControlElement3
         '
         Me.AccordionControlElement3.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement9, Me.AccordionControlElement29, Me.AccordionControlElement31, Me.AccordionControlElement32})
@@ -157,7 +163,7 @@ Partial Class MainForm
         '
         'AccordionControlElement8
         '
-        Me.AccordionControlElement8.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement10, Me.AccordionControlElement12})
+        Me.AccordionControlElement8.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement10, Me.AccordionControlElement12, Me.AccordionControlElement13})
         Me.AccordionControlElement8.Expanded = True
         Me.AccordionControlElement8.Name = "AccordionControlElement8"
         Me.AccordionControlElement8.Text = "Finanzas"
@@ -168,14 +174,14 @@ Partial Class MainForm
         Me.AccordionControlElement10.ImageOptions.Image = CType(resources.GetObject("AccordionControlElement10.ImageOptions.Image"), System.Drawing.Image)
         Me.AccordionControlElement10.Name = "AccordionControlElement10"
         Me.AccordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement10.Text = "Transferencia Contable"
+        Me.AccordionControlElement10.Text = "Asientos de Provisión"
         '
         'AccordionControlElement12
         '
         Me.AccordionControlElement12.ImageOptions.Image = CType(resources.GetObject("AccordionControlElement12.ImageOptions.Image"), System.Drawing.Image)
         Me.AccordionControlElement12.Name = "AccordionControlElement12"
         Me.AccordionControlElement12.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement12.Text = "Facturación Electrónica"
+        Me.AccordionControlElement12.Text = "Facturación Ventas"
         '
         'AccordionControlElement11
         '
@@ -185,7 +191,7 @@ Partial Class MainForm
         '
         'AccordionControlElement4
         '
-        Me.AccordionControlElement4.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement14, Me.AccordionControlElement13, Me.AccordionControlElement18, Me.AccordionControlElement19})
+        Me.AccordionControlElement4.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement14, Me.AccordionControlElement18, Me.AccordionControlElement19})
         Me.AccordionControlElement4.Expanded = True
         Me.AccordionControlElement4.Name = "AccordionControlElement4"
         Me.AccordionControlElement4.Text = "Servicio Logístico"
@@ -202,7 +208,7 @@ Partial Class MainForm
         Me.AccordionControlElement13.ImageOptions.Image = CType(resources.GetObject("AccordionControlElement13.ImageOptions.Image"), System.Drawing.Image)
         Me.AccordionControlElement13.Name = "AccordionControlElement13"
         Me.AccordionControlElement13.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement13.Text = "Registro de Documentos"
+        Me.AccordionControlElement13.Text = "Facturación Compras"
         '
         'AccordionControlElement18
         '
@@ -302,12 +308,6 @@ Partial Class MainForm
         'XtraTabbedMdiManager1
         '
         Me.XtraTabbedMdiManager1.MdiParent = Me
-        '
-        'AccordionControlElement33
-        '
-        Me.AccordionControlElement33.Name = "AccordionControlElement33"
-        Me.AccordionControlElement33.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement33.Text = "Consulta Integral"
         '
         'MainForm
         '

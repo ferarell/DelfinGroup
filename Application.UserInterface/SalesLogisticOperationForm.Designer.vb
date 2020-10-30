@@ -357,10 +357,10 @@ Partial Class SalesLogisticOperationForm
         GridLevelNode1.LevelTemplate = Me.CardView1
         GridLevelNode1.RelationName = "Level1"
         Me.gcTariff.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
-        Me.gcTariff.Location = New System.Drawing.Point(2, 20)
+        Me.gcTariff.Location = New System.Drawing.Point(2, 21)
         Me.gcTariff.MainView = Me.GridView3
         Me.gcTariff.Name = "gcTariff"
-        Me.gcTariff.Size = New System.Drawing.Size(456, 144)
+        Me.gcTariff.Size = New System.Drawing.Size(456, 143)
         Me.gcTariff.TabIndex = 177
         Me.gcTariff.UseEmbeddedNavigator = True
         Me.gcTariff.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.CardView1})
@@ -454,7 +454,7 @@ Partial Class SalesLogisticOperationForm
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.gcServiceRelated)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(988, 350)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(988, 349)
         Me.SplitContainerControl1.SplitterPosition = 184
         Me.SplitContainerControl1.TabIndex = 0
         '
@@ -496,9 +496,9 @@ Partial Class SalesLogisticOperationForm
         'meObservacionesTarifa
         '
         Me.meObservacionesTarifa.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.meObservacionesTarifa.Location = New System.Drawing.Point(2, 20)
+        Me.meObservacionesTarifa.Location = New System.Drawing.Point(2, 21)
         Me.meObservacionesTarifa.Name = "meObservacionesTarifa"
-        Me.meObservacionesTarifa.Size = New System.Drawing.Size(313, 144)
+        Me.meObservacionesTarifa.Size = New System.Drawing.Size(313, 143)
         Me.meObservacionesTarifa.TabIndex = 0
         '
         'deVigenciaHasta
@@ -657,7 +657,7 @@ Partial Class SalesLogisticOperationForm
         Me.gcServiceRelated.MainView = Me.GridView1
         Me.gcServiceRelated.Name = "gcServiceRelated"
         Me.gcServiceRelated.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemLookUpEdit2, Me.RepositoryItemLookUpEdit3, Me.RepositoryItemLookUpEdit4, Me.RepositoryItemLookUpEdit5})
-        Me.gcServiceRelated.Size = New System.Drawing.Size(988, 161)
+        Me.gcServiceRelated.Size = New System.Drawing.Size(988, 159)
         Me.gcServiceRelated.TabIndex = 174
         Me.gcServiceRelated.UseEmbeddedNavigator = True
         Me.gcServiceRelated.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})

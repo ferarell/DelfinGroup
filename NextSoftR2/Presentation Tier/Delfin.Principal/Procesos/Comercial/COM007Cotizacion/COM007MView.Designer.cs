@@ -1445,7 +1445,7 @@
             // 
             this.grdItemsSeguro.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 27, 240, 150);
             this.grdItemsSeguro.RootElement.MinSize = new System.Drawing.Size(0, 0);
-            this.grdItemsSeguro.Size = new System.Drawing.Size(1092, 140);
+            this.grdItemsSeguro.Size = new System.Drawing.Size(1092, 139);
             this.grdItemsSeguro.TabIndex = 52;
             this.grdItemsSeguro.TabStop = false;
             // 

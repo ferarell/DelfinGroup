@@ -128,8 +128,9 @@ Public Class ElectronicInvoicingForm
             bbiEdit.Enabled = False
             bbiGenerate.Enabled = False
             bbiReset.Enabled = False
-            If GridView1.GetFocusedRowCellValue("DocumentoSAP").ToString <> "" Then
+            If GridView1.GetFocusedRowCellValue("DocumentoSAP").ToString <> "" Or GridView1.GetFocusedRowCellValue("TIPO_CodTDO").ToString.Contains({"100", "105"}) Then
                 bbiSyncSAP.Enabled = False
+                bbiResend.Enabled = False
             End If
         End If
         If Mid(GridView1.GetFocusedRowCellValue("DOCV_EstadoStr"), 1, 1) = "A" Then

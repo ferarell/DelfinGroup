@@ -19,9 +19,8 @@ Partial Class VendorDocumentQueryForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VendorDocumentQueryForm))
-        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.bmActions = New DevExpress.XtraBars.BarManager()
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
@@ -49,7 +48,7 @@ Partial Class VendorDocumentQueryForm
         Me.bbiSendMessage = New DevExpress.XtraBars.BarButtonItem()
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -232,31 +231,31 @@ Partial Class VendorDocumentQueryForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(929, 47)
+        Me.BarDockControl1.Size = New System.Drawing.Size(923, 45)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 437)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 431)
         Me.BarDockControl2.Manager = Me.bmActions
-        Me.BarDockControl2.Size = New System.Drawing.Size(929, 29)
+        Me.BarDockControl2.Size = New System.Drawing.Size(923, 29)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 45)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 390)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 386)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(929, 47)
+        Me.BarDockControl4.Location = New System.Drawing.Point(923, 45)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 390)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 386)
         '
         'BarButtonItem1
         '
@@ -346,7 +345,7 @@ Partial Class VendorDocumentQueryForm
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 45)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.Label3)
@@ -360,7 +359,7 @@ Partial Class VendorDocumentQueryForm
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(929, 390)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(923, 386)
         Me.SplitContainerControl1.SplitterPosition = 76
         Me.SplitContainerControl1.TabIndex = 6
         '
@@ -463,7 +462,7 @@ Partial Class VendorDocumentQueryForm
         Me.SplitContainerControl2.Panel1.Text = "Panel1"
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.gcVendorService)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(929, 309)
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(923, 304)
         Me.SplitContainerControl2.SplitterPosition = 267
         Me.SplitContainerControl2.TabIndex = 172
         '
@@ -479,7 +478,7 @@ Partial Class VendorDocumentQueryForm
         Me.gcPurchaseInvoice.MainView = Me.GridView1
         Me.gcPurchaseInvoice.Name = "gcPurchaseInvoice"
         Me.gcPurchaseInvoice.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit2, Me.RepositoryItemCheckEdit1, Me.RepositoryItemCheckEdit3})
-        Me.gcPurchaseInvoice.Size = New System.Drawing.Size(929, 267)
+        Me.gcPurchaseInvoice.Size = New System.Drawing.Size(923, 267)
         Me.gcPurchaseInvoice.TabIndex = 171
         Me.gcPurchaseInvoice.UseEmbeddedNavigator = True
         Me.gcPurchaseInvoice.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -712,7 +711,7 @@ Partial Class VendorDocumentQueryForm
         Me.gcVendorService.MainView = Me.GridView2
         Me.gcVendorService.Name = "gcVendorService"
         Me.gcVendorService.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit2, Me.RepositoryItemLookUpEdit3, Me.RepositoryItemLookUpEdit4})
-        Me.gcVendorService.Size = New System.Drawing.Size(929, 37)
+        Me.gcVendorService.Size = New System.Drawing.Size(923, 31)
         Me.gcVendorService.TabIndex = 174
         Me.gcVendorService.UseEmbeddedNavigator = True
         Me.gcVendorService.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
@@ -854,7 +853,7 @@ Partial Class VendorDocumentQueryForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(929, 466)
+        Me.ClientSize = New System.Drawing.Size(923, 460)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.Controls.Add(Me.BarDockControl3)
         Me.Controls.Add(Me.BarDockControl4)

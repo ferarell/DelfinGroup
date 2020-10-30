@@ -19,7 +19,6 @@ Partial Class AccountingTransferForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AccountingTransferForm))
         Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
         Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
@@ -35,7 +34,7 @@ Partial Class AccountingTransferForm
         Me.bbiSendMessage = New DevExpress.XtraBars.BarButtonItem()
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
-        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.bmActions = New DevExpress.XtraBars.BarManager()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
@@ -52,7 +51,7 @@ Partial Class AccountingTransferForm
         Me.BarButtonItem5 = New DevExpress.XtraBars.BarButtonItem()
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -60,7 +59,7 @@ Partial Class AccountingTransferForm
         Me.deDateFrom = New DevExpress.XtraEditors.DateEdit()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.gcStatements = New DevExpress.XtraGrid.GridControl()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
         Me.SeleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeseleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InvertirSelecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -217,31 +216,31 @@ Partial Class AccountingTransferForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(878, 47)
+        Me.BarDockControl1.Size = New System.Drawing.Size(872, 45)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 436)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 430)
         Me.BarDockControl2.Manager = Me.bmActions
-        Me.BarDockControl2.Size = New System.Drawing.Size(878, 29)
+        Me.BarDockControl2.Size = New System.Drawing.Size(872, 29)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 45)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 389)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 385)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(878, 47)
+        Me.BarDockControl4.Location = New System.Drawing.Point(872, 45)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 389)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 385)
         '
         'BarButtonItem1
         '
@@ -324,7 +323,7 @@ Partial Class AccountingTransferForm
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 45)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.Label3)
@@ -334,7 +333,7 @@ Partial Class AccountingTransferForm
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(878, 389)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(872, 385)
         Me.SplitContainerControl1.SplitterPosition = 47
         Me.SplitContainerControl1.TabIndex = 4
         '
@@ -393,7 +392,7 @@ Partial Class AccountingTransferForm
         Me.SplitContainerControl2.Panel1.Text = "Panel1"
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.gcListaHBL)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(878, 337)
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(872, 332)
         Me.SplitContainerControl2.SplitterPosition = 171
         Me.SplitContainerControl2.TabIndex = 172
         '
@@ -410,7 +409,7 @@ Partial Class AccountingTransferForm
         Me.gcStatements.MainView = Me.GridView1
         Me.gcStatements.Name = "gcStatements"
         Me.gcStatements.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
-        Me.gcStatements.Size = New System.Drawing.Size(878, 171)
+        Me.gcStatements.Size = New System.Drawing.Size(872, 171)
         Me.gcStatements.TabIndex = 171
         Me.gcStatements.UseEmbeddedNavigator = True
         Me.gcStatements.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -601,7 +600,7 @@ Partial Class AccountingTransferForm
         Me.gcListaHBL.MainView = Me.GridView2
         Me.gcListaHBL.Name = "gcListaHBL"
         Me.gcListaHBL.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit2})
-        Me.gcListaHBL.Size = New System.Drawing.Size(878, 161)
+        Me.gcListaHBL.Size = New System.Drawing.Size(872, 155)
         Me.gcListaHBL.TabIndex = 171
         Me.gcListaHBL.UseEmbeddedNavigator = True
         Me.gcListaHBL.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
@@ -687,7 +686,7 @@ Partial Class AccountingTransferForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(878, 465)
+        Me.ClientSize = New System.Drawing.Size(872, 459)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.Controls.Add(Me.BarDockControl3)
         Me.Controls.Add(Me.BarDockControl4)

@@ -4797,7 +4797,7 @@ namespace Delfin.Principal
          {
             if (bValid == true)
             { 
-                if (XtraMessageBox.Show("Esta opción es sólo para incluir un nuevo servicio, si necesita actualizar un servicio que ya existe debe usar el botón que está en la pestaña Servicios Adicionales, desea continuar? ", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                if (XtraMessageBox.Show("Esta opción es sólo para incluir un nuevo servicio, si necesita modificar un servicio que ya existe debe usar el botón [Crear Change Control] que está en la pestaña Servicios Adicionales, desea continuar? ", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 { return; }
             }
             Entities.Det_Cotizacion_OV_Servicio _servicio = new Entities.Det_Cotizacion_OV_Servicio();
