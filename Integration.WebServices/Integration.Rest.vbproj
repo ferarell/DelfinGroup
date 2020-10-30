@@ -209,6 +209,7 @@
     <Compile Include="Controllers\ConditionController.vb" />
     <Compile Include="Controllers\ConstantesController.vb" />
     <Compile Include="Controllers\CotizacionController.vb" />
+    <Compile Include="Controllers\DocumentosSapController.vb" />
     <Compile Include="Controllers\GroupController.vb" />
     <Compile Include="Controllers\LayoutController.vb" />
     <Compile Include="Controllers\PackController.vb" />
@@ -220,6 +221,25 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Models\Sap_upUpdateSynchronizedDocumentNumber.vb" />
+    <Compile Include="NexSoftModel.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NexSoftModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NexSoftModel.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NexSoftModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NexSoftModel.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NexSoftModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="paInsertaCotizacion_Result.vb">
+      <DependentUpon>NexSoftModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Soap\Message.vb" />
     <Compile Include="Soap\Response.vb" />
@@ -246,24 +266,6 @@
     </Compile>
     <Compile Include="Controllers\HomeController.vb" />
     <Compile Include="Controllers\ValuesController.vb" />
-    <Compile Include="NextSoftModel.Context.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NextSoftModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NextSoftModel.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NextSoftModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="NextSoftModel.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NextSoftModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="paInsertaCotizacion_Result.vb">
-      <DependentUpon>NextSoftModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Soap\Wrong.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -350,26 +352,26 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <EntityDeploy Include="NextSoftModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NextSoftModel.Designer.vb</LastGenOutput>
-    </EntityDeploy>
+    <Content Include="NexSoftModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NexSoftModel.edmx</DependentUpon>
+      <LastGenOutput>NexSoftModel.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="NexSoftModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NexSoftModel.edmx</DependentUpon>
+      <LastGenOutput>NexSoftModel.vb</LastGenOutput>
+    </Content>
     <Content Include="Soap\IntegradorSBO.svc" />
-    <Content Include="NextSoftModel.edmx.diagram">
-      <DependentUpon>NextSoftModel.edmx</DependentUpon>
+    <EntityDeploy Include="NexSoftModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NexSoftModel.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="NexSoftModel.edmx.diagram">
+      <DependentUpon>NexSoftModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="NextSoftModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NextSoftModel.edmx</DependentUpon>
-      <LastGenOutput>NextSoftModel.Context.vb</LastGenOutput>
-    </Content>
-    <Content Include="NextSoftModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NextSoftModel.edmx</DependentUpon>
-      <LastGenOutput>NextSoftModel.vb</LastGenOutput>
-    </Content>
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
