@@ -29,6 +29,7 @@
       private void InitializeComponent()
       {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OPE001MView));
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Documento de Transporte");
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Manifiesto de Carga");
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Documento Nacional de Identidad - DNI");
@@ -47,7 +48,6 @@
             System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("Certificado de Peso");
             System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Ticket de Balanza");
             System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("Otros");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OPE001MView));
             this.errorProviderCab_Cotizacion_OV = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabCab_Cotizacion_OV = new Dotnetrix.Controls.TabControlEX();
             this.pageGenerales = new Dotnetrix.Controls.TabPageEX();
@@ -130,6 +130,7 @@
             this.pageServiciosTarifa = new Dotnetrix.Controls.TabPageEX();
             this.tabServiciosAdicionales = new Dotnetrix.Controls.TabControlEX();
             this.pageServicios = new Dotnetrix.Controls.TabPageEX();
+            this.btnChangeControl = new DevExpress.XtraEditors.SimpleButton();
             this.btnAuditoriaDet_Cotizacion_OV_Servicio = new System.Windows.Forms.Button();
             this.btnAddServicio = new System.Windows.Forms.Button();
             this.grdItemsServicio = new Telerik.WinControls.UI.RadGridView();
@@ -474,7 +475,6 @@
             this.btnEtiqueta = new System.Windows.Forms.ToolStripButton();
             this.btnAuditoriaCab_Cotizacion_OV = new System.Windows.Forms.ToolStripButton();
             this.errorAnexo = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnChangeControl = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCab_Cotizacion_OV)).BeginInit();
             this.tabCab_Cotizacion_OV.SuspendLayout();
             this.pageGenerales.SuspendLayout();
@@ -1691,6 +1691,18 @@
             this.pageServicios.TabIndex = 0;
             this.pageServicios.Text = "Servicios Adicionales";
             // 
+            // btnChangeControl
+            // 
+            this.btnChangeControl.Enabled = false;
+            this.btnChangeControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeControl.ImageOptions.Image")));
+            this.btnChangeControl.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btnChangeControl.Location = new System.Drawing.Point(408, 1);
+            this.btnChangeControl.Name = "btnChangeControl";
+            this.btnChangeControl.Size = new System.Drawing.Size(30, 25);
+            this.btnChangeControl.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.btnChangeControl, "Crear Change Control");
+            this.btnChangeControl.Click += new System.EventHandler(this.btnChangeControl_Click);
+            // 
             // btnAuditoriaDet_Cotizacion_OV_Servicio
             // 
             this.btnAuditoriaDet_Cotizacion_OV_Servicio.BackColor = System.Drawing.Color.Transparent;
@@ -1727,7 +1739,7 @@
             // 
             // 
             // 
-            this.grdItemsServicio.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 27, 1097, 154);
+            this.grdItemsServicio.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 27, 240, 150);
             this.grdItemsServicio.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.grdItemsServicio.Size = new System.Drawing.Size(1097, 154);
             this.grdItemsServicio.TabIndex = 3;
@@ -6269,18 +6281,6 @@
             // errorAnexo
             // 
             this.errorAnexo.ContainerControl = this;
-            // 
-            // btnChangeControl
-            // 
-            this.btnChangeControl.Enabled = false;
-            this.btnChangeControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnChangeControl.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnChangeControl.Location = new System.Drawing.Point(408, 1);
-            this.btnChangeControl.Name = "btnChangeControl";
-            this.btnChangeControl.Size = new System.Drawing.Size(30, 25);
-            this.btnChangeControl.TabIndex = 17;
-            this.toolTip1.SetToolTip(this.btnChangeControl, "Crear Change Control");
-            this.btnChangeControl.Click += new System.EventHandler(this.btnChangeControl_Click);
             // 
             // OPE001MView
             // 
