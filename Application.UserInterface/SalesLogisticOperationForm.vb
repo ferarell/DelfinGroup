@@ -270,9 +270,8 @@ Public Class SalesLogisticOperationForm
 
     Private Sub beTarifa_Properties_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles beTarifa.Properties.ButtonClick
         Dim oTariffSelecting As New TariffSelectingForm
-        If lueTransportistaTerrestre.EditValue.ToString = "" Then
-            oTariffSelecting.ENTC_CodTransportista = Item.ENTC_CodTransportista
-        Else
+        oTariffSelecting.ENTC_CodTransportista = Item.ENTC_CodTransportista
+        If Not lueTransportistaTerrestre.EditValue Is Nothing Then
             oTariffSelecting.ENTC_CodTransportista = lueTransportistaTerrestre.EditValue
         End If
         oTariffSelecting.ShowDialog()

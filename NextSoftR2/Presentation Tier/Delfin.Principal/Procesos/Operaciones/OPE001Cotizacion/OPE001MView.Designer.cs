@@ -130,13 +130,14 @@
             this.pageServiciosTarifa = new Dotnetrix.Controls.TabPageEX();
             this.tabServiciosAdicionales = new Dotnetrix.Controls.TabControlEX();
             this.pageServicios = new Dotnetrix.Controls.TabPageEX();
-            this.btnChangeControl = new DevExpress.XtraEditors.SimpleButton();
+            this.btnChangeControl1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnAuditoriaDet_Cotizacion_OV_Servicio = new System.Windows.Forms.Button();
             this.btnAddServicio = new System.Windows.Forms.Button();
             this.grdItemsServicio = new Telerik.WinControls.UI.RadGridView();
             this.btnDelServicio = new System.Windows.Forms.Button();
             this.panelCaption5 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.pageChangeControl = new Dotnetrix.Controls.TabPageEX();
+            this.btnChangeControl2 = new DevExpress.XtraEditors.SimpleButton();
             this.btnEnviarProvisionSAP = new DevExpress.XtraEditors.SimpleButton();
             this.btnEnviarFinanzasChangeControl = new System.Windows.Forms.Button();
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl = new System.Windows.Forms.Button();
@@ -1670,7 +1671,7 @@
             this.tabServiciosAdicionales.Location = new System.Drawing.Point(0, 284);
             this.tabServiciosAdicionales.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabServiciosAdicionales.Name = "tabServiciosAdicionales";
-            this.tabServiciosAdicionales.SelectedIndex = 0;
+            this.tabServiciosAdicionales.SelectedIndex = 1;
             this.tabServiciosAdicionales.SelectedTabColor = System.Drawing.Color.SteelBlue;
             this.tabServiciosAdicionales.Size = new System.Drawing.Size(1105, 210);
             this.tabServiciosAdicionales.TabIndex = 2;
@@ -1678,7 +1679,7 @@
             // 
             // pageServicios
             // 
-            this.pageServicios.Controls.Add(this.btnChangeControl);
+            this.pageServicios.Controls.Add(this.btnChangeControl1);
             this.pageServicios.Controls.Add(this.btnAuditoriaDet_Cotizacion_OV_Servicio);
             this.pageServicios.Controls.Add(this.btnAddServicio);
             this.pageServicios.Controls.Add(this.grdItemsServicio);
@@ -1691,17 +1692,17 @@
             this.pageServicios.TabIndex = 0;
             this.pageServicios.Text = "Servicios Adicionales";
             // 
-            // btnChangeControl
+            // btnChangeControl1
             // 
-            this.btnChangeControl.Enabled = false;
-            this.btnChangeControl.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeControl.ImageOptions.Image")));
-            this.btnChangeControl.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btnChangeControl.Location = new System.Drawing.Point(408, 1);
-            this.btnChangeControl.Name = "btnChangeControl";
-            this.btnChangeControl.Size = new System.Drawing.Size(30, 25);
-            this.btnChangeControl.TabIndex = 17;
-            this.toolTip1.SetToolTip(this.btnChangeControl, "Crear Change Control");
-            this.btnChangeControl.Click += new System.EventHandler(this.btnChangeControl_Click);
+            this.btnChangeControl1.Enabled = false;
+            this.btnChangeControl1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeControl1.ImageOptions.Image")));
+            this.btnChangeControl1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btnChangeControl1.Location = new System.Drawing.Point(408, 1);
+            this.btnChangeControl1.Name = "btnChangeControl1";
+            this.btnChangeControl1.Size = new System.Drawing.Size(30, 25);
+            this.btnChangeControl1.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.btnChangeControl1, "Crear Change Control con Referencia");
+            this.btnChangeControl1.Click += new System.EventHandler(this.btnChangeControl1_Click);
             // 
             // btnAuditoriaDet_Cotizacion_OV_Servicio
             // 
@@ -1775,6 +1776,7 @@
             // 
             // pageChangeControl
             // 
+            this.pageChangeControl.Controls.Add(this.btnChangeControl2);
             this.pageChangeControl.Controls.Add(this.btnEnviarProvisionSAP);
             this.pageChangeControl.Controls.Add(this.btnEnviarFinanzasChangeControl);
             this.pageChangeControl.Controls.Add(this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl);
@@ -1789,10 +1791,21 @@
             this.pageChangeControl.TabIndex = 1;
             this.pageChangeControl.Text = "Servicios Change Control";
             // 
+            // btnChangeControl2
+            // 
+            this.btnChangeControl2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeControl2.ImageOptions.Image")));
+            this.btnChangeControl2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btnChangeControl2.Location = new System.Drawing.Point(406, 1);
+            this.btnChangeControl2.Name = "btnChangeControl2";
+            this.btnChangeControl2.Size = new System.Drawing.Size(30, 25);
+            this.btnChangeControl2.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.btnChangeControl2, "Crear Change Control con Referencia");
+            this.btnChangeControl2.Click += new System.EventHandler(this.btnChangeControl2_Click);
+            // 
             // btnEnviarProvisionSAP
             // 
             this.btnEnviarProvisionSAP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEnviarProvisionSAP.ImageOptions.Image")));
-            this.btnEnviarProvisionSAP.Location = new System.Drawing.Point(441, 1);
+            this.btnEnviarProvisionSAP.Location = new System.Drawing.Point(476, 1);
             this.btnEnviarProvisionSAP.Name = "btnEnviarProvisionSAP";
             this.btnEnviarProvisionSAP.Size = new System.Drawing.Size(30, 25);
             this.btnEnviarProvisionSAP.TabIndex = 16;
@@ -1803,7 +1816,7 @@
             // 
             this.btnEnviarFinanzasChangeControl.BackColor = System.Drawing.Color.Transparent;
             this.btnEnviarFinanzasChangeControl.Image = global::Delfin.Principal.Properties.Resources.money2;
-            this.btnEnviarFinanzasChangeControl.Location = new System.Drawing.Point(406, 1);
+            this.btnEnviarFinanzasChangeControl.Location = new System.Drawing.Point(441, 1);
             this.btnEnviarFinanzasChangeControl.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEnviarFinanzasChangeControl.Name = "btnEnviarFinanzasChangeControl";
             this.btnEnviarFinanzasChangeControl.Size = new System.Drawing.Size(30, 25);
@@ -1816,7 +1829,7 @@
             // 
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.BackColor = System.Drawing.Color.Transparent;
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Image = global::Delfin.Principal.Properties.Resources.businessman_view;
-            this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Location = new System.Drawing.Point(476, 1);
+            this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Location = new System.Drawing.Point(511, 1);
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Name = "btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl";
             this.btnAuditoriaDet_Cotizacion_OV_Servicio_ChangeControl.Size = new System.Drawing.Size(30, 25);
@@ -2078,7 +2091,7 @@
             // 
             this.btnAuditoriaDet_Cotizacion_OV_Flete.BackColor = System.Drawing.Color.Transparent;
             this.btnAuditoriaDet_Cotizacion_OV_Flete.Image = global::Delfin.Principal.Properties.Resources.businessman_view;
-            this.btnAuditoriaDet_Cotizacion_OV_Flete.Location = new System.Drawing.Point(412, 1);
+            this.btnAuditoriaDet_Cotizacion_OV_Flete.Location = new System.Drawing.Point(410, 1);
             this.btnAuditoriaDet_Cotizacion_OV_Flete.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAuditoriaDet_Cotizacion_OV_Flete.Name = "btnAuditoriaDet_Cotizacion_OV_Flete";
             this.btnAuditoriaDet_Cotizacion_OV_Flete.Size = new System.Drawing.Size(30, 25);
@@ -2091,7 +2104,7 @@
             // 
             this.btnDelFlete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelFlete.Image = global::Delfin.Principal.Properties.Resources.delete1;
-            this.btnDelFlete.Location = new System.Drawing.Point(378, 1);
+            this.btnDelFlete.Location = new System.Drawing.Point(375, 0);
             this.btnDelFlete.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDelFlete.Name = "btnDelFlete";
             this.btnDelFlete.Size = new System.Drawing.Size(30, 25);
@@ -2105,7 +2118,7 @@
             // 
             this.btnAddFlete.BackColor = System.Drawing.Color.Transparent;
             this.btnAddFlete.Image = global::Delfin.Principal.Properties.Resources.add16x16;
-            this.btnAddFlete.Location = new System.Drawing.Point(344, 1);
+            this.btnAddFlete.Location = new System.Drawing.Point(340, 1);
             this.btnAddFlete.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAddFlete.Name = "btnAddFlete";
             this.btnAddFlete.Size = new System.Drawing.Size(30, 25);
@@ -6847,6 +6860,7 @@
       private System.Windows.Forms.Label lbl_FecEmiDoc;
       private Infrastructure.WinForms.Controls.MaskDateTime mdtCCOT_FecEmiDoc;
         private DevExpress.XtraEditors.SimpleButton btnEnviarProvisionSAP;
-        private DevExpress.XtraEditors.SimpleButton btnChangeControl;
+        private DevExpress.XtraEditors.SimpleButton btnChangeControl1;
+        private DevExpress.XtraEditors.SimpleButton btnChangeControl2;
     }
 }

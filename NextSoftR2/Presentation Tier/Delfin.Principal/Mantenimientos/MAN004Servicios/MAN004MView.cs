@@ -454,7 +454,7 @@ namespace Delfin.Principal
 
 
                 SERV_Nombre_SPA.Select();
-            HashFormulario = Infrastructure.Client.FormClose.FormValidateChanges.iniciarComparacionFormulario(this);
+            //HashFormulario = Infrastructure.Client.FormClose.FormValidateChanges.iniciarComparacionFormulario(this);
 
             if (!String.IsNullOrEmpty(Presenter.Item.CENT_Ano)) { cmbCENT_Ano.SelectedValue = Presenter.Item.CENT_Ano; }
             if (!String.IsNullOrEmpty(Presenter.Item.CENT_Codigo))

@@ -19,19 +19,18 @@ Partial Class LogisticOperationQueryForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogisticOperationQueryForm))
-        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip2 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipItem2 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition3 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition4 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
+        Dim SuperToolTip3 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipItem3 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip4 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipItem4 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim ColumnDefinition5 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition6 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition7 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition8 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim RowDefinition3 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition4 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Me.bmActions = New DevExpress.XtraBars.BarManager()
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
@@ -63,7 +62,7 @@ Partial Class LogisticOperationQueryForm
         Me.bbiSendMessage = New DevExpress.XtraBars.BarButtonItem()
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.tsShowRO = New DevExpress.XtraEditors.ToggleSwitch()
@@ -242,9 +241,9 @@ Partial Class LogisticOperationQueryForm
         Me.bbiAdd1.ImageOptions.Image = CType(resources.GetObject("bbiAdd1.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiAdd1.ImageOptions.LargeImage = CType(resources.GetObject("bbiAdd1.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.bbiAdd1.Name = "bbiAdd1"
-        ToolTipItem1.Text = "Crea una OP referenciando una OV / HBL"
-        SuperToolTip1.Items.Add(ToolTipItem1)
-        Me.bbiAdd1.SuperTip = SuperToolTip1
+        ToolTipItem3.Text = "Crea una OP referenciando una OV / HBL"
+        SuperToolTip3.Items.Add(ToolTipItem3)
+        Me.bbiAdd1.SuperTip = SuperToolTip3
         '
         'bbiAdd2
         '
@@ -253,9 +252,9 @@ Partial Class LogisticOperationQueryForm
         Me.bbiAdd2.ImageOptions.Image = CType(resources.GetObject("bbiAdd2.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiAdd2.ImageOptions.LargeImage = CType(resources.GetObject("bbiAdd2.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.bbiAdd2.Name = "bbiAdd2"
-        ToolTipItem2.Text = "Crea una OP sin referencia a una OV / HBL"
-        SuperToolTip2.Items.Add(ToolTipItem2)
-        Me.bbiAdd2.SuperTip = SuperToolTip2
+        ToolTipItem4.Text = "Crea una OP sin referencia a una OV / HBL"
+        SuperToolTip4.Items.Add(ToolTipItem4)
+        Me.bbiAdd2.SuperTip = SuperToolTip4
         '
         'bbiAdd
         '
@@ -555,20 +554,20 @@ Partial Class LogisticOperationQueryForm
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.LayoutControlItem2, Me.LayoutControlItem1, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem4, Me.LayoutControlItem7})
         Me.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.Root.Name = "Root"
-        ColumnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition1.Width = 33.195020746887963R
-        ColumnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition2.Width = 33.195020746887963R
-        ColumnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition3.Width = 33.609958506224068R
-        ColumnDefinition4.SizeType = System.Windows.Forms.SizeType.AutoSize
-        ColumnDefinition4.Width = 229.0R
-        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition1, ColumnDefinition2, ColumnDefinition3, ColumnDefinition4})
-        RowDefinition1.Height = 30.0R
-        RowDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition2.Height = 30.0R
-        RowDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute
-        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition1, RowDefinition2})
+        ColumnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition5.Width = 33.195020746887963R
+        ColumnDefinition6.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition6.Width = 33.195020746887963R
+        ColumnDefinition7.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition7.Width = 33.609958506224068R
+        ColumnDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize
+        ColumnDefinition8.Width = 229.0R
+        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition5, ColumnDefinition6, ColumnDefinition7, ColumnDefinition8})
+        RowDefinition3.Height = 30.0R
+        RowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition4.Height = 30.0R
+        RowDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute
+        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition3, RowDefinition4})
         Me.Root.Size = New System.Drawing.Size(933, 83)
         Me.Root.TextVisible = False
         '
@@ -714,7 +713,6 @@ Partial Class LogisticOperationQueryForm
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
-        Me.GridView1.OptionsView.BestFitMaxRowCount = 10
         Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways
@@ -1148,6 +1146,7 @@ Partial Class LogisticOperationQueryForm
         Me.Controls.Add(Me.BarDockControl1)
         Me.Name = "LogisticOperationQueryForm"
         Me.Text = "Operaciones Logísticas"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).EndInit()

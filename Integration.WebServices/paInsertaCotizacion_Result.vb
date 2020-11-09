@@ -10,12 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Namespace IntegrationServicesRest
+Partial Public Class paInsertaCotizacion_Result
+    Public Property NumeroCotizacion As String
+    Public Property VersionCotizacion As Nullable(Of Short)
 
-    Partial Public Class paInsertaCotizacion_Result
-        Public Property NumeroCotizacion As String
-        Public Property VersionCotizacion As Nullable(Of Short)
-    
-    End Class
-
-End Namespace
+End Class

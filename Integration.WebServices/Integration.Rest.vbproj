@@ -223,17 +223,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Models\Sap_upUpdateSynchronizedDocumentNumber.vb" />
-    <Compile Include="NextSoftModel.Context.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NextSoftModel.Context.tt</DependentUpon>
-    </Compile>
+    <Compile Include="NextSoftModel.Context.vb" />
     <Compile Include="NextSoftModel.Designer.vb">
+      <DependentUpon>NextSoftModel.edmx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>NextSoftModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="NextSoftModel.vb">
+    <Compile Include="NextSoftModel.vb" />
+    <Compile Include="NextSoftModel1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NextSoftModel.tt</DependentUpon>
@@ -352,15 +349,18 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="NextSoftModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NextSoftModel.Context.tt</DependentUpon>
+    </Content>
     <Content Include="NextSoftModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NextSoftModel.edmx</DependentUpon>
-      <LastGenOutput>NextSoftModel.Context.vb</LastGenOutput>
+      <LastGenOutput>NextSoftModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="NextSoftModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>NextSoftModel.edmx</DependentUpon>
-      <LastGenOutput>NextSoftModel.vb</LastGenOutput>
+      <LastGenOutput>NextSoftModel1.vb</LastGenOutput>
     </Content>
     <Content Include="Soap\IntegradorSBO.svc" />
     <EntityDeploy Include="NextSoftModel.edmx">

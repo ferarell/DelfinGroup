@@ -80,8 +80,8 @@ Public Class LogisticOperationRegisterForm
         Dim dtQuery As New DataTable
         dtQuery = oMasterDataList.LoadMasterData("BusinessUnit", Nothing)
         lueUnidadNegocio.Properties.DataSource = dtQuery
-        lueUnidadNegocio.Properties.DisplayMember = "DescripcionUnidadNegocio"
-        lueUnidadNegocio.Properties.ValueMember = "CodigoUnidadNegocio"
+        lueUnidadNegocio.Properties.DisplayMember = "DescripcionLineaNegocio"
+        lueUnidadNegocio.Properties.ValueMember = "CodigoLineaNegocio"
     End Sub
 
     Private Sub LoadCommodity()
@@ -271,6 +271,7 @@ Public Class LogisticOperationRegisterForm
     End Sub
 
     Private Sub SetItem()
+        RepositoryItemLookUpEdit9.DataSource = lueMoneda.Properties.DataSource
         dsOperationRelated = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasRelacionadas " & InternalCode.ToString)
         If dsOperationRelated Is Nothing Or dsOperationRelated.Tables(0).Rows.Count = 0 Then
             Return
@@ -289,6 +290,9 @@ Public Class LogisticOperationRegisterForm
         lueTerminalPortuario.EditValue = drOperation("ENTC_CodigoTerminalPortuario")
         lueCondicionEmbarque.EditValue = drOperation("CodigoCondicionEmbarque")
         lueMoneda.EditValue = drOperation("TIPO_CodMND")
+        lueUnidadNegocio.EditValue = drOperation("CONS_CodLNG")
+        lueRegimen.EditValue = drOperation("CONS_CodRGM")
+        lueVia.EditValue = drOperation("CONS_CodVIA")
         If dsOperationRelated.Tables(2).Rows.Count > 0 Then
             lueTipoMercancia.EditValue = dsOperationRelated.Tables(2).Rows(0)("TIPO_CodCDT")
         End If
@@ -344,6 +348,9 @@ Public Class LogisticOperationRegisterForm
 
     Private Sub bbiQuery_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiQuery.ItemClick
         If Not vpInputs.Validate Then
+            Return
+        End If
+        If teHBL.EditValue.ToString = "" Then
             Return
         End If
         Dim oForm As New VerticalViewerOVForm

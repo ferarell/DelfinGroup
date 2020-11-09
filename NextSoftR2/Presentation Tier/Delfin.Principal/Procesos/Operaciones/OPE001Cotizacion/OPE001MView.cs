@@ -234,7 +234,7 @@ namespace Delfin.Principal
             //grdItemsServicio.Enabled = true;
             if (Presenter.Item.CONS_CodEST == "007")
             {
-                btnChangeControl.Enabled = true;
+                btnChangeControl1.Enabled = true;
                 //grdItemsFlete.Enabled = false;
                 //grdItemsServicio.Enabled = false;
             }
@@ -8539,7 +8539,7 @@ namespace Delfin.Principal
             { btnEnviarProvisionSAP.Enabled = true; }
         }
 
-        private void btnChangeControl_Click(object sender, EventArgs e)
+        private void btnChangeControl1_Click(object sender, EventArgs e)
         {
             //Object oServicio = grdItemsServicio.CurrentRow;    
             //Entities.Det_Cotizacion_OV_Servicio _changecontrol = new Entities.Det_Cotizacion_OV_Servicio();
@@ -8550,6 +8550,7 @@ namespace Delfin.Principal
             grdItemsServiciosChangeControl.CurrentRow.Cells["CCOT_IngresoGasto"].Value = grdItemsServicio.CurrentRow.Cells["CCOT_IngresoGasto"].Value.ToString() == "E" ? "I" : "E";
             grdItemsServiciosChangeControl.CurrentRow.Cells["TIPE_Codigo"].Value = grdItemsServicio.CurrentRow.Cells["TIPE_Codigo"].Value;
             grdItemsServiciosChangeControl.CurrentRow.Cells["ENTC_Codigo"].Value = grdItemsServicio.CurrentRow.Cells["ENTC_Codigo"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["ENTC_NomCom"].Value = grdItemsServicio.CurrentRow.Cells["ENTC_NomCom"].Value;
             //grdItemsServiciosChangeControl.CurrentRow.Cells["CONS_TabBas"].Value = grdItemsServicio.CurrentRow.Cells["CONS_TabBas"].Value;
             grdItemsServiciosChangeControl.CurrentRow.Cells["CONS_CodBas"].Value = grdItemsServicio.CurrentRow.Cells["CONS_CodBas"].Value;
             grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Cantidad"].Value = grdItemsServicio.CurrentRow.Cells["SCOT_Cantidad"].Value;
@@ -8559,6 +8560,30 @@ namespace Delfin.Principal
             grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Importe_Ingreso"].Value = Convert.ToDecimal(grdItemsServicio.CurrentRow.Cells["SCOT_Importe_Ingreso"].Value) == 0 ? grdItemsServicio.CurrentRow.Cells["SCOT_Importe_Egreso"].Value : 0;
             grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Importe_Egreso"].Value = Convert.ToDecimal(grdItemsServicio.CurrentRow.Cells["SCOT_Importe_Egreso"].Value) == 0 ? grdItemsServicio.CurrentRow.Cells["SCOT_Importe_Ingreso"].Value : 0;
             grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_ItemChangeControl"].Value = grdItemsServicio.CurrentRow.Cells["SCOT_Item"].Value;
+            SeleccionarTipoDocumento(true, grdItemsServiciosChangeControl.CurrentRow.Index);
+        }
+
+        private void btnChangeControl2_Click(object sender, EventArgs e)
+        {
+            //tabServiciosAdicionales.SelectedTab = pageChangeControl;
+            int iPos = grdItemsServiciosChangeControl.CurrentRow.Index;
+            AddServicioChangeControl(false);
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Exonerado"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["SCOT_Exonerado"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SERV_Codigo"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["SERV_Codigo"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["CCOT_IngresoGasto"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["CCOT_IngresoGasto"].Value.ToString() == "E" ? "I" : "E";
+            grdItemsServiciosChangeControl.CurrentRow.Cells["TIPE_Codigo"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["TIPE_Codigo"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["ENTC_Codigo"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["ENTC_Codigo"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["ENTC_NomCom"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["ENTC_NomCom"].Value;
+            //grdItemsServiciosChangeControl.CurrentRow.Cells["CONS_TabBas"].Value = grdItemsServicio.CurrentRow.Cells["CONS_TabBas"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["CONS_CodBas"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["CONS_CodBas"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Cantidad"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["SCOT_Cantidad"].Value;
+            //grdItemsServiciosChangeControl.CurrentRow.Cells["TIPO_TabMnd"].Value = grdItemsServicio.CurrentRow.Cells["TIPO_TabMnd"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["TIPO_CodMnd"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["TIPO_CodMnd"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_PrecioUni"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["SCOT_PrecioUni"].Value;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Importe_Ingreso"].Value = Convert.ToDecimal(grdItemsServiciosChangeControl.Rows[iPos].Cells["SCOT_Importe_Ingreso"].Value) == 0 ? grdItemsServiciosChangeControl.Rows[iPos].Cells["SCOT_Importe_Egreso"].Value : 0;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Importe_Egreso"].Value = Convert.ToDecimal(grdItemsServiciosChangeControl.Rows[iPos].Cells["SCOT_Importe_Egreso"].Value) == 0 ? grdItemsServiciosChangeControl.Rows[iPos].Cells["SCOT_Importe_Ingreso"].Value : 0;
+            grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_ItemChangeControl"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["SCOT_Item"].Value;
+            SeleccionarTipoDocumento(true, grdItemsServiciosChangeControl.CurrentRow.Index);
         }
     }
 }
