@@ -226,8 +226,8 @@
     <Compile Include="NextSoftModel.Context.vb" />
     <Compile Include="NextSoftModel.Designer.vb">
       <DependentUpon>NextSoftModel.edmx</DependentUpon>
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="NextSoftModel.vb" />
     <Compile Include="NextSoftModel1.vb">
@@ -358,18 +358,14 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NextSoftModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="NextSoftModel.edmx.diagram">
+      <DependentUpon>NextSoftModel.edmx</DependentUpon>
+    </Content>
     <Content Include="NextSoftModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NextSoftModel1.vb</LastGenOutput>
     </Content>
     <Content Include="Soap\IntegradorSBO.svc" />
-    <EntityDeploy Include="NextSoftModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>NextSoftModel.Designer.vb</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="NextSoftModel.edmx.diagram">
-      <DependentUpon>NextSoftModel.edmx</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -425,6 +421,12 @@
       <Project>{e8bc2fbb-f572-476d-9ecd-774fc211b4a0}</Project>
       <Name>Application.DataAccessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="NextSoftModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NextSoftModel.Designer.vb</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

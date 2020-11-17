@@ -19,18 +19,19 @@ Partial Class LogisticOperationQueryForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogisticOperationQueryForm))
-        Dim SuperToolTip3 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipItem3 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim SuperToolTip4 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipItem4 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim ColumnDefinition5 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition6 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition7 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition8 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim RowDefinition3 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition4 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip2 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipItem2 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition3 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition4 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
@@ -62,7 +63,7 @@ Partial Class LogisticOperationQueryForm
         Me.bbiSendMessage = New DevExpress.XtraBars.BarButtonItem()
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.tsShowRO = New DevExpress.XtraEditors.ToggleSwitch()
@@ -241,9 +242,9 @@ Partial Class LogisticOperationQueryForm
         Me.bbiAdd1.ImageOptions.Image = CType(resources.GetObject("bbiAdd1.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiAdd1.ImageOptions.LargeImage = CType(resources.GetObject("bbiAdd1.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.bbiAdd1.Name = "bbiAdd1"
-        ToolTipItem3.Text = "Crea una OP referenciando una OV / HBL"
-        SuperToolTip3.Items.Add(ToolTipItem3)
-        Me.bbiAdd1.SuperTip = SuperToolTip3
+        ToolTipItem1.Text = "Crea una OP referenciando una OV / HBL"
+        SuperToolTip1.Items.Add(ToolTipItem1)
+        Me.bbiAdd1.SuperTip = SuperToolTip1
         '
         'bbiAdd2
         '
@@ -252,9 +253,9 @@ Partial Class LogisticOperationQueryForm
         Me.bbiAdd2.ImageOptions.Image = CType(resources.GetObject("bbiAdd2.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiAdd2.ImageOptions.LargeImage = CType(resources.GetObject("bbiAdd2.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.bbiAdd2.Name = "bbiAdd2"
-        ToolTipItem4.Text = "Crea una OP sin referencia a una OV / HBL"
-        SuperToolTip4.Items.Add(ToolTipItem4)
-        Me.bbiAdd2.SuperTip = SuperToolTip4
+        ToolTipItem2.Text = "Crea una OP sin referencia a una OV / HBL"
+        SuperToolTip2.Items.Add(ToolTipItem2)
+        Me.bbiAdd2.SuperTip = SuperToolTip2
         '
         'bbiAdd
         '
@@ -554,20 +555,20 @@ Partial Class LogisticOperationQueryForm
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.LayoutControlItem2, Me.LayoutControlItem1, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem4, Me.LayoutControlItem7})
         Me.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.Root.Name = "Root"
-        ColumnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition5.Width = 33.195020746887963R
-        ColumnDefinition6.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition6.Width = 33.195020746887963R
-        ColumnDefinition7.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition7.Width = 33.609958506224068R
-        ColumnDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize
-        ColumnDefinition8.Width = 229.0R
-        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition5, ColumnDefinition6, ColumnDefinition7, ColumnDefinition8})
-        RowDefinition3.Height = 30.0R
-        RowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition4.Height = 30.0R
-        RowDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute
-        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition3, RowDefinition4})
+        ColumnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition1.Width = 33.195020746887963R
+        ColumnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition2.Width = 33.195020746887963R
+        ColumnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition3.Width = 33.609958506224068R
+        ColumnDefinition4.SizeType = System.Windows.Forms.SizeType.AutoSize
+        ColumnDefinition4.Width = 229.0R
+        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition1, ColumnDefinition2, ColumnDefinition3, ColumnDefinition4})
+        RowDefinition1.Height = 30.0R
+        RowDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition2.Height = 30.0R
+        RowDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute
+        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition1, RowDefinition2})
         Me.Root.Size = New System.Drawing.Size(933, 83)
         Me.Root.TextVisible = False
         '
@@ -712,7 +713,6 @@ Partial Class LogisticOperationQueryForm
         Me.GridView1.GridControl = Me.gcRegistered
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsBehavior.Editable = False
         Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways
@@ -723,6 +723,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn1.Caption = "Código Interno"
         Me.GridColumn1.FieldName = "COPE_Codigo"
         Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.OptionsColumn.ReadOnly = True
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 0
         '
@@ -731,6 +732,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn2.Caption = "No.Operación"
         Me.GridColumn2.FieldName = "COPE_NumDoc"
         Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.OptionsColumn.ReadOnly = True
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 1
         '
@@ -739,6 +741,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn3.Caption = "Fecha Emisión"
         Me.GridColumn3.FieldName = "COPE_FecEmi"
         Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.OptionsColumn.ReadOnly = True
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 2
         '
@@ -747,6 +750,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn41.Caption = "No.Cotización"
         Me.GridColumn41.FieldName = "CCOT_NumDoc"
         Me.GridColumn41.Name = "GridColumn41"
+        Me.GridColumn41.OptionsColumn.ReadOnly = True
         Me.GridColumn41.Visible = True
         Me.GridColumn41.VisibleIndex = 3
         '
@@ -755,6 +759,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn4.Caption = "HBL"
         Me.GridColumn4.FieldName = "COPE_HBL"
         Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.OptionsColumn.ReadOnly = True
         Me.GridColumn4.Visible = True
         Me.GridColumn4.VisibleIndex = 4
         '
@@ -763,6 +768,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn15.Caption = "MBL"
         Me.GridColumn15.FieldName = "COPE_MBL"
         Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.OptionsColumn.ReadOnly = True
         Me.GridColumn15.Visible = True
         Me.GridColumn15.VisibleIndex = 5
         '
@@ -771,6 +777,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn5.Caption = "Cliente"
         Me.GridColumn5.FieldName = "Cliente"
         Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.OptionsColumn.ReadOnly = True
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 6
         '
@@ -779,6 +786,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn6.Caption = "Transportista"
         Me.GridColumn6.FieldName = "Transportista"
         Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.OptionsColumn.ReadOnly = True
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 7
         '
@@ -787,6 +795,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn45.Caption = "Código Viaje"
         Me.GridColumn45.FieldName = "NVIA_Codigo"
         Me.GridColumn45.Name = "GridColumn45"
+        Me.GridColumn45.OptionsColumn.ReadOnly = True
         Me.GridColumn45.Visible = True
         Me.GridColumn45.VisibleIndex = 8
         '
@@ -795,12 +804,14 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn7.Caption = "Agente"
         Me.GridColumn7.FieldName = "Agente"
         Me.GridColumn7.Name = "GridColumn7"
+        Me.GridColumn7.OptionsColumn.ReadOnly = True
         '
         'GridColumn8
         '
         Me.GridColumn8.Caption = "Nave"
         Me.GridColumn8.FieldName = "NAVE_Nombre"
         Me.GridColumn8.Name = "GridColumn8"
+        Me.GridColumn8.OptionsColumn.ReadOnly = True
         Me.GridColumn8.Visible = True
         Me.GridColumn8.VisibleIndex = 9
         '
@@ -809,6 +820,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn9.Caption = "Viaje"
         Me.GridColumn9.FieldName = "NVIA_NroViaje"
         Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.OptionsColumn.ReadOnly = True
         Me.GridColumn9.Visible = True
         Me.GridColumn9.VisibleIndex = 10
         '
@@ -817,6 +829,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn10.Caption = "ETA-ETD"
         Me.GridColumn10.FieldName = "NVIA_FecETA_IMPO_ETD_EXPO"
         Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.OptionsColumn.ReadOnly = True
         Me.GridColumn10.Visible = True
         Me.GridColumn10.VisibleIndex = 11
         '
@@ -825,6 +838,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn11.Caption = "Fecha Embarque"
         Me.GridColumn11.FieldName = "DDOV_FecEmbarque"
         Me.GridColumn11.Name = "GridColumn11"
+        Me.GridColumn11.OptionsColumn.ReadOnly = True
         Me.GridColumn11.Visible = True
         Me.GridColumn11.VisibleIndex = 12
         '
@@ -833,6 +847,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn12.Caption = "Moneda"
         Me.GridColumn12.FieldName = "Moneda"
         Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.OptionsColumn.ReadOnly = True
         Me.GridColumn12.Visible = True
         Me.GridColumn12.VisibleIndex = 13
         '
@@ -841,6 +856,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn13.Caption = "Importe Costo"
         Me.GridColumn13.FieldName = "ImporteCosto"
         Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.OptionsColumn.ReadOnly = True
         Me.GridColumn13.Visible = True
         Me.GridColumn13.VisibleIndex = 14
         '
@@ -849,6 +865,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn14.Caption = "Importe Venta"
         Me.GridColumn14.FieldName = "ImporteVenta"
         Me.GridColumn14.Name = "GridColumn14"
+        Me.GridColumn14.OptionsColumn.ReadOnly = True
         Me.GridColumn14.Visible = True
         Me.GridColumn14.VisibleIndex = 15
         '
@@ -859,6 +876,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn19.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn19.FieldName = "FechaDesglose"
         Me.GridColumn19.Name = "GridColumn19"
+        Me.GridColumn19.OptionsColumn.ReadOnly = True
         Me.GridColumn19.Visible = True
         Me.GridColumn19.VisibleIndex = 16
         '
@@ -867,6 +885,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn16.Caption = "Estado"
         Me.GridColumn16.FieldName = "CONS_DescEstado"
         Me.GridColumn16.Name = "GridColumn16"
+        Me.GridColumn16.OptionsColumn.ReadOnly = True
         Me.GridColumn16.Visible = True
         Me.GridColumn16.VisibleIndex = 17
         '
@@ -875,6 +894,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn46.Caption = "Ejecutivo Comercial"
         Me.GridColumn46.FieldName = "EjecutivoComercial"
         Me.GridColumn46.Name = "GridColumn46"
+        Me.GridColumn46.OptionsColumn.ReadOnly = True
         Me.GridColumn46.Visible = True
         Me.GridColumn46.VisibleIndex = 18
         '
@@ -882,33 +902,39 @@ Partial Class LogisticOperationQueryForm
         '
         Me.GridColumn17.Caption = "Provisión Costo"
         Me.GridColumn17.Name = "GridColumn17"
+        Me.GridColumn17.OptionsColumn.ReadOnly = True
         '
         'GridColumn18
         '
         Me.GridColumn18.Caption = "Provisión Venta"
         Me.GridColumn18.Name = "GridColumn18"
+        Me.GridColumn18.OptionsColumn.ReadOnly = True
         '
         'GridColumn39
         '
         Me.GridColumn39.Caption = "Comprobante Costo"
         Me.GridColumn39.Name = "GridColumn39"
+        Me.GridColumn39.OptionsColumn.ReadOnly = True
         '
         'GridColumn40
         '
         Me.GridColumn40.Caption = "Comprobante Venta"
         Me.GridColumn40.Name = "GridColumn40"
+        Me.GridColumn40.OptionsColumn.ReadOnly = True
         '
         'GridColumn43
         '
         Me.GridColumn43.Caption = "Codigo Estado"
         Me.GridColumn43.FieldName = "CONS_CodEstado"
         Me.GridColumn43.Name = "GridColumn43"
+        Me.GridColumn43.OptionsColumn.ReadOnly = True
         '
         'GridColumn44
         '
         Me.GridColumn44.Caption = "Versión"
         Me.GridColumn44.FieldName = "COPE_Version"
         Me.GridColumn44.Name = "GridColumn44"
+        Me.GridColumn44.OptionsColumn.ReadOnly = True
         '
         'RepositoryItemLookUpEdit1
         '

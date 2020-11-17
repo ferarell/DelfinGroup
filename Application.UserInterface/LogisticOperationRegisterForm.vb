@@ -709,7 +709,18 @@ Public Class LogisticOperationRegisterForm
     End Sub
 
     Private Sub gcServiceRelated_Enter(sender As Object, e As EventArgs) Handles gcServiceRelated.Enter
-
+        cmsServices.Enabled = True
+        If GridView1.RowCount = 0 Then
+            cmsServices.Enabled = False
+        End If
+        cmsChangeControl.Enabled = True
+        If GridView5.RowCount = 0 Then
+            cmsChangeControl.Enabled = False
+        End If
+        cmsServices.Items("tsmiChangeControl").Enabled = True
+        If GridView1.GetFocusedRowCellValue("DOPE_DocProvVenta") Is Nothing Then
+            cmsServices.Items("tsmiChangeControl").Enabled = False
+        End If
     End Sub
 
     Private Sub gcServiceRelated_ProcessGridKey(sender As Object, e As KeyEventArgs) Handles gcServiceRelated.ProcessGridKey
