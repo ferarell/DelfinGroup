@@ -326,10 +326,10 @@ Namespace AppService
         Function ExecuteSQLNonQueryAsync(ByVal QueryString As String) As System.Threading.Tasks.Task(Of Boolean)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/NewExecuteSQLNonQuery", ReplyAction:="http://tempuri.org/IDelfinService/NewExecuteSQLNonQueryResponse"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))>  _
         Function NewExecuteSQLNonQuery(ByVal QueryString As String) As Object()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/NewExecuteSQLNonQuery", ReplyAction:="http://tempuri.org/IDelfinService/NewExecuteSQLNonQueryResponse")>  _
@@ -348,80 +348,80 @@ Namespace AppService
         Function UserValidationAsync(ByVal DirectoryEntry As String, ByVal DirectoryUserName As String, ByVal DirectoryPassword As String, ByVal ErrorMessage As String) As System.Threading.Tasks.Task(Of String)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/GenerateNextSisVoucher", ReplyAction:="http://tempuri.org/IDelfinService/GenerateNextSisVoucherResponse"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))>  _
         Function GenerateNextSisVoucher(ByVal Company As String, ByVal dsVoucher As System.Data.DataSet) As Object()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/GenerateNextSisVoucher", ReplyAction:="http://tempuri.org/IDelfinService/GenerateNextSisVoucherResponse")>  _
         Function GenerateNextSisVoucherAsync(ByVal Company As String, ByVal dsVoucher As System.Data.DataSet) As System.Threading.Tasks.Task(Of Object())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/GenerateNextSisVoucherBCopy", ReplyAction:="http://tempuri.org/IDelfinService/GenerateNextSisVoucherBCopyResponse"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))>  _
         Function GenerateNextSisVoucherBCopy(ByVal Company As String, ByVal dsVoucher As System.Data.DataSet) As Object()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/GenerateNextSisVoucherBCopy", ReplyAction:="http://tempuri.org/IDelfinService/GenerateNextSisVoucherBCopyResponse")>  _
         Function GenerateNextSisVoucherBCopyAsync(ByVal Company As String, ByVal dsVoucher As System.Data.DataSet) As System.Threading.Tasks.Task(Of Object())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/GenerateNextSoftVoucher", ReplyAction:="http://tempuri.org/IDelfinService/GenerateNextSoftVoucherResponse"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))>  _
         Function GenerateNextSoftVoucher(ByVal dtMovimiento As System.Data.DataTable, ByVal dtCtaCte As System.Data.DataTable) As Object()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/GenerateNextSoftVoucher", ReplyAction:="http://tempuri.org/IDelfinService/GenerateNextSoftVoucherResponse")>  _
         Function GenerateNextSoftVoucherAsync(ByVal dtMovimiento As System.Data.DataTable, ByVal dtCtaCte As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/InsertarContribuyente", ReplyAction:="http://tempuri.org/IDelfinService/InsertarContribuyenteResponse"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))>  _
         Function InsertarContribuyente(ByVal dtSource As System.Data.DataTable) As Object()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/InsertarContribuyente", ReplyAction:="http://tempuri.org/IDelfinService/InsertarContribuyenteResponse")>  _
         Function InsertarContribuyenteAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/ActualizarContribuyente", ReplyAction:="http://tempuri.org/IDelfinService/ActualizarContribuyenteResponse"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))>  _
         Function ActualizarContribuyente(ByVal dtSource As System.Data.DataTable) As Object()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/ActualizarContribuyente", ReplyAction:="http://tempuri.org/IDelfinService/ActualizarContribuyenteResponse")>  _
         Function ActualizarContribuyenteAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdateTableWithBulkCopy", ReplyAction:="http://tempuri.org/IDelfinService/UpdateTableWithBulkCopyResponse"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))>  _
         Function UpdateTableWithBulkCopy(ByVal Table As String, ByVal dtSource As System.Data.DataTable, ByVal ProcessType As String) As Object()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdateTableWithBulkCopy", ReplyAction:="http://tempuri.org/IDelfinService/UpdateTableWithBulkCopyResponse")>  _
         Function UpdateTableWithBulkCopyAsync(ByVal Table As String, ByVal dtSource As System.Data.DataTable, ByVal ProcessType As String) As System.Threading.Tasks.Task(Of Object())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdatingUsingTableAsParameter", ReplyAction:="http://tempuri.org/IDelfinService/UpdatingUsingTableAsParameterResponse"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))>  _
         Function UpdatingUsingTableAsParameter(ByVal StoreProcedure As String, ByVal dtSource As System.Data.DataTable) As Object()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdatingUsingTableAsParameter", ReplyAction:="http://tempuri.org/IDelfinService/UpdatingUsingTableAsParameterResponse")>  _
         Function UpdatingUsingTableAsParameterAsync(ByVal StoreProcedure As String, ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdatingWithTableAndParameters", ReplyAction:="http://tempuri.org/IDelfinService/UpdatingWithTableAndParametersResponse"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))>  _
         Function UpdatingWithTableAndParameters(ByVal StoreProcedure As String, ByVal dtSource As System.Data.DataTable, ByVal Params() As Object, ByVal Values() As Object) As Object()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdatingWithTableAndParameters", ReplyAction:="http://tempuri.org/IDelfinService/UpdatingWithTableAndParametersResponse")>  _
@@ -452,24 +452,24 @@ Namespace AppService
         Function DeleteEventoAsync(ByVal oEvento As AppService.COM_Det_Cotizacion_OV_EventosTareas_BE) As System.Threading.Tasks.Task
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/InsertLogisticOperation", ReplyAction:="http://tempuri.org/IDelfinService/InsertLogisticOperationResponse"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))>  _
         Function InsertLogisticOperation(ByVal dsLogisticOperation As System.Data.DataSet) As Object()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/InsertLogisticOperation", ReplyAction:="http://tempuri.org/IDelfinService/InsertLogisticOperationResponse")>  _
         Function InsertLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet) As System.Threading.Tasks.Task(Of Object())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdateLogisticOperation", ReplyAction:="http://tempuri.org/IDelfinService/UpdateLogisticOperationResponse"),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
-         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
-        Function UpdateLogisticOperation(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable) As Object()
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))>  _
+        Function UpdateLogisticOperation(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable, ByVal dtOriginalChangeControl As System.Data.DataTable) As Object()
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdateLogisticOperation", ReplyAction:="http://tempuri.org/IDelfinService/UpdateLogisticOperationResponse")>  _
-        Function UpdateLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object())
+        Function UpdateLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable, ByVal dtOriginalChangeControl As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object())
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -655,12 +655,12 @@ Namespace AppService
             Return MyBase.Channel.InsertLogisticOperationAsync(dsLogisticOperation)
         End Function
         
-        Public Function UpdateLogisticOperation(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable) As Object() Implements AppService.IDelfinService.UpdateLogisticOperation
-            Return MyBase.Channel.UpdateLogisticOperation(dsLogisticOperation, dtOriginalDetail)
+        Public Function UpdateLogisticOperation(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable, ByVal dtOriginalChangeControl As System.Data.DataTable) As Object() Implements AppService.IDelfinService.UpdateLogisticOperation
+            Return MyBase.Channel.UpdateLogisticOperation(dsLogisticOperation, dtOriginalDetail, dtOriginalChangeControl)
         End Function
         
-        Public Function UpdateLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object()) Implements AppService.IDelfinService.UpdateLogisticOperationAsync
-            Return MyBase.Channel.UpdateLogisticOperationAsync(dsLogisticOperation, dtOriginalDetail)
+        Public Function UpdateLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable, ByVal dtOriginalChangeControl As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object()) Implements AppService.IDelfinService.UpdateLogisticOperationAsync
+            Return MyBase.Channel.UpdateLogisticOperationAsync(dsLogisticOperation, dtOriginalDetail, dtOriginalChangeControl)
         End Function
     End Class
 End Namespace

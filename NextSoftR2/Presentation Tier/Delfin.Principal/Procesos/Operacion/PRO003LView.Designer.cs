@@ -28,9 +28,8 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PRO003LView));
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmColumnas = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +45,7 @@
             this.panelCaption1 = new Infrastructure.WinFormsControls.PanelCaption();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMAN = new System.Windows.Forms.Label();
-            this.AyudaEntidadCliente = new Delfin.Controls.Entidad(this.components);
+            this.AyudaEntidadCliente = new Delfin.Controls.Entidad();
             this.mdtFecDesde = new Infrastructure.WinFormsControls.MaskDateTime();
             this.lblCONT_FecIni = new System.Windows.Forms.Label();
             this.txtNroCotizacion = new System.Windows.Forms.TextBox();
@@ -57,12 +56,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelCaption2 = new Infrastructure.WinFormsControls.PanelCaption();
             this.grdItems = new Telerik.WinControls.UI.RadGridView();
-            this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsItems = new System.Windows.Forms.ContextMenuStrip();
             this.insertarEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelDetalleOperacion = new Infrastructure.WinFormsControls.PanelCaption();
             this.grdItemsServicios = new Telerik.WinControls.UI.RadGridView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItems = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
@@ -72,7 +71,7 @@
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.navItemsServicios = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItemsServicios = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -150,7 +149,7 @@
             // 
             this.btnGenerarAviso.AutoSize = true;
             this.btnGenerarAviso.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnGenerarAviso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnGenerarAviso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarAviso.ImageOptions.Image")));
             this.btnGenerarAviso.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.btnGenerarAviso.Location = new System.Drawing.Point(442, 0);
             this.btnGenerarAviso.Name = "btnGenerarAviso";
@@ -603,6 +602,7 @@
             this.bindingNavigatorPositionItem1.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -707,6 +707,7 @@
             this.toolStripTextBox1.AccessibleName = "Posición";
             this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -762,7 +763,7 @@
             // 
             this.simpleButton1.AutoSize = true;
             this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image1")));
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.simpleButton1.Location = new System.Drawing.Point(442, 0);
             this.simpleButton1.Name = "simpleButton1";
