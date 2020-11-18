@@ -238,6 +238,7 @@
     <Compile Include="paInsertaCotizacion_Result.vb">
       <DependentUpon>NextSoftModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Soap\d.vb" />
     <Compile Include="Soap\Message.vb" />
     <Compile Include="Soap\Response.vb" />
     <Compile Include="Soap\Respuesta.vb" />
@@ -263,6 +264,7 @@
     </Compile>
     <Compile Include="Controllers\HomeController.vb" />
     <Compile Include="Controllers\ValuesController.vb" />
+    <Compile Include="Soap\results.vb" />
     <Compile Include="Soap\Wrong.vb" />
   </ItemGroup>
   <ItemGroup>

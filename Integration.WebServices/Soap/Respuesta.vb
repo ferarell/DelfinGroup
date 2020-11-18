@@ -8,6 +8,7 @@ Public Class Respuesta
     Dim _RespuestaNexsoft As Integer
     Dim _Value As String
     Dim _Response As List(Of Response)
+    Dim _D As d
     Public Property ResponseStatus As String
         Get
             Return _ResponseStatus
@@ -70,6 +71,20 @@ Public Class Respuesta
         End Get
         Set(value As List(Of Response))
             _Response = value
+        End Set
+    End Property
+
+
+
+
+
+
+    Public Property d As d
+        Get
+            Return _D
+        End Get
+        Set(value As d)
+            _D = value
         End Set
     End Property
 End Class

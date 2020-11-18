@@ -751,6 +751,66 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
         Return listRespuestas
     End Function
 
+    Public Function VerificarExistenciaDocumento(CompraVenta As String, TipoDocumento As String, Serie As String, Numero As String) As String Implements IIntegradorSBO.VerificarExistenciaDocumento
+
+        Dim oRespuesta As Respuesta = New Respuesta()
+        Dim Respuesta As String = "NO"
+        Dim listRespuestas As List(Of Respuesta) = New List(Of Respuesta)()
+        Dim dtAdicionales As DataTable = New DataTable()
+        Dim UrlDocument As String = ConfigurationManager.AppSettings("urlSAPGETDocuments")
+        Dim FilterBusqueda As String = ""
+        Dim client As HttpClient = New HttpClient
+        Dim UrlBusqueda As String = ""
+        client.DefaultRequestHeaders.Accept.Add(
+            New System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"))
 
 
+
+        If CompraVenta = "VE" Then
+            If TipoDocumento = "INV" Then
+                UrlBusqueda = UrlDocument + "Invoices/Invoices.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and FolioNum eq " + Numero + "&$format=json"
+            Else
+
+                UrlBusqueda = UrlDocument + "CreditNotes/CreditNotes.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and FolioNum eq " + Numero + "&$format=json"
+            End If
+
+
+        Else
+
+            If TipoDocumento = "INV" Then
+                UrlBusqueda = UrlDocument + "PurchaseInvoices/PurchaseInvoices.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and FolioNum eq " + Numero + "&$format=json"
+
+
+            Else
+
+                UrlBusqueda = UrlDocument + "PurchaseCreditNotes/PurchaseCreditNotes.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and FolioNum eq " + Numero + "&$format=json"
+            End If
+
+        End If
+
+
+        Dim response As HttpResponseMessage = client.GetAsync(New Uri(UrlBusqueda)).Result
+
+        If response.IsSuccessStatusCode Then
+            Dim jsonString As String = response.Content.ReadAsStringAsync().Result
+            oRespuesta = JsonConvert.DeserializeObject(Of Respuesta)(jsonString)
+        End If
+
+
+        If oRespuesta IsNot Nothing Then
+            If oRespuesta.d IsNot Nothing Then
+                If oRespuesta.d.results IsNot Nothing Then
+                    If oRespuesta.d.results.Count > 0 Then
+                        Respuesta = "SI"
+                    End If
+                End If
+            End If
+        End If
+
+
+
+        Return Respuesta
+
+
+    End Function
 End Class

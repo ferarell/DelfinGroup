@@ -29,4 +29,10 @@ Public Interface IIntegradorSBO
     Function InsertarActualizarPurchaseCreditMemo(PurchaseCreditMemo As DataSet) As List(Of Respuesta)
 
 
+    <OperationContract()>
+    Function VerificarExistenciaDocumento(CompraVenta As String, TipoDocumento As String, Serie As String, Numero As String) As String
+
+
+
+
 End Interface
