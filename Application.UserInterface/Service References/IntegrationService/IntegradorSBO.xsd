@@ -209,4 +209,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="VerificarExistenciaDocumento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompraVenta" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Serie" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarExistenciaDocumentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerificarExistenciaDocumentoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

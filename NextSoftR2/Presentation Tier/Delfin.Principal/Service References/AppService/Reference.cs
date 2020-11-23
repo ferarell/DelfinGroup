@@ -174,10 +174,10 @@ namespace Delfin.Principal.AppService {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[][]))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
-        object[] UpdateLogisticOperation(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail);
+        object[] UpdateLogisticOperation(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail, System.Data.DataTable dtOriginalChangeControl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDelfinService/UpdateLogisticOperation", ReplyAction="http://tempuri.org/IDelfinService/UpdateLogisticOperationResponse")]
-        System.Threading.Tasks.Task<object[]> UpdateLogisticOperationAsync(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail);
+        System.Threading.Tasks.Task<object[]> UpdateLogisticOperationAsync(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail, System.Data.DataTable dtOriginalChangeControl);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -359,12 +359,12 @@ namespace Delfin.Principal.AppService {
             return base.Channel.InsertLogisticOperationAsync(dsLogisticOperation);
         }
         
-        public object[] UpdateLogisticOperation(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail) {
-            return base.Channel.UpdateLogisticOperation(dsLogisticOperation, dtOriginalDetail);
+        public object[] UpdateLogisticOperation(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail, System.Data.DataTable dtOriginalChangeControl) {
+            return base.Channel.UpdateLogisticOperation(dsLogisticOperation, dtOriginalDetail, dtOriginalChangeControl);
         }
         
-        public System.Threading.Tasks.Task<object[]> UpdateLogisticOperationAsync(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail) {
-            return base.Channel.UpdateLogisticOperationAsync(dsLogisticOperation, dtOriginalDetail);
+        public System.Threading.Tasks.Task<object[]> UpdateLogisticOperationAsync(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail, System.Data.DataTable dtOriginalChangeControl) {
+            return base.Channel.UpdateLogisticOperationAsync(dsLogisticOperation, dtOriginalDetail, dtOriginalChangeControl);
         }
     }
 }

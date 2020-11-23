@@ -48,6 +48,9 @@ Namespace IntegrationService
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ValueField As String
         
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private dField As IntegrationService.d
+        
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
             Get
@@ -145,6 +148,66 @@ Namespace IntegrationService
                 If (Object.ReferenceEquals(Me.ValueField, value) <> true) Then
                     Me.ValueField = value
                     Me.RaisePropertyChanged("Value")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property d() As IntegrationService.d
+            Get
+                Return Me.dField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.dField, value) <> true) Then
+                    Me.dField = value
+                    Me.RaisePropertyChanged("d")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="d", [Namespace]:="http://schemas.datacontract.org/2004/07/IntegrationServicesRest"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class d
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private resultsField() As IntegrationService.results
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property results() As IntegrationService.results()
+            Get
+                Return Me.resultsField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.resultsField, value) <> true) Then
+                    Me.resultsField = value
+                    Me.RaisePropertyChanged("results")
                 End If
             End Set
         End Property
@@ -396,6 +459,85 @@ Namespace IntegrationService
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0"),  _
+     System.Runtime.Serialization.DataContractAttribute(Name:="results", [Namespace]:="http://schemas.datacontract.org/2004/07/IntegrationServicesRest"),  _
+     System.SerializableAttribute()>  _
+    Partial Public Class results
+        Inherits Object
+        Implements System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged
+        
+        <System.NonSerializedAttribute()>  _
+        Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private DocEntryField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private FolioNumField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private FolioPrefField As String
+        
+        <Global.System.ComponentModel.BrowsableAttribute(false)>  _
+        Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
+            Get
+                Return Me.extensionDataField
+            End Get
+            Set
+                Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property DocEntry() As String
+            Get
+                Return Me.DocEntryField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.DocEntryField, value) <> true) Then
+                    Me.DocEntryField = value
+                    Me.RaisePropertyChanged("DocEntry")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property FolioNum() As String
+            Get
+                Return Me.FolioNumField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.FolioNumField, value) <> true) Then
+                    Me.FolioNumField = value
+                    Me.RaisePropertyChanged("FolioNum")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property FolioPref() As String
+            Get
+                Return Me.FolioPrefField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.FolioPrefField, value) <> true) Then
+                    Me.FolioPrefField = value
+                    Me.RaisePropertyChanged("FolioPref")
+                End If
+            End Set
+        End Property
+        
+        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+        
+        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
+            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
+            If (Not (propertyChanged) Is Nothing) Then
+                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
+            End If
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
      System.ServiceModel.ServiceContractAttribute(ConfigurationName:="IntegrationService.IIntegradorSBO")>  _
     Public Interface IIntegradorSBO
@@ -447,6 +589,12 @@ Namespace IntegrationService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemo", ReplyAction:="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemoResponse")>  _
         Function InsertarActualizarPurchaseCreditMemoAsync(ByVal PurchaseCreditMemo As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento", ReplyAction:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumentoResponse")>  _
+        Function VerificarExistenciaDocumento(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String) As String
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento", ReplyAction:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumentoResponse")>  _
+        Function VerificarExistenciaDocumentoAsync(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String) As System.Threading.Tasks.Task(Of String)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -542,6 +690,14 @@ Namespace IntegrationService
         
         Public Function InsertarActualizarPurchaseCreditMemoAsync(ByVal PurchaseCreditMemo As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta()) Implements IntegrationService.IIntegradorSBO.InsertarActualizarPurchaseCreditMemoAsync
             Return MyBase.Channel.InsertarActualizarPurchaseCreditMemoAsync(PurchaseCreditMemo)
+        End Function
+        
+        Public Function VerificarExistenciaDocumento(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String) As String Implements IntegrationService.IIntegradorSBO.VerificarExistenciaDocumento
+            Return MyBase.Channel.VerificarExistenciaDocumento(CompraVenta, TipoDocumento, Serie, Numero)
+        End Function
+        
+        Public Function VerificarExistenciaDocumentoAsync(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String) As System.Threading.Tasks.Task(Of String) Implements IntegrationService.IIntegradorSBO.VerificarExistenciaDocumentoAsync
+            Return MyBase.Channel.VerificarExistenciaDocumentoAsync(CompraVenta, TipoDocumento, Serie, Numero)
         End Function
     End Class
 End Namespace

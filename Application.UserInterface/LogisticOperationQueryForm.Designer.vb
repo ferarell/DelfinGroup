@@ -85,7 +85,13 @@ Partial Class LogisticOperationQueryForm
         Me.SplitContainerControl3 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.gcRegistered = New DevExpress.XtraGrid.GridControl()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.SeleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeseleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InvertirSelecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn49 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemCheckEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -112,6 +118,8 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn40 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn43 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn44 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn47 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn48 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl()
@@ -172,7 +180,9 @@ Partial Class LogisticOperationQueryForm
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.gcRegistered, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -306,7 +316,6 @@ Partial Class LogisticOperationQueryForm
         Me.bbiPreInvoicing.Id = 29
         Me.bbiPreInvoicing.ImageOptions.Image = CType(resources.GetObject("bbiPreInvoicing.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiPreInvoicing.Name = "bbiPreInvoicing"
-        Me.bbiPreInvoicing.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'bbiClose
         '
@@ -692,6 +701,7 @@ Partial Class LogisticOperationQueryForm
         '
         'gcRegistered
         '
+        Me.gcRegistered.ContextMenuStrip = Me.ContextMenuStrip1
         Me.gcRegistered.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gcRegistered.EmbeddedNavigator.Buttons.Append.Visible = False
         Me.gcRegistered.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
@@ -701,22 +711,65 @@ Partial Class LogisticOperationQueryForm
         Me.gcRegistered.Location = New System.Drawing.Point(2, 20)
         Me.gcRegistered.MainView = Me.GridView1
         Me.gcRegistered.Name = "gcRegistered"
-        Me.gcRegistered.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemCheckEdit2})
+        Me.gcRegistered.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemCheckEdit2, Me.RepositoryItemCheckEdit3})
         Me.gcRegistered.Size = New System.Drawing.Size(728, 158)
         Me.gcRegistered.TabIndex = 171
         Me.gcRegistered.UseEmbeddedNavigator = True
         Me.gcRegistered.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SeleccionaTodosToolStripMenuItem, Me.DeseleccionaTodosToolStripMenuItem, Me.InvertirSelecciónToolStripMenuItem})
+        Me.ContextMenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(211, 70)
+        '
+        'SeleccionaTodosToolStripMenuItem
+        '
+        Me.SeleccionaTodosToolStripMenuItem.Name = "SeleccionaTodosToolStripMenuItem"
+        Me.SeleccionaTodosToolStripMenuItem.ShortcutKeyDisplayString = "(Ctrl+E)"
+        Me.SeleccionaTodosToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
+        Me.SeleccionaTodosToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.SeleccionaTodosToolStripMenuItem.Text = "Seleccionar todo"
+        '
+        'DeseleccionaTodosToolStripMenuItem
+        '
+        Me.DeseleccionaTodosToolStripMenuItem.Name = "DeseleccionaTodosToolStripMenuItem"
+        Me.DeseleccionaTodosToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.DeseleccionaTodosToolStripMenuItem.Text = "No seleccionar ninguno"
+        '
+        'InvertirSelecciónToolStripMenuItem
+        '
+        Me.InvertirSelecciónToolStripMenuItem.Name = "InvertirSelecciónToolStripMenuItem"
+        Me.InvertirSelecciónToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.InvertirSelecciónToolStripMenuItem.Text = "Invertir selección"
+        '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn41, Me.GridColumn4, Me.GridColumn15, Me.GridColumn5, Me.GridColumn6, Me.GridColumn45, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn19, Me.GridColumn16, Me.GridColumn46, Me.GridColumn17, Me.GridColumn18, Me.GridColumn39, Me.GridColumn40, Me.GridColumn43, Me.GridColumn44})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn49, Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn41, Me.GridColumn4, Me.GridColumn15, Me.GridColumn5, Me.GridColumn6, Me.GridColumn45, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn19, Me.GridColumn16, Me.GridColumn46, Me.GridColumn17, Me.GridColumn18, Me.GridColumn39, Me.GridColumn40, Me.GridColumn43, Me.GridColumn44, Me.GridColumn47, Me.GridColumn48})
         Me.GridView1.GridControl = Me.gcRegistered
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsSelection.MultiSelect = True
         Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways
         Me.GridView1.OptionsView.ShowFooter = True
+        '
+        'GridColumn49
+        '
+        Me.GridColumn49.Caption = "S/N"
+        Me.GridColumn49.ColumnEdit = Me.RepositoryItemCheckEdit3
+        Me.GridColumn49.FieldName = "Checked"
+        Me.GridColumn49.Name = "GridColumn49"
+        Me.GridColumn49.Visible = True
+        Me.GridColumn49.VisibleIndex = 0
+        '
+        'RepositoryItemCheckEdit3
+        '
+        Me.RepositoryItemCheckEdit3.AutoHeight = False
+        Me.RepositoryItemCheckEdit3.Name = "RepositoryItemCheckEdit3"
         '
         'GridColumn1
         '
@@ -725,7 +778,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.OptionsColumn.ReadOnly = True
         Me.GridColumn1.Visible = True
-        Me.GridColumn1.VisibleIndex = 0
+        Me.GridColumn1.VisibleIndex = 1
         '
         'GridColumn2
         '
@@ -734,7 +787,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.OptionsColumn.ReadOnly = True
         Me.GridColumn2.Visible = True
-        Me.GridColumn2.VisibleIndex = 1
+        Me.GridColumn2.VisibleIndex = 2
         '
         'GridColumn3
         '
@@ -743,7 +796,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.OptionsColumn.ReadOnly = True
         Me.GridColumn3.Visible = True
-        Me.GridColumn3.VisibleIndex = 2
+        Me.GridColumn3.VisibleIndex = 3
         '
         'GridColumn41
         '
@@ -752,7 +805,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn41.Name = "GridColumn41"
         Me.GridColumn41.OptionsColumn.ReadOnly = True
         Me.GridColumn41.Visible = True
-        Me.GridColumn41.VisibleIndex = 3
+        Me.GridColumn41.VisibleIndex = 4
         '
         'GridColumn4
         '
@@ -761,7 +814,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.OptionsColumn.ReadOnly = True
         Me.GridColumn4.Visible = True
-        Me.GridColumn4.VisibleIndex = 4
+        Me.GridColumn4.VisibleIndex = 5
         '
         'GridColumn15
         '
@@ -770,7 +823,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn15.Name = "GridColumn15"
         Me.GridColumn15.OptionsColumn.ReadOnly = True
         Me.GridColumn15.Visible = True
-        Me.GridColumn15.VisibleIndex = 5
+        Me.GridColumn15.VisibleIndex = 6
         '
         'GridColumn5
         '
@@ -779,7 +832,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.OptionsColumn.ReadOnly = True
         Me.GridColumn5.Visible = True
-        Me.GridColumn5.VisibleIndex = 6
+        Me.GridColumn5.VisibleIndex = 7
         '
         'GridColumn6
         '
@@ -788,7 +841,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.OptionsColumn.ReadOnly = True
         Me.GridColumn6.Visible = True
-        Me.GridColumn6.VisibleIndex = 7
+        Me.GridColumn6.VisibleIndex = 8
         '
         'GridColumn45
         '
@@ -797,7 +850,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn45.Name = "GridColumn45"
         Me.GridColumn45.OptionsColumn.ReadOnly = True
         Me.GridColumn45.Visible = True
-        Me.GridColumn45.VisibleIndex = 8
+        Me.GridColumn45.VisibleIndex = 9
         '
         'GridColumn7
         '
@@ -813,7 +866,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn8.Name = "GridColumn8"
         Me.GridColumn8.OptionsColumn.ReadOnly = True
         Me.GridColumn8.Visible = True
-        Me.GridColumn8.VisibleIndex = 9
+        Me.GridColumn8.VisibleIndex = 10
         '
         'GridColumn9
         '
@@ -822,7 +875,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn9.Name = "GridColumn9"
         Me.GridColumn9.OptionsColumn.ReadOnly = True
         Me.GridColumn9.Visible = True
-        Me.GridColumn9.VisibleIndex = 10
+        Me.GridColumn9.VisibleIndex = 11
         '
         'GridColumn10
         '
@@ -831,7 +884,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn10.Name = "GridColumn10"
         Me.GridColumn10.OptionsColumn.ReadOnly = True
         Me.GridColumn10.Visible = True
-        Me.GridColumn10.VisibleIndex = 11
+        Me.GridColumn10.VisibleIndex = 12
         '
         'GridColumn11
         '
@@ -840,7 +893,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn11.Name = "GridColumn11"
         Me.GridColumn11.OptionsColumn.ReadOnly = True
         Me.GridColumn11.Visible = True
-        Me.GridColumn11.VisibleIndex = 12
+        Me.GridColumn11.VisibleIndex = 13
         '
         'GridColumn12
         '
@@ -849,7 +902,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn12.Name = "GridColumn12"
         Me.GridColumn12.OptionsColumn.ReadOnly = True
         Me.GridColumn12.Visible = True
-        Me.GridColumn12.VisibleIndex = 13
+        Me.GridColumn12.VisibleIndex = 14
         '
         'GridColumn13
         '
@@ -858,7 +911,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn13.Name = "GridColumn13"
         Me.GridColumn13.OptionsColumn.ReadOnly = True
         Me.GridColumn13.Visible = True
-        Me.GridColumn13.VisibleIndex = 14
+        Me.GridColumn13.VisibleIndex = 15
         '
         'GridColumn14
         '
@@ -867,7 +920,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn14.Name = "GridColumn14"
         Me.GridColumn14.OptionsColumn.ReadOnly = True
         Me.GridColumn14.Visible = True
-        Me.GridColumn14.VisibleIndex = 15
+        Me.GridColumn14.VisibleIndex = 16
         '
         'GridColumn19
         '
@@ -878,7 +931,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn19.Name = "GridColumn19"
         Me.GridColumn19.OptionsColumn.ReadOnly = True
         Me.GridColumn19.Visible = True
-        Me.GridColumn19.VisibleIndex = 16
+        Me.GridColumn19.VisibleIndex = 17
         '
         'GridColumn16
         '
@@ -887,7 +940,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn16.Name = "GridColumn16"
         Me.GridColumn16.OptionsColumn.ReadOnly = True
         Me.GridColumn16.Visible = True
-        Me.GridColumn16.VisibleIndex = 17
+        Me.GridColumn16.VisibleIndex = 18
         '
         'GridColumn46
         '
@@ -896,7 +949,7 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn46.Name = "GridColumn46"
         Me.GridColumn46.OptionsColumn.ReadOnly = True
         Me.GridColumn46.Visible = True
-        Me.GridColumn46.VisibleIndex = 18
+        Me.GridColumn46.VisibleIndex = 19
         '
         'GridColumn17
         '
@@ -935,6 +988,18 @@ Partial Class LogisticOperationQueryForm
         Me.GridColumn44.FieldName = "COPE_Version"
         Me.GridColumn44.Name = "GridColumn44"
         Me.GridColumn44.OptionsColumn.ReadOnly = True
+        '
+        'GridColumn47
+        '
+        Me.GridColumn47.Caption = "Tipo"
+        Me.GridColumn47.FieldName = "Tipo"
+        Me.GridColumn47.Name = "GridColumn47"
+        '
+        'GridColumn48
+        '
+        Me.GridColumn48.Caption = "Tipo Consulta"
+        Me.GridColumn48.FieldName = "TipoConsulta"
+        Me.GridColumn48.Name = "GridColumn48"
         '
         'RepositoryItemLookUpEdit1
         '
@@ -1205,7 +1270,9 @@ Partial Class LogisticOperationQueryForm
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         CType(Me.gcRegistered, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemCheckEdit3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemCheckEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1329,4 +1396,12 @@ Partial Class LogisticOperationQueryForm
     Friend WithEvents GridColumn45 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn44 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn46 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn47 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn48 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn49 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemCheckEdit3 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents SeleccionaTodosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeseleccionaTodosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InvertirSelecciónToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -679,7 +679,7 @@ Public Class DelfinService
     Public Function InsertLogisticOperation(dsLogisticOperation As DataSet) As ArrayList Implements IDelfinService.InsertLogisticOperation
         Dim aResult As New ArrayList
         Dim dtHeader As DataTable = dsLogisticOperation.Tables("Header")
-        Dim dtDetail As DataTable = dsLogisticOperation.Tables("Detail")
+        Dim dtDetail As DataTable = dsLogisticOperation.Tables("Service")
         Dim dtChangeControl As DataTable = dsLogisticOperation.Tables("ChangeControl")
         Dim _CodOper As String = ""
         aResult.AddRange({2, ""})
@@ -798,6 +798,8 @@ Public Class DelfinService
                         .Add("@pchrTIPO_CodMND", SqlDbType.Char, 3).Value = oRowD("TIPO_CodMND")
                         .Add("@pchrCONS_CodLNG", SqlDbType.Char, 3).Value = oRowH("CONS_CodLNG")
                         .Add("@pchrCONS_TabLNG", SqlDbType.Char, 3).Value = oRowH("CONS_TabLNG")
+                        .Add("@pbitDOPE_ChangeControl", SqlDbType.Bit).Value = oRowD("DOPE_ChangeControl")
+                        .Add("@pintDOPE_ItemChangeControl", SqlDbType.Int).Value = oRowD("DOPE_ItemChangeControl")
                     End With
                     Command.ExecuteNonQuery()
                 Next
@@ -844,6 +846,8 @@ Public Class DelfinService
                         .Add("@pchrTIPO_CodMND", SqlDbType.Char, 3).Value = oRowD("TIPO_CodMND")
                         .Add("@pchrCONS_CodLNG", SqlDbType.Char, 3).Value = oRowH("CONS_CodLNG")
                         .Add("@pchrCONS_TabLNG", SqlDbType.Char, 3).Value = oRowH("CONS_TabLNG")
+                        .Add("@pbitDOPE_ChangeControl", SqlDbType.Bit).Value = oRowD("DOPE_ChangeControl")
+                        .Add("@pintDOPE_ItemChangeControl", SqlDbType.Int).Value = oRowD("DOPE_ItemChangeControl")
                     End With
                     Command.ExecuteNonQuery()
                 Next
@@ -1006,6 +1010,7 @@ Public Class DelfinService
                             .Add("@pchrCONS_CodLNG", SqlDbType.Char, 3).Value = oRowD("CONS_CodLNG")
                             .Add("@pchrCONS_TabLNG", SqlDbType.Char, 3).Value = oRowD("CONS_TabLNG")
                             .Add("@pbitDOPE_ChangeControl", SqlDbType.Bit).Value = oRowD("DOPE_ChangeControl")
+                            .Add("@pintDOPE_ItemChangeControl", SqlDbType.Int).Value = oRowD("DOPE_ItemChangeControl")
                         End With
                     Else
                         Command.CommandType = CommandType.StoredProcedure
@@ -1049,6 +1054,7 @@ Public Class DelfinService
                             .Add("@pchrCONS_CodLNG", SqlDbType.Char, 3).Value = oRowD("CONS_CodLNG")
                             .Add("@pchrCONS_TabLNG", SqlDbType.Char, 3).Value = oRowD("CONS_TabLNG")
                             .Add("@pbitDOPE_ChangeControl", SqlDbType.Bit).Value = oRowD("DOPE_ChangeControl")
+                            .Add("@pintDOPE_ItemChangeControl", SqlDbType.Int).Value = oRowD("DOPE_ItemChangeControl")
                         End With
                     End If
                     Command.ExecuteNonQuery()
@@ -1122,6 +1128,7 @@ Public Class DelfinService
                             .Add("@pchrCONS_CodLNG", SqlDbType.Char, 3).Value = oRowD("CONS_CodLNG")
                             .Add("@pchrCONS_TabLNG", SqlDbType.Char, 3).Value = oRowD("CONS_TabLNG")
                             .Add("@pbitDOPE_ChangeControl", SqlDbType.Bit).Value = oRowD("DOPE_ChangeControl")
+                            .Add("@pintDOPE_ItemChangeControl", SqlDbType.Int).Value = oRowD("DOPE_ItemChangeControl")
                         End With
                     Else
                         Command.CommandType = CommandType.StoredProcedure
@@ -1165,6 +1172,7 @@ Public Class DelfinService
                             .Add("@pchrCONS_CodLNG", SqlDbType.Char, 3).Value = oRowD("CONS_CodLNG")
                             .Add("@pchrCONS_TabLNG", SqlDbType.Char, 3).Value = oRowD("CONS_TabLNG")
                             .Add("@pbitDOPE_ChangeControl", SqlDbType.Bit).Value = oRowD("DOPE_ChangeControl")
+                            .Add("@pintDOPE_ItemChangeControl", SqlDbType.Int).Value = oRowD("DOPE_ItemChangeControl")
                         End With
                     End If
                     Command.ExecuteNonQuery()

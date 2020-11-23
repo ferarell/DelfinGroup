@@ -59,7 +59,12 @@ Public Class LogisticOperationRegisterForm
             SetItem()
         End If
 
-        'LoadTariff(InternalCode)
+        If dsOperationRelated.Tables(0).Rows.Count = 0 Then
+            Return
+        End If
+        If dsOperationRelated.Tables(0).Rows(0)("CONS_CodEstado") > "001" Then
+            GridView1.OptionsBehavior.ReadOnly = True
+        End If
 
     End Sub
 
@@ -254,7 +259,7 @@ Public Class LogisticOperationRegisterForm
     End Sub
 
     Private Sub LoadOperationRelated()
-        'dsOperationRelated = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasRelacionadas '" & sHBL & "'")
+        dsOperationRelated = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasRelacionadas 0")
     End Sub
 
     Private Sub NewItem()
@@ -280,6 +285,9 @@ Public Class LogisticOperationRegisterForm
         lueTipoMercancia.EditValue = dsQuery.Tables(2)(0)("TIPO_CodCDT")
         tsSADA.Enabled = CBool(drQuery("CCOT_SADA"))
         tsIMO.Enabled = CBool(drQuery("CCOT_IMO"))
+        lueUnidadNegocio.EditValue = "003"
+        lueRegimen.EditValue = drQuery("CONS_CodRGM")
+        lueVia.EditValue = drQuery("CONS_CodVIA")
         'Nave-Viaje
         teCodigoViaje.EditValue = drQuery("CodigoViaje")
         teNombreNave.EditValue = drQuery("NombreNave")
@@ -427,15 +435,6 @@ Public Class LogisticOperationRegisterForm
     End Sub
 
     Private Sub LoadTariffDetail()
-        'gcTariff.DataSource = Nothing
-        'Dim dtTariffDetail As New DataTable
-        'dtTariffDetail = oAppService.ExecuteSQL("EXEC NextSoft.tar.upGetTariffDetailById " & lueTarifa.EditValue.ToString).Tables(0)
-        'gcTariff.DataSource = dtTariffDetail
-        'GridView3.BestFitColumns()
-        'teTipoTarifa.EditValue = IIf(lueTarifa.GetColumnValue("TariffType") = "B", "BASE", IIf(lueTarifa.GetColumnValue("TariffType") = "R", "REGULAR", IIf(lueTarifa.GetColumnValue("TariffType") = "E", "ESPECIAL", "")))
-        'deVigenciaDesde.EditValue = lueTarifa.GetColumnValue("ValidFrom")
-        'deVigenciaHasta.EditValue = lueTarifa.GetColumnValue("ValidTo")
-        'meObservacionesTarifa.EditValue = lueTarifa.GetColumnValue("Remarks")
         gcTariff.DataSource = Nothing
         Dim dtTariffDetail As New DataTable
         dtTariffDetail = oAppService.ExecuteSQL("EXEC NextSoft.tar.upGetTariffDetailById " & beTarifa.EditValue.ToString).Tables(0)
@@ -445,8 +444,38 @@ Public Class LogisticOperationRegisterForm
         deVigenciaDesde.EditValue = GridView3.GetRowCellValue(0, "ValidFrom")
         deVigenciaHasta.EditValue = GridView3.GetRowCellValue(0, "ValidTo")
         meObservacionesTarifa.EditValue = GridView3.GetRowCellValue(0, "Remarks")
+        LoadServiceRelated()
     End Sub
 
+    Private Sub LoadServiceRelated()
+        If beTarifa.EditValue.ToString = "" Then
+            If teNumeroOperacion.Text.Contains({"", "0"}) Then
+                gcServiceRelated.DataSource = Nothing
+                gcTariff.DataSource = Nothing
+                teTipoTarifa.EditValue = Nothing
+                deVigenciaDesde.EditValue = Nothing
+                deVigenciaHasta.EditValue = Nothing
+                meObservacionesTarifa.EditValue = Nothing
+            End If
+            Return
+        End If
+        gcServiceRelated.DataSource = Nothing
+        If dsOperationRelated.Tables(5).Rows.Count = 0 Then
+            Dim dtServiceRelated As New DataTable
+            dtServiceRelated = oAppService.ExecuteSQL("EXEC NextSoft.tar.upGetServiceCalulatedByTariff " & beTarifa.EditValue.ToString & ",NULL, NULL, '" & teHBL.Text & "'").Tables(0)
+            For r = 0 To dtServiceRelated.Rows.Count - 1
+                dsOperationRelated.Tables(5).Rows.Add()
+                For c = 0 To dtServiceRelated.Columns.Count - 1
+                    If dsOperationRelated.Tables(5).Columns.Contains(dtServiceRelated.Columns(c).ColumnName) Then
+                        dsOperationRelated.Tables(5).Rows(r)(dtServiceRelated.Columns(c).ColumnName) = dtServiceRelated.Rows(r)(dtServiceRelated.Columns(c).ColumnName)
+                    End If
+                Next
+                dsOperationRelated.Tables(5).Rows(r)("CONS_CodLNG") = lueUnidadNegocio.EditValue
+            Next
+        End If
+        gcServiceRelated.DataSource = dsOperationRelated.Tables(5)
+        GridView1.BestFitColumns()
+    End Sub
     'Private Sub lueTarifa_EditValueChanged(sender As Object, e As EventArgs)
     '    If lueTarifa.ItemIndex = -1 Then
     '        If InternalCode = -1 Then
@@ -540,6 +569,8 @@ Public Class LogisticOperationRegisterForm
         drHeader("COPE_NumDoc") = teNumeroOperacion.EditValue
         drHeader("COPE_Version") = 1
         drHeader("CCOT_Codigo") = dsOperationRelated.Tables(0).Rows(0)("CCOT_Codigo")
+        drHeader("CCOT_Numero") = drSource("CCOT_Numero")
+        drHeader("CCOT_Tipo") = drSource("CCOT_Tipo")
         drHeader("COPE_HBL") = teHBL.EditValue
         drHeader("ENTC_CodCliente") = lueCliente.EditValue
         drHeader("ENTC_CodTransporte") = DBNull.Value
@@ -593,18 +624,21 @@ Public Class LogisticOperationRegisterForm
             drHeader("COPE_FecEmi") = deFechaEmision.EditValue
         Else
             drHeader("AUDI_UsrCrea") = AppUser
-            'drHeader("COPE_FecEmi") = DateTime.Today
+            drHeader("COPE_FecEmi") = DateTime.Today
         End If
 
         'Servicios
         dsOperationRelated.Tables(5).TableName = "Service"
-        '_TransType = IIf(dsOperationRelated.Tables(5).Rows.Count = 0, "I", "U")
+        _TransType = IIf(dsOperationRelated.Tables(5).Rows.Count = 0, "I", "U")
         For i = 0 To GridView1.RowCount - 1
-            Dim drDetail As DataRow
+            Dim drDetail As DataRow = dsOperationRelated.Tables(5).Rows(i)
+            If drDetail.RowState = DataRowState.Deleted Then
+                Continue For
+            End If
             If _TransType = "I" Then
                 dsOperationRelated.Tables(5).Rows.Add()
             End If
-            drDetail = dsOperationRelated.Tables(5).Rows(i)
+            'drDetail = dsOperationRelated.Tables(5).Rows(i)
             drDetail("COPE_Codigo") = drHeader("COPE_Codigo")
             drDetail("COPE_Version") = 1
             drDetail("DOPE_ChangeControl") = 0
@@ -632,6 +666,7 @@ Public Class LogisticOperationRegisterForm
             drDetail("CONS_CodLNG") = GridView1.GetRowCellValue(i, "CONS_CodLNG")
             drDetail("TIPO_TabMND") = "MND"
             drDetail("TIPO_CodMND") = GridView1.GetRowCellValue(i, "TIPO_CodMnd")
+            drDetail("DOPE_ItemChangeControl") = GridView1.GetRowCellValue(i, "DOPE_ItemChangeControl")
             If drDetail.RowState = DataRowState.Added Then
                 drDetail("AUDI_UsrCrea") = AppUser
                 drDetail("CONS_CodEST") = "001"
@@ -644,11 +679,14 @@ Public Class LogisticOperationRegisterForm
         'Change Control
         dsOperationRelated.Tables(6).TableName = "ChangeControl"
         For i = 0 To GridView5.RowCount - 1
-            Dim drDetail As DataRow
+            Dim drDetail As DataRow = dsOperationRelated.Tables(6).Rows(i)
+            If drDetail.RowState = DataRowState.Deleted Then
+                Continue For
+            End If
             If _TransType = "I" Then
                 dsOperationRelated.Tables(6).Rows.Add()
             End If
-            drDetail = dsOperationRelated.Tables(6).Rows(i)
+            'drDetail = dsOperationRelated.Tables(6).Rows(i)
             drDetail("COPE_Codigo") = drHeader("COPE_Codigo")
             drDetail("COPE_Version") = 1
             drDetail("DOPE_ChangeControl") = 1
@@ -676,6 +714,7 @@ Public Class LogisticOperationRegisterForm
             drDetail("CONS_CodLNG") = GridView5.GetRowCellValue(i, "CONS_CodLNG")
             drDetail("TIPO_TabMND") = "MND"
             drDetail("TIPO_CodMND") = GridView5.GetRowCellValue(i, "TIPO_CodMnd")
+            drDetail("DOPE_ItemChangeControl") = GridView5.GetRowCellValue(i, "DOPE_ItemChangeControl")
             If drDetail.RowState = DataRowState.Added Then
                 drDetail("AUDI_UsrCrea") = AppUser
                 drDetail("CONS_CodEST") = "001"
@@ -686,14 +725,31 @@ Public Class LogisticOperationRegisterForm
         Next
     End Sub
 
-    Private Sub tsmiChangeControl_Click(sender As Object, e As EventArgs) Handles tsmiChangeControl.Click
+    Private Sub tsmiChangeControlWR1_Click(sender As Object, e As EventArgs) Handles tsmiChangeControlWR1.Click
+        GridView5.AddNewRow()
+        For c = 0 To GridView5.Columns.Count - 1
+            GridView5.SetFocusedRowCellValue(GridView1.Columns(c).FieldName, GridView1.GetFocusedRowCellValue(GridView1.Columns(c)))
+        Next
+        GridView5.SetFocusedRowCellValue("DOPE_Item", Nothing)
+        GridView5.SetFocusedRowCellValue("DOPE_ItemChangeControl", GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "DOPE_Item"))
+        GridView5.MoveNextPage()
+    End Sub
 
+    Private Sub tsmiChangeControlWR2_Click(sender As Object, e As EventArgs) Handles tsmiChangeControlWR2.Click
+        Dim iPos As Integer = GridView5.FocusedRowHandle
+        GridView5.AddNewRow()
+        For c = 0 To GridView5.Columns.Count - 1
+            GridView5.SetFocusedRowCellValue(GridView5.Columns(c).FieldName, GridView5.GetRowCellValue(iPos, GridView1.Columns(c)))
+        Next
+        GridView5.SetFocusedRowCellValue("DOPE_Item", Nothing)
+        GridView5.SetFocusedRowCellValue("DOPE_ItemChangeControl", GridView5.GetRowCellValue(iPos, "DOPE_Item"))
+        GridView5.MoveNextPage()
     End Sub
 
     Private Sub beTarifa_Properties_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles beTarifa.Properties.ButtonClick
         Dim oTariffSelecting As New TariffSelectingForm
         oTariffSelecting.ENTC_CodTransportista = IIf(lueTransportista.EditValue Is Nothing, lueTransportistaTerrestre.EditValue, lueTransportista.EditValue)
-        If Not lueTransportistaTerrestre.EditValue Is Nothing Then
+        If lueTransportistaTerrestre.Text <> "" Then
             oTariffSelecting.ENTC_CodTransportista = lueTransportistaTerrestre.EditValue
         End If
         oTariffSelecting.ShowDialog()
@@ -701,26 +757,71 @@ Public Class LogisticOperationRegisterForm
         LoadTariffDetail()
     End Sub
 
-    Private Sub tsmiEliminarServicio_Click(sender As Object, e As EventArgs) Handles tsmiEliminarServicio.Click
+    Private Sub tsmiEliminarServicio_Click(sender As Object, e As EventArgs) Handles tsmiServiceDelete.Click
+        'If GridView1.GetFocusedRowCellValue("IdTariffDetail") Is Nothing Then
+        '    XtraMessageBox.Show("No se permite eliminar un servicio asociado a una tarifa.", "Error", MessageBoxButtons.OK)
+        'End If
         If XtraMessageBox.Show("Está seguro de eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
-        Dim grid As GridControl = gcServiceRelated
+            Dim grid As GridControl = gcServiceRelated
+            Dim view As GridView = TryCast(grid.FocusedView, GridView)
+            view.DeleteSelectedRows()
+    End Sub
+
+    Private Sub gcServiceRelated_Enter(sender As Object, e As EventArgs) Handles gcServiceRelated.Enter
+
+    End Sub
+
+    Private Sub tsmiChangeControlDelete_Click(sender As Object, e As EventArgs) Handles tsmiChangeControlDelete.Click
+        If XtraMessageBox.Show("Está seguro de eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
+        Dim grid As GridControl = gcChangeControlRelated
         Dim view As GridView = TryCast(grid.FocusedView, GridView)
         view.DeleteSelectedRows()
     End Sub
 
-    Private Sub gcServiceRelated_Enter(sender As Object, e As EventArgs) Handles gcServiceRelated.Enter
+    Private Sub gcServiceRelated_Click(sender As Object, e As EventArgs) Handles gcServiceRelated.Click
         cmsServices.Enabled = True
         If GridView1.RowCount = 0 Then
             cmsServices.Enabled = False
         End If
+        cmsServices.Items("tsmiChangeControlWR1").Enabled = True
+        If GridView1.GetFocusedRowCellValue("DOPE_DocProvVenta") Is Nothing Then
+            'cmsServices.Items("tsmiChangeControl").Enabled = False
+        End If
+    End Sub
+
+    Private Sub gcChangeControlRelated_Click(sender As Object, e As EventArgs) Handles gcChangeControlRelated.Click
         cmsChangeControl.Enabled = True
         If GridView5.RowCount = 0 Then
             cmsChangeControl.Enabled = False
         End If
-        cmsServices.Items("tsmiChangeControl").Enabled = True
-        If GridView1.GetFocusedRowCellValue("DOPE_DocProvVenta") Is Nothing Then
-            cmsServices.Items("tsmiChangeControl").Enabled = False
+        cmsChangeControl.Items("tsmiChangeControlWR2").Enabled = True
+        cmsChangeControl.Items("tsmiChangeControlDelete").Enabled = True
+        cmsChangeControl.Items("tsmiEntryJournalCreate").Enabled = True
+        cmsChangeControl.Items("tsmiJournalEntryVoid").Enabled = True
+        If GridView5.GetFocusedRowCellValue("DocumentoSAP").ToString.Length = 0 Then
+            cmsChangeControl.Items("tsmiChangeControlWR2").Enabled = False
+            cmsChangeControl.Items("tsmiJournalEntryVoid").Enabled = False
+            cmsChangeControl.Items("tsmiJournalEntryVoid").Enabled = False
         End If
+    End Sub
+
+    Private Sub GridView1_RowStyle(sender As Object, e As RowStyleEventArgs) Handles GridView1.RowStyle
+        Dim View As GridView = sender
+        If (e.RowHandle >= 0) Then
+            ''Dim C22 As String = View.GetRowCellDisplayText(e.RowHandle, View.Columns("C22"))
+            If View.GetRowCellDisplayText(e.RowHandle, View.Columns("DTAR_Item")) <> "" Then
+                e.Appearance.BackColor = Color.LightGray
+                'e.Appearance.BackColor2 = Color.SeaShell
+            End If
+        End If
+    End Sub
+
+    Private Sub tsmiEntryJournalCreate_Click(sender As Object, e As EventArgs) Handles tsmiEntryJournalCreate.Click
+
+    End Sub
+
+    Private Sub tsmiJournalEntryVoid_Click(sender As Object, e As EventArgs) Handles tsmiJournalEntryVoid.Click
+
     End Sub
 
     Private Sub gcServiceRelated_ProcessGridKey(sender As Object, e As KeyEventArgs) Handles gcServiceRelated.ProcessGridKey
@@ -786,7 +887,7 @@ Public Class LogisticOperationRegisterForm
     End Sub
 
     Private Sub RepositoryItemLookUpEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles RepositoryItemLookUpEdit1.EditValueChanged
-        GridView1.SetFocusedRowCellValue("SERV_Tipo", DirectCast(DirectCast(sender, DevExpress.XtraEditors.LookUpEditBase).GetSelectedDataRow, System.Data.DataRowView).Row.ItemArray(2))
+        'GridView1.SetFocusedRowCellValue("SERV_Tipo", DirectCast(DirectCast(sender, DevExpress.XtraEditors.LookUpEditBase).GetSelectedDataRow, System.Data.DataRowView).Row.ItemArray(2))
     End Sub
 
     Private Sub RepositoryItemLookUpEdit1_Leave(sender As Object, e As EventArgs) Handles RepositoryItemLookUpEdit1.Leave

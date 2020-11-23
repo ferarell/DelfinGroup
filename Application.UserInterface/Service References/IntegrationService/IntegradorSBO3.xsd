@@ -15,6 +15,7 @@
       <xs:element minOccurs="0" name="RespuestaSAP" type="xs:int" />
       <xs:element minOccurs="0" name="SWW" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="tns:d" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Respuesta" nillable="true" type="tns:Respuesta" />
@@ -48,4 +49,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:complexType name="d">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="results" nillable="true" type="tns:ArrayOfresults" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="d" nillable="true" type="tns:d" />
+  <xs:complexType name="ArrayOfresults">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="results" nillable="true" type="tns:results" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfresults" nillable="true" type="tns:ArrayOfresults" />
+  <xs:complexType name="results">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocEntry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FolioNum" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FolioPref" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="results" nillable="true" type="tns:results" />
 </xs:schema>

@@ -18,6 +18,7 @@ Public Class LogisticOperationQueryForm
     End Sub
 
     Private Sub LogisticOperationQueryForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.StartPosition = FormStartPosition.CenterScreen
         gcRegistered.MainView.RestoreLayoutFromRegistry(IO.Directory.GetCurrentDirectory)
         deDateFrom.EditValue = DateAdd(DateInterval.Day, -60, Now)
         deDateTo.EditValue = Now
@@ -96,6 +97,7 @@ Public Class LogisticOperationQueryForm
             Return
         End If
         Dim dtSource As New DataTable
+        dtSource.Columns.Add("Checked", GetType(Boolean)).DefaultValue = False
         Dim sParams As String = ""
         sParams = IIf(lueEntity.EditValue Is Nothing, "NULL", lueEntity.EditValue)
         sParams += ", " & IIf(teOperationNumber.Text.Trim = "", "NULL", "'" & teOperationNumber.Text & "'")
@@ -201,6 +203,7 @@ Public Class LogisticOperationQueryForm
             Return
         Else
             bbiExport.Enabled = True
+            bbiPreInvoicing.Enabled = True
         End If
         If GridView1.RowCount > 0 And GridView1.IsFocusedView Then
             For b = 0 To bmActions.Items.Count - 1
@@ -221,7 +224,7 @@ Public Class LogisticOperationQueryForm
             bbiAdd1.Enabled = True
         End If
         If GridView1.GetFocusedRowCellValue("CONS_CodEstado") <> "001" Then
-            bbiEdit.Enabled = False
+            'bbiEdit.Enabled = False
             bbiVoid.Enabled = False
             bbiPreInvoicing.Enabled = False
             If GridView1.GetFocusedRowCellValue("CONS_CodEstado") = "004" Then
@@ -275,10 +278,21 @@ Public Class LogisticOperationQueryForm
         If GridView1.RowCount = 0 Then
             Return
         End If
+        Dim iCurrentRow As Integer = 0
+        Dim iSelected As Integer = RowSelectedCount(GridView1)
+        If iSelected = 0 Then
+            XtraMessageBox.Show("Debe seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+        If DevExpress.XtraEditors.XtraMessageBox.Show("Se generarán las pre-facturas de las operciones seleccionadas, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            Return
+        End If
         Dim bError As Boolean = False
         For r = 0 To GridView1.RowCount - 1
-            If GridView1.GetRowCellValue(r, "HBL") Then
-
+            Dim oRow As DataRow = GridView1.GetDataRow(r)
+            oRow("Checked") = IIf(IsDBNull(oRow("Checked")), False, oRow("Checked"))
+            If oRow("Checked") = False Then
+                Continue For
             End If
         Next
         If bError Then
@@ -307,5 +321,67 @@ Public Class LogisticOperationQueryForm
         End If
     End Sub
 
+    Friend Function RowSelectedCount(oGridView As GridView) As Integer
+        Dim iChecked As Integer = 0
+        For i = 0 To oGridView.RowCount - 1
+            If IsDBNull(oGridView.GetRowCellValue(i, "Checked")) Then
+                Continue For
+            End If
+            If oGridView.GetRowCellValue(i, "Checked") Then
+                iChecked += 1
+            End If
+        Next
+        Return iChecked
+    End Function
+
+    Private Sub SelectRowsByType(oGridView As GridView, SelectType As Integer)
+        For i = 0 To oGridView.RowCount - 1
+            Dim row As DataRow = oGridView.GetDataRow(i)
+            If IsDBNull(row("Checked")) Then
+                row("Checked") = False
+            End If
+            If SelectType = 0 Then
+                If oGridView.Name = "GridView1" Then
+                    If row("DocumentoSAP").ToString.Length = 0 Then
+                        row("Checked") = True
+                    End If
+                Else
+                    row("Checked") = True
+                End If
+            End If
+            If SelectType = 1 Then
+                row("Checked") = False
+            End If
+            If SelectType = 2 Then
+                If row("Checked") Then
+                    row("Checked") = False
+                Else
+                    If oGridView.Name = "GridView1" Then
+                        If row("DocumentoSAP").ToString.Length = 0 Then
+                            row("Checked") = True
+                        End If
+                    Else
+                        row("Checked") = True
+                    End If
+                End If
+            End If
+            Validate()
+        Next
+    End Sub
+
+    Private Sub SeleccionaTodosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SeleccionaTodosToolStripMenuItem.Click
+        Dim oGridView As GridView = IIf(GridView1.IsFocusedView, GridView1, GridView2)
+        SelectRowsByType(oGridView, 0)
+    End Sub
+
+    Private Sub DeseleccionaTodosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeseleccionaTodosToolStripMenuItem.Click
+        Dim oGridView As GridView = IIf(GridView1.IsFocusedView, GridView1, GridView2)
+        SelectRowsByType(oGridView, 1)
+    End Sub
+
+    Private Sub InvertirSelecciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InvertirSelecciónToolStripMenuItem.Click
+        Dim oGridView As GridView = IIf(GridView1.IsFocusedView, GridView1, GridView2)
+        SelectRowsByType(oGridView, 2)
+    End Sub
 
 End Class

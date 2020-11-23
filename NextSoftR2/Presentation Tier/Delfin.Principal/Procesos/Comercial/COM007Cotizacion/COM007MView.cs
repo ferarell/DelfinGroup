@@ -197,13 +197,16 @@ namespace Delfin.Principal
             if (salesLogistic.beTarifa.Text != "") // && salesLogistic.gcServiceRelated.MainView.RowCount > 0)
             {
                 LogisticOperationRegister(_Trans);
+                DataTable dtChangeControl = dtServiceDetail.Clone();
+                dtChangeControl.TableName = "ChangeControl";
+                dsLogisticOperation.Tables.Add(dtChangeControl);
                 ArrayList _exception = new ArrayList();
                 if (_Trans == "I")
                 {
                     try
                     {
                         _exception.AddRange(oAppService.InsertLogisticOperation(salesLogistic.dsLogisticOperation));
-                                        if (_exception[0].Equals(0))
+                        if (_exception[0].Equals(0))
                         {
                             throw new System.ArgumentException(_exception[1].ToString());
                         }
@@ -217,7 +220,7 @@ namespace Delfin.Principal
                 {
                     try
                     {
-                        _exception.AddRange(oAppService.UpdateLogisticOperation(salesLogistic.dsLogisticOperation, dtServiceDetail));
+                        _exception.AddRange(oAppService.UpdateLogisticOperation(salesLogistic.dsLogisticOperation, dtServiceDetail, dtChangeControl));
                         if (_exception[0].Equals(0))
                         {
                             throw new System.ArgumentException(_exception[1].ToString());
@@ -269,6 +272,12 @@ namespace Delfin.Principal
             else
             { drHeader["CONS_CodCRG"] = "002"; }
             drHeader["CONS_TabCRG"] = "CRG";
+            drHeader["CONS_TabLNG"] = "LNG";
+            drHeader["CONS_CodLNG"] = cmbCONS_CodLNG.SelectedValue;
+            drHeader["CONS_TabRGM"] = "RGM";
+            drHeader["CONS_CodRGM"] = cmbCONS_CodRGM.SelectedValue;
+            drHeader["CONS_TabVIA"] = "VIA";
+            drHeader["CONS_CodVIA"] = cmbCONS_CodVia.SelectedValue;
             drHeader["CTAR_Codigo"] = salesLogistic.beTarifa.EditValue;
             drHeader["CTAR_Version"] = 1;
             drHeader["COPE_Fob"] = 0;
@@ -280,7 +289,7 @@ namespace Delfin.Principal
             drHeader["COPE_Igv"] = 0;
             drHeader["COPE_Percepcion"] = 0;
             drHeader["COPE_TasaDespacho"] = 0;
-            drHeader["COPE_AdValorem"] = 0;
+            drHeader["COPE_AdValorem"] = 0;            
             if (type == "I")
             {
                 drHeader["AUDI_UsrCrea"] = Presenter.Session.UserName;
@@ -293,7 +302,7 @@ namespace Delfin.Principal
             }
 
             //Detail
-            salesLogistic.dsLogisticOperation.Tables[5].TableName = "Detail";
+            salesLogistic.dsLogisticOperation.Tables[5].TableName = "Service";
 
             for (int i = 0; i <= salesLogistic.GridView1.RowCount - 1; ++i)
             {
@@ -344,6 +353,7 @@ namespace Delfin.Principal
                 drDetail["DOPE_Venta"] = 0;
                 drDetail["TIPO_TabMND"] = "MND";
                 drDetail["TIPO_CodMND"] = salesLogistic.GridView1.GetRowCellValue(i, "Currency");
+                drDetail["DOPE_ChangeControl"] = 0;
                 if (salesLogistic.dsLogisticOperation.Tables[5].Rows[i].RowState == DataRowState.Added)
                 {
                     drDetail["AUDI_UsrCrea"] = Presenter.Session.UserName;

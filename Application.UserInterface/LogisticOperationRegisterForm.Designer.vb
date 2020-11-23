@@ -210,10 +210,11 @@ Partial Class LogisticOperationRegisterForm
         Me.NavBarGroupControlContainer3 = New DevExpress.XtraNavBar.NavBarGroupControlContainer()
         Me.gcServiceRelated = New DevExpress.XtraGrid.GridControl()
         Me.cmsServices = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.tsmiChangeControl = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiChangeControlWR1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsmiEliminarServicio = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiServiceDelete = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn69 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
@@ -234,8 +235,8 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn28 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn72 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn42 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn43 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn44 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn55 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn60 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -263,15 +264,15 @@ Partial Class LogisticOperationRegisterForm
         Me.NavBarGroupControlContainer5 = New DevExpress.XtraNavBar.NavBarGroupControlContainer()
         Me.gcChangeControlRelated = New DevExpress.XtraGrid.GridControl()
         Me.cmsChangeControl = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiChangeControlWR2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsmiChangeControlDelete = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiEntryJournalCreate = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiJournalEntryVoid = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn70 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn29 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn30 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
@@ -292,10 +293,11 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn39 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn40 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn41 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn73 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn56 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn57 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn58 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn59 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn71 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.NavBarGroup2 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarGroup3 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarGroup5 = New DevExpress.XtraNavBar.NavBarGroup()
@@ -307,11 +309,6 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlGroup7 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.TabbedControlGroup2 = New DevExpress.XtraLayout.TabbedControlGroup()
         Me.LayoutControlGroup8 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.GridColumn69 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn70 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn71 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn72 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn73 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcTariff, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -2050,30 +2047,30 @@ Partial Class LogisticOperationRegisterForm
         '
         'cmsServices
         '
-        Me.cmsServices.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiChangeControl, Me.ToolStripSeparator1, Me.tsmiEliminarServicio})
+        Me.cmsServices.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiChangeControlWR1, Me.ToolStripSeparator1, Me.tsmiServiceDelete})
         Me.cmsServices.Name = "ContextMenuStrip1"
         Me.cmsServices.Size = New System.Drawing.Size(190, 54)
         '
-        'tsmiChangeControl
+        'tsmiChangeControlWR1
         '
-        Me.tsmiChangeControl.Name = "tsmiChangeControl"
-        Me.tsmiChangeControl.Size = New System.Drawing.Size(189, 22)
-        Me.tsmiChangeControl.Text = "Crear Change Control"
+        Me.tsmiChangeControlWR1.Name = "tsmiChangeControlWR1"
+        Me.tsmiChangeControlWR1.Size = New System.Drawing.Size(189, 22)
+        Me.tsmiChangeControlWR1.Text = "Crear Change Control"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(186, 6)
         '
-        'tsmiEliminarServicio
+        'tsmiServiceDelete
         '
-        Me.tsmiEliminarServicio.Name = "tsmiEliminarServicio"
-        Me.tsmiEliminarServicio.Size = New System.Drawing.Size(189, 22)
-        Me.tsmiEliminarServicio.Text = "Eliminar Servicio"
+        Me.tsmiServiceDelete.Name = "tsmiServiceDelete"
+        Me.tsmiServiceDelete.Size = New System.Drawing.Size(189, 22)
+        Me.tsmiServiceDelete.Text = "Eliminar Servicio"
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn69, Me.GridColumn7, Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn67, Me.GridColumn53, Me.GridColumn52, Me.GridColumn63, Me.GridColumn8, Me.GridColumn9, Me.GridColumn6, Me.GridColumn5, Me.GridColumn10, Me.GridColumn28, Me.GridColumn72, Me.GridColumn42, Me.GridColumn43, Me.GridColumn44, Me.GridColumn55, Me.GridColumn60, Me.GridColumn61, Me.GridColumn62})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn69, Me.GridColumn7, Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn67, Me.GridColumn53, Me.GridColumn52, Me.GridColumn63, Me.GridColumn8, Me.GridColumn9, Me.GridColumn6, Me.GridColumn5, Me.GridColumn10, Me.GridColumn28, Me.GridColumn72, Me.GridColumn42, Me.GridColumn44, Me.GridColumn55, Me.GridColumn60, Me.GridColumn61, Me.GridColumn62})
         Me.GridView1.GridControl = Me.gcServiceRelated
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
@@ -2085,6 +2082,16 @@ Partial Class LogisticOperationRegisterForm
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
         Me.GridView1.OptionsView.ShowFooter = True
         Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn69
+        '
+        Me.GridColumn69.Caption = "Item"
+        Me.GridColumn69.FieldName = "DOPE_Item"
+        Me.GridColumn69.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left
+        Me.GridColumn69.Name = "GridColumn69"
+        Me.GridColumn69.OptionsColumn.ReadOnly = True
+        Me.GridColumn69.Visible = True
+        Me.GridColumn69.VisibleIndex = 0
         '
         'GridColumn7
         '
@@ -2257,23 +2264,23 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn28.FieldName = "TotalProfit"
         Me.GridColumn28.Name = "GridColumn28"
         '
+        'GridColumn72
+        '
+        Me.GridColumn72.Caption = "Código Interno"
+        Me.GridColumn72.FieldName = "CCCT_Codigo"
+        Me.GridColumn72.Name = "GridColumn72"
+        Me.GridColumn72.OptionsColumn.ReadOnly = True
+        Me.GridColumn72.Visible = True
+        Me.GridColumn72.VisibleIndex = 12
+        '
         'GridColumn42
         '
-        Me.GridColumn42.Caption = "Provisión Venta"
-        Me.GridColumn42.FieldName = "DOPE_DocProvVenta"
+        Me.GridColumn42.Caption = "Documento Provisión"
+        Me.GridColumn42.FieldName = "DocumentoSAP"
         Me.GridColumn42.Name = "GridColumn42"
         Me.GridColumn42.OptionsColumn.ReadOnly = True
         Me.GridColumn42.Visible = True
         Me.GridColumn42.VisibleIndex = 13
-        '
-        'GridColumn43
-        '
-        Me.GridColumn43.Caption = "Provisión Costo"
-        Me.GridColumn43.FieldName = "DOPE_DocProvCosto"
-        Me.GridColumn43.Name = "GridColumn43"
-        Me.GridColumn43.OptionsColumn.ReadOnly = True
-        Me.GridColumn43.Visible = True
-        Me.GridColumn43.VisibleIndex = 14
         '
         'GridColumn44
         '
@@ -2302,7 +2309,7 @@ Partial Class LogisticOperationRegisterForm
         'GridColumn62
         '
         Me.GridColumn62.Caption = "Código Detalle Tarifa"
-        Me.GridColumn62.FieldName = "IdTariffDetail"
+        Me.GridColumn62.FieldName = "DTAR_Item"
         Me.GridColumn62.Name = "GridColumn62"
         '
         'NavBarGroupControlContainer4
@@ -2565,59 +2572,52 @@ Partial Class LogisticOperationRegisterForm
         '
         'cmsChangeControl
         '
-        Me.cmsChangeControl.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem6, Me.ToolStripSeparator2, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripSeparator4, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5})
+        Me.cmsChangeControl.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiChangeControlWR2, Me.ToolStripSeparator3, Me.tsmiChangeControlDelete, Me.ToolStripSeparator2, Me.tsmiEntryJournalCreate, Me.ToolStripSeparator4, Me.tsmiJournalEntryVoid})
         Me.cmsChangeControl.Name = "ContextMenuStrip1"
-        Me.cmsChangeControl.Size = New System.Drawing.Size(205, 148)
+        Me.cmsChangeControl.Size = New System.Drawing.Size(205, 110)
         '
-        'ToolStripMenuItem1
+        'tsmiChangeControlWR2
         '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(204, 22)
-        Me.ToolStripMenuItem1.Text = "Crear Change Control"
+        Me.tsmiChangeControlWR2.Name = "tsmiChangeControlWR2"
+        Me.tsmiChangeControlWR2.Size = New System.Drawing.Size(204, 22)
+        Me.tsmiChangeControlWR2.Text = "Crear Change Control"
         '
-        'ToolStripMenuItem6
+        'ToolStripSeparator3
         '
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(204, 22)
-        Me.ToolStripMenuItem6.Text = "Eliminar Change Control"
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(201, 6)
+        '
+        'tsmiChangeControlDelete
+        '
+        Me.tsmiChangeControlDelete.Name = "tsmiChangeControlDelete"
+        Me.tsmiChangeControlDelete.Size = New System.Drawing.Size(204, 22)
+        Me.tsmiChangeControlDelete.Text = "Eliminar Change Control"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(201, 6)
         '
-        'ToolStripMenuItem2
+        'tsmiEntryJournalCreate
         '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(204, 22)
-        Me.ToolStripMenuItem2.Text = "Generar Provisión Venta"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(204, 22)
-        Me.ToolStripMenuItem3.Text = "Generar Provisión Costo"
+        Me.tsmiEntryJournalCreate.Name = "tsmiEntryJournalCreate"
+        Me.tsmiEntryJournalCreate.Size = New System.Drawing.Size(204, 22)
+        Me.tsmiEntryJournalCreate.Text = "Generar Provisión"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(201, 6)
         '
-        'ToolStripMenuItem4
+        'tsmiJournalEntryVoid
         '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(204, 22)
-        Me.ToolStripMenuItem4.Text = "Anular Provisión Venta"
-        '
-        'ToolStripMenuItem5
-        '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(204, 22)
-        Me.ToolStripMenuItem5.Text = "Anular Provisión Costo"
+        Me.tsmiJournalEntryVoid.Name = "tsmiJournalEntryVoid"
+        Me.tsmiJournalEntryVoid.Size = New System.Drawing.Size(204, 22)
+        Me.tsmiJournalEntryVoid.Text = "Anular Provisión"
         '
         'GridView5
         '
-        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn70, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn68, Me.GridColumn33, Me.GridColumn34, Me.GridColumn66, Me.GridColumn35, Me.GridColumn36, Me.GridColumn38, Me.GridColumn39, Me.GridColumn40, Me.GridColumn73, Me.GridColumn41, Me.GridColumn56, Me.GridColumn57, Me.GridColumn58, Me.GridColumn59, Me.GridColumn71})
+        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn70, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn68, Me.GridColumn33, Me.GridColumn34, Me.GridColumn66, Me.GridColumn35, Me.GridColumn36, Me.GridColumn38, Me.GridColumn39, Me.GridColumn40, Me.GridColumn41, Me.GridColumn73, Me.GridColumn56, Me.GridColumn58, Me.GridColumn59, Me.GridColumn71})
         Me.GridView5.GridControl = Me.gcChangeControlRelated
         Me.GridView5.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView5.Name = "GridView5"
@@ -2630,6 +2630,16 @@ Partial Class LogisticOperationRegisterForm
         Me.GridView5.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
         Me.GridView5.OptionsView.ShowFooter = True
         Me.GridView5.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn70
+        '
+        Me.GridColumn70.Caption = "Item"
+        Me.GridColumn70.FieldName = "DOPE_Item"
+        Me.GridColumn70.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left
+        Me.GridColumn70.Name = "GridColumn70"
+        Me.GridColumn70.OptionsColumn.ReadOnly = True
+        Me.GridColumn70.Visible = True
+        Me.GridColumn70.VisibleIndex = 0
         '
         'GridColumn29
         '
@@ -2797,23 +2807,23 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn41.FieldName = "TotalProfit"
         Me.GridColumn41.Name = "GridColumn41"
         '
+        'GridColumn73
+        '
+        Me.GridColumn73.Caption = "Código Interno"
+        Me.GridColumn73.FieldName = "CCCT_Codigo"
+        Me.GridColumn73.Name = "GridColumn73"
+        Me.GridColumn73.OptionsColumn.ReadOnly = True
+        Me.GridColumn73.Visible = True
+        Me.GridColumn73.VisibleIndex = 12
+        '
         'GridColumn56
         '
-        Me.GridColumn56.Caption = "Provisión Venta"
-        Me.GridColumn56.FieldName = "DOPE_DocProvVenta"
+        Me.GridColumn56.Caption = "Documento Provisión"
+        Me.GridColumn56.FieldName = "DocumentoSAP"
         Me.GridColumn56.Name = "GridColumn56"
         Me.GridColumn56.OptionsColumn.ReadOnly = True
         Me.GridColumn56.Visible = True
-        Me.GridColumn56.VisibleIndex = 12
-        '
-        'GridColumn57
-        '
-        Me.GridColumn57.Caption = "Provisión Costo"
-        Me.GridColumn57.FieldName = "DOPE_DocProvCosto"
-        Me.GridColumn57.Name = "GridColumn57"
-        Me.GridColumn57.OptionsColumn.ReadOnly = True
-        Me.GridColumn57.Visible = True
-        Me.GridColumn57.VisibleIndex = 13
+        Me.GridColumn56.VisibleIndex = 13
         '
         'GridColumn58
         '
@@ -2826,6 +2836,15 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn59.Caption = "Comprobante Costo"
         Me.GridColumn59.FieldName = "DOPE_DocContCosto"
         Me.GridColumn59.Name = "GridColumn59"
+        '
+        'GridColumn71
+        '
+        Me.GridColumn71.Caption = "Item Referencia"
+        Me.GridColumn71.FieldName = "DOPE_ItemChangeControl"
+        Me.GridColumn71.Name = "GridColumn71"
+        Me.GridColumn71.OptionsColumn.ReadOnly = True
+        Me.GridColumn71.Visible = True
+        Me.GridColumn71.VisibleIndex = 14
         '
         'NavBarGroup2
         '
@@ -2918,53 +2937,6 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlGroup8.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup8.Name = "LayoutControlGroup8"
         Me.LayoutControlGroup8.Size = New System.Drawing.Size(318, 56)
-        '
-        'GridColumn69
-        '
-        Me.GridColumn69.Caption = "Item"
-        Me.GridColumn69.FieldName = "DOPE_Item"
-        Me.GridColumn69.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left
-        Me.GridColumn69.Name = "GridColumn69"
-        Me.GridColumn69.OptionsColumn.ReadOnly = True
-        Me.GridColumn69.Visible = True
-        Me.GridColumn69.VisibleIndex = 0
-        '
-        'GridColumn70
-        '
-        Me.GridColumn70.Caption = "Item"
-        Me.GridColumn70.FieldName = "DOPE_Item"
-        Me.GridColumn70.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left
-        Me.GridColumn70.Name = "GridColumn70"
-        Me.GridColumn70.OptionsColumn.ReadOnly = True
-        Me.GridColumn70.Visible = True
-        Me.GridColumn70.VisibleIndex = 0
-        '
-        'GridColumn71
-        '
-        Me.GridColumn71.Caption = "Item Referencia"
-        Me.GridColumn71.FieldName = "DOPE_ItemChangeControl"
-        Me.GridColumn71.Name = "GridColumn71"
-        Me.GridColumn71.OptionsColumn.ReadOnly = True
-        Me.GridColumn71.Visible = True
-        Me.GridColumn71.VisibleIndex = 15
-        '
-        'GridColumn72
-        '
-        Me.GridColumn72.Caption = "Código Interno"
-        Me.GridColumn72.FieldName = "CCCT_Codigo"
-        Me.GridColumn72.Name = "GridColumn72"
-        Me.GridColumn72.OptionsColumn.ReadOnly = True
-        Me.GridColumn72.Visible = True
-        Me.GridColumn72.VisibleIndex = 12
-        '
-        'GridColumn73
-        '
-        Me.GridColumn73.Caption = "Código Interno"
-        Me.GridColumn73.FieldName = "CCCT_Codigo"
-        Me.GridColumn73.Name = "GridColumn73"
-        Me.GridColumn73.OptionsColumn.ReadOnly = True
-        Me.GridColumn73.Visible = True
-        Me.GridColumn73.VisibleIndex = 14
         '
         'LogisticOperationRegisterForm
         '
@@ -3301,17 +3273,15 @@ Partial Class LogisticOperationRegisterForm
     Friend WithEvents GridColumn41 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents NavBarGroup5 As DevExpress.XtraNavBar.NavBarGroup
     Friend WithEvents cmsServices As ContextMenuStrip
-    Friend WithEvents tsmiChangeControl As ToolStripMenuItem
+    Friend WithEvents tsmiChangeControlWR1 As ToolStripMenuItem
     Friend WithEvents GridColumn42 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn43 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn44 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn55 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn56 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn57 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn58 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn59 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents tsmiEliminarServicio As ToolStripMenuItem
+    Friend WithEvents tsmiServiceDelete As ToolStripMenuItem
     Friend WithEvents GridColumn60 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn61 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn62 As DevExpress.XtraGrid.Columns.GridColumn
@@ -3377,17 +3347,16 @@ Partial Class LogisticOperationRegisterForm
     Friend WithEvents GridColumn68 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemLookUpEdit12 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents cmsChangeControl As ContextMenuStrip
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents tsmiChangeControlWR2 As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents tsmiEntryJournalCreate As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem6 As ToolStripMenuItem
+    Friend WithEvents tsmiJournalEntryVoid As ToolStripMenuItem
+    Friend WithEvents tsmiChangeControlDelete As ToolStripMenuItem
     Friend WithEvents GridColumn69 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn70 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn71 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn72 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn73 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
 End Class

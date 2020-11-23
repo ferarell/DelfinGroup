@@ -93,7 +93,9 @@ Public Class SalesLogisticOperationForm
         teCondicionEmbarque.EditValue = dsLogisticOperation.Tables(0).Rows(0)("DescripcionCondicionEmbarque")
 
         beTarifa.EditValue = dsLogisticOperation.Tables(0).Rows(0)("CTAR_Codigo")
-        LoadTariffDetail()
+        If beTarifa.Text <> "" Then
+            LoadTariffDetail()
+        End If
         gcServiceRelated.DataSource = dsLogisticOperation.Tables(5)
         GridView1.BestFitColumns()
     End Sub
@@ -208,7 +210,7 @@ Public Class SalesLogisticOperationForm
     Private Sub LoadTariffDetail()
         gcTariff.DataSource = Nothing
         Dim dtTariffDetail As New DataTable
-        dtTariffDetail = oAppService.ExecuteSQL("EXEC NextSoft.tar.upGetTariffDetailById " & beTarifa.EditValue.ToString).Tables(0)
+        dtTariffDetail = oAppService.ExecuteSQL("EXEC NextSoft.tar.upGetTariffDetailById " & beTarifa.Text).Tables(0)
         gcTariff.DataSource = dtTariffDetail
         GridView3.BestFitColumns()
         teTipoTarifa.EditValue = IIf(GridView3.GetRowCellValue(0, "TariffType") = "B", "BASE", IIf(GridView3.GetRowCellValue(0, "TariffType") = "R", "REGULAR", IIf(GridView3.GetRowCellValue(0, "TariffType") = "E", "ESPECIAL", "")))
