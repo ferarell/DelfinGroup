@@ -352,7 +352,7 @@ namespace Delfin.Principal
                 drDetail["DOPE_VentaSada"] = 0;
                 drDetail["DOPE_Venta"] = 0;
                 drDetail["TIPO_TabMND"] = "MND";
-                drDetail["TIPO_CodMND"] = salesLogistic.GridView1.GetRowCellValue(i, "Currency");
+                drDetail["TIPO_CodMND"] = salesLogistic.GridView1.GetRowCellValue(i, "TIPO_CodMnd");
                 drDetail["DOPE_ChangeControl"] = 0;
                 if (salesLogistic.dsLogisticOperation.Tables[5].Rows[i].RowState == DataRowState.Added)
                 {
