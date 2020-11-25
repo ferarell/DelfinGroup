@@ -8526,7 +8526,10 @@ namespace Delfin.Principal
             dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserName + "', 'P'");
             oJournalEntryViewerForm.dsVoucher = dsQuery;
             oJournalEntryViewerForm.ShowDialog();
-            grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value = oJournalEntryViewerForm.sDocSAP;
+            if (oJournalEntryViewerForm.sDocSAP != null)
+            {
+                grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value = oJournalEntryViewerForm.sDocSAP;
+            }
             grdItemsServiciosChangeControl_SelectionChanged(sender, e);
         }
 
@@ -8535,7 +8538,7 @@ namespace Delfin.Principal
             if (grdItemsServiciosChangeControl.RowCount == 0)
             { return; }
             btnEnviarProvisionSAP.Enabled = false;
-            if (grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value == null && Convert.ToBoolean(grdItemsServiciosChangeControl.CurrentRow.Cells["SERV_AfeIgv"].Value) == true)
+            if (grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value == null && Convert.ToBoolean(grdItemsServiciosChangeControl.CurrentRow.Cells["SERV_AfeIgv"].Value) && Convert.ToBoolean(grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Exonerado"].Value) == false)
             { btnEnviarProvisionSAP.Enabled = true; }
         }
 
@@ -8584,6 +8587,15 @@ namespace Delfin.Principal
             grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Importe_Egreso"].Value = Convert.ToDecimal(grdItemsServiciosChangeControl.Rows[iPos].Cells["SCOT_Importe_Egreso"].Value) == 0 ? grdItemsServiciosChangeControl.Rows[iPos].Cells["SCOT_Importe_Ingreso"].Value : 0;
             grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_ItemChangeControl"].Value = grdItemsServiciosChangeControl.Rows[iPos].Cells["SCOT_Item"].Value;
             SeleccionarTipoDocumento(true, grdItemsServiciosChangeControl.CurrentRow.Index);
+        }
+
+        private void grdItemsServicio_SelectionChanged(object sender, EventArgs e)
+        {
+            if (grdItemsServicio.RowCount == 0)
+            { return; }
+            btnChangeControl1.Enabled = false;
+            if (Convert.ToBoolean(grdItemsServicio.CurrentRow.Cells["SCOT_Exonerado"].Value) == false)
+            { btnChangeControl1.Enabled = true; }
         }
     }
 }
