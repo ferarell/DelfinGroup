@@ -8526,7 +8526,7 @@ namespace Delfin.Principal
             dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserName + "', 'P'");
             oJournalEntryViewerForm.dsVoucher = dsQuery;
             oJournalEntryViewerForm.ShowDialog();
-            if (oJournalEntryViewerForm.sDocSAP != null)
+            if (oJournalEntryViewerForm.sDocSAP != "")
             {
                 grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value = oJournalEntryViewerForm.sDocSAP;
             }
