@@ -216,7 +216,7 @@ Partial Class AccountingTransferForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(872, 45)
+        Me.BarDockControl1.Size = New System.Drawing.Size(872, 47)
         '
         'BarDockControl2
         '
@@ -230,17 +230,17 @@ Partial Class AccountingTransferForm
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 45)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 385)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 383)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(872, 45)
+        Me.BarDockControl4.Location = New System.Drawing.Point(872, 47)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 385)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 383)
         '
         'BarButtonItem1
         '
@@ -323,7 +323,7 @@ Partial Class AccountingTransferForm
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 45)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.Label3)
@@ -333,7 +333,7 @@ Partial Class AccountingTransferForm
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(872, 385)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(872, 383)
         Me.SplitContainerControl1.SplitterPosition = 47
         Me.SplitContainerControl1.TabIndex = 4
         '
@@ -392,7 +392,7 @@ Partial Class AccountingTransferForm
         Me.SplitContainerControl2.Panel1.Text = "Panel1"
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.gcListaHBL)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(872, 332)
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(872, 331)
         Me.SplitContainerControl2.SplitterPosition = 171
         Me.SplitContainerControl2.TabIndex = 172
         '
@@ -638,7 +638,7 @@ Partial Class AccountingTransferForm
         '
         'GridColumn21
         '
-        Me.GridColumn21.Caption = "Código OV"
+        Me.GridColumn21.Caption = "Código OV/OP"
         Me.GridColumn21.FieldName = "CCOT_Numero"
         Me.GridColumn21.Name = "GridColumn21"
         Me.GridColumn21.OptionsColumn.ReadOnly = True
@@ -647,7 +647,7 @@ Partial Class AccountingTransferForm
         '
         'GridColumn19
         '
-        Me.GridColumn19.Caption = "Número OV"
+        Me.GridColumn19.Caption = "Número OV/OP"
         Me.GridColumn19.FieldName = "OV"
         Me.GridColumn19.Name = "GridColumn19"
         Me.GridColumn19.OptionsColumn.ReadOnly = True

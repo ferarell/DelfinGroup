@@ -10,11 +10,11 @@ Public Class AccountingTransferForm
     Private Sub AccountingTransferForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'gcStatements.MainView.RestoreLayoutFromRegistry(IO.Directory.GetCurrentDirectory)
         Me.StartPosition = FormStartPosition.CenterScreen
-        SplitContainerControl2.SplitterPosition = SplitContainerControl2.Height * 0.8
+        SplitContainerControl2.SplitterPosition = SplitContainerControl2.Height * 0.6
         deDateFrom.EditValue = DateAdd(DateInterval.Day, -90, Now)
         deDateTo.EditValue = Now
         EMPR_Codigo = 1
-        SUCR_Codigo = "01"
+        SUCR_Codigo = 1
     End Sub
 
     'Private Sub LoadBusinessUnit()
@@ -104,7 +104,12 @@ Public Class AccountingTransferForm
             Return
         End If
         Dim dtQuery As New DataTable
-        dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneListaOvPorFiltros NULL, " & GridView1.GetFocusedRowCellValue("NVIA_Codigo").ToString & ",'" & GridView1.GetFocusedRowCellValue("CONS_CodLNG").ToString & "', NULL, NULL").Tables(0)
+        If GridView1.GetFocusedRowCellValue("Origen") = "OV" Then
+
+            dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneListaOvPorFiltros NULL, " & GridView1.GetFocusedRowCellValue("NVIA_Codigo").ToString & ",'" & GridView1.GetFocusedRowCellValue("CONS_CodLNG").ToString & "', NULL, NULL").Tables(0)
+        Else
+            dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneListaOpPorFiltros NULL, " & GridView1.GetFocusedRowCellValue("NVIA_Codigo").ToString & ",'" & GridView1.GetFocusedRowCellValue("CONS_CodLNG").ToString & "', NULL, NULL").Tables(0)
+        End If
         If dtQuery.Rows.Count = 0 Then
             Return
         End If
@@ -252,7 +257,8 @@ Public Class AccountingTransferForm
         Dim NVIA_Codigo As Integer = GridView1.GetFocusedRowCellValue("NVIA_Codigo")
         Dim CONS_CodLNG As String = GridView1.GetFocusedRowCellValue("CONS_CodLNG")
         Dim DocSAP As String = GridView1.GetFocusedRowCellValue("DocumentoSAP").ToString
-        dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " & EMPR_Codigo & ",'" & SUCR_Codigo & "'," & NVIA_Codigo.ToString & ",'" & CONS_CodLNG & "', NULL, NULL, 0, NULL, NULL, '" & AppUser & "', 'P'")
+        Dim Origen As String = GridView1.GetFocusedRowCellValue("Origen").ToString
+        dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface" & Origen & Space(1) & EMPR_Codigo & ",'" & SUCR_Codigo & "'," & NVIA_Codigo.ToString & ",'" & CONS_CodLNG & "', NULL, NULL, 0, NULL, NULL, '" & AppUser & "', 'P'")
         oForm.dsVoucher = dsQuery
         If DocSAP <> "" Then
             oForm.bbiVoucherGenerate.Enabled = False
