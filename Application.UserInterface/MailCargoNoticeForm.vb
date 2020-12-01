@@ -129,6 +129,8 @@ Public Class MailCargoNoticeForm
             gcMainData.DataSource = dtQuery
             VGridControl1.DataSource = dtQuery
             ButtonEnabled()
+            GridView1.Focus()
+            GridView1.MoveFirst()
         Catch ex As Exception
             SplashScreenManager.CloseForm(False)
         End Try
@@ -173,6 +175,7 @@ Public Class MailCargoNoticeForm
         If DevExpress.XtraEditors.XtraMessageBox.Show("El envío masivo registrará un evento por cada HBL, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Forms.DialogResult.No Then
             Return
         End If
+        GridView1.Focus()
         Dim oEventUpdate As New EventUpdate
         For r = 0 To GridView1.DataRowCount - 1
             Dim oRow As DataRow = GridView1.GetDataRow(r)
