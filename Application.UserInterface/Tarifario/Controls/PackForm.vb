@@ -24,8 +24,9 @@ Public Class PackForm
         LoadOperationType()
         LoadAppUser()
         LoadEstados()
-        LoadUnidadesNegocio()
+        LoadTipoDistribucion()
         LoadConceptos()
+        LoadConceptosEquivalentes()
         'LoadUnidades()
         'LoadTiposPaquete()
         SplitContainerControl1.PanelVisibility = SplitPanelVisibility.Panel2
@@ -168,7 +169,7 @@ Public Class PackForm
                 oInputs.EditValue = False
             End If
         Next
-        Dim listPAckConcepts As BindingList(Of PackConceptClient) = New BindingList(Of PackConceptClient)()
+        Dim listPAckConcepts As BindingList(Of PackDetailClient) = New BindingList(Of PackDetailClient)()
         gcServicios.DataSource = listPAckConcepts
         ControlFocused.Focus()
     End Sub
@@ -201,13 +202,13 @@ Public Class PackForm
 
             lueEstado.EditValue = dgrItem.PackStatus
 
-            lueUnidadNegocio.EditValue = dgrItem.IdBusinessUnit
+            lueTipoDistribucion.EditValue = dgrItem.DistributionType
             'gcServicios.DataSource = dgrItem.PackConcept
             'txtImporteCompra.Text = dgrItem.SalesAmount.ToString()
             'txtImporteVenta.Text = dgrItem.SalesAmount.ToString()
 
             'If dgrItem.PackConcept.Count > 0 Then
-            Dim PackConceptList As BindingList(Of PackConceptClient) = New BindingList(Of PackConceptClient)(dgrItem.PackConcept.ToList())
+            Dim PackConceptList As BindingList(Of PackDetailClient) = New BindingList(Of PackDetailClient)(dgrItem.PackDetail.ToList())
             gcServicios.DataSource = PackConceptList
             'End If
 
@@ -296,10 +297,10 @@ Public Class PackForm
 
 
 
-        Dim PackConceptList As BindingList(Of PackConceptClient) = New BindingList(Of PackConceptClient)((TryCast(gcServicios.DataSource, IEnumerable(Of PackConceptClient))).ToList())
-        oPackClient.PackConcept = PackConceptList
+        Dim PackConceptList As BindingList(Of PackDetailClient) = New BindingList(Of PackDetailClient)((TryCast(gcServicios.DataSource, IEnumerable(Of PackDetailClient))).ToList())
+        oPackClient.PackDetail = PackConceptList
 
-        oPackClient.IdBusinessUnit = lueUnidadNegocio.EditValue
+        oPackClient.DistributionType = lueTipoDistribucion.EditValue.ToString().Trim()
         'oAttentionPointBE.attention_point_id = IdAttentionPoint
         'oAttentionPointBE.description = teUserDescription.Text
         'oAttentionPointBE.valid_date_from = deDateFrom.EditValue
@@ -471,6 +472,27 @@ Public Class PackForm
         End If
     End Sub
 
+    Private Sub LoadConceptosEquivalentes()
+        client.DefaultRequestHeaders.Accept.Add(
+            New System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"))
+
+        Dim response As HttpResponseMessage = client.GetAsync(
+                               New Uri(UrlTarifasRest + "/Concept/ObtenerConceptos")).Result
+
+        If response.IsSuccessStatusCode Then
+            Dim jsonString As String = response.Content.ReadAsStringAsync().Result
+            Dim listConcepts As List(Of ConceptClient) = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of ConceptClient))(jsonString)
+            rilueConceptoEquivalente.DataSource = listConcepts
+            rilueConceptoEquivalente.DisplayMember = "ConceptDescription"
+            rilueConceptoEquivalente.ValueMember = "IdConcept"
+            'rilueConcepto.ItemIndex = 0
+
+        End If
+    End Sub
+
+
+
+
     Private Sub GridView1_DoubleClick(sender As Object, e As EventArgs) Handles GridView1.DoubleClick
         Index = 1
         SplitContainerControl1.PanelVisibility = SplitPanelVisibility.Both
@@ -480,21 +502,23 @@ Public Class PackForm
         bbiInsert.Enabled = False
     End Sub
 
-    Private Sub LoadUnidadesNegocio()
+    Private Sub LoadTipoDistribucion()
         client.DefaultRequestHeaders.Accept.Add(
             New System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"))
 
         Dim response As HttpResponseMessage = client.GetAsync(
-                               New Uri(UrlTarifasRest + "/UnidadesNegocio/ObtenerUnidadesNegocio")).Result
+                               New Uri(UrlTarifasRest + "/Tipos/ObtenerTiposPorCriterio?Tipo_CodTabla=TDB")).Result
 
         If response.IsSuccessStatusCode Then
             Dim jsonString As String = response.Content.ReadAsStringAsync().Result
-            Dim listUnidades As List(Of BusinessUnitClient) = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of BusinessUnitClient))(jsonString)
-            Dim listUnidadesActivas As List(Of BusinessUnitClient) = listUnidades.FindAll(Function(x) x.BusinessUnitStatus = "A")
-            lueUnidadNegocio.Properties.DataSource = listUnidadesActivas
-            lueUnidadNegocio.Properties.DisplayMember = "BusinessUnitDescription"
-            lueUnidadNegocio.Properties.ValueMember = "IdBusinessUnit"
-            lueUnidadNegocio.ItemIndex = 0
+            Dim listTipos As List(Of TiposCliente) = Newtonsoft.Json.JsonConvert.DeserializeObject(Of List(Of TiposCliente))(jsonString)
+            lueTipoDistribucion.Properties.DataSource = listTipos
+            lueTipoDistribucion.Properties.DisplayMember = "TIPO_Desc1"
+            lueTipoDistribucion.Properties.ValueMember = "TIPO_CodTipo"
+            lueTipoDistribucion.ItemIndex = 0
+
+
+
 
         End If
     End Sub

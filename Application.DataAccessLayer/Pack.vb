@@ -14,13 +14,13 @@ Partial Public Class Pack
     Public Property IdPack As Integer
     Public Property PackCode As String
     Public Property PackDescription As String
+    Public Property DistributionType As String
     Public Property PackStatus As String
     Public Property UserCreate As String
     Public Property DateCreate As Nullable(Of Date)
     Public Property UserUpdate As String
     Public Property DateUpdate As Nullable(Of Date)
-    Public Property IdBusinessUnit As Nullable(Of Integer)
 
-    Public Overridable Property PackConcept As ICollection(Of PackConcept) = New HashSet(Of PackConcept)
+    Public Overridable Property PackDetail As ICollection(Of PackDetail) = New HashSet(Of PackDetail)
 
 End Class

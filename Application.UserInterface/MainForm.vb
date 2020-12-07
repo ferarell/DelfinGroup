@@ -135,4 +135,8 @@
     Private Sub AccordionControlElement33_Click(sender As Object, e As EventArgs) Handles AccordionControlElement33.Click
         OpenForm(ConsolidatedInquiryForm)
     End Sub
+
+    Private Sub AccordionControlElement34_Click(sender As Object, e As EventArgs) Handles AccordionControlElement34.Click
+        OpenForm(PackForm)
+    End Sub
 End Class

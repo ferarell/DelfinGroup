@@ -42,7 +42,7 @@
 
 
 
-                    condItem.IdBusinessUnit = PaqueteItem.IdBusinessUnit
+                    condItem.DistributionType = PaqueteItem.DistributionType
 
                     condItem.DateUpdate = PaqueteItem.DateUpdate
                     'condItem.PackConcept = PaqueteItem.PackConcept
@@ -54,20 +54,20 @@
                     'DbContext.Set(condItem.PackConcept.GetType).
 
 
-                    Dim listPackServiceCurrent As List(Of PackConcept) = New List(Of PackConcept)()
-                    listPackServiceCurrent = PaqueteItem.PackConcept.ToList()
+                    Dim listPackServiceCurrent As List(Of PackDetail) = New List(Of PackDetail)()
+                    listPackServiceCurrent = PaqueteItem.PackDetail.ToList()
 
-                    Dim listPackServicePrevious As List(Of PackConcept) = New List(Of PackConcept)()
-                    listPackServicePrevious = condItem.PackConcept.ToList()
+                    Dim listPackServicePrevious As List(Of PackDetail) = New List(Of PackDetail)()
+                    listPackServicePrevious = condItem.PackDetail.ToList()
 
 
 
 
                     'Por Eliminar
 
-                    For Each item As PackConcept In listPackServicePrevious
+                    For Each item As PackDetail In listPackServicePrevious
 
-                        Dim deletedPackConcept As PackConcept = listPackServiceCurrent.Find(Function(p) p.IdPackConcept = item.IdPackConcept)
+                        Dim deletedPackConcept As PackDetail = listPackServiceCurrent.Find(Function(p) p.IdPackDetail = item.IdPackDetail)
 
                         If deletedPackConcept Is Nothing Then
                             DbContext.Entry(item).State = System.Data.Entity.EntityState.Deleted
@@ -80,16 +80,20 @@
                     'Por Añadir / Actualizar
 
 
-                    For Each item As PackConcept In listPackServiceCurrent
+                    For Each item As PackDetail In listPackServiceCurrent
 
                         'Dim add_update_PackConcept As PackConcept = listPackServicePrevious.Find(Function(p) p.IdPackConcept = item.IdPackConcept)
 
-                        If item.IdPackConcept = 0 Then
+                        If item.IdPackDetail = 0 Then
+                            item.UserCreate = PaqueteItem.UserUpdate
+                            item.DateCreate = PaqueteItem.DateUpdate
                             DbContext.Entry(item).State = System.Data.Entity.EntityState.Added
                         Else
                             'DbContext.PackConcept.Add(item)
-                            Dim condItemPackConcept As PackConcept = DbContext.PackConcept.Where(Function(p) p.IdPackConcept = item.IdPackConcept).FirstOrDefault
-                            condItemPackConcept.IdPackConcept = item.IdPackConcept
+                            Dim condItemPackConcept As PackDetail = DbContext.PackDetail.Where(Function(p) p.IdPackDetail = item.IdPackDetail).FirstOrDefault
+                            condItemPackConcept.IdPackDetail = item.IdPackDetail
+                            condItemPackConcept.DistributionValue = item.DistributionValue
+                            condItemPackConcept.VendorEquivalentCode = item.VendorEquivalentCode
                             condItemPackConcept.IdPack = item.IdPack
                             condItemPackConcept.IdConcept = item.IdConcept
                             condItemPackConcept.UserUpdate = item.UserUpdate

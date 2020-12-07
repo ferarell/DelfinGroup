@@ -10,21 +10,21 @@
         <EntityTypeShape EntityType="TarifarioModel.Condition" Width="1.5" PointX="10.125" PointY="1.125" />
         <EntityTypeShape EntityType="TarifarioModel.Layout" Width="1.5" PointX="4.875" PointY="0.875" />
         <EntityTypeShape EntityType="TarifarioModel.LayoutAttribute" Width="1.5" PointX="7.625" PointY="6" />
-        <EntityTypeShape EntityType="TarifarioModel.Pack" Width="1.5" PointX="0.5" PointY="10.5" />
-        <EntityTypeShape EntityType="TarifarioModel.PackConcept" Width="1.5" PointX="3" PointY="11.25" />
         <EntityTypeShape EntityType="TarifarioModel.TariffDetail" Width="1.5" PointX="14.625" PointY="5.375" />
         <EntityTypeShape EntityType="TarifarioModel.Unit" Width="1.5" PointX="12.25" PointY="2.5" />
         <AssociationConnector Association="TarifarioModel.FK_LayoutAttribute_Attribute" />
         <AssociationConnector Association="TarifarioModel.FK_LayoutAttribute_Layout1" />
-        <AssociationConnector Association="TarifarioModel.FK_PackConcept_Pack" />
         <AssociationConnector Association="TarifarioModel.FK_TariffDetail_Unit" />
         <EntityTypeShape EntityType="TarifarioModel.Company" Width="1.5" PointX="13.375" PointY="13.25" />
         <EntityTypeShape EntityType="TarifarioModel.Group" Width="1.5" PointX="10.375" PointY="12.25" />
         <AssociationConnector Association="TarifarioModel.FK_Company_Group" />
         <EntityTypeShape EntityType="TarifarioModel.Concept" Width="1.5" PointX="5.625" PointY="12.25" />
-        <AssociationConnector Association="TarifarioModel.FK_PackConcept_Concept" />
         <EntityTypeShape EntityType="TarifarioModel.Tariff" Width="1.5" PointX="12.375" PointY="6.375" />
         <AssociationConnector Association="TarifarioModel.FK_TariffDetail_Tariff" />
+        <EntityTypeShape EntityType="TarifarioModel.Pack" Width="1.5" PointX="0.5" PointY="10.5" />
+        <EntityTypeShape EntityType="TarifarioModel.PackDetail" Width="1.5" PointX="3.375" PointY="12.5" />
+        <AssociationConnector Association="TarifarioModel.FK_PackConcept_Concept" />
+        <AssociationConnector Association="TarifarioModel.FK_PackConcept_Pack" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

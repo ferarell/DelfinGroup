@@ -30,7 +30,7 @@ Public Class LayoutForm
         LoadEstados()
         LoadUnidadesNegocio()
         'LoadConceptos()
-        'LoadPaquetes()
+        LoadPaquetes()
         LoadCondicion()
         LoadAtributos()
         LoadAtributosCabecera()
@@ -309,7 +309,7 @@ Public Class LayoutForm
 
         'oLayoutClient.IdConcept = lueConcepto.EditValue
         oLayoutClient.IdCondition = lueCondicion.EditValue
-        'oLayoutClient.IdPack = luePack.EditValue
+        oLayoutClient.IdPack = luePack.EditValue
 
 
         Dim LayoutAttributeList As BindingList(Of LayoutAttributeClient) = New BindingList(Of LayoutAttributeClient)((TryCast(gcAtributos.DataSource, IEnumerable(Of LayoutAttributeClient))).ToList())
