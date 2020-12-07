@@ -159,8 +159,9 @@ namespace Delfin.BusinessLogic
                     DataAccessEnterpriseSQL.DAAgregarParametro("@psinTIPE_Codigo", Item.TIPE_Codigo, SqlDbType.SmallInt, 4, ParameterDirection.Input);
                                        
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pbitSERV_AfeIgv", Item.SERV_AfeIgv, SqlDbType.Bit, 4, ParameterDirection.Input);
-                                                                                          
-                    DataAccessEnterpriseSQL.DAAgregarParametro("@pvchAUDI_UsrCrea", Item.AUDI_UsrCrea, SqlDbType.VarChar, 20, ParameterDirection.Input);
+					DataAccessEnterpriseSQL.DAAgregarParametro("@pbitSERV_AfeReembolso", Item.SERV_AfeReembolso, SqlDbType.Bit, 4, ParameterDirection.Input);
+
+					DataAccessEnterpriseSQL.DAAgregarParametro("@pvchAUDI_UsrCrea", Item.AUDI_UsrCrea, SqlDbType.VarChar, 20, ParameterDirection.Input);
                     //DataAccessEnterpriseSQL.DAAgregarParametro("@pdttAUDI_FecCrea", Item.AUDI_FecCrea, SqlDbType.DateTime,10, ParameterDirection.Input);
                     //DataAccessEnterpriseSQL.DAAgregarParametro("@pvchAUDI_UsrMod", Item.AUDI_UsrMod, SqlDbType.VarChar, 20, ParameterDirection.Input);
                     //DataAccessEnterpriseSQL.DAAgregarParametro("@pdttAUDI_FecMod", Item.AUDI_FecMod, SqlDbType.DateTime, 10, ParameterDirection.Input);
@@ -218,10 +219,11 @@ namespace Delfin.BusinessLogic
                     DataAccessEnterpriseSQL.DAAgregarParametro("@psinTIPE_Codigo", Item.TIPE_Codigo, SqlDbType.SmallInt, 4, ParameterDirection.Input);
 
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pbitSERV_AfeIgv", Item.SERV_AfeIgv, SqlDbType.Bit, 4, ParameterDirection.Input);
+					DataAccessEnterpriseSQL.DAAgregarParametro("@pbitSERV_AfeReembolso", Item.SERV_AfeReembolso, SqlDbType.Bit, 4, ParameterDirection.Input);
 
-                    //DataAccessEnterpriseSQL.DAAgregarParametro("@pvchAUDI_UsrCrea", Item.AUDI_UsrCrea, SqlDbType.VarChar, 20, ParameterDirection.Input);
-                    //DataAccessEnterpriseSQL.DAAgregarParametro("@pdttAUDI_FecCrea", Item.AUDI_FecCrea, SqlDbType.DateTime, 10, ParameterDirection.Input);
-                    DataAccessEnterpriseSQL.DAAgregarParametro("@pvchAUDI_UsrMod", Item.AUDI_UsrMod, SqlDbType.VarChar, 20, ParameterDirection.Input);
+					//DataAccessEnterpriseSQL.DAAgregarParametro("@pvchAUDI_UsrCrea", Item.AUDI_UsrCrea, SqlDbType.VarChar, 20, ParameterDirection.Input);
+					//DataAccessEnterpriseSQL.DAAgregarParametro("@pdttAUDI_FecCrea", Item.AUDI_FecCrea, SqlDbType.DateTime, 10, ParameterDirection.Input);
+					DataAccessEnterpriseSQL.DAAgregarParametro("@pvchAUDI_UsrMod", Item.AUDI_UsrMod, SqlDbType.VarChar, 20, ParameterDirection.Input);
                     //DataAccessEnterpriseSQL.DAAgregarParametro("@pdttAUDI_FecMod", Item.AUDI_FecMod, SqlDbType.DateTime, 10, ParameterDirection.Input);
 
 
@@ -275,8 +277,9 @@ namespace Delfin.BusinessLogic
                     DataAccessEnterpriseSQL.DAAgregarParametro("@psinTIPE_Codigo", Item.TIPE_Codigo, SqlDbType.SmallInt, 4, ParameterDirection.Input);
 
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pbitSERV_AfeIgv", Item.SERV_AfeIgv, SqlDbType.Bit, 4, ParameterDirection.Input);
+					DataAccessEnterpriseSQL.DAAgregarParametro("@pbitSERV_AfeReembolso", Item.SERV_AfeReembolso, SqlDbType.Bit, 4, ParameterDirection.Input);
 
-                    DataAccessEnterpriseSQL.DAAgregarParametro("@pvchAUDI_UsrCrea", Item.AUDI_UsrCrea, SqlDbType.VarChar, 20, ParameterDirection.Input);
+					DataAccessEnterpriseSQL.DAAgregarParametro("@pvchAUDI_UsrCrea", Item.AUDI_UsrCrea, SqlDbType.VarChar, 20, ParameterDirection.Input);
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pdttAUDI_FecCrea", Item.AUDI_FecCrea, SqlDbType.DateTime, 10, ParameterDirection.Input);
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pvchAUDI_UsrMod", Item.AUDI_UsrMod, SqlDbType.VarChar, 20, ParameterDirection.Input);
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pdttAUDI_FecMod", Item.AUDI_FecMod, SqlDbType.DateTime, 10, ParameterDirection.Input);

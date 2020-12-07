@@ -883,6 +883,14 @@ namespace Delfin.Principal
                 
                 this.grdItemsLineaNegocio.Columns.Add(_efectoigv);
 
+                //SERVICIO AFECTADO REEMBOLSO 
+                Telerik.WinControls.UI.GridViewCheckBoxColumn _efectoreembolso = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+                _efectoreembolso.Name = "SERV_AfeReembolso";
+                _efectoreembolso.HeaderText = "Afecto Reembolso";
+                _efectoreembolso.FieldName = "SERV_AfeReembolso";
+
+                this.grdItemsLineaNegocio.Columns.Add(_efectoreembolso);
+
                 this.grdItemsLineaNegocio.Columns.Add("SLNG_Remarks", "Observaciones", "SLNG_Remarks");
                 this.grdItemsLineaNegocio.Columns.Add("SERV_CuentaIngreso", "Cuenta Ingreso", "SERV_CuentaIngreso");
                 this.grdItemsLineaNegocio.Columns.Add("SERV_CuentaCosto", "Cuenta Costo", "SERV_CuentaCosto");

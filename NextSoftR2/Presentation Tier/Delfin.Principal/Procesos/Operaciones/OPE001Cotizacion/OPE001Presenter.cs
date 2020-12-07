@@ -338,7 +338,7 @@ namespace Delfin.Principal
 
             if (OVCONCLUIDA || OVDOCUMENTADA || OVSOLOLECTURA)
             {
-               if (ItemLView != null)
+               if (ItemLView != null)   
                {
 
                   Item = Client.OPE_GetOneCab_Cotizacion_OV(Delfin.Controls.Entorno.ItemEmpresa.EMPR_Codigo, Delfin.Controls.Entorno.ItemSucursal.SUCR_Codigo, ItemLView.CCOT_Tipo, ItemLView.CCOT_Numero);

@@ -29,6 +29,7 @@ namespace Delfin.Entities
         private string m_serv_estactsap;
         private Int32 m_tipe_codigo;
         private Boolean m_serv_afeigv;
+        private Boolean m_serv_afereembolso;
 
         private String m_audi_usrcrea;
 		private DateTime? m_audi_feccrea;
@@ -353,6 +354,23 @@ namespace Delfin.Entities
         }
 
 
+        /// <summary>
+        /// Gets or sets el valor de: SERV_AfeReembolso.
+        /// </summary>
+        [DataMember]
+        public Boolean SERV_AfeReembolso
+        {
+            get { return m_serv_afereembolso; }
+            set
+            {
+                if (m_serv_afereembolso != value)
+                {
+                    m_serv_afereembolso = value;
+                    OnPropertyChanged("SERV_AfeReembolso");
+                }
+            }
+        }
+
 
         /// <summary>
         /// Gets or sets el valor de: AUDI_UsrCrea.
@@ -457,6 +475,7 @@ namespace Delfin.Entities
                 Item.m_serv_estactsap = this.m_serv_estactsap;
                 Item.m_tipe_codigo = this.m_tipe_codigo;
                 Item.m_serv_afeigv = this.m_serv_afeigv;
+                Item.m_serv_afereembolso = this.m_serv_afereembolso;
                 Item.m_audi_usrcrea = this.m_audi_usrcrea;
                 Item.m_audi_feccrea = this.m_audi_feccrea;
                 Item.m_audi_usrmod = this.m_audi_usrmod;

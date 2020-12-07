@@ -8523,7 +8523,7 @@ namespace Delfin.Principal
             DataSet dsQuery = new DataSet();
             ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();           
             DateTime _SCOT_FechaOperacion = Convert.ToDateTime(grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
-            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterface " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserName + "', 'P'");
+            dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForJournalEntryInterfaceOV " + Presenter.Item.EMPR_Codigo + ",'" + Presenter.Item.SUCR_Codigo + "', NULL, NULL, " + _CCCT_Codigo.ToString() + ", NULL, 1,'" + _SCOT_FechaOperacion.ToString("yyyyMMdd") + "', NULL, '" + Presenter.Session.UserName + "', 'P'");
             oJournalEntryViewerForm.dsVoucher = dsQuery;
             oJournalEntryViewerForm.ShowDialog();
             if (oJournalEntryViewerForm.sDocSAP != "")
@@ -8538,8 +8538,12 @@ namespace Delfin.Principal
             if (grdItemsServiciosChangeControl.RowCount == 0)
             { return; }
             btnEnviarProvisionSAP.Enabled = false;
-            if (grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value == null && Convert.ToBoolean(grdItemsServiciosChangeControl.CurrentRow.Cells["SERV_AfeIgv"].Value) && Convert.ToBoolean(grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Exonerado"].Value) == false)
-            { btnEnviarProvisionSAP.Enabled = true; }
+            btnDelServicioChangeControl.Enabled = false;
+            if (grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value == null && Convert.ToBoolean(grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_Exonerado"].Value) == false)
+            { 
+                btnEnviarProvisionSAP.Enabled = true;
+                btnDelServicioChangeControl.Enabled = true;
+            }
         }
 
         private void btnChangeControl1_Click(object sender, EventArgs e)
