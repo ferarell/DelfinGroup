@@ -125,6 +125,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NextSoftTarifarioEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="PackDetail.vb">
+      <DependentUpon>TarifarioEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="ServiciosDAL.vb" />
     <Compile Include="TariffDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -143,9 +146,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Pack.vb">
-      <DependentUpon>TarifarioEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PackConcept.vb">
       <DependentUpon>TarifarioEF.tt</DependentUpon>
     </Compile>
     <Compile Include="LayoutDAL.vb" />

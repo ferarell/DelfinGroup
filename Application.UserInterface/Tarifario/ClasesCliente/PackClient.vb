@@ -9,12 +9,13 @@ Public Class PackClient
     Dim _SalesAmount As Nullable(Of Decimal)
     Dim _CostsAmount As Nullable(Of Decimal)
     Dim _PackStatus As String
+    Dim _DistributionType As String
     Dim _UserCreate As String
     Dim _DateCreate As Nullable(Of Date)
     Dim _UserUpdate As String
     Dim _DateUpdate As Nullable(Of Date)
-    Dim _IdBusinessUnit As Nullable(Of Integer)
-    Dim _PackConcept As ICollection(Of PackConceptClient) = New HashSet(Of PackConceptClient)
+    'Dim _IdBusinessUnit As Nullable(Of Integer)
+    Dim _PackDetail As ICollection(Of PackDetailClient) = New HashSet(Of PackDetailClient)
 
     Public Property IdPack As Integer
         Get
@@ -115,21 +116,30 @@ Public Class PackClient
         End Set
     End Property
 
-    Public Property PackConcept As ICollection(Of PackConceptClient)
+    Public Property PackDetail As ICollection(Of PackDetailClient)
         Get
-            Return _PackConcept
+            Return _PackDetail
         End Get
-        Set(value As ICollection(Of PackConceptClient))
-            _PackConcept = value
+        Set(value As ICollection(Of PackDetailClient))
+            _PackDetail = value
         End Set
     End Property
 
-    Public Property IdBusinessUnit As Integer?
+    'Public Property IdBusinessUnit As Integer?
+    '    Get
+    '        Return _IdBusinessUnit
+    '    End Get
+    '    Set(value As Integer?)
+    '        _IdBusinessUnit = value
+    '    End Set
+    'End Property
+
+    Public Property DistributionType As String
         Get
-            Return _IdBusinessUnit
+            Return _DistributionType
         End Get
-        Set(value As Integer?)
-            _IdBusinessUnit = value
+        Set(value As String)
+            _DistributionType = value
         End Set
     End Property
 End Class

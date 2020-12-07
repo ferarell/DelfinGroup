@@ -10,12 +10,14 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class PackConcept
-    Public Property IdPackConcept As Integer
+Partial Public Class PackDetail
+    Public Property IdPackDetail As Integer
     Public Property IdPack As Integer
     Public Property IdConcept As Integer
+    Public Property VendorEquivalentCode As Integer
+    Public Property DistributionValue As Double
     Public Property UserCreate As String
-    Public Property DateCreate As Nullable(Of Date)
+    Public Property DateCreate As Date
     Public Property UserUpdate As String
     Public Property DateUpdate As Nullable(Of Date)
 

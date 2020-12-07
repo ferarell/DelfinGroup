@@ -51,7 +51,7 @@ Partial Class PackForm
         Me.ucAuditPanel = New ApplicationForm.ucAuditPanel()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.lueUnidadNegocio = New DevExpress.XtraEditors.LookUpEdit()
+        Me.lueTipoDistribucion = New DevExpress.XtraEditors.LookUpEdit()
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.lueEstado = New DevExpress.XtraEditors.LookUpEdit()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
@@ -62,7 +62,10 @@ Partial Class PackForm
         Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.rilueConcepto = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.riteValorDistribucion = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.rilueConceptoEquivalente = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -95,12 +98,14 @@ Partial Class PackForm
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        CType(Me.lueUnidadNegocio.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lueTipoDistribucion.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lueEstado.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtDescripcion.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcServicios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rilueConcepto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.riteValorDistribucion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.rilueConceptoEquivalente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemImageEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rilud, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcMainDataPack, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -220,34 +225,34 @@ Partial Class PackForm
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
         Me.BarDockControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BarDockControl1.Size = New System.Drawing.Size(941, 57)
+        Me.BarDockControl1.Size = New System.Drawing.Size(935, 56)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 509)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 501)
         Me.BarDockControl2.Manager = Me.bmActions
         Me.BarDockControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BarDockControl2.Size = New System.Drawing.Size(941, 36)
+        Me.BarDockControl2.Size = New System.Drawing.Size(935, 37)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 57)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 56)
         Me.BarDockControl3.Manager = Me.bmActions
         Me.BarDockControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 452)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 445)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(941, 57)
+        Me.BarDockControl4.Location = New System.Drawing.Point(935, 56)
         Me.BarDockControl4.Manager = Me.bmActions
         Me.BarDockControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 452)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 445)
         '
         'BarButtonItem1
         '
@@ -327,10 +332,10 @@ Partial Class PackForm
         Me.ucAuditPanel.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ucAuditPanel.FechaCreacion = New Date(CType(0, Long))
         Me.ucAuditPanel.FechaModificacion = New Date(CType(0, Long))
-        Me.ucAuditPanel.Location = New System.Drawing.Point(0, 463)
-        Me.ucAuditPanel.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.ucAuditPanel.Location = New System.Drawing.Point(0, 455)
+        Me.ucAuditPanel.Margin = New System.Windows.Forms.Padding(5)
         Me.ucAuditPanel.Name = "ucAuditPanel"
-        Me.ucAuditPanel.Size = New System.Drawing.Size(941, 46)
+        Me.ucAuditPanel.Size = New System.Drawing.Size(935, 46)
         Me.ucAuditPanel.TabIndex = 4
         Me.ucAuditPanel.UsuarioCreacion = Nothing
         Me.ucAuditPanel.UsuarioModificacion = Nothing
@@ -339,7 +344,7 @@ Partial Class PackForm
         '
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.None
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 57)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 56)
         Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
@@ -348,8 +353,8 @@ Partial Class PackForm
         Me.SplitContainerControl1.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.gcMainDataPack)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(941, 406)
-        Me.SplitContainerControl1.SplitterPosition = 453
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(935, 399)
+        Me.SplitContainerControl1.SplitterPosition = 451
         Me.SplitContainerControl1.TabIndex = 5
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
         '
@@ -363,7 +368,7 @@ Partial Class PackForm
         '
         'SplitContainer1.Panel1
         '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.lueUnidadNegocio)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.lueTipoDistribucion)
         Me.SplitContainer1.Panel1.Controls.Add(Me.LabelControl3)
         Me.SplitContainer1.Panel1.Controls.Add(Me.lueEstado)
         Me.SplitContainer1.Panel1.Controls.Add(Me.LabelControl2)
@@ -373,31 +378,31 @@ Partial Class PackForm
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.gcServicios)
-        Me.SplitContainer1.Size = New System.Drawing.Size(449, 402)
-        Me.SplitContainer1.SplitterDistance = 201
+        Me.SplitContainer1.Size = New System.Drawing.Size(447, 395)
+        Me.SplitContainer1.SplitterDistance = 197
         Me.SplitContainer1.SplitterWidth = 5
         Me.SplitContainer1.TabIndex = 80
         '
-        'lueUnidadNegocio
+        'lueTipoDistribucion
         '
-        Me.lueUnidadNegocio.Location = New System.Drawing.Point(143, 49)
-        Me.lueUnidadNegocio.Margin = New System.Windows.Forms.Padding(2)
-        Me.lueUnidadNegocio.Name = "lueUnidadNegocio"
-        Me.lueUnidadNegocio.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
-        Me.lueUnidadNegocio.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lueUnidadNegocio.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IdBusinessUnit", "ID", 15, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BusinessUnitCode", "Codigo", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BusinessUnitDescription", "Descripcion")})
-        Me.lueUnidadNegocio.Properties.NullText = ""
-        Me.lueUnidadNegocio.Size = New System.Drawing.Size(265, 22)
-        Me.lueUnidadNegocio.TabIndex = 91
+        Me.lueTipoDistribucion.Location = New System.Drawing.Point(143, 49)
+        Me.lueTipoDistribucion.Margin = New System.Windows.Forms.Padding(2)
+        Me.lueTipoDistribucion.Name = "lueTipoDistribucion"
+        Me.lueTipoDistribucion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
+        Me.lueTipoDistribucion.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.lueTipoDistribucion.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TIPO_CodTipo", "Codigo"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TIPO_Desc1", "Descripcion")})
+        Me.lueTipoDistribucion.Properties.NullText = ""
+        Me.lueTipoDistribucion.Size = New System.Drawing.Size(265, 22)
+        Me.lueTipoDistribucion.TabIndex = 91
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(48, 53)
+        Me.LabelControl3.Location = New System.Drawing.Point(39, 53)
         Me.LabelControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(88, 16)
+        Me.LabelControl3.Size = New System.Drawing.Size(95, 16)
         Me.LabelControl3.TabIndex = 90
-        Me.LabelControl3.Text = "Unidad Negocio"
+        Me.LabelControl3.Text = "Tipo Distribución"
         '
         'lueEstado
         '
@@ -447,14 +452,14 @@ Partial Class PackForm
         Me.gcServicios.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gcServicios.MenuManager = Me.bmActions
         Me.gcServicios.Name = "gcServicios"
-        Me.gcServicios.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rilueConcepto, Me.RepositoryItemImageEdit1, Me.rilud})
-        Me.gcServicios.Size = New System.Drawing.Size(449, 196)
+        Me.gcServicios.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rilueConcepto, Me.RepositoryItemImageEdit1, Me.rilud, Me.riteValorDistribucion, Me.rilueConceptoEquivalente})
+        Me.gcServicios.Size = New System.Drawing.Size(447, 193)
         Me.gcServicios.TabIndex = 0
         Me.gcServicios.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
         'GridView2
         '
-        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn9, Me.GridColumn11, Me.GridColumn10, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15})
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn9, Me.GridColumn11, Me.GridColumn16, Me.GridColumn10, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15})
         Me.GridView2.DetailHeight = 431
         Me.GridView2.GridControl = Me.gcServicios
         Me.GridView2.Name = "GridView2"
@@ -464,7 +469,7 @@ Partial Class PackForm
         'GridColumn9
         '
         Me.GridColumn9.Caption = "IdPackConcept"
-        Me.GridColumn9.FieldName = "IdPackConcept"
+        Me.GridColumn9.FieldName = "IdPackDetail"
         Me.GridColumn9.MinWidth = 23
         Me.GridColumn9.Name = "GridColumn9"
         Me.GridColumn9.Width = 87
@@ -487,13 +492,39 @@ Partial Class PackForm
         Me.rilueConcepto.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IdConcept", "IdConcept", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ConceptCode", "CODIGO", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ConceptDescription", "DESCRIPCION")})
         Me.rilueConcepto.Name = "rilueConcepto"
         '
+        'GridColumn16
+        '
+        Me.GridColumn16.Caption = "VALOR DISTRIBUCION"
+        Me.GridColumn16.ColumnEdit = Me.riteValorDistribucion
+        Me.GridColumn16.FieldName = "DistributionValue"
+        Me.GridColumn16.MinWidth = 25
+        Me.GridColumn16.Name = "GridColumn16"
+        Me.GridColumn16.Visible = True
+        Me.GridColumn16.VisibleIndex = 1
+        Me.GridColumn16.Width = 94
+        '
+        'riteValorDistribucion
+        '
+        Me.riteValorDistribucion.AutoHeight = False
+        Me.riteValorDistribucion.Name = "riteValorDistribucion"
+        '
         'GridColumn10
         '
-        Me.GridColumn10.Caption = "IdPack"
-        Me.GridColumn10.FieldName = "IdPack"
-        Me.GridColumn10.MinWidth = 23
+        Me.GridColumn10.Caption = "CONCEPTO EQUIVALENTE"
+        Me.GridColumn10.ColumnEdit = Me.rilueConceptoEquivalente
+        Me.GridColumn10.FieldName = "VendorEquivalentCode"
+        Me.GridColumn10.MinWidth = 25
         Me.GridColumn10.Name = "GridColumn10"
-        Me.GridColumn10.Width = 87
+        Me.GridColumn10.Visible = True
+        Me.GridColumn10.VisibleIndex = 2
+        Me.GridColumn10.Width = 94
+        '
+        'rilueConceptoEquivalente
+        '
+        Me.rilueConceptoEquivalente.AutoHeight = False
+        Me.rilueConceptoEquivalente.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.rilueConceptoEquivalente.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IdConcept", "IdConcept", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ConceptCode", "CODIGO"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ConceptDescription", "DESCRIPCION")})
+        Me.rilueConceptoEquivalente.Name = "rilueConceptoEquivalente"
         '
         'GridColumn12
         '
@@ -553,7 +584,7 @@ Partial Class PackForm
         Me.gcMainDataPack.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gcMainDataPack.Name = "gcMainDataPack"
         Me.gcMainDataPack.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckedComboBoxEdit1, Me.RepositoryItemCheckEdit1})
-        Me.gcMainDataPack.Size = New System.Drawing.Size(478, 402)
+        Me.gcMainDataPack.Size = New System.Drawing.Size(473, 395)
         Me.gcMainDataPack.TabIndex = 6
         Me.gcMainDataPack.UseEmbeddedNavigator = True
         Me.gcMainDataPack.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.LayoutView1, Me.CardView1})
@@ -683,7 +714,7 @@ Partial Class PackForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(941, 545)
+        Me.ClientSize = New System.Drawing.Size(935, 538)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.Controls.Add(Me.ucAuditPanel)
         Me.Controls.Add(Me.BarDockControl3)
@@ -705,12 +736,14 @@ Partial Class PackForm
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
-        CType(Me.lueUnidadNegocio.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lueTipoDistribucion.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lueEstado.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtDescripcion.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcServicios, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rilueConcepto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.riteValorDistribucion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.rilueConceptoEquivalente, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemImageEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rilud, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcMainDataPack, System.ComponentModel.ISupportInitialize).EndInit()
@@ -776,7 +809,6 @@ Partial Class PackForm
     Friend WithEvents gcServicios As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridColumn9 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn12 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn13 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
@@ -785,6 +817,10 @@ Partial Class PackForm
     Friend WithEvents rilud As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents RepositoryItemImageEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemImageEdit
     Friend WithEvents GridColumn11 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents lueUnidadNegocio As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents lueTipoDistribucion As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GridColumn16 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents riteValorDistribucion As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
+    Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents rilueConceptoEquivalente As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
 End Class

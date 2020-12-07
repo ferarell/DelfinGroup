@@ -256,22 +256,22 @@ Partial Class LayoutForm
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
         Me.BarDockControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BarDockControl1.Size = New System.Drawing.Size(1015, 57)
+        Me.BarDockControl1.Size = New System.Drawing.Size(1015, 56)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 608)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 607)
         Me.BarDockControl2.Manager = Me.bmActions
         Me.BarDockControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BarDockControl2.Size = New System.Drawing.Size(1015, 36)
+        Me.BarDockControl2.Size = New System.Drawing.Size(1015, 37)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 57)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 56)
         Me.BarDockControl3.Manager = Me.bmActions
         Me.BarDockControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BarDockControl3.Size = New System.Drawing.Size(0, 551)
@@ -280,7 +280,7 @@ Partial Class LayoutForm
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(1015, 57)
+        Me.BarDockControl4.Location = New System.Drawing.Point(1015, 56)
         Me.BarDockControl4.Manager = Me.bmActions
         Me.BarDockControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BarDockControl4.Size = New System.Drawing.Size(0, 551)
@@ -363,7 +363,7 @@ Partial Class LayoutForm
         Me.ucAuditPanel.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ucAuditPanel.FechaCreacion = New Date(CType(0, Long))
         Me.ucAuditPanel.FechaModificacion = New Date(CType(0, Long))
-        Me.ucAuditPanel.Location = New System.Drawing.Point(0, 562)
+        Me.ucAuditPanel.Location = New System.Drawing.Point(0, 561)
         Me.ucAuditPanel.Margin = New System.Windows.Forms.Padding(5)
         Me.ucAuditPanel.Name = "ucAuditPanel"
         Me.ucAuditPanel.Size = New System.Drawing.Size(1015, 46)
@@ -375,7 +375,7 @@ Partial Class LayoutForm
         '
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.None
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 57)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 56)
         Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
@@ -415,8 +415,8 @@ Partial Class LayoutForm
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(486, 501)
-        Me.SplitContainer1.SplitterDistance = 139
+        Me.SplitContainer1.Size = New System.Drawing.Size(485, 501)
+        Me.SplitContainer1.SplitterDistance = 170
         Me.SplitContainer1.SplitterWidth = 5
         Me.SplitContainer1.TabIndex = 80
         '
@@ -443,7 +443,7 @@ Partial Class LayoutForm
         '
         'lueConcepto
         '
-        Me.lueConcepto.Location = New System.Drawing.Point(145, 134)
+        Me.lueConcepto.Location = New System.Drawing.Point(143, 199)
         Me.lueConcepto.Margin = New System.Windows.Forms.Padding(2)
         Me.lueConcepto.Name = "lueConcepto"
         Me.lueConcepto.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
@@ -468,7 +468,7 @@ Partial Class LayoutForm
         '
         'luePack
         '
-        Me.luePack.Location = New System.Drawing.Point(143, 162)
+        Me.luePack.Location = New System.Drawing.Point(143, 136)
         Me.luePack.Margin = New System.Windows.Forms.Padding(2)
         Me.luePack.Name = "luePack"
         Me.luePack.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
@@ -477,7 +477,6 @@ Partial Class LayoutForm
         Me.luePack.Properties.NullText = ""
         Me.luePack.Size = New System.Drawing.Size(265, 22)
         Me.luePack.TabIndex = 97
-        Me.luePack.Visible = False
         '
         'LabelControl8
         '
@@ -490,7 +489,7 @@ Partial Class LayoutForm
         '
         'LabelControl4
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(75, 139)
+        Me.LabelControl4.Location = New System.Drawing.Point(81, 202)
         Me.LabelControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(53, 16)
@@ -500,13 +499,12 @@ Partial Class LayoutForm
         '
         'LabelControl7
         '
-        Me.LabelControl7.Location = New System.Drawing.Point(100, 166)
+        Me.LabelControl7.Location = New System.Drawing.Point(97, 140)
         Me.LabelControl7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(27, 16)
         Me.LabelControl7.TabIndex = 91
         Me.LabelControl7.Text = "Pack"
-        Me.LabelControl7.Visible = False
         '
         'lueEstado
         '
@@ -563,8 +561,8 @@ Partial Class LayoutForm
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.gcAtributos)
-        Me.SplitContainer2.Size = New System.Drawing.Size(486, 357)
-        Me.SplitContainer2.SplitterDistance = 97
+        Me.SplitContainer2.Size = New System.Drawing.Size(485, 326)
+        Me.SplitContainer2.SplitterDistance = 88
         Me.SplitContainer2.SplitterWidth = 5
         Me.SplitContainer2.TabIndex = 0
         '
@@ -579,7 +577,7 @@ Partial Class LayoutForm
         Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(486, 97)
+        Me.GroupControl1.Size = New System.Drawing.Size(485, 88)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "AGREGAR ATRIBUTOS"
         '
@@ -646,7 +644,7 @@ Partial Class LayoutForm
         Me.gcAtributos.MenuManager = Me.bmActions
         Me.gcAtributos.Name = "gcAtributos"
         Me.gcAtributos.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rilueAtributo})
-        Me.gcAtributos.Size = New System.Drawing.Size(486, 255)
+        Me.gcAtributos.Size = New System.Drawing.Size(485, 233)
         Me.gcAtributos.TabIndex = 0
         Me.gcAtributos.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '

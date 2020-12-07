@@ -141,22 +141,24 @@
           <Property Name="IdPack" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PackCode" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="PackDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DistributionType" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="PackStatus" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="UserCreate" Type="varchar" MaxLength="20" />
           <Property Name="DateCreate" Type="datetime" />
           <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
           <Property Name="DateUpdate" Type="datetime" />
-          <Property Name="IdBusinessUnit" Type="int" />
         </EntityType>
-        <EntityType Name="PackConcept">
+        <EntityType Name="PackDetail">
           <Key>
-            <PropertyRef Name="IdPackConcept" />
+            <PropertyRef Name="IdPackDetail" />
           </Key>
-          <Property Name="IdPackConcept" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdPackDetail" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdPack" Type="int" Nullable="false" />
           <Property Name="IdConcept" Type="int" Nullable="false" />
-          <Property Name="UserCreate" Type="varchar" MaxLength="20" />
-          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="VendorEquivalentCode" Type="int" Nullable="false" />
+          <Property Name="DistributionValue" Type="float" Nullable="false" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DateCreate" Type="datetime" Nullable="false" />
           <Property Name="UserUpdate" Type="varchar" MaxLength="20" />
           <Property Name="DateUpdate" Type="datetime" />
         </EntityType>
@@ -234,24 +236,24 @@
         </Association>
         <Association Name="FK_PackConcept_Concept">
           <End Role="Concept" Type="Self.Concept" Multiplicity="1" />
-          <End Role="PackConcept" Type="Self.PackConcept" Multiplicity="*" />
+          <End Role="PackDetail" Type="Self.PackDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Concept">
               <PropertyRef Name="IdConcept" />
             </Principal>
-            <Dependent Role="PackConcept">
+            <Dependent Role="PackDetail">
               <PropertyRef Name="IdConcept" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PackConcept_Pack">
           <End Role="Pack" Type="Self.Pack" Multiplicity="1" />
-          <End Role="PackConcept" Type="Self.PackConcept" Multiplicity="*" />
+          <End Role="PackDetail" Type="Self.PackDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Pack">
               <PropertyRef Name="IdPack" />
             </Principal>
-            <Dependent Role="PackConcept">
+            <Dependent Role="PackDetail">
               <PropertyRef Name="IdPack" />
             </Dependent>
           </ReferentialConstraint>
@@ -293,7 +295,7 @@
           <EntitySet Name="Layout" EntityType="Self.Layout" Schema="tar" store:Type="Tables" />
           <EntitySet Name="LayoutAttribute" EntityType="Self.LayoutAttribute" Schema="tar" store:Type="Tables" />
           <EntitySet Name="Pack" EntityType="Self.Pack" Schema="tar" store:Type="Tables" />
-          <EntitySet Name="PackConcept" EntityType="Self.PackConcept" Schema="tar" store:Type="Tables" />
+          <EntitySet Name="PackDetail" EntityType="Self.PackDetail" Schema="tar" store:Type="Tables" />
           <EntitySet Name="Tariff" EntityType="Self.Tariff" Schema="tar" store:Type="Tables" />
           <EntitySet Name="TariffDetail" EntityType="Self.TariffDetail" Schema="tar" store:Type="Tables" />
           <EntitySet Name="Unit" EntityType="Self.Unit" Schema="tar" store:Type="Tables" />
@@ -307,11 +309,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_PackConcept_Concept" Association="Self.FK_PackConcept_Concept">
             <End Role="Concept" EntitySet="Concept" />
-            <End Role="PackConcept" EntitySet="PackConcept" />
+            <End Role="PackDetail" EntitySet="PackDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_PackConcept_Pack" Association="Self.FK_PackConcept_Pack">
             <End Role="Pack" EntitySet="Pack" />
-            <End Role="PackConcept" EntitySet="PackConcept" />
+            <End Role="PackDetail" EntitySet="PackDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_TariffDetail_Tariff" Association="Self.FK_TariffDetail_Tariff">
             <End Role="Tariff" EntitySet="Tariff" />
@@ -335,8 +337,6 @@
           <EntitySet Name="Condition" EntityType="TarifarioModel.Condition" />
           <EntitySet Name="Layout" EntityType="TarifarioModel.Layout" />
           <EntitySet Name="LayoutAttribute" EntityType="TarifarioModel.LayoutAttribute" />
-          <EntitySet Name="Pack" EntityType="TarifarioModel.Pack" />
-          <EntitySet Name="PackConcept" EntityType="TarifarioModel.PackConcept" />
           <EntitySet Name="TariffDetail" EntityType="TarifarioModel.TariffDetail" />
           <EntitySet Name="Unit" EntityType="TarifarioModel.Unit" />
           <AssociationSet Name="FK_LayoutAttribute_Attribute" Association="TarifarioModel.FK_LayoutAttribute_Attribute">
@@ -346,10 +346,6 @@
           <AssociationSet Name="FK_LayoutAttribute_Layout1" Association="TarifarioModel.FK_LayoutAttribute_Layout1">
             <End Role="Layout" EntitySet="Layout" />
             <End Role="LayoutAttribute" EntitySet="LayoutAttribute" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PackConcept_Pack" Association="TarifarioModel.FK_PackConcept_Pack">
-            <End Role="Pack" EntitySet="Pack" />
-            <End Role="PackConcept" EntitySet="PackConcept" />
           </AssociationSet>
           <AssociationSet Name="FK_TariffDetail_Unit" Association="TarifarioModel.FK_TariffDetail_Unit">
             <End Role="Unit" EntitySet="Unit" />
@@ -362,14 +358,20 @@
             <End Role="Company" EntitySet="Company" />
           </AssociationSet>
           <EntitySet Name="Concept" EntityType="TarifarioModel.Concept" />
-          <AssociationSet Name="FK_PackConcept_Concept" Association="TarifarioModel.FK_PackConcept_Concept">
-            <End Role="Concept" EntitySet="Concept" />
-            <End Role="PackConcept" EntitySet="PackConcept" />
-          </AssociationSet>
           <EntitySet Name="Tariff" EntityType="TarifarioModel.Tariff" />
           <AssociationSet Name="FK_TariffDetail_Tariff" Association="TarifarioModel.FK_TariffDetail_Tariff">
             <End Role="Tariff" EntitySet="Tariff" />
             <End Role="TariffDetail" EntitySet="TariffDetail" />
+          </AssociationSet>
+          <EntitySet Name="Pack" EntityType="TarifarioModel.Pack" />
+          <EntitySet Name="PackDetail" EntityType="TarifarioModel.PackDetail" />
+          <AssociationSet Name="FK_PackConcept_Concept" Association="TarifarioModel.FK_PackConcept_Concept">
+            <End Role="Concept" EntitySet="Concept" />
+            <End Role="PackDetail" EntitySet="PackDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PackConcept_Pack" Association="TarifarioModel.FK_PackConcept_Pack">
+            <End Role="Pack" EntitySet="Pack" />
+            <End Role="PackDetail" EntitySet="PackDetail" />
           </AssociationSet>
         </EntityContainer>
         <ComplexType Name="uspValueAttributes_Result">
@@ -461,34 +463,6 @@
           <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="DateUpdate" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="Pack">
-          <Key>
-            <PropertyRef Name="IdPack" />
-          </Key>
-          <Property Name="IdPack" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PackCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="PackDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="PackStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="DateCreate" Type="DateTime" Precision="3" />
-          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
-          <Property Name="IdBusinessUnit" Type="Int32" />
-          <NavigationProperty Name="PackConcept" Relationship="TarifarioModel.FK_PackConcept_Pack" FromRole="Pack" ToRole="PackConcept" />
-        </EntityType>
-        <EntityType Name="PackConcept">
-          <Key>
-            <PropertyRef Name="IdPackConcept" />
-          </Key>
-          <Property Name="IdPackConcept" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdPack" Type="Int32" Nullable="false" />
-          <Property Name="IdConcept" Type="Int32" Nullable="false" />
-          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="DateCreate" Type="DateTime" Precision="3" />
-          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Concept" Relationship="TarifarioModel.FK_PackConcept_Concept" FromRole="PackConcept" ToRole="Concept" />
-        </EntityType>
         <EntityType Name="TariffDetail">
           <Key>
             <PropertyRef Name="IdTariffDetail" />
@@ -541,18 +515,6 @@
             </Principal>
             <Dependent Role="LayoutAttribute">
               <PropertyRef Name="IdLayout" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PackConcept_Pack">
-          <End Type="TarifarioModel.Pack" Role="Pack" Multiplicity="1" />
-          <End Type="TarifarioModel.PackConcept" Role="PackConcept" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pack">
-              <PropertyRef Name="IdPack" />
-            </Principal>
-            <Dependent Role="PackConcept">
-              <PropertyRef Name="IdPack" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -626,18 +588,6 @@
           <Property Name="DateUpdate" Type="DateTime" Precision="3" />
           <Property Name="EquivalentCode" Type="Int32" />
         </EntityType>
-        <Association Name="FK_PackConcept_Concept">
-          <End Type="TarifarioModel.Concept" Role="Concept" Multiplicity="1" />
-          <End Type="TarifarioModel.PackConcept" Role="PackConcept" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Concept">
-              <PropertyRef Name="IdConcept" />
-            </Principal>
-            <Dependent Role="PackConcept">
-              <PropertyRef Name="IdConcept" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Tariff">
           <Key>
             <PropertyRef Name="IdTariff" />
@@ -665,6 +615,60 @@
             </Principal>
             <Dependent Role="TariffDetail">
               <PropertyRef Name="IdTariff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Pack">
+          <Key>
+            <PropertyRef Name="IdPack" />
+          </Key>
+          <Property Name="IdPack" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PackCode" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PackDescription" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DistributionType" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PackStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UserCreate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PackDetail" Relationship="TarifarioModel.FK_PackConcept_Pack" FromRole="Pack" ToRole="PackDetail" />
+        </EntityType>
+        <EntityType Name="PackDetail">
+          <Key>
+            <PropertyRef Name="IdPackDetail" />
+          </Key>
+          <Property Name="IdPackDetail" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPack" Type="Int32" Nullable="false" />
+          <Property Name="IdConcept" Type="Int32" Nullable="false" />
+          <Property Name="VendorEquivalentCode" Type="Int32" Nullable="false" />
+          <Property Name="DistributionValue" Type="Double" Nullable="false" />
+          <Property Name="UserCreate" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserUpdate" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Concept" Relationship="TarifarioModel.FK_PackConcept_Concept" FromRole="PackDetail" ToRole="Concept" />
+        </EntityType>
+        <Association Name="FK_PackConcept_Concept">
+          <End Type="TarifarioModel.Concept" Role="Concept" Multiplicity="1" />
+          <End Type="TarifarioModel.PackDetail" Role="PackDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Concept">
+              <PropertyRef Name="IdConcept" />
+            </Principal>
+            <Dependent Role="PackDetail">
+              <PropertyRef Name="IdConcept" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PackConcept_Pack">
+          <End Type="TarifarioModel.Pack" Role="Pack" Multiplicity="1" />
+          <End Type="TarifarioModel.PackDetail" Role="PackDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pack">
+              <PropertyRef Name="IdPack" />
+            </Principal>
+            <Dependent Role="PackDetail">
+              <PropertyRef Name="IdPack" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -772,34 +776,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Pack">
-            <EntityTypeMapping TypeName="TarifarioModel.Pack">
-              <MappingFragment StoreEntitySet="Pack">
-                <ScalarProperty Name="IdBusinessUnit" ColumnName="IdBusinessUnit" />
-                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
-                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
-                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
-                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
-                <ScalarProperty Name="PackStatus" ColumnName="PackStatus" />
-                <ScalarProperty Name="PackDescription" ColumnName="PackDescription" />
-                <ScalarProperty Name="PackCode" ColumnName="PackCode" />
-                <ScalarProperty Name="IdPack" ColumnName="IdPack" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PackConcept">
-            <EntityTypeMapping TypeName="TarifarioModel.PackConcept">
-              <MappingFragment StoreEntitySet="PackConcept">
-                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
-                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
-                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
-                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
-                <ScalarProperty Name="IdConcept" ColumnName="IdConcept" />
-                <ScalarProperty Name="IdPack" ColumnName="IdPack" />
-                <ScalarProperty Name="IdPackConcept" ColumnName="IdPackConcept" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TariffDetail">
             <EntityTypeMapping TypeName="TarifarioModel.TariffDetail">
               <MappingFragment StoreEntitySet="TariffDetail">
@@ -896,6 +872,36 @@
                 <ScalarProperty Name="IdLayout" ColumnName="IdLayout" />
                 <ScalarProperty Name="TariffType" ColumnName="TariffType" />
                 <ScalarProperty Name="IdTariff" ColumnName="IdTariff" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pack">
+            <EntityTypeMapping TypeName="TarifarioModel.Pack">
+              <MappingFragment StoreEntitySet="Pack">
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="PackStatus" ColumnName="PackStatus" />
+                <ScalarProperty Name="DistributionType" ColumnName="DistributionType" />
+                <ScalarProperty Name="PackDescription" ColumnName="PackDescription" />
+                <ScalarProperty Name="PackCode" ColumnName="PackCode" />
+                <ScalarProperty Name="IdPack" ColumnName="IdPack" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackDetail">
+            <EntityTypeMapping TypeName="TarifarioModel.PackDetail">
+              <MappingFragment StoreEntitySet="PackDetail">
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="UserUpdate" ColumnName="UserUpdate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="DistributionValue" ColumnName="DistributionValue" />
+                <ScalarProperty Name="VendorEquivalentCode" ColumnName="VendorEquivalentCode" />
+                <ScalarProperty Name="IdConcept" ColumnName="IdConcept" />
+                <ScalarProperty Name="IdPack" ColumnName="IdPack" />
+                <ScalarProperty Name="IdPackDetail" ColumnName="IdPackDetail" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

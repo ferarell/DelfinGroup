@@ -1,4 +1,4 @@
-﻿' La generación de código T4 está habilitada para el modelo 'C:\Users\lucia\Documents\Visual Studio 2017\Projects\DataAccessLayer\DataAccessLayer\NextSoftTarifarioEF.edmx'. 
+﻿' La generación de código T4 está habilitada para el modelo 'D:\DELFIN\DelfinGroup\Application.DataAccessLayer\NextSoftTarifarioEF.edmx'. 
 ' Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 ' por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 ' el modelo en el diseñador.

@@ -1,22 +1,23 @@
 ﻿Imports ApplicationForm
 
-Public Class PackConceptClient
-    Dim _IdPackConcept As Integer
+Public Class PackDetailClient
+    Dim _IdPackDetail As Integer
     Dim _IdPack As Integer
     Dim _IdConcept As Integer
     Dim _UserCreate As String
     Dim _DateCreate As Nullable(Of Date)
     Dim _UserUpdate As String
     Dim _DateUpdate As Nullable(Of Date)
-
+    Dim _VendorEquivalentCode As Integer
+    Dim _DistributionValue As Double
     Dim _Pack As PackClient
 
-    Public Property IdPackConcept As Integer
+    Public Property IdPackDetail As Integer
         Get
-            Return _IdPackConcept
+            Return _IdPackDetail
         End Get
         Set(value As Integer)
-            _IdPackConcept = value
+            _IdPackDetail = value
         End Set
     End Property
 
@@ -80,6 +81,24 @@ Public Class PackConceptClient
         End Get
         Set(value As PackClient)
             _Pack = value
+        End Set
+    End Property
+
+    Public Property VendorEquivalentCode As Integer
+        Get
+            Return _VendorEquivalentCode
+        End Get
+        Set(value As Integer)
+            _VendorEquivalentCode = value
+        End Set
+    End Property
+
+    Public Property DistributionValue As Double
+        Get
+            Return _DistributionValue
+        End Get
+        Set(value As Double)
+            _DistributionValue = value
         End Set
     End Property
 End Class
