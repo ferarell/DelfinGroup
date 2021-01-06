@@ -70,4 +70,7 @@ Public Interface IDelfinService
     <OperationContract>
     Function UpdateLogisticOperation(dsLogisticOperation As DataSet, dtOriginalDetail As DataTable, dtOriginalChangeControl As DataTable) As ArrayList
 
+    <OperationContract>
+    Function PreFacturar(PDOC_Codigo As Integer, AUDI_UsrCrea As String) As Boolean
+
 End Interface

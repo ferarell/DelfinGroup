@@ -1189,6 +1189,14 @@ Public Class DelfinService
         End Using
         Return aResult
     End Function
+
+
+    Public Function PreFacturar(PDOC_Codigo As Integer, AUDI_UsrCrea As String) As Boolean Implements IDelfinService.PreFacturar
+        Dim DocsVta_BL As New DocsVta_BL
+        Return DocsVta_BL.PreFacturar(PDOC_Codigo, AUDI_UsrCrea)
+    End Function
+
+
 #End Region
 
 End Class
