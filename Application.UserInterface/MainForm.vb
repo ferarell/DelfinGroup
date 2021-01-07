@@ -139,4 +139,8 @@
     Private Sub AccordionControlElement34_Click(sender As Object, e As EventArgs) Handles AccordionControlElement34.Click
         OpenForm(PackForm)
     End Sub
+
+    Private Sub AccordionControlElement35_Click(sender As Object, e As EventArgs) Handles AccordionControlElement35.Click
+        OpenForm(ReferencesTransferForm)
+    End Sub
 End Class

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="IntegradorSBO" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IntegrationServicesRest" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarServicio" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarSocioNegocio_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarSocioNegocio" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarSocioNegocio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarSocioNegocioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarReferencias_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarReferencias" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarReferencias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarReferenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarJournalEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarJournalEntry" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarJournalEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarJournalEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarInvoiceBills_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarInvoiceBills" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarInvoiceBills_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarInvoiceBillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarCreditMemo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarCreditMemo" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarCreditMemo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarCreditMemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarPurchaseInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarPurchaseInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarPurchaseInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarPurchaseInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarPurchaseCreditMemo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarPurchaseCreditMemo" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_InsertarActualizarPurchaseCreditMemo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarPurchaseCreditMemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_VerificarExistenciaDocumento_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarExistenciaDocumento" />
+  </wsdl:message>
+  <wsdl:message name="IIntegradorSBO_VerificarExistenciaDocumento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarExistenciaDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IIntegradorSBO">
+    <wsdl:operation name="InsertarActualizarServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarServicio" message="tns:IIntegradorSBO_InsertarActualizarServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarServicioResponse" message="tns:IIntegradorSBO_InsertarActualizarServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarSocioNegocio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarSocioNegocio" message="tns:IIntegradorSBO_InsertarActualizarSocioNegocio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarSocioNegocioResponse" message="tns:IIntegradorSBO_InsertarActualizarSocioNegocio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarReferencias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarReferencias" message="tns:IIntegradorSBO_InsertarActualizarReferencias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarReferenciasResponse" message="tns:IIntegradorSBO_InsertarActualizarReferencias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarJournalEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry" message="tns:IIntegradorSBO_InsertarActualizarJournalEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntryResponse" message="tns:IIntegradorSBO_InsertarActualizarJournalEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarInvoiceBills">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBills" message="tns:IIntegradorSBO_InsertarActualizarInvoiceBills_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBillsResponse" message="tns:IIntegradorSBO_InsertarActualizarInvoiceBills_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarCreditMemo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemo" message="tns:IIntegradorSBO_InsertarActualizarCreditMemo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemoResponse" message="tns:IIntegradorSBO_InsertarActualizarCreditMemo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarPurchaseInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseInvoice" message="tns:IIntegradorSBO_InsertarActualizarPurchaseInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseInvoiceResponse" message="tns:IIntegradorSBO_InsertarActualizarPurchaseInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarPurchaseCreditMemo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemo" message="tns:IIntegradorSBO_InsertarActualizarPurchaseCreditMemo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemoResponse" message="tns:IIntegradorSBO_InsertarActualizarPurchaseCreditMemo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarExistenciaDocumento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento" message="tns:IIntegradorSBO_VerificarExistenciaDocumento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumentoResponse" message="tns:IIntegradorSBO_VerificarExistenciaDocumento_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IIntegradorSBO" type="tns:IIntegradorSBO">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarActualizarServicio">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarSocioNegocio">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarSocioNegocio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarReferencias">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarReferencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarJournalEntry">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarJournalEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarInvoiceBills">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarInvoiceBills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarCreditMemo">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarCreditMemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarPurchaseInvoice">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarActualizarPurchaseCreditMemo">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarExistenciaDocumento">
+      <soap:operation soapAction="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IntegradorSBO">
+    <wsdl:port name="BasicHttpBinding_IIntegradorSBO" binding="tns:BasicHttpBinding_IIntegradorSBO">
+      <soap:address location="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

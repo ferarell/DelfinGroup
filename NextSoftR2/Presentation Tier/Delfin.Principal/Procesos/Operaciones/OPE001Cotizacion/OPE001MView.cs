@@ -4379,7 +4379,7 @@ namespace Delfin.Principal
       private void grdItemsServicio_CellEndEdit(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
       {
          if (e.Column.Name == "SERV_Codigo")
-         { SetDatosServicios(false, e.RowIndex); }
+         { SetDatosServicios(false, e.RowIndex); }                 
          else if (e.Column.Name == "CCOT_IngresoGasto")
          { SetTipoDocumentoServicio(false, e.RowIndex); }
          else if (e.Column.Name == "ENTC_Codigo")

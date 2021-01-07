@@ -29,7 +29,7 @@
       private void InitializeComponent()
       {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            Infrastructure.WinFormsControls.OutlookBarButton outlookBarButton3 = new Infrastructure.WinFormsControls.OutlookBarButton();
+            Infrastructure.WinFormsControls.OutlookBarButton outlookBarButton2 = new Infrastructure.WinFormsControls.OutlookBarButton();
             this.tabViews = new Telerik.WinControls.UI.RadPageView();
             this.splitMenuContainer = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
@@ -40,7 +40,7 @@
             this.TAR003UnidadesNegocio = new System.Windows.Forms.ToolStripButton();
             this.TAR004Atributos = new System.Windows.Forms.ToolStripButton();
             this.TAR005Conceptos = new System.Windows.Forms.ToolStripButton();
-            this.TAR006Paquetes = new System.Windows.Forms.ToolStripButton();
+            this.TAR006ConceptosEquivalentes = new System.Windows.Forms.ToolStripButton();
             this.TAR007Condiciones = new System.Windows.Forms.ToolStripButton();
             this.TAR008UnidadesMedida = new System.Windows.Forms.ToolStripButton();
             this.SEP011 = new System.Windows.Forms.ToolStripSeparator();
@@ -93,6 +93,7 @@
             this.CAJ015AsientosContables = new System.Windows.Forms.ToolStripButton();
             this.tss09 = new System.Windows.Forms.ToolStripSeparator();
             this.CAJ017AvisosLlegada = new System.Windows.Forms.ToolStripButton();
+            this.CAJ019GestionAvisos = new System.Windows.Forms.ToolStripButton();
             this.menuCaptionFinanzas = new Infrastructure.WinFormsControls.MenuCaption();
             this.pnlMenuOperaciones = new System.Windows.Forms.Panel();
             this.toolOperaciones = new System.Windows.Forms.ToolStrip();
@@ -250,6 +251,7 @@
             this.tslblVersion = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslblServidor = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslblBD = new System.Windows.Forms.ToolStripStatusLabel();
+            this.FIN004SincronizarReferencias = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.tabViews)).BeginInit();
             this.splitMenuContainer.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -339,7 +341,7 @@
             this.TAR003UnidadesNegocio,
             this.TAR004Atributos,
             this.TAR005Conceptos,
-            this.TAR006Paquetes,
+            this.TAR006ConceptosEquivalentes,
             this.TAR007Condiciones,
             this.TAR008UnidadesMedida,
             this.SEP011,
@@ -387,11 +389,12 @@
             this.TAR005Conceptos.Tag = "TAR005";
             this.TAR005Conceptos.Click += new System.EventHandler(this.TAR005Conceptos_Click);
             // 
-            // TAR006Paquetes
+            // TAR006ConceptosEquivalentes
             // 
-            resources.ApplyResources(this.TAR006Paquetes, "TAR006Paquetes");
-            this.TAR006Paquetes.Name = "TAR006Paquetes";
-            this.TAR006Paquetes.Tag = "TAR006";
+            resources.ApplyResources(this.TAR006ConceptosEquivalentes, "TAR006ConceptosEquivalentes");
+            this.TAR006ConceptosEquivalentes.Name = "TAR006ConceptosEquivalentes";
+            this.TAR006ConceptosEquivalentes.Tag = "TAR006";
+            this.TAR006ConceptosEquivalentes.Click += new System.EventHandler(this.TAR006ConceptosEquivalentes_Click);
             // 
             // TAR007Condiciones
             // 
@@ -537,6 +540,7 @@
             this.FIN001AsientosProvision,
             this.FIN002FacturacionVentas,
             this.FIN003FacturacionCompras,
+            this.FIN004SincronizarReferencias,
             this.tss10,
             this.CAJ001CuentasBancarias,
             this.tss01,
@@ -563,7 +567,8 @@
             this.CAJ018AsientosStatement,
             this.CAJ015AsientosContables,
             this.tss09,
-            this.CAJ017AvisosLlegada});
+            this.CAJ017AvisosLlegada,
+            this.CAJ019GestionAvisos});
             this.toolFinanzas.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolFinanzas.Name = "toolFinanzas";
             this.toolFinanzas.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -811,6 +816,13 @@
             this.CAJ017AvisosLlegada.Name = "CAJ017AvisosLlegada";
             this.CAJ017AvisosLlegada.Tag = "CAJ017";
             this.CAJ017AvisosLlegada.Click += new System.EventHandler(this.CAJ017AvisosLlegada_Click);
+            // 
+            // CAJ019GestionAvisos
+            // 
+            resources.ApplyResources(this.CAJ019GestionAvisos, "CAJ019GestionAvisos");
+            this.CAJ019GestionAvisos.Name = "CAJ019GestionAvisos";
+            this.CAJ019GestionAvisos.Tag = "CAJ019";
+            this.CAJ019GestionAvisos.Click += new System.EventHandler(this.CAJ019GestionAvisos_Click);
             // 
             // menuCaptionFinanzas
             // 
@@ -2124,11 +2136,11 @@
             this.olbMenuAlmafin.GradientButtonSelectedDark = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(150)))), ((int)(((byte)(21)))));
             this.olbMenuAlmafin.GradientButtonSelectedLight = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(230)))), ((int)(((byte)(148)))));
             this.olbMenuAlmafin.Name = "olbMenuAlmafin";
-            outlookBarButton3.Enabled = true;
-            outlookBarButton3.Image = null;
-            outlookBarButton3.Tag = null;
-            outlookBarButton3.Text = "";
-            this.olbMenuAlmafin.SelectedButton = outlookBarButton3;
+            outlookBarButton2.Enabled = true;
+            outlookBarButton2.Image = null;
+            outlookBarButton2.Tag = null;
+            outlookBarButton2.Text = "";
+            this.olbMenuAlmafin.SelectedButton = outlookBarButton2;
             this.olbMenuAlmafin.Click += new Infrastructure.WinFormsControls.OutlookBar.ButtonClickEventHandler(this.olbMenuAlmafin_Click);
             // 
             // statusStrip1
@@ -2184,6 +2196,13 @@
             this.tslblBD.Image = global::Delfin.Principal.Properties.Resources.data_connection_16x16;
             this.tslblBD.Name = "tslblBD";
             resources.ApplyResources(this.tslblBD, "tslblBD");
+            // 
+            // FIN004SincronizarReferencias
+            // 
+            resources.ApplyResources(this.FIN004SincronizarReferencias, "FIN004SincronizarReferencias");
+            this.FIN004SincronizarReferencias.Name = "FIN004SincronizarReferencias";
+            this.FIN004SincronizarReferencias.Tag = "FIN004";
+            this.FIN004SincronizarReferencias.Click += new System.EventHandler(this.FIN004SincronizarReferencias_Click);
             // 
             // MainWindow
             // 
@@ -2434,7 +2453,7 @@
         private System.Windows.Forms.ToolStripButton TAR003UnidadesNegocio;
         private System.Windows.Forms.ToolStripButton TAR004Atributos;
         private System.Windows.Forms.ToolStripButton TAR005Conceptos;
-        private System.Windows.Forms.ToolStripButton TAR006Paquetes;
+        private System.Windows.Forms.ToolStripButton TAR006ConceptosEquivalentes;
         private Infrastructure.WinFormsControls.MenuCaption menuCaptionTarifario;
         private System.Windows.Forms.Panel pnlMenuServicioLogistico;
         private System.Windows.Forms.ToolStrip toolServicioLogistico;
@@ -2463,6 +2482,8 @@
         private System.Windows.Forms.ToolStripSeparator SEP014;
         private System.Windows.Forms.ToolStripButton COM015ConsultaIntegral;
         private System.Windows.Forms.ToolStripButton FIN003FacturacionCompras;
+        private System.Windows.Forms.ToolStripButton CAJ019GestionAvisos;
+        private System.Windows.Forms.ToolStripButton FIN004SincronizarReferencias;
     }
 }
 

@@ -102,12 +102,14 @@
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Dialogs.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v18.2.Drawing, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -120,6 +122,9 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Client.Runtime.WindowsPhone, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -171,6 +176,12 @@
       <DependentUpon>CargoNoticeQueryForm.vb</DependentUpon>
     </Compile>
     <Compile Include="CargoNoticeQueryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EndoseVirtualForm.Designer.vb">
+      <DependentUpon>EndoseVirtualForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EndoseVirtualForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OperationalTrackingForm.Designer.vb">
@@ -273,6 +284,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SharedModule.vb" />
+    <Compile Include="SharePointListTransactions.vb" />
     <Compile Include="TestForm.Designer.vb">
       <DependentUpon>TestForm.vb</DependentUpon>
     </Compile>
@@ -368,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CargoNoticeQueryForm.resx">
       <DependentUpon>CargoNoticeQueryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EndoseVirtualForm.resx">
+      <DependentUpon>EndoseVirtualForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OperationalTrackingForm.resx">
       <DependentUpon>OperationalTrackingForm.vb</DependentUpon>

@@ -770,6 +770,7 @@ Partial Class LogisticOperationQueryForm
         '
         Me.RepositoryItemCheckEdit3.AutoHeight = False
         Me.RepositoryItemCheckEdit3.Name = "RepositoryItemCheckEdit3"
+        Me.RepositoryItemCheckEdit3.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked
         '
         'GridColumn1
         '

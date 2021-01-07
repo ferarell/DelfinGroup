@@ -1450,6 +1450,9 @@ function viewPDF(type, number, serie) {
     } else if (type == 'RC') {
         TipDocSunat = "RC";
         folder = "recibos";
+    } else if (type == 'RD') {
+        TipDocSunat = "RC";
+        folder = "recibos";
     }
     var url = "";
 

@@ -153,4 +153,8 @@ Public Class MainForm
     Private Sub NavBarItem19_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem19.LinkClicked
         OpenForm(New CustomerStatementQueryForm)
     End Sub
+
+    Private Sub NavBarItem20_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem20.LinkClicked
+        OpenForm(New EndoseVirtualForm)
+    End Sub
 End Class

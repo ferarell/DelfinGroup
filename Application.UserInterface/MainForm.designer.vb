@@ -19,9 +19,8 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel()
         Me.AccordionControl1 = New DevExpress.XtraBars.Navigation.AccordionControl()
         Me.AccordionControlElement1 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement16 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
@@ -53,6 +52,7 @@ Partial Class MainForm
         Me.AccordionControlElement24 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement25 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement26 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement34 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlSeparator3 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
         Me.AccordionControlElement28 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlSeparator4 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
@@ -60,8 +60,8 @@ Partial Class MainForm
         Me.AccordionControlSeparator2 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
         Me.AccordionControlElement30 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlSeparator1 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
-        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
-        Me.AccordionControlElement34 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager()
+        Me.AccordionControlElement35 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -75,9 +75,8 @@ Partial Class MainForm
         Me.AccordionControl1.Dock = System.Windows.Forms.DockStyle.Left
         Me.AccordionControl1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement1, Me.AccordionControlElement2, Me.AccordionControlElement3, Me.AccordionControlElement8, Me.AccordionControlElement11, Me.AccordionControlElement4, Me.AccordionControlElement5, Me.AccordionControlSeparator1})
         Me.AccordionControl1.Location = New System.Drawing.Point(0, 0)
-        Me.AccordionControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.AccordionControl1.Name = "AccordionControl1"
-        Me.AccordionControl1.Size = New System.Drawing.Size(271, 548)
+        Me.AccordionControl1.Size = New System.Drawing.Size(275, 445)
         Me.AccordionControl1.TabIndex = 0
         Me.AccordionControl1.Text = "AccordionControl1"
         Me.AccordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
@@ -166,7 +165,7 @@ Partial Class MainForm
         '
         'AccordionControlElement8
         '
-        Me.AccordionControlElement8.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement10, Me.AccordionControlElement12, Me.AccordionControlElement13})
+        Me.AccordionControlElement8.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement10, Me.AccordionControlElement12, Me.AccordionControlElement13, Me.AccordionControlElement35})
         Me.AccordionControlElement8.Expanded = True
         Me.AccordionControlElement8.Name = "AccordionControlElement8"
         Me.AccordionControlElement8.Text = "Finanzas"
@@ -274,6 +273,12 @@ Partial Class MainForm
         Me.AccordionControlElement26.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.AccordionControlElement26.Text = "Condiciones"
         '
+        'AccordionControlElement34
+        '
+        Me.AccordionControlElement34.Name = "AccordionControlElement34"
+        Me.AccordionControlElement34.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement34.Text = "Pack"
+        '
         'AccordionControlSeparator3
         '
         Me.AccordionControlSeparator3.Name = "AccordionControlSeparator3"
@@ -312,21 +317,20 @@ Partial Class MainForm
         '
         Me.XtraTabbedMdiManager1.MdiParent = Me
         '
-        'AccordionControlElement34
+        'AccordionControlElement35
         '
-        Me.AccordionControlElement34.Name = "AccordionControlElement34"
-        Me.AccordionControlElement34.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement34.Text = "Pack"
+        Me.AccordionControlElement35.Name = "AccordionControlElement35"
+        Me.AccordionControlElement35.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement35.Text = "Sincronización de Referencias"
         '
         'MainForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1003, 548)
+        Me.ClientSize = New System.Drawing.Size(860, 445)
         Me.Controls.Add(Me.AccordionControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "MainForm"
         Me.Text = "MainForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -376,4 +380,5 @@ Partial Class MainForm
     Friend WithEvents AccordionControlElement32 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents AccordionControlElement33 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents AccordionControlElement34 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement35 As DevExpress.XtraBars.Navigation.AccordionControlElement
 End Class

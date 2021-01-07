@@ -7,6 +7,7 @@ Imports System.Runtime.InteropServices
 Imports System.Windows
 Imports System.IO
 Imports DevExpress.XtraGrid.Views.Grid
+Imports DevExpress.XtraEditors
 
 Public Class MailCargoNoticeForm
 
@@ -160,6 +161,11 @@ Public Class MailCargoNoticeForm
         If DevExpress.XtraEditors.XtraMessageBox.Show("El envío de este mensaje NO registrará un evento, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Forms.DialogResult.No Then
             Return
         End If
+        Dim iSelected As Integer = RowSelectedCount(GridView1)
+        If iSelected = 0 Then
+            XtraMessageBox.Show("Debe seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
         If lueNoticeLayout.EditValue = "001" Then
             MailGenerate1(GridView1.GetFocusedDataRow, "Display")
         ElseIf lueNoticeLayout.EditValue = "002" Then
@@ -173,6 +179,11 @@ Public Class MailCargoNoticeForm
     Private Sub bbiSendAllMessage_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSendAllMessage.ItemClick
         Validate()
         If DevExpress.XtraEditors.XtraMessageBox.Show("El envío masivo registrará un evento por cada HBL, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Forms.DialogResult.No Then
+            Return
+        End If
+        Dim iSelected As Integer = RowSelectedCount(GridView1)
+        If iSelected = 0 Then
+            XtraMessageBox.Show("Debe seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
         GridView1.Focus()
@@ -234,28 +245,6 @@ Public Class MailCargoNoticeForm
             Dim _RptPath As String = IO.Directory.GetCurrentDirectory & "\Reportes\"
             Dim _LabelNotice As String = ""
             Dim _TipoAviso As String = ""
-            'If oRow("CONS_CodRGM") = "001" And oRow("CONS_CodVia") = "001" Then
-            '    _LabelNotice = "Aviso de Arribo de Importación Marítima"
-            '    _TipoAviso = "AVISO DE ARRIBO"
-            '    If oRow("EsLCL") = 1 Then
-            '        oDocumento.RptFile = _RptPath & "AvisoArriboMaritimoLcl.rpt"
-            '    Else
-            '        oDocumento.RptFile = _RptPath & "AvisoArriboMaritimoFcl.rpt"
-            '    End If
-            'ElseIf oRow("CONS_CodRGM") = "001" And oRow("CONS_CodVia") = "002" Then
-            '    _LabelNotice = "Aviso de Llegada de Carga Aérea"
-            '    _TipoAviso = "AVISO DE LLEGADA"
-            '    oDocumento.RptFile = _RptPath & "AvisoArriboAereo.rpt"
-            'ElseIf oRow("CONS_CodRGM") = "002" And oRow("CONS_CodVia") = "001" Then
-            '    _LabelNotice = "Aviso de Zarpe Marítimo"
-            '    _TipoAviso = "AVISO DE ZARPE"
-            '    If oRow("EsLCL") = 1 Then
-            '        oDocumento.RptFile = _RptPath & "AvisoZarpeMaritimoLcl.rpt"
-            '    Else
-            '        oDocumento.RptFile = _RptPath & "AvisoZarpeMaritimoFcl.rpt"
-            '    End If
-            'End If
-            'Marítimo
             If oRow("CONS_CodVia") = "001" Then
                 If oRow("CONS_CodRGM") = "001" Then 'Impo
                     _LabelNotice = "Aviso de Arribo de Importación Marítima"
@@ -333,31 +322,6 @@ Public Class MailCargoNoticeForm
             End If
             _Subject += " / " & Format(oRow("ETA_ETD"), "dd/MM/yyyy")
             oMailItem.subject = _Subject
-            'If oRow("EsLCL") = 0 Then
-            '    'FCL
-            '    If oRow("CONS_CodRGM") = "001" Then
-            '        'Impo
-            '        If oRow("Puerto").ToString.Contains("ARICA") Then 'Arica
-            '            richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoFcl_CLARI.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
-            '        Else
-            '            oMailItem.aAttachment.Add(IO.Directory.GetCurrentDirectory & "\Plantillas\COMUNICADO No.08.PDF")
-            '            richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoFcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
-            '        End If
-            '    Else
-            '            'Expo
-            '            richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosExpoFcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
-            '    End If
-            'End If
-            'If oRow("EsLCL") = 1 Then
-            '    'LCL
-            '    If oRow("CONS_CodRGM") = "001" Then
-            '        'Impo
-            '        richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoLcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
-            '    Else
-            '        'Expo
-            '        richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosExpoLcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
-            '    End If
-            'End If
             oMailItem.htmlBody.AppendText(Replace(richEditControl.HtmlText, "[TipoAviso]", _LabelNotice.ToUpper))
             oMailItem.htmlBody.Text = Replace(oMailItem.htmlBody.Text, "[CierreDireccionamiento]", oRow("FechaCierreDireccionamiento").ToString)
             oMailItem.htmlBody.Text = Replace(oMailItem.htmlBody.Text, "[PlazoVistoBueno]", oRow("FechaPlazoVistoBueno").ToString)
@@ -539,4 +503,18 @@ Public Class MailCargoNoticeForm
             bbiSearch.PerformClick()
         End If
     End Sub
+
+    Friend Function RowSelectedCount(oGridView As GridView) As Integer
+        Dim iChecked As Integer = 0
+        For i = 0 To oGridView.RowCount - 1
+            If IsDBNull(oGridView.GetRowCellValue(i, "Checked")) Then
+                Continue For
+            End If
+            If oGridView.GetRowCellValue(i, "Checked") Then
+                iChecked += 1
+            End If
+        Next
+        Return iChecked
+    End Function
+
 End Class

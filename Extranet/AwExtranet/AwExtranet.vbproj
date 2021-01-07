@@ -2414,6 +2414,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AvisoArriboMaritimoLcl.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="avisollegada\AvisoSalidaAereo.vb">
       <AutoGen>True</AutoGen>

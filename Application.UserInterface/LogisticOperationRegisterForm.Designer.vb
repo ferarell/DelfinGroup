@@ -88,17 +88,6 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn27 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn64 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn65 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.gcContainerDetail = New DevExpress.XtraGrid.GridControl()
-        Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GridColumn74 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn75 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn76 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn23 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn24 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.gcContainerGroup = New DevExpress.XtraGrid.GridControl()
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GridColumn96 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn97 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
@@ -175,7 +164,18 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem41 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.XtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
+        Me.gcContainerGroup = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn96 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn97 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
+        Me.gcContainerDetail = New DevExpress.XtraGrid.GridControl()
+        Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn74 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn75 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn76 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn23 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn24 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.LayoutControl4 = New DevExpress.XtraLayout.LayoutControl()
         Me.teCodigoViaje = New DevExpress.XtraEditors.TextEdit()
@@ -208,6 +208,45 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem21 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.NavBarGroupControlContainer3 = New DevExpress.XtraNavBar.NavBarGroupControlContainer()
+        Me.XtraTabControl2 = New DevExpress.XtraTab.XtraTabControl()
+        Me.XtraTabPage4 = New DevExpress.XtraTab.XtraTabPage()
+        Me.gcChangeControlRelated = New DevExpress.XtraGrid.GridControl()
+        Me.cmsChangeControl = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.tsmiChangeControlWR2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsmiChangeControlDelete = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsmiEntryJournalCreate = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsmiJournalEntryVoid = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn70 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn29 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn30 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn31 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn32 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit6 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn68 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit12 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn33 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit7 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn34 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit8 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn66 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit10 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn35 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn36 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn38 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn39 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn40 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn41 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn73 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn56 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn58 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn59 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn71 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.XtraTabPage3 = New DevExpress.XtraTab.XtraTabPage()
         Me.gcServiceRelated = New DevExpress.XtraGrid.GridControl()
         Me.cmsServices = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.tsmiChangeControlWR1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -262,42 +301,6 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem34 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem35 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.NavBarGroupControlContainer5 = New DevExpress.XtraNavBar.NavBarGroupControlContainer()
-        Me.gcChangeControlRelated = New DevExpress.XtraGrid.GridControl()
-        Me.cmsChangeControl = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.tsmiChangeControlWR2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsmiChangeControlDelete = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsmiEntryJournalCreate = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsmiJournalEntryVoid = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GridColumn70 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn29 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn30 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridColumn31 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn32 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit6 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridColumn68 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit12 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridColumn33 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit7 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridColumn34 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit8 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridColumn66 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit10 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridColumn35 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn36 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn38 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn39 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn40 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn41 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn73 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn56 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn58 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn59 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn71 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.NavBarGroup2 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarGroup3 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarGroup5 = New DevExpress.XtraNavBar.NavBarGroup()
@@ -309,13 +312,11 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlGroup7 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.TabbedControlGroup2 = New DevExpress.XtraLayout.TabbedControlGroup()
         Me.LayoutControlGroup8 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.tsmiInvoiceBillsCreate = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiInvoiceBillsVoid = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcTariff, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gcContainerDetail, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gcContainerGroup, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -374,7 +375,11 @@ Partial Class LogisticOperationRegisterForm
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControl1.SuspendLayout()
         Me.XtraTabPage1.SuspendLayout()
+        CType(Me.gcContainerGroup, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage2.SuspendLayout()
+        CType(Me.gcContainerDetail, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.LayoutControl4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -415,6 +420,19 @@ Partial Class LogisticOperationRegisterForm
         CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NavBarGroupControlContainer3.SuspendLayout()
+        CType(Me.XtraTabControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabControl2.SuspendLayout()
+        Me.XtraTabPage4.SuspendLayout()
+        CType(Me.gcChangeControlRelated, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cmsChangeControl.SuspendLayout()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit10, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtraTabPage3.SuspendLayout()
         CType(Me.gcServiceRelated, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsServices.SuspendLayout()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -444,16 +462,6 @@ Partial Class LogisticOperationRegisterForm
         CType(Me.LayoutControlItem33, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem34, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem35, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.NavBarGroupControlContainer5.SuspendLayout()
-        CType(Me.gcChangeControlRelated, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.cmsChangeControl.SuspendLayout()
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -622,8 +630,8 @@ Partial Class LogisticOperationRegisterForm
         Me.gcTariff.Location = New System.Drawing.Point(2, 20)
         Me.gcTariff.MainView = Me.GridView3
         Me.gcTariff.Name = "gcTariff"
-        Me.gcTariff.Size = New System.Drawing.Size(425, 82)
-        Me.gcTariff.TabIndex = 178
+        Me.gcTariff.Size = New System.Drawing.Size(422, 82)
+        Me.gcTariff.TabIndex = 179
         Me.gcTariff.UseEmbeddedNavigator = True
         Me.gcTariff.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.CardView1})
         '
@@ -706,120 +714,6 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn65.Name = "GridColumn65"
         Me.GridColumn65.OptionsColumn.ReadOnly = True
         '
-        'gcContainerDetail
-        '
-        Me.gcContainerDetail.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcContainerDetail.EmbeddedNavigator.Buttons.Append.Visible = False
-        Me.gcContainerDetail.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
-        Me.gcContainerDetail.EmbeddedNavigator.Buttons.Edit.Visible = False
-        Me.gcContainerDetail.EmbeddedNavigator.Buttons.EndEdit.Visible = False
-        Me.gcContainerDetail.EmbeddedNavigator.Buttons.Remove.Visible = False
-        Me.gcContainerDetail.Location = New System.Drawing.Point(0, 0)
-        Me.gcContainerDetail.MainView = Me.GridView4
-        Me.gcContainerDetail.Name = "gcContainerDetail"
-        Me.gcContainerDetail.Size = New System.Drawing.Size(354, 98)
-        Me.gcContainerDetail.TabIndex = 178
-        Me.gcContainerDetail.UseEmbeddedNavigator = True
-        Me.gcContainerDetail.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView4})
-        '
-        'GridView4
-        '
-        Me.GridView4.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn74, Me.GridColumn75, Me.GridColumn76, Me.GridColumn23, Me.GridColumn24})
-        Me.GridView4.GridControl = Me.gcContainerDetail
-        Me.GridView4.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "###,###,###", New Decimal(New Integer() {0, 0, 0, 131072}))})
-        Me.GridView4.Name = "GridView4"
-        Me.GridView4.OptionsBehavior.Editable = False
-        Me.GridView4.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
-        Me.GridView4.OptionsView.ShowGroupPanel = False
-        '
-        'GridColumn74
-        '
-        Me.GridColumn74.Caption = "Item"
-        Me.GridColumn74.FieldName = "DHBL_Item"
-        Me.GridColumn74.Name = "GridColumn74"
-        Me.GridColumn74.Visible = True
-        Me.GridColumn74.VisibleIndex = 0
-        Me.GridColumn74.Width = 103
-        '
-        'GridColumn75
-        '
-        Me.GridColumn75.Caption = "Tipo"
-        Me.GridColumn75.FieldName = "PACK_DescC"
-        Me.GridColumn75.Name = "GridColumn75"
-        Me.GridColumn75.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn75.Visible = True
-        Me.GridColumn75.VisibleIndex = 1
-        Me.GridColumn75.Width = 239
-        '
-        'GridColumn76
-        '
-        Me.GridColumn76.Caption = "Número"
-        Me.GridColumn76.FieldName = "CNTR_Numero"
-        Me.GridColumn76.Name = "GridColumn76"
-        Me.GridColumn76.Visible = True
-        Me.GridColumn76.VisibleIndex = 2
-        '
-        'GridColumn23
-        '
-        Me.GridColumn23.Caption = "Mercancía"
-        Me.GridColumn23.FieldName = "DHBL_DescProducto"
-        Me.GridColumn23.Name = "GridColumn23"
-        Me.GridColumn23.Visible = True
-        Me.GridColumn23.VisibleIndex = 3
-        '
-        'GridColumn24
-        '
-        Me.GridColumn24.Caption = "Tipo de Carga"
-        Me.GridColumn24.FieldName = "DescTipoCommodity"
-        Me.GridColumn24.Name = "GridColumn24"
-        Me.GridColumn24.Visible = True
-        Me.GridColumn24.VisibleIndex = 4
-        '
-        'gcContainerGroup
-        '
-        Me.gcContainerGroup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcContainerGroup.EmbeddedNavigator.Buttons.Append.Visible = False
-        Me.gcContainerGroup.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
-        Me.gcContainerGroup.EmbeddedNavigator.Buttons.Edit.Visible = False
-        Me.gcContainerGroup.EmbeddedNavigator.Buttons.EndEdit.Visible = False
-        Me.gcContainerGroup.EmbeddedNavigator.Buttons.Remove.Visible = False
-        Me.gcContainerGroup.Location = New System.Drawing.Point(0, 0)
-        Me.gcContainerGroup.MainView = Me.GridView2
-        Me.gcContainerGroup.Name = "gcContainerGroup"
-        Me.gcContainerGroup.Size = New System.Drawing.Size(354, 98)
-        Me.gcContainerGroup.TabIndex = 178
-        Me.gcContainerGroup.UseEmbeddedNavigator = True
-        Me.gcContainerGroup.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
-        '
-        'GridView2
-        '
-        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn96, Me.GridColumn97})
-        Me.GridView2.GridControl = Me.gcContainerGroup
-        Me.GridView2.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "###,###,###", New Decimal(New Integer() {0, 0, 0, 131072}))})
-        Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsBehavior.Editable = False
-        Me.GridView2.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
-        Me.GridView2.OptionsView.ShowGroupPanel = False
-        '
-        'GridColumn96
-        '
-        Me.GridColumn96.Caption = "Tamaño"
-        Me.GridColumn96.FieldName = "CTNR_Grupo"
-        Me.GridColumn96.Name = "GridColumn96"
-        Me.GridColumn96.Visible = True
-        Me.GridColumn96.VisibleIndex = 0
-        Me.GridColumn96.Width = 103
-        '
-        'GridColumn97
-        '
-        Me.GridColumn97.Caption = "Cantidad"
-        Me.GridColumn97.FieldName = "CTNR_Cantidad"
-        Me.GridColumn97.Name = "GridColumn97"
-        Me.GridColumn97.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
-        Me.GridColumn97.Visible = True
-        Me.GridColumn97.VisibleIndex = 1
-        Me.GridColumn97.Width = 239
-        '
         'bmActions
         '
         Me.bmActions.Bars.AddRange(New DevExpress.XtraBars.Bar() {Me.bar5, Me.brBarraAcciones})
@@ -893,15 +787,15 @@ Partial Class LogisticOperationRegisterForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(932, 47)
+        Me.BarDockControl1.Size = New System.Drawing.Size(926, 47)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 536)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 530)
         Me.BarDockControl2.Manager = Me.bmActions
-        Me.BarDockControl2.Size = New System.Drawing.Size(932, 29)
+        Me.BarDockControl2.Size = New System.Drawing.Size(926, 29)
         '
         'BarDockControl3
         '
@@ -909,15 +803,15 @@ Partial Class LogisticOperationRegisterForm
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
         Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 489)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 483)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(932, 47)
+        Me.BarDockControl4.Location = New System.Drawing.Point(926, 47)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 489)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 483)
         '
         'BarButtonItem1
         '
@@ -1030,7 +924,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(716, 163, 650, 400)
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(932, 489)
+        Me.LayoutControl1.Size = New System.Drawing.Size(926, 483)
         Me.LayoutControl1.TabIndex = 9
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -1046,8 +940,8 @@ Partial Class LogisticOperationRegisterForm
         Me.NavBarControl1.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem1})
         Me.NavBarControl1.Location = New System.Drawing.Point(5, 5)
         Me.NavBarControl1.Name = "NavBarControl1"
-        Me.NavBarControl1.OptionsNavPane.ExpandedWidth = 922
-        Me.NavBarControl1.Size = New System.Drawing.Size(922, 479)
+        Me.NavBarControl1.OptionsNavPane.ExpandedWidth = 916
+        Me.NavBarControl1.Size = New System.Drawing.Size(916, 473)
         Me.NavBarControl1.TabIndex = 4
         Me.NavBarControl1.Text = "NavBarControl1"
         '
@@ -1065,7 +959,7 @@ Partial Class LogisticOperationRegisterForm
         Me.NavBarGroupControlContainer1.Appearance.Options.UseBackColor = True
         Me.NavBarGroupControlContainer1.Controls.Add(Me.LayoutControl2)
         Me.NavBarGroupControlContainer1.Name = "NavBarGroupControlContainer1"
-        Me.NavBarGroupControlContainer1.Size = New System.Drawing.Size(914, 279)
+        Me.NavBarGroupControlContainer1.Size = New System.Drawing.Size(908, 279)
         Me.NavBarGroupControlContainer1.TabIndex = 0
         '
         'LayoutControl2
@@ -1078,7 +972,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControl2.Name = "LayoutControl2"
         Me.LayoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(293, 421, 650, 434)
         Me.LayoutControl2.Root = Me.LayoutControlGroup1
-        Me.LayoutControl2.Size = New System.Drawing.Size(914, 279)
+        Me.LayoutControl2.Size = New System.Drawing.Size(908, 279)
         Me.LayoutControl2.TabIndex = 0
         Me.LayoutControl2.Text = "LayoutControl2"
         '
@@ -1087,7 +981,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GroupControl1.Controls.Add(Me.LayoutControl3)
         Me.GroupControl1.Location = New System.Drawing.Point(4, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(542, 271)
+        Me.GroupControl1.Size = New System.Drawing.Size(538, 271)
         Me.GroupControl1.TabIndex = 4
         Me.GroupControl1.Text = "General"
         '
@@ -1117,19 +1011,19 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControl3.Name = "LayoutControl3"
         Me.LayoutControl3.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(521, 19, 650, 400)
         Me.LayoutControl3.Root = Me.LayoutControlGroup2
-        Me.LayoutControl3.Size = New System.Drawing.Size(538, 247)
+        Me.LayoutControl3.Size = New System.Drawing.Size(534, 247)
         Me.LayoutControl3.TabIndex = 0
         Me.LayoutControl3.Text = "LayoutControl3"
         '
         'tsIMO
         '
-        Me.tsIMO.Location = New System.Drawing.Point(379, 221)
+        Me.tsIMO.Location = New System.Drawing.Point(377, 221)
         Me.tsIMO.Name = "tsIMO"
         Me.tsIMO.Properties.OffText = ""
         Me.tsIMO.Properties.OnText = ""
         Me.tsIMO.Properties.ShowText = False
         Me.tsIMO.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.tsIMO.Size = New System.Drawing.Size(146, 24)
+        Me.tsIMO.Size = New System.Drawing.Size(144, 24)
         Me.tsIMO.StyleController = Me.LayoutControl3
         Me.tsIMO.TabIndex = 18
         '
@@ -1142,18 +1036,18 @@ Partial Class LogisticOperationRegisterForm
         Me.tsSADA.Properties.OnText = ""
         Me.tsSADA.Properties.ShowText = False
         Me.tsSADA.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.tsSADA.Size = New System.Drawing.Size(146, 24)
+        Me.tsSADA.Size = New System.Drawing.Size(144, 24)
         Me.tsSADA.StyleController = Me.LayoutControl3
         Me.tsSADA.TabIndex = 17
         '
         'lueMoneda
         '
-        Me.lueMoneda.Location = New System.Drawing.Point(379, 77)
+        Me.lueMoneda.Location = New System.Drawing.Point(377, 77)
         Me.lueMoneda.Name = "lueMoneda"
         Me.lueMoneda.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueMoneda.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoISOMoneda", "Código ISO"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoMoneda", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionMoneda", "Descripción")})
         Me.lueMoneda.Properties.NullText = ""
-        Me.lueMoneda.Size = New System.Drawing.Size(146, 20)
+        Me.lueMoneda.Size = New System.Drawing.Size(144, 20)
         Me.lueMoneda.StyleController = Me.LayoutControl3
         Me.lueMoneda.TabIndex = 7
         '
@@ -1165,7 +1059,7 @@ Partial Class LogisticOperationRegisterForm
         Me.lueCondicionEmbarque.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueCondicionEmbarque.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoCondicionEmbarque", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionCondicionEmbarque", "Descripción")})
         Me.lueCondicionEmbarque.Properties.NullText = ""
-        Me.lueCondicionEmbarque.Size = New System.Drawing.Size(146, 20)
+        Me.lueCondicionEmbarque.Size = New System.Drawing.Size(144, 20)
         Me.lueCondicionEmbarque.StyleController = Me.LayoutControl3
         Me.lueCondicionEmbarque.TabIndex = 16
         '
@@ -1177,19 +1071,19 @@ Partial Class LogisticOperationRegisterForm
         Me.lueVia.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lueVia.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoVia", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionVia", "Descripción")})
         Me.lueVia.Properties.NullText = ""
-        Me.lueVia.Size = New System.Drawing.Size(146, 20)
+        Me.lueVia.Size = New System.Drawing.Size(144, 20)
         Me.lueVia.StyleController = Me.LayoutControl3
         Me.lueVia.TabIndex = 4
         '
         'lueRegimen
         '
-        Me.lueRegimen.Location = New System.Drawing.Point(379, 29)
+        Me.lueRegimen.Location = New System.Drawing.Point(377, 29)
         Me.lueRegimen.Name = "lueRegimen"
         Me.lueRegimen.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueRegimen.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lueRegimen.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoRegimen", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionRegimen", "Descripción")})
         Me.lueRegimen.Properties.NullText = ""
-        Me.lueRegimen.Size = New System.Drawing.Size(146, 20)
+        Me.lueRegimen.Size = New System.Drawing.Size(144, 20)
         Me.lueRegimen.StyleController = Me.LayoutControl3
         Me.lueRegimen.TabIndex = 3
         '
@@ -1201,44 +1095,44 @@ Partial Class LogisticOperationRegisterForm
         Me.lueUnidadNegocio.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lueUnidadNegocio.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoLineaNegocio", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionLineaNegocio", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CONS_CodSAP", "Código Equivalente", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueUnidadNegocio.Properties.NullText = ""
-        Me.lueUnidadNegocio.Size = New System.Drawing.Size(146, 20)
+        Me.lueUnidadNegocio.Size = New System.Drawing.Size(144, 20)
         Me.lueUnidadNegocio.StyleController = Me.LayoutControl3
         Me.lueUnidadNegocio.TabIndex = 2
         '
         'lueTipoMercancia
         '
-        Me.lueTipoMercancia.Location = New System.Drawing.Point(379, 173)
+        Me.lueTipoMercancia.Location = New System.Drawing.Point(377, 173)
         Me.lueTipoMercancia.Name = "lueTipoMercancia"
         Me.lueTipoMercancia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueTipoMercancia.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lueTipoMercancia.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoTipoCommodity", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionTipoCommodity", "Descripción")})
         Me.lueTipoMercancia.Properties.NullText = ""
-        Me.lueTipoMercancia.Size = New System.Drawing.Size(146, 20)
+        Me.lueTipoMercancia.Size = New System.Drawing.Size(144, 20)
         Me.lueTipoMercancia.StyleController = Me.LayoutControl3
         Me.lueTipoMercancia.TabIndex = 15
         '
         'LookUpEdit1
         '
-        Me.LookUpEdit1.Location = New System.Drawing.Point(379, 125)
+        Me.LookUpEdit1.Location = New System.Drawing.Point(377, 125)
         Me.LookUpEdit1.Name = "LookUpEdit1"
         Me.LookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.LookUpEdit1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.LookUpEdit1.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoEntidad", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionEntidad", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTC_DocIden", "N.I.T.")})
         Me.LookUpEdit1.Properties.NullText = ""
-        Me.LookUpEdit1.Size = New System.Drawing.Size(146, 20)
+        Me.LookUpEdit1.Size = New System.Drawing.Size(144, 20)
         Me.LookUpEdit1.StyleController = Me.LayoutControl3
         Me.LookUpEdit1.TabIndex = 11
         '
         'lueTerminalPortuario
         '
-        Me.lueTerminalPortuario.Location = New System.Drawing.Point(379, 149)
+        Me.lueTerminalPortuario.Location = New System.Drawing.Point(377, 149)
         Me.lueTerminalPortuario.MenuManager = Me.bmActions
         Me.lueTerminalPortuario.Name = "lueTerminalPortuario"
         Me.lueTerminalPortuario.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueTerminalPortuario.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lueTerminalPortuario.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoEntidad", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionEntidad", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTC_DocIden", "N.I.T.")})
         Me.lueTerminalPortuario.Properties.NullText = ""
-        Me.lueTerminalPortuario.Size = New System.Drawing.Size(146, 20)
+        Me.lueTerminalPortuario.Size = New System.Drawing.Size(144, 20)
         Me.lueTerminalPortuario.StyleController = Me.LayoutControl3
         Me.lueTerminalPortuario.TabIndex = 13
         '
@@ -1251,7 +1145,7 @@ Partial Class LogisticOperationRegisterForm
         Me.lueAlmacen.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lueAlmacen.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoEntidad", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionEntidad", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTC_DocIden", "N.I.T.")})
         Me.lueAlmacen.Properties.NullText = ""
-        Me.lueAlmacen.Size = New System.Drawing.Size(146, 20)
+        Me.lueAlmacen.Size = New System.Drawing.Size(144, 20)
         Me.lueAlmacen.StyleController = Me.LayoutControl3
         Me.lueAlmacen.TabIndex = 14
         '
@@ -1264,20 +1158,20 @@ Partial Class LogisticOperationRegisterForm
         Me.lueAgenciaMaritima.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lueAgenciaMaritima.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoEntidad", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionEntidad", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTC_DocIden", "N.I.T.")})
         Me.lueAgenciaMaritima.Properties.NullText = ""
-        Me.lueAgenciaMaritima.Size = New System.Drawing.Size(146, 20)
+        Me.lueAgenciaMaritima.Size = New System.Drawing.Size(144, 20)
         Me.lueAgenciaMaritima.StyleController = Me.LayoutControl3
         Me.lueAgenciaMaritima.TabIndex = 12
         '
         'lueTransportistaTerrestre
         '
-        Me.lueTransportistaTerrestre.Location = New System.Drawing.Point(379, 101)
+        Me.lueTransportistaTerrestre.Location = New System.Drawing.Point(377, 101)
         Me.lueTransportistaTerrestre.Name = "lueTransportistaTerrestre"
         Me.lueTransportistaTerrestre.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueTransportistaTerrestre.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueTransportistaTerrestre.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lueTransportistaTerrestre.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoEntidad", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionEntidad", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTC_DocIden", "N.I.T.")})
         Me.lueTransportistaTerrestre.Properties.NullText = ""
-        Me.lueTransportistaTerrestre.Size = New System.Drawing.Size(146, 20)
+        Me.lueTransportistaTerrestre.Size = New System.Drawing.Size(144, 20)
         Me.lueTransportistaTerrestre.StyleController = Me.LayoutControl3
         Me.lueTransportistaTerrestre.TabIndex = 9
         '
@@ -1290,7 +1184,7 @@ Partial Class LogisticOperationRegisterForm
         Me.lueTransportista.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lueTransportista.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoEntidad", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionEntidad", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTC_DocIden", "N.I.T.")})
         Me.lueTransportista.Properties.NullText = ""
-        Me.lueTransportista.Size = New System.Drawing.Size(146, 20)
+        Me.lueTransportista.Size = New System.Drawing.Size(144, 20)
         Me.lueTransportista.StyleController = Me.LayoutControl3
         Me.lueTransportista.TabIndex = 8
         '
@@ -1303,7 +1197,7 @@ Partial Class LogisticOperationRegisterForm
         Me.lueCliente.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.lueCliente.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoEntidad", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionEntidad", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ENTC_DocIden", "N.I.T.")})
         Me.lueCliente.Properties.NullText = ""
-        Me.lueCliente.Size = New System.Drawing.Size(146, 20)
+        Me.lueCliente.Size = New System.Drawing.Size(144, 20)
         Me.lueCliente.StyleController = Me.LayoutControl3
         Me.lueCliente.TabIndex = 10
         '
@@ -1314,31 +1208,31 @@ Partial Class LogisticOperationRegisterForm
         Me.teNumeroOperacion.Name = "teNumeroOperacion"
         Me.teNumeroOperacion.Properties.AllowFocused = False
         Me.teNumeroOperacion.Properties.ReadOnly = True
-        Me.teNumeroOperacion.Size = New System.Drawing.Size(146, 20)
+        Me.teNumeroOperacion.Size = New System.Drawing.Size(144, 20)
         Me.teNumeroOperacion.StyleController = Me.LayoutControl3
         Me.teNumeroOperacion.TabIndex = 0
         '
         'deFechaEmision
         '
         Me.deFechaEmision.EditValue = Nothing
-        Me.deFechaEmision.Location = New System.Drawing.Point(379, 5)
+        Me.deFechaEmision.Location = New System.Drawing.Point(377, 5)
         Me.deFechaEmision.MenuManager = Me.bmActions
         Me.deFechaEmision.Name = "deFechaEmision"
         Me.deFechaEmision.Properties.AllowFocused = False
         Me.deFechaEmision.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deFechaEmision.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deFechaEmision.Properties.ReadOnly = True
-        Me.deFechaEmision.Size = New System.Drawing.Size(146, 20)
+        Me.deFechaEmision.Size = New System.Drawing.Size(144, 20)
         Me.deFechaEmision.StyleController = Me.LayoutControl3
         Me.deFechaEmision.TabIndex = 1
         '
         'teHBL
         '
-        Me.teHBL.Location = New System.Drawing.Point(379, 53)
+        Me.teHBL.Location = New System.Drawing.Point(377, 53)
         Me.teHBL.MenuManager = Me.bmActions
         Me.teHBL.Name = "teHBL"
         Me.teHBL.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teHBL.Size = New System.Drawing.Size(146, 20)
+        Me.teHBL.Size = New System.Drawing.Size(144, 20)
         Me.teHBL.StyleController = Me.LayoutControl3
         Me.teHBL.TabIndex = 5
         '
@@ -1348,7 +1242,7 @@ Partial Class LogisticOperationRegisterForm
         Me.teMBL.MenuManager = Me.bmActions
         Me.teMBL.Name = "teMBL"
         Me.teMBL.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teMBL.Size = New System.Drawing.Size(146, 20)
+        Me.teMBL.Size = New System.Drawing.Size(144, 20)
         Me.teMBL.StyleController = Me.LayoutControl3
         Me.teMBL.TabIndex = 6
         '
@@ -1386,7 +1280,7 @@ Partial Class LogisticOperationRegisterForm
         RowDefinition10.SizeType = System.Windows.Forms.SizeType.Absolute
         Me.LayoutControlGroup2.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition1, RowDefinition2, RowDefinition3, RowDefinition4, RowDefinition5, RowDefinition6, RowDefinition7, RowDefinition8, RowDefinition9, RowDefinition10})
         Me.LayoutControlGroup2.Padding = New DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3)
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(538, 247)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(534, 247)
         Me.LayoutControlGroup2.TextVisible = False
         '
         'LayoutControlItem5
@@ -1395,18 +1289,18 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
         Me.LayoutControlItem5.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem5.Text = "Número Operación"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(97, 13)
         '
         'LayoutControlItem6
         '
         Me.LayoutControlItem6.Control = Me.deFechaEmision
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(266, 0)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(264, 0)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
         Me.LayoutControlItem6.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem6.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem6.Text = "Fecha Emisión"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1419,7 +1313,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem8.OptionsTableLayoutItem.RowIndex = 4
         Me.LayoutControlItem8.OptionsToolTip.ToolTip = "Transportista Aéreo/Marítimo asociado a la operación logística."
         Me.LayoutControlItem8.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem8.Text = "Transportista (A/M)"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1427,13 +1321,13 @@ Partial Class LogisticOperationRegisterForm
         '
         Me.LayoutControlItem24.Control = Me.lueTransportistaTerrestre
         Me.LayoutControlItem24.CustomizationFormText = "Transportista (T)"
-        Me.LayoutControlItem24.Location = New System.Drawing.Point(266, 96)
+        Me.LayoutControlItem24.Location = New System.Drawing.Point(264, 96)
         Me.LayoutControlItem24.Name = "LayoutControlItem24"
         Me.LayoutControlItem24.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem24.OptionsTableLayoutItem.RowIndex = 4
         Me.LayoutControlItem24.OptionsToolTip.ToolTip = "Transportista Terrestre asociado a la operación logística."
         Me.LayoutControlItem24.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem24.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem24.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem24.Text = "Transportista (T)"
         Me.LayoutControlItem24.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1444,19 +1338,19 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
         Me.LayoutControlItem7.OptionsTableLayoutItem.RowIndex = 5
         Me.LayoutControlItem7.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem7.Text = "Cliente"
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(97, 13)
         '
         'LayoutControlItem37
         '
         Me.LayoutControlItem37.Control = Me.lueMoneda
-        Me.LayoutControlItem37.Location = New System.Drawing.Point(266, 72)
+        Me.LayoutControlItem37.Location = New System.Drawing.Point(264, 72)
         Me.LayoutControlItem37.Name = "LayoutControlItem37"
         Me.LayoutControlItem37.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem37.OptionsTableLayoutItem.RowIndex = 3
         Me.LayoutControlItem37.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem37.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem37.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem37.Text = "Moneda"
         Me.LayoutControlItem37.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1467,19 +1361,19 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
         Me.LayoutControlItem11.OptionsTableLayoutItem.RowIndex = 3
         Me.LayoutControlItem11.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem11.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem11.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem11.Text = "Número MBL"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(97, 13)
         '
         'LayoutControlItem10
         '
         Me.LayoutControlItem10.Control = Me.teHBL
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(266, 48)
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(264, 48)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
         Me.LayoutControlItem10.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem10.OptionsTableLayoutItem.RowIndex = 2
         Me.LayoutControlItem10.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem10.Text = "Número HBL"
         Me.LayoutControlItem10.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1491,7 +1385,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem36.Name = "LayoutControlItem36"
         Me.LayoutControlItem36.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem36.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem36.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem36.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem36.Text = "Unidad de Negocio"
         Me.LayoutControlItem36.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1499,12 +1393,12 @@ Partial Class LogisticOperationRegisterForm
         '
         Me.LayoutControlItem39.Control = Me.lueRegimen
         Me.LayoutControlItem39.CustomizationFormText = "Regimen"
-        Me.LayoutControlItem39.Location = New System.Drawing.Point(266, 24)
+        Me.LayoutControlItem39.Location = New System.Drawing.Point(264, 24)
         Me.LayoutControlItem39.Name = "LayoutControlItem39"
         Me.LayoutControlItem39.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem39.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem39.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem39.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem39.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem39.Text = "Regimen"
         Me.LayoutControlItem39.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1516,7 +1410,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem40.Name = "LayoutControlItem40"
         Me.LayoutControlItem40.OptionsTableLayoutItem.RowIndex = 2
         Me.LayoutControlItem40.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem40.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem40.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem40.Text = "Vía"
         Me.LayoutControlItem40.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1527,19 +1421,19 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem38.Name = "LayoutControlItem38"
         Me.LayoutControlItem38.OptionsTableLayoutItem.RowIndex = 9
         Me.LayoutControlItem38.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem38.Size = New System.Drawing.Size(266, 25)
+        Me.LayoutControlItem38.Size = New System.Drawing.Size(264, 25)
         Me.LayoutControlItem38.Text = "SADA"
         Me.LayoutControlItem38.TextSize = New System.Drawing.Size(97, 13)
         '
         'LayoutControlItem22
         '
         Me.LayoutControlItem22.Control = Me.tsIMO
-        Me.LayoutControlItem22.Location = New System.Drawing.Point(266, 216)
+        Me.LayoutControlItem22.Location = New System.Drawing.Point(264, 216)
         Me.LayoutControlItem22.Name = "LayoutControlItem22"
         Me.LayoutControlItem22.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem22.OptionsTableLayoutItem.RowIndex = 9
         Me.LayoutControlItem22.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem22.Size = New System.Drawing.Size(266, 25)
+        Me.LayoutControlItem22.Size = New System.Drawing.Size(264, 25)
         Me.LayoutControlItem22.Text = "IMO"
         Me.LayoutControlItem22.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1550,19 +1444,19 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem18.Name = "LayoutControlItem18"
         Me.LayoutControlItem18.OptionsTableLayoutItem.RowIndex = 8
         Me.LayoutControlItem18.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem18.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem18.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem18.Text = "Condición Embarque"
         Me.LayoutControlItem18.TextSize = New System.Drawing.Size(97, 13)
         '
         'LayoutControlItem23
         '
         Me.LayoutControlItem23.Control = Me.lueTipoMercancia
-        Me.LayoutControlItem23.Location = New System.Drawing.Point(266, 168)
+        Me.LayoutControlItem23.Location = New System.Drawing.Point(264, 168)
         Me.LayoutControlItem23.Name = "LayoutControlItem23"
         Me.LayoutControlItem23.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem23.OptionsTableLayoutItem.RowIndex = 7
         Me.LayoutControlItem23.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem23.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem23.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem23.Text = "Tipo de Carga"
         Me.LayoutControlItem23.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1573,19 +1467,19 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem15.Name = "LayoutControlItem15"
         Me.LayoutControlItem15.OptionsTableLayoutItem.RowIndex = 7
         Me.LayoutControlItem15.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem15.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem15.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem15.Text = "Almacén"
         Me.LayoutControlItem15.TextSize = New System.Drawing.Size(97, 13)
         '
         'LayoutControlItem16
         '
         Me.LayoutControlItem16.Control = Me.lueTerminalPortuario
-        Me.LayoutControlItem16.Location = New System.Drawing.Point(266, 144)
+        Me.LayoutControlItem16.Location = New System.Drawing.Point(264, 144)
         Me.LayoutControlItem16.Name = "LayoutControlItem16"
         Me.LayoutControlItem16.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem16.OptionsTableLayoutItem.RowIndex = 6
         Me.LayoutControlItem16.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem16.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem16.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem16.Text = "Terminal Portuario"
         Me.LayoutControlItem16.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1596,7 +1490,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
         Me.LayoutControlItem9.OptionsTableLayoutItem.RowIndex = 6
         Me.LayoutControlItem9.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem9.Text = "Agencia Marítima"
         Me.LayoutControlItem9.TextSize = New System.Drawing.Size(97, 13)
         '
@@ -1604,21 +1498,21 @@ Partial Class LogisticOperationRegisterForm
         '
         Me.LayoutControlItem41.Control = Me.LookUpEdit1
         Me.LayoutControlItem41.CustomizationFormText = "Lugar Despacho"
-        Me.LayoutControlItem41.Location = New System.Drawing.Point(266, 120)
+        Me.LayoutControlItem41.Location = New System.Drawing.Point(264, 120)
         Me.LayoutControlItem41.Name = "LayoutControlItem41"
         Me.LayoutControlItem41.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem41.OptionsTableLayoutItem.RowIndex = 5
         Me.LayoutControlItem41.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem41.Size = New System.Drawing.Size(266, 24)
+        Me.LayoutControlItem41.Size = New System.Drawing.Size(264, 24)
         Me.LayoutControlItem41.Text = "Lugar Despacho"
         Me.LayoutControlItem41.TextSize = New System.Drawing.Size(97, 13)
         '
         'XtraTabControl1
         '
-        Me.XtraTabControl1.Location = New System.Drawing.Point(550, 149)
+        Me.XtraTabControl1.Location = New System.Drawing.Point(546, 149)
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
-        Me.XtraTabControl1.Size = New System.Drawing.Size(360, 126)
+        Me.XtraTabControl1.Size = New System.Drawing.Size(358, 126)
         Me.XtraTabControl1.TabIndex = 180
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage2})
         '
@@ -1626,22 +1520,136 @@ Partial Class LogisticOperationRegisterForm
         '
         Me.XtraTabPage1.Controls.Add(Me.gcContainerGroup)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(354, 98)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(352, 98)
         Me.XtraTabPage1.Text = "Contenedores (Agrupado)"
+        '
+        'gcContainerGroup
+        '
+        Me.gcContainerGroup.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcContainerGroup.EmbeddedNavigator.Buttons.Append.Visible = False
+        Me.gcContainerGroup.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
+        Me.gcContainerGroup.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.gcContainerGroup.EmbeddedNavigator.Buttons.EndEdit.Visible = False
+        Me.gcContainerGroup.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.gcContainerGroup.Location = New System.Drawing.Point(0, 0)
+        Me.gcContainerGroup.MainView = Me.GridView2
+        Me.gcContainerGroup.Name = "gcContainerGroup"
+        Me.gcContainerGroup.Size = New System.Drawing.Size(352, 98)
+        Me.gcContainerGroup.TabIndex = 179
+        Me.gcContainerGroup.UseEmbeddedNavigator = True
+        Me.gcContainerGroup.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn96, Me.GridColumn97})
+        Me.GridView2.GridControl = Me.gcContainerGroup
+        Me.GridView2.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "###,###,###", New Decimal(New Integer() {0, 0, 0, 131072}))})
+        Me.GridView2.Name = "GridView2"
+        Me.GridView2.OptionsBehavior.Editable = False
+        Me.GridView2.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
+        Me.GridView2.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn96
+        '
+        Me.GridColumn96.Caption = "Tamaño"
+        Me.GridColumn96.FieldName = "CTNR_Grupo"
+        Me.GridColumn96.Name = "GridColumn96"
+        Me.GridColumn96.Visible = True
+        Me.GridColumn96.VisibleIndex = 0
+        Me.GridColumn96.Width = 103
+        '
+        'GridColumn97
+        '
+        Me.GridColumn97.Caption = "Cantidad"
+        Me.GridColumn97.FieldName = "CTNR_Cantidad"
+        Me.GridColumn97.Name = "GridColumn97"
+        Me.GridColumn97.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.GridColumn97.Visible = True
+        Me.GridColumn97.VisibleIndex = 1
+        Me.GridColumn97.Width = 239
         '
         'XtraTabPage2
         '
         Me.XtraTabPage2.Controls.Add(Me.gcContainerDetail)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(354, 98)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(352, 98)
         Me.XtraTabPage2.Text = "Contenedores (Detalle)"
+        '
+        'gcContainerDetail
+        '
+        Me.gcContainerDetail.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcContainerDetail.EmbeddedNavigator.Buttons.Append.Visible = False
+        Me.gcContainerDetail.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
+        Me.gcContainerDetail.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.gcContainerDetail.EmbeddedNavigator.Buttons.EndEdit.Visible = False
+        Me.gcContainerDetail.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.gcContainerDetail.Location = New System.Drawing.Point(0, 0)
+        Me.gcContainerDetail.MainView = Me.GridView4
+        Me.gcContainerDetail.Name = "gcContainerDetail"
+        Me.gcContainerDetail.Size = New System.Drawing.Size(352, 98)
+        Me.gcContainerDetail.TabIndex = 179
+        Me.gcContainerDetail.UseEmbeddedNavigator = True
+        Me.gcContainerDetail.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView4})
+        '
+        'GridView4
+        '
+        Me.GridView4.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn74, Me.GridColumn75, Me.GridColumn76, Me.GridColumn23, Me.GridColumn24})
+        Me.GridView4.GridControl = Me.gcContainerDetail
+        Me.GridView4.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "###,###,###", New Decimal(New Integer() {0, 0, 0, 131072}))})
+        Me.GridView4.Name = "GridView4"
+        Me.GridView4.OptionsBehavior.Editable = False
+        Me.GridView4.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
+        Me.GridView4.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn74
+        '
+        Me.GridColumn74.Caption = "Item"
+        Me.GridColumn74.FieldName = "DHBL_Item"
+        Me.GridColumn74.Name = "GridColumn74"
+        Me.GridColumn74.Visible = True
+        Me.GridColumn74.VisibleIndex = 0
+        Me.GridColumn74.Width = 103
+        '
+        'GridColumn75
+        '
+        Me.GridColumn75.Caption = "Tipo"
+        Me.GridColumn75.FieldName = "PACK_DescC"
+        Me.GridColumn75.Name = "GridColumn75"
+        Me.GridColumn75.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)})
+        Me.GridColumn75.Visible = True
+        Me.GridColumn75.VisibleIndex = 1
+        Me.GridColumn75.Width = 239
+        '
+        'GridColumn76
+        '
+        Me.GridColumn76.Caption = "Número"
+        Me.GridColumn76.FieldName = "CNTR_Numero"
+        Me.GridColumn76.Name = "GridColumn76"
+        Me.GridColumn76.Visible = True
+        Me.GridColumn76.VisibleIndex = 2
+        '
+        'GridColumn23
+        '
+        Me.GridColumn23.Caption = "Mercancía"
+        Me.GridColumn23.FieldName = "DHBL_DescProducto"
+        Me.GridColumn23.Name = "GridColumn23"
+        Me.GridColumn23.Visible = True
+        Me.GridColumn23.VisibleIndex = 3
+        '
+        'GridColumn24
+        '
+        Me.GridColumn24.Caption = "Tipo de Carga"
+        Me.GridColumn24.FieldName = "DescTipoCommodity"
+        Me.GridColumn24.Name = "GridColumn24"
+        Me.GridColumn24.Visible = True
+        Me.GridColumn24.VisibleIndex = 4
         '
         'GroupControl3
         '
         Me.GroupControl3.Controls.Add(Me.LayoutControl4)
-        Me.GroupControl3.Location = New System.Drawing.Point(550, 4)
+        Me.GroupControl3.Location = New System.Drawing.Point(546, 4)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(360, 141)
+        Me.GroupControl3.Size = New System.Drawing.Size(358, 141)
         Me.GroupControl3.TabIndex = 6
         Me.GroupControl3.Text = "Nave / Viaje"
         '
@@ -1656,7 +1664,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControl4.Name = "LayoutControl4"
         Me.LayoutControl4.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(40, 194, 650, 400)
         Me.LayoutControl4.Root = Me.LayoutControlGroup3
-        Me.LayoutControl4.Size = New System.Drawing.Size(356, 119)
+        Me.LayoutControl4.Size = New System.Drawing.Size(354, 119)
         Me.LayoutControl4.TabIndex = 0
         Me.LayoutControl4.Text = "LayoutControl4"
         '
@@ -1666,7 +1674,7 @@ Partial Class LogisticOperationRegisterForm
         Me.teCodigoViaje.MenuManager = Me.bmActions
         Me.teCodigoViaje.Name = "teCodigoViaje"
         Me.teCodigoViaje.Properties.ReadOnly = True
-        Me.teCodigoViaje.Size = New System.Drawing.Size(253, 20)
+        Me.teCodigoViaje.Size = New System.Drawing.Size(251, 20)
         Me.teCodigoViaje.StyleController = Me.LayoutControl4
         Me.teCodigoViaje.TabIndex = 0
         '
@@ -1677,7 +1685,7 @@ Partial Class LogisticOperationRegisterForm
         Me.teNombreNave.Name = "teNombreNave"
         Me.teNombreNave.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teNombreNave.Properties.ReadOnly = True
-        Me.teNombreNave.Size = New System.Drawing.Size(253, 20)
+        Me.teNombreNave.Size = New System.Drawing.Size(251, 20)
         Me.teNombreNave.StyleController = Me.LayoutControl4
         Me.teNombreNave.TabIndex = 1
         '
@@ -1688,7 +1696,7 @@ Partial Class LogisticOperationRegisterForm
         Me.teNumeroViaje.Name = "teNumeroViaje"
         Me.teNumeroViaje.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.teNumeroViaje.Properties.ReadOnly = True
-        Me.teNumeroViaje.Size = New System.Drawing.Size(253, 20)
+        Me.teNumeroViaje.Size = New System.Drawing.Size(251, 20)
         Me.teNumeroViaje.StyleController = Me.LayoutControl4
         Me.teNumeroViaje.TabIndex = 2
         '
@@ -1700,7 +1708,7 @@ Partial Class LogisticOperationRegisterForm
         Me.deFechaEtaEtd.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deFechaEtaEtd.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deFechaEtaEtd.Properties.ReadOnly = True
-        Me.deFechaEtaEtd.Size = New System.Drawing.Size(253, 20)
+        Me.deFechaEtaEtd.Size = New System.Drawing.Size(251, 20)
         Me.deFechaEtaEtd.StyleController = Me.LayoutControl4
         Me.deFechaEtaEtd.TabIndex = 3
         '
@@ -1724,7 +1732,7 @@ Partial Class LogisticOperationRegisterForm
         RowDefinition14.SizeType = System.Windows.Forms.SizeType.Absolute
         Me.LayoutControlGroup3.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition11, RowDefinition12, RowDefinition13, RowDefinition14})
         Me.LayoutControlGroup3.Padding = New DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3)
-        Me.LayoutControlGroup3.Size = New System.Drawing.Size(356, 119)
+        Me.LayoutControlGroup3.Size = New System.Drawing.Size(354, 119)
         Me.LayoutControlGroup3.TextVisible = False
         '
         'LayoutControlItem12
@@ -1733,7 +1741,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
         Me.LayoutControlItem12.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(350, 25)
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(348, 25)
         Me.LayoutControlItem12.Text = "Código de Viaje"
         Me.LayoutControlItem12.TextSize = New System.Drawing.Size(74, 13)
         '
@@ -1744,7 +1752,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem4.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(350, 25)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(348, 25)
         Me.LayoutControlItem4.Text = "Nave"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(74, 13)
         '
@@ -1755,7 +1763,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
         Me.LayoutControlItem13.OptionsTableLayoutItem.RowIndex = 2
         Me.LayoutControlItem13.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem13.Size = New System.Drawing.Size(350, 25)
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(348, 25)
         Me.LayoutControlItem13.Text = "Viaje"
         Me.LayoutControlItem13.TextSize = New System.Drawing.Size(74, 13)
         '
@@ -1766,7 +1774,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem14.Name = "LayoutControlItem14"
         Me.LayoutControlItem14.OptionsTableLayoutItem.RowIndex = 3
         Me.LayoutControlItem14.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem14.Size = New System.Drawing.Size(350, 38)
+        Me.LayoutControlItem14.Size = New System.Drawing.Size(348, 38)
         Me.LayoutControlItem14.Text = "ETA/ETD"
         Me.LayoutControlItem14.TextSize = New System.Drawing.Size(74, 13)
         '
@@ -1788,27 +1796,27 @@ Partial Class LogisticOperationRegisterForm
         RowDefinition16.SizeType = System.Windows.Forms.SizeType.AutoSize
         Me.LayoutControlGroup1.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition15, RowDefinition16})
         Me.LayoutControlGroup1.Padding = New DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2)
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(914, 279)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(908, 279)
         Me.LayoutControlGroup1.TextVisible = False
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.GroupControl3
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(546, 0)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(542, 0)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.OptionsTableLayoutItem.ColumnIndex = 1
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(364, 145)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(362, 145)
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextVisible = False
         '
         'LayoutControlItem27
         '
         Me.LayoutControlItem27.Control = Me.XtraTabControl1
-        Me.LayoutControlItem27.Location = New System.Drawing.Point(546, 145)
+        Me.LayoutControlItem27.Location = New System.Drawing.Point(542, 145)
         Me.LayoutControlItem27.Name = "LayoutControlItem27"
         Me.LayoutControlItem27.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem27.OptionsTableLayoutItem.RowIndex = 1
-        Me.LayoutControlItem27.Size = New System.Drawing.Size(364, 130)
+        Me.LayoutControlItem27.Size = New System.Drawing.Size(362, 130)
         Me.LayoutControlItem27.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem27.TextVisible = False
         '
@@ -1818,7 +1826,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.OptionsTableLayoutItem.RowSpan = 2
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(546, 275)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(542, 275)
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = False
         '
@@ -1828,7 +1836,7 @@ Partial Class LogisticOperationRegisterForm
         Me.NavBarGroupControlContainer2.Appearance.Options.UseBackColor = True
         Me.NavBarGroupControlContainer2.Controls.Add(Me.LayoutControl5)
         Me.NavBarGroupControlContainer2.Name = "NavBarGroupControlContainer2"
-        Me.NavBarGroupControlContainer2.Size = New System.Drawing.Size(914, 112)
+        Me.NavBarGroupControlContainer2.Size = New System.Drawing.Size(908, 112)
         Me.NavBarGroupControlContainer2.TabIndex = 1
         '
         'LayoutControl5
@@ -1844,7 +1852,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControl5.Name = "LayoutControl5"
         Me.LayoutControl5.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(583, 107, 592, 577)
         Me.LayoutControl5.Root = Me.LayoutControlGroup4
-        Me.LayoutControl5.Size = New System.Drawing.Size(914, 112)
+        Me.LayoutControl5.Size = New System.Drawing.Size(908, 112)
         Me.LayoutControl5.TabIndex = 0
         Me.LayoutControl5.Text = "LayoutControl5"
         '
@@ -1853,25 +1861,25 @@ Partial Class LogisticOperationRegisterForm
         Me.beTarifa.Location = New System.Drawing.Point(87, 4)
         Me.beTarifa.Name = "beTarifa"
         Me.beTarifa.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.beTarifa.Size = New System.Drawing.Size(78, 20)
+        Me.beTarifa.Size = New System.Drawing.Size(77, 20)
         Me.beTarifa.StyleController = Me.LayoutControl5
         Me.beTarifa.TabIndex = 18
         '
         'GroupControl5
         '
         Me.GroupControl5.Controls.Add(Me.gcTariff)
-        Me.GroupControl5.Location = New System.Drawing.Point(177, 4)
+        Me.GroupControl5.Location = New System.Drawing.Point(176, 4)
         Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(429, 104)
+        Me.GroupControl5.Size = New System.Drawing.Size(426, 104)
         Me.GroupControl5.TabIndex = 7
         Me.GroupControl5.Text = "Importes por Servicio y Unidad"
         '
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.meObservacionesTarifa)
-        Me.GroupControl2.Location = New System.Drawing.Point(612, 4)
+        Me.GroupControl2.Location = New System.Drawing.Point(608, 4)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(296, 104)
+        Me.GroupControl2.Size = New System.Drawing.Size(294, 104)
         Me.GroupControl2.TabIndex = 16
         Me.GroupControl2.Text = "Descripción"
         '
@@ -1882,7 +1890,7 @@ Partial Class LogisticOperationRegisterForm
         Me.meObservacionesTarifa.MenuManager = Me.bmActions
         Me.meObservacionesTarifa.Name = "meObservacionesTarifa"
         Me.meObservacionesTarifa.Properties.ReadOnly = True
-        Me.meObservacionesTarifa.Size = New System.Drawing.Size(292, 82)
+        Me.meObservacionesTarifa.Size = New System.Drawing.Size(290, 82)
         Me.meObservacionesTarifa.TabIndex = 0
         '
         'deVigenciaHasta
@@ -1894,7 +1902,7 @@ Partial Class LogisticOperationRegisterForm
         Me.deVigenciaHasta.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deVigenciaHasta.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deVigenciaHasta.Properties.ReadOnly = True
-        Me.deVigenciaHasta.Size = New System.Drawing.Size(78, 20)
+        Me.deVigenciaHasta.Size = New System.Drawing.Size(77, 20)
         Me.deVigenciaHasta.StyleController = Me.LayoutControl5
         Me.deVigenciaHasta.TabIndex = 12
         '
@@ -1907,7 +1915,7 @@ Partial Class LogisticOperationRegisterForm
         Me.deVigenciaDesde.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deVigenciaDesde.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deVigenciaDesde.Properties.ReadOnly = True
-        Me.deVigenciaDesde.Size = New System.Drawing.Size(78, 20)
+        Me.deVigenciaDesde.Size = New System.Drawing.Size(77, 20)
         Me.deVigenciaDesde.StyleController = Me.LayoutControl5
         Me.deVigenciaDesde.TabIndex = 13
         '
@@ -1917,7 +1925,7 @@ Partial Class LogisticOperationRegisterForm
         Me.teTipoTarifa.MenuManager = Me.bmActions
         Me.teTipoTarifa.Name = "teTipoTarifa"
         Me.teTipoTarifa.Properties.ReadOnly = True
-        Me.teTipoTarifa.Size = New System.Drawing.Size(78, 20)
+        Me.teTipoTarifa.Size = New System.Drawing.Size(77, 20)
         Me.teTipoTarifa.StyleController = Me.LayoutControl5
         Me.teTipoTarifa.TabIndex = 15
         '
@@ -1933,7 +1941,7 @@ Partial Class LogisticOperationRegisterForm
         ColumnDefinition7.SizeType = System.Windows.Forms.SizeType.Percent
         ColumnDefinition7.Width = 71.428571428571431R
         ColumnDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize
-        ColumnDefinition8.Width = 304.0R
+        ColumnDefinition8.Width = 302.0R
         Me.LayoutControlGroup4.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition6, ColumnDefinition7, ColumnDefinition8})
         RowDefinition17.Height = 25.0R
         RowDefinition17.SizeType = System.Windows.Forms.SizeType.Absolute
@@ -1945,18 +1953,18 @@ Partial Class LogisticOperationRegisterForm
         RowDefinition20.SizeType = System.Windows.Forms.SizeType.Absolute
         Me.LayoutControlGroup4.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition17, RowDefinition18, RowDefinition19, RowDefinition20})
         Me.LayoutControlGroup4.Padding = New DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2)
-        Me.LayoutControlGroup4.Size = New System.Drawing.Size(914, 112)
+        Me.LayoutControlGroup4.Size = New System.Drawing.Size(908, 112)
         Me.LayoutControlGroup4.TextVisible = False
         '
         'LayoutControlItem19
         '
         Me.LayoutControlItem19.Control = Me.GroupControl2
-        Me.LayoutControlItem19.Location = New System.Drawing.Point(606, 0)
+        Me.LayoutControlItem19.Location = New System.Drawing.Point(602, 0)
         Me.LayoutControlItem19.Name = "LayoutControlItem19"
         Me.LayoutControlItem19.OptionsTableLayoutItem.ColumnIndex = 2
         Me.LayoutControlItem19.OptionsTableLayoutItem.RowSpan = 4
         Me.LayoutControlItem19.Padding = New DevExpress.XtraLayout.Utils.Padding(4, 4, 2, 2)
-        Me.LayoutControlItem19.Size = New System.Drawing.Size(304, 108)
+        Me.LayoutControlItem19.Size = New System.Drawing.Size(302, 108)
         Me.LayoutControlItem19.Text = "Descripción"
         Me.LayoutControlItem19.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem19.TextVisible = False
@@ -1968,7 +1976,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem25.Name = "LayoutControlItem25"
         Me.LayoutControlItem25.OptionsTableLayoutItem.RowIndex = 3
         Me.LayoutControlItem25.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem25.Size = New System.Drawing.Size(173, 33)
+        Me.LayoutControlItem25.Size = New System.Drawing.Size(172, 33)
         Me.LayoutControlItem25.Text = "Vigencia Hasta"
         Me.LayoutControlItem25.TextSize = New System.Drawing.Size(72, 13)
         '
@@ -1979,7 +1987,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem20.Name = "LayoutControlItem20"
         Me.LayoutControlItem20.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem20.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem20.Size = New System.Drawing.Size(173, 25)
+        Me.LayoutControlItem20.Size = New System.Drawing.Size(172, 25)
         Me.LayoutControlItem20.Text = "Tipo"
         Me.LayoutControlItem20.TextSize = New System.Drawing.Size(72, 13)
         '
@@ -1990,18 +1998,18 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem26.Name = "LayoutControlItem26"
         Me.LayoutControlItem26.OptionsTableLayoutItem.RowIndex = 2
         Me.LayoutControlItem26.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem26.Size = New System.Drawing.Size(173, 25)
+        Me.LayoutControlItem26.Size = New System.Drawing.Size(172, 25)
         Me.LayoutControlItem26.Text = "Vigencia Desde"
         Me.LayoutControlItem26.TextSize = New System.Drawing.Size(72, 13)
         '
         'LayoutControlItem21
         '
         Me.LayoutControlItem21.Control = Me.GroupControl5
-        Me.LayoutControlItem21.Location = New System.Drawing.Point(173, 0)
+        Me.LayoutControlItem21.Location = New System.Drawing.Point(172, 0)
         Me.LayoutControlItem21.Name = "LayoutControlItem21"
         Me.LayoutControlItem21.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem21.OptionsTableLayoutItem.RowSpan = 4
-        Me.LayoutControlItem21.Size = New System.Drawing.Size(433, 108)
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(430, 108)
         Me.LayoutControlItem21.Text = "Importes"
         Me.LayoutControlItem21.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem21.TextVisible = False
@@ -2013,7 +2021,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem17.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem17.Name = "LayoutControlItem17"
         Me.LayoutControlItem17.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 10, 2, 2)
-        Me.LayoutControlItem17.Size = New System.Drawing.Size(173, 25)
+        Me.LayoutControlItem17.Size = New System.Drawing.Size(172, 25)
         Me.LayoutControlItem17.Text = "Tarifa"
         Me.LayoutControlItem17.TextSize = New System.Drawing.Size(72, 13)
         '
@@ -2021,11 +2029,329 @@ Partial Class LogisticOperationRegisterForm
         '
         Me.NavBarGroupControlContainer3.Appearance.BackColor = System.Drawing.SystemColors.Control
         Me.NavBarGroupControlContainer3.Appearance.Options.UseBackColor = True
-        Me.NavBarGroupControlContainer3.Controls.Add(Me.gcServiceRelated)
+        Me.NavBarGroupControlContainer3.Controls.Add(Me.XtraTabControl2)
         Me.NavBarGroupControlContainer3.Name = "NavBarGroupControlContainer3"
         Me.NavBarGroupControlContainer3.Padding = New System.Windows.Forms.Padding(1)
-        Me.NavBarGroupControlContainer3.Size = New System.Drawing.Size(914, 158)
+        Me.NavBarGroupControlContainer3.Size = New System.Drawing.Size(908, 243)
         Me.NavBarGroupControlContainer3.TabIndex = 2
+        '
+        'XtraTabControl2
+        '
+        Me.XtraTabControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.XtraTabControl2.Location = New System.Drawing.Point(1, 1)
+        Me.XtraTabControl2.Name = "XtraTabControl2"
+        Me.XtraTabControl2.SelectedTabPage = Me.XtraTabPage4
+        Me.XtraTabControl2.Size = New System.Drawing.Size(906, 241)
+        Me.XtraTabControl2.TabIndex = 174
+        Me.XtraTabControl2.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage3, Me.XtraTabPage4})
+        '
+        'XtraTabPage4
+        '
+        Me.XtraTabPage4.Controls.Add(Me.gcChangeControlRelated)
+        Me.XtraTabPage4.Name = "XtraTabPage4"
+        Me.XtraTabPage4.Size = New System.Drawing.Size(900, 213)
+        Me.XtraTabPage4.Text = "Change Control"
+        '
+        'gcChangeControlRelated
+        '
+        Me.gcChangeControlRelated.ContextMenuStrip = Me.cmsChangeControl
+        Me.gcChangeControlRelated.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcChangeControlRelated.EmbeddedNavigator.Buttons.Append.Visible = False
+        Me.gcChangeControlRelated.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
+        Me.gcChangeControlRelated.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.gcChangeControlRelated.EmbeddedNavigator.Buttons.EndEdit.Visible = False
+        Me.gcChangeControlRelated.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.gcChangeControlRelated.Location = New System.Drawing.Point(0, 0)
+        Me.gcChangeControlRelated.MainView = Me.GridView5
+        Me.gcChangeControlRelated.Name = "gcChangeControlRelated"
+        Me.gcChangeControlRelated.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit5, Me.RepositoryItemLookUpEdit7, Me.RepositoryItemLookUpEdit8, Me.RepositoryItemLookUpEdit6, Me.RepositoryItemLookUpEdit10, Me.RepositoryItemLookUpEdit12})
+        Me.gcChangeControlRelated.Size = New System.Drawing.Size(900, 213)
+        Me.gcChangeControlRelated.TabIndex = 175
+        Me.gcChangeControlRelated.UseEmbeddedNavigator = True
+        Me.gcChangeControlRelated.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5})
+        '
+        'cmsChangeControl
+        '
+        Me.cmsChangeControl.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiChangeControlWR2, Me.ToolStripSeparator3, Me.tsmiChangeControlDelete, Me.ToolStripSeparator2, Me.tsmiEntryJournalCreate, Me.tsmiJournalEntryVoid, Me.ToolStripSeparator4, Me.tsmiInvoiceBillsCreate, Me.tsmiInvoiceBillsVoid})
+        Me.cmsChangeControl.Name = "ContextMenuStrip1"
+        Me.cmsChangeControl.Size = New System.Drawing.Size(205, 176)
+        '
+        'tsmiChangeControlWR2
+        '
+        Me.tsmiChangeControlWR2.Name = "tsmiChangeControlWR2"
+        Me.tsmiChangeControlWR2.Size = New System.Drawing.Size(204, 22)
+        Me.tsmiChangeControlWR2.Text = "Crear Change Control"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(201, 6)
+        '
+        'tsmiChangeControlDelete
+        '
+        Me.tsmiChangeControlDelete.Name = "tsmiChangeControlDelete"
+        Me.tsmiChangeControlDelete.Size = New System.Drawing.Size(204, 22)
+        Me.tsmiChangeControlDelete.Text = "Eliminar Change Control"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(201, 6)
+        '
+        'tsmiEntryJournalCreate
+        '
+        Me.tsmiEntryJournalCreate.Name = "tsmiEntryJournalCreate"
+        Me.tsmiEntryJournalCreate.Size = New System.Drawing.Size(204, 22)
+        Me.tsmiEntryJournalCreate.Text = "Generar Provisión"
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(201, 6)
+        '
+        'tsmiJournalEntryVoid
+        '
+        Me.tsmiJournalEntryVoid.Name = "tsmiJournalEntryVoid"
+        Me.tsmiJournalEntryVoid.Size = New System.Drawing.Size(204, 22)
+        Me.tsmiJournalEntryVoid.Text = "Anular Provisión"
+        '
+        'GridView5
+        '
+        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn70, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn68, Me.GridColumn33, Me.GridColumn34, Me.GridColumn66, Me.GridColumn35, Me.GridColumn36, Me.GridColumn38, Me.GridColumn39, Me.GridColumn40, Me.GridColumn41, Me.GridColumn73, Me.GridColumn56, Me.GridColumn58, Me.GridColumn59, Me.GridColumn71})
+        Me.GridView5.GridControl = Me.gcChangeControlRelated
+        Me.GridView5.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
+        Me.GridView5.Name = "GridView5"
+        Me.GridView5.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
+        Me.GridView5.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.[True]
+        Me.GridView5.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.[True]
+        Me.GridView5.OptionsEditForm.ShowOnF2Key = DevExpress.Utils.DefaultBoolean.[True]
+        Me.GridView5.OptionsNavigation.AutoFocusNewRow = True
+        Me.GridView5.OptionsView.BestFitMaxRowCount = 10
+        Me.GridView5.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
+        Me.GridView5.OptionsView.ShowFooter = True
+        Me.GridView5.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn70
+        '
+        Me.GridColumn70.Caption = "Item"
+        Me.GridColumn70.FieldName = "DOPE_Item"
+        Me.GridColumn70.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left
+        Me.GridColumn70.Name = "GridColumn70"
+        Me.GridColumn70.OptionsColumn.ReadOnly = True
+        Me.GridColumn70.Visible = True
+        Me.GridColumn70.VisibleIndex = 0
+        '
+        'GridColumn29
+        '
+        Me.GridColumn29.Caption = "Código"
+        Me.GridColumn29.FieldName = "SERV_Codigo"
+        Me.GridColumn29.Name = "GridColumn29"
+        '
+        'GridColumn30
+        '
+        Me.GridColumn30.Caption = "Descripción"
+        Me.GridColumn30.ColumnEdit = Me.RepositoryItemLookUpEdit5
+        Me.GridColumn30.FieldName = "SERV_Codigo"
+        Me.GridColumn30.Name = "GridColumn30"
+        Me.GridColumn30.Visible = True
+        Me.GridColumn30.VisibleIndex = 1
+        '
+        'RepositoryItemLookUpEdit5
+        '
+        Me.RepositoryItemLookUpEdit5.AutoHeight = False
+        Me.RepositoryItemLookUpEdit5.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit5.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoServicio", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionServicio", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TipoConcepto", "Tipo", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
+        Me.RepositoryItemLookUpEdit5.Name = "RepositoryItemLookUpEdit5"
+        Me.RepositoryItemLookUpEdit5.NullText = ""
+        '
+        'GridColumn31
+        '
+        Me.GridColumn31.Caption = "Tipo Servicio"
+        Me.GridColumn31.FieldName = "SERV_Tipo"
+        Me.GridColumn31.Name = "GridColumn31"
+        '
+        'GridColumn32
+        '
+        Me.GridColumn32.Caption = "Unidad Base"
+        Me.GridColumn32.ColumnEdit = Me.RepositoryItemLookUpEdit6
+        Me.GridColumn32.FieldName = "CONS_CodBas"
+        Me.GridColumn32.Name = "GridColumn32"
+        Me.GridColumn32.Visible = True
+        Me.GridColumn32.VisibleIndex = 2
+        '
+        'RepositoryItemLookUpEdit6
+        '
+        Me.RepositoryItemLookUpEdit6.AutoHeight = False
+        Me.RepositoryItemLookUpEdit6.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
+        Me.RepositoryItemLookUpEdit6.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit6.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoUnidadBase", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionUnidadBase", "Descripción")})
+        Me.RepositoryItemLookUpEdit6.Name = "RepositoryItemLookUpEdit6"
+        Me.RepositoryItemLookUpEdit6.NullText = ""
+        '
+        'GridColumn68
+        '
+        Me.GridColumn68.Caption = "Línea Negocio"
+        Me.GridColumn68.ColumnEdit = Me.RepositoryItemLookUpEdit12
+        Me.GridColumn68.FieldName = "CONS_CodLNG"
+        Me.GridColumn68.Name = "GridColumn68"
+        Me.GridColumn68.Visible = True
+        Me.GridColumn68.VisibleIndex = 3
+        '
+        'RepositoryItemLookUpEdit12
+        '
+        Me.RepositoryItemLookUpEdit12.AutoHeight = False
+        Me.RepositoryItemLookUpEdit12.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit12.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoLineaNegocio", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionLineaNegocio", "Descripción")})
+        Me.RepositoryItemLookUpEdit12.Name = "RepositoryItemLookUpEdit12"
+        Me.RepositoryItemLookUpEdit12.NullText = ""
+        '
+        'GridColumn33
+        '
+        Me.GridColumn33.Caption = "Tipo Entidad"
+        Me.GridColumn33.ColumnEdit = Me.RepositoryItemLookUpEdit7
+        Me.GridColumn33.FieldName = "TIPE_Codigo"
+        Me.GridColumn33.Name = "GridColumn33"
+        Me.GridColumn33.Visible = True
+        Me.GridColumn33.VisibleIndex = 4
+        '
+        'RepositoryItemLookUpEdit7
+        '
+        Me.RepositoryItemLookUpEdit7.AutoHeight = False
+        Me.RepositoryItemLookUpEdit7.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit7.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoTipoEntidad", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionTipoEntidad", "Descripción")})
+        Me.RepositoryItemLookUpEdit7.Name = "RepositoryItemLookUpEdit7"
+        Me.RepositoryItemLookUpEdit7.NullText = ""
+        '
+        'GridColumn34
+        '
+        Me.GridColumn34.Caption = "Razón Social"
+        Me.GridColumn34.ColumnEdit = Me.RepositoryItemLookUpEdit8
+        Me.GridColumn34.FieldName = "ENTC_Codigo"
+        Me.GridColumn34.Name = "GridColumn34"
+        Me.GridColumn34.Visible = True
+        Me.GridColumn34.VisibleIndex = 5
+        '
+        'RepositoryItemLookUpEdit8
+        '
+        Me.RepositoryItemLookUpEdit8.AutoHeight = False
+        Me.RepositoryItemLookUpEdit8.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit8.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoEntidad", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionEntidad", "Descripción")})
+        Me.RepositoryItemLookUpEdit8.Name = "RepositoryItemLookUpEdit8"
+        Me.RepositoryItemLookUpEdit8.NullText = ""
+        '
+        'GridColumn66
+        '
+        Me.GridColumn66.Caption = "Moneda"
+        Me.GridColumn66.ColumnEdit = Me.RepositoryItemLookUpEdit10
+        Me.GridColumn66.FieldName = "TIPO_CodMnd"
+        Me.GridColumn66.Name = "GridColumn66"
+        Me.GridColumn66.Visible = True
+        Me.GridColumn66.VisibleIndex = 6
+        '
+        'RepositoryItemLookUpEdit10
+        '
+        Me.RepositoryItemLookUpEdit10.AutoHeight = False
+        Me.RepositoryItemLookUpEdit10.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit10.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoMoneda", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionMoneda", "Descripción")})
+        Me.RepositoryItemLookUpEdit10.Name = "RepositoryItemLookUpEdit10"
+        Me.RepositoryItemLookUpEdit10.NullText = ""
+        '
+        'GridColumn35
+        '
+        Me.GridColumn35.Caption = "Costo (Unidad)"
+        Me.GridColumn35.FieldName = "DOPE_PrecioUnitCosto"
+        Me.GridColumn35.Name = "GridColumn35"
+        Me.GridColumn35.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioUnitCosto", "{0:###,##0.00}")})
+        Me.GridColumn35.Visible = True
+        Me.GridColumn35.VisibleIndex = 7
+        '
+        'GridColumn36
+        '
+        Me.GridColumn36.Caption = "Venta (Unidad)"
+        Me.GridColumn36.FieldName = "DOPE_PrecioUnitVta"
+        Me.GridColumn36.Name = "GridColumn36"
+        Me.GridColumn36.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioUnitVta", "{0:###,##0.00}")})
+        Me.GridColumn36.Visible = True
+        Me.GridColumn36.VisibleIndex = 8
+        '
+        'GridColumn38
+        '
+        Me.GridColumn38.Caption = "Cantidad"
+        Me.GridColumn38.FieldName = "DOPE_Cantidad"
+        Me.GridColumn38.Name = "GridColumn38"
+        Me.GridColumn38.Visible = True
+        Me.GridColumn38.VisibleIndex = 9
+        '
+        'GridColumn39
+        '
+        Me.GridColumn39.Caption = "Costo (Total)"
+        Me.GridColumn39.FieldName = "DOPE_PrecioTotCosto"
+        Me.GridColumn39.Name = "GridColumn39"
+        Me.GridColumn39.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioTotCosto", "{0:###,##0.00}")})
+        Me.GridColumn39.Visible = True
+        Me.GridColumn39.VisibleIndex = 10
+        '
+        'GridColumn40
+        '
+        Me.GridColumn40.Caption = "Venta (Total)"
+        Me.GridColumn40.FieldName = "DOPE_PrecioTotVta"
+        Me.GridColumn40.Name = "GridColumn40"
+        Me.GridColumn40.OptionsColumn.ReadOnly = True
+        Me.GridColumn40.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioTotVta", "{0:###,##0.00}")})
+        Me.GridColumn40.Visible = True
+        Me.GridColumn40.VisibleIndex = 11
+        '
+        'GridColumn41
+        '
+        Me.GridColumn41.Caption = "Rentabilidad"
+        Me.GridColumn41.FieldName = "TotalProfit"
+        Me.GridColumn41.Name = "GridColumn41"
+        '
+        'GridColumn73
+        '
+        Me.GridColumn73.Caption = "Código Interno"
+        Me.GridColumn73.FieldName = "CCCT_Codigo"
+        Me.GridColumn73.Name = "GridColumn73"
+        Me.GridColumn73.OptionsColumn.ReadOnly = True
+        Me.GridColumn73.Visible = True
+        Me.GridColumn73.VisibleIndex = 12
+        '
+        'GridColumn56
+        '
+        Me.GridColumn56.Caption = "Documento Provisión"
+        Me.GridColumn56.FieldName = "DocumentoSAP"
+        Me.GridColumn56.Name = "GridColumn56"
+        Me.GridColumn56.OptionsColumn.ReadOnly = True
+        Me.GridColumn56.Visible = True
+        Me.GridColumn56.VisibleIndex = 13
+        '
+        'GridColumn58
+        '
+        Me.GridColumn58.Caption = "Comprobante Venta"
+        Me.GridColumn58.FieldName = "DOPE_DocContVenta"
+        Me.GridColumn58.Name = "GridColumn58"
+        '
+        'GridColumn59
+        '
+        Me.GridColumn59.Caption = "Comprobante Costo"
+        Me.GridColumn59.FieldName = "DOPE_DocContCosto"
+        Me.GridColumn59.Name = "GridColumn59"
+        '
+        'GridColumn71
+        '
+        Me.GridColumn71.Caption = "Item Referencia"
+        Me.GridColumn71.FieldName = "DOPE_ItemChangeControl"
+        Me.GridColumn71.Name = "GridColumn71"
+        Me.GridColumn71.OptionsColumn.ReadOnly = True
+        Me.GridColumn71.Visible = True
+        Me.GridColumn71.VisibleIndex = 14
+        '
+        'XtraTabPage3
+        '
+        Me.XtraTabPage3.Controls.Add(Me.gcServiceRelated)
+        Me.XtraTabPage3.Name = "XtraTabPage3"
+        Me.XtraTabPage3.Size = New System.Drawing.Size(900, 213)
+        Me.XtraTabPage3.Text = "Servicios"
         '
         'gcServiceRelated
         '
@@ -2036,12 +2362,12 @@ Partial Class LogisticOperationRegisterForm
         Me.gcServiceRelated.EmbeddedNavigator.Buttons.Edit.Visible = False
         Me.gcServiceRelated.EmbeddedNavigator.Buttons.EndEdit.Visible = False
         Me.gcServiceRelated.EmbeddedNavigator.Buttons.Remove.Visible = False
-        Me.gcServiceRelated.Location = New System.Drawing.Point(1, 1)
+        Me.gcServiceRelated.Location = New System.Drawing.Point(0, 0)
         Me.gcServiceRelated.MainView = Me.GridView1
         Me.gcServiceRelated.Name = "gcServiceRelated"
         Me.gcServiceRelated.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemLookUpEdit2, Me.RepositoryItemLookUpEdit3, Me.RepositoryItemLookUpEdit4, Me.RepositoryItemLookUpEdit9, Me.RepositoryItemLookUpEdit11})
-        Me.gcServiceRelated.Size = New System.Drawing.Size(912, 156)
-        Me.gcServiceRelated.TabIndex = 173
+        Me.gcServiceRelated.Size = New System.Drawing.Size(900, 213)
+        Me.gcServiceRelated.TabIndex = 174
         Me.gcServiceRelated.UseEmbeddedNavigator = True
         Me.gcServiceRelated.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -2547,319 +2873,25 @@ Partial Class LogisticOperationRegisterForm
         '
         Me.NavBarGroupControlContainer5.Appearance.BackColor = System.Drawing.SystemColors.Control
         Me.NavBarGroupControlContainer5.Appearance.Options.UseBackColor = True
-        Me.NavBarGroupControlContainer5.Controls.Add(Me.gcChangeControlRelated)
         Me.NavBarGroupControlContainer5.Name = "NavBarGroupControlContainer5"
-        Me.NavBarGroupControlContainer5.Size = New System.Drawing.Size(914, 165)
+        Me.NavBarGroupControlContainer5.Size = New System.Drawing.Size(908, 165)
         Me.NavBarGroupControlContainer5.TabIndex = 4
-        '
-        'gcChangeControlRelated
-        '
-        Me.gcChangeControlRelated.ContextMenuStrip = Me.cmsChangeControl
-        Me.gcChangeControlRelated.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcChangeControlRelated.EmbeddedNavigator.Buttons.Append.Visible = False
-        Me.gcChangeControlRelated.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
-        Me.gcChangeControlRelated.EmbeddedNavigator.Buttons.Edit.Visible = False
-        Me.gcChangeControlRelated.EmbeddedNavigator.Buttons.EndEdit.Visible = False
-        Me.gcChangeControlRelated.EmbeddedNavigator.Buttons.Remove.Visible = False
-        Me.gcChangeControlRelated.Location = New System.Drawing.Point(0, 0)
-        Me.gcChangeControlRelated.MainView = Me.GridView5
-        Me.gcChangeControlRelated.Name = "gcChangeControlRelated"
-        Me.gcChangeControlRelated.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit5, Me.RepositoryItemLookUpEdit7, Me.RepositoryItemLookUpEdit8, Me.RepositoryItemLookUpEdit6, Me.RepositoryItemLookUpEdit10, Me.RepositoryItemLookUpEdit12})
-        Me.gcChangeControlRelated.Size = New System.Drawing.Size(914, 165)
-        Me.gcChangeControlRelated.TabIndex = 174
-        Me.gcChangeControlRelated.UseEmbeddedNavigator = True
-        Me.gcChangeControlRelated.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5})
-        '
-        'cmsChangeControl
-        '
-        Me.cmsChangeControl.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiChangeControlWR2, Me.ToolStripSeparator3, Me.tsmiChangeControlDelete, Me.ToolStripSeparator2, Me.tsmiEntryJournalCreate, Me.ToolStripSeparator4, Me.tsmiJournalEntryVoid})
-        Me.cmsChangeControl.Name = "ContextMenuStrip1"
-        Me.cmsChangeControl.Size = New System.Drawing.Size(205, 110)
-        '
-        'tsmiChangeControlWR2
-        '
-        Me.tsmiChangeControlWR2.Name = "tsmiChangeControlWR2"
-        Me.tsmiChangeControlWR2.Size = New System.Drawing.Size(204, 22)
-        Me.tsmiChangeControlWR2.Text = "Crear Change Control"
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(201, 6)
-        '
-        'tsmiChangeControlDelete
-        '
-        Me.tsmiChangeControlDelete.Name = "tsmiChangeControlDelete"
-        Me.tsmiChangeControlDelete.Size = New System.Drawing.Size(204, 22)
-        Me.tsmiChangeControlDelete.Text = "Eliminar Change Control"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(201, 6)
-        '
-        'tsmiEntryJournalCreate
-        '
-        Me.tsmiEntryJournalCreate.Name = "tsmiEntryJournalCreate"
-        Me.tsmiEntryJournalCreate.Size = New System.Drawing.Size(204, 22)
-        Me.tsmiEntryJournalCreate.Text = "Generar Provisión"
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(201, 6)
-        '
-        'tsmiJournalEntryVoid
-        '
-        Me.tsmiJournalEntryVoid.Name = "tsmiJournalEntryVoid"
-        Me.tsmiJournalEntryVoid.Size = New System.Drawing.Size(204, 22)
-        Me.tsmiJournalEntryVoid.Text = "Anular Provisión"
-        '
-        'GridView5
-        '
-        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn70, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn68, Me.GridColumn33, Me.GridColumn34, Me.GridColumn66, Me.GridColumn35, Me.GridColumn36, Me.GridColumn38, Me.GridColumn39, Me.GridColumn40, Me.GridColumn41, Me.GridColumn73, Me.GridColumn56, Me.GridColumn58, Me.GridColumn59, Me.GridColumn71})
-        Me.GridView5.GridControl = Me.gcChangeControlRelated
-        Me.GridView5.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
-        Me.GridView5.Name = "GridView5"
-        Me.GridView5.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
-        Me.GridView5.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.[True]
-        Me.GridView5.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.[True]
-        Me.GridView5.OptionsEditForm.ShowOnF2Key = DevExpress.Utils.DefaultBoolean.[True]
-        Me.GridView5.OptionsNavigation.AutoFocusNewRow = True
-        Me.GridView5.OptionsView.BestFitMaxRowCount = 10
-        Me.GridView5.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
-        Me.GridView5.OptionsView.ShowFooter = True
-        Me.GridView5.OptionsView.ShowGroupPanel = False
-        '
-        'GridColumn70
-        '
-        Me.GridColumn70.Caption = "Item"
-        Me.GridColumn70.FieldName = "DOPE_Item"
-        Me.GridColumn70.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left
-        Me.GridColumn70.Name = "GridColumn70"
-        Me.GridColumn70.OptionsColumn.ReadOnly = True
-        Me.GridColumn70.Visible = True
-        Me.GridColumn70.VisibleIndex = 0
-        '
-        'GridColumn29
-        '
-        Me.GridColumn29.Caption = "Código"
-        Me.GridColumn29.FieldName = "SERV_Codigo"
-        Me.GridColumn29.Name = "GridColumn29"
-        '
-        'GridColumn30
-        '
-        Me.GridColumn30.Caption = "Descripción"
-        Me.GridColumn30.ColumnEdit = Me.RepositoryItemLookUpEdit5
-        Me.GridColumn30.FieldName = "SERV_Codigo"
-        Me.GridColumn30.Name = "GridColumn30"
-        Me.GridColumn30.Visible = True
-        Me.GridColumn30.VisibleIndex = 1
-        '
-        'RepositoryItemLookUpEdit5
-        '
-        Me.RepositoryItemLookUpEdit5.AutoHeight = False
-        Me.RepositoryItemLookUpEdit5.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit5.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoServicio", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionServicio", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TipoConcepto", "Tipo", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
-        Me.RepositoryItemLookUpEdit5.Name = "RepositoryItemLookUpEdit5"
-        Me.RepositoryItemLookUpEdit5.NullText = ""
-        '
-        'GridColumn31
-        '
-        Me.GridColumn31.Caption = "Tipo Servicio"
-        Me.GridColumn31.FieldName = "SERV_Tipo"
-        Me.GridColumn31.Name = "GridColumn31"
-        '
-        'GridColumn32
-        '
-        Me.GridColumn32.Caption = "Unidad Base"
-        Me.GridColumn32.ColumnEdit = Me.RepositoryItemLookUpEdit6
-        Me.GridColumn32.FieldName = "CONS_CodBas"
-        Me.GridColumn32.Name = "GridColumn32"
-        Me.GridColumn32.Visible = True
-        Me.GridColumn32.VisibleIndex = 2
-        '
-        'RepositoryItemLookUpEdit6
-        '
-        Me.RepositoryItemLookUpEdit6.AutoHeight = False
-        Me.RepositoryItemLookUpEdit6.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
-        Me.RepositoryItemLookUpEdit6.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit6.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoUnidadBase", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionUnidadBase", "Descripción")})
-        Me.RepositoryItemLookUpEdit6.Name = "RepositoryItemLookUpEdit6"
-        Me.RepositoryItemLookUpEdit6.NullText = ""
-        '
-        'GridColumn68
-        '
-        Me.GridColumn68.Caption = "Línea Negocio"
-        Me.GridColumn68.ColumnEdit = Me.RepositoryItemLookUpEdit12
-        Me.GridColumn68.FieldName = "CONS_CodLNG"
-        Me.GridColumn68.Name = "GridColumn68"
-        Me.GridColumn68.Visible = True
-        Me.GridColumn68.VisibleIndex = 3
-        '
-        'RepositoryItemLookUpEdit12
-        '
-        Me.RepositoryItemLookUpEdit12.AutoHeight = False
-        Me.RepositoryItemLookUpEdit12.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit12.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoLineaNegocio", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionLineaNegocio", "Descripción")})
-        Me.RepositoryItemLookUpEdit12.Name = "RepositoryItemLookUpEdit12"
-        Me.RepositoryItemLookUpEdit12.NullText = ""
-        '
-        'GridColumn33
-        '
-        Me.GridColumn33.Caption = "Tipo Entidad"
-        Me.GridColumn33.ColumnEdit = Me.RepositoryItemLookUpEdit7
-        Me.GridColumn33.FieldName = "TIPE_Codigo"
-        Me.GridColumn33.Name = "GridColumn33"
-        Me.GridColumn33.Visible = True
-        Me.GridColumn33.VisibleIndex = 4
-        '
-        'RepositoryItemLookUpEdit7
-        '
-        Me.RepositoryItemLookUpEdit7.AutoHeight = False
-        Me.RepositoryItemLookUpEdit7.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit7.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoTipoEntidad", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionTipoEntidad", "Descripción")})
-        Me.RepositoryItemLookUpEdit7.Name = "RepositoryItemLookUpEdit7"
-        Me.RepositoryItemLookUpEdit7.NullText = ""
-        '
-        'GridColumn34
-        '
-        Me.GridColumn34.Caption = "Razón Social"
-        Me.GridColumn34.ColumnEdit = Me.RepositoryItemLookUpEdit8
-        Me.GridColumn34.FieldName = "ENTC_Codigo"
-        Me.GridColumn34.Name = "GridColumn34"
-        Me.GridColumn34.Visible = True
-        Me.GridColumn34.VisibleIndex = 5
-        '
-        'RepositoryItemLookUpEdit8
-        '
-        Me.RepositoryItemLookUpEdit8.AutoHeight = False
-        Me.RepositoryItemLookUpEdit8.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit8.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoEntidad", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionEntidad", "Descripción")})
-        Me.RepositoryItemLookUpEdit8.Name = "RepositoryItemLookUpEdit8"
-        Me.RepositoryItemLookUpEdit8.NullText = ""
-        '
-        'GridColumn66
-        '
-        Me.GridColumn66.Caption = "Moneda"
-        Me.GridColumn66.ColumnEdit = Me.RepositoryItemLookUpEdit10
-        Me.GridColumn66.FieldName = "TIPO_CodMnd"
-        Me.GridColumn66.Name = "GridColumn66"
-        Me.GridColumn66.Visible = True
-        Me.GridColumn66.VisibleIndex = 6
-        '
-        'RepositoryItemLookUpEdit10
-        '
-        Me.RepositoryItemLookUpEdit10.AutoHeight = False
-        Me.RepositoryItemLookUpEdit10.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit10.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoMoneda", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionMoneda", "Descripción")})
-        Me.RepositoryItemLookUpEdit10.Name = "RepositoryItemLookUpEdit10"
-        Me.RepositoryItemLookUpEdit10.NullText = ""
-        '
-        'GridColumn35
-        '
-        Me.GridColumn35.Caption = "Costo (Unidad)"
-        Me.GridColumn35.FieldName = "DOPE_PrecioUnitCosto"
-        Me.GridColumn35.Name = "GridColumn35"
-        Me.GridColumn35.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioUnitCosto", "{0:###,##0.00}")})
-        Me.GridColumn35.Visible = True
-        Me.GridColumn35.VisibleIndex = 7
-        '
-        'GridColumn36
-        '
-        Me.GridColumn36.Caption = "Venta (Unidad)"
-        Me.GridColumn36.FieldName = "DOPE_PrecioUnitVta"
-        Me.GridColumn36.Name = "GridColumn36"
-        Me.GridColumn36.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioUnitVta", "{0:###,##0.00}")})
-        Me.GridColumn36.Visible = True
-        Me.GridColumn36.VisibleIndex = 8
-        '
-        'GridColumn38
-        '
-        Me.GridColumn38.Caption = "Cantidad"
-        Me.GridColumn38.FieldName = "DOPE_Cantidad"
-        Me.GridColumn38.Name = "GridColumn38"
-        Me.GridColumn38.Visible = True
-        Me.GridColumn38.VisibleIndex = 9
-        '
-        'GridColumn39
-        '
-        Me.GridColumn39.Caption = "Costo (Total)"
-        Me.GridColumn39.FieldName = "DOPE_PrecioTotCosto"
-        Me.GridColumn39.Name = "GridColumn39"
-        Me.GridColumn39.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioTotCosto", "{0:###,##0.00}")})
-        Me.GridColumn39.Visible = True
-        Me.GridColumn39.VisibleIndex = 10
-        '
-        'GridColumn40
-        '
-        Me.GridColumn40.Caption = "Venta (Total)"
-        Me.GridColumn40.FieldName = "DOPE_PrecioTotVta"
-        Me.GridColumn40.Name = "GridColumn40"
-        Me.GridColumn40.OptionsColumn.ReadOnly = True
-        Me.GridColumn40.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioTotVta", "{0:###,##0.00}")})
-        Me.GridColumn40.Visible = True
-        Me.GridColumn40.VisibleIndex = 11
-        '
-        'GridColumn41
-        '
-        Me.GridColumn41.Caption = "Rentabilidad"
-        Me.GridColumn41.FieldName = "TotalProfit"
-        Me.GridColumn41.Name = "GridColumn41"
-        '
-        'GridColumn73
-        '
-        Me.GridColumn73.Caption = "Código Interno"
-        Me.GridColumn73.FieldName = "CCCT_Codigo"
-        Me.GridColumn73.Name = "GridColumn73"
-        Me.GridColumn73.OptionsColumn.ReadOnly = True
-        Me.GridColumn73.Visible = True
-        Me.GridColumn73.VisibleIndex = 12
-        '
-        'GridColumn56
-        '
-        Me.GridColumn56.Caption = "Documento Provisión"
-        Me.GridColumn56.FieldName = "DocumentoSAP"
-        Me.GridColumn56.Name = "GridColumn56"
-        Me.GridColumn56.OptionsColumn.ReadOnly = True
-        Me.GridColumn56.Visible = True
-        Me.GridColumn56.VisibleIndex = 13
-        '
-        'GridColumn58
-        '
-        Me.GridColumn58.Caption = "Comprobante Venta"
-        Me.GridColumn58.FieldName = "DOPE_DocContVenta"
-        Me.GridColumn58.Name = "GridColumn58"
-        '
-        'GridColumn59
-        '
-        Me.GridColumn59.Caption = "Comprobante Costo"
-        Me.GridColumn59.FieldName = "DOPE_DocContCosto"
-        Me.GridColumn59.Name = "GridColumn59"
-        '
-        'GridColumn71
-        '
-        Me.GridColumn71.Caption = "Item Referencia"
-        Me.GridColumn71.FieldName = "DOPE_ItemChangeControl"
-        Me.GridColumn71.Name = "GridColumn71"
-        Me.GridColumn71.OptionsColumn.ReadOnly = True
-        Me.GridColumn71.Visible = True
-        Me.GridColumn71.VisibleIndex = 14
         '
         'NavBarGroup2
         '
-        Me.NavBarGroup2.Caption = "Tarifa Asociada"
+        Me.NavBarGroup2.Caption = "Tarifa"
         Me.NavBarGroup2.ControlContainer = Me.NavBarGroupControlContainer2
+        Me.NavBarGroup2.Expanded = True
         Me.NavBarGroup2.GroupClientHeight = 116
         Me.NavBarGroup2.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer
         Me.NavBarGroup2.Name = "NavBarGroup2"
         '
         'NavBarGroup3
         '
-        Me.NavBarGroup3.Caption = "Servicios Asociados"
+        Me.NavBarGroup3.Caption = "Provisiones"
         Me.NavBarGroup3.ControlContainer = Me.NavBarGroupControlContainer3
         Me.NavBarGroup3.Expanded = True
-        Me.NavBarGroup3.GroupClientHeight = 162
+        Me.NavBarGroup3.GroupClientHeight = 247
         Me.NavBarGroup3.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer
         Me.NavBarGroup3.Name = "NavBarGroup3"
         '
@@ -2867,10 +2899,10 @@ Partial Class LogisticOperationRegisterForm
         '
         Me.NavBarGroup5.Caption = "Change Control"
         Me.NavBarGroup5.ControlContainer = Me.NavBarGroupControlContainer5
-        Me.NavBarGroup5.Expanded = True
         Me.NavBarGroup5.GroupClientHeight = 169
         Me.NavBarGroup5.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer
         Me.NavBarGroup5.Name = "NavBarGroup5"
+        Me.NavBarGroup5.Visible = False
         '
         'NavBarGroup4
         '
@@ -2899,7 +2931,7 @@ Partial Class LogisticOperationRegisterForm
         RowDefinition24.SizeType = System.Windows.Forms.SizeType.Percent
         Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition24})
         Me.Root.Padding = New DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3)
-        Me.Root.Size = New System.Drawing.Size(932, 489)
+        Me.Root.Size = New System.Drawing.Size(926, 483)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -2907,7 +2939,7 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlItem1.Control = Me.NavBarControl1
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(926, 483)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(920, 477)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -2938,11 +2970,23 @@ Partial Class LogisticOperationRegisterForm
         Me.LayoutControlGroup8.Name = "LayoutControlGroup8"
         Me.LayoutControlGroup8.Size = New System.Drawing.Size(318, 56)
         '
+        'tsmiInvoiceBillsCreate
+        '
+        Me.tsmiInvoiceBillsCreate.Name = "tsmiInvoiceBillsCreate"
+        Me.tsmiInvoiceBillsCreate.Size = New System.Drawing.Size(204, 22)
+        Me.tsmiInvoiceBillsCreate.Text = "Generar Pre-Factura"
+        '
+        'tsmiInvoiceBillsVoid
+        '
+        Me.tsmiInvoiceBillsVoid.Name = "tsmiInvoiceBillsVoid"
+        Me.tsmiInvoiceBillsVoid.Size = New System.Drawing.Size(204, 22)
+        Me.tsmiInvoiceBillsVoid.Text = "Anular Pre-Factura"
+        '
         'LogisticOperationRegisterForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(932, 565)
+        Me.ClientSize = New System.Drawing.Size(926, 559)
         Me.Controls.Add(Me.LayoutControl1)
         Me.Controls.Add(Me.BarDockControl3)
         Me.Controls.Add(Me.BarDockControl4)
@@ -2955,10 +2999,6 @@ Partial Class LogisticOperationRegisterForm
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gcTariff, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gcContainerDetail, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gcContainerGroup, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3017,7 +3057,11 @@ Partial Class LogisticOperationRegisterForm
         CType(Me.XtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControl1.ResumeLayout(False)
         Me.XtraTabPage1.ResumeLayout(False)
+        CType(Me.gcContainerGroup, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabPage2.ResumeLayout(False)
+        CType(Me.gcContainerDetail, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.LayoutControl4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3058,6 +3102,19 @@ Partial Class LogisticOperationRegisterForm
         CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
         Me.NavBarGroupControlContainer3.ResumeLayout(False)
+        CType(Me.XtraTabControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabControl2.ResumeLayout(False)
+        Me.XtraTabPage4.ResumeLayout(False)
+        CType(Me.gcChangeControlRelated, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.cmsChangeControl.ResumeLayout(False)
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit10, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtraTabPage3.ResumeLayout(False)
         CType(Me.gcServiceRelated, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cmsServices.ResumeLayout(False)
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3087,16 +3144,6 @@ Partial Class LogisticOperationRegisterForm
         CType(Me.LayoutControlItem33, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem34, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem35, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.NavBarGroupControlContainer5.ResumeLayout(False)
-        CType(Me.gcChangeControlRelated, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.cmsChangeControl.ResumeLayout(False)
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3174,20 +3221,7 @@ Partial Class LogisticOperationRegisterForm
     Friend WithEvents teTipoTarifa As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents meObservacionesTarifa As DevExpress.XtraEditors.MemoEdit
-    Friend WithEvents gcServiceRelated As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
-    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
-    Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents bbiSendMailTo As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn8 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn9 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem19 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents NavBarGroupControlContainer4 As DevExpress.XtraNavBar.NavBarGroupControlContainer
@@ -3205,39 +3239,24 @@ Partial Class LogisticOperationRegisterForm
     Friend WithEvents LayoutControlItem28 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem30 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem31 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents RepositoryItemLookUpEdit3 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents LayoutControlItem29 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem25 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem20 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem26 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents GroupControl5 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents LayoutControlItem21 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents GridColumn53 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn52 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents XtraTabControl1 As DevExpress.XtraTab.XtraTabControl
     Friend WithEvents XtraTabPage2 As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents LayoutControlItem27 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlGroup7 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents TabbedControlGroup2 As DevExpress.XtraLayout.TabbedControlGroup
     Friend WithEvents LayoutControlGroup8 As DevExpress.XtraLayout.LayoutControlGroup
-    Friend WithEvents gcContainerDetail As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView4 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GridColumn74 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn75 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn76 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents XtraTabPage1 As DevExpress.XtraTab.XtraTabPage
-    Friend WithEvents gcContainerGroup As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GridColumn96 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn97 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents GridColumn23 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn24 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LayoutControlItem32 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem33 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem34 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem35 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents GridColumn28 As DevExpress.XtraGrid.Columns.GridColumn
     Public WithEvents lueTransportista As DevExpress.XtraEditors.LookUpEdit
     Public WithEvents lueCliente As DevExpress.XtraEditors.LookUpEdit
     Public WithEvents teHBL As DevExpress.XtraEditors.TextEdit
@@ -3251,40 +3270,12 @@ Partial Class LogisticOperationRegisterForm
     Public WithEvents tsSADA As DevExpress.XtraEditors.ToggleSwitch
     Public WithEvents tsIMO As DevExpress.XtraEditors.ToggleSwitch
     Public WithEvents lueTransportistaTerrestre As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents RepositoryItemLookUpEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents NavBarGroupControlContainer5 As DevExpress.XtraNavBar.NavBarGroupControlContainer
-    Friend WithEvents gcChangeControlRelated As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView5 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GridColumn29 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn30 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemLookUpEdit5 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
-    Friend WithEvents GridColumn31 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn32 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemLookUpEdit6 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
-    Friend WithEvents GridColumn33 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemLookUpEdit7 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
-    Friend WithEvents GridColumn34 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemLookUpEdit8 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
-    Friend WithEvents GridColumn35 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn36 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn38 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn39 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn40 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn41 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents NavBarGroup5 As DevExpress.XtraNavBar.NavBarGroup
     Friend WithEvents cmsServices As ContextMenuStrip
     Friend WithEvents tsmiChangeControlWR1 As ToolStripMenuItem
-    Friend WithEvents GridColumn42 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn44 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn55 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn56 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn58 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn59 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents tsmiServiceDelete As ToolStripMenuItem
-    Friend WithEvents GridColumn60 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn61 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn62 As DevExpress.XtraGrid.Columns.GridColumn
     Public WithEvents lueVia As DevExpress.XtraEditors.LookUpEdit
     Public WithEvents lueRegimen As DevExpress.XtraEditors.LookUpEdit
     Public WithEvents lueUnidadNegocio As DevExpress.XtraEditors.LookUpEdit
@@ -3306,8 +3297,19 @@ Partial Class LogisticOperationRegisterForm
     Friend WithEvents LayoutControlItem16 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem9 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem41 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents GridColumn63 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemLookUpEdit9 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Public WithEvents beTarifa As DevExpress.XtraEditors.ButtonEdit
+    Friend WithEvents LayoutControlItem17 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents cmsChangeControl As ContextMenuStrip
+    Friend WithEvents tsmiChangeControlWR2 As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents tsmiEntryJournalCreate As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Friend WithEvents tsmiJournalEntryVoid As ToolStripMenuItem
+    Friend WithEvents tsmiChangeControlDelete As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents XtraTabControl2 As DevExpress.XtraTab.XtraTabControl
+    Friend WithEvents XtraTabPage4 As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents XtraTabPage3 As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents gcTariff As DevExpress.XtraGrid.GridControl
     Friend WithEvents CardView1 As DevExpress.XtraGrid.Views.Card.CardView
     Friend WithEvents GridColumn4 As DevExpress.XtraGrid.Columns.GridColumn
@@ -3338,25 +3340,75 @@ Partial Class LogisticOperationRegisterForm
     Friend WithEvents GridColumn27 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn64 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn65 As DevExpress.XtraGrid.Columns.GridColumn
-    Public WithEvents beTarifa As DevExpress.XtraEditors.ButtonEdit
-    Friend WithEvents LayoutControlItem17 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents GridColumn66 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemLookUpEdit10 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
-    Friend WithEvents GridColumn67 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemLookUpEdit11 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents gcContainerGroup As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn96 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn97 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents gcContainerDetail As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView4 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn74 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn75 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn76 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn23 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn24 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents gcChangeControlRelated As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView5 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn70 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn29 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn30 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit5 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents GridColumn31 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn32 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit6 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents GridColumn68 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemLookUpEdit12 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
-    Friend WithEvents cmsChangeControl As ContextMenuStrip
-    Friend WithEvents tsmiChangeControlWR2 As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents tsmiEntryJournalCreate As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents tsmiJournalEntryVoid As ToolStripMenuItem
-    Friend WithEvents tsmiChangeControlDelete As ToolStripMenuItem
-    Friend WithEvents GridColumn69 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn70 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn71 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents GridColumn72 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn33 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit7 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents GridColumn34 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit8 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents GridColumn66 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit10 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents GridColumn35 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn36 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn38 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn39 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn40 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn41 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn73 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents GridColumn56 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn58 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn59 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn71 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents gcServiceRelated As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn69 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents GridColumn67 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit11 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents GridColumn53 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents GridColumn52 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit3 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents GridColumn63 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit9 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents GridColumn8 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn9 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn28 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn72 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn42 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn44 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn55 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn60 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn61 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn62 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents tsmiInvoiceBillsCreate As ToolStripMenuItem
+    Friend WithEvents tsmiInvoiceBillsVoid As ToolStripMenuItem
 End Class

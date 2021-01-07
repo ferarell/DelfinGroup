@@ -31,6 +31,9 @@ Public Class LogisticOperationRegisterForm
     Private Sub LogisticOperationRegisterForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'NavBarGroup4.Visible = False
         ExpandAllGroups()
+        XtraTabControl2.SelectedTabPageIndex = 0
+        cmsServices.Enabled = False
+        cmsChangeControl.Enabled = False
         NavBarGroup4.Expanded = False
         tsSADA.Properties.ReadOnly = True
         tsIMO.Properties.ReadOnly = True
@@ -58,12 +61,16 @@ Public Class LogisticOperationRegisterForm
         ElseIf InternalCode >= 0 Then 'Edit Item
             SetItem()
         End If
-
         If dsOperationRelated.Tables(0).Rows.Count = 0 Then
             Return
         End If
         If dsOperationRelated.Tables(0).Rows(0)("CONS_CodEstado") > "001" Then
             GridView1.OptionsBehavior.ReadOnly = True
+        End If
+        If dsOperationRelated.Tables(0).Rows(0)("CONS_CodEstado") = "004" Then
+            'XtraTabControl2.TabPages(0).Enabled = False
+            GridView1.OptionsBehavior.ReadOnly = True
+            GridView5.OptionsBehavior.ReadOnly = True
         End If
 
     End Sub
@@ -424,11 +431,11 @@ Public Class LogisticOperationRegisterForm
         'vpInputs.SetValidationRule(Me.deDateTo, customValidationRule)
     End Sub
 
-    Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
+    Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs)
 
     End Sub
 
-    Private Sub GridView1_FocusedColumnChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedColumnChangedEventArgs) Handles GridView1.FocusedColumnChanged
+    Private Sub GridView1_FocusedColumnChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedColumnChangedEventArgs)
         'If e.FocusedColumn.FieldName = "TIPE_Codigo" Then
         '    LoadEntityDataList(GridView1.GetFocusedRowCellValue("TIPE_Codigo"), "RepositoryItemLookUpEdit3")
         'End If
@@ -733,6 +740,7 @@ Public Class LogisticOperationRegisterForm
         GridView5.SetFocusedRowCellValue("DOPE_Item", Nothing)
         GridView5.SetFocusedRowCellValue("DOPE_ItemChangeControl", GridView1.GetRowCellValue(GridView1.FocusedRowHandle, "DOPE_Item"))
         GridView5.MoveNextPage()
+        XtraTabControl2.SelectedTabPageIndex = 1
     End Sub
 
     Private Sub tsmiChangeControlWR2_Click(sender As Object, e As EventArgs) Handles tsmiChangeControlWR2.Click
@@ -762,12 +770,12 @@ Public Class LogisticOperationRegisterForm
         '    XtraMessageBox.Show("No se permite eliminar un servicio asociado a una tarifa.", "Error", MessageBoxButtons.OK)
         'End If
         If XtraMessageBox.Show("Está seguro de eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
-            Dim grid As GridControl = gcServiceRelated
-            Dim view As GridView = TryCast(grid.FocusedView, GridView)
-            view.DeleteSelectedRows()
+        Dim grid As GridControl = gcServiceRelated
+        Dim view As GridView = TryCast(grid.FocusedView, GridView)
+        view.DeleteSelectedRows()
     End Sub
 
-    Private Sub gcServiceRelated_Enter(sender As Object, e As EventArgs) Handles gcServiceRelated.Enter
+    Private Sub gcServiceRelated_Enter(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -779,17 +787,25 @@ Public Class LogisticOperationRegisterForm
     End Sub
 
     Private Sub gcServiceRelated_Click(sender As Object, e As EventArgs) Handles gcServiceRelated.Click
+        cmsServices.Enabled = False
+        If GridView1.FocusedRowHandle < 0 Then
+            Return
+        End If
         cmsServices.Enabled = True
         If GridView1.RowCount = 0 Then
             cmsServices.Enabled = False
         End If
         cmsServices.Items("tsmiChangeControlWR1").Enabled = True
-        If GridView1.GetFocusedRowCellValue("DOPE_DocProvVenta") Is Nothing Then
-            'cmsServices.Items("tsmiChangeControl").Enabled = False
+        If GridView1.GetFocusedRowCellValue("CONS_CodEstado") <> "001" Then
+            cmsServices.Items("tsmiServiceDelete").Enabled = False
         End If
     End Sub
 
-    Private Sub gcChangeControlRelated_Click(sender As Object, e As EventArgs) Handles gcChangeControlRelated.Click
+    Private Sub gcChangeControlRelated_Enter(sender As Object, e As EventArgs) Handles gcChangeControlRelated.Enter
+        cmsChangeControl.Enabled = False
+        If GridView5.FocusedRowHandle < 0 Then
+            Return
+        End If
         cmsChangeControl.Enabled = True
         If GridView5.RowCount = 0 Then
             cmsChangeControl.Enabled = False
@@ -886,7 +902,7 @@ Public Class LogisticOperationRegisterForm
         End If
     End Sub
 
-    Private Sub RepositoryItemLookUpEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles RepositoryItemLookUpEdit1.EditValueChanged
+    Private Sub RepositoryItemLookUpEdit1_EditValueChanged(sender As Object, e As EventArgs)
         'GridView1.SetFocusedRowCellValue("SERV_Tipo", DirectCast(DirectCast(sender, DevExpress.XtraEditors.LookUpEditBase).GetSelectedDataRow, System.Data.DataRowView).Row.ItemArray(2))
     End Sub
 

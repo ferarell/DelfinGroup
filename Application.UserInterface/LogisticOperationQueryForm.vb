@@ -96,30 +96,31 @@ Public Class LogisticOperationQueryForm
         If Not vpInputs.Validate Then
             Return
         End If
-        Dim dtSource As New DataTable
-        dtSource.Columns.Add("Checked", GetType(Boolean)).DefaultValue = False
+        Dim dtSource, dtRegistered, dtPending As New DataTable
         Dim sParams As String = ""
         sParams = IIf(lueEntity.EditValue Is Nothing, "NULL", lueEntity.EditValue)
         sParams += ", " & IIf(teOperationNumber.Text.Trim = "", "NULL", "'" & teOperationNumber.Text & "'")
-            sParams += ", " & IIf(teHBL.Text.Trim = "", "NULL", "'" & teHBL.Text & "'")
+        sParams += ", " & IIf(teHBL.Text.Trim = "", "NULL", "'" & teHBL.Text & "'")
         If teOperationNumber.Text.Trim = "" And teHBL.Text.Trim = "" Then
             sParams += ", '" & IIf(deDateFrom.EditValue = Nothing, "NULL", Format(deDateFrom.EditValue, "yyyyMMdd")) & "'"
             sParams += ", '" & IIf(deDateTo.EditValue = Nothing, "NULL", Format(deDateTo.EditValue, "yyyyMMdd")) & "'"
         End If
         gcRegistered.DataSource = Nothing
+        gcPending.DataSource = Nothing
         SplitContainerControl2.Collapsed = True
         dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticas " & sParams).Tables(0)
-        If dtSource.Rows.Count > 0 Then
-            If dtSource.Select("TipoConsulta=1").Length > 0 Then
-                gcRegistered.DataSource = dtSource.Select("TipoConsulta=1").CopyToDataTable
-            End If
-            If dtSource.Select("TipoConsulta=0").Length > 0 Then
-                gcPending.DataSource = dtSource.Select("TipoConsulta=0").CopyToDataTable
-            End If
+        dtSource.Columns.Add("Checked", GetType(Boolean)).DefaultValue = False
+        dtRegistered = dtSource.Select("TipoConsulta=1").CopyToDataTable
+        dtPending = dtSource.Select("TipoConsulta=0").CopyToDataTable
+        If dtRegistered.Rows.Count > 0 Then
+            gcRegistered.DataSource = dtRegistered
             GridView1.BestFitColumns()
-            GridView2.BestFitColumns()
-            ButtonEnabled(GridView1, 0)
         End If
+        If dtPending.Rows.Count > 0 Then
+            gcPending.DataSource = dtPending
+            GridView2.BestFitColumns()
+        End If
+        ButtonEnabled(GridView1, 0)
     End Sub
 
     Private Sub bbiExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiExport.ItemClick
@@ -155,7 +156,7 @@ Public Class LogisticOperationQueryForm
         If IsDBNull(oGridView.GetFocusedRowCellValue("COPE_HBL")) Then
             Return
         End If
-        If SplitContainerControl2.Collapsed Then
+        If SplitContainerControl2.Collapsed = True Then
             Return
         End If
         Dim OVForm As New VerticalViewerOVForm
@@ -197,7 +198,7 @@ Public Class LogisticOperationQueryForm
         bbiVoid.Enabled = False
         bbiExport.Enabled = False
         bbiSendMailTo.Enabled = False
-        bbiPreInvoicing.Enabled = False
+        'bbiPreInvoicing.Enabled = False
         tsShowRO.Enabled = False
         If RowHandle < 0 Or oGridView.RowCount = 0 Then
             Return
@@ -226,7 +227,7 @@ Public Class LogisticOperationQueryForm
         If GridView1.GetFocusedRowCellValue("CONS_CodEstado") <> "001" Then
             'bbiEdit.Enabled = False
             bbiVoid.Enabled = False
-            bbiPreInvoicing.Enabled = False
+            'bbiPreInvoicing.Enabled = False
             If GridView1.GetFocusedRowCellValue("CONS_CodEstado") = "004" Then
                 bbiSendMailTo.Enabled = False
             End If
@@ -275,6 +276,7 @@ Public Class LogisticOperationQueryForm
     End Sub
 
     Private Sub bbiPreInvoicing_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiPreInvoicing.ItemClick
+        Validate()
         If GridView1.RowCount = 0 Then
             Return
         End If
@@ -342,7 +344,7 @@ Public Class LogisticOperationQueryForm
             End If
             If SelectType = 0 Then
                 If oGridView.Name = "GridView1" Then
-                    If row("DocumentoSAP").ToString.Length = 0 Then
+                    If row("CONS_CodEstado") = "001" Then
                         row("Checked") = True
                     End If
                 Else
@@ -357,7 +359,7 @@ Public Class LogisticOperationQueryForm
                     row("Checked") = False
                 Else
                     If oGridView.Name = "GridView1" Then
-                        If row("DocumentoSAP").ToString.Length = 0 Then
+                        If row("CONS_CodEstado") = "001" Then
                             row("Checked") = True
                         End If
                     Else
@@ -382,6 +384,13 @@ Public Class LogisticOperationQueryForm
     Private Sub InvertirSelecciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InvertirSelecciónToolStripMenuItem.Click
         Dim oGridView As GridView = IIf(GridView1.IsFocusedView, GridView1, GridView2)
         SelectRowsByType(oGridView, 2)
+    End Sub
+
+    Private Sub RepositoryItemCheckEdit3_EditValueChanged(sender As Object, e As EventArgs) Handles RepositoryItemCheckEdit3.EditValueChanged
+        If GridView1.GetFocusedRowCellValue("CONS_CodEstado") <> "001" Then
+            GridView1.SetFocusedRowCellValue("Checked", False)
+            DevExpress.XtraEditors.XtraMessageBox.Show("Sólo puede pre-facturar una OP en estado Ingresada. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 
 End Class

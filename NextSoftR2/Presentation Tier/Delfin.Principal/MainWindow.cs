@@ -1509,6 +1509,7 @@ namespace Delfin.Principal
             TAR003_mview = null;
             TAR004_mview = null;
             TAR005_mview = null;
+            TAR006_mview = null;
             TAR007_mview = null;
             TAR008_mview = null;
             TAR009_mview = null;
@@ -1849,6 +1850,8 @@ namespace Delfin.Principal
 
             CAJ018_lview = null;
             CAJ018_presenter = null;
+
+            CAJ019_mview = null;
 
             OPE001_lview = null;
             OPE001_mview = null;
@@ -6677,6 +6680,38 @@ namespace Delfin.Principal
          }
       }
 
+
+        ApplicationForm.MailCargoNoticeForm CAJ019_mview;
+
+        private void CAJ019GestionAvisos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CAJ019_mview == null)
+                {
+                    CAJ019_mview = new ApplicationForm.MailCargoNoticeForm();
+                    CAJ019_mview.AppUser = ItemUsuario.USUA_CodUsr;
+                    CAJ019_mview.TopLevel = false;
+                    CAJ019_mview.Dock = DockStyle.Fill;
+                    CAJ019_mview.FormBorderStyle = FormBorderStyle.None;
+                    _pageView = new RadPageViewPage();
+                    CAJ019_mview.Parent = _pageView;
+                    _pageView.Controls.Add(CAJ019_mview);
+                    _pageView.Text = CAJ019_mview.Text;
+                    _pageView.Tag = ((System.Windows.Forms.ToolStripItem)(sender)).Tag;
+                    tabViews.Pages.Add(_pageView);
+                    CAJ019_mview.Show();
+                }
+                else
+                { tabViews.SelectedPage = _pageView; }
+            }
+            catch (Exception ex)
+            {
+                Dialogos.MostrarMensajeError(Text, "Ha Ocurrido un error al llamar la vista: Gestión de Avisos", ex);
+            }
+            tabViews.SelectedPage = _pageView;
+        }
+
         ApplicationForm.AccountingTransferForm FIN001_mview;
 
         private void FIN001TransferenciaContable_Click(object sender, EventArgs e)
@@ -6769,6 +6804,38 @@ namespace Delfin.Principal
             }
             tabViews.SelectedPage = _pageView;
         }
+
+        ApplicationForm.ReferencesTransferForm FIN004_mview;
+
+        private void FIN004SincronizarReferencias_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (FIN004_mview == null)
+                {
+                    FIN004_mview = new ApplicationForm.ReferencesTransferForm();
+                    FIN004_mview.AppUser = ItemUsuario.USUA_CodUsr;
+                    FIN004_mview.TopLevel = false;
+                    FIN004_mview.Dock = DockStyle.Fill;
+                    FIN004_mview.FormBorderStyle = FormBorderStyle.None;
+                    _pageView = new RadPageViewPage();
+                    FIN004_mview.Parent = _pageView;
+                    _pageView.Controls.Add(FIN004_mview);
+                    _pageView.Text = FIN004_mview.Text;
+                    _pageView.Tag = ((System.Windows.Forms.ToolStripItem)(sender)).Tag;
+                    tabViews.Pages.Add(_pageView);
+                    FIN004_mview.Show();
+                }
+                else
+                { tabViews.SelectedPage = _pageView; }
+            }
+            catch (Exception ex)
+            {
+                Dialogos.MostrarMensajeError(Text, "Ha Ocurrido un error al llamar la vista: Sincronizar Referencias", ex);
+            }
+            tabViews.SelectedPage = _pageView;
+        }
+
         #endregion
 
         #region [ Reportes - Finanzas ]
@@ -7466,6 +7533,38 @@ namespace Delfin.Principal
             tabViews.SelectedPage = _pageView;
         }
 
+        ApplicationForm.PackForm TAR006_mview;
+
+        private void TAR006ConceptosEquivalentes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (TAR006_mview == null)
+                {
+                    TAR006_mview = new ApplicationForm.PackForm();
+                    TAR006_mview.AppUser = ItemUsuario.USUA_CodUsr;
+                    TAR006_mview.TopLevel = false;
+                    TAR006_mview.Dock = DockStyle.Fill;
+                    TAR006_mview.FormBorderStyle = FormBorderStyle.None;
+                    //TAR005_mview.WindowState = FormWindowState.Maximized;
+                    _pageView = new RadPageViewPage();
+                    TAR006_mview.Parent = _pageView;
+                    _pageView.Controls.Add(TAR006_mview);
+                    _pageView.Text = TAR006_mview.Text;
+                    _pageView.Tag = ((System.Windows.Forms.ToolStripItem)(sender)).Tag;
+                    tabViews.Pages.Add(_pageView);
+                    TAR006_mview.Show();
+                }
+                else
+                { tabViews.SelectedPage = _pageView; }
+            }
+            catch (Exception ex)
+            {
+                Dialogos.MostrarMensajeError(Text, "Ha Ocurrido un error al llamar la vista: Equivalencia Externa", ex);
+            }
+            tabViews.SelectedPage = _pageView;
+        }
+
         ApplicationForm.ConditionForm TAR007_mview;
 
         private void TAR007Condiciones_Click(object sender, EventArgs e)
@@ -7652,6 +7751,9 @@ namespace Delfin.Principal
                 case "TAR005":
                     TAR005_mview = null;
                     break;
+                case "TAR006":
+                    TAR006_mview = null;
+                    break;
                 case "TAR007":
                     TAR007_mview = null;
                     break;
@@ -7675,6 +7777,9 @@ namespace Delfin.Principal
                     break;
                 case "FIN003":
                     FIN003_mview = null;
+                    break;
+                case "FIN004":
+                    FIN004_mview = null;
                     break;
                 case "OPE011":
                   OPE011_mview = null;
@@ -8130,6 +8235,9 @@ namespace Delfin.Principal
               case "CAJ018":
                   CAJ018_lview = null;
                   CAJ018_presenter = null;
+                  break;
+              case "CAJ019":
+                  CAJ019_mview = null;
                   break;
               case "OPE001":
                   OPE001_lview = null;

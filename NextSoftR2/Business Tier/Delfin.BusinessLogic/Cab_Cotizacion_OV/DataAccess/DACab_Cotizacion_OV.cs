@@ -162,6 +162,7 @@ namespace Delfin.BusinessLogic
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pchrDOOV_HBL", item.DOOV_HBL, SqlDbType.VarChar, 50, ParameterDirection.Input);
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pchrDOOV_MBL", item.DOOV_MBL, SqlDbType.VarChar, 50, ParameterDirection.Input);
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pvchDDOV_NroBooking", item.DDOV_NroBooking, SqlDbType.VarChar, 50, ParameterDirection.Input);
+                    DataAccessEnterpriseSQL.DAAgregarParametro("@pdtmDDOV_FecRecBooking", item.DDOV_FecRecBooking, SqlDbType.DateTime, 8, ParameterDirection.Input);
 
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pdtmDDOV_FecEmbarque", item.DDOV_FecEmbarque, SqlDbType.DateTime, 8, ParameterDirection.Input);
 
@@ -283,6 +284,7 @@ namespace Delfin.BusinessLogic
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pchrDOOV_HBL", item.DOOV_HBL, SqlDbType.VarChar, 50, ParameterDirection.Input);
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pchrDOOV_MBL", item.DOOV_MBL, SqlDbType.VarChar, 50, ParameterDirection.Input);
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pvchDDOV_NroBooking", item.DDOV_NroBooking, SqlDbType.VarChar, 50, ParameterDirection.Input);
+                    DataAccessEnterpriseSQL.DAAgregarParametro("@pdtmDDOV_FecRecBooking", item.DDOV_FecRecBooking, SqlDbType.DateTime, 8, ParameterDirection.Input); 
 
                     DataAccessEnterpriseSQL.DAAgregarParametro("@pvchDOOV_CodReferencia", item.DOOV_CodReferencia, SqlDbType.Char, 50, ParameterDirection.Input);
 

@@ -479,6 +479,8 @@ namespace Delfin.BusinessLogic
                DataAccessEnterpriseSQL.DAAgregarParametro("@pbitCCOT_DiferenciaFlete", Item.CCOT_DiferenciaFlete, SqlDbType.Bit, 1, ParameterDirection.Input);
                DataAccessEnterpriseSQL.DAAgregarParametro("@pbitCCOT_DiferenciaFleteRecup", Item.CCOT_DiferenciaFleteRecup, SqlDbType.Bit, 1, ParameterDirection.Input);
                DataAccessEnterpriseSQL.DAAgregarParametro("@pchrDDOV_NroBooking", Item.DDOV_NroBooking, SqlDbType.VarChar, 50, ParameterDirection.Input);
+               //DataAccessEnterpriseSQL.DAAgregarParametro("@pdtmDDOV_FecRecBooking", item.DDOV_FecRecBooking, SqlDbType.DateTime, 8, ParameterDirection.Input);
+
                DataAccessEnterpriseSQL.DAAgregarParametro("@pvchDDOV_DescShipper", Item.DDOV_DescShipper, SqlDbType.VarChar, 1024, ParameterDirection.Input);
                DataAccessEnterpriseSQL.DAAgregarParametro("@pvchDDOV_DescConsignee", Item.DDOV_DescConsignee, SqlDbType.VarChar, 1024, ParameterDirection.Input);
                DataAccessEnterpriseSQL.DAAgregarParametro("@pvchDDOV_DescNotify", Item.DDOV_DescNotify, SqlDbType.VarChar, 1024, ParameterDirection.Input);

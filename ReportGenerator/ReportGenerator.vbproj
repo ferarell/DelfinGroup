@@ -154,7 +154,7 @@
     </Content>
     <Content Include="Reports\AvisoArriboMaritimoLcl.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>AvisoArriboMaritimoLcl.vb</LastGenOutput>
+      <LastGenOutput>AvisoArriboMaritimoLcl1.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Reports\AvisoArriboMaritimoFcl_CLARI.rpt">

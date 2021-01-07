@@ -19,9 +19,8 @@ Partial Class LayoutForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LayoutForm))
-        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.bmActions = New DevExpress.XtraBars.BarManager()
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
@@ -48,7 +47,7 @@ Partial Class LayoutForm
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
         Me.ucAuditPanel = New ApplicationForm.ucAuditPanel()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
@@ -255,35 +254,31 @@ Partial Class LayoutForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BarDockControl1.Size = New System.Drawing.Size(1015, 56)
+        Me.BarDockControl1.Size = New System.Drawing.Size(870, 47)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 607)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 494)
         Me.BarDockControl2.Manager = Me.bmActions
-        Me.BarDockControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BarDockControl2.Size = New System.Drawing.Size(1015, 37)
+        Me.BarDockControl2.Size = New System.Drawing.Size(870, 29)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 56)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 551)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 447)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(1015, 56)
+        Me.BarDockControl4.Location = New System.Drawing.Point(870, 47)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 551)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 447)
         '
         'BarButtonItem1
         '
@@ -363,10 +358,10 @@ Partial Class LayoutForm
         Me.ucAuditPanel.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ucAuditPanel.FechaCreacion = New Date(CType(0, Long))
         Me.ucAuditPanel.FechaModificacion = New Date(CType(0, Long))
-        Me.ucAuditPanel.Location = New System.Drawing.Point(0, 561)
-        Me.ucAuditPanel.Margin = New System.Windows.Forms.Padding(5)
+        Me.ucAuditPanel.Location = New System.Drawing.Point(0, 457)
+        Me.ucAuditPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ucAuditPanel.Name = "ucAuditPanel"
-        Me.ucAuditPanel.Size = New System.Drawing.Size(1015, 46)
+        Me.ucAuditPanel.Size = New System.Drawing.Size(870, 37)
         Me.ucAuditPanel.TabIndex = 4
         Me.ucAuditPanel.UsuarioCreacion = Nothing
         Me.ucAuditPanel.UsuarioModificacion = Nothing
@@ -375,8 +370,7 @@ Partial Class LayoutForm
         '
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.None
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 56)
-        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.SplitContainer1)
@@ -384,8 +378,8 @@ Partial Class LayoutForm
         Me.SplitContainerControl1.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.gcMainDataLayout)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(1015, 505)
-        Me.SplitContainerControl1.SplitterPosition = 489
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(870, 410)
+        Me.SplitContainerControl1.SplitterPosition = 420
         Me.SplitContainerControl1.TabIndex = 5
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
         '
@@ -393,7 +387,6 @@ Partial Class LayoutForm
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -415,142 +408,133 @@ Partial Class LayoutForm
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(485, 501)
-        Me.SplitContainer1.SplitterDistance = 170
-        Me.SplitContainer1.SplitterWidth = 5
+        Me.SplitContainer1.Size = New System.Drawing.Size(416, 406)
+        Me.SplitContainer1.SplitterDistance = 141
         Me.SplitContainer1.TabIndex = 80
         '
         'lueUnidadNegocio
         '
-        Me.lueUnidadNegocio.Location = New System.Drawing.Point(145, 46)
+        Me.lueUnidadNegocio.Location = New System.Drawing.Point(125, 37)
         Me.lueUnidadNegocio.Margin = New System.Windows.Forms.Padding(2)
         Me.lueUnidadNegocio.Name = "lueUnidadNegocio"
         Me.lueUnidadNegocio.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueUnidadNegocio.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueUnidadNegocio.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IdBusinessUnit", "ID", 15, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BusinessUnitCode", "Codigo", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BusinessUnitDescription", "Descripcion")})
         Me.lueUnidadNegocio.Properties.NullText = ""
-        Me.lueUnidadNegocio.Size = New System.Drawing.Size(265, 22)
-        Me.lueUnidadNegocio.TabIndex = 101
+        Me.lueUnidadNegocio.Size = New System.Drawing.Size(227, 20)
+        Me.lueUnidadNegocio.TabIndex = 1
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(49, 49)
-        Me.LabelControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl3.Location = New System.Drawing.Point(45, 40)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(88, 16)
+        Me.LabelControl3.Size = New System.Drawing.Size(74, 13)
         Me.LabelControl3.TabIndex = 100
         Me.LabelControl3.Text = "Unidad Negocio"
         '
         'lueConcepto
         '
-        Me.lueConcepto.Location = New System.Drawing.Point(143, 199)
+        Me.lueConcepto.Location = New System.Drawing.Point(123, 162)
         Me.lueConcepto.Margin = New System.Windows.Forms.Padding(2)
         Me.lueConcepto.Name = "lueConcepto"
         Me.lueConcepto.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueConcepto.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueConcepto.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IdConcept", "ID", 15, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ConceptCode", "Codigo", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ConceptDescription", "Descripción")})
         Me.lueConcepto.Properties.NullText = ""
-        Me.lueConcepto.Size = New System.Drawing.Size(265, 22)
+        Me.lueConcepto.Size = New System.Drawing.Size(227, 20)
         Me.lueConcepto.TabIndex = 99
         Me.lueConcepto.Visible = False
         '
         'lueCondicion
         '
-        Me.lueCondicion.Location = New System.Drawing.Point(143, 75)
+        Me.lueCondicion.Location = New System.Drawing.Point(125, 61)
         Me.lueCondicion.Margin = New System.Windows.Forms.Padding(2)
         Me.lueCondicion.Name = "lueCondicion"
         Me.lueCondicion.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueCondicion.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueCondicion.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IdCondition", "ID", 15, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ConditionCode", "Codigo", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ConditionDescription", "Descripción")})
         Me.lueCondicion.Properties.NullText = ""
-        Me.lueCondicion.Size = New System.Drawing.Size(265, 22)
-        Me.lueCondicion.TabIndex = 98
+        Me.lueCondicion.Size = New System.Drawing.Size(227, 20)
+        Me.lueCondicion.TabIndex = 2
         '
         'luePack
         '
-        Me.luePack.Location = New System.Drawing.Point(143, 136)
+        Me.luePack.Location = New System.Drawing.Point(125, 85)
         Me.luePack.Margin = New System.Windows.Forms.Padding(2)
         Me.luePack.Name = "luePack"
         Me.luePack.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.luePack.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.luePack.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IdPack", "ID", 15, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PackCode", "Codigo", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PackDescription", "Descripción")})
         Me.luePack.Properties.NullText = ""
-        Me.luePack.Size = New System.Drawing.Size(265, 22)
-        Me.luePack.TabIndex = 97
+        Me.luePack.Size = New System.Drawing.Size(227, 20)
+        Me.luePack.TabIndex = 3
         '
         'LabelControl8
         '
-        Me.LabelControl8.Location = New System.Drawing.Point(82, 80)
-        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl8.Location = New System.Drawing.Point(73, 65)
         Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(55, 16)
+        Me.LabelControl8.Size = New System.Drawing.Size(46, 13)
         Me.LabelControl8.TabIndex = 95
         Me.LabelControl8.Text = "Condicion"
         '
         'LabelControl4
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(81, 202)
-        Me.LabelControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl4.Location = New System.Drawing.Point(69, 164)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(53, 16)
+        Me.LabelControl4.Size = New System.Drawing.Size(46, 13)
         Me.LabelControl4.TabIndex = 92
         Me.LabelControl4.Text = "Concepto"
         Me.LabelControl4.Visible = False
         '
         'LabelControl7
         '
-        Me.LabelControl7.Location = New System.Drawing.Point(97, 140)
-        Me.LabelControl7.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl7.Location = New System.Drawing.Point(19, 88)
         Me.LabelControl7.Name = "LabelControl7"
-        Me.LabelControl7.Size = New System.Drawing.Size(27, 16)
+        Me.LabelControl7.Size = New System.Drawing.Size(100, 13)
         Me.LabelControl7.TabIndex = 91
-        Me.LabelControl7.Text = "Pack"
+        Me.LabelControl7.Text = "Equivalencia Externa"
         '
         'lueEstado
         '
-        Me.lueEstado.Location = New System.Drawing.Point(143, 105)
+        Me.lueEstado.Location = New System.Drawing.Point(125, 109)
         Me.lueEstado.Margin = New System.Windows.Forms.Padding(2)
         Me.lueEstado.Name = "lueEstado"
         Me.lueEstado.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueEstado.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueEstado.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TIPO_CodTipo", "Codigo", 15, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TIPO_Desc1", "Descripcion")})
         Me.lueEstado.Properties.NullText = ""
-        Me.lueEstado.Size = New System.Drawing.Size(265, 22)
-        Me.lueEstado.TabIndex = 89
+        Me.lueEstado.Size = New System.Drawing.Size(227, 20)
+        Me.lueEstado.TabIndex = 4
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(97, 108)
-        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl2.Location = New System.Drawing.Point(86, 112)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(38, 16)
+        Me.LabelControl2.Size = New System.Drawing.Size(33, 13)
         Me.LabelControl2.TabIndex = 83
         Me.LabelControl2.Text = "Estado"
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(69, 21)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl1.Location = New System.Drawing.Point(65, 17)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(65, 16)
+        Me.LabelControl1.Size = New System.Drawing.Size(54, 13)
         Me.LabelControl1.TabIndex = 82
         Me.LabelControl1.Text = "Descripción"
         '
         'txtDescripcion
         '
-        Me.txtDescripcion.Location = New System.Drawing.Point(146, 17)
-        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtDescripcion.Location = New System.Drawing.Point(125, 14)
         Me.txtDescripcion.MenuManager = Me.bmActions
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Properties.MaxLength = 250
-        Me.txtDescripcion.Size = New System.Drawing.Size(264, 22)
-        Me.txtDescripcion.TabIndex = 81
+        Me.txtDescripcion.Size = New System.Drawing.Size(226, 20)
+        Me.txtDescripcion.TabIndex = 0
         '
         'SplitContainer2
         '
         Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer2.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainer2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SplitContainer2.Name = "SplitContainer2"
         Me.SplitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -561,9 +545,8 @@ Partial Class LayoutForm
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.gcAtributos)
-        Me.SplitContainer2.Size = New System.Drawing.Size(485, 326)
-        Me.SplitContainer2.SplitterDistance = 88
-        Me.SplitContainer2.SplitterWidth = 5
+        Me.SplitContainer2.Size = New System.Drawing.Size(416, 261)
+        Me.SplitContainer2.SplitterDistance = 70
         Me.SplitContainer2.TabIndex = 0
         '
         'GroupControl1
@@ -575,24 +558,22 @@ Partial Class LayoutForm
         Me.GroupControl1.Controls.Add(Me.LabelControl9)
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
-        Me.GroupControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(485, 88)
+        Me.GroupControl1.Size = New System.Drawing.Size(416, 70)
         Me.GroupControl1.TabIndex = 0
         Me.GroupControl1.Text = "AGREGAR ATRIBUTOS"
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(383, 33)
-        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnAgregar.Location = New System.Drawing.Point(328, 27)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(87, 28)
+        Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
         Me.btnAgregar.TabIndex = 94
         Me.btnAgregar.Text = "Agregar"
         '
         'lueValor
         '
-        Me.lueValor.Location = New System.Drawing.Point(100, 60)
+        Me.lueValor.Location = New System.Drawing.Point(86, 49)
         Me.lueValor.Margin = New System.Windows.Forms.Padding(2)
         Me.lueValor.Name = "lueValor"
         Me.lueValor.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
@@ -600,21 +581,20 @@ Partial Class LayoutForm
         Me.lueValor.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Codigo", "Codigo", 15, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Descripcion", "Descripcion")})
         Me.lueValor.Properties.NullText = ""
         Me.lueValor.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoComplete
-        Me.lueValor.Size = New System.Drawing.Size(265, 22)
+        Me.lueValor.Size = New System.Drawing.Size(227, 20)
         Me.lueValor.TabIndex = 93
         '
         'LabelControl10
         '
-        Me.LabelControl10.Location = New System.Drawing.Point(22, 64)
-        Me.LabelControl10.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl10.Location = New System.Drawing.Point(19, 52)
         Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(40, 16)
+        Me.LabelControl10.Size = New System.Drawing.Size(33, 13)
         Me.LabelControl10.TabIndex = 92
         Me.LabelControl10.Text = "VALOR"
         '
         'lueAtributo
         '
-        Me.lueAtributo.Location = New System.Drawing.Point(100, 31)
+        Me.lueAtributo.Location = New System.Drawing.Point(86, 25)
         Me.lueAtributo.Margin = New System.Windows.Forms.Padding(2)
         Me.lueAtributo.Name = "lueAtributo"
         Me.lueAtributo.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
@@ -622,36 +602,32 @@ Partial Class LayoutForm
         Me.lueAtributo.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("IdAttribute", "IdAttribute", 15, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AttributeCode", "CODIGO", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AttributeDescription", "DESCRIPCION")})
         Me.lueAtributo.Properties.NullText = ""
         Me.lueAtributo.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoComplete
-        Me.lueAtributo.Size = New System.Drawing.Size(265, 22)
+        Me.lueAtributo.Size = New System.Drawing.Size(227, 20)
         Me.lueAtributo.TabIndex = 91
         '
         'LabelControl9
         '
-        Me.LabelControl9.Location = New System.Drawing.Point(22, 34)
-        Me.LabelControl9.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LabelControl9.Location = New System.Drawing.Point(19, 28)
         Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(60, 16)
+        Me.LabelControl9.Size = New System.Drawing.Size(51, 13)
         Me.LabelControl9.TabIndex = 90
         Me.LabelControl9.Text = "ATRIBUTO"
         '
         'gcAtributos
         '
         Me.gcAtributos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcAtributos.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gcAtributos.Location = New System.Drawing.Point(0, 0)
         Me.gcAtributos.MainView = Me.GridView2
-        Me.gcAtributos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gcAtributos.MenuManager = Me.bmActions
         Me.gcAtributos.Name = "gcAtributos"
         Me.gcAtributos.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rilueAtributo})
-        Me.gcAtributos.Size = New System.Drawing.Size(485, 233)
+        Me.gcAtributos.Size = New System.Drawing.Size(416, 187)
         Me.gcAtributos.TabIndex = 0
         Me.gcAtributos.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
         'GridView2
         '
         Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn17, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15, Me.GridColumn16})
-        Me.GridView2.DetailHeight = 431
         Me.GridView2.GridControl = Me.gcAtributos
         Me.GridView2.Name = "GridView2"
         '
@@ -659,28 +635,22 @@ Partial Class LayoutForm
         '
         Me.GridColumn9.Caption = "IdLayoutAttribute"
         Me.GridColumn9.FieldName = "IdLayoutAttribute"
-        Me.GridColumn9.MinWidth = 23
         Me.GridColumn9.Name = "GridColumn9"
-        Me.GridColumn9.Width = 87
         '
         'GridColumn10
         '
         Me.GridColumn10.Caption = "IdLayout"
         Me.GridColumn10.FieldName = "IdLayout"
-        Me.GridColumn10.MinWidth = 23
         Me.GridColumn10.Name = "GridColumn10"
-        Me.GridColumn10.Width = 87
         '
         'GridColumn11
         '
         Me.GridColumn11.Caption = "ATRIBUTO"
         Me.GridColumn11.ColumnEdit = Me.rilueAtributo
         Me.GridColumn11.FieldName = "IdAttribute"
-        Me.GridColumn11.MinWidth = 23
         Me.GridColumn11.Name = "GridColumn11"
         Me.GridColumn11.Visible = True
         Me.GridColumn11.VisibleIndex = 0
-        Me.GridColumn11.Width = 87
         '
         'rilueAtributo
         '
@@ -694,53 +664,41 @@ Partial Class LayoutForm
         '
         Me.GridColumn12.Caption = "VALOR"
         Me.GridColumn12.FieldName = "Value"
-        Me.GridColumn12.MinWidth = 23
         Me.GridColumn12.Name = "GridColumn12"
         Me.GridColumn12.Visible = True
         Me.GridColumn12.VisibleIndex = 1
-        Me.GridColumn12.Width = 87
         '
         'GridColumn17
         '
         Me.GridColumn17.Caption = "DESCRIPCION"
         Me.GridColumn17.FieldName = "AttributeDescription"
-        Me.GridColumn17.MinWidth = 23
         Me.GridColumn17.Name = "GridColumn17"
         Me.GridColumn17.Visible = True
         Me.GridColumn17.VisibleIndex = 2
-        Me.GridColumn17.Width = 87
         '
         'GridColumn13
         '
         Me.GridColumn13.Caption = "UserCreate"
         Me.GridColumn13.FieldName = "UserCreate"
-        Me.GridColumn13.MinWidth = 23
         Me.GridColumn13.Name = "GridColumn13"
-        Me.GridColumn13.Width = 87
         '
         'GridColumn14
         '
         Me.GridColumn14.Caption = "DateCreate"
         Me.GridColumn14.FieldName = "DateCreate"
-        Me.GridColumn14.MinWidth = 23
         Me.GridColumn14.Name = "GridColumn14"
-        Me.GridColumn14.Width = 87
         '
         'GridColumn15
         '
         Me.GridColumn15.Caption = "UserUpdate"
         Me.GridColumn15.FieldName = "UserUpdate"
-        Me.GridColumn15.MinWidth = 23
         Me.GridColumn15.Name = "GridColumn15"
-        Me.GridColumn15.Width = 87
         '
         'GridColumn16
         '
         Me.GridColumn16.Caption = "DateUpdate"
         Me.GridColumn16.FieldName = "DateUpdate"
-        Me.GridColumn16.MinWidth = 23
         Me.GridColumn16.Name = "GridColumn16"
-        Me.GridColumn16.Width = 87
         '
         'gcMainDataLayout
         '
@@ -750,13 +708,11 @@ Partial Class LayoutForm
         Me.gcMainDataLayout.EmbeddedNavigator.Buttons.Edit.Visible = False
         Me.gcMainDataLayout.EmbeddedNavigator.Buttons.EndEdit.Visible = False
         Me.gcMainDataLayout.EmbeddedNavigator.Buttons.Remove.Visible = False
-        Me.gcMainDataLayout.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gcMainDataLayout.Location = New System.Drawing.Point(0, 0)
         Me.gcMainDataLayout.MainView = Me.GridView1
-        Me.gcMainDataLayout.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gcMainDataLayout.Name = "gcMainDataLayout"
         Me.gcMainDataLayout.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckedComboBoxEdit1, Me.RepositoryItemCheckEdit1})
-        Me.gcMainDataLayout.Size = New System.Drawing.Size(515, 501)
+        Me.gcMainDataLayout.Size = New System.Drawing.Size(441, 406)
         Me.gcMainDataLayout.TabIndex = 6
         Me.gcMainDataLayout.UseEmbeddedNavigator = True
         Me.gcMainDataLayout.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.LayoutView1, Me.CardView1})
@@ -764,7 +720,6 @@ Partial Class LayoutForm
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn5, Me.GridColumn4, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8})
-        Me.GridView1.DetailHeight = 431
         Me.GridView1.GridControl = Me.gcMainDataLayout
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
@@ -776,73 +731,57 @@ Partial Class LayoutForm
         '
         Me.GridColumn1.Caption = "ID"
         Me.GridColumn1.FieldName = "IdLayout"
-        Me.GridColumn1.MinWidth = 23
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.OptionsColumn.ReadOnly = True
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 0
-        Me.GridColumn1.Width = 87
         '
         'GridColumn2
         '
         Me.GridColumn2.Caption = "CODIGO"
         Me.GridColumn2.FieldName = "LayoutCode"
-        Me.GridColumn2.MinWidth = 23
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.OptionsColumn.ReadOnly = True
-        Me.GridColumn2.Width = 87
         '
         'GridColumn3
         '
         Me.GridColumn3.Caption = "DESCRIPCION"
         Me.GridColumn3.FieldName = "LayoutDescription"
-        Me.GridColumn3.MinWidth = 23
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.OptionsColumn.ReadOnly = True
         Me.GridColumn3.Visible = True
         Me.GridColumn3.VisibleIndex = 1
-        Me.GridColumn3.Width = 87
         '
         'GridColumn5
         '
         Me.GridColumn5.Caption = "ESTADO"
         Me.GridColumn5.FieldName = "LayoutStatus"
-        Me.GridColumn5.MinWidth = 23
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 2
-        Me.GridColumn5.Width = 87
         '
         'GridColumn4
         '
         Me.GridColumn4.FieldName = "UserCreate"
-        Me.GridColumn4.MinWidth = 23
         Me.GridColumn4.Name = "GridColumn4"
-        Me.GridColumn4.Width = 87
         '
         'GridColumn6
         '
         Me.GridColumn6.Caption = "GridColumn6"
         Me.GridColumn6.FieldName = "DateCreate"
-        Me.GridColumn6.MinWidth = 23
         Me.GridColumn6.Name = "GridColumn6"
-        Me.GridColumn6.Width = 87
         '
         'GridColumn7
         '
         Me.GridColumn7.Caption = "GridColumn7"
         Me.GridColumn7.FieldName = "UserUpdate"
-        Me.GridColumn7.MinWidth = 23
         Me.GridColumn7.Name = "GridColumn7"
-        Me.GridColumn7.Width = 87
         '
         'GridColumn8
         '
         Me.GridColumn8.Caption = "GridColumn8"
         Me.GridColumn8.FieldName = "DateUpdate"
-        Me.GridColumn8.MinWidth = 23
         Me.GridColumn8.Name = "GridColumn8"
-        Me.GridColumn8.Width = 87
         '
         'RepositoryItemCheckedComboBoxEdit1
         '
@@ -859,7 +798,6 @@ Partial Class LayoutForm
         '
         'LayoutView1
         '
-        Me.LayoutView1.DetailHeight = 431
         Me.LayoutView1.GridControl = Me.gcMainDataLayout
         Me.LayoutView1.Name = "LayoutView1"
         Me.LayoutView1.OptionsBehavior.Editable = False
@@ -873,8 +811,6 @@ Partial Class LayoutForm
         '
         'CardView1
         '
-        Me.CardView1.CardWidth = 233
-        Me.CardView1.DetailHeight = 431
         Me.CardView1.GridControl = Me.gcMainDataLayout
         Me.CardView1.Name = "CardView1"
         Me.CardView1.OptionsBehavior.Editable = False
@@ -924,16 +860,15 @@ Partial Class LayoutForm
         '
         'LayoutForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1015, 644)
+        Me.ClientSize = New System.Drawing.Size(870, 523)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.Controls.Add(Me.ucAuditPanel)
         Me.Controls.Add(Me.BarDockControl3)
         Me.Controls.Add(Me.BarDockControl4)
         Me.Controls.Add(Me.BarDockControl2)
         Me.Controls.Add(Me.BarDockControl1)
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "LayoutForm"
         Me.Text = "Plantillas"
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()

@@ -273,7 +273,7 @@ namespace Delfin.Principal
             { drHeader["CONS_CodCRG"] = "002"; }
             drHeader["CONS_TabCRG"] = "CRG";
             drHeader["CONS_TabLNG"] = "LNG";
-            drHeader["CONS_CodLNG"] = cmbCONS_CodLNG.SelectedValue;
+            drHeader["CONS_CodLNG"] = "003";
             drHeader["CONS_TabRGM"] = "RGM";
             drHeader["CONS_CodRGM"] = cmbCONS_CodRGM.SelectedValue;
             drHeader["CONS_TabVIA"] = "VIA";
@@ -665,6 +665,7 @@ namespace Delfin.Principal
                DOOV_HBL.Text = null;
                DOOV_MBL.Text = null;
                txtDDOV_NroBooking.Text = null;
+               DDOV_FecRecBooking.NSFecha = null;
                //TIPO_CodDTM.TiposSelectedValue = null;
                txaENTC_CodDepTemporal.ClearValue();
                chkDDOV_HBLNieto.Checked = false;
@@ -1006,6 +1007,7 @@ namespace Delfin.Principal
                Presenter.Item.DOOV_HBL = DOOV_HBL.Text;
                Presenter.Item.DOOV_MBL = DOOV_MBL.Text;
                Presenter.Item.DDOV_NroBooking = txtDDOV_NroBooking.Text;
+               Presenter.Item.DDOV_FecRecBooking = DDOV_FecRecBooking.NSFecha;
                //if (TIPO_CodDTM.TiposSelectedItem != null)
                //{
                //   Presenter.Item.TIPO_TabDTM = TIPO_CodDTM.TiposSelectedItem.TIPO_CodTabla;
@@ -1016,7 +1018,7 @@ namespace Delfin.Principal
                //   Presenter.Item.TIPO_TabDTM = null;
                //   Presenter.Item.TIPO_CodDTM = null;
                //}
-               if (txaENTC_CodDepTemporal.Value != null)
+                    if (txaENTC_CodDepTemporal.Value != null)
                { Presenter.Item.ENTC_CodDepTemporal = txaENTC_CodDepTemporal.Value.ENTC_Codigo; }
                else
                { Presenter.Item.ENTC_CodDepTemporal = null; }
@@ -1203,6 +1205,7 @@ namespace Delfin.Principal
                DOOV_HBL.Text = Presenter.Item.DOOV_HBL;
                DOOV_MBL.Text = Presenter.Item.DOOV_MBL;
                txtDDOV_NroBooking.Text = Presenter.Item.DDOV_NroBooking;
+               DDOV_FecRecBooking.NSFecha = Presenter.Item.DDOV_FecRecBooking;
                //TIPO_CodDTM.TiposSelectedValue = Presenter.Item.TIPO_CodDTM;
                if (Presenter.Item.ENTC_CodDepTemporal.HasValue)
                { txaENTC_CodDepTemporal.SetValue(Presenter.Item.ENTC_CodDepTemporal.Value); }
@@ -1458,6 +1461,7 @@ namespace Delfin.Principal
                DOOV_Cntr.Enabled = EnabledDatosDocumento;
                DOOV_MBL.Enabled = EnabledDatosDocumento;
                txtDDOV_NroBooking.Enabled = EnabledDatosDocumento;
+               DDOV_FecRecBooking.Enabled = EnabledDatosDocumento;
 
                chkDDOV_HBLNieto.Enabled = EnabledDatosDocumento;
 

@@ -2,6 +2,7 @@
 Imports DevExpress.XtraEditors.DXErrorProvider
 Imports System.Data
 Imports System.Windows.Forms
+Imports DevExpress.XtraEditors
 
 Public Class ResultadoOperativoV3Form
     Dim oAppService As New AppService.DelfinServiceClient
@@ -24,6 +25,12 @@ Public Class ResultadoOperativoV3Form
         Dim FecFin As String = Format(LastDayOfMonth(FecIni), "yyyy-MM-dd")
         sPeriodo = Format(seFiscalPeriod.EditValue, "00")
         dTeus = 0
+        Dim dtTipoCambio As New DataTable
+        dtTipoCambio = oAppService.ExecuteSQL("SELECT TIPC_Venta FROM NextSoft.dbo.TiposCambio WHERE TIPC_Fecha='" & Format(Now, "yyyyMMdd") & "'").Tables(0)
+        If dtTipoCambio.Rows.Count = 0 Then
+            XtraMessageBox.Show("No existe tipo de cambio del día, por favor coordine con Contabilidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
         Try
             'Impo FCL
             ProcesoImpoFCL("EXEC Integrador.dbo.paResultadoOperativo 'RGM', '001', 'FCL', '" & FecIni & "', '" & FecFin & "'", "Impo FCL")
@@ -57,7 +64,9 @@ Public Class ResultadoOperativoV3Form
     End Sub
 
     Private Sub ProcesoImpoFCL(CmdStr As String, PrcTxt As String)
-        dsSource.Tables.Clear()
+        If dsSource IsNot Nothing Then
+            dsSource.Tables.Clear()
+        End If
         SplashScreenManager.Default.SetWaitFormDescription("Procesando " & PrcTxt & "...")
         Try
             dsSource = oAppService.ExecuteSQL(CmdStr)
@@ -72,7 +81,9 @@ Public Class ResultadoOperativoV3Form
     End Sub
 
     Private Sub ProcesoImpoLCL(CmdStr As String, PrcTxt As String)
-        dsSource.Tables.Clear()
+        If dsSource IsNot Nothing Then
+            dsSource.Tables.Clear()
+        End If
         SplashScreenManager.Default.SetWaitFormDescription("Procesando " & PrcTxt & "...")
         Try
             dsSource = oAppService.ExecuteSQL(CmdStr)
@@ -87,7 +98,9 @@ Public Class ResultadoOperativoV3Form
     End Sub
 
     Private Sub ProcesoExpoFCL(CmdStr As String, PrcTxt As String)
-        dsSource.Tables.Clear()
+        If dsSource IsNot Nothing Then
+            dsSource.Tables.Clear()
+        End If
         SplashScreenManager.Default.SetWaitFormDescription("Procesando " & PrcTxt & "...")
         Try
             dsSource = oAppService.ExecuteSQL(CmdStr)
@@ -102,7 +115,9 @@ Public Class ResultadoOperativoV3Form
     End Sub
 
     Private Sub ProcesoExpoLCL(CmdStr As String, PrcTxt As String)
-        dsSource.Tables.Clear()
+        If dsSource IsNot Nothing Then
+            dsSource.Tables.Clear()
+        End If
         SplashScreenManager.Default.SetWaitFormDescription("Procesando " & PrcTxt & "...")
         Try
             dsSource = oAppService.ExecuteSQL(CmdStr)
@@ -118,7 +133,9 @@ Public Class ResultadoOperativoV3Form
 
     Private Sub ProcesoGastos(CmdStr As String, PrcTxt As String)
         Dim cia As String = Strings.Right(PrcTxt, 2).ToLower
-        dsSource.Tables.Clear()
+        If dsSource IsNot Nothing Then
+            dsSource.Tables.Clear()
+        End If
         SplashScreenManager.Default.SetWaitFormDescription("Procesando " & PrcTxt & "...")
         Try
             dsSource = oAppService.ExecuteSQL(CmdStr)
@@ -144,7 +161,9 @@ Public Class ResultadoOperativoV3Form
 
     Private Sub ProcesoIngresos(CmdStr As String, PrcTxt As String)
         Dim cia As String = Strings.Right(PrcTxt, 2).ToLower
-        dsSource.Tables.Clear()
+        If dsSource IsNot Nothing Then
+            dsSource.Tables.Clear()
+        End If
         SplashScreenManager.Default.SetWaitFormDescription("Procesando " & PrcTxt & "...")
         Try
             dsSource = oAppService.ExecuteSQL(CmdStr)
@@ -209,7 +228,7 @@ Public Class ResultadoOperativoV3Form
                 If dsSource.Tables(0).Columns.Contains("TOTAL_A_COBRAR") Then
                     dtotal_c_m = IIf(IsDBNull(dsSource.Tables(0).Compute("SUM(TOTAL_A_COBRAR)", "MANDATO='SI'")), 0, dsSource.Tables(0).Compute("SUM(TOTAL_A_COBRAR)", "MANDATO='SI'"))
                     dtotal_c_o = IIf(IsDBNull(dsSource.Tables(0).Compute("SUM(TOTAL_A_COBRAR)", "MANDATO='NO'")), 0, dsSource.Tables(0).Compute("SUM(TOTAL_A_COBRAR)", "MANDATO='NO'"))
-        End If
+                End If
                 If dsSource.Tables(0).Columns.Contains("TOTAL_A_PAGAR") Then
                     dtotal_p_m = IIf(IsDBNull(dsSource.Tables(0).Compute("SUM(TOTAL_A_PAGAR)", "MANDATO='SI'")), 0, dsSource.Tables(0).Compute("SUM(TOTAL_A_PAGAR)", "MANDATO='SI'"))
                     dtotal_p_o = IIf(IsDBNull(dsSource.Tables(0).Compute("SUM(TOTAL_A_PAGAR)", "MANDATO='NO'")), 0, dsSource.Tables(0).Compute("SUM(TOTAL_A_PAGAR)", "MANDATO='NO'"))

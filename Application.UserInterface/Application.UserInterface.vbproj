@@ -30,7 +30,7 @@
     <PublisherName>Delfin Group Co SAC</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -73,7 +73,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>ApplicationDXForm.snk</AssemblyOriginatorKeyFile>
@@ -82,7 +82,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>0A7D8196CE7015EA4E93D6FF03A26C3C93E81DC8</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>0405C0DFF597987A72D9E8B48CD5ABD83E12B871</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -95,18 +95,10 @@
     </ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.Shared.1.0.0\lib\CrystalDecisions.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalDecisions.Windows.Forms.1.0.0\lib\CrystalDecisions.Windows.Forms.dll</HintPath>
-    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.BonusSkins.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -208,6 +200,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountingInterfaces.vb" />
+    <Compile Include="LogFileGenerate.vb" />
+    <Compile Include="ReferencesTransferForm.Designer.vb">
+      <DependentUpon>ReferencesTransferForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReferencesTransferForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AccountingTransferForm.Designer.vb">
       <DependentUpon>AccountingTransferForm.vb</DependentUpon>
     </Compile>
@@ -585,6 +584,9 @@
     <None Include="Service References\AppService\ApplicationForm.AppService.COM_Det_Cotizacion_OV_EventosTareas_BE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <EmbeddedResource Include="ReferencesTransferForm.resx">
+      <DependentUpon>ReferencesTransferForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AccountingTransferForm.resx">
       <DependentUpon>AccountingTransferForm.vb</DependentUpon>
     </EmbeddedResource>

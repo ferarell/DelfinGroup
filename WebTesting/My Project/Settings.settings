@@ -35,5 +35,14 @@
     <Setting Name="pathpdfRecibos" Type="System.String" Scope="User">
       <Value Profile="(Default)">\\30.0.0.10\FacturacionElectronica\pdf\Recibos\</Value>
     </Setting>
+    <Setting Name="SharePoint_User" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sharepoint@delfingroupco.com.pe</Value>
+    </Setting>
+    <Setting Name="SharePoint_Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Delf1nGroup</Value>
+    </Setting>
+    <Setting Name="SharePoint_Url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://delfingrouppe.sharepoint.com/sites/ITSupport</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

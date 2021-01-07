@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="08649e3c-2310-4518-91d6-6d3aeb546876" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IntegradorSBO.xsd" MetadataType="Schema" ID="aecb3b16-b17f-4b51-8e58-05b52e60baa0" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc?xsd=xsd0" />
+    <MetadataFile FileName="IntegradorSBO.wsdl" MetadataType="Wsdl" ID="6b6dfef9-98d3-4260-80d3-cf662bc7a47a" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc?wsdl" />
+    <MetadataFile FileName="IntegradorSBO1.xsd" MetadataType="Schema" ID="5366e46d-a177-434f-ac8b-041d95f7dd5c" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc?xsd=xsd2" />
+    <MetadataFile FileName="IntegradorSBO.disco" MetadataType="Disco" ID="07b3cca0-1f1e-408b-abbe-9438e1db9d98" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc?disco" />
+    <MetadataFile FileName="IntegradorSBO2.xsd" MetadataType="Schema" ID="4166d578-e42c-449c-a2cf-2f5fa9e17517" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc?xsd=xsd1" />
+    <MetadataFile FileName="IntegradorSBO3.xsd" MetadataType="Schema" ID="b1ea7ce1-466c-4f59-8277-8b27c72e83ae" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:768/Soap/IntegradorSBO.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

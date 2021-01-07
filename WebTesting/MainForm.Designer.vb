@@ -55,6 +55,7 @@ Partial Class MainForm
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.RepositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
+        Me.NavBarItem20 = New DevExpress.XtraNavBar.NavBarItem()
         CType(Me.nbcMainMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,7 +67,7 @@ Partial Class MainForm
         Me.nbcMainMenu.ActiveGroup = Me.NavBarGroup1
         Me.nbcMainMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.nbcMainMenu.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.NavBarGroup1, Me.NavBarGroup2, Me.NavBarGroup3})
-        Me.nbcMainMenu.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem1, Me.NavBarItem2, Me.NavBarItem3, Me.NavBarItem4, Me.NavBarItem5, Me.NavBarItem6, Me.NavBarItem7, Me.NavBarItem8, Me.NavBarItem9, Me.NavBarItem10, Me.NavBarItem11, Me.NavBarItem12, Me.NavBarItem13, Me.NavBarItem14, Me.NavBarItem15, Me.NavBarItem16, Me.NavBarItem17, Me.NavBarItem18, Me.NavBarItem19})
+        Me.nbcMainMenu.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem1, Me.NavBarItem2, Me.NavBarItem3, Me.NavBarItem4, Me.NavBarItem5, Me.NavBarItem6, Me.NavBarItem7, Me.NavBarItem8, Me.NavBarItem9, Me.NavBarItem10, Me.NavBarItem11, Me.NavBarItem12, Me.NavBarItem13, Me.NavBarItem14, Me.NavBarItem15, Me.NavBarItem16, Me.NavBarItem17, Me.NavBarItem18, Me.NavBarItem19, Me.NavBarItem20})
         Me.nbcMainMenu.Location = New System.Drawing.Point(0, 0)
         Me.nbcMainMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.nbcMainMenu.Name = "nbcMainMenu"
@@ -80,7 +81,7 @@ Partial Class MainForm
         '
         Me.NavBarGroup1.Caption = "Extranet"
         Me.NavBarGroup1.Expanded = True
-        Me.NavBarGroup1.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem2), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem4), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem16), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem5), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem6), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem7), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem8), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem15), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem3), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem18), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem19), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem17)})
+        Me.NavBarGroup1.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem2), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem4), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem16), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem5), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem6), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem7), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem8), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem15), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem3), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem18), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem19), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem17), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem20)})
         Me.NavBarGroup1.Name = "NavBarGroup1"
         '
         'NavBarItem2
@@ -286,6 +287,11 @@ Partial Class MainForm
         '
         Me.RepositoryItemPictureEdit1.Name = "RepositoryItemPictureEdit1"
         '
+        'NavBarItem20
+        '
+        Me.NavBarItem20.Caption = "Endose Virtual"
+        Me.NavBarItem20.Name = "NavBarItem20"
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -345,4 +351,5 @@ Partial Class MainForm
     Friend WithEvents NavBarItem18 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents bsiVersion As DevExpress.XtraBars.BarStaticItem
     Friend WithEvents NavBarItem19 As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents NavBarItem20 As DevExpress.XtraNavBar.NavBarItem
 End Class

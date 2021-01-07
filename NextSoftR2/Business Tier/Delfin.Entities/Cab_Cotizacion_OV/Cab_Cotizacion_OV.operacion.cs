@@ -44,7 +44,9 @@ namespace Delfin.Entities
       private Boolean m_ccot_diferenciaflete;
       private Boolean m_ccot_diferenciafleterecup;
       private String m_ddov_nrobooking;
-      private String m_ddov_descshipper;
+      private Nullable<DateTime> m_ddov_fecrecbooking;
+
+        private String m_ddov_descshipper;
       private String m_ddov_descconsignee;
       private String m_ddov_descnotify;
       private String m_ddov_descapplyto;
@@ -388,10 +390,26 @@ namespace Delfin.Entities
             }
          }
       }
-      /// <summary>
-      /// Gets or sets el valor de: CCOT_DepTemNegociaAgente.
-      /// </summary>
-      [DataMember]
+        /// <summary>
+        /// Gets or sets el valor de: DDOV_FecRecBooking.
+        /// </summary>
+        [DataMember]
+        public Nullable<DateTime> DDOV_FecRecBooking
+        {
+            get { return m_ddov_fecrecbooking; }
+            set
+            {
+                if (m_ddov_fecrecbooking != value)
+                {
+                    m_ddov_fecrecbooking = value;
+                    OnPropertyChanged("DDOV_FecRecBooking");
+                }
+            }
+        }
+        /// <summary>
+        /// Gets or sets el valor de: CCOT_DepTemNegociaAgente.
+        /// </summary>
+        [DataMember]
       public Boolean CCOT_DepTemNegociaAgente
       {
          get { return m_ccot_deptemnegociaagente; }

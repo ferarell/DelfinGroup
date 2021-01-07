@@ -43,7 +43,7 @@
     <PublishUrl>\\30.0.0.10\inetpub\DeployApps\ExcelAddIn\</PublishUrl>
     <InstallUrl>http://apps.delfingroupco.com.pe:755/ExcelAddIn/</InstallUrl>
     <TargetCulture>es</TargetCulture>
-    <ApplicationVersion>1.0.2.1</ApplicationVersion>
+    <ApplicationVersion>1.0.2.2</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -296,20 +296,30 @@
     </EmbeddedResource>
     <None Include="4BiznesSolutions.snk" />
     <None Include="app.config" />
+    <None Include="DelfinGroup.snk" />
     <None Include="My Project\DataSources\System.Data.DataSet.datasource" />
     <None Include="My Project\DataSources\System.Data.DataTable.datasource" />
-    <None Include="Service References\AppService\DelfinService.wsdl" />
-    <None Include="Service References\AppService\DelfinService.xsd">
+    <None Include="Service References\AppService\DelfinService1.wsdl" />
+    <None Include="Service References\AppService\DelfinService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService1.xsd">
+    <None Include="Service References\AppService\DelfinService41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService2.xsd">
+    <None Include="Service References\AppService\DelfinService42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService3.xsd">
+    <None Include="Service References\AppService\DelfinService43.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService44.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService45.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\Excel_Customizations_of_Delfin_Group_Perú.AppService.COM_Det_Cotizacion_OV_EventosTareas_BE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.vb</DependentUpon>
@@ -349,9 +359,6 @@
     <WCFMetadataStorage Include="Service References\AppService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AppService\DelfinService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\AppService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -362,6 +369,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AppService\DelfinService1.disco" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -384,14 +394,13 @@
     </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>DC87BEA73AE94F9E5FA32EDC6D10731FFDD9C858</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>0405C0DFF597987A72D9E8B48CD5ABD83E12B871</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>DelfinGroup.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a Visual Basic project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
@@ -401,7 +410,7 @@
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="vb" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\15.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{DCFE8D25-4715-4C33-9EAB-A34A9EBC9544}" />
+        <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="vb" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{DCFE8D25-4715-4C33-9EAB-A34A9EBC9544}" />
         <Host Name="Excel" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
           <HostItem Name="ThisAddIn" Code="ThisAddIn.vb" CanonicalName="AddIn" PublishedHash="501F60F3B8BAF1916C7D50AECC5342A51A6B73BE" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.vb" />
         </Host>

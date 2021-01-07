@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>Reportes</DataSourceReference>
+      <CommandText>SELECT        CONS_CodTipo AS Codigo, CONS_Desc_SPA AS Descripcion
+FROM            NextSoft.dbo.Constantes
+WHERE        (CONS_CodTabla = 'RGM')
+UNION ALL
+SELECT NULL, '(Todos)'
+ORDER BY 1</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Codigo">
+        <DataField>Codigo</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Descripcion">
+        <DataField>Descripcion</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>
