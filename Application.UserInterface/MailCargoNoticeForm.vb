@@ -158,6 +158,7 @@ Public Class MailCargoNoticeForm
     End Sub
 
     Private Sub bbiCreateMessage_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiCreateMessage.ItemClick
+        Validate()
         If DevExpress.XtraEditors.XtraMessageBox.Show("El envío de este mensaje NO registrará un evento, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Forms.DialogResult.No Then
             Return
         End If
@@ -505,12 +506,13 @@ Public Class MailCargoNoticeForm
     End Sub
 
     Friend Function RowSelectedCount(oGridView As GridView) As Integer
+        'Validate()
         Dim iChecked As Integer = 0
         For i = 0 To oGridView.RowCount - 1
-            If IsDBNull(oGridView.GetRowCellValue(i, "Checked")) Then
+            If IsDBNull(oGridView.GetRowCellValue(i, "CCOT_EnviaAvisoLlegada")) Then
                 Continue For
             End If
-            If oGridView.GetRowCellValue(i, "Checked") Then
+            If oGridView.GetRowCellValue(i, "CCOT_EnviaAvisoLlegada") Then
                 iChecked += 1
             End If
         Next
