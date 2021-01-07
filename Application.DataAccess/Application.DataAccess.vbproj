@@ -69,6 +69,7 @@
     <Compile Include="COM_DetSobrestadia_DA.vb" />
     <Compile Include="COM_Det_Cotizacion_OV_EventosTareas_DA.vb" />
     <Compile Include="COM_Sobrestadia_DA.vb" />
+    <Compile Include="DocsVta_DA.vb" />
     <Compile Include="EntidadDireccionamiento_DA.vb" />
     <Compile Include="EntidadRegistro_DA.vb" />
     <Compile Include="EntidadVinculada_DA.vb" />

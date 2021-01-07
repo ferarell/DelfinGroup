@@ -51,17 +51,17 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Application.BusinessEntities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Application.BusinessEntities, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\NextSoft\Application.Entities\bin\Debug\Application.BusinessEntities.dll</HintPath>
+      <HintPath>..\Application.Entities\bin\Debug\Application.BusinessEntities.dll</HintPath>
     </Reference>
     <Reference Include="Application.BusinessLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\NextSoft\Application.BusinessLogic\bin\Debug\Application.BusinessLogic.dll</HintPath>
+      <HintPath>..\Application.BusinessLogic\bin\Debug\Application.BusinessLogic.dll</HintPath>
     </Reference>
-    <Reference Include="Application.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Application.DataAccess, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\NextSoft\Application.DataAccess\bin\Debug\Application.DataAccess.dll</HintPath>
+      <HintPath>..\Application.DataAccess\bin\Debug\Application.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="BusinessEntities">
       <HintPath>..\Portico\Entities\bin\Debug\netstandard2.0\BusinessEntities.dll</HintPath>
