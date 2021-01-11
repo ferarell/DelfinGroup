@@ -2,6 +2,9 @@
     Dim _DocEntry As String
     Dim _FolioNum As String
     Dim _FolioPref As String
+    Dim _TransId As Integer
+    Dim _Number As Integer
+    Dim _Line_ID As Integer
 
     Public Property DocEntry As String
         Get
@@ -27,6 +30,33 @@
         End Get
         Set(value As String)
             _FolioPref = value
+        End Set
+    End Property
+
+    Public Property TransId As Integer
+        Get
+            Return _TransId
+        End Get
+        Set(value As Integer)
+            _TransId = value
+        End Set
+    End Property
+
+    Public Property Number As Integer
+        Get
+            Return _Number
+        End Get
+        Set(value As Integer)
+            _Number = value
+        End Set
+    End Property
+
+    Public Property Line_ID As Integer
+        Get
+            Return _Line_ID
+        End Get
+        Set(value As Integer)
+            _Line_ID = value
         End Set
     End Property
 End Class

@@ -7,6 +7,7 @@ Public Class Respuesta
     Dim _RespuestaSAP As Integer
     Dim _RespuestaNexsoft As Integer
     Dim _Value As String
+    Dim _Existe As String
     Dim _Response As List(Of Response)
     Dim _D As d
     Public Property ResponseStatus As String
@@ -85,6 +86,15 @@ Public Class Respuesta
         End Get
         Set(value As d)
             _D = value
+        End Set
+    End Property
+
+    Public Property Existe As String
+        Get
+            Return _Existe
+        End Get
+        Set(value As String)
+            _Existe = value
         End Set
     End Property
 End Class

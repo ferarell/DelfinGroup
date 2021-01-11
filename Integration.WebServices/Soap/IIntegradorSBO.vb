@@ -30,7 +30,7 @@ Public Interface IIntegradorSBO
 
 
     <OperationContract()>
-    Function VerificarExistenciaDocumento(CompraVenta As String, TipoDocumento As String, Serie As String, Numero As String) As String
+    Function VerificarExistenciaDocumento(CompraVenta As String, TipoDocumento As String, Serie As String, Numero As String, U_MSS_NSTATEMENT As String, U_MSS_TSERV As String) As Respuesta
 
 
 

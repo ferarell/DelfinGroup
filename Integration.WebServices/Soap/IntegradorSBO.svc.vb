@@ -751,7 +751,7 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
         Return listRespuestas
     End Function
 
-    Public Function VerificarExistenciaDocumento(CompraVenta As String, TipoDocumento As String, Serie As String, Numero As String) As String Implements IIntegradorSBO.VerificarExistenciaDocumento
+    Public Function VerificarExistenciaDocumento(CompraVenta As String, TipoDocumento As String, Serie As String, Numero As String, U_MSS_NSTATEMENT As String, U_MSS_TSERV As String) As Respuesta Implements IIntegradorSBO.VerificarExistenciaDocumento
 
         Dim oRespuesta As Respuesta = New Respuesta()
         Dim Respuesta As String = "NO"
@@ -775,7 +775,7 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
             End If
 
 
-        Else
+        ElseIf CompraVenta = "CO" Then
 
             If TipoDocumento = "INV" Then
                 UrlBusqueda = UrlDocument + "PurchaseInvoices/PurchaseInvoices.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and FolioNum eq " + Numero + "&$format=json"
@@ -785,6 +785,11 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
 
                 UrlBusqueda = UrlDocument + "PurchaseCreditNotes/PurchaseCreditNotes.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and FolioNum eq " + Numero + "&$format=json"
             End If
+
+        ElseIf CompraVenta = "JE" Then
+            UrlBusqueda = UrlDocument + "JournalEntries/JournalEntries.xsodata/Get?$filter=U_MSS_NSTATEMENT eq '" + U_MSS_NSTATEMENT + "' and U_MSS_TSERV eq '" + U_MSS_TSERV + "'&$format=json"
+
+
 
         End If
 
@@ -798,10 +803,11 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
 
 
         If oRespuesta IsNot Nothing Then
+            oRespuesta.Existe = "NO"
             If oRespuesta.d IsNot Nothing Then
                 If oRespuesta.d.results IsNot Nothing Then
                     If oRespuesta.d.results.Count > 0 Then
-                        Respuesta = "SI"
+                        oRespuesta.Existe = "SI"
                     End If
                 End If
             End If
@@ -809,7 +815,7 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
 
 
 
-        Return Respuesta
+        Return oRespuesta
 
 
     End Function
