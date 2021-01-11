@@ -7,7 +7,7 @@ Imports System.Windows.Forms
 
 Public Class CreateMailItem
     'Dim Application As New Outlook.Application
-    Dim Application As Microsoft.Office.Interop.Outlook.Application = CType(Activator.CreateInstance(Type.GetTypeFromCLSID(New Guid("0006F03A-0000-0000-C000-000000000046"))), Microsoft.Office.Interop.Outlook.Application)
+    Dim Application As Outlook.Application = CType(Activator.CreateInstance(Type.GetTypeFromCLSID(New Guid("0006F03A-0000-0000-C000-000000000046"))), Microsoft.Office.Interop.Outlook.Application)
     Dim mail As Outlook.MailItem = Nothing
     Dim mailRecipients As Outlook.Recipients = Nothing
     Dim mailRecipient As Outlook.Recipient = Nothing

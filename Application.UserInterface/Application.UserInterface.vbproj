@@ -537,25 +537,60 @@
     <Content Include="Plantillas\COMUNICADO No.08.PDF">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Reportes\AvisoArriboMaritimoFcl_New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboMaritimoFcl1.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoArriboAereo_New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboAereo1.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoArriboMaritimoFcl_CLARI_New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboMaritimoFcl_CLARI.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoArriboMaritimoLcl_New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboMaritimoLcl1.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoSalidaAereo_New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoSalidaAereo.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoZarpeMaritimoFcl_New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoZarpeMaritimoFcl.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\AvisoZarpeMaritimoLcl_New.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoZarpeMaritimoLcl.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\AppService\DelfinService1.disco" />
     <None Include="Application.UserInterface_TemporaryKey.pfx" />
-    <None Include="Service References\AppService\DelfinService.disco" />
-    <None Include="Service References\AppService\DelfinService.wsdl" />
-    <None Include="Service References\AppService\DelfinService.xsd">
+    <None Include="Service References\AppService\DelfinService1.wsdl" />
+    <None Include="Service References\AppService\DelfinService6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService1.xsd">
+    <None Include="Service References\AppService\DelfinService61.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService2.xsd">
+    <None Include="Service References\AppService\DelfinService62.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService3.xsd">
+    <None Include="Service References\AppService\DelfinService63.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService4.xsd">
+    <None Include="Service References\AppService\DelfinService64.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService5.xsd">
+    <None Include="Service References\AppService\DelfinService65.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\IntegrationService\IntegradorSBO.disco" />

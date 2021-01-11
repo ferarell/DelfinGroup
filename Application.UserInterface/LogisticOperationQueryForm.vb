@@ -275,6 +275,15 @@ Public Class LogisticOperationQueryForm
         oMailItem.CreateCustomMessage("Display")
     End Sub
 
+    Private Sub NewMailGenerate()
+        Dim oMailItem As New CreateMailItem
+        oMailItem.subject = "Prueba"
+        oMailItem.htmlBody.AppendText("Esto es una prueba de correo")
+        oMailItem.mailTo = "aremonfe@gmail.com"
+        oMailItem.CreateCustomMessage("Display")
+
+    End Sub
+
     Private Sub bbiPreInvoicing_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiPreInvoicing.ItemClick
         Validate()
         If GridView1.RowCount = 0 Then
@@ -289,13 +298,17 @@ Public Class LogisticOperationQueryForm
         If DevExpress.XtraEditors.XtraMessageBox.Show("Se generarán las pre-facturas de las operciones seleccionadas, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
             Return
         End If
-        Dim bError As Boolean = False
+        Dim bError As Boolean = True
         For r = 0 To GridView1.RowCount - 1
             Dim oRow As DataRow = GridView1.GetDataRow(r)
             oRow("Checked") = IIf(IsDBNull(oRow("Checked")), False, oRow("Checked"))
             If oRow("Checked") = False Then
                 Continue For
             End If
+            'If Not oAppService.PreFacturar(1, AppUser) Then
+            '    bError = False
+            'End If
+
         Next
         If bError Then
 

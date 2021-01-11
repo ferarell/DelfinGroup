@@ -386,30 +386,113 @@ Public Class MailCargoNoticeForm
 
     Function MailGenerate3(oRow As DataRow, _MsgType As String) As Boolean
         Dim bResult As Boolean = True
+        Dim dsPrint As New DataSet
+        Dim dtPrint1, dtPrint2 As New DataTable
         Dim aAttachments As New ArrayList
         Dim oMailItem As New CreateMailItem
+        Dim oDocumento As New CreateFileFromCrystalReport
 
+        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+        SplashScreenManager.Default.SetWaitFormDescription("Generando mensaje para el HBL: " & oRow("HBL"))
+
+        oDocumento.dsPrint = Nothing
+
+        dtPrint1 = oAppService.ExecuteSQL("EXEC NextSoft.web.upCargoNoticeQuery 1, 1, NULL, NULL, NULL, NULL, '" & oRow("HBL") & "'").Tables(0)
+        dtPrint1.TableName = "Query1"
+        dsPrint.Tables.Add(dtPrint1.Copy)
+        dtPrint2 = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneServiciosPorPagar " & dtPrint1.Rows(0)("EMPR_Codigo").ToString & ", " & dtPrint1.Rows(0)("CCOT_Numero").ToString).Tables(0)
+        dtPrint2.TableName = "Query2"
+        dsPrint.Tables.Add(dtPrint2.Copy)
+
+        'If dsPrint.Tables(0).Rows.Count = 0 Then
+        '    DevExpress.XtraEditors.XtraMessageBox.Show("La consulta no retornó datos para el HBL: " & oRow("HBL"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Return False
+        'End If
         Try
-            Dim dtQuery As New DataTable
-            dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.ptc.OPE_CCOTSS_PorPagar 1,'" & oRow("HBL") & "'").Tables(0)
-            'If dtQuery.Rows.Count = 0 Then
-            '    DevExpress.XtraEditors.XtraMessageBox.Show("La consulta no retornó datos para el HBL: " & oRow("HBL"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            '    Return False
-            'End If
+            Dim _NoticeFile As String = Path.GetTempPath & "AVISO_" & oRow("HBL") & ".PDF"
             Dim _RptPath As String = IO.Directory.GetCurrentDirectory & "\Reportes\"
+            Dim _LabelNotice As String = ""
+            Dim _TipoAviso As String = ""
+            If oRow("CONS_CodVia") = "001" Then
+                If oRow("CONS_CodRGM") = "001" Then 'Impo
+                    _LabelNotice = "Aviso de Arribo de Importación Marítima"
+                    _TipoAviso = "AVISO DE ARRIBO"
+                    If oRow("EsLCL") = 0 Then 'FCL
+                        If oRow("Puerto").ToString.Contains("ARICA") Then 'Arica
+                            oDocumento.RptFile = _RptPath & "AvisoArriboMaritimoFcl_CLARI_New.rpt"
+                            richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoFcl_CLARI.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
+                        Else 'Todo Destino
+                            oDocumento.RptFile = _RptPath & "AvisoArriboMaritimoFcl_New.rpt"
+                            richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoFcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
+                        End If
+                    End If
+                    If oRow("EsLCL") = 1 Then 'LCL
+                        'Todo Destino
+                        oDocumento.RptFile = _RptPath & "AvisoArriboMaritimoLcl_New.rpt"
+                        richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoLcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
+                    End If
+                ElseIf oRow("CONS_CodRGM") = "002" Then 'Expo
+                    _LabelNotice = "Aviso de Zarpe de Exportación Marítima"
+                    _TipoAviso = "AVISO DE ZARPE"
+                    If oRow("EsLCL") = 0 Then 'FCL
+                        oDocumento.RptFile = _RptPath & "AvisoZarpeMaritimoFcl_New.rpt"
+                        richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosExpoFcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
+                    End If
+                    If oRow("EsLCL") = 1 Then 'LCL
+                        'Todo Destino
+                        oDocumento.RptFile = _RptPath & "AvisoZarpeMaritimoLcl_New.rpt"
+                        richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosExpoLcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
+                    End If
+                End If
+            End If
+            'Aéreo
+            If oRow("CONS_CodVia") = "002" Then
+                If oRow("CONS_CodRGM") = "001" Then 'Impo
+                    _LabelNotice = "Aviso de Arribo de Importación Aérea"
+                    _TipoAviso = "AVISO DE ARRIBO"
+                    If oRow("EsLCL") = 0 Then 'FCL
+                        oDocumento.RptFile = _RptPath & "AvisoArriboAereo_New.rpt"
+                        richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoAereo.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
+                    End If
+                    If oRow("EsLCL") = 1 Then 'LCL
+                        oDocumento.RptFile = _RptPath & "AvisoArriboAereo_New.rpt"
+                        richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoAereo.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
+                    End If
+                ElseIf oRow("CONS_CodRGM") = "002" Then 'Expo
+                    _LabelNotice = "Aviso de Salida"
+                    _TipoAviso = "AVISO DE SALIDA"
+                    If oRow("EsLCL") = 0 Then 'FCL
+                        oDocumento.RptFile = _RptPath & "AvisoSalidaAereo_New.rpt"
+                        richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosExpoAereo.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
+                    End If
+                    If oRow("EsLCL") = 1 Then 'LCL
+                        'Todo Destino
+                        oDocumento.RptFile = _RptPath & "AvisoSalidaAereo_New.rpt"
+                        richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosExpoAereo.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
+                    End If
+                End If
+            End If
+            oDocumento.dsPrint = dsPrint
+            oDocumento.TargetFileName = _NoticeFile
+            oDocumento.TargetFileFormat = CrystalDecisions.Shared.ExportFormatType.PortableDocFormat
+            oDocumento.RptSubreports = 1
+            oDocumento.ReportGenerate()
+            oMailItem.aAttachment.Add(_NoticeFile)
             oMailItem.aAttachment.Add(IO.Directory.GetCurrentDirectory & "\Plantillas\COMUNICADO No.10 - VoBo HBL-HAWB ELECTRONICO.PDF")
-            Dim _Subject As String = "AVISO DE COBRANZA"
+            Dim _Subject As String = _LabelNotice.ToUpper
+            _Subject = oRow("Cliente")
+            _Subject += " / " & _TipoAviso
             _Subject += " / " & GridView1.GetFocusedRowCellValue("NombreNave").ToString
             _Subject += " / " & GridView1.GetFocusedRowCellValue("Viaje_Vuelo").ToString
             _Subject += " / " & oRow("HBL")
             If oRow("DOOV_CodReferencia").trim <> "" Then
                 _Subject += " / " & oRow("DOOV_CodReferencia").ToString.Trim
             End If
-            _Subject += " / " & oRow("Cliente")
             _Subject += " / " & Format(oRow("ETA_ETD"), "dd/MM/yyyy")
             oMailItem.subject = _Subject
-            'richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosLcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
-            oMailItem.htmlBody.AppendText(oMailItem.GetPorticoMessageBody("Cliente:", dtQuery, 8))
+            oMailItem.htmlBody.AppendText(Replace(richEditControl.HtmlText, "[TipoAviso]", _LabelNotice.ToUpper))
+            oMailItem.htmlBody.Text = Replace(oMailItem.htmlBody.Text, "[CierreDireccionamiento]", oRow("FechaCierreDireccionamiento").ToString)
+            oMailItem.htmlBody.Text = Replace(oMailItem.htmlBody.Text, "[PlazoVistoBueno]", oRow("FechaPlazoVistoBueno").ToString)
             oMailItem.mailTo = oRow("ENTC_EMail")
             oMailItem.mailCc = "operations@delfingroupco.com.pe;" & oRow("ENTC_EmailCustomer") & ";" & oRow("ENTC_EmailEjecutivo")
             oMailItem.mailBcc = "auditoria@delfingroupco.com.pe"
@@ -424,6 +507,46 @@ Public Class MailCargoNoticeForm
         End Try
         SplashScreenManager.CloseForm(False)
         Return bResult
+
+        'Dim bResult As Boolean = True
+        'Dim aAttachments As New ArrayList
+        'Dim oMailItem As New CreateMailItem
+
+        'Try
+        '    Dim dtQuery As New DataTable
+        '    dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.ptc.OPE_CCOTSS_PorPagar 1,'" & oRow("HBL") & "'").Tables(0)
+        '    'If dtQuery.Rows.Count = 0 Then
+        '    '    DevExpress.XtraEditors.XtraMessageBox.Show("La consulta no retornó datos para el HBL: " & oRow("HBL"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    '    Return False
+        '    'End If
+        '    Dim _RptPath As String = IO.Directory.GetCurrentDirectory & "\Reportes\"
+        '    oMailItem.aAttachment.Add(IO.Directory.GetCurrentDirectory & "\Plantillas\COMUNICADO No.10 - VoBo HBL-HAWB ELECTRONICO.PDF")
+        '    Dim _Subject As String = "AVISO DE COBRANZA"
+        '    _Subject += " / " & GridView1.GetFocusedRowCellValue("NombreNave").ToString
+        '    _Subject += " / " & GridView1.GetFocusedRowCellValue("Viaje_Vuelo").ToString
+        '    _Subject += " / " & oRow("HBL")
+        '    If oRow("DOOV_CodReferencia").trim <> "" Then
+        '        _Subject += " / " & oRow("DOOV_CodReferencia").ToString.Trim
+        '    End If
+        '    _Subject += " / " & oRow("Cliente")
+        '    _Subject += " / " & Format(oRow("ETA_ETD"), "dd/MM/yyyy")
+        '    oMailItem.subject = _Subject
+        '    'richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosLcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
+        '    oMailItem.htmlBody.AppendText(oMailItem.GetPorticoMessageBody("Cliente:", dtQuery, 8))
+        '    oMailItem.mailTo = oRow("ENTC_EMail")
+        '    oMailItem.mailCc = "operations@delfingroupco.com.pe;" & oRow("ENTC_EmailCustomer") & ";" & oRow("ENTC_EmailEjecutivo")
+        '    oMailItem.mailBcc = "auditoria@delfingroupco.com.pe"
+        '    If oMailItem.CreateCustomMessage(_MsgType) <> "" Then
+        '        bResult = False
+        '    End If
+        'Catch ex As Exception
+        '    bResult = False
+        '    DevExpress.XtraEditors.XtraMessageBox.Show("La consulta del HBL: " & oRow("HBL").ToString & " generó el siguiente error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'Finally
+        '    SplashScreenManager.CloseForm(False)
+        'End Try
+        'SplashScreenManager.CloseForm(False)
+        'Return bResult
     End Function
 
     Function UpdateAddressingDate(iNVIA_Codigo As Integer) As Boolean
