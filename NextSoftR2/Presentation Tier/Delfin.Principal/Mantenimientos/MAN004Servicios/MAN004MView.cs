@@ -1158,7 +1158,8 @@ namespace Delfin.Principal
             else
                 if (listRespuestas[0].RespuestaSAP == 0)
                 {
-                    Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Presenter.Title, "Ocurrió un error al actualizar los datos en SAP." + Environment.NewLine + listRespuestas[0].Value);
+                    //Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Presenter.Title, "Ocurrió un error al actualizar los datos en SAP." + Environment.NewLine + listRespuestas[0].Value);
+                    Infrastructure.WinForms.Controls.Dialogos.MostrarMensajeError(Presenter.Title, "Ocurrió un error al actualizar los datos en SAP." + Environment.NewLine + listRespuestas[0].Response[0].error.Message.Value.ToString(), true);
                     this.Close();
                 }
                 if (listRespuestas[0].RespuestaNexsoft == 0)
