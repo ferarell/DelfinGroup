@@ -130,7 +130,7 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
                 jsonSerialiceDireccion = JsonConvert.SerializeObject(dictionaryDirecciones, Xml.Formatting.Indented)
             End If
 
-            jsonSerialiceCliente = jsonSerialiceCliente.Replace("-1", "[" & jsonSerialiceDireccion & "]")
+            jsonSerialiceCliente = jsonSerialiceCliente.Replace("-999999", "[" & jsonSerialiceDireccion & "]")
 
 
             Dim content As StringContent = New StringContent(jsonSerialiceCliente, Encoding.UTF8, "application/json")
