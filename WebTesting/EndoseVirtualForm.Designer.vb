@@ -112,7 +112,7 @@ Partial Class EndoseVirtualForm
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit2, Me.RepositoryItemLookUpEdit3})
-        Me.GridControl2.Size = New System.Drawing.Size(289, 165)
+        Me.GridControl2.Size = New System.Drawing.Size(288, 165)
         Me.GridControl2.TabIndex = 2
         Me.GridControl2.UseEmbeddedNavigator = True
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
@@ -184,7 +184,7 @@ Partial Class EndoseVirtualForm
         Me.GridControl1.Location = New System.Drawing.Point(0, 0)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(834, 319)
+        Me.GridControl1.Size = New System.Drawing.Size(834, 318)
         Me.GridControl1.TabIndex = 1
         Me.GridControl1.UseEmbeddedNavigator = True
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})

@@ -7,7 +7,7 @@ Public Class neCorreo
 
     Public Sub EnviarCorreo(ByVal sMaildestino As String, ByVal sAsuntoCorreo As String, ByVal sMensaje As String)
         Dim mmsg As MailMessage = New MailMessage()
-        Dim MailSender As String = "webmaster@delfingroupco.com.pe"
+        Dim MailSender As String = ConfigurationManager.AppSettings("CorreoEnvio").ToString()
         Dim sCorreEnvio As String = ConfigurationManager.AppSettings("CorreoEnvio").ToString()
         Dim sCorrePWD As String = ConfigurationManager.AppSettings("CorreoPWD").ToString()
         Dim sCorreHost As String = ConfigurationManager.AppSettings("CorreoHost").ToString()

@@ -62,6 +62,12 @@ namespace Delfin.Principal.IntegrationService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemo", ReplyAction="http://tempuri.org/IIntegradorSBO/InsertarActualizarPurchaseCreditMemoResponse")]
         System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarPurchaseCreditMemoAsync(System.Data.DataSet PurchaseCreditMemo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento", ReplyAction="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumentoResponse")]
+        ApplicationForm.IntegrationService.Respuesta VerificarExistenciaDocumento(string CompraVenta, string TipoDocumento, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento", ReplyAction="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumentoResponse")]
+        System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta> VerificarExistenciaDocumentoAsync(string CompraVenta, string TipoDocumento, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -153,6 +159,14 @@ namespace Delfin.Principal.IntegrationService {
         
         public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarPurchaseCreditMemoAsync(System.Data.DataSet PurchaseCreditMemo) {
             return base.Channel.InsertarActualizarPurchaseCreditMemoAsync(PurchaseCreditMemo);
+        }
+        
+        public ApplicationForm.IntegrationService.Respuesta VerificarExistenciaDocumento(string CompraVenta, string TipoDocumento, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV) {
+            return base.Channel.VerificarExistenciaDocumento(CompraVenta, TipoDocumento, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV);
+        }
+        
+        public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta> VerificarExistenciaDocumentoAsync(string CompraVenta, string TipoDocumento, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV) {
+            return base.Channel.VerificarExistenciaDocumentoAsync(CompraVenta, TipoDocumento, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV);
         }
     }
 }

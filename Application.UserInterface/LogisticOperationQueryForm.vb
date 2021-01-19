@@ -7,6 +7,7 @@ Public Class LogisticOperationQueryForm
     Dim oMasterDataList As New MasterDataList
     Public AppUser As String = "sistemas"
     Friend _EMPR_Codigo, _SUCR_Codigo As Integer
+    Dim dtRegistered As New DataTable
 
     Public Sub New()
 
@@ -96,7 +97,8 @@ Public Class LogisticOperationQueryForm
         If Not vpInputs.Validate Then
             Return
         End If
-        Dim dtSource, dtRegistered, dtPending As New DataTable
+        dtRegistered.Rows.Clear()
+        Dim dtSource, dtPending As New DataTable
         Dim sParams As String = ""
         sParams = IIf(lueEntity.EditValue Is Nothing, "NULL", lueEntity.EditValue)
         sParams += ", " & IIf(teOperationNumber.Text.Trim = "", "NULL", "'" & teOperationNumber.Text & "'")
@@ -295,25 +297,13 @@ Public Class LogisticOperationQueryForm
             XtraMessageBox.Show("Debe seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
-        If DevExpress.XtraEditors.XtraMessageBox.Show("Se generarán las pre-facturas de las operciones seleccionadas, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
-            Return
+        Dim oForm As New LogisticOperationInvoicingPopupForm
+        oForm.dtSource = dtRegistered.Select("Checked = 1").CopyToDataTable
+        oForm.oProcessType = "Multiple"
+        If oForm.ShowDialog = DialogResult.OK Then
+            bbiSearch.PerformClick()
         End If
-        Dim bError As Boolean = True
-        For r = 0 To GridView1.RowCount - 1
-            Dim oRow As DataRow = GridView1.GetDataRow(r)
-            oRow("Checked") = IIf(IsDBNull(oRow("Checked")), False, oRow("Checked"))
-            If oRow("Checked") = False Then
-                Continue For
-            End If
-            'If Not oAppService.PreFacturar(1, AppUser) Then
-            '    bError = False
-            'End If
 
-        Next
-        If bError Then
-
-            Return
-        End If
     End Sub
 
     Private Sub GridView1_RowClick(sender As Object, e As DevExpress.XtraGrid.Views.Grid.RowClickEventArgs) Handles GridView1.RowClick, GridView2.RowClick

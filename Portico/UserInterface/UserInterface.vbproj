@@ -14,7 +14,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>\\30.0.0.10\inetpub\DeployApps\Portico\</PublishUrl>
+    <PublishUrl>C:\DeployApps\PorticoUI\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,12 +24,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://apps.delfingroupco.com.pe:755/Portico/</InstallUrl>
-    <ProductName>Portico</ProductName>
-    <PublisherName>DELFIN GROUP CO SAC</PublisherName>
+    <InstallUrl>http://apps.delfingroupco.com.pe:765/PorticoUI/</InstallUrl>
+    <ProductName>Portico %28Administración%29</ProductName>
+    <PublisherName>Delfin Group Co</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

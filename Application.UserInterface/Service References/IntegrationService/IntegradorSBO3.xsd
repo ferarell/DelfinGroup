@@ -8,6 +8,7 @@
   <xs:element name="ArrayOfRespuesta" nillable="true" type="tns:ArrayOfRespuesta" />
   <xs:complexType name="Respuesta">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Existe" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ItemCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfResponse" />
       <xs:element minOccurs="0" name="ResponseStatus" nillable="true" type="xs:string" />
@@ -66,6 +67,9 @@
       <xs:element minOccurs="0" name="DocEntry" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FolioNum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FolioPref" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Number" type="xs:int" />
+      <xs:element minOccurs="0" name="TransId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="results" nillable="true" type="tns:results" />

@@ -759,7 +759,7 @@ Partial Class LogisticOperationQueryForm
         '
         'GridColumn49
         '
-        Me.GridColumn49.Caption = "S/N"
+        Me.GridColumn49.Caption = "PreFacturar"
         Me.GridColumn49.ColumnEdit = Me.RepositoryItemCheckEdit3
         Me.GridColumn49.FieldName = "Checked"
         Me.GridColumn49.Name = "GridColumn49"

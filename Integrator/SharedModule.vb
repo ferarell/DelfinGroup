@@ -453,4 +453,5 @@ Module SharedModule
         Return System.Text.Encoding.Unicode.GetString(bytes)
     End Function
 
+
 End Module

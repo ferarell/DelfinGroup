@@ -33,10 +33,10 @@
     <IsWebBootstrapper>True</IsWebBootstrapper>
     <TargetFrameworkProfile />
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>\\30.0.0.10\inetpub\DeployApps\OutlookAddIn\</PublishUrl>
-    <InstallUrl>http://apps.delfingroupco.com.pe:755/OutlookAddIn/</InstallUrl>
+    <PublishUrl>C:\DeployApps\PorticoAI\</PublishUrl>
+    <InstallUrl>http://apps.delfingroupco.com.pe:765/PorticoAI/</InstallUrl>
     <TargetCulture>es</TargetCulture>
-    <ApplicationVersion>1.0.4.9</ApplicationVersion>
+    <ApplicationVersion>1.0.4.10</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>

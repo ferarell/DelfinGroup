@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>\\30.0.0.10\inetpub\DeployApps\NextSoft\</PublishUrl>
+    <PublishUrl>C:\DeployApps\NextSoft\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -23,12 +23,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://apps.delfingroupco.com.pe:755/NextSoft/</InstallUrl>
+    <InstallUrl>http://apps.delfingroupco.com.pe:765/NextSoft/</InstallUrl>
     <ProductName>NextSoft</ProductName>
-    <PublisherName>Delfin Group Co SAC</PublisherName>
+    <PublisherName>Delfin Group Co</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>2.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1915,9 +1915,7 @@
       <DependentUpon>REP000LView.cs</DependentUpon>
     </Compile>
     <Content Include="3d Logo DG.ico" />
-    <Content Include="cConfig.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="cConfig.xml" />
     <Content Include="cubes.ico" />
     <Content Include="cubos.ico" />
     <Content Include="icons8-website-64.png" />

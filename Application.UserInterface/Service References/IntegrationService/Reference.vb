@@ -28,6 +28,9 @@ Namespace IntegrationService
         Private extensionDataField As System.Runtime.Serialization.ExtensionDataObject
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private ExisteField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private ItemCodeField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -58,6 +61,19 @@ Namespace IntegrationService
             End Get
             Set
                 Me.extensionDataField = value
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Existe() As String
+            Get
+                Return Me.ExisteField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.ExisteField, value) <> true) Then
+                    Me.ExisteField = value
+                    Me.RaisePropertyChanged("Existe")
+                End If
             End Set
         End Property
         
@@ -479,6 +495,15 @@ Namespace IntegrationService
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private FolioPrefField As String
         
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private Line_IDField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private NumberField As Integer
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private TransIdField As Integer
+        
         <Global.System.ComponentModel.BrowsableAttribute(false)>  _
         Public Property ExtensionData() As System.Runtime.Serialization.ExtensionDataObject Implements System.Runtime.Serialization.IExtensibleDataObject.ExtensionData
             Get
@@ -524,6 +549,45 @@ Namespace IntegrationService
                 If (Object.ReferenceEquals(Me.FolioPrefField, value) <> true) Then
                     Me.FolioPrefField = value
                     Me.RaisePropertyChanged("FolioPref")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Line_ID() As Integer
+            Get
+                Return Me.Line_IDField
+            End Get
+            Set
+                If (Me.Line_IDField.Equals(value) <> true) Then
+                    Me.Line_IDField = value
+                    Me.RaisePropertyChanged("Line_ID")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property Number() As Integer
+            Get
+                Return Me.NumberField
+            End Get
+            Set
+                If (Me.NumberField.Equals(value) <> true) Then
+                    Me.NumberField = value
+                    Me.RaisePropertyChanged("Number")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property TransId() As Integer
+            Get
+                Return Me.TransIdField
+            End Get
+            Set
+                If (Me.TransIdField.Equals(value) <> true) Then
+                    Me.TransIdField = value
+                    Me.RaisePropertyChanged("TransId")
                 End If
             End Set
         End Property
@@ -591,10 +655,10 @@ Namespace IntegrationService
         Function InsertarActualizarPurchaseCreditMemoAsync(ByVal PurchaseCreditMemo As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento", ReplyAction:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumentoResponse")>  _
-        Function VerificarExistenciaDocumento(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String) As String
+        Function VerificarExistenciaDocumento(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As IntegrationService.Respuesta
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento", ReplyAction:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumentoResponse")>  _
-        Function VerificarExistenciaDocumentoAsync(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String) As System.Threading.Tasks.Task(Of String)
+        Function VerificarExistenciaDocumentoAsync(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -692,12 +756,12 @@ Namespace IntegrationService
             Return MyBase.Channel.InsertarActualizarPurchaseCreditMemoAsync(PurchaseCreditMemo)
         End Function
         
-        Public Function VerificarExistenciaDocumento(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String) As String Implements IntegrationService.IIntegradorSBO.VerificarExistenciaDocumento
-            Return MyBase.Channel.VerificarExistenciaDocumento(CompraVenta, TipoDocumento, Serie, Numero)
+        Public Function VerificarExistenciaDocumento(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As IntegrationService.Respuesta Implements IntegrationService.IIntegradorSBO.VerificarExistenciaDocumento
+            Return MyBase.Channel.VerificarExistenciaDocumento(CompraVenta, TipoDocumento, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV)
         End Function
         
-        Public Function VerificarExistenciaDocumentoAsync(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String) As System.Threading.Tasks.Task(Of String) Implements IntegrationService.IIntegradorSBO.VerificarExistenciaDocumentoAsync
-            Return MyBase.Channel.VerificarExistenciaDocumentoAsync(CompraVenta, TipoDocumento, Serie, Numero)
+        Public Function VerificarExistenciaDocumentoAsync(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta) Implements IntegrationService.IIntegradorSBO.VerificarExistenciaDocumentoAsync
+            Return MyBase.Channel.VerificarExistenciaDocumentoAsync(CompraVenta, TipoDocumento, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV)
         End Function
     End Class
 End Namespace

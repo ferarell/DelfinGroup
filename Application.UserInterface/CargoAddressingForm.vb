@@ -186,7 +186,7 @@ Public Class CargoAddressingForm
                 mail.HTMLBody += " con ETA " & GridView1.GetFocusedRowCellValue("Puerto").ToString & Space(1) & Format(GridView1.GetFocusedRowCellValue("ETA_ETD"), "dd/MM/yyyy")
             End If
             mail.To = "operations@delfingroupco.com.pe; logistica@delfingroupco.com.pe"
-            mail.CC = "admin@delfingroupco.com.pe; controller@delfingroupco.com.pe"
+            mail.CC = "controller@delfingroupco.com.pe"
             Dim sFileName = GetTmpFileName("xlsx")
             GridView1.ExportToXlsx(sFileName)
             If IO.File.Exists(sFileName) Then

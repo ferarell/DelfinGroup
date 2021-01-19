@@ -201,6 +201,12 @@
   <ItemGroup>
     <Compile Include="AccountingInterfaces.vb" />
     <Compile Include="LogFileGenerate.vb" />
+    <Compile Include="LogisticOperationInvoicingPopupForm.Designer.vb">
+      <DependentUpon>LogisticOperationInvoicingPopupForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LogisticOperationInvoicingPopupForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ReferencesTransferForm.Designer.vb">
       <DependentUpon>ReferencesTransferForm.vb</DependentUpon>
     </Compile>
@@ -572,6 +578,7 @@
       <LastGenOutput>AvisoZarpeMaritimoLcl.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\IntegrationService\IntegradorSBO.disco" />
     <None Include="Service References\AppService\DelfinService1.disco" />
     <None Include="Application.UserInterface_TemporaryKey.pfx" />
     <None Include="Service References\AppService\DelfinService1.wsdl" />
@@ -593,7 +600,6 @@
     <None Include="Service References\AppService\DelfinService65.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\IntegrationService\IntegradorSBO.disco" />
     <None Include="Service References\IntegrationService\ApplicationForm.IntegrationService.Respuesta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -619,6 +625,9 @@
     <None Include="Service References\AppService\ApplicationForm.AppService.COM_Det_Cotizacion_OV_EventosTareas_BE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <EmbeddedResource Include="LogisticOperationInvoicingPopupForm.resx">
+      <DependentUpon>LogisticOperationInvoicingPopupForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReferencesTransferForm.resx">
       <DependentUpon>ReferencesTransferForm.vb</DependentUpon>
     </EmbeddedResource>

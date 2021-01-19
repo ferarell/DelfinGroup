@@ -4,7 +4,7 @@ Imports System.Threading
 Imports System.Globalization
 
 Public Class MainForm
-
+    Dim oAppService As New AppService.DelfinServiceClient
     Public Sub New()
         'Thread.CurrentThread.CurrentCulture = New CultureInfo("es-PE")
         Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo(CultureInfo.CurrentCulture.Name)
@@ -27,7 +27,23 @@ Public Class MainForm
         SkinName = My.Settings.LookAndFeel
     End Sub
 
+    Private Sub LoadUser()
+        Dim dtUserAccount As New DataTable
+        Dim drUserAccount As DataRow
+        dtUserAccount = oAppService.ExecuteSQL("SELECT * FROM Integrador.sec.UsersAccount WHERE DomainUserAccount='" & My.User.Name & "'").Tables(0)
+        If dtUserAccount.Rows.Count = 0 Then
+            DevExpress.XtraEditors.XtraMessageBox.Show("El usuario no está registrado, por favor comunicarse con Administración.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End
+        End If
+        drUserAccount = dtUserAccount.Rows(0)
+        UserName = drUserAccount("UserName")
+        AppUser = drUserAccount("MailUserAccount")
+        bbiUserApp.Caption = "Usuario: " & drUserAccount("UserName") & " (" & drUserAccount("MailUserAccount") & ")"
+        TextToSpeak("Bienvenido, " & UserName)
+    End Sub
+
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadUser()
         CheckForIllegalCrossThreadCalls = False
         If dtActiveDirectoryObjects.Rows.Count > 0 Then
             bbiUserApp.Caption = "Usuario: " & UserName & " (" & AppUser & ")"

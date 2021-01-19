@@ -40,8 +40,8 @@
     </SccProvider>
     <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>\\30.0.0.10\inetpub\DeployApps\ExcelAddIn\</PublishUrl>
-    <InstallUrl>http://apps.delfingroupco.com.pe:755/ExcelAddIn/</InstallUrl>
+    <PublishUrl>C:\DeployApps\ExcelAddIn\</PublishUrl>
+    <InstallUrl>http://apps.delfingroupco.com.pe:765/ExcelAddIn/</InstallUrl>
     <TargetCulture>es</TargetCulture>
     <ApplicationVersion>1.0.2.2</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
@@ -49,7 +49,7 @@
     <UpdateInterval>0</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
     <ProductName>Excel Customizations of Delfin Group Perú</ProductName>
-    <PublisherName>Delfin Group Co SAC</PublisherName>
+    <PublisherName>Delfin Group Co</PublisherName>
     <SupportUrl />
     <FriendlyName>Excel Customizations of Delfin Group Perú</FriendlyName>
     <OfficeApplicationDescription />
