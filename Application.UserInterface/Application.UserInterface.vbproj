@@ -578,28 +578,28 @@
       <LastGenOutput>AvisoZarpeMaritimoLcl.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\AppService\DelfinService.disco" />
+    <None Include="Service References\AppService\DelfinService.wsdl" />
+    <None Include="Service References\AppService\DelfinService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\IntegrationService\IntegradorSBO.disco" />
-    <None Include="Service References\AppService\DelfinService1.disco" />
     <None Include="Application.UserInterface_TemporaryKey.pfx" />
-    <None Include="Service References\AppService\DelfinService1.wsdl" />
-    <None Include="Service References\AppService\DelfinService6.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AppService\DelfinService61.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AppService\DelfinService62.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AppService\DelfinService63.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AppService\DelfinService64.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AppService\DelfinService65.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\IntegrationService\ApplicationForm.IntegrationService.Respuesta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

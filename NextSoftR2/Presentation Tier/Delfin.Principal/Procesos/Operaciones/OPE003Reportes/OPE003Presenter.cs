@@ -289,44 +289,44 @@ namespace Delfin.Principal
 
          if (xlWorkbook.Worksheets.Count < _WorksheetsIndex)
          { xlWorkbook.Worksheets.Add(misValue, xlWorksheetData, misValue, misValue); }
-         xlWorksheetPivot = (XLExcel.Worksheet)xlWorkbook.Worksheets[_WorksheetsIndex];
-         xlWorksheetPivot.Name = (EsServicioTransmision ? "SERVICIO TRANSMISIONES" : ("TOTAL " + Nombre + (MostrarRebate ? " SIN REBATE" : "")));
+         //xlWorksheetPivot = (XLExcel.Worksheet)xlWorkbook.Worksheets[_WorksheetsIndex];
+         //xlWorksheetPivot.Name = (EsServicioTransmision ? "SERVICIO TRANSMISIONES" : ("TOTAL " + Nombre + (MostrarRebate ? " SIN REBATE" : "")));
 
-         if (!EsServicioTransmision)
-         {
-            if (MostrarRebate)
-            {
-               _WorksheetsIndex += 1;
+         //if (!EsServicioTransmision)
+         //{
+         //   if (MostrarRebate)
+         //   {
+         //      _WorksheetsIndex += 1;
 
-               if (xlWorkbook.Worksheets.Count < _WorksheetsIndex)
-               { xlWorkbook.Worksheets.Add(misValue, xlWorksheetPivot, misValue, misValue); }
-               xlWorksheetPivotRebate = (XLExcel.Worksheet)xlWorkbook.Worksheets[_WorksheetsIndex];
-               xlWorksheetPivotRebate.Name = "TOTAL " + Nombre + " CON REBATE";
+         //      if (xlWorkbook.Worksheets.Count < _WorksheetsIndex)
+         //      { xlWorkbook.Worksheets.Add(misValue, xlWorksheetPivot, misValue, misValue); }
+         //      xlWorksheetPivotRebate = (XLExcel.Worksheet)xlWorkbook.Worksheets[_WorksheetsIndex];
+         //      xlWorksheetPivotRebate.Name = "TOTAL " + Nombre + " CON REBATE";
 
-            }
+         //   }
 
-            _WorksheetsIndex += 1;
+         //   _WorksheetsIndex += 1;
 
-            if (xlWorkbook.Worksheets.Count < _WorksheetsIndex)
-            { xlWorkbook.Worksheets.Add(misValue, xlWorksheetPivot, misValue, misValue); }
-            xlWorksheetPivotFFVV = (XLExcel.Worksheet)xlWorkbook.Worksheets[_WorksheetsIndex];
-            xlWorksheetPivotFFVV.Name = "FUERZA VENTAS";
+         //   if (xlWorkbook.Worksheets.Count < _WorksheetsIndex)
+         //   { xlWorkbook.Worksheets.Add(misValue, xlWorksheetPivot, misValue, misValue); }
+         //   xlWorksheetPivotFFVV = (XLExcel.Worksheet)xlWorkbook.Worksheets[_WorksheetsIndex];
+         //   xlWorksheetPivotFFVV.Name = "FUERZA VENTAS";
 
-            _WorksheetsIndex += 1;
+         //   _WorksheetsIndex += 1;
 
-            if (xlWorkbook.Worksheets.Count < _WorksheetsIndex)
-            { xlWorkbook.Worksheets.Add(misValue, xlWorksheetPivot, misValue, misValue); }
-            xlWorksheetPivotFFVVServicios = (XLExcel.Worksheet)xlWorkbook.Worksheets[_WorksheetsIndex];
-            xlWorksheetPivotFFVVServicios.Name = "FFVV POR SERVICIOS";
+         //   if (xlWorkbook.Worksheets.Count < _WorksheetsIndex)
+         //   { xlWorkbook.Worksheets.Add(misValue, xlWorksheetPivot, misValue, misValue); }
+         //   xlWorksheetPivotFFVVServicios = (XLExcel.Worksheet)xlWorkbook.Worksheets[_WorksheetsIndex];
+         //   xlWorksheetPivotFFVVServicios.Name = "FFVV POR SERVICIOS";
 
 
-            _WorksheetsIndex += 1;
+         //   _WorksheetsIndex += 1;
 
-            if (xlWorkbook.Worksheets.Count < _WorksheetsIndex)
-            { xlWorkbook.Worksheets.Add(misValue, xlWorksheetPivot, misValue, misValue); }
-            xlWorksheetComparacion = (XLExcel.Worksheet)xlWorkbook.Worksheets[_WorksheetsIndex];
-            xlWorksheetComparacion.Name = "COMPARATIVO";
-         }
+         //   if (xlWorkbook.Worksheets.Count < _WorksheetsIndex)
+         //   { xlWorkbook.Worksheets.Add(misValue, xlWorksheetPivot, misValue, misValue); }
+         //   xlWorksheetComparacion = (XLExcel.Worksheet)xlWorkbook.Worksheets[_WorksheetsIndex];
+         //   xlWorksheetComparacion.Name = "COMPARATIVO";
+         //}
 
          try
          {
@@ -367,589 +367,589 @@ namespace Delfin.Principal
             xlRange.Value2 = _data;
             #endregion
 
-            if (!EsServicioTransmision)
-            {
-               #region [ Comparacion ]
-               xlWorksheetComparacion = (XLExcel.Worksheet)xlWorkbook.Worksheets[(MostrarRebate ? 6 : 5)];
-               xlWorksheetComparacion.Name = "COMPARATIVO";
-
-               xlWorksheetComparacion.Activate();
-
-               rowIndex = 0;
-               colIndex = 0;
-
-               //HEADER
-               _columns = new Object[1, Comparacion1.Columns.Count];
-               foreach (System.Data.DataColumn _column in Comparacion1.Columns)
-               { _columns[rowIndex, colIndex] = _column.ColumnName; colIndex += 1; }
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[7, 1], xlWorksheetComparacion.Cells[7, 14]];
-               xlRangeComparacion.Value2 = _columns;
-
-               rowIndex = 0;
-               colIndex = 0;
-
-               //CELLS
-               _data = new Object[Comparacion1.Rows.Count, Comparacion1.Columns.Count];
-               foreach (System.Data.DataRow _row in Comparacion1.Rows)
-               {
-                  colIndex = 0;
-                  foreach (System.Data.DataColumn _column in Comparacion1.Columns)
-                  { _data[rowIndex, colIndex] = _row[_column.ColumnName]; colIndex += 1; }
-                  rowIndex += 1;
-               }
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[8, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 11 : 10), 14]];
-               xlRangeComparacion.Value2 = _data;
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[7, 1], xlWorksheetComparacion.Cells[7, 1]];
-               xlRangeComparacion.Value = (Anio - 1).ToString();
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[7, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 11 : 10), 14]];
-               setBorderCelda(xlRangeComparacion, XLExcel.XlBorderWeight.xlThin, XLExcel.XlLineStyle.xlContinuous, true, true, true, true, true, true, true, false, false);
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[7, 1], xlWorksheetComparacion.Cells[7, 14]];
-               xlRangeComparacion.Interior.Pattern = XLExcel.XlPattern.xlPatternSolid;
-               xlRangeComparacion.Interior.PatternColorIndex = XLExcel.XlPattern.xlPatternAutomatic;
-               xlRangeComparacion.Interior.ThemeColor = XLExcel.XlThemeColor.xlThemeColorAccent2;
-               xlRangeComparacion.Interior.TintAndShade = 0;
-               xlRangeComparacion.Interior.PatternTintAndShade = 0;
-               xlRangeComparacion.Font.ThemeColor = XLExcel.XlThemeColor.xlThemeColorDark1;
-               xlRangeComparacion.Font.TintAndShade = 0;
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[7, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 11 : 10), 1]];
-               xlRangeComparacion.Interior.Pattern = XLExcel.XlPattern.xlPatternSolid;
-               xlRangeComparacion.Interior.PatternColorIndex = XLExcel.XlPattern.xlPatternAutomatic;
-               xlRangeComparacion.Interior.ThemeColor = XLExcel.XlThemeColor.xlThemeColorAccent2;
-               xlRangeComparacion.Interior.TintAndShade = 0;
-               xlRangeComparacion.Interior.PatternTintAndShade = 0;
-               xlRangeComparacion.Font.ThemeColor = XLExcel.XlThemeColor.xlThemeColorDark1;
-               xlRangeComparacion.Font.TintAndShade = 0;
-
-
-               rowIndex = 0;
-               colIndex = 0;
-
-               //HEADER
-               _columns = new Object[1, Comparacion2.Columns.Count];
-               foreach (System.Data.DataColumn _column in Comparacion2.Columns)
-               { _columns[rowIndex, colIndex] = _column.ColumnName; colIndex += 1; }
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[13, 1], xlWorksheetComparacion.Cells[13, Comparacion2.Columns.Count]];
-               xlRangeComparacion.Value2 = _columns;
-
-               rowIndex = 0;
-               colIndex = 0;
-
-               //CELLS
-               _data = new Object[Comparacion2.Rows.Count, Comparacion2.Columns.Count];
-               foreach (System.Data.DataRow _row in Comparacion2.Rows)
-               {
-                  colIndex = 0;
-                  foreach (System.Data.DataColumn _column in Comparacion2.Columns)
-                  { _data[rowIndex, colIndex] = _row[_column.ColumnName]; colIndex += 1; }
-                  rowIndex += 1;
-               }
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[14, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 17 : 16), Comparacion2.Columns.Count]];
-               xlRangeComparacion.Value2 = _data;
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[13, 1], xlWorksheetComparacion.Cells[13, 1]];
-               xlRangeComparacion.Value = Anio.ToString();
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[13, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 17 : 16), 14]];
-               setBorderCelda(xlRangeComparacion, XLExcel.XlBorderWeight.xlThin, XLExcel.XlLineStyle.xlContinuous, true, true, true, true, true, true, true, false, false);
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[13, 1], xlWorksheetComparacion.Cells[13, 14]];
-               xlRangeComparacion.Interior.Pattern = XLExcel.XlPattern.xlPatternSolid;
-               xlRangeComparacion.Interior.PatternColorIndex = XLExcel.XlPattern.xlPatternAutomatic;
-               xlRangeComparacion.Interior.ThemeColor = XLExcel.XlThemeColor.xlThemeColorAccent2;
-               xlRangeComparacion.Interior.TintAndShade = 0;
-               xlRangeComparacion.Interior.PatternTintAndShade = 0;
-               xlRangeComparacion.Font.ThemeColor = XLExcel.XlThemeColor.xlThemeColorDark1;
-               xlRangeComparacion.Font.TintAndShade = 0;
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[13, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 17 : 16), 1]];
-               xlRangeComparacion.Interior.Pattern = XLExcel.XlPattern.xlPatternSolid;
-               xlRangeComparacion.Interior.PatternColorIndex = XLExcel.XlPattern.xlPatternAutomatic;
-               xlRangeComparacion.Interior.ThemeColor = XLExcel.XlThemeColor.xlThemeColorAccent2;
-               xlRangeComparacion.Interior.TintAndShade = 0;
-               xlRangeComparacion.Interior.PatternTintAndShade = 0;
-               xlRangeComparacion.Font.ThemeColor = XLExcel.XlThemeColor.xlThemeColorDark1;
-               xlRangeComparacion.Font.TintAndShade = 0;
-
-               XLExcel.Chart XLChart1 = (XLExcel.Chart)xlWorksheetComparacion.Shapes.AddChart(XLExcel.XlChartType.xl3DColumnClustered, 100, 300, 500, 300).Chart;
-
-               (XLChart1.SeriesCollection() as XLExcel.SeriesCollection).NewSeries();
-               (XLChart1.SeriesCollection(1) as XLExcel.Series).Name = "=COMPARATIVO!$A$7";
-               (XLChart1.SeriesCollection(1) as XLExcel.Series).Values = "=COMPARATIVO!$B$" + (x_CCOT_CodFLE == 1 ? "9" : "8") + ":$M$" + (x_CCOT_CodFLE == 1 ? "9" : "8");
-               (XLChart1.SeriesCollection(1) as XLExcel.Series).XValues = "=COMPARATIVO!$B$7:$M$7";
-
-               (XLChart1.SeriesCollection() as XLExcel.SeriesCollection).NewSeries();
-               (XLChart1.SeriesCollection(2) as XLExcel.Series).Name = "=COMPARATIVO!$A$13";
-               (XLChart1.SeriesCollection(2) as XLExcel.Series).Values = "=COMPARATIVO!$B$" + (x_CCOT_CodFLE == 1 ? "15" : "14") + ":$M$" + (x_CCOT_CodFLE == 1 ? "15" : "14");
-               (XLChart1.SeriesCollection(2) as XLExcel.Series).XValues = "=COMPARATIVO!$B$13:$M$13";
-
-               //XLExcel.SeriesCollection XLSeriesCollection1 = XLChart1.SeriesCollection();
-
-               //XLExcel.Series XLSerie1 = XLSeriesCollection1.NewSeries();
-               //XLSerie1.Name = "=COMPARATIVO!$A$7";
-               //XLSerie1.Values = "=COMPARATIVO!$B$8:$M$8";
-               //XLSerie1.XValues = "=COMPARATIVO!$B$7:$M$7";
-
-               //XLExcel.Series XLSerie2 = XLSeriesCollection1.NewSeries();
-               //XLSerie2.Name = "=COMPARATIVO!$A$12";
-               //XLSerie2.Values = "=COMPARATIVO!$B$13:$M$13";            
-               //XLSerie2.XValues = "=COMPARATIVO!$B$7:$M$7";
-
-               XLChart1.SetElement(Microsoft.Office.Core.MsoChartElementType.msoElementChartTitleAboveChart);
-               switch (x_CCOT_CodFLE)
-               {
-                  case 1:
-                     XLChart1.ChartTitle.Text = String.Format("COMPARATIVO {0} - TEUS {1} VS. {2} {3}", Titulo, (Anio - 1), Anio, (MostrarRebate ? " - CON REBATE" : ""));
-                     break;
-                  case 2:
-                     //XLChart1.ChartTitle.Text = String.Format("COMPARATIVO {0} - " + (CONS_CodRGM == "001" ? "LCL" : "BB") + " {1} VS. {2}", Titulo, (Anio - 1), Anio);
-                     XLChart1.ChartTitle.Text = String.Format("COMPARATIVO {0} - LCL {1} VS. {2} {3}", Titulo, (Anio - 1), Anio, (MostrarRebate ? " - CON REBATE" : ""));
-                     break;
-                  default:
-                     XLChart1.ChartTitle.Text = String.Format("COMPARATIVO {0} {1} VS. {2} {3}", Titulo, (Anio - 1), Anio, (MostrarRebate ? " - CON REBATE" : ""));
-                     break;
-               }
-
-               XLChart1.SetElement(Microsoft.Office.Core.MsoChartElementType.msoElementPrimaryValueAxisTitleAdjacentToAxis);
-               XLExcel.Axis XlAxis1 = XLChart1.Axes(XLExcel.XlAxisType.xlValue, XLExcel.XlAxisGroup.xlPrimary) as XLExcel.Axis;
-               XlAxis1.HasTitle = true;
-               switch (x_CCOT_CodFLE)
-               {
-                  case 1:
-                     XlAxis1.AxisTitle.Caption = "TEUS";
-                     break;
-                  case 2:
-                     XlAxis1.AxisTitle.Caption = "LCL"; //(CONS_CodRGM == "001" ? "LCL" : "BB");
-                     break;
-                  default:
-                     XlAxis1.AxisTitle.Caption = "TEUS";
-                     break;
-               }
-
-               //XLChart1.Activate();
-               XLChart1.Refresh();
-
-               XLExcel.Chart XLChart2 = (XLExcel.Chart)xlWorksheetComparacion.Shapes.AddChart(XLExcel.XlChartType.xl3DColumnClustered, 100, 650, 500, 300).Chart;
-
-               (XLChart2.SeriesCollection() as XLExcel.SeriesCollection).NewSeries();
-               (XLChart2.SeriesCollection(1) as XLExcel.Series).Name = "=COMPARATIVO!$A$7";
-               (XLChart2.SeriesCollection(1) as XLExcel.Series).Values = "=COMPARATIVO!$B$" + (x_CCOT_CodFLE == 1 ? "10" : "9") + ":$M$" + (x_CCOT_CodFLE == 1 ? "10" : "9");
-               (XLChart2.SeriesCollection(1) as XLExcel.Series).XValues = "=COMPARATIVO!$B$7:$M$7";
-
-               (XLChart2.SeriesCollection() as XLExcel.SeriesCollection).NewSeries();
-               (XLChart2.SeriesCollection(2) as XLExcel.Series).Name = "=COMPARATIVO!$A$13";
-               (XLChart2.SeriesCollection(2) as XLExcel.Series).Values = "=COMPARATIVO!$B$" + (x_CCOT_CodFLE == 1 ? "16" : "15") + ":$M$" + (x_CCOT_CodFLE == 1 ? "16" : "15");
-               (XLChart2.SeriesCollection(2) as XLExcel.Series).XValues = "=COMPARATIVO!$B$13:$M$13";
-
-               //XLExcel.SeriesCollection XLSeriesCollection2 = XLChart2.SeriesCollection();
-
-               //XLExcel.Series XLSerie3 = XLSeriesCollection2.NewSeries();
-               //XLSerie3.Name = "=COMPARATIVO!$A$7";
-               //XLSerie3.Values = "=COMPARATIVO!$B$10:$M$10";
-               //XLSerie3.XValues = "=COMPARATIVO!$B$7:$M$7";
-
-               //XLExcel.Series XLSerie4 = XLSeriesCollection2.NewSeries();
-               //XLSerie4.Name = "=COMPARATIVO!$A$13";
-               //XLSerie4.Values = "=COMPARATIVO!$B$16:$M$16";
-               //XLSerie4.XValues = "=COMPARATIVO!$B$13:$M$13";
-
-               XLChart2.SetElement(Microsoft.Office.Core.MsoChartElementType.msoElementChartTitleAboveChart);
-               XLChart2.ChartTitle.Text = String.Format("COMPARATIVO {0} - PROFIT {1} VS. {2}", Titulo, (Anio - 1), Anio);
-
-               XLChart2.SetElement(Microsoft.Office.Core.MsoChartElementType.msoElementPrimaryValueAxisTitleAdjacentToAxis);
-               XLExcel.Axis XlAxis2 = XLChart2.Axes(XLExcel.XlAxisType.xlValue, XLExcel.XlAxisGroup.xlPrimary) as XLExcel.Axis;
-               XlAxis2.HasTitle = true;
-               XlAxis2.AxisTitle.Caption = "PROFIT";
-
-
-               //XLChart2.Activate();
-               XLChart2.Refresh();
-
-               //TITLE
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[2, 1], xlWorksheetComparacion.Cells[2, 14]];
-               xlRangeComparacion.MergeCells = true;
-               switch (x_CCOT_CodFLE)
-               {
-                  case 1:
-                     xlRangeComparacion.Value = Titulo + " - COMPARATIVO TEUS Y PROFIT" + (MostrarRebate ? " CON REBATE" : "");
-                     break;
-                  case 2:
-                     xlRangeComparacion.Value = Titulo + " - COMPARATIVO " + "LCL" + " Y PROFIT" + (MostrarRebate ? " CON REBATE" : ""); //(CONS_CodRGM == "001" ? "LCL" : "BB")
-                     break;
-                  default:
-                     xlRangeComparacion.Value = Titulo + " - COMPARATIVO PROFIT" + (MostrarRebate ? " CON REBATE" : "");;
-                     break;
-               }
-
-               xlRangeComparacion.Font.Bold = true;
-               xlRangeComparacion.Font.Size = 16;
-               xlRangeComparacion.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-               xlRangeComparacion.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-               xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[3, 1], xlWorksheetComparacion.Cells[3, 14]];
-               xlRangeComparacion.MergeCells = true;
-               //xlRangeComparacion.Value = string.Format("{0} {1} - {2}  {3} VS. {4}", SubTitulo, MonthName(x_Desde.Month), MonthName(x_Hasta.Month), (Anio - 1), Anio); //SubTitulo + " - " + (Anio - 1).ToString() + " VS. " + Anio.ToString();
-               xlRangeComparacion.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE"))) + " - " + (Anio - 1).ToString() + " VS. " + Anio.ToString(); ;//SubTitulo + " " + Anio.ToString();
-               xlRangeComparacion.Font.Bold = true;
-               xlRangeComparacion.Font.Size = 12;
-               xlRangeComparacion.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-               xlRangeComparacion.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-               #endregion
-
-
-               #region [ TOTAL SIN REBATE ]
-               xlWorksheetData.Activate();
-               xlRange = xlWorksheetData.Range[xlWorksheetData.Cells[1, 1], xlWorksheetData.Cells[Reporte.Rows.Count + 1, Reporte.Columns.Count]];
-
-               xlWorksheetPivot = (XLExcel.Worksheet)xlWorkbook.Worksheets[2];
-               xlWorksheetPivot.Name = "TOTAL " + Nombre + (MostrarRebate ? " SIN REBATE" : "");
-               xlWorksheetPivot.Activate();
-
-               XLExcel.Range xlRangePivot;
-
-               //TITLE
-               xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[2, 1], xlWorksheetPivot.Cells[2, 14]];
-               xlRangePivot.MergeCells = true;
-               xlRangePivot.Value = Empresa + " - " + Titulo + (MostrarRebate ? " SIN REBATE" : "");
-               xlRangePivot.Font.Bold = true;
-               xlRangePivot.Font.Size = 16;
-               xlRangePivot.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-               xlRangePivot.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-               xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[3, 1], xlWorksheetPivot.Cells[3, 14]];
-               xlRangePivot.MergeCells = true;
-               xlRangePivot.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")));//SubTitulo + " " + Anio.ToString();
-               xlRangePivot.Font.Bold = true;
-               xlRangePivot.Font.Size = 12;
-               xlRangePivot.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-               xlRangePivot.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-
-               xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[6, 1], xlWorksheetPivot.Cells[6, 1]]; ;
-
-               // create Pivot Cache and Pivot Table
-               XLExcel.PivotCache XLPivotCache = (XLExcel.PivotCache)xlWorkbook.PivotCaches().Add(XLExcel.XlPivotTableSourceType.xlDatabase, xlRange);
-               XLExcel.PivotTable XLPivotTable = (XLExcel.PivotTable)xlWorksheetPivot.PivotTables().Add(PivotCache: XLPivotCache, TableDestination: xlRangePivot, TableName: "SIN REBATE");
-
-               // create Pivot Field, note that name will be the same as column name on sheet one
-               XLExcel.PivotField XLPivotFieldMES = (XLExcel.PivotField)XLPivotTable.PivotFields("MES");
-               XLPivotFieldMES.Orientation = XLExcel.XlPivotFieldOrientation.xlColumnField;
-               XLPivotFieldMES.Name = "MES";
-
-               XLExcel.PivotField XLPivotFieldVENDEDOR = (XLExcel.PivotField)XLPivotTable.PivotFields("VENDEDOR");
-               XLPivotFieldVENDEDOR.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
-               XLPivotFieldVENDEDOR.Name = "VENDEDOR";
-
-               XLExcel.PivotField XLPivotFieldTEUS = (XLExcel.PivotField)XLPivotTable.PivotFields((EsServicioTransmision ? "BLS" : ((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL"))));
-               XLPivotFieldTEUS.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-               XLPivotFieldTEUS.Function = XLExcel.XlConsolidationFunction.xlSum;
-               XLPivotFieldTEUS.Name = "Sum " + (EsServicioTransmision ? "BLS" : ((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL")));
-
-               XLExcel.PivotField XLPivotFieldRENT_TOTAL = (XLExcel.PivotField)XLPivotTable.PivotFields("RENT_TOTAL");
-               XLPivotFieldRENT_TOTAL.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-               XLPivotFieldRENT_TOTAL.Function = XLExcel.XlConsolidationFunction.xlSum;
-               XLPivotFieldRENT_TOTAL.Name = "Sum RENT_TOTAL";
-
-               XLPivotTable.SubtotalLocation(XLExcel.XlSubtototalLocationType.xlAtBottom);
-               XLPivotTable.DataPivotField.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
-               XLPivotTable.DataPivotField.Position = 2;
-
-               XLPivotTable.TableStyle2 = "PivotStyleLight18";
-               XLPivotTable.RowAxisLayout(XLExcel.XlLayoutRowType.xlCompactRow);
-               #endregion
-
-
-               if (MostrarRebate)
-               {
-                  #region [ TOTAL CON REBATE ]
-                  xlWorksheetData.Activate();
-
-                  xlRange = xlWorksheetData.Range[xlWorksheetData.Cells[1, 1], xlWorksheetData.Cells[Reporte.Rows.Count + 1, Reporte.Columns.Count]];
-
-                  xlWorksheetPivotRebate = (XLExcel.Worksheet)xlWorkbook.Worksheets[3];
-                  xlWorksheetPivotRebate.Name = "TOTAL " + Nombre + " CON REBATE";
-                  xlWorksheetPivotRebate.Activate();
-
-                  XLExcel.Range xlRangePivotRebate;
-
-                  //TITLE
-                  xlRangePivotRebate = xlWorksheetPivotRebate.Range[xlWorksheetPivotRebate.Cells[2, 1], xlWorksheetPivotRebate.Cells[2, 14]];
-                  xlRangePivotRebate.MergeCells = true;
-                  xlRangePivotRebate.Value = Empresa + " - " + Titulo + (MostrarRebate ? " CON REBATE" : "");
-                  xlRangePivotRebate.Font.Bold = true;
-                  xlRangePivotRebate.Font.Size = 16;
-                  xlRangePivotRebate.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-                  xlRangePivotRebate.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-                  xlRangePivotRebate = xlWorksheetPivotRebate.Range[xlWorksheetPivotRebate.Cells[3, 1], xlWorksheetPivotRebate.Cells[3, 14]];
-                  xlRangePivotRebate.MergeCells = true;
-                  xlRangePivotRebate.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")));//SubTitulo + " " + Anio.ToString();
-                  xlRangePivotRebate.Font.Bold = true;
-                  xlRangePivotRebate.Font.Size = 12;
-                  xlRangePivotRebate.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-                  xlRangePivotRebate.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-
-                  xlRangePivotRebate = xlWorksheetPivotRebate.Range[xlWorksheetPivotRebate.Cells[6, 1], xlWorksheetPivotRebate.Cells[6, 1]]; ;
-
-                  // create Pivot Cache and Pivot Table
-                  //XLExcel.PivotCache XLPivotCacheRebate = (XLExcel.PivotCache)xlWorkbook.PivotCaches().Add(XLExcel.XlPivotTableSourceType.xlDatabase, xlRange);
-                  XLExcel.PivotTable XLPivotTableRebate = (XLExcel.PivotTable)xlWorksheetPivotRebate.PivotTables().Add(PivotCache: XLPivotCache, TableDestination: xlRangePivotRebate, TableName: "CON REBATE");
-
-                  // create Pivot Field, note that name will be the same as column name on sheet one
-                  XLExcel.PivotField XLPivotFieldMESRebate = (XLExcel.PivotField)XLPivotTableRebate.PivotFields("MES");
-                  XLPivotFieldMESRebate.Orientation = XLExcel.XlPivotFieldOrientation.xlColumnField;
-                  XLPivotFieldMESRebate.Name = "MES";
-
-                  XLExcel.PivotField XLPivotFieldVENDEDORRebate = (XLExcel.PivotField)XLPivotTableRebate.PivotFields("VENDEDOR");
-                  XLPivotFieldVENDEDORRebate.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
-                  XLPivotFieldVENDEDORRebate.Name = "VENDEDOR";
-
-                  XLExcel.PivotField XLPivotFieldTEUSRebate = (XLExcel.PivotField)XLPivotTableRebate.PivotFields((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL"));
-                  XLPivotFieldTEUSRebate.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-                  XLPivotFieldTEUSRebate.Function = XLExcel.XlConsolidationFunction.xlSum;
-                  XLPivotFieldTEUSRebate.Name = "Sum " + (x_CCOT_CodFLE == 1 ? "TEUS" : "LCL");
-
-                  XLExcel.PivotField XLPivotFieldRENT_TOTALRebate = (XLExcel.PivotField)XLPivotTableRebate.PivotFields("RENTABILIDAD_CON_REBATE");
-                  XLPivotFieldRENT_TOTALRebate.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-                  XLPivotFieldRENT_TOTALRebate.Function = XLExcel.XlConsolidationFunction.xlSum;
-                  XLPivotFieldRENT_TOTALRebate.Name = "Sum RENTABILIDAD_CON_REBATE";
-
-                  XLPivotTableRebate.SubtotalLocation(XLExcel.XlSubtototalLocationType.xlAtBottom);
-                  XLPivotTableRebate.DataPivotField.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
-                  XLPivotTableRebate.DataPivotField.Position = 2;
-
-                  XLPivotTableRebate.TableStyle2 = "PivotStyleLight18";
-                  XLPivotTableRebate.RowAxisLayout(XLExcel.XlLayoutRowType.xlCompactRow);
-                  #endregion
-               }
-
-               #region [ FUERZA DE VENTAS ]
-               xlWorksheetData.Activate();
-               xlRange = xlWorksheetData.Range[xlWorksheetData.Cells[1, 1], xlWorksheetData.Cells[Reporte.Rows.Count + 1, Reporte.Columns.Count]];
-
-               xlWorksheetPivotFFVV = (XLExcel.Worksheet)xlWorkbook.Worksheets[(MostrarRebate ? 4 : 3)];
-               xlWorksheetPivotFFVV.Name = "FUERZA VENTAS";
-
-               xlWorksheetPivotFFVV.Activate();
-
-               XLExcel.Range xlRangePivotFFVV;
-
-               //TITLE
-               xlRangePivotFFVV = xlWorksheetPivotFFVV.Range[xlWorksheetPivotFFVV.Cells[2, 1], xlWorksheetPivotFFVV.Cells[2, 14]];
-               xlRangePivotFFVV.MergeCells = true;
-               xlRangePivotFFVV.Value = Empresa + " - " + Titulo + (MostrarRebate ? " CON REBATE" : "");
-               xlRangePivotFFVV.Font.Bold = true;
-               xlRangePivotFFVV.Font.Size = 16;
-               xlRangePivotFFVV.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-               xlRangePivotFFVV.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-               xlRangePivotFFVV = xlWorksheetPivotFFVV.Range[xlWorksheetPivotFFVV.Cells[3, 1], xlWorksheetPivotFFVV.Cells[3, 14]];
-               xlRangePivotFFVV.MergeCells = true;
-               xlRangePivotFFVV.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")));//SubTitulo + " " + Anio.ToString();
-               xlRangePivotFFVV.Font.Bold = true;
-               xlRangePivotFFVV.Font.Size = 12;
-               xlRangePivotFFVV.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-               xlRangePivotFFVV.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-
-               xlRangePivotFFVV = xlWorksheetPivotFFVV.Range[xlWorksheetPivotFFVV.Cells[6, 1], xlWorksheetPivotFFVV.Cells[6, 1]]; ;
-
-               // create Pivot Cache and Pivot Table
-               //XLExcel.PivotCache XLPivotCache = (XLExcel.PivotCache)xlWorkbook.PivotCaches().Add(XLExcel.XlPivotTableSourceType.xlDatabase, xlRange);
-               XLExcel.PivotTable XLPivotTableFFVV = (XLExcel.PivotTable)xlWorksheetPivotFFVV.PivotTables().Add(PivotCache: XLPivotCache, TableDestination: xlRangePivotFFVV, TableName: "FFVV");
-
-               // create Pivot Field, note that name will be the same as column name on sheet one
-               XLExcel.PivotField XLPivotFieldMESFFVV = (XLExcel.PivotField)XLPivotTableFFVV.PivotFields("MES");
-               XLPivotFieldMESFFVV.Orientation = XLExcel.XlPivotFieldOrientation.xlColumnField;
-               XLPivotFieldMESFFVV.Name = "MES";
-
-               XLExcel.PivotField XLPivotFieldVENDEDORFFVV = (XLExcel.PivotField)XLPivotTableFFVV.PivotFields("VENDEDOR");
-               XLPivotFieldVENDEDORFFVV.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
-               XLPivotFieldVENDEDORFFVV.Name = "VENDEDOR";
-
-               XLExcel.PivotField XLPivotFieldTEUSFFVV = (XLExcel.PivotField)XLPivotTableFFVV.PivotFields((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL"));
-               XLPivotFieldTEUSFFVV.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-               XLPivotFieldTEUSFFVV.Function = XLExcel.XlConsolidationFunction.xlSum;
-               XLPivotFieldTEUSFFVV.Name = "Sum " + (x_CCOT_CodFLE == 1 ? "TEUS" : "LCL");
-
-               if (MostrarRebate)
-               {
-                  XLExcel.PivotField XLPivotFieldRENT_TOTALFFVV = (XLExcel.PivotField)XLPivotTableFFVV.PivotFields("RENTABILIDAD_CON_REBATE");
-                  XLPivotFieldRENT_TOTALFFVV.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-                  XLPivotFieldRENT_TOTALFFVV.Function = XLExcel.XlConsolidationFunction.xlSum;
-                  XLPivotFieldRENT_TOTALFFVV.Name = "Sum RENTABILIDAD_CON_REBATE";
-               }
-               else
-               {
-                  XLExcel.PivotField XLPivotFieldRENT_TOTALFFVV = (XLExcel.PivotField)XLPivotTableFFVV.PivotFields("RENT_TOTAL");
-                  XLPivotFieldRENT_TOTALFFVV.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-                  XLPivotFieldRENT_TOTALFFVV.Function = XLExcel.XlConsolidationFunction.xlSum;
-                  XLPivotFieldRENT_TOTALFFVV.Name = "Sum RENT_TOTAL";
-               }
-
-               XLPivotTableFFVV.SubtotalLocation(XLExcel.XlSubtototalLocationType.xlAtBottom);
-               XLPivotTableFFVV.DataPivotField.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
-               XLPivotTableFFVV.DataPivotField.Position = 2;
-
-               XLPivotTableFFVV.TableStyle2 = "PivotStyleLight18";
-               XLPivotTableFFVV.RowAxisLayout(XLExcel.XlLayoutRowType.xlCompactRow);
-               #endregion
-
-               #region [ FUERZA DE VENTAS TRAFICO ]
-               xlWorksheetData.Activate();
-               xlRange = xlWorksheetData.Range[xlWorksheetData.Cells[1, 1], xlWorksheetData.Cells[Reporte.Rows.Count + 1, Reporte.Columns.Count]];
-
-               xlWorksheetPivotFFVVServicios = (XLExcel.Worksheet)xlWorkbook.Worksheets[(MostrarRebate ? 5 : 4)];
-               xlWorksheetPivotFFVVServicios.Name = "FF VV Servicios";
-
-               xlWorksheetPivotFFVVServicios.Activate();
-
-               XLExcel.Range xlRangePivotFFVVServicios;
-
-               //TITLE
-               xlRangePivotFFVVServicios = xlWorksheetPivotFFVVServicios.Range[xlWorksheetPivotFFVVServicios.Cells[2, 1], xlWorksheetPivotFFVVServicios.Cells[2, 14]];
-               xlRangePivotFFVVServicios.MergeCells = true;
-               xlRangePivotFFVVServicios.Value = Empresa + " - " + Titulo + (MostrarRebate ? " CON REBATE POR SERVICIO" : "");
-               xlRangePivotFFVVServicios.Font.Bold = true;
-               xlRangePivotFFVVServicios.Font.Size = 16;
-               xlRangePivotFFVVServicios.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-               xlRangePivotFFVVServicios.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-               xlRangePivotFFVVServicios = xlWorksheetPivotFFVVServicios.Range[xlWorksheetPivotFFVVServicios.Cells[3, 1], xlWorksheetPivotFFVVServicios.Cells[3, 14]];
-               xlRangePivotFFVVServicios.MergeCells = true;
-               xlRangePivotFFVVServicios.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")));//SubTitulo + " " + Anio.ToString();
-               xlRangePivotFFVVServicios.Font.Bold = true;
-               xlRangePivotFFVVServicios.Font.Size = 12;
-               xlRangePivotFFVVServicios.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-               xlRangePivotFFVVServicios.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-
-               xlRangePivotFFVVServicios = xlWorksheetPivotFFVVServicios.Range[xlWorksheetPivotFFVVServicios.Cells[6, 1], xlWorksheetPivotFFVVServicios.Cells[6, 1]]; ;
-
-               // create Pivot Cache and Pivot Table
-               //XLExcel.PivotCache XLPivotCache = (XLExcel.PivotCache)xlWorkbook.PivotCaches().Add(XLExcel.XlPivotTableSourceType.xlDatabase, xlRange);
-               XLExcel.PivotTable XLPivotTableFFVVServicios = (XLExcel.PivotTable)xlWorksheetPivotFFVVServicios.PivotTables().Add(PivotCache: XLPivotCache, TableDestination: xlRangePivotFFVVServicios, TableName: "FFVV Servicios");
-
-               // create Pivot Field, note that name will be the same as column name on sheet one
-               XLExcel.PivotField XLPivotFieldMESFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields("MES");
-               XLPivotFieldMESFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlColumnField;
-               XLPivotFieldMESFFVVServicios.Name = "MES";
-
-               XLExcel.PivotField XLPivotFieldVENDEDORFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields("TRAFICO");
-               XLPivotFieldVENDEDORFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
-               XLPivotFieldVENDEDORFFVVServicios.Name = "TRAFICO";
-
-               XLExcel.PivotField XLPivotFieldSERVICIOFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields("VENDEDOR");
-               XLPivotFieldSERVICIOFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
-               XLPivotFieldSERVICIOFFVVServicios.Name = "VENDEDOR";
-
-               XLExcel.PivotField XLPivotFieldTEUSFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL"));
-               XLPivotFieldTEUSFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-               XLPivotFieldTEUSFFVVServicios.Function = XLExcel.XlConsolidationFunction.xlSum;
-               XLPivotFieldTEUSFFVVServicios.Name = "Sum " + (x_CCOT_CodFLE == 1 ? "TEUS" : "LCL");
-
-               if (MostrarRebate)
-               {
-                  XLExcel.PivotField XLPivotFieldRENT_TOTALFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields("RENTABILIDAD_CON_REBATE");
-                  XLPivotFieldRENT_TOTALFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-                  XLPivotFieldRENT_TOTALFFVVServicios.Function = XLExcel.XlConsolidationFunction.xlSum;
-                  XLPivotFieldRENT_TOTALFFVVServicios.Name = "Sum RENTABILIDAD_CON_REBATE";
-               }
-               else
-               {
-                  XLExcel.PivotField XLPivotFieldRENT_TOTALFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields("RENT_TOTAL");
-                  XLPivotFieldRENT_TOTALFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-                  XLPivotFieldRENT_TOTALFFVVServicios.Function = XLExcel.XlConsolidationFunction.xlSum;
-                  XLPivotFieldRENT_TOTALFFVVServicios.Name = "Sum RENT_TOTAL";
-               }
-
-               XLPivotTableFFVVServicios.SubtotalLocation(XLExcel.XlSubtototalLocationType.xlAtBottom);
-               XLPivotTableFFVVServicios.DataPivotField.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
-               XLPivotTableFFVVServicios.DataPivotField.Position = 2;
-
-               XLPivotTableFFVVServicios.TableStyle2 = "PivotStyleLight18";
-               XLPivotTableFFVVServicios.RowAxisLayout(XLExcel.XlLayoutRowType.xlCompactRow);
-               #endregion
-            }
-            else
-            {
-               #region [ SERVICIO TRANSMISIONES ]
-               xlWorksheetData.Activate();
-               xlRange = xlWorksheetData.Range[xlWorksheetData.Cells[1, 1], xlWorksheetData.Cells[Reporte.Rows.Count + 1, Reporte.Columns.Count]];
-
-               xlWorksheetPivot = (XLExcel.Worksheet)xlWorkbook.Worksheets[2];
-               xlWorksheetPivot.Name = "TOTAL " + Nombre + (MostrarRebate ? " SIN REBATE" : "");
-               xlWorksheetPivot.Activate();
-
-               XLExcel.Range xlRangePivot;
-
-               //TITLE
-               xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[2, 1], xlWorksheetPivot.Cells[2, 14]];
-               xlRangePivot.MergeCells = true;
-               xlRangePivot.Value = Empresa + " - " + Titulo + (MostrarRebate ? " SIN REBATE" : "");
-               xlRangePivot.Font.Bold = true;
-               xlRangePivot.Font.Size = 16;
-               xlRangePivot.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-               xlRangePivot.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-               xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[3, 1], xlWorksheetPivot.Cells[3, 14]];
-               xlRangePivot.MergeCells = true;
-               xlRangePivot.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")));//SubTitulo + " " + Anio.ToString();
-               xlRangePivot.Font.Bold = true;
-               xlRangePivot.Font.Size = 12;
-               xlRangePivot.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
-               xlRangePivot.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
-
-
-               xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[6, 1], xlWorksheetPivot.Cells[6, 1]]; ;
-
-               // create Pivot Cache and Pivot Table
-               XLExcel.PivotCache XLPivotCache = (XLExcel.PivotCache)xlWorkbook.PivotCaches().Add(XLExcel.XlPivotTableSourceType.xlDatabase, xlRange);
-               XLExcel.PivotTable XLPivotTable = (XLExcel.PivotTable)xlWorksheetPivot.PivotTables().Add(PivotCache: XLPivotCache, TableDestination: xlRangePivot, TableName: "SIN REBATE");
-
-               // create Pivot Field, note that name will be the same as column name on sheet one
-               XLExcel.PivotField XLPivotFieldMES = (XLExcel.PivotField)XLPivotTable.PivotFields("MES");
-               XLPivotFieldMES.Orientation = XLExcel.XlPivotFieldOrientation.xlColumnField;
-               XLPivotFieldMES.Name = "MES";
-
-               XLExcel.PivotField XLPivotFieldVENDEDOR = (XLExcel.PivotField)XLPivotTable.PivotFields("VENDEDOR");
-               XLPivotFieldVENDEDOR.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
-               XLPivotFieldVENDEDOR.Name = "VENDEDOR";
-
-               XLExcel.PivotField XLPivotFieldTEUS = (XLExcel.PivotField)XLPivotTable.PivotFields((EsServicioTransmision ? "BLS" : ((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL"))));
-               XLPivotFieldTEUS.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-               XLPivotFieldTEUS.Function = XLExcel.XlConsolidationFunction.xlSum;
-               XLPivotFieldTEUS.Name = "Sum " + (EsServicioTransmision ? "BLS" : ((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL")));
-
-               XLExcel.PivotField XLPivotFieldRENT_TOTAL = (XLExcel.PivotField)XLPivotTable.PivotFields("RENT_TOTAL");
-               XLPivotFieldRENT_TOTAL.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
-               XLPivotFieldRENT_TOTAL.Function = XLExcel.XlConsolidationFunction.xlSum;
-               XLPivotFieldRENT_TOTAL.Name = "Sum RENT_TOTAL";
-
-               XLPivotTable.SubtotalLocation(XLExcel.XlSubtototalLocationType.xlAtBottom);
-               XLPivotTable.DataPivotField.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
-               XLPivotTable.DataPivotField.Position = 2;
-
-               XLPivotTable.TableStyle2 = "PivotStyleLight18";
-               XLPivotTable.RowAxisLayout(XLExcel.XlLayoutRowType.xlCompactRow);
-               #endregion
-            }
+            //if (!EsServicioTransmision)
+            //{
+            //   #region [ Comparacion ]
+            //   xlWorksheetComparacion = (XLExcel.Worksheet)xlWorkbook.Worksheets[(MostrarRebate ? 6 : 5)];
+            //   xlWorksheetComparacion.Name = "COMPARATIVO";
+
+            //   xlWorksheetComparacion.Activate();
+
+            //   rowIndex = 0;
+            //   colIndex = 0;
+
+            //   //HEADER
+            //   _columns = new Object[1, Comparacion1.Columns.Count];
+            //   foreach (System.Data.DataColumn _column in Comparacion1.Columns)
+            //   { _columns[rowIndex, colIndex] = _column.ColumnName; colIndex += 1; }
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[7, 1], xlWorksheetComparacion.Cells[7, 14]];
+            //   xlRangeComparacion.Value2 = _columns;
+
+            //   rowIndex = 0;
+            //   colIndex = 0;
+
+            //   //CELLS
+            //   _data = new Object[Comparacion1.Rows.Count, Comparacion1.Columns.Count];
+            //   foreach (System.Data.DataRow _row in Comparacion1.Rows)
+            //   {
+            //      colIndex = 0;
+            //      foreach (System.Data.DataColumn _column in Comparacion1.Columns)
+            //      { _data[rowIndex, colIndex] = _row[_column.ColumnName]; colIndex += 1; }
+            //      rowIndex += 1;
+            //   }
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[8, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 11 : 10), 14]];
+            //   xlRangeComparacion.Value2 = _data;
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[7, 1], xlWorksheetComparacion.Cells[7, 1]];
+            //   xlRangeComparacion.Value = (Anio - 1).ToString();
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[7, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 11 : 10), 14]];
+            //   setBorderCelda(xlRangeComparacion, XLExcel.XlBorderWeight.xlThin, XLExcel.XlLineStyle.xlContinuous, true, true, true, true, true, true, true, false, false);
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[7, 1], xlWorksheetComparacion.Cells[7, 14]];
+            //   xlRangeComparacion.Interior.Pattern = XLExcel.XlPattern.xlPatternSolid;
+            //   xlRangeComparacion.Interior.PatternColorIndex = XLExcel.XlPattern.xlPatternAutomatic;
+            //   xlRangeComparacion.Interior.ThemeColor = XLExcel.XlThemeColor.xlThemeColorAccent2;
+            //   xlRangeComparacion.Interior.TintAndShade = 0;
+            //   xlRangeComparacion.Interior.PatternTintAndShade = 0;
+            //   xlRangeComparacion.Font.ThemeColor = XLExcel.XlThemeColor.xlThemeColorDark1;
+            //   xlRangeComparacion.Font.TintAndShade = 0;
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[7, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 11 : 10), 1]];
+            //   xlRangeComparacion.Interior.Pattern = XLExcel.XlPattern.xlPatternSolid;
+            //   xlRangeComparacion.Interior.PatternColorIndex = XLExcel.XlPattern.xlPatternAutomatic;
+            //   xlRangeComparacion.Interior.ThemeColor = XLExcel.XlThemeColor.xlThemeColorAccent2;
+            //   xlRangeComparacion.Interior.TintAndShade = 0;
+            //   xlRangeComparacion.Interior.PatternTintAndShade = 0;
+            //   xlRangeComparacion.Font.ThemeColor = XLExcel.XlThemeColor.xlThemeColorDark1;
+            //   xlRangeComparacion.Font.TintAndShade = 0;
+
+
+            //   rowIndex = 0;
+            //   colIndex = 0;
+
+            //   //HEADER
+            //   _columns = new Object[1, Comparacion2.Columns.Count];
+            //   foreach (System.Data.DataColumn _column in Comparacion2.Columns)
+            //   { _columns[rowIndex, colIndex] = _column.ColumnName; colIndex += 1; }
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[13, 1], xlWorksheetComparacion.Cells[13, Comparacion2.Columns.Count]];
+            //   xlRangeComparacion.Value2 = _columns;
+
+            //   rowIndex = 0;
+            //   colIndex = 0;
+
+            //   //CELLS
+            //   _data = new Object[Comparacion2.Rows.Count, Comparacion2.Columns.Count];
+            //   foreach (System.Data.DataRow _row in Comparacion2.Rows)
+            //   {
+            //      colIndex = 0;
+            //      foreach (System.Data.DataColumn _column in Comparacion2.Columns)
+            //      { _data[rowIndex, colIndex] = _row[_column.ColumnName]; colIndex += 1; }
+            //      rowIndex += 1;
+            //   }
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[14, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 17 : 16), Comparacion2.Columns.Count]];
+            //   xlRangeComparacion.Value2 = _data;
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[13, 1], xlWorksheetComparacion.Cells[13, 1]];
+            //   xlRangeComparacion.Value = Anio.ToString();
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[13, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 17 : 16), 14]];
+            //   setBorderCelda(xlRangeComparacion, XLExcel.XlBorderWeight.xlThin, XLExcel.XlLineStyle.xlContinuous, true, true, true, true, true, true, true, false, false);
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[13, 1], xlWorksheetComparacion.Cells[13, 14]];
+            //   xlRangeComparacion.Interior.Pattern = XLExcel.XlPattern.xlPatternSolid;
+            //   xlRangeComparacion.Interior.PatternColorIndex = XLExcel.XlPattern.xlPatternAutomatic;
+            //   xlRangeComparacion.Interior.ThemeColor = XLExcel.XlThemeColor.xlThemeColorAccent2;
+            //   xlRangeComparacion.Interior.TintAndShade = 0;
+            //   xlRangeComparacion.Interior.PatternTintAndShade = 0;
+            //   xlRangeComparacion.Font.ThemeColor = XLExcel.XlThemeColor.xlThemeColorDark1;
+            //   xlRangeComparacion.Font.TintAndShade = 0;
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[13, 1], xlWorksheetComparacion.Cells[(x_CCOT_CodFLE == 1 ? 17 : 16), 1]];
+            //   xlRangeComparacion.Interior.Pattern = XLExcel.XlPattern.xlPatternSolid;
+            //   xlRangeComparacion.Interior.PatternColorIndex = XLExcel.XlPattern.xlPatternAutomatic;
+            //   xlRangeComparacion.Interior.ThemeColor = XLExcel.XlThemeColor.xlThemeColorAccent2;
+            //   xlRangeComparacion.Interior.TintAndShade = 0;
+            //   xlRangeComparacion.Interior.PatternTintAndShade = 0;
+            //   xlRangeComparacion.Font.ThemeColor = XLExcel.XlThemeColor.xlThemeColorDark1;
+            //   xlRangeComparacion.Font.TintAndShade = 0;
+
+            //   XLExcel.Chart XLChart1 = (XLExcel.Chart)xlWorksheetComparacion.Shapes.AddChart(XLExcel.XlChartType.xl3DColumnClustered, 100, 300, 500, 300).Chart;
+
+            //   (XLChart1.SeriesCollection() as XLExcel.SeriesCollection).NewSeries();
+            //   (XLChart1.SeriesCollection(1) as XLExcel.Series).Name = "=COMPARATIVO!$A$7";
+            //   (XLChart1.SeriesCollection(1) as XLExcel.Series).Values = "=COMPARATIVO!$B$" + (x_CCOT_CodFLE == 1 ? "9" : "8") + ":$M$" + (x_CCOT_CodFLE == 1 ? "9" : "8");
+            //   (XLChart1.SeriesCollection(1) as XLExcel.Series).XValues = "=COMPARATIVO!$B$7:$M$7";
+
+            //   (XLChart1.SeriesCollection() as XLExcel.SeriesCollection).NewSeries();
+            //   (XLChart1.SeriesCollection(2) as XLExcel.Series).Name = "=COMPARATIVO!$A$13";
+            //   (XLChart1.SeriesCollection(2) as XLExcel.Series).Values = "=COMPARATIVO!$B$" + (x_CCOT_CodFLE == 1 ? "15" : "14") + ":$M$" + (x_CCOT_CodFLE == 1 ? "15" : "14");
+            //   (XLChart1.SeriesCollection(2) as XLExcel.Series).XValues = "=COMPARATIVO!$B$13:$M$13";
+
+            //   //XLExcel.SeriesCollection XLSeriesCollection1 = XLChart1.SeriesCollection();
+
+            //   //XLExcel.Series XLSerie1 = XLSeriesCollection1.NewSeries();
+            //   //XLSerie1.Name = "=COMPARATIVO!$A$7";
+            //   //XLSerie1.Values = "=COMPARATIVO!$B$8:$M$8";
+            //   //XLSerie1.XValues = "=COMPARATIVO!$B$7:$M$7";
+
+            //   //XLExcel.Series XLSerie2 = XLSeriesCollection1.NewSeries();
+            //   //XLSerie2.Name = "=COMPARATIVO!$A$12";
+            //   //XLSerie2.Values = "=COMPARATIVO!$B$13:$M$13";            
+            //   //XLSerie2.XValues = "=COMPARATIVO!$B$7:$M$7";
+
+            //   XLChart1.SetElement(Microsoft.Office.Core.MsoChartElementType.msoElementChartTitleAboveChart);
+            //   switch (x_CCOT_CodFLE)
+            //   {
+            //      case 1:
+            //         XLChart1.ChartTitle.Text = String.Format("COMPARATIVO {0} - TEUS {1} VS. {2} {3}", Titulo, (Anio - 1), Anio, (MostrarRebate ? " - CON REBATE" : ""));
+            //         break;
+            //      case 2:
+            //         //XLChart1.ChartTitle.Text = String.Format("COMPARATIVO {0} - " + (CONS_CodRGM == "001" ? "LCL" : "BB") + " {1} VS. {2}", Titulo, (Anio - 1), Anio);
+            //         XLChart1.ChartTitle.Text = String.Format("COMPARATIVO {0} - LCL {1} VS. {2} {3}", Titulo, (Anio - 1), Anio, (MostrarRebate ? " - CON REBATE" : ""));
+            //         break;
+            //      default:
+            //         XLChart1.ChartTitle.Text = String.Format("COMPARATIVO {0} {1} VS. {2} {3}", Titulo, (Anio - 1), Anio, (MostrarRebate ? " - CON REBATE" : ""));
+            //         break;
+            //   }
+
+            //   XLChart1.SetElement(Microsoft.Office.Core.MsoChartElementType.msoElementPrimaryValueAxisTitleAdjacentToAxis);
+            //   XLExcel.Axis XlAxis1 = XLChart1.Axes(XLExcel.XlAxisType.xlValue, XLExcel.XlAxisGroup.xlPrimary) as XLExcel.Axis;
+            //   XlAxis1.HasTitle = true;
+            //   switch (x_CCOT_CodFLE)
+            //   {
+            //      case 1:
+            //         XlAxis1.AxisTitle.Caption = "TEUS";
+            //         break;
+            //      case 2:
+            //         XlAxis1.AxisTitle.Caption = "LCL"; //(CONS_CodRGM == "001" ? "LCL" : "BB");
+            //         break;
+            //      default:
+            //         XlAxis1.AxisTitle.Caption = "TEUS";
+            //         break;
+            //   }
+
+            //   //XLChart1.Activate();
+            //   XLChart1.Refresh();
+
+            //   XLExcel.Chart XLChart2 = (XLExcel.Chart)xlWorksheetComparacion.Shapes.AddChart(XLExcel.XlChartType.xl3DColumnClustered, 100, 650, 500, 300).Chart;
+
+            //   (XLChart2.SeriesCollection() as XLExcel.SeriesCollection).NewSeries();
+            //   (XLChart2.SeriesCollection(1) as XLExcel.Series).Name = "=COMPARATIVO!$A$7";
+            //   (XLChart2.SeriesCollection(1) as XLExcel.Series).Values = "=COMPARATIVO!$B$" + (x_CCOT_CodFLE == 1 ? "10" : "9") + ":$M$" + (x_CCOT_CodFLE == 1 ? "10" : "9");
+            //   (XLChart2.SeriesCollection(1) as XLExcel.Series).XValues = "=COMPARATIVO!$B$7:$M$7";
+
+            //   (XLChart2.SeriesCollection() as XLExcel.SeriesCollection).NewSeries();
+            //   (XLChart2.SeriesCollection(2) as XLExcel.Series).Name = "=COMPARATIVO!$A$13";
+            //   (XLChart2.SeriesCollection(2) as XLExcel.Series).Values = "=COMPARATIVO!$B$" + (x_CCOT_CodFLE == 1 ? "16" : "15") + ":$M$" + (x_CCOT_CodFLE == 1 ? "16" : "15");
+            //   (XLChart2.SeriesCollection(2) as XLExcel.Series).XValues = "=COMPARATIVO!$B$13:$M$13";
+
+            //   //XLExcel.SeriesCollection XLSeriesCollection2 = XLChart2.SeriesCollection();
+
+            //   //XLExcel.Series XLSerie3 = XLSeriesCollection2.NewSeries();
+            //   //XLSerie3.Name = "=COMPARATIVO!$A$7";
+            //   //XLSerie3.Values = "=COMPARATIVO!$B$10:$M$10";
+            //   //XLSerie3.XValues = "=COMPARATIVO!$B$7:$M$7";
+
+            //   //XLExcel.Series XLSerie4 = XLSeriesCollection2.NewSeries();
+            //   //XLSerie4.Name = "=COMPARATIVO!$A$13";
+            //   //XLSerie4.Values = "=COMPARATIVO!$B$16:$M$16";
+            //   //XLSerie4.XValues = "=COMPARATIVO!$B$13:$M$13";
+
+            //   XLChart2.SetElement(Microsoft.Office.Core.MsoChartElementType.msoElementChartTitleAboveChart);
+            //   XLChart2.ChartTitle.Text = String.Format("COMPARATIVO {0} - PROFIT {1} VS. {2}", Titulo, (Anio - 1), Anio);
+
+            //   XLChart2.SetElement(Microsoft.Office.Core.MsoChartElementType.msoElementPrimaryValueAxisTitleAdjacentToAxis);
+            //   XLExcel.Axis XlAxis2 = XLChart2.Axes(XLExcel.XlAxisType.xlValue, XLExcel.XlAxisGroup.xlPrimary) as XLExcel.Axis;
+            //   XlAxis2.HasTitle = true;
+            //   XlAxis2.AxisTitle.Caption = "PROFIT";
+
+
+            //   //XLChart2.Activate();
+            //   XLChart2.Refresh();
+
+            //   //TITLE
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[2, 1], xlWorksheetComparacion.Cells[2, 14]];
+            //   xlRangeComparacion.MergeCells = true;
+            //   switch (x_CCOT_CodFLE)
+            //   {
+            //      case 1:
+            //         xlRangeComparacion.Value = Titulo + " - COMPARATIVO TEUS Y PROFIT" + (MostrarRebate ? " CON REBATE" : "");
+            //         break;
+            //      case 2:
+            //         xlRangeComparacion.Value = Titulo + " - COMPARATIVO " + "LCL" + " Y PROFIT" + (MostrarRebate ? " CON REBATE" : ""); //(CONS_CodRGM == "001" ? "LCL" : "BB")
+            //         break;
+            //      default:
+            //         xlRangeComparacion.Value = Titulo + " - COMPARATIVO PROFIT" + (MostrarRebate ? " CON REBATE" : "");;
+            //         break;
+            //   }
+
+            //   xlRangeComparacion.Font.Bold = true;
+            //   xlRangeComparacion.Font.Size = 16;
+            //   xlRangeComparacion.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   xlRangeComparacion.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+            //   xlRangeComparacion = xlWorksheetComparacion.Range[xlWorksheetComparacion.Cells[3, 1], xlWorksheetComparacion.Cells[3, 14]];
+            //   xlRangeComparacion.MergeCells = true;
+            //   //xlRangeComparacion.Value = string.Format("{0} {1} - {2}  {3} VS. {4}", SubTitulo, MonthName(x_Desde.Month), MonthName(x_Hasta.Month), (Anio - 1), Anio); //SubTitulo + " - " + (Anio - 1).ToString() + " VS. " + Anio.ToString();
+            //   xlRangeComparacion.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE"))) + " - " + (Anio - 1).ToString() + " VS. " + Anio.ToString(); ;//SubTitulo + " " + Anio.ToString();
+            //   xlRangeComparacion.Font.Bold = true;
+            //   xlRangeComparacion.Font.Size = 12;
+            //   xlRangeComparacion.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   xlRangeComparacion.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+            //   #endregion
+
+
+            //   //#region [ TOTAL SIN REBATE ]
+            //   //xlWorksheetData.Activate();
+            //   //xlRange = xlWorksheetData.Range[xlWorksheetData.Cells[1, 1], xlWorksheetData.Cells[Reporte.Rows.Count + 1, Reporte.Columns.Count]];
+
+            //   //xlWorksheetPivot = (XLExcel.Worksheet)xlWorkbook.Worksheets[2];
+            //   //xlWorksheetPivot.Name = "TOTAL " + Nombre + (MostrarRebate ? " SIN REBATE" : "");
+            //   //xlWorksheetPivot.Activate();
+
+            //   //XLExcel.Range xlRangePivot;
+
+            //   ////TITLE
+            //   //xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[2, 1], xlWorksheetPivot.Cells[2, 14]];
+            //   //xlRangePivot.MergeCells = true;
+            //   //xlRangePivot.Value = Empresa + " - " + Titulo + (MostrarRebate ? " SIN REBATE" : "");
+            //   //xlRangePivot.Font.Bold = true;
+            //   //xlRangePivot.Font.Size = 16;
+            //   //xlRangePivot.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   //xlRangePivot.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+            //   //xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[3, 1], xlWorksheetPivot.Cells[3, 14]];
+            //   //xlRangePivot.MergeCells = true;
+            //   //xlRangePivot.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")));//SubTitulo + " " + Anio.ToString();
+            //   //xlRangePivot.Font.Bold = true;
+            //   //xlRangePivot.Font.Size = 12;
+            //   //xlRangePivot.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   //xlRangePivot.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+
+            //   //xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[6, 1], xlWorksheetPivot.Cells[6, 1]]; ;
+
+            //   //// create Pivot Cache and Pivot Table
+            //   //XLExcel.PivotCache XLPivotCache = (XLExcel.PivotCache)xlWorkbook.PivotCaches().Add(XLExcel.XlPivotTableSourceType.xlDatabase, xlRange);
+            //   //XLExcel.PivotTable XLPivotTable = (XLExcel.PivotTable)xlWorksheetPivot.PivotTables().Add(PivotCache: XLPivotCache, TableDestination: xlRangePivot, TableName: "SIN REBATE");
+
+            //   //// create Pivot Field, note that name will be the same as column name on sheet one
+            //   //XLExcel.PivotField XLPivotFieldMES = (XLExcel.PivotField)XLPivotTable.PivotFields("MES");
+            //   //XLPivotFieldMES.Orientation = XLExcel.XlPivotFieldOrientation.xlColumnField;
+            //   //XLPivotFieldMES.Name = "MES";
+
+            //   //XLExcel.PivotField XLPivotFieldVENDEDOR = (XLExcel.PivotField)XLPivotTable.PivotFields("VENDEDOR");
+            //   //XLPivotFieldVENDEDOR.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
+            //   //XLPivotFieldVENDEDOR.Name = "VENDEDOR";
+
+            //   //XLExcel.PivotField XLPivotFieldTEUS = (XLExcel.PivotField)XLPivotTable.PivotFields((EsServicioTransmision ? "BLS" : ((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL"))));
+            //   //XLPivotFieldTEUS.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   //XLPivotFieldTEUS.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   //XLPivotFieldTEUS.Name = "Sum " + (EsServicioTransmision ? "BLS" : ((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL")));
+
+            //   //XLExcel.PivotField XLPivotFieldRENT_TOTAL = (XLExcel.PivotField)XLPivotTable.PivotFields("RENT_TOTAL");
+            //   //XLPivotFieldRENT_TOTAL.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   //XLPivotFieldRENT_TOTAL.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   //XLPivotFieldRENT_TOTAL.Name = "Sum RENT_TOTAL";
+
+            //   //XLPivotTable.SubtotalLocation(XLExcel.XlSubtototalLocationType.xlAtBottom);
+            //   //XLPivotTable.DataPivotField.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
+            //   //XLPivotTable.DataPivotField.Position = 2;
+
+            //   //XLPivotTable.TableStyle2 = "PivotStyleLight18";
+            //   //XLPivotTable.RowAxisLayout(XLExcel.XlLayoutRowType.xlCompactRow);
+            //   //#endregion
+
+
+            //   //if (MostrarRebate)
+            //   //{
+            //   //   #region [ TOTAL CON REBATE ]
+            //   //   xlWorksheetData.Activate();
+
+            //   //   xlRange = xlWorksheetData.Range[xlWorksheetData.Cells[1, 1], xlWorksheetData.Cells[Reporte.Rows.Count + 1, Reporte.Columns.Count]];
+
+            //   //   xlWorksheetPivotRebate = (XLExcel.Worksheet)xlWorkbook.Worksheets[3];
+            //   //   xlWorksheetPivotRebate.Name = "TOTAL " + Nombre + " CON REBATE";
+            //   //   xlWorksheetPivotRebate.Activate();
+
+            //   //   XLExcel.Range xlRangePivotRebate;
+
+            //   //   //TITLE
+            //   //   xlRangePivotRebate = xlWorksheetPivotRebate.Range[xlWorksheetPivotRebate.Cells[2, 1], xlWorksheetPivotRebate.Cells[2, 14]];
+            //   //   xlRangePivotRebate.MergeCells = true;
+            //   //   xlRangePivotRebate.Value = Empresa + " - " + Titulo + (MostrarRebate ? " CON REBATE" : "");
+            //   //   xlRangePivotRebate.Font.Bold = true;
+            //   //   xlRangePivotRebate.Font.Size = 16;
+            //   //   xlRangePivotRebate.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   //   xlRangePivotRebate.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+            //   //   xlRangePivotRebate = xlWorksheetPivotRebate.Range[xlWorksheetPivotRebate.Cells[3, 1], xlWorksheetPivotRebate.Cells[3, 14]];
+            //   //   xlRangePivotRebate.MergeCells = true;
+            //   //   xlRangePivotRebate.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")));//SubTitulo + " " + Anio.ToString();
+            //   //   xlRangePivotRebate.Font.Bold = true;
+            //   //   xlRangePivotRebate.Font.Size = 12;
+            //   //   xlRangePivotRebate.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   //   xlRangePivotRebate.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+
+            //   //   xlRangePivotRebate = xlWorksheetPivotRebate.Range[xlWorksheetPivotRebate.Cells[6, 1], xlWorksheetPivotRebate.Cells[6, 1]]; ;
+
+            //   //   // create Pivot Cache and Pivot Table
+            //   //   //XLExcel.PivotCache XLPivotCacheRebate = (XLExcel.PivotCache)xlWorkbook.PivotCaches().Add(XLExcel.XlPivotTableSourceType.xlDatabase, xlRange);
+            //   //   XLExcel.PivotTable XLPivotTableRebate = (XLExcel.PivotTable)xlWorksheetPivotRebate.PivotTables().Add(PivotCache: XLPivotCache, TableDestination: xlRangePivotRebate, TableName: "CON REBATE");
+
+            //   //   // create Pivot Field, note that name will be the same as column name on sheet one
+            //   //   XLExcel.PivotField XLPivotFieldMESRebate = (XLExcel.PivotField)XLPivotTableRebate.PivotFields("MES");
+            //   //   XLPivotFieldMESRebate.Orientation = XLExcel.XlPivotFieldOrientation.xlColumnField;
+            //   //   XLPivotFieldMESRebate.Name = "MES";
+
+            //   //   XLExcel.PivotField XLPivotFieldVENDEDORRebate = (XLExcel.PivotField)XLPivotTableRebate.PivotFields("VENDEDOR");
+            //   //   XLPivotFieldVENDEDORRebate.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
+            //   //   XLPivotFieldVENDEDORRebate.Name = "VENDEDOR";
+
+            //   //   XLExcel.PivotField XLPivotFieldTEUSRebate = (XLExcel.PivotField)XLPivotTableRebate.PivotFields((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL"));
+            //   //   XLPivotFieldTEUSRebate.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   //   XLPivotFieldTEUSRebate.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   //   XLPivotFieldTEUSRebate.Name = "Sum " + (x_CCOT_CodFLE == 1 ? "TEUS" : "LCL");
+
+            //   //   XLExcel.PivotField XLPivotFieldRENT_TOTALRebate = (XLExcel.PivotField)XLPivotTableRebate.PivotFields("RENTABILIDAD_CON_REBATE");
+            //   //   XLPivotFieldRENT_TOTALRebate.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   //   XLPivotFieldRENT_TOTALRebate.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   //   XLPivotFieldRENT_TOTALRebate.Name = "Sum RENTABILIDAD_CON_REBATE";
+
+            //   //   XLPivotTableRebate.SubtotalLocation(XLExcel.XlSubtototalLocationType.xlAtBottom);
+            //   //   XLPivotTableRebate.DataPivotField.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
+            //   //   XLPivotTableRebate.DataPivotField.Position = 2;
+
+            //   //   XLPivotTableRebate.TableStyle2 = "PivotStyleLight18";
+            //   //   XLPivotTableRebate.RowAxisLayout(XLExcel.XlLayoutRowType.xlCompactRow);
+            //   //   #endregion
+            //   //}
+
+            //   //#region [ FUERZA DE VENTAS ]
+            //   //xlWorksheetData.Activate();
+            //   //xlRange = xlWorksheetData.Range[xlWorksheetData.Cells[1, 1], xlWorksheetData.Cells[Reporte.Rows.Count + 1, Reporte.Columns.Count]];
+
+            //   //xlWorksheetPivotFFVV = (XLExcel.Worksheet)xlWorkbook.Worksheets[(MostrarRebate ? 4 : 3)];
+            //   //xlWorksheetPivotFFVV.Name = "FUERZA VENTAS";
+
+            //   //xlWorksheetPivotFFVV.Activate();
+
+            //   //XLExcel.Range xlRangePivotFFVV;
+
+            //   ////TITLE
+            //   //xlRangePivotFFVV = xlWorksheetPivotFFVV.Range[xlWorksheetPivotFFVV.Cells[2, 1], xlWorksheetPivotFFVV.Cells[2, 14]];
+            //   //xlRangePivotFFVV.MergeCells = true;
+            //   //xlRangePivotFFVV.Value = Empresa + " - " + Titulo + (MostrarRebate ? " CON REBATE" : "");
+            //   //xlRangePivotFFVV.Font.Bold = true;
+            //   //xlRangePivotFFVV.Font.Size = 16;
+            //   //xlRangePivotFFVV.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   //xlRangePivotFFVV.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+            //   //xlRangePivotFFVV = xlWorksheetPivotFFVV.Range[xlWorksheetPivotFFVV.Cells[3, 1], xlWorksheetPivotFFVV.Cells[3, 14]];
+            //   //xlRangePivotFFVV.MergeCells = true;
+            //   //xlRangePivotFFVV.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")));//SubTitulo + " " + Anio.ToString();
+            //   //xlRangePivotFFVV.Font.Bold = true;
+            //   //xlRangePivotFFVV.Font.Size = 12;
+            //   //xlRangePivotFFVV.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   //xlRangePivotFFVV.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+
+            //   //xlRangePivotFFVV = xlWorksheetPivotFFVV.Range[xlWorksheetPivotFFVV.Cells[6, 1], xlWorksheetPivotFFVV.Cells[6, 1]]; ;
+
+            //   //// create Pivot Cache and Pivot Table
+            //   ////XLExcel.PivotCache XLPivotCache = (XLExcel.PivotCache)xlWorkbook.PivotCaches().Add(XLExcel.XlPivotTableSourceType.xlDatabase, xlRange);
+            //   //XLExcel.PivotTable XLPivotTableFFVV = (XLExcel.PivotTable)xlWorksheetPivotFFVV.PivotTables().Add(PivotCache: XLPivotCache, TableDestination: xlRangePivotFFVV, TableName: "FFVV");
+
+            //   //// create Pivot Field, note that name will be the same as column name on sheet one
+            //   //XLExcel.PivotField XLPivotFieldMESFFVV = (XLExcel.PivotField)XLPivotTableFFVV.PivotFields("MES");
+            //   //XLPivotFieldMESFFVV.Orientation = XLExcel.XlPivotFieldOrientation.xlColumnField;
+            //   //XLPivotFieldMESFFVV.Name = "MES";
+
+            //   //XLExcel.PivotField XLPivotFieldVENDEDORFFVV = (XLExcel.PivotField)XLPivotTableFFVV.PivotFields("VENDEDOR");
+            //   //XLPivotFieldVENDEDORFFVV.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
+            //   //XLPivotFieldVENDEDORFFVV.Name = "VENDEDOR";
+
+            //   //XLExcel.PivotField XLPivotFieldTEUSFFVV = (XLExcel.PivotField)XLPivotTableFFVV.PivotFields((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL"));
+            //   //XLPivotFieldTEUSFFVV.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   //XLPivotFieldTEUSFFVV.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   //XLPivotFieldTEUSFFVV.Name = "Sum " + (x_CCOT_CodFLE == 1 ? "TEUS" : "LCL");
+
+            //   //if (MostrarRebate)
+            //   //{
+            //   //   XLExcel.PivotField XLPivotFieldRENT_TOTALFFVV = (XLExcel.PivotField)XLPivotTableFFVV.PivotFields("RENTABILIDAD_CON_REBATE");
+            //   //   XLPivotFieldRENT_TOTALFFVV.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   //   XLPivotFieldRENT_TOTALFFVV.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   //   XLPivotFieldRENT_TOTALFFVV.Name = "Sum RENTABILIDAD_CON_REBATE";
+            //   //}
+            //   //else
+            //   //{
+            //   //   XLExcel.PivotField XLPivotFieldRENT_TOTALFFVV = (XLExcel.PivotField)XLPivotTableFFVV.PivotFields("RENT_TOTAL");
+            //   //   XLPivotFieldRENT_TOTALFFVV.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   //   XLPivotFieldRENT_TOTALFFVV.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   //   XLPivotFieldRENT_TOTALFFVV.Name = "Sum RENT_TOTAL";
+            //   //}
+
+            //   //XLPivotTableFFVV.SubtotalLocation(XLExcel.XlSubtototalLocationType.xlAtBottom);
+            //   //XLPivotTableFFVV.DataPivotField.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
+            //   //XLPivotTableFFVV.DataPivotField.Position = 2;
+
+            //   //XLPivotTableFFVV.TableStyle2 = "PivotStyleLight18";
+            //   //XLPivotTableFFVV.RowAxisLayout(XLExcel.XlLayoutRowType.xlCompactRow);
+            //   //#endregion
+
+            //   //#region [ FUERZA DE VENTAS TRAFICO ]
+            //   //xlWorksheetData.Activate();
+            //   //xlRange = xlWorksheetData.Range[xlWorksheetData.Cells[1, 1], xlWorksheetData.Cells[Reporte.Rows.Count + 1, Reporte.Columns.Count]];
+
+            //   //xlWorksheetPivotFFVVServicios = (XLExcel.Worksheet)xlWorkbook.Worksheets[(MostrarRebate ? 5 : 4)];
+            //   //xlWorksheetPivotFFVVServicios.Name = "FF VV Servicios";
+
+            //   //xlWorksheetPivotFFVVServicios.Activate();
+
+            //   //XLExcel.Range xlRangePivotFFVVServicios;
+
+            //   ////TITLE
+            //   //xlRangePivotFFVVServicios = xlWorksheetPivotFFVVServicios.Range[xlWorksheetPivotFFVVServicios.Cells[2, 1], xlWorksheetPivotFFVVServicios.Cells[2, 14]];
+            //   //xlRangePivotFFVVServicios.MergeCells = true;
+            //   //xlRangePivotFFVVServicios.Value = Empresa + " - " + Titulo + (MostrarRebate ? " CON REBATE POR SERVICIO" : "");
+            //   //xlRangePivotFFVVServicios.Font.Bold = true;
+            //   //xlRangePivotFFVVServicios.Font.Size = 16;
+            //   //xlRangePivotFFVVServicios.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   //xlRangePivotFFVVServicios.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+            //   //xlRangePivotFFVVServicios = xlWorksheetPivotFFVVServicios.Range[xlWorksheetPivotFFVVServicios.Cells[3, 1], xlWorksheetPivotFFVVServicios.Cells[3, 14]];
+            //   //xlRangePivotFFVVServicios.MergeCells = true;
+            //   //xlRangePivotFFVVServicios.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")));//SubTitulo + " " + Anio.ToString();
+            //   //xlRangePivotFFVVServicios.Font.Bold = true;
+            //   //xlRangePivotFFVVServicios.Font.Size = 12;
+            //   //xlRangePivotFFVVServicios.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   //xlRangePivotFFVVServicios.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+
+            //   //xlRangePivotFFVVServicios = xlWorksheetPivotFFVVServicios.Range[xlWorksheetPivotFFVVServicios.Cells[6, 1], xlWorksheetPivotFFVVServicios.Cells[6, 1]]; ;
+
+            //   //// create Pivot Cache and Pivot Table
+            //   ////XLExcel.PivotCache XLPivotCache = (XLExcel.PivotCache)xlWorkbook.PivotCaches().Add(XLExcel.XlPivotTableSourceType.xlDatabase, xlRange);
+            //   //XLExcel.PivotTable XLPivotTableFFVVServicios = (XLExcel.PivotTable)xlWorksheetPivotFFVVServicios.PivotTables().Add(PivotCache: XLPivotCache, TableDestination: xlRangePivotFFVVServicios, TableName: "FFVV Servicios");
+
+            //   //// create Pivot Field, note that name will be the same as column name on sheet one
+            //   //XLExcel.PivotField XLPivotFieldMESFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields("MES");
+            //   //XLPivotFieldMESFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlColumnField;
+            //   //XLPivotFieldMESFFVVServicios.Name = "MES";
+
+            //   //XLExcel.PivotField XLPivotFieldVENDEDORFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields("TRAFICO");
+            //   //XLPivotFieldVENDEDORFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
+            //   //XLPivotFieldVENDEDORFFVVServicios.Name = "TRAFICO";
+
+            //   //XLExcel.PivotField XLPivotFieldSERVICIOFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields("VENDEDOR");
+            //   //XLPivotFieldSERVICIOFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
+            //   //XLPivotFieldSERVICIOFFVVServicios.Name = "VENDEDOR";
+
+            //   //XLExcel.PivotField XLPivotFieldTEUSFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL"));
+            //   //XLPivotFieldTEUSFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   //XLPivotFieldTEUSFFVVServicios.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   //XLPivotFieldTEUSFFVVServicios.Name = "Sum " + (x_CCOT_CodFLE == 1 ? "TEUS" : "LCL");
+
+            //   //if (MostrarRebate)
+            //   //{
+            //   //   XLExcel.PivotField XLPivotFieldRENT_TOTALFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields("RENTABILIDAD_CON_REBATE");
+            //   //   XLPivotFieldRENT_TOTALFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   //   XLPivotFieldRENT_TOTALFFVVServicios.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   //   XLPivotFieldRENT_TOTALFFVVServicios.Name = "Sum RENTABILIDAD_CON_REBATE";
+            //   //}
+            //   //else
+            //   //{
+            //   //   XLExcel.PivotField XLPivotFieldRENT_TOTALFFVVServicios = (XLExcel.PivotField)XLPivotTableFFVVServicios.PivotFields("RENT_TOTAL");
+            //   //   XLPivotFieldRENT_TOTALFFVVServicios.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   //   XLPivotFieldRENT_TOTALFFVVServicios.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   //   XLPivotFieldRENT_TOTALFFVVServicios.Name = "Sum RENT_TOTAL";
+            //   //}
+
+            //   //XLPivotTableFFVVServicios.SubtotalLocation(XLExcel.XlSubtototalLocationType.xlAtBottom);
+            //   //XLPivotTableFFVVServicios.DataPivotField.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
+            //   //XLPivotTableFFVVServicios.DataPivotField.Position = 2;
+
+            //   //XLPivotTableFFVVServicios.TableStyle2 = "PivotStyleLight18";
+            //   //XLPivotTableFFVVServicios.RowAxisLayout(XLExcel.XlLayoutRowType.xlCompactRow);
+            //   //#endregion
+            //}
+            //else
+            //{
+            //   #region [ SERVICIO TRANSMISIONES ]
+            //   xlWorksheetData.Activate();
+            //   xlRange = xlWorksheetData.Range[xlWorksheetData.Cells[1, 1], xlWorksheetData.Cells[Reporte.Rows.Count + 1, Reporte.Columns.Count]];
+
+            //   xlWorksheetPivot = (XLExcel.Worksheet)xlWorkbook.Worksheets[2];
+            //   xlWorksheetPivot.Name = "TOTAL " + Nombre + (MostrarRebate ? " SIN REBATE" : "");
+            //   xlWorksheetPivot.Activate();
+
+            //   XLExcel.Range xlRangePivot;
+
+            //   //TITLE
+            //   xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[2, 1], xlWorksheetPivot.Cells[2, 14]];
+            //   xlRangePivot.MergeCells = true;
+            //   xlRangePivot.Value = Empresa + " - " + Titulo + (MostrarRebate ? " SIN REBATE" : "");
+            //   xlRangePivot.Font.Bold = true;
+            //   xlRangePivot.Font.Size = 16;
+            //   xlRangePivot.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   xlRangePivot.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+            //   xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[3, 1], xlWorksheetPivot.Cells[3, 14]];
+            //   xlRangePivot.MergeCells = true;
+            //   xlRangePivot.Value = string.Format("{0} del {1} al {2}", SubTitulo, x_Desde.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")), x_Hasta.ToString("D", CultureInfo.CreateSpecificCulture("es-PE")));//SubTitulo + " " + Anio.ToString();
+            //   xlRangePivot.Font.Bold = true;
+            //   xlRangePivot.Font.Size = 12;
+            //   xlRangePivot.VerticalAlignment = XLExcel.XlVAlign.xlVAlignCenter;
+            //   xlRangePivot.HorizontalAlignment = XLExcel.XlHAlign.xlHAlignCenter;
+
+
+            //   xlRangePivot = xlWorksheetPivot.Range[xlWorksheetPivot.Cells[6, 1], xlWorksheetPivot.Cells[6, 1]]; ;
+
+            //   // create Pivot Cache and Pivot Table
+            //   XLExcel.PivotCache XLPivotCache = (XLExcel.PivotCache)xlWorkbook.PivotCaches().Add(XLExcel.XlPivotTableSourceType.xlDatabase, xlRange);
+            //   XLExcel.PivotTable XLPivotTable = (XLExcel.PivotTable)xlWorksheetPivot.PivotTables().Add(PivotCache: XLPivotCache, TableDestination: xlRangePivot, TableName: "SIN REBATE");
+
+            //   // create Pivot Field, note that name will be the same as column name on sheet one
+            //   XLExcel.PivotField XLPivotFieldMES = (XLExcel.PivotField)XLPivotTable.PivotFields("MES");
+            //   XLPivotFieldMES.Orientation = XLExcel.XlPivotFieldOrientation.xlColumnField;
+            //   XLPivotFieldMES.Name = "MES";
+
+            //   XLExcel.PivotField XLPivotFieldVENDEDOR = (XLExcel.PivotField)XLPivotTable.PivotFields("VENDEDOR");
+            //   XLPivotFieldVENDEDOR.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
+            //   XLPivotFieldVENDEDOR.Name = "VENDEDOR";
+
+            //   XLExcel.PivotField XLPivotFieldTEUS = (XLExcel.PivotField)XLPivotTable.PivotFields((EsServicioTransmision ? "BLS" : ((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL"))));
+            //   XLPivotFieldTEUS.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   XLPivotFieldTEUS.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   XLPivotFieldTEUS.Name = "Sum " + (EsServicioTransmision ? "BLS" : ((x_CCOT_CodFLE == 1 ? "TEUS" : "LCL")));
+
+            //   XLExcel.PivotField XLPivotFieldRENT_TOTAL = (XLExcel.PivotField)XLPivotTable.PivotFields("RENT_TOTAL");
+            //   XLPivotFieldRENT_TOTAL.Orientation = XLExcel.XlPivotFieldOrientation.xlDataField;
+            //   XLPivotFieldRENT_TOTAL.Function = XLExcel.XlConsolidationFunction.xlSum;
+            //   XLPivotFieldRENT_TOTAL.Name = "Sum RENT_TOTAL";
+
+            //   XLPivotTable.SubtotalLocation(XLExcel.XlSubtototalLocationType.xlAtBottom);
+            //   XLPivotTable.DataPivotField.Orientation = XLExcel.XlPivotFieldOrientation.xlRowField;
+            //   XLPivotTable.DataPivotField.Position = 2;
+
+            //   XLPivotTable.TableStyle2 = "PivotStyleLight18";
+            //   XLPivotTable.RowAxisLayout(XLExcel.XlLayoutRowType.xlCompactRow);
+            //   #endregion
+            //}
 
             xlApplication.Visible = true;
 
             releaseObject(xlWorksheetData);
 
-            releaseObject(xlWorksheetPivot);
-            if (MostrarRebate)
-            { releaseObject(xlWorksheetPivotRebate); }
+            //releaseObject(xlWorksheetPivot);
+            //if (MostrarRebate)
+            //{ releaseObject(xlWorksheetPivotRebate); }
             releaseObject(xlWorksheetComparacion);
 
             releaseObject(xlWorksheetPivotFFVV);
@@ -962,7 +962,7 @@ namespace Delfin.Principal
          catch (Exception ex)
          {
             releaseObject(xlWorksheetData);
-            releaseObject(xlWorksheetPivot);
+            //releaseObject(xlWorksheetPivot);
 
             if (MostrarRebate)
             { releaseObject(xlWorksheetPivotRebate); }

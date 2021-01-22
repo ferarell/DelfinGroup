@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\DeployApps\NextSoft\</PublishUrl>
+    <PublishUrl>\\10.0.2.4\inetpub\DeployApps\NextSoft\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -28,7 +28,7 @@
     <PublisherName>Delfin Group Co</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>2.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1915,7 +1915,9 @@
       <DependentUpon>REP000LView.cs</DependentUpon>
     </Compile>
     <Content Include="3d Logo DG.ico" />
-    <None Include="cConfig.xml" />
+    <Content Include="cConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="cubes.ico" />
     <Content Include="cubos.ico" />
     <Content Include="icons8-website-64.png" />

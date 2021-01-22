@@ -20,7 +20,7 @@ Public Class CreateMailItem
         Dim sResult As String = ""
         Try
             mail = Application.CreateItem(Outlook.OlItemType.olMailItem)
-            Dim oInspector As Outlook.Inspector = mail.GetInspector
+            'Dim oInspector As Outlook.Inspector = mail.GetInspector
             If Not mailTo Is Nothing Then
                 mail.To = mailTo
             End If

@@ -470,12 +470,6 @@ Namespace AppService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdateLogisticOperation", ReplyAction:="http://tempuri.org/IDelfinService/UpdateLogisticOperationResponse")>  _
         Function UpdateLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable, ByVal dtOriginalChangeControl As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object())
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/PreFacturar", ReplyAction:="http://tempuri.org/IDelfinService/PreFacturarResponse")>  _
-        Function PreFacturar(ByVal PDOC_Codigo As Integer, ByVal AUDI_UsrCrea As String) As Boolean
-        
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/PreFacturar", ReplyAction:="http://tempuri.org/IDelfinService/PreFacturarResponse")>  _
-        Function PreFacturarAsync(ByVal PDOC_Codigo As Integer, ByVal AUDI_UsrCrea As String) As System.Threading.Tasks.Task(Of Boolean)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -667,14 +661,6 @@ Namespace AppService
         
         Public Function UpdateLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable, ByVal dtOriginalChangeControl As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object()) Implements AppService.IDelfinService.UpdateLogisticOperationAsync
             Return MyBase.Channel.UpdateLogisticOperationAsync(dsLogisticOperation, dtOriginalDetail, dtOriginalChangeControl)
-        End Function
-        
-        Public Function PreFacturar(ByVal PDOC_Codigo As Integer, ByVal AUDI_UsrCrea As String) As Boolean Implements AppService.IDelfinService.PreFacturar
-            Return MyBase.Channel.PreFacturar(PDOC_Codigo, AUDI_UsrCrea)
-        End Function
-        
-        Public Function PreFacturarAsync(ByVal PDOC_Codigo As Integer, ByVal AUDI_UsrCrea As String) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IDelfinService.PreFacturarAsync
-            Return MyBase.Channel.PreFacturarAsync(PDOC_Codigo, AUDI_UsrCrea)
         End Function
     End Class
 End Namespace
