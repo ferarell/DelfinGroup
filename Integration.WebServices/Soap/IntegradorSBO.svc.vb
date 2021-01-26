@@ -751,7 +751,7 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
         Return listRespuestas
     End Function
 
-    Public Function VerificarExistenciaDocumento(CompraVenta As String, TipoDocumento As String, Serie As String, Numero As String, U_MSS_NSTATEMENT As String, U_MSS_TSERV As String) As Respuesta Implements IIntegradorSBO.VerificarExistenciaDocumento
+    Public Function VerificarExistenciaDocumento(CompraVenta As String, TipoDocumento As String, Indicator As String, CardCode As String, Serie As String, Numero As String, U_MSS_NSTATEMENT As String, U_MSS_TSERV As String) As Respuesta Implements IIntegradorSBO.VerificarExistenciaDocumento
 
         Dim oRespuesta As Respuesta = New Respuesta()
         Dim Respuesta As String = "NO"
@@ -768,22 +768,22 @@ Public Function InsertarActualizarSocioNegocio(dsCliente As DataSet) As List(Of 
 
         If CompraVenta = "VE" Then
             If TipoDocumento = "INV" Then
-                UrlBusqueda = UrlDocument + "Invoices/Invoices.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and FolioNum eq " + Numero + "&$format=json"
+                UrlBusqueda = UrlDocument + "Invoices/Invoices.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and Indicator eq '" + Indicator + "' and CardCode eq '" + CardCode + "' and FolioNum eq " + Numero + "&$format=json"
             Else
 
-                UrlBusqueda = UrlDocument + "CreditNotes/CreditNotes.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and FolioNum eq " + Numero + "&$format=json"
+                UrlBusqueda = UrlDocument + "CreditNotes/CreditNotes.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and Indicator eq '" + Indicator + "' and CardCode eq '" + CardCode + "' and FolioNum eq " + Numero + "&$format=json"
             End If
 
 
         ElseIf CompraVenta = "CO" Then
 
             If TipoDocumento = "INV" Then
-                UrlBusqueda = UrlDocument + "PurchaseInvoices/PurchaseInvoices.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and FolioNum eq " + Numero + "&$format=json"
+                UrlBusqueda = UrlDocument + "PurchaseInvoices/PurchaseInvoices.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and Indicator eq '" + Indicator + "' and CardCode eq '" + CardCode + "' and FolioNum eq " + Numero + "&$format=json"
 
 
             Else
 
-                UrlBusqueda = UrlDocument + "PurchaseCreditNotes/PurchaseCreditNotes.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and FolioNum eq " + Numero + "&$format=json"
+                UrlBusqueda = UrlDocument + "PurchaseCreditNotes/PurchaseCreditNotes.xsodata/Get?$filter=FolioPref eq '" + Serie + "' and Indicator eq '" + Indicator + "' and CardCode eq '" + CardCode + "' and FolioNum eq " + Numero + "&$format=json"
             End If
 
         ElseIf CompraVenta = "JE" Then
