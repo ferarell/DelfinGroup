@@ -125,6 +125,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "App.Net.ControlBasc", "Cont
 EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ReportingServices.InformesCompartidos", "ReportingServices.InformesCompartidos\ReportingServices.InformesCompartidos.rptproj", "{35E0CCF6-EFB2-431B-A199-FDA41170A7ED}"
 EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ReportingServices.InformesRecursosHumanos", "ReportingServices.InformesRecursosHumanos\ReportingServices.InformesRecursosHumanos.rptproj", "{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -657,6 +659,22 @@ Global
 		{35E0CCF6-EFB2-431B-A199-FDA41170A7ED}.Release|x86.ActiveCfg = Release
 		{35E0CCF6-EFB2-431B-A199-FDA41170A7ED}.Release|x86.Build.0 = Release
 		{35E0CCF6-EFB2-431B-A199-FDA41170A7ED}.Release|x86.Deploy.0 = Release
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Debug|Any CPU.ActiveCfg = Debug
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Debug|Any CPU.Build.0 = Debug
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Debug|Any CPU.Deploy.0 = Debug
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Debug|x86.ActiveCfg = Debug
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Debug|x86.Build.0 = Debug
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Debug|x86.Deploy.0 = Debug
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.DebugLocal|Any CPU.ActiveCfg = DebugLocal
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.DebugLocal|Any CPU.Build.0 = DebugLocal
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.DebugLocal|x86.ActiveCfg = DebugLocal
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.DebugLocal|x86.Build.0 = DebugLocal
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Release|Any CPU.ActiveCfg = Release
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Release|Any CPU.Build.0 = Release
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Release|Any CPU.Deploy.0 = Release
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Release|x86.ActiveCfg = Release
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Release|x86.Build.0 = Release
+		{70F222E9-BDF2-4A2E-99E4-EAD4FA5FEA4A}.Release|x86.Deploy.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

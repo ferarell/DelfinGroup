@@ -1,8 +1,11 @@
-﻿Imports DevExpress.XtraSplashScreen
+﻿Imports DevExpress.XtraEditors
+Imports DevExpress.XtraSplashScreen
 Imports eFactDelfin
+Imports IntegrationService
 
 Public Class ElectronicInvoicingForm
     Dim oAppService As New AppService.DelfinServiceClient
+    Dim oIntegrationService As New IntegrationService.IntegradorSBOClient
     Public AppUser As String = "sistemas"
 
     Private Sub lueShipline_Properties_EditValueChanged(sender As Object, e As EventArgs) Handles lueStatus.Properties.EditValueChanged
@@ -157,6 +160,11 @@ Public Class ElectronicInvoicingForm
         If _DOCV_Codigo = 0 Then
             Return
         End If
+        If GridView1.GetFocusedRowCellValue("DocumentoSAP").ToString = "" Then
+            If GetDocSAP() = True Then
+                Return
+            End If
+        End If
         Dim dsQuery As DataSet = New DataSet()
         Dim oInvoiceBillsViewerForm As New InvoiceBillsViewerForm
         If GridView1.GetFocusedRowCellValue("TIPO_TDO").ToString().Contains("CREDITO") Then
@@ -170,4 +178,25 @@ Public Class ElectronicInvoicingForm
         oInvoiceBillsViewerForm.ShowDialog()
         GridView1.SetFocusedRowCellValue("DocumentoSAP", oInvoiceBillsViewerForm.sDocSAP)
     End Sub
+
+    Private Function GetDocSAP() As Boolean
+        Dim bResult As Boolean = False
+        Dim oRespuesta As New IntegrationService.Respuesta
+        Dim iCodigoViaje As Integer = GridView1.GetFocusedRowCellValue("NVIA_Codigo")
+        Dim sLineaNegocio As String = GridView1.GetFocusedRowCellValue("CONS_DescLNG")
+        oRespuesta = oIntegrationService.VerificarExistenciaDocumento("VE", "", "", "", Nothing, Nothing)
+        If oRespuesta.Existe = "SI" Then
+            Dim DocNumber As String = oRespuesta.d.results(0).Number.ToString
+            Dim DocCode As Integer = oRespuesta.d.results(0).TransId
+            bResult = True
+            'If Not oAppService.ExecuteSQLNonQuery("EXEC NextSoft.sap.upUpdateSynchronizedJournalEntry " & DocCode.ToString & ",'" & DocNumber & "','JournalEntry','COM_NaveViaje'," & iCodigoViaje.ToString & ",'" & GridView1.GetFocusedRowCellValue("CONS_CodLNG") & "',NULL,'" & AppUser & "'") Then
+            '    XtraMessageBox.Show("Ocurrió un error al actualizar el objeto sap.upUpdateSynchronizedJournalEntry", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            '    Return True
+            'End If
+            GridView1.SetFocusedRowCellValue("DocumentoSAP", DocNumber)
+            XtraMessageBox.Show("La provisión que intenta generar ya existe en SAP, por favor verifique el documento SAP asignado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+        Return bResult
+    End Function
+
 End Class

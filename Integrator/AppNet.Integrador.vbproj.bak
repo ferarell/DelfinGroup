@@ -11,7 +11,7 @@
     <AssemblyName>Integrador</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -22,7 +22,7 @@
     </SccProvider>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>\\30.0.0.10\inetpub\DeployApps\Integrador\</PublishUrl>
+    <PublishUrl>C:\DeployApps\Integrador\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -32,13 +32,13 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://apps.delfingroupco.com.pe:755/Integrador/</InstallUrl>
+    <InstallUrl>http://apps.delfingroupco.com.pe:765/Integrador/</InstallUrl>
     <ProductName>Integrador</ProductName>
     <PublisherName>Delfin Group Co</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
-    <ApplicationVersion>1.0.5.%2a</ApplicationVersion>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.9.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -80,7 +80,7 @@
     <ApplicationIcon>AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>69A0C8E19E50BC70F1C35FA5B9D7CFE734B2AB4D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>4BCEA868F5D2EC0A2F3DDA96E59F2B19C582D468</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>AppNet.Integrador_TemporaryKey.pfx</ManifestKeyFile>
@@ -103,7 +103,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>DelfinGroup.Integrador.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>AppNet.Integrador_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -111,67 +111,76 @@
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
+      <HintPath>..\Libraries\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
+      <HintPath>..\Libraries\CrystalDecisions.ReportSource.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
+      <HintPath>..\Libraries\CrystalDecisions.Shared.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.BonusSkins.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Data.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Office.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.PivotGrid.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraBars.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraNavBar.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraPivotGrid.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraNavBar.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    <Reference Include="DevExpress.XtraPivotGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraTreeList.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraVerticalGrid.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Images.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
@@ -221,10 +230,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjusteDiferenciaForm.Designer.vb">
+      <DependentUpon>AjusteDiferenciaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AjusteDiferenciaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AjusteMonetarioForm.Designer.vb">
       <DependentUpon>AjusteMonetarioForm.vb</DependentUpon>
     </Compile>
     <Compile Include="AjusteMonetarioForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnulaAsientoForm.Designer.vb">
+      <DependentUpon>AnulaAsientoForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AnulaAsientoForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
@@ -288,10 +309,28 @@
     <Compile Include="Controls\ucGridView.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ucAuditPanel.designer.vb">
+    <Compile Include="LibroInventariosBalancesForm.Designer.vb">
+      <DependentUpon>LibroInventariosBalancesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LibroInventariosBalancesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RetencionesForm.Designer.vb">
+      <DependentUpon>RetencionesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RetencionesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReversaAsientoOldForm.Designer.vb">
+      <DependentUpon>ReversaAsientoOldForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReversaAsientoOldForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ucAuditPanel.designer.vb">
       <DependentUpon>ucAuditPanel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ucAuditPanel.vb">
+    <Compile Include="ucAuditPanel.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomValidationRule.vb" />
@@ -370,10 +409,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReportServerCredentials.vb" />
-    <Compile Include="Reports\ImpresionVoucher.vb">
+    <Compile Include="Reports\ImpresionVoucherNextSis.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ImpresionVoucher.rpt</DependentUpon>
+      <DependentUpon>ImpresionVoucherNextSis.rpt</DependentUpon>
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
@@ -408,6 +447,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -513,11 +553,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EstadoResultado.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SplashScreen.Designer.vb">
       <DependentUpon>SplashScreen.vb</DependentUpon>
     </Compile>
     <Compile Include="SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisorOrdenVenta.Designer.vb">
+      <DependentUpon>VisorOrdenVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VisorOrdenVenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VoucherViewerForm.Designer.vb">
@@ -649,13 +696,50 @@
     <Content Include="Resources\ToDoList_32x32.png" />
     <Content Include="Resources\Tomorrow_Flag.png" />
     <Content Include="Resources\Unknown-user.png" />
+    <None Include="AppNet.Integrador_TemporaryKey.pfx" />
+    <None Include="ClassDiagram1.cd" />
+    <Content Include="Reports\ImpresionVoucherConcar.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\LibroInventariosBalances.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\BalanceComprobacionSunat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceComprobacionSunat.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\BalanceGeneralSunat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceGeneralSunat.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\EstadoResultadoSunat.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\AppService\DelfinService.disco" />
+    <None Include="Service References\AppService\DelfinService.wsdl" />
+    <None Include="Service References\AppService\DelfinService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\AppService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
     <None Include="Service References\AppService\configuration.svcinfo" />
     <None Include="Service References\AppService\configuration91.svcinfo" />
-    <None Include="Service References\AppService\DelfinService.disco" />
     <None Include="Service References\AppServiceTest\DelfinServiceTest1.disco" />
     <None Include="Service References\AppServiceTest\DelfinServiceTest1.wsdl" />
     <None Include="Service References\AppServiceTest\DelfinServiceTest5.xsd">
@@ -681,9 +765,6 @@
     <None Include="Service References\AppServiceTest\configuration91.svcinfo" />
     <None Include="My Project\app.manifest" />
     <None Include="DataAccess\Contribuyente.DA" />
-    <None Include="DelfinGroup.Integrador.pfx" />
-    <None Include="DelfinGroupCert.pfx" />
-    <None Include="4BiznesSolutions.snk" />
     <None Include="dsSunat.xsc">
       <DependentUpon>dsSunat.xsd</DependentUpon>
     </None>
@@ -695,8 +776,14 @@
     <None Include="dsSunat.xss">
       <DependentUpon>dsSunat.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="AjusteDiferenciaForm.resx">
+      <DependentUpon>AjusteDiferenciaForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AjusteMonetarioForm.resx">
       <DependentUpon>AjusteMonetarioForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnulaAsientoForm.resx">
+      <DependentUpon>AnulaAsientoForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BalanceSaldosForm.resx">
       <DependentUpon>BalanceSaldosForm.vb</DependentUpon>
@@ -728,7 +815,16 @@
     <EmbeddedResource Include="Controls\ucGridView.resx">
       <DependentUpon>ucGridView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ucAuditPanel.resx">
+    <EmbeddedResource Include="LibroInventariosBalancesForm.resx">
+      <DependentUpon>LibroInventariosBalancesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RetencionesForm.resx">
+      <DependentUpon>RetencionesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReversaAsientoOldForm.resx">
+      <DependentUpon>ReversaAsientoOldForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAuditPanel.resx">
       <DependentUpon>ucAuditPanel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetraccionesConstanciasForm.resx">
@@ -790,10 +886,11 @@
       <LastGenOutput>BalanceGeneral.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="Reports\EstadoResultado.rpt">
+    <Content Include="Reports\EstadoResultado.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EstadoResultado.vb</LastGenOutput>
-    </EmbeddedResource>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Reports\LibroDiario.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>LibroDiario.vb</LastGenOutput>
@@ -829,9 +926,9 @@
       <LastGenOutput>ImpresionBoleta.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reports\ImpresionVoucher.rpt">
+    <Content Include="Reports\ImpresionVoucherNextSis.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ImpresionVoucher.vb</LastGenOutput>
+      <LastGenOutput>ImpresionVoucherNextSis.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="ReportViewerForm.resx">
@@ -846,6 +943,9 @@
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VisorOrdenVenta.resx">
+      <DependentUpon>VisorOrdenVenta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VoucherViewerForm.resx">
       <DependentUpon>VoucherViewerForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -855,22 +955,6 @@
     <EmbeddedResource Include="XtraForm1.resx">
       <DependentUpon>XtraForm1.vb</DependentUpon>
     </EmbeddedResource>
-    <None Include="Service References\AppService\DelfinService.wsdl" />
-    <None Include="Service References\AppService\DelfinService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AppService\DelfinService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AppService\DelfinService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AppService\DelfinService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\AppService\DelfinService4.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="System.Data.DataTable.datasource" />
   </ItemGroup>
   <ItemGroup>
@@ -917,16 +1001,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PublishFile Include="CrystalDecisions.CrystalReports.Engine">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
       <Visible>False</Visible>
       <Group>
@@ -1047,7 +1121,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="CrystalDecisions.ReportSource">
+    <PublishFile Include="DevExpress.Office.v17.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1057,7 +1131,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="CrystalDecisions.Shared">
+    <PublishFile Include="DevExpress.RichEdit.v17.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1067,7 +1141,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="CrystalDecisions.Windows.Forms">
+    <PublishFile Include="DevExpress.Sparkline.v17.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1077,7 +1151,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Office.v13.1.Core">
+    <PublishFile Include="DevExpress.XtraTreeList.v17.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1087,37 +1161,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.RichEdit.v13.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.Sparkline.v13.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraTreeList.v13.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="de\DevExpress.Data.v13.1.resources">
+    <PublishFile Include="de\DevExpress.Data.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1127,7 +1171,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Office.v13.1.Core.resources">
+    <PublishFile Include="de\DevExpress.Office.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1137,7 +1181,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.PivotGrid.v13.1.Core.resources">
+    <PublishFile Include="de\DevExpress.PivotGrid.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1147,7 +1191,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Printing.v13.1.Core.resources">
+    <PublishFile Include="de\DevExpress.Printing.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1157,7 +1201,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.RichEdit.v13.1.Core.resources">
+    <PublishFile Include="de\DevExpress.RichEdit.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1167,7 +1211,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Sparkline.v13.1.Core.resources">
+    <PublishFile Include="de\DevExpress.Sparkline.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1177,7 +1221,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Utils.v13.1.resources">
+    <PublishFile Include="de\DevExpress.Utils.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1187,7 +1231,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraBars.v13.1.resources">
+    <PublishFile Include="de\DevExpress.XtraBars.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1197,7 +1241,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraEditors.v13.1.resources">
+    <PublishFile Include="de\DevExpress.XtraEditors.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1207,7 +1251,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraGrid.v13.1.resources">
+    <PublishFile Include="de\DevExpress.XtraGrid.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1217,7 +1261,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraLayout.v13.1.resources">
+    <PublishFile Include="de\DevExpress.XtraLayout.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1227,7 +1271,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraNavBar.v13.1.resources">
+    <PublishFile Include="de\DevExpress.XtraNavBar.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1237,7 +1281,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraPivotGrid.v13.1.resources">
+    <PublishFile Include="de\DevExpress.XtraPivotGrid.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1247,7 +1291,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraPrinting.v13.1.resources">
+    <PublishFile Include="de\DevExpress.XtraPrinting.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1257,7 +1301,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraRichEdit.v13.1.resources">
+    <PublishFile Include="de\DevExpress.XtraRichEdit.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1267,7 +1311,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraTreeList.v13.1.resources">
+    <PublishFile Include="de\DevExpress.XtraTreeList.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1277,7 +1321,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.XtraVerticalGrid.v13.1.resources">
+    <PublishFile Include="de\DevExpress.XtraVerticalGrid.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1287,7 +1331,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Data.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.Data.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1297,7 +1341,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Office.v13.1.Core.resources">
+    <PublishFile Include="ja\DevExpress.Office.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1307,7 +1351,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.PivotGrid.v13.1.Core.resources">
+    <PublishFile Include="ja\DevExpress.PivotGrid.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1317,7 +1361,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Printing.v13.1.Core.resources">
+    <PublishFile Include="ja\DevExpress.Printing.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1327,7 +1371,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.RichEdit.v13.1.Core.resources">
+    <PublishFile Include="ja\DevExpress.RichEdit.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1337,7 +1381,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Sparkline.v13.1.Core.resources">
+    <PublishFile Include="ja\DevExpress.Sparkline.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1347,7 +1391,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.Utils.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.Utils.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1357,7 +1401,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraBars.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.XtraBars.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1367,7 +1411,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraEditors.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.XtraEditors.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1377,7 +1421,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraGrid.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.XtraGrid.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1387,7 +1431,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraLayout.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.XtraLayout.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1397,7 +1441,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraNavBar.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.XtraNavBar.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1407,7 +1451,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraPivotGrid.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.XtraPivotGrid.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1417,7 +1461,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraPrinting.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.XtraPrinting.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1427,7 +1471,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraRichEdit.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.XtraRichEdit.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1437,7 +1481,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraTreeList.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.XtraTreeList.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1447,7 +1491,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ja\DevExpress.XtraVerticalGrid.v13.1.resources">
+    <PublishFile Include="ja\DevExpress.XtraVerticalGrid.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1497,7 +1541,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Data.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.Data.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1507,7 +1551,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Office.v13.1.Core.resources">
+    <PublishFile Include="ru\DevExpress.Office.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1517,7 +1561,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.PivotGrid.v13.1.Core.resources">
+    <PublishFile Include="ru\DevExpress.PivotGrid.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1527,7 +1571,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Printing.v13.1.Core.resources">
+    <PublishFile Include="ru\DevExpress.Printing.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1537,7 +1581,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.RichEdit.v13.1.Core.resources">
+    <PublishFile Include="ru\DevExpress.RichEdit.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1547,7 +1591,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Sparkline.v13.1.Core.resources">
+    <PublishFile Include="ru\DevExpress.Sparkline.v17.2.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1557,7 +1601,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.Utils.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.Utils.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1567,7 +1611,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraBars.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.XtraBars.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1577,7 +1621,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraEditors.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.XtraEditors.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1587,7 +1631,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraGrid.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.XtraGrid.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1597,7 +1641,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraLayout.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.XtraLayout.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1607,7 +1651,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraNavBar.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.XtraNavBar.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1617,7 +1661,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraPivotGrid.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.XtraPivotGrid.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1627,7 +1671,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraPrinting.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.XtraPrinting.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1637,7 +1681,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraRichEdit.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.XtraRichEdit.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1647,7 +1691,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraTreeList.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.XtraTreeList.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1657,7 +1701,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="ru\DevExpress.XtraVerticalGrid.v13.1.resources">
+    <PublishFile Include="ru\DevExpress.XtraVerticalGrid.v17.2.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
