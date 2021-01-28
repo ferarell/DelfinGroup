@@ -3,8 +3,8 @@ Imports Application.DataAccess
 Public Class DocsVta_BL
     Dim DocsVta_DA As New DocsVta_DA
 
-    Public Function PreFacturar(PDOC_Codigo As Integer, AUDI_UsrCrea As String) As Boolean
-        Return DocsVta_DA.PreFacturar(PDOC_Codigo, AUDI_UsrCrea)
+    Public Function PreFacturar(COPE_Codigo As Integer, dsDocumentoVenta As DataSet) As ArrayList
+        Return DocsVta_DA.PreFacturar(COPE_Codigo, dsDocumentoVenta)
     End Function
 
 End Class

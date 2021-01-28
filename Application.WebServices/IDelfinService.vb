@@ -71,6 +71,10 @@ Public Interface IDelfinService
     Function UpdateLogisticOperation(dsLogisticOperation As DataSet, dtOriginalDetail As DataTable, dtOriginalChangeControl As DataTable) As ArrayList
 
     <OperationContract>
-    Function PreFacturar(PDOC_Codigo As Integer, AUDI_UsrCrea As String) As Boolean
+    Function PreFacturar(COPE_Codigo As Integer, dsDocumentoVenta As DataSet) As ArrayList
+
+
+    <OperationContract>
+    Function InsertDocumentsProvider(dsDocumentsProvider As DataSet, Items As String) As String
 
 End Interface
