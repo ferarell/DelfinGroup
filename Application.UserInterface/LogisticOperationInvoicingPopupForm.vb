@@ -1,4 +1,5 @@
-﻿Imports DevExpress.XtraGrid.Views.Grid
+﻿Imports DevExpress.XtraEditors
+Imports DevExpress.XtraGrid.Views.Grid
 
 Public Class LogisticOperationInvoicingPopupForm
     Dim oAppService As New AppService.DelfinServiceClient
@@ -66,32 +67,54 @@ Public Class LogisticOperationInvoicingPopupForm
     End Sub
 
     Private Sub bbiGenerate_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiGenerate.ItemClick
-        If DevExpress.XtraEditors.XtraMessageBox.Show("Se generarán las pre-facturas de las operciones seleccionadas, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+        If XtraMessageBox.Show("Se generarán las pre-facturas de las operciones seleccionadas, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
             Return
         End If
         Dim bError As Boolean = True
-        'For r = 0 To GridView1.RowCount - 1
-        '    Dim oRow As DataRow = GridView1.GetDataRow(r)
-        '    oRow("Checked") = IIf(IsDBNull(oRow("Checked")), False, oRow("Checked"))
-        '    If oRow("Checked") = False Then
-        '        Continue For
-        '    End If
-        '    'If Not oAppService.PreFacturar(1, AppUser) Then
-        '    '    bError = False
-        '    'End If
+        Dim dsDocVta As New DataSet
+        dsDocVta.Tables.Add(oAppService.ExecuteSQL("SELECT TOP 0 * FROM NextSoft.dbo.VEN_DocsVta").Tables(0))
+        dsDocVta.Tables.Add(oAppService.ExecuteSQL("SELECT TOP 0 * FROM NextSoft.dbo.VEN_DetDocsVta").Tables(0))
+        For r = 0 To GridView1.RowCount - 1
+            Dim oRow As DataRow = GridView1.GetDataRow(r)
+            dsDocVta = GetDataResult(dsDocVta, oRow)
+            Try
+                If Not oAppService.PreFacturar(oRow("COPE_Codigo"), dsDocVta) Then
+                    bError = False
+                End If
 
-        'Next
-        'If bError Then
-
-        '    Return
-        'End If
+            Catch ex As Exception
+                bError = False
+            End Try
+        Next
+        If bError Then
+            XtraMessageBox.Show("Se identificaron algunos errores durante el proceso de pre facturación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
     End Sub
 
+    Function GetDataResult(dsResult As DataSet, drSource As DataRow) As DataSet
+
+
+        Return dsResult
+    End Function
     Private Sub bbiClose_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiClose.ItemClick
         Close()
     End Sub
 
     Private Sub lueTipoComprobante_EditValueChanged(sender As Object, e As EventArgs) Handles lueTipoComprobante.EditValueChanged
         LoadTaxDocumentSerie()
+    End Sub
+
+    Private Sub GridView1_CellValueChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        If e.Column.FieldName = "CONS_CodFPG" Then
+            If GridView1.GetFocusedRowCellValue("CONS_CodFPG") = "001" Then
+                GridView1.SetFocusedRowCellValue("ENLI_DiasDuracion", 0)
+            End If
+        End If
+        If e.Column.FieldName = "ENLI_DiasDuracion" Then
+            If GridView1.GetFocusedRowCellValue("ENLI_DiasDuracion") >= 0 Then
+                GridView1.SetFocusedRowCellValue("DOCV_FechaVcmto", DateAdd(DateInterval.Day, GridView1.GetFocusedRowCellValue("ENLI_DiasDuracion"), deFechaEmision.DateTime))
+            End If
+        End If
     End Sub
 End Class

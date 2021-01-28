@@ -21,12 +21,12 @@ Partial Class LogisticOperationInvoicingPopupForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogisticOperationInvoicingPopupForm))
-        Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition3 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition3 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim ColumnDefinition4 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition5 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition6 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim RowDefinition4 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition5 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition6 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
@@ -368,20 +368,20 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8})
         Me.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.Root.Name = "Root"
-        ColumnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition1.Width = 33.333333333333336R
-        ColumnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition2.Width = 33.333333333333336R
-        ColumnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition3.Width = 33.333333333333336R
-        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition1, ColumnDefinition2, ColumnDefinition3})
-        RowDefinition1.Height = 30.0R
-        RowDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition2.Height = 30.0R
-        RowDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition3.Height = 30.0R
-        RowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute
-        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition1, RowDefinition2, RowDefinition3})
+        ColumnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition4.Width = 33.333333333333336R
+        ColumnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition5.Width = 33.333333333333336R
+        ColumnDefinition6.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition6.Width = 33.333333333333336R
+        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition4, ColumnDefinition5, ColumnDefinition6})
+        RowDefinition4.Height = 30.0R
+        RowDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition5.Height = 30.0R
+        RowDefinition5.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition6.Height = 30.0R
+        RowDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute
+        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition4, RowDefinition5, RowDefinition6})
         Me.Root.Size = New System.Drawing.Size(931, 126)
         Me.Root.TextVisible = False
         '
@@ -583,7 +583,6 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.GridColumn1.Caption = "Días Crédito"
         Me.GridColumn1.FieldName = "ENLI_DiasDuracion"
         Me.GridColumn1.Name = "GridColumn1"
-        Me.GridColumn1.OptionsColumn.ReadOnly = True
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 7
         '
@@ -616,7 +615,7 @@ Partial Class LogisticOperationInvoicingPopupForm
         '
         'GridColumn5
         '
-        Me.GridColumn5.Caption = "Cliente"
+        Me.GridColumn5.Caption = "Socio de Negocio"
         Me.GridColumn5.FieldName = "Cliente"
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.OptionsColumn.ReadOnly = True
