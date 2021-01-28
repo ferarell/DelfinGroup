@@ -19,6 +19,7 @@ Partial Class LogisticOperationInvoicingPopupForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogisticOperationInvoicingPopupForm))
         Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
         Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
@@ -26,7 +27,7 @@ Partial Class LogisticOperationInvoicingPopupForm
         Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim RowDefinition3 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
@@ -38,7 +39,7 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.BarDockControl4 = New DevExpress.XtraBars.BarDockControl()
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.lueSerieComprobante = New DevExpress.XtraEditors.LookUpEdit()
@@ -58,6 +59,24 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.gcInvoicing = New DevExpress.XtraGrid.GridControl()
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn45 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn41 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,6 +104,9 @@ Partial Class LogisticOperationInvoicingPopupForm
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gcInvoicing, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'bmActions
@@ -202,6 +224,7 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LayoutControl1)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.gcInvoicing)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
         Me.SplitContainerControl1.Size = New System.Drawing.Size(935, 391)
         Me.SplitContainerControl1.SplitterPosition = 130
@@ -453,6 +476,179 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.LayoutControlItem8.Text = "Socio de Negocio"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(92, 13)
         '
+        'gcInvoicing
+        '
+        Me.gcInvoicing.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcInvoicing.EmbeddedNavigator.Buttons.Append.Visible = False
+        Me.gcInvoicing.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
+        Me.gcInvoicing.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.gcInvoicing.EmbeddedNavigator.Buttons.EndEdit.Visible = False
+        Me.gcInvoicing.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.gcInvoicing.Location = New System.Drawing.Point(0, 0)
+        Me.gcInvoicing.MainView = Me.GridView1
+        Me.gcInvoicing.Name = "gcInvoicing"
+        Me.gcInvoicing.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
+        Me.gcInvoicing.Size = New System.Drawing.Size(935, 256)
+        Me.gcInvoicing.TabIndex = 172
+        Me.gcInvoicing.UseEmbeddedNavigator = True
+        Me.gcInvoicing.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn45, Me.GridColumn8, Me.GridColumn9, Me.GridColumn41, Me.GridColumn2, Me.GridColumn3, Me.GridColumn6, Me.GridColumn1, Me.GridColumn7, Me.GridColumn4, Me.GridColumn15, Me.GridColumn5, Me.GridColumn10, Me.GridColumn12, Me.GridColumn14})
+        Me.GridView1.GridControl = Me.gcInvoicing
+        Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsView.ColumnAutoWidth = False
+        Me.GridView1.OptionsView.ShowAutoFilterRow = True
+        Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways
+        Me.GridView1.OptionsView.ShowFooter = True
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn45
+        '
+        Me.GridColumn45.Caption = "Código Viaje"
+        Me.GridColumn45.FieldName = "NVIA_Codigo"
+        Me.GridColumn45.Name = "GridColumn45"
+        Me.GridColumn45.OptionsColumn.ReadOnly = True
+        Me.GridColumn45.Visible = True
+        Me.GridColumn45.VisibleIndex = 0
+        '
+        'GridColumn8
+        '
+        Me.GridColumn8.Caption = "Nave"
+        Me.GridColumn8.FieldName = "NAVE_Nombre"
+        Me.GridColumn8.Name = "GridColumn8"
+        Me.GridColumn8.OptionsColumn.ReadOnly = True
+        Me.GridColumn8.Visible = True
+        Me.GridColumn8.VisibleIndex = 1
+        '
+        'GridColumn9
+        '
+        Me.GridColumn9.Caption = "Viaje"
+        Me.GridColumn9.FieldName = "NVIA_NroViaje"
+        Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.OptionsColumn.ReadOnly = True
+        Me.GridColumn9.Visible = True
+        Me.GridColumn9.VisibleIndex = 2
+        '
+        'GridColumn41
+        '
+        Me.GridColumn41.Caption = "No.Cotización"
+        Me.GridColumn41.FieldName = "CCOT_NumDoc"
+        Me.GridColumn41.Name = "GridColumn41"
+        Me.GridColumn41.OptionsColumn.ReadOnly = True
+        Me.GridColumn41.Visible = True
+        Me.GridColumn41.VisibleIndex = 3
+        '
+        'GridColumn2
+        '
+        Me.GridColumn2.Caption = "No.Operación"
+        Me.GridColumn2.FieldName = "COPE_NumDoc"
+        Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.OptionsColumn.ReadOnly = True
+        Me.GridColumn2.Visible = True
+        Me.GridColumn2.VisibleIndex = 4
+        '
+        'GridColumn3
+        '
+        Me.GridColumn3.Caption = "Fecha Emisión"
+        Me.GridColumn3.FieldName = "COPE_FecEmi"
+        Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.OptionsColumn.ReadOnly = True
+        Me.GridColumn3.Visible = True
+        Me.GridColumn3.VisibleIndex = 5
+        '
+        'GridColumn6
+        '
+        Me.GridColumn6.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GridColumn6.AppearanceCell.Options.UseBackColor = True
+        Me.GridColumn6.Caption = "Forma de Pago"
+        Me.GridColumn6.ColumnEdit = Me.RepositoryItemLookUpEdit1
+        Me.GridColumn6.FieldName = "CONS_CodFPG"
+        Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.Visible = True
+        Me.GridColumn6.VisibleIndex = 6
+        '
+        'RepositoryItemLookUpEdit1
+        '
+        Me.RepositoryItemLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit1.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionFormaPago", "Descripción")})
+        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
+        Me.RepositoryItemLookUpEdit1.NullText = ""
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Días Crédito"
+        Me.GridColumn1.FieldName = "ENLI_DiasDuracion"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.OptionsColumn.ReadOnly = True
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 7
+        '
+        'GridColumn7
+        '
+        Me.GridColumn7.Caption = "Fecha Vencimiento"
+        Me.GridColumn7.FieldName = "DOCV_FechaVcmto"
+        Me.GridColumn7.Name = "GridColumn7"
+        Me.GridColumn7.OptionsColumn.ReadOnly = True
+        Me.GridColumn7.Visible = True
+        Me.GridColumn7.VisibleIndex = 8
+        '
+        'GridColumn4
+        '
+        Me.GridColumn4.Caption = "HBL"
+        Me.GridColumn4.FieldName = "COPE_HBL"
+        Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.OptionsColumn.ReadOnly = True
+        Me.GridColumn4.Visible = True
+        Me.GridColumn4.VisibleIndex = 9
+        '
+        'GridColumn15
+        '
+        Me.GridColumn15.Caption = "MBL"
+        Me.GridColumn15.FieldName = "COPE_MBL"
+        Me.GridColumn15.Name = "GridColumn15"
+        Me.GridColumn15.OptionsColumn.ReadOnly = True
+        Me.GridColumn15.Visible = True
+        Me.GridColumn15.VisibleIndex = 10
+        '
+        'GridColumn5
+        '
+        Me.GridColumn5.Caption = "Cliente"
+        Me.GridColumn5.FieldName = "Cliente"
+        Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.OptionsColumn.ReadOnly = True
+        Me.GridColumn5.Visible = True
+        Me.GridColumn5.VisibleIndex = 11
+        '
+        'GridColumn10
+        '
+        Me.GridColumn10.Caption = "Servicio"
+        Me.GridColumn10.FieldName = "SERV_Nombre_SPA"
+        Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.Visible = True
+        Me.GridColumn10.VisibleIndex = 12
+        '
+        'GridColumn12
+        '
+        Me.GridColumn12.Caption = "Moneda"
+        Me.GridColumn12.FieldName = "Moneda"
+        Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.OptionsColumn.ReadOnly = True
+        Me.GridColumn12.Visible = True
+        Me.GridColumn12.VisibleIndex = 13
+        '
+        'GridColumn14
+        '
+        Me.GridColumn14.Caption = "Importe Venta"
+        Me.GridColumn14.FieldName = "DOPE_PrecioTotVta"
+        Me.GridColumn14.Name = "GridColumn14"
+        Me.GridColumn14.OptionsColumn.ReadOnly = True
+        Me.GridColumn14.Visible = True
+        Me.GridColumn14.VisibleIndex = 14
+        '
         'LogisticOperationInvoicingPopupForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -493,6 +689,9 @@ Partial Class LogisticOperationInvoicingPopupForm
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gcInvoicing, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -530,4 +729,22 @@ Partial Class LogisticOperationInvoicingPopupForm
     Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem8 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents gcInvoicing As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn45 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn8 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn9 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn41 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn4 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn15 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn12 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

@@ -655,10 +655,10 @@ Namespace IntegrationService
         Function InsertarActualizarPurchaseCreditMemoAsync(ByVal PurchaseCreditMemo As System.Data.DataSet) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta())
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento", ReplyAction:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumentoResponse")>  _
-        Function VerificarExistenciaDocumento(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As IntegrationService.Respuesta
+        Function VerificarExistenciaDocumento(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Indicator As String, ByVal CardCode As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As IntegrationService.Respuesta
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento", ReplyAction:="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumentoResponse")>  _
-        Function VerificarExistenciaDocumentoAsync(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta)
+        Function VerificarExistenciaDocumentoAsync(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Indicator As String, ByVal CardCode As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -756,12 +756,12 @@ Namespace IntegrationService
             Return MyBase.Channel.InsertarActualizarPurchaseCreditMemoAsync(PurchaseCreditMemo)
         End Function
         
-        Public Function VerificarExistenciaDocumento(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As IntegrationService.Respuesta Implements IntegrationService.IIntegradorSBO.VerificarExistenciaDocumento
-            Return MyBase.Channel.VerificarExistenciaDocumento(CompraVenta, TipoDocumento, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV)
+        Public Function VerificarExistenciaDocumento(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Indicator As String, ByVal CardCode As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As IntegrationService.Respuesta Implements IntegrationService.IIntegradorSBO.VerificarExistenciaDocumento
+            Return MyBase.Channel.VerificarExistenciaDocumento(CompraVenta, TipoDocumento, Indicator, CardCode, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV)
         End Function
         
-        Public Function VerificarExistenciaDocumentoAsync(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta) Implements IntegrationService.IIntegradorSBO.VerificarExistenciaDocumentoAsync
-            Return MyBase.Channel.VerificarExistenciaDocumentoAsync(CompraVenta, TipoDocumento, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV)
+        Public Function VerificarExistenciaDocumentoAsync(ByVal CompraVenta As String, ByVal TipoDocumento As String, ByVal Indicator As String, ByVal CardCode As String, ByVal Serie As String, ByVal Numero As String, ByVal U_MSS_NSTATEMENT As String, ByVal U_MSS_TSERV As String) As System.Threading.Tasks.Task(Of IntegrationService.Respuesta) Implements IntegrationService.IIntegradorSBO.VerificarExistenciaDocumentoAsync
+            Return MyBase.Channel.VerificarExistenciaDocumentoAsync(CompraVenta, TipoDocumento, Indicator, CardCode, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV)
         End Function
     End Class
 End Namespace

@@ -152,18 +152,13 @@ Public Class ElectronicInvoicingForm
 
     End Sub
 
-    Private Sub bbiVoucherGenerate_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSyncSAP.ItemClick
+    Private Sub bbiSyncSAP_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSyncSAP.ItemClick
         If GridView1.RowCount = 0 Then
             Return
         End If
         Dim _DOCV_Codigo As Integer = Convert.ToInt32(GridView1.GetFocusedRowCellValue("DOCV_Codigo"))
         If _DOCV_Codigo = 0 Then
             Return
-        End If
-        If GridView1.GetFocusedRowCellValue("DocumentoSAP").ToString = "" Then
-            If GetDocSAP() = True Then
-                Return
-            End If
         End If
         Dim dsQuery As DataSet = New DataSet()
         Dim oInvoiceBillsViewerForm As New InvoiceBillsViewerForm
@@ -174,27 +169,46 @@ Public Class ElectronicInvoicingForm
             dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForInvoiceBillsInterface " & "1, 1, " & _DOCV_Codigo.ToString() & ", '" & AppUser & "', 'P'")
             oInvoiceBillsViewerForm.sInterfaceName = "InvoiceBills"
         End If
+        Dim DocSAP As String = GridView1.GetFocusedRowCellValue("DocumentoSAP").ToString
+        If DocSAP = "" Then
+            If GetDocSAP(oInvoiceBillsViewerForm.sInterfaceName, dsQuery) = True Then
+                oInvoiceBillsViewerForm.bbiVoucherGenerate.Enabled = False
+            End If
+        Else
+            oInvoiceBillsViewerForm.bbiVoucherGenerate.Enabled = False
+        End If
         oInvoiceBillsViewerForm.dsVoucher = dsQuery
         oInvoiceBillsViewerForm.ShowDialog()
         GridView1.SetFocusedRowCellValue("DocumentoSAP", oInvoiceBillsViewerForm.sDocSAP)
     End Sub
 
-    Private Function GetDocSAP() As Boolean
+    Private Function GetDocSAP(InterfaceName As String, dsVoucherSAP As DataSet) As Boolean
         Dim bResult As Boolean = False
         Dim oRespuesta As New IntegrationService.Respuesta
-        Dim iCodigoViaje As Integer = GridView1.GetFocusedRowCellValue("NVIA_Codigo")
-        Dim sLineaNegocio As String = GridView1.GetFocusedRowCellValue("CONS_DescLNG")
-        oRespuesta = oIntegrationService.VerificarExistenciaDocumento("VE", "", "", "", Nothing, Nothing)
+        Dim iCodigoCtaCte As Integer = dsVoucherSAP.Tables(2).Rows(0)("CCCT_Codigo")
+        Dim oRow As DataRow = dsVoucherSAP.Tables(0).Rows(0)
+        Dim TipDoc As String = IIf(InterfaceName = "InvoiceBills", "INV", "CRD")
+        oRespuesta = oIntegrationService.VerificarExistenciaDocumento("VE", TipDoc, oRow("Indicator"), oRow("CardCode"), oRow("FolioPrefixString"), oRow("FolioNumber"), Nothing, Nothing)
         If oRespuesta.Existe = "SI" Then
             Dim DocNumber As String = oRespuesta.d.results(0).Number.ToString
-            Dim DocCode As Integer = oRespuesta.d.results(0).TransId
+            Dim DocCode As Integer = oRespuesta.d.results(0).DocEntry
+            If DocNumber = "0" Then
+                XtraMessageBox.Show("El valor del número de documento is incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return True
+            End If
             bResult = True
-            'If Not oAppService.ExecuteSQLNonQuery("EXEC NextSoft.sap.upUpdateSynchronizedJournalEntry " & DocCode.ToString & ",'" & DocNumber & "','JournalEntry','COM_NaveViaje'," & iCodigoViaje.ToString & ",'" & GridView1.GetFocusedRowCellValue("CONS_CodLNG") & "',NULL,'" & AppUser & "'") Then
-            '    XtraMessageBox.Show("Ocurrió un error al actualizar el objeto sap.upUpdateSynchronizedJournalEntry", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            '    Return True
-            'End If
+            Dim SqlText As String = ""
+            If TipDoc = "INV" Then
+                SqlText = "EXEC NextSoft.sap.upUpdateSynchronizedInvoiceBills " & DocCode.ToString & ",'" & DocNumber & "','InvoiceBills','CAJ_CtaCte'," & iCodigoCtaCte.ToString & ",'" & AppUser & "'"
+            Else
+                SqlText = "EXEC NextSoft.sap.upUpdateSynchronizedCreditMemo " & DocCode.ToString & ",'" & DocNumber & "','CreditMemo','CAJ_CtaCte'," & iCodigoCtaCte.ToString & ",'" & AppUser & "'"
+            End If
+            If Not oAppService.ExecuteSQLNonQuery(SqlText) Then
+                XtraMessageBox.Show("Ocurrió un error al actualizar la tabla de control de asientos SAP", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return True
+            End If
             GridView1.SetFocusedRowCellValue("DocumentoSAP", DocNumber)
-            XtraMessageBox.Show("La provisión que intenta generar ya existe en SAP, por favor verifique el documento SAP asignado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            XtraMessageBox.Show("El documento de venta que intenta generar ya existe en SAP, por favor verifique el documento SAP asignado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
         Return bResult
     End Function

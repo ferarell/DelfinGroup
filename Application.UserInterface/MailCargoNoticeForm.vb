@@ -507,46 +507,6 @@ Public Class MailCargoNoticeForm
         End Try
         SplashScreenManager.CloseForm(False)
         Return bResult
-
-        'Dim bResult As Boolean = True
-        'Dim aAttachments As New ArrayList
-        'Dim oMailItem As New CreateMailItem
-
-        'Try
-        '    Dim dtQuery As New DataTable
-        '    dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.ptc.OPE_CCOTSS_PorPagar 1,'" & oRow("HBL") & "'").Tables(0)
-        '    'If dtQuery.Rows.Count = 0 Then
-        '    '    DevExpress.XtraEditors.XtraMessageBox.Show("La consulta no retornó datos para el HBL: " & oRow("HBL"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    '    Return False
-        '    'End If
-        '    Dim _RptPath As String = IO.Directory.GetCurrentDirectory & "\Reportes\"
-        '    oMailItem.aAttachment.Add(IO.Directory.GetCurrentDirectory & "\Plantillas\COMUNICADO No.10 - VoBo HBL-HAWB ELECTRONICO.PDF")
-        '    Dim _Subject As String = "AVISO DE COBRANZA"
-        '    _Subject += " / " & GridView1.GetFocusedRowCellValue("NombreNave").ToString
-        '    _Subject += " / " & GridView1.GetFocusedRowCellValue("Viaje_Vuelo").ToString
-        '    _Subject += " / " & oRow("HBL")
-        '    If oRow("DOOV_CodReferencia").trim <> "" Then
-        '        _Subject += " / " & oRow("DOOV_CodReferencia").ToString.Trim
-        '    End If
-        '    _Subject += " / " & oRow("Cliente")
-        '    _Subject += " / " & Format(oRow("ETA_ETD"), "dd/MM/yyyy")
-        '    oMailItem.subject = _Subject
-        '    'richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosLcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
-        '    oMailItem.htmlBody.AppendText(oMailItem.GetPorticoMessageBody("Cliente:", dtQuery, 8))
-        '    oMailItem.mailTo = oRow("ENTC_EMail")
-        '    oMailItem.mailCc = "operations@delfingroupco.com.pe;" & oRow("ENTC_EmailCustomer") & ";" & oRow("ENTC_EmailEjecutivo")
-        '    oMailItem.mailBcc = "auditoria@delfingroupco.com.pe"
-        '    If oMailItem.CreateCustomMessage(_MsgType) <> "" Then
-        '        bResult = False
-        '    End If
-        'Catch ex As Exception
-        '    bResult = False
-        '    DevExpress.XtraEditors.XtraMessageBox.Show("La consulta del HBL: " & oRow("HBL").ToString & " generó el siguiente error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        'Finally
-        '    SplashScreenManager.CloseForm(False)
-        'End Try
-        'SplashScreenManager.CloseForm(False)
-        'Return bResult
     End Function
 
     Function UpdateAddressingDate(iNVIA_Codigo As Integer) As Boolean

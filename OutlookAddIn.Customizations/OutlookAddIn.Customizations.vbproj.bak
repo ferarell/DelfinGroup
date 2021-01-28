@@ -26,16 +26,17 @@
     <OutputType>Library</OutputType>
     <RootNamespace>OutlookAddIn.Customizations</RootNamespace>
     <AssemblyName>Portico.OutlookAddIn</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <StartupObject>
     </StartupObject>
     <IsWebBootstrapper>True</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>\\30.0.0.10\inetpub\DeployApps\OutlookAddIn\</PublishUrl>
-    <InstallUrl>http://apps.delfingroupco.com.pe:755/OutlookAddIn/</InstallUrl>
+    <PublishUrl>C:\DeployApps\PorticoAI\</PublishUrl>
+    <InstallUrl>http://apps.delfingroupco.com.pe:765/PorticoAI/</InstallUrl>
     <TargetCulture>es</TargetCulture>
-    <ApplicationVersion>1.0.0.7</ApplicationVersion>
+    <ApplicationVersion>1.0.4.10</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -51,6 +52,16 @@
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -112,6 +123,7 @@
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <!--
     This section defines properties that are set when the "Release" configuration is selected.
@@ -147,44 +159,75 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="DevExpress.Data.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Office.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Printing.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v13.1.Core, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraBars.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v13.1, Version=13.1.12.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Images.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -242,6 +285,7 @@
   -->
   <ItemGroup>
     <AppDesigner Include="My Project\" />
+    <Compile Include="AvisoLlegada.vb" />
     <Compile Include="CongestionPortuaria.vb" />
     <Compile Include="CustomizedRibbon.Designer.vb">
       <DependentUpon>CustomizedRibbon.vb</DependentUpon>
@@ -249,8 +293,21 @@
     <Compile Include="CustomizedRibbon.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="EmisionHBL.vb" />
+    <Compile Include="EntidadesSunat.vb" />
+    <Compile Include="FacturacionElectronica.vb" />
     <Compile Include="GetHtmlTable.vb" />
+    <Compile Include="GetHtmlTableOld.vb" />
+    <Compile Include="BusinessEntities\MessageLayoutBE.vb" />
+    <Compile Include="ReadXML.vb" />
+    <Compile Include="Reporting.vb" />
+    <Compile Include="SendMessage.vb" />
     <Compile Include="Service References\AppService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PorticoService\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -266,36 +323,97 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ValidaDatosPorNaveViaje.vb" />
-    <Compile Include="XtraForm1.Designer.vb">
-      <DependentUpon>XtraForm1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="XtraForm1.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Content Include="Manual Solicitud Aviso Zarpe_Llegada.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\PorticoService\OutlookAddIn.Customizations.PorticoService.InputConfiguration.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PorticoService\OutlookAddIn.Customizations.PorticoService.InputSubject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PorticoService\OutlookAddIn.Customizations.PorticoService.InputType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PorticoService\OutlookAddIn.Customizations.PorticoService.MessageConfiguration.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PorticoService\OutlookAddIn.Customizations.PorticoService.MessageLayout.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PorticoService\OutlookAddIn.Customizations.PorticoService.MessageStructure.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PorticoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\PorticoService\configuration.svcinfo" />
+    <None Include="Service References\PorticoService\configuration91.svcinfo" />
+    <None Include="Service References\PorticoService\Portico.disco" />
+    <None Include="Service References\AppService\DelfinService.disco" />
+    <None Include="My Project\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\AppService\DelfinService.wsdl" />
+    <None Include="Service References\AppService\DelfinService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppService\DelfinService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <EmbeddedResource Include="My Project\licenses.licx" />
+    <Content Include="ReportGenerator.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AvisoArriboMaritimoFcl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboMaritimoFcl.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AvisoArriboMaritimoLcl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AvisoArriboMaritimoLcl1.vb</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="SettingsForm.resx">
       <DependentUpon>SettingsForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="XtraForm1.resx">
-      <DependentUpon>XtraForm1.vb</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="My Project\DataSources\System.Data.DataSet.datasource" />
-    <None Include="OutlookAddIn.Customizations_TemporaryKey.pfx" />
-    <None Include="Service References\AppService\DelfinService1.wsdl" />
-    <None Include="Service References\AppService\DelfinService5.xsd">
+    <Content Include="ReportGenerator.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AvisoArriboAereo.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AvisoZarpeMaritimo.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\PorticoService\Portico.wsdl" />
+    <None Include="Service References\PorticoService\Portico.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService51.xsd">
+    <None Include="Service References\PorticoService\Portico1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService52.xsd">
+    <None Include="Service References\PorticoService\Portico2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService53.xsd">
+    <None Include="Service References\PorticoService\Portico3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService54.xsd">
+    <None Include="Service References\PorticoService\Portico4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PorticoService\Portico5.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="ThisAddIn.Designer.xml">
@@ -334,6 +452,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AppService\" />
+    <WCFMetadataStorage Include="Service References\PorticoService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\AppService\configuration91.svcinfo" />
@@ -348,11 +467,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataSource\" />
-    <Folder Include="Entities\" />
+    <Folder Include="DataAccess\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AppService\DelfinService1.disco" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -371,16 +489,18 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>OutlookAddIn.Customizations_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>8C4113C7F4C2127C00846AF162F1442778A0AB9F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>05194ADE30532268936F849256E3745D77284338</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>OutlookAddIn.Customizations_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- Include the build rules for a Visual Basic project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
@@ -390,9 +510,9 @@
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="Outlook" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Outlook" Language="vb" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\15.0\Outlook\InstallRoot\Path#outlook.exe" AddItemTemplatesGuid="{5D898164-AEB5-470F-97BA-9253F022FD71}" />
+        <ProjectProperties HostName="Outlook" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Outlook" Language="vb" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Outlook\InstallRoot\Path#outlook.exe" AddItemTemplatesGuid="{5D898164-AEB5-470F-97BA-9253F022FD71}" />
         <Host Name="Outlook" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.vb" CanonicalName="AddIn" PublishedHash="341B421006973DA6ECFF9E7771C273C5532C588D" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.vb" />
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.vb" CanonicalName="AddIn" PublishedHash="097D042D33F55A3A3980D4AB7E40C018B0D94DAF" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.vb" />
         </Host>
       </FlavorProperties>
     </VisualStudio>

@@ -1,7 +1,9 @@
-﻿Imports DevExpress.XtraEditors.DXErrorProvider
-
+﻿Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.DXErrorProvider
+Imports IntegrationService
 Public Class VendorDocumentQueryForm
     Dim oAppService As New AppService.DelfinServiceClient
+    Dim oIntegrationService As New IntegrationService.IntegradorSBOClient
     Dim oMasterDataList As New MasterDataList
     Public AppUser As String = "sistemas"
 
@@ -153,4 +155,35 @@ Public Class VendorDocumentQueryForm
         oPurchaseInvoiceViewerForm.ShowDialog()
         GridView1.SetFocusedRowCellValue("DocumentoSAP", oPurchaseInvoiceViewerForm.sDocSAP)
     End Sub
+
+    Private Function GetDocSAP(InterfaceName As String, dsVoucherSAP As DataSet) As Boolean
+        Dim bResult As Boolean = False
+        Dim oRespuesta As New IntegrationService.Respuesta
+        Dim iCodigoCtaCte As Integer = dsVoucherSAP.Tables(2).Rows(0)("CCCT_Codigo")
+        Dim oRow As DataRow = dsVoucherSAP.Tables(0).Rows(0)
+        Dim TipDoc As String = IIf(InterfaceName = "PurchaseInvoice", "INV", "CRD")
+        oRespuesta = oIntegrationService.VerificarExistenciaDocumento("CO", TipDoc, oRow("Indicator"), oRow("CardCode"), oRow("FolioPrefixString"), oRow("FolioNumber"), Nothing, Nothing)
+        If oRespuesta.Existe = "SI" Then
+            Dim DocNumber As String = oRespuesta.d.results(0).Number.ToString
+            Dim DocCode As Integer = oRespuesta.d.results(0).DocEntry
+            If DocNumber = "0" Then
+                XtraMessageBox.Show("El valor del número de documento is incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return True
+            End If
+            bResult = True
+            Dim SqlText As String = ""
+            If TipDoc = "INV" Then
+                SqlText = "EXEC NextSoft.sap.upUpdateSynchronizedPurchaseInvoice " & DocCode.ToString & ",'" & DocNumber & "','InvoiceBills','CAJ_CtaCte'," & iCodigoCtaCte.ToString & ",'" & AppUser & "'"
+            Else
+                SqlText = "EXEC NextSoft.sap.upUpdateSynchronizedPurchaseCreditMemo " & DocCode.ToString & ",'" & DocNumber & "','CreditMemo','CAJ_CtaCte'," & iCodigoCtaCte.ToString & ",'" & AppUser & "'"
+            End If
+            If Not oAppService.ExecuteSQLNonQuery(SqlText) Then
+                XtraMessageBox.Show("Ocurrió un error al actualizar la tabla de control de asientos SAP", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return True
+            End If
+            GridView1.SetFocusedRowCellValue("DocumentoSAP", DocNumber)
+            XtraMessageBox.Show("El documento de compra que intenta generar ya existe en SAP, por favor verifique el documento SAP asignado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+        Return bResult
+    End Function
 End Class

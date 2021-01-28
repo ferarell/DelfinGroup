@@ -343,6 +343,7 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <Content Include="My Project\DataSources\System.Data.DataSet.datasource" />
+    <None Include="My Project\PublishProfiles\10.0.2.4.pubxml" />
     <None Include="My Project\PublishProfiles\192.168.103.13.pubxml" />
     <None Include="My Project\PublishProfiles\30.0.0.10.pubxml" />
     <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />

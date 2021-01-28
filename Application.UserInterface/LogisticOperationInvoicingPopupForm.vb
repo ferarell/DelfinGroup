@@ -2,11 +2,22 @@
 
 Public Class LogisticOperationInvoicingPopupForm
     Dim oAppService As New AppService.DelfinServiceClient
-    Friend dtSource As New DataTable
+    Dim oMasterDataList As New MasterDataList
+    'Friend dtSource As New DataTable
+    Friend OperationsList As String = ""
+    Friend CodigoMoneda As String
     Friend oProcessType As String = ""
     Private Sub LogisticOperationInvoicingPopupForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim dtSource As New DataTable
         LoadTaxDocumentType()
+        LoadPaymentType()
         deFechaEmision.EditValue = Now
+        dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasPorPreFacturar '" & OperationsList & "','" & CodigoMoneda & "'").Tables(0)
+
+        If oProcessType = "Single" Then
+            'gcInvoicing.MainView = GridView1
+            GridView1.Columns("CONS_CodFPG").Visible = False
+        End If
 
         If oProcessType = "Multiple" Then
             lueMoneda.ReadOnly = True
@@ -14,10 +25,26 @@ Public Class LogisticOperationInvoicingPopupForm
             seDiasCredito.ReadOnly = True
             deFechaVencimiento.ReadOnly = True
             lueSocioNegocio.ReadOnly = True
+            'gcInvoicing.MainView = GridView1
         End If
         lueTipoComprobante.ItemIndex = 0
-        'gcDetail.DataSource = dtSource
+        gcInvoicing.DataSource = dtSource
+        GridView1.BestFitColumns()
 
+    End Sub
+
+    Private Sub LoadPaymentType()
+        Dim dtQuery As New DataTable
+        dtQuery = oMasterDataList.LoadMasterData("PayTerm", Nothing)
+        If oProcessType = "Single" Then
+            lueFormaPago.Properties.DataSource = dtQuery
+            lueFormaPago.Properties.DisplayMember = "DescripcionFormaPago"
+            lueFormaPago.Properties.ValueMember = "CodigoFormaPago"
+        Else
+            RepositoryItemLookUpEdit1.DataSource = dtQuery
+            RepositoryItemLookUpEdit1.DisplayMember = "DescripcionFormaPago"
+            RepositoryItemLookUpEdit1.ValueMember = "CodigoFormaPago"
+        End If
     End Sub
 
     Private Sub LoadTaxDocumentType()

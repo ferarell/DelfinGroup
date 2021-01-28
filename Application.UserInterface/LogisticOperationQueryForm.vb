@@ -298,7 +298,19 @@ Public Class LogisticOperationQueryForm
             Return
         End If
         Dim oForm As New LogisticOperationInvoicingPopupForm
-        oForm.dtSource = dtRegistered.Select("Checked = 1").CopyToDataTable
+        Dim OpeList As String = ""
+        Dim CodMon As String = ""
+        Dim dtQuery As New DataTable
+        dtQuery = dtRegistered.Select("Checked = 1").CopyToDataTable
+        For r = 0 To dtQuery.Rows.Count - 1
+            Dim oRow As DataRow = dtQuery.Rows(r)
+            If r = 0 Then
+                CodMon = oRow("TIPO_CodMND")
+            End If
+            OpeList += IIf(r = 0, "", ",") & oRow("COPE_Codigo").ToString
+        Next
+        oForm.OperationsList = OpeList
+        oForm.CodigoMoneda = CodMon
         oForm.oProcessType = "Multiple"
         If oForm.ShowDialog = DialogResult.OK Then
             bbiSearch.PerformClick()

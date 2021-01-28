@@ -124,7 +124,8 @@ Public Class ReferencesTransferForm
     Private Sub bbiReferences_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiReferencesSync.ItemClick
         Validate()
         Dim dsReferences As New DataSet
-        Dim TipoReferencia, HBL As String
+        Dim TipoReferencia As String = ""
+        Dim HBL As String = ""
         TipoReferencia = GridView1.GetFocusedRowCellValue("Origen")
         Dim iCurrentRow As Integer = 0
         Dim iSelected As Integer = RowSelectedCount(GridView2)

@@ -282,13 +282,13 @@ Public Class AccountingTransferForm
         Dim oRespuesta As New IntegrationService.Respuesta
         Dim iCodigoViaje As Integer = GridView1.GetFocusedRowCellValue("NVIA_Codigo")
         Dim sLineaNegocio As String = GridView1.GetFocusedRowCellValue("CONS_DescLNG")
-        oRespuesta = oIntegrationService.VerificarExistenciaDocumento("JE", "", "", "", iCodigoViaje.ToString, sLineaNegocio)
+        oRespuesta = oIntegrationService.VerificarExistenciaDocumento("JE", "", "", "", "", "", iCodigoViaje.ToString, sLineaNegocio)
         If oRespuesta.Existe = "SI" Then
             Dim DocNumber As String = oRespuesta.d.results(0).Number.ToString
             Dim DocCode As Integer = oRespuesta.d.results(0).TransId
             bResult = True
             If Not oAppService.ExecuteSQLNonQuery("EXEC NextSoft.sap.upUpdateSynchronizedJournalEntry " & DocCode.ToString & ",'" & DocNumber & "','JournalEntry','COM_NaveViaje'," & iCodigoViaje.ToString & ",'" & GridView1.GetFocusedRowCellValue("CONS_CodLNG") & "',NULL,'" & AppUser & "'") Then
-                XtraMessageBox.Show("Ocurrió un error al actualizar el objeto sap.upUpdateSynchronizedJournalEntry", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                XtraMessageBox.Show("Ocurrió un error al actualizar la tabla de control de asientos SAP", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return True
             End If
             GridView1.SetFocusedRowCellValue("DocumentoSAP", DocNumber)
