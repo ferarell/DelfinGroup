@@ -10,4 +10,9 @@ Public Class CustomizedRibbon
         Dim oForm As New SettingsForm
         oForm.ShowDialog()
     End Sub
+
+    Private Sub btStatistics_Click(sender As Object, e As RibbonControlEventArgs) Handles btStatistics.Click
+        'Dim oForm As New StatisticsForm
+        'oForm.ShowDialog()
+    End Sub
 End Class

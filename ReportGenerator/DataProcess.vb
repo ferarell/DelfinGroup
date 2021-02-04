@@ -19,7 +19,7 @@
         dsPrint.Tables.Add(dtPrint2)
         dsPrint.Tables(1).TableName = "Query2"
         Console.Write("FILAS RETORNADAS DE CONSULTA2: " & dtPrint2.Rows.Count & vbNewLine)
-        sFileName = "C:\Portico\Procesados\AVISO_" & sHbl & "_" & Now.ToString("yyyyMMdd") & ".pdf"
+        sFileName = My.Settings.ProcessedPath & "\AVISO_" & sHbl & "_" & Now.ToString("yyyyMMdd") & ".pdf"
         Dim oReporting As New Reporting
         oReporting.dsPrint = dsPrint
         Dim oRow As DataRow = dtPrint1.Rows(0)

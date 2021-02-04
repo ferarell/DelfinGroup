@@ -47,9 +47,12 @@
         Me.Tab2 = Me.Factory.CreateRibbonTab
         Me.Group3 = Me.Factory.CreateRibbonGroup
         Me.btSettings = Me.Factory.CreateRibbonButton
+        Me.btStatistics = Me.Factory.CreateRibbonButton
+        Me.Separator1 = Me.Factory.CreateRibbonSeparator
         Me.Tab1.SuspendLayout()
         Me.Tab2.SuspendLayout()
         Me.Group3.SuspendLayout()
+        Me.SuspendLayout()
         '
         'Tab1
         '
@@ -72,6 +75,8 @@
         'Group3
         '
         Me.Group3.Items.Add(Me.btSettings)
+        Me.Group3.Items.Add(Me.Separator1)
+        Me.Group3.Items.Add(Me.btStatistics)
         Me.Group3.Label = "PORTAL"
         Me.Group3.Name = "Group3"
         '
@@ -82,6 +87,18 @@
         Me.btSettings.Label = "Panel de Configuración"
         Me.btSettings.Name = "btSettings"
         Me.btSettings.ShowImage = True
+        '
+        'btStatistics
+        '
+        Me.btStatistics.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.btStatistics.Image = CType(resources.GetObject("btStatistics.Image"), System.Drawing.Image)
+        Me.btStatistics.Label = "Estadísticas de Uso"
+        Me.btStatistics.Name = "btStatistics"
+        Me.btStatistics.ShowImage = True
+        '
+        'Separator1
+        '
+        Me.Separator1.Name = "Separator1"
         '
         'CustomizedRibbon
         '
@@ -95,6 +112,7 @@
         Me.Tab2.PerformLayout()
         Me.Group3.ResumeLayout(False)
         Me.Group3.PerformLayout()
+        Me.ResumeLayout(False)
 
     End Sub
 
@@ -103,6 +121,8 @@
     Friend WithEvents Tab2 As Microsoft.Office.Tools.Ribbon.RibbonTab
     Friend WithEvents Group3 As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents btSettings As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents Separator1 As Microsoft.Office.Tools.Ribbon.RibbonSeparator
+    Friend WithEvents btStatistics As Microsoft.Office.Tools.Ribbon.RibbonButton
 End Class
 
 Partial Class ThisRibbonCollection

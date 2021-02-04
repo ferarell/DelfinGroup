@@ -38,4 +38,14 @@ Public Class CustomizedRibbon
         Dim oForm As New ResultadoOperativoV3Form
         oForm.ShowDialog()
     End Sub
+
+    Private Sub btUpdateDataBase_Click(sender As Object, e As RibbonControlEventArgs) Handles btUpdateDataBase.Click
+        Dim TittleRng As Excel.Range = Globals.ThisAddIn.Application.Sheets("2020 NEXTSOFT").Range("A1")
+        If Not TittleRng.Text.Contains("BUQUE") Then
+            DevExpress.XtraEditors.XtraMessageBox.Show("Este archivo no es válido para esta opción, verifique por favor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+        Dim oForm As New ConciliacionRebatesForm
+        oForm.ShowDialog()
+    End Sub
 End Class

@@ -1,4 +1,7 @@
 ﻿
+Imports System.Collections
+Imports System.Data
+
 Public Class MasterDataList
     Private oAppService As New AppService.DelfinServiceClient
 

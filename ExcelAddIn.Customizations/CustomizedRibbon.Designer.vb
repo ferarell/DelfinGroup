@@ -49,9 +49,12 @@
         Me.btResultadoOperativoV1 = Me.Factory.CreateRibbonButton
         Me.btResultadoOperativoV2 = Me.Factory.CreateRibbonButton
         Me.btResultadoOperativoV3 = Me.Factory.CreateRibbonButton
+        Me.Group3 = Me.Factory.CreateRibbonGroup
+        Me.btUpdateDataBase = Me.Factory.CreateRibbonButton
         Me.Tab1.SuspendLayout()
         Me.Tab2.SuspendLayout()
         Me.Group2.SuspendLayout()
+        Me.Group3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Tab1
@@ -69,6 +72,7 @@
         'Tab2
         '
         Me.Tab2.Groups.Add(Me.Group2)
+        Me.Tab2.Groups.Add(Me.Group3)
         Me.Tab2.Label = "DELFIN GROUP PERÚ"
         Me.Tab2.Name = "Tab2"
         '
@@ -104,6 +108,20 @@
         Me.btResultadoOperativoV3.Name = "btResultadoOperativoV3"
         Me.btResultadoOperativoV3.ShowImage = True
         '
+        'Group3
+        '
+        Me.Group3.Items.Add(Me.btUpdateDataBase)
+        Me.Group3.Label = "Rebates"
+        Me.Group3.Name = "Group3"
+        '
+        'btUpdateDataBase
+        '
+        Me.btUpdateDataBase.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.btUpdateDataBase.Image = CType(resources.GetObject("btUpdateDataBase.Image"), System.Drawing.Image)
+        Me.btUpdateDataBase.Label = "Conciliación"
+        Me.btUpdateDataBase.Name = "btUpdateDataBase"
+        Me.btUpdateDataBase.ShowImage = True
+        '
         'CustomizedRibbon
         '
         Me.Name = "CustomizedRibbon"
@@ -116,6 +134,8 @@
         Me.Tab2.PerformLayout()
         Me.Group2.ResumeLayout(False)
         Me.Group2.PerformLayout()
+        Me.Group3.ResumeLayout(False)
+        Me.Group3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -127,6 +147,8 @@
     Friend WithEvents btResultadoOperativoV1 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents btResultadoOperativoV2 As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents btResultadoOperativoV3 As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents Group3 As Microsoft.Office.Tools.Ribbon.RibbonGroup
+    Friend WithEvents btUpdateDataBase As Microsoft.Office.Tools.Ribbon.RibbonButton
 End Class
 
 Partial Class ThisRibbonCollection

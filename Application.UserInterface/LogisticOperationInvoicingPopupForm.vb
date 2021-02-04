@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.XtraEditors
 Imports DevExpress.XtraGrid.Views.Grid
+Imports DevExpress.XtraSplashScreen
 
 Public Class LogisticOperationInvoicingPopupForm
     Dim oAppService As New AppService.DelfinServiceClient
@@ -70,29 +71,39 @@ Public Class LogisticOperationInvoicingPopupForm
         If XtraMessageBox.Show("Se generarán las pre-facturas de las operciones seleccionadas, desea continuar? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
             Return
         End If
-        Dim bError As Boolean = True
+        Dim dtHeader, dtDetail As New DataTable
         Dim dsDocVta As New DataSet
-        dsDocVta.Tables.Add(oAppService.ExecuteSQL("SELECT TOP 0 * FROM NextSoft.dbo.VEN_DocsVta").Tables(0))
-        dsDocVta.Tables.Add(oAppService.ExecuteSQL("SELECT TOP 0 * FROM NextSoft.dbo.VEN_DetDocsVta").Tables(0))
+        dtHeader = oAppService.ExecuteSQL("SELECT TOP 0 * FROM NextSoft.dbo.VEN_DocsVta").Tables(0)
+        dtHeader.TableName = "Header"
+        dtDetail = oAppService.ExecuteSQL("SELECT TOP 0 * FROM NextSoft.dbo.VEN_DetDocsVta").Tables(0)
+        dtDetail.TableName = "Detail"
+        dsDocVta.Tables.Add(dtHeader.Copy)
+        dsDocVta.Tables.Add(dtDetail.Copy)
         For r = 0 To GridView1.RowCount - 1
+            Dim aResponse As New ArrayList
             Dim oRow As DataRow = GridView1.GetDataRow(r)
+            SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+            SplashScreenManager.Default.SetWaitFormDescription("PreFacturando (" & (r + 1).ToString & " de " & GridView1.RowCount.ToString & ") OP:  " & oRow("COPE_NumDoc"))
             dsDocVta = GetDataResult(dsDocVta, oRow)
             Try
-                If Not oAppService.PreFacturar(oRow("COPE_Codigo"), dsDocVta) Then
-                    bError = False
-                End If
+                aResponse.AddRange(oAppService.PreFacturar(oRow("COPE_Codigo"), dsDocVta))
+                If aResponse.Count > 0 Then
 
+                End If
             Catch ex As Exception
-                bError = False
+
             End Try
         Next
-        If bError Then
-            XtraMessageBox.Show("Se identificaron algunos errores durante el proceso de pre facturación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
-        End If
+        SplashScreenManager.CloseForm(False)
+        'If bError Then
+        '    SplashScreenManager.CloseForm(False)
+        '    XtraMessageBox.Show("Se identificaron algunos errores durante el proceso de pre facturación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Return
+        'End If
     End Sub
 
     Function GetDataResult(dsResult As DataSet, drSource As DataRow) As DataSet
+        dsResult.Tables(0).Rows.Add()
 
 
         Return dsResult

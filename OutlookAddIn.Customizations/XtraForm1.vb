@@ -1,3 +1,3 @@
-﻿Public Class XtraForm1 
+﻿Public Class XtraForm1
 
 End Class

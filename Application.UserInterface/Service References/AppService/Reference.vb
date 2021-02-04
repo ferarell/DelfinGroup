@@ -470,6 +470,22 @@ Namespace AppService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/UpdateLogisticOperation", ReplyAction:="http://tempuri.org/IDelfinService/UpdateLogisticOperationResponse")>  _
         Function UpdateLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable, ByVal dtOriginalChangeControl As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/PreFacturar", ReplyAction:="http://tempuri.org/IDelfinService/PreFacturarResponse"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(AppService.COM_Det_Cotizacion_OV_EventosTareas_BE)),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()())),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(String()))>  _
+        Function PreFacturar(ByVal COPE_Codigo As Integer, ByVal dsDocumentoVenta As System.Data.DataSet) As Object()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/PreFacturar", ReplyAction:="http://tempuri.org/IDelfinService/PreFacturarResponse")>  _
+        Function PreFacturarAsync(ByVal COPE_Codigo As Integer, ByVal dsDocumentoVenta As System.Data.DataSet) As System.Threading.Tasks.Task(Of Object())
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/InsertDocumentsProvider", ReplyAction:="http://tempuri.org/IDelfinService/InsertDocumentsProviderResponse")>  _
+        Function InsertDocumentsProvider(ByVal dsDocumentsProvider As System.Data.DataSet, ByVal Items As String) As String
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/InsertDocumentsProvider", ReplyAction:="http://tempuri.org/IDelfinService/InsertDocumentsProviderResponse")>  _
+        Function InsertDocumentsProviderAsync(ByVal dsDocumentsProvider As System.Data.DataSet, ByVal Items As String) As System.Threading.Tasks.Task(Of String)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -661,6 +677,22 @@ Namespace AppService
         
         Public Function UpdateLogisticOperationAsync(ByVal dsLogisticOperation As System.Data.DataSet, ByVal dtOriginalDetail As System.Data.DataTable, ByVal dtOriginalChangeControl As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object()) Implements AppService.IDelfinService.UpdateLogisticOperationAsync
             Return MyBase.Channel.UpdateLogisticOperationAsync(dsLogisticOperation, dtOriginalDetail, dtOriginalChangeControl)
+        End Function
+        
+        Public Function PreFacturar(ByVal COPE_Codigo As Integer, ByVal dsDocumentoVenta As System.Data.DataSet) As Object() Implements AppService.IDelfinService.PreFacturar
+            Return MyBase.Channel.PreFacturar(COPE_Codigo, dsDocumentoVenta)
+        End Function
+        
+        Public Function PreFacturarAsync(ByVal COPE_Codigo As Integer, ByVal dsDocumentoVenta As System.Data.DataSet) As System.Threading.Tasks.Task(Of Object()) Implements AppService.IDelfinService.PreFacturarAsync
+            Return MyBase.Channel.PreFacturarAsync(COPE_Codigo, dsDocumentoVenta)
+        End Function
+        
+        Public Function InsertDocumentsProvider(ByVal dsDocumentsProvider As System.Data.DataSet, ByVal Items As String) As String Implements AppService.IDelfinService.InsertDocumentsProvider
+            Return MyBase.Channel.InsertDocumentsProvider(dsDocumentsProvider, Items)
+        End Function
+        
+        Public Function InsertDocumentsProviderAsync(ByVal dsDocumentsProvider As System.Data.DataSet, ByVal Items As String) As System.Threading.Tasks.Task(Of String) Implements AppService.IDelfinService.InsertDocumentsProviderAsync
+            Return MyBase.Channel.InsertDocumentsProviderAsync(dsDocumentsProvider, Items)
         End Function
     End Class
 End Namespace

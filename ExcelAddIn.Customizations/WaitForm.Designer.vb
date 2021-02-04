@@ -37,6 +37,7 @@ Partial Class WaitForm
         Me.progressPanel1.AppearanceCaption.Options.UseFont = True
         Me.progressPanel1.AppearanceDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.progressPanel1.AppearanceDescription.Options.UseFont = True
+        Me.progressPanel1.BarAnimationElementThickness = 2
         Me.progressPanel1.Caption = "Por favor espere"
         Me.progressPanel1.Description = "Procesando ..."
         Me.progressPanel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -85,6 +86,7 @@ Partial Class WaitForm
         Me.Controls.Add(Me.tableLayoutPanel1)
         Me.DoubleBuffered = True
         Me.Name = "WaitForm"
+        Me.ShowOnTopMode = DevExpress.XtraWaitForm.ShowFormOnTopMode.AboveAll
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Form1"
         Me.tableLayoutPanel1.ResumeLayout(False)
