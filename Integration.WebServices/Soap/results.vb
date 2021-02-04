@@ -1,5 +1,6 @@
 ﻿Public Class results
     Dim _DocEntry As String
+    Dim _DocNum As String
     Dim _FolioNum As String
     Dim _FolioPref As String
     Dim _TransId As Integer
@@ -57,6 +58,15 @@
         End Get
         Set(value As Integer)
             _Line_ID = value
+        End Set
+    End Property
+
+    Public Property DocNum As String
+        Get
+            Return _DocNum
+        End Get
+        Set(value As String)
+            _DocNum = value
         End Set
     End Property
 End Class
