@@ -19,17 +19,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://apps.delfingroupco.com.pe:766/NextSoftService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.103.13:766/NextSoftService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="NextSoftService.xsd" MetadataType="Schema" ID="0f046c5e-50f3-4deb-8a60-9f9b3b972422" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd4" />
-    <MetadataFile FileName="NextSoftService1.xsd" MetadataType="Schema" ID="c121103d-b887-405c-b40a-a24c1bec0cfa" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd5" />
-    <MetadataFile FileName="NextSoftService.disco" MetadataType="Disco" ID="fc1538b3-3156-4b4c-8c21-a877c3407b46" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?disco" />
-    <MetadataFile FileName="NextSoftService2.xsd" MetadataType="Schema" ID="bf0127a1-8236-4e4c-9a8c-f2fe1b964ae5" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd3" />
-    <MetadataFile FileName="NextSoftService3.xsd" MetadataType="Schema" ID="254681b6-1795-4f23-8af9-3af2b511d5e3" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd0" />
-    <MetadataFile FileName="NextSoftService4.xsd" MetadataType="Schema" ID="691a6196-a6c9-4b86-8f7e-1a82bf886e28" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd1" />
-    <MetadataFile FileName="NextSoftService5.xsd" MetadataType="Schema" ID="21672fdf-872b-497b-b39a-75dd5831a91e" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?xsd=xsd2" />
-    <MetadataFile FileName="NextSoftService.wsdl" MetadataType="Wsdl" ID="4a9689a8-4c45-4985-a66e-75c9b81dbc66" SourceId="1" SourceUrl="http://apps.delfingroupco.com.pe:766/NextSoftService.svc?wsdl" />
+    <MetadataFile FileName="NextSoftService1.wsdl" MetadataType="Wsdl" ID="8287f59d-4d34-4b76-9874-023115d754e2" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?wsdl" />
+    <MetadataFile FileName="NextSoftService6.xsd" MetadataType="Schema" ID="f05dce2a-5de9-4985-ae8e-3522ac40d8e3" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd5" />
+    <MetadataFile FileName="NextSoftService61.xsd" MetadataType="Schema" ID="19f8b328-1e7e-4cfb-8a3b-60e0f7f4fb6b" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd4" />
+    <MetadataFile FileName="NextSoftService62.xsd" MetadataType="Schema" ID="7262d1a1-2512-43b9-885a-d74f5de2ac4f" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd3" />
+    <MetadataFile FileName="NextSoftService63.xsd" MetadataType="Schema" ID="39f6bf6d-5dbb-4eeb-aa3e-fd90162fe75d" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NextSoftService64.xsd" MetadataType="Schema" ID="1e59a8dc-0d7c-4ee5-94f1-c4a3833739ae" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NextSoftService65.xsd" MetadataType="Schema" ID="4e8abc7e-0bc8-4074-b0ef-b5e5f72b2ea0" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NextSoftService1.disco" MetadataType="Disco" ID="3f150e31-9705-471b-ac0a-cc44c76e5c96" SourceId="1" SourceUrl="http://192.168.103.13:766/NextSoftService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

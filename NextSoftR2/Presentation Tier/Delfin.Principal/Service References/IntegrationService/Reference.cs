@@ -64,10 +64,10 @@ namespace Delfin.Principal.IntegrationService {
         System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta[]> InsertarActualizarPurchaseCreditMemoAsync(System.Data.DataSet PurchaseCreditMemo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento", ReplyAction="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumentoResponse")]
-        ApplicationForm.IntegrationService.Respuesta VerificarExistenciaDocumento(string CompraVenta, string TipoDocumento, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV);
+        ApplicationForm.IntegrationService.Respuesta VerificarExistenciaDocumento(string CompraVenta, string TipoDocumento, string Indicator, string CardCode, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumento", ReplyAction="http://tempuri.org/IIntegradorSBO/VerificarExistenciaDocumentoResponse")]
-        System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta> VerificarExistenciaDocumentoAsync(string CompraVenta, string TipoDocumento, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV);
+        System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta> VerificarExistenciaDocumentoAsync(string CompraVenta, string TipoDocumento, string Indicator, string CardCode, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -161,12 +161,12 @@ namespace Delfin.Principal.IntegrationService {
             return base.Channel.InsertarActualizarPurchaseCreditMemoAsync(PurchaseCreditMemo);
         }
         
-        public ApplicationForm.IntegrationService.Respuesta VerificarExistenciaDocumento(string CompraVenta, string TipoDocumento, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV) {
-            return base.Channel.VerificarExistenciaDocumento(CompraVenta, TipoDocumento, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV);
+        public ApplicationForm.IntegrationService.Respuesta VerificarExistenciaDocumento(string CompraVenta, string TipoDocumento, string Indicator, string CardCode, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV) {
+            return base.Channel.VerificarExistenciaDocumento(CompraVenta, TipoDocumento, Indicator, CardCode, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV);
         }
         
-        public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta> VerificarExistenciaDocumentoAsync(string CompraVenta, string TipoDocumento, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV) {
-            return base.Channel.VerificarExistenciaDocumentoAsync(CompraVenta, TipoDocumento, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV);
+        public System.Threading.Tasks.Task<ApplicationForm.IntegrationService.Respuesta> VerificarExistenciaDocumentoAsync(string CompraVenta, string TipoDocumento, string Indicator, string CardCode, string Serie, string Numero, string U_MSS_NSTATEMENT, string U_MSS_TSERV) {
+            return base.Channel.VerificarExistenciaDocumentoAsync(CompraVenta, TipoDocumento, Indicator, CardCode, Serie, Numero, U_MSS_NSTATEMENT, U_MSS_TSERV);
         }
     }
 }

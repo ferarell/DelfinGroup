@@ -151,9 +151,18 @@ Public Class VendorDocumentQueryForm
             dsQuery = oAppService.ExecuteSQL("EXEC NextSoft.sap.upGetDataForPurchaseInvoiceInterface " & "1, 1, " & _CCCT_Codigo.ToString() & ", '" & AppUser & "', 'P'")
             oPurchaseInvoiceViewerForm.sInterfaceName = "PurchaseInvoice"
         End If
+        Dim DocSAP As String = GridView1.GetFocusedRowCellValue("DocumentoSAP").ToString
+        If DocSAP = "" Then
+            If GetDocSAP(oPurchaseInvoiceViewerForm.sInterfaceName, dsQuery) = True Then
+                oPurchaseInvoiceViewerForm.bbiVoucherGenerate.Enabled = False
+            End If
+        Else
+            oPurchaseInvoiceViewerForm.bbiVoucherGenerate.Enabled = False
+        End If
         oPurchaseInvoiceViewerForm.dsVoucher = dsQuery
-        oPurchaseInvoiceViewerForm.ShowDialog()
-        GridView1.SetFocusedRowCellValue("DocumentoSAP", oPurchaseInvoiceViewerForm.sDocSAP)
+        If oPurchaseInvoiceViewerForm.ShowDialog() = DialogResult.OK Then
+            GridView1.SetFocusedRowCellValue("DocumentoSAP", oPurchaseInvoiceViewerForm.sDocSAP)
+        End If
     End Sub
 
     Private Function GetDocSAP(InterfaceName As String, dsVoucherSAP As DataSet) As Boolean
@@ -162,9 +171,9 @@ Public Class VendorDocumentQueryForm
         Dim iCodigoCtaCte As Integer = dsVoucherSAP.Tables(2).Rows(0)("CCCT_Codigo")
         Dim oRow As DataRow = dsVoucherSAP.Tables(0).Rows(0)
         Dim TipDoc As String = IIf(InterfaceName = "PurchaseInvoice", "INV", "CRD")
-        oRespuesta = oIntegrationService.VerificarExistenciaDocumento("CO", TipDoc, oRow("Indicator"), oRow("CardCode"), oRow("FolioPrefixString"), oRow("FolioNumber"), Nothing, Nothing)
+        oRespuesta = oIntegrationService.VerificarExistenciaDocumento("CO", TipDoc, oRow("Indicator"), oRow("CardCode").ToString, oRow("FolioPrefixString"), oRow("FolioNumber"), Nothing, Nothing)
         If oRespuesta.Existe = "SI" Then
-            Dim DocNumber As String = oRespuesta.d.results(0).Number.ToString
+            Dim DocNumber As String = oRespuesta.d.results(0).DocNum.ToString
             Dim DocCode As Integer = oRespuesta.d.results(0).DocEntry
             If DocNumber = "0" Then
                 XtraMessageBox.Show("El valor del número de documento is incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -173,9 +182,9 @@ Public Class VendorDocumentQueryForm
             bResult = True
             Dim SqlText As String = ""
             If TipDoc = "INV" Then
-                SqlText = "EXEC NextSoft.sap.upUpdateSynchronizedPurchaseInvoice " & DocCode.ToString & ",'" & DocNumber & "','InvoiceBills','CAJ_CtaCte'," & iCodigoCtaCte.ToString & ",'" & AppUser & "'"
+                SqlText = "EXEC NextSoft.sap.upUpdateSynchronizedPurchaseInvoice " & DocCode.ToString & ",'" & DocNumber & "','PurchaseInvoiceBills','CAJ_CtaCte'," & iCodigoCtaCte.ToString & ",'" & AppUser & "'"
             Else
-                SqlText = "EXEC NextSoft.sap.upUpdateSynchronizedPurchaseCreditMemo " & DocCode.ToString & ",'" & DocNumber & "','CreditMemo','CAJ_CtaCte'," & iCodigoCtaCte.ToString & ",'" & AppUser & "'"
+                SqlText = "EXEC NextSoft.sap.upUpdateSynchronizedPurchaseCreditMemo " & DocCode.ToString & ",'" & DocNumber & "','PurchaseCreditMemo','CAJ_CtaCte'," & iCodigoCtaCte.ToString & ",'" & AppUser & "'"
             End If
             If Not oAppService.ExecuteSQLNonQuery(SqlText) Then
                 XtraMessageBox.Show("Ocurrió un error al actualizar la tabla de control de asientos SAP", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

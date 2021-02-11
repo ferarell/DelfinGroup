@@ -28,7 +28,7 @@
     <PublisherName>Delfin Group Co</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>2.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -3722,6 +3722,8 @@
     <None Include="Service References\AppService\DelfinService5.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\IntegrationService\configuration91.svcinfo" />
+    <None Include="Service References\IntegrationService\configuration.svcinfo" />
     <None Include="Service References\IntegrationService\IntegradorSBO1.wsdl" />
     <None Include="Service References\IntegrationService\IntegradorSBO4.xsd">
       <SubType>Designer</SubType>
@@ -3735,6 +3737,12 @@
     <None Include="Service References\IntegrationService\IntegradorSBO43.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\IntegrationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\NextSoftService\configuration91.svcinfo" />
+    <None Include="Service References\NextSoftService\configuration.svcinfo" />
     <None Include="Service References\NextSoftService\NextSoftService.wsdl" />
     <None Include="Service References\NextSoftService\NextSoftService.xsd">
       <SubType>Designer</SubType>
@@ -3754,15 +3762,6 @@
     <None Include="Service References\NextSoftService\NextSoftService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\IntegrationService\configuration91.svcinfo" />
-    <None Include="Service References\IntegrationService\configuration.svcinfo" />
-    <None Include="Service References\IntegrationService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\NextSoftService\NextSoftService.disco" />
-    <None Include="Service References\NextSoftService\configuration91.svcinfo" />
-    <None Include="Service References\NextSoftService\configuration.svcinfo" />
     <None Include="Service References\NextSoftService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -3782,6 +3781,7 @@
     </None>
     <None Include="Service References\AppService\DelfinService.disco" />
     <None Include="Service References\IntegrationService\IntegradorSBO1.disco" />
+    <None Include="Service References\NextSoftService\NextSoftService.disco" />
     <Content Include="SmtpMail.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

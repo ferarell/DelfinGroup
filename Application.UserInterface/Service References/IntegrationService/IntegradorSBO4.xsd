@@ -65,6 +65,7 @@
   <xs:complexType name="results">
     <xs:sequence>
       <xs:element minOccurs="0" name="DocEntry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocNum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FolioNum" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FolioPref" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Line_ID" type="xs:int" />

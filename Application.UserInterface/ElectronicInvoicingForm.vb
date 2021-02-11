@@ -178,8 +178,9 @@ Public Class ElectronicInvoicingForm
             oInvoiceBillsViewerForm.bbiVoucherGenerate.Enabled = False
         End If
         oInvoiceBillsViewerForm.dsVoucher = dsQuery
-        oInvoiceBillsViewerForm.ShowDialog()
-        GridView1.SetFocusedRowCellValue("DocumentoSAP", oInvoiceBillsViewerForm.sDocSAP)
+        If oInvoiceBillsViewerForm.ShowDialog() = DialogResult.OK Then
+            GridView1.SetFocusedRowCellValue("DocumentoSAP", oInvoiceBillsViewerForm.sDocSAP)
+        End If
     End Sub
 
     Private Function GetDocSAP(InterfaceName As String, dsVoucherSAP As DataSet) As Boolean
@@ -190,7 +191,7 @@ Public Class ElectronicInvoicingForm
         Dim TipDoc As String = IIf(InterfaceName = "InvoiceBills", "INV", "CRD")
         oRespuesta = oIntegrationService.VerificarExistenciaDocumento("VE", TipDoc, oRow("Indicator"), oRow("CardCode"), oRow("FolioPrefixString"), oRow("FolioNumber"), Nothing, Nothing)
         If oRespuesta.Existe = "SI" Then
-            Dim DocNumber As String = oRespuesta.d.results(0).Number.ToString
+            Dim DocNumber As String = oRespuesta.d.results(0).DocNum.ToString
             Dim DocCode As Integer = oRespuesta.d.results(0).DocEntry
             If DocNumber = "0" Then
                 XtraMessageBox.Show("El valor del número de documento is incorrecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

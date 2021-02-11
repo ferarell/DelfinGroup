@@ -63,7 +63,7 @@ Public Class DocsVta_DA
                     .Add(New SqlParameter("@pnumDOCV_TipoCambio", SqlDbType.Decimal) With {.Precision = 18, .Scale = 4}).Value = oRowH("DOCV_TipoCambio")
                     .Add("@pdtmDOCV_FechaEmision", SqlDbType.DateTime).Value = oRowH("DOCV_FechaEmision")
                     .Add("@pdtmDOCV_FechaVcmto", SqlDbType.DateTime).Value = oRowH("DOCV_FechaVcmto")
-                    .Add("@@pchrDOCV_Estado", SqlDbType.Char, 1).Value = oRowH("DOCV_Estado")
+                    .Add("@pchrDOCV_Estado", SqlDbType.Char, 1).Value = oRowH("DOCV_Estado")
 
                     .Add(New SqlParameter("@pdecDOCV_PrecVtaTotal", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("DOCV_PrecVtaTotal")
                     .Add(New SqlParameter("@pdecDOCV_PrecVtaTotalD", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowH("DOCV_PrecVtaTotalD")
@@ -115,7 +115,7 @@ Public Class DocsVta_DA
                     .Add("@pintENTC_Codigo", SqlDbType.Int).Value = oRowH("ENTC_Codigo")
                     .Add("@psinTIPE_Codigo", SqlDbType.SmallInt).Value = oRowH("TIPE_Codigo")
                     .Add("@pvchDOCV_HBL", SqlDbType.VarChar, 30).Value = oRowH("DOCV_HBL")
-                    .Add("@pvchCOPE_NumDoc", SqlDbType.VarChar, 30).Value = oRowH("COPE_NumDoc")
+                    .Add("@pvchCOPE_NumDoc", SqlDbType.VarChar, 30).Value = oRowH("DOCV_NroOperacion")
 
                 End With
                 _DOCV_Codigo = Command.ExecuteScalar

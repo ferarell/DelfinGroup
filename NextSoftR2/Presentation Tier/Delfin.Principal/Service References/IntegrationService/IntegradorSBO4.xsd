@@ -214,6 +214,8 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="CompraVenta" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Indicator" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CardCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Serie" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="U_MSS_NSTATEMENT" nillable="true" type="xs:string" />

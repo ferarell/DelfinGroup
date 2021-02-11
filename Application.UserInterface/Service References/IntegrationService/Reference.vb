@@ -490,6 +490,9 @@ Namespace IntegrationService
         Private DocEntryField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
+        Private DocNumField As String
+        
+        <System.Runtime.Serialization.OptionalFieldAttribute()>  _
         Private FolioNumField As String
         
         <System.Runtime.Serialization.OptionalFieldAttribute()>  _
@@ -523,6 +526,19 @@ Namespace IntegrationService
                 If (Object.ReferenceEquals(Me.DocEntryField, value) <> true) Then
                     Me.DocEntryField = value
                     Me.RaisePropertyChanged("DocEntry")
+                End If
+            End Set
+        End Property
+        
+        <System.Runtime.Serialization.DataMemberAttribute()>  _
+        Public Property DocNum() As String
+            Get
+                Return Me.DocNumField
+            End Get
+            Set
+                If (Object.ReferenceEquals(Me.DocNumField, value) <> true) Then
+                    Me.DocNumField = value
+                    Me.RaisePropertyChanged("DocNum")
                 End If
             End Set
         End Property

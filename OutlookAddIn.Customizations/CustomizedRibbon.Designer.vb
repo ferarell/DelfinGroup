@@ -47,8 +47,8 @@
         Me.Tab2 = Me.Factory.CreateRibbonTab
         Me.Group3 = Me.Factory.CreateRibbonGroup
         Me.btSettings = Me.Factory.CreateRibbonButton
-        Me.btStatistics = Me.Factory.CreateRibbonButton
         Me.Separator1 = Me.Factory.CreateRibbonSeparator
+        Me.btStatistics = Me.Factory.CreateRibbonButton
         Me.Tab1.SuspendLayout()
         Me.Tab2.SuspendLayout()
         Me.Group3.SuspendLayout()
@@ -77,7 +77,7 @@
         Me.Group3.Items.Add(Me.btSettings)
         Me.Group3.Items.Add(Me.Separator1)
         Me.Group3.Items.Add(Me.btStatistics)
-        Me.Group3.Label = "PORTAL"
+        Me.Group3.Label = "Pórtico"
         Me.Group3.Name = "Group3"
         '
         'btSettings
@@ -88,6 +88,10 @@
         Me.btSettings.Name = "btSettings"
         Me.btSettings.ShowImage = True
         '
+        'Separator1
+        '
+        Me.Separator1.Name = "Separator1"
+        '
         'btStatistics
         '
         Me.btStatistics.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
@@ -95,10 +99,6 @@
         Me.btStatistics.Label = "Estadísticas de Uso"
         Me.btStatistics.Name = "btStatistics"
         Me.btStatistics.ShowImage = True
-        '
-        'Separator1
-        '
-        Me.Separator1.Name = "Separator1"
         '
         'CustomizedRibbon
         '
