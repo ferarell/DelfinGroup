@@ -39,7 +39,7 @@ Public Class DocsVta_DA
 
         Dim aResult As New ArrayList
         Dim dtHeader As DataTable = dsDocumentoVenta.Tables("Header")
-        Dim dtDetail As DataTable = dsDocumentoVenta.Tables("Service")
+        Dim dtDetail As DataTable = dsDocumentoVenta.Tables("Detail")
 
         Dim _DOCV_Codigo As String = ""
         aResult.AddRange({2, ""})
@@ -128,9 +128,9 @@ Public Class DocsVta_DA
                     Command.CommandText = "NextSoft.dgp.VEN_DDOVSI_UnReg"
                     With Command.Parameters
                         .Clear()
-                        .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowD("COPE_Codigo")
+                        .Add("@pintCOPE_Codigo", SqlDbType.Int).Value = oRowH("COPE_Codigo")
                         .Add("@pintDOCV_Codigo", SqlDbType.Int).Value = _DOCV_Codigo
-                        .Add("@psinPDDO_Item", SqlDbType.SmallInt).Value = oRowH("PDDO_Item")
+                        .Add("@psinDDOV_Item", SqlDbType.SmallInt).Value = oRowD("DDOV_Item")
 
 
                         .Add(New SqlParameter("@pdecDDOV_Cantidad", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DDOV_Cantidad")

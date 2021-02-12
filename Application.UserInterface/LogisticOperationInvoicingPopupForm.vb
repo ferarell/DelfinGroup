@@ -124,7 +124,7 @@ Public Class LogisticOperationInvoicingPopupForm
         oRow("DOCV_ValorTotalD") = drSource("DOPE_PrecioTotVta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
         oRow("DOCV_Descuento") = 0
         oRow("DOCV_DescuentoD") = 0
-        oRow("DOCV_Observaciones") = ""
+        oRow("DOCV_Observaciones") = drSource("SERV_Nombre_SPA")
         oRow("DOCV_Impuesto1") = oRow("DOCV_ValorTotal") * (drSource("VALOR_IGV") / 100)
         oRow("DOCV_Impuesto1D") = oRow("DOCV_ValorTotalD") * (drSource("VALOR_IGV") / 100)
         oRow("DOCV_Impuesto2") = 0
@@ -191,7 +191,7 @@ Public Class LogisticOperationInvoicingPopupForm
         oRow("DDOV_Notas") = ""
         oRow("DOCV_Codigo") = 0
         oRow("SERV_Codigo") = drSource("SERV_Codigo")
-        oRow("DDOV_Descripcion") = ""
+        oRow("DDOV_Descripcion") = drSource("SERV_Nombre_SPA")
         oRow("AUDI_UsrCrea") = AppUser
         'oRow("AUDI_FecCrea") =
         oRow("AUDI_UsrMod") = AppUser
