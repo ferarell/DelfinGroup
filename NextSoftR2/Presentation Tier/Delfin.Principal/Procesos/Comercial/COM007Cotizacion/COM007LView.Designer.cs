@@ -28,9 +28,8 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(COM007LView));
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmColumnas = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,12 +52,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblENTC_CodCustomer = new System.Windows.Forms.Label();
             this.lblENTC_CodEjecutivo = new System.Windows.Forms.Label();
-            this.ENTC_CodEjecutivo = new Delfin.Controls.Entidad(this.components);
-            this.ENTC_CodCustomer = new Delfin.Controls.Entidad(this.components);
+            this.ENTC_CodEjecutivo = new Delfin.Controls.Entidad();
+            this.ENTC_CodCustomer = new Delfin.Controls.Entidad();
             this.lblENTC_CodAgente = new System.Windows.Forms.Label();
-            this.ENTC_CodAgente = new Delfin.Controls.Entidad(this.components);
-            this.ENTC_CodBroker = new Delfin.Controls.Entidad(this.components);
-            this.ENTC_CodCliente = new Delfin.Controls.Entidad(this.components);
+            this.ENTC_CodAgente = new Delfin.Controls.Entidad();
+            this.ENTC_CodBroker = new Delfin.Controls.Entidad();
+            this.ENTC_CodCliente = new Delfin.Controls.Entidad();
             this.lblENTC_CodBroker = new System.Windows.Forms.Label();
             this.lblENTC_CodCliente = new System.Windows.Forms.Label();
             this.lblCONS_CodRGM = new System.Windows.Forms.Label();
@@ -82,7 +81,7 @@
             this.panelCaption2 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.grdItems = new Telerik.WinControls.UI.RadGridView();
             this.TitleView = new Infrastructure.WinForms.Controls.FormTitle();
-            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItems = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
@@ -92,6 +91,7 @@
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.sbCambiarEstado = new DevExpress.XtraEditors.SimpleButton();
             this.cmsMenu.SuspendLayout();
             this.pnBotones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -131,6 +131,7 @@
             // pnBotones
             // 
             this.pnBotones.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pnBotones.Controls.Add(this.sbCambiarEstado);
             this.pnBotones.Controls.Add(this.btnActualizarCRM);
             this.pnBotones.Controls.Add(this.btnDeshacer);
             this.pnBotones.Controls.Add(this.btnExportar);
@@ -149,7 +150,7 @@
             this.pnBotones.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pnBotones.Location = new System.Drawing.Point(0, 26);
             this.pnBotones.Name = "pnBotones";
-            this.pnBotones.Size = new System.Drawing.Size(947, 50);
+            this.pnBotones.Size = new System.Drawing.Size(1101, 50);
             this.pnBotones.TabIndex = 42;
             // 
             // btnActualizarCRM
@@ -417,7 +418,7 @@
             this.panelCaption1.InactiveGradientLowColor = System.Drawing.Color.MidnightBlue;
             this.panelCaption1.Location = new System.Drawing.Point(0, 76);
             this.panelCaption1.Name = "panelCaption1";
-            this.panelCaption1.Size = new System.Drawing.Size(947, 26);
+            this.panelCaption1.Size = new System.Drawing.Size(1101, 26);
             this.panelCaption1.TabIndex = 45;
             // 
             // tableLayoutPanel1
@@ -472,7 +473,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(947, 243);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1101, 243);
             this.tableLayoutPanel1.TabIndex = 46;
             // 
             // lblENTC_CodCustomer
@@ -838,7 +839,7 @@
             this.panelCaption2.InactiveGradientLowColor = System.Drawing.Color.MidnightBlue;
             this.panelCaption2.Location = new System.Drawing.Point(0, 345);
             this.panelCaption2.Name = "panelCaption2";
-            this.panelCaption2.Size = new System.Drawing.Size(947, 26);
+            this.panelCaption2.Size = new System.Drawing.Size(1101, 26);
             this.panelCaption2.TabIndex = 47;
             // 
             // grdItems
@@ -851,7 +852,7 @@
             // 
             // 
             this.grdItems.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 371, 240, 150);
-            this.grdItems.Size = new System.Drawing.Size(947, 101);
+            this.grdItems.Size = new System.Drawing.Size(1101, 101);
             this.grdItems.TabIndex = 50;
             this.grdItems.TabStop = false;
             // 
@@ -867,7 +868,7 @@
             this.TitleView.InactiveGradientLowColor = System.Drawing.Color.MidnightBlue;
             this.TitleView.Location = new System.Drawing.Point(0, 0);
             this.TitleView.Name = "TitleView";
-            this.TitleView.Size = new System.Drawing.Size(947, 26);
+            this.TitleView.Size = new System.Drawing.Size(1101, 26);
             this.TitleView.TabIndex = 51;
             this.TitleView.Load += new System.EventHandler(this.TitleView_Load);
             // 
@@ -895,7 +896,7 @@
             this.navItems.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.navItems.Name = "navItems";
             this.navItems.PositionItem = this.bindingNavigatorPositionItem1;
-            this.navItems.Size = new System.Drawing.Size(947, 25);
+            this.navItems.Size = new System.Drawing.Size(1101, 25);
             this.navItems.TabIndex = 52;
             this.navItems.Text = "bindingNavigator1";
             // 
@@ -938,6 +939,7 @@
             this.bindingNavigatorPositionItem1.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -974,6 +976,18 @@
             this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
             this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
+            // sbCambiarEstado
+            // 
+            this.sbCambiarEstado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sbCambiarEstado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbCambiarEstado.ImageOptions.Image")));
+            this.sbCambiarEstado.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.sbCambiarEstado.Location = new System.Drawing.Point(934, 0);
+            this.sbCambiarEstado.Name = "sbCambiarEstado";
+            this.sbCambiarEstado.Size = new System.Drawing.Size(89, 50);
+            this.sbCambiarEstado.TabIndex = 14;
+            this.sbCambiarEstado.Text = "Cambiar Estado";
+            this.sbCambiarEstado.Click += new System.EventHandler(this.sbCambiarEstado_Click);
+            // 
             // COM007LView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -987,7 +1001,7 @@
             this.Controls.Add(this.pnBotones);
             this.Controls.Add(this.TitleView);
             this.Name = "COM007LView";
-            this.Size = new System.Drawing.Size(947, 497);
+            this.Size = new System.Drawing.Size(1101, 497);
             this.cmsMenu.ResumeLayout(false);
             this.pnBotones.ResumeLayout(false);
             this.pnBotones.PerformLayout();
@@ -1067,5 +1081,6 @@
       private System.Windows.Forms.Label lblCCOT_NumPresupuesto;
       private System.Windows.Forms.TextBox CCOT_NumPresupuesto;
       private System.Windows.Forms.Button btnActualizarCRM;
+        private DevExpress.XtraEditors.SimpleButton sbCambiarEstado;
     }
 }

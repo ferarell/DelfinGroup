@@ -202,10 +202,16 @@
   <ItemGroup>
     <Compile Include="AccountingInterfaces.vb" />
     <Compile Include="LogFileGenerate.vb" />
-    <Compile Include="LogisticOperationInvoicingPopupForm.Designer.vb">
-      <DependentUpon>LogisticOperationInvoicingPopupForm.vb</DependentUpon>
+    <Compile Include="PreInvoicingPopupForm.Designer.vb">
+      <DependentUpon>PreInvoicingPopupForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="LogisticOperationInvoicingPopupForm.vb">
+    <Compile Include="PreInvoicingPopupForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeStatusPopupForm.Designer.vb">
+      <DependentUpon>ChangeStatusPopupForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeStatusPopupForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReferencesTransferForm.Designer.vb">
@@ -627,8 +633,11 @@
     <None Include="Service References\AppService\ApplicationForm.AppService.COM_Det_Cotizacion_OV_EventosTareas_BE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <EmbeddedResource Include="LogisticOperationInvoicingPopupForm.resx">
-      <DependentUpon>LogisticOperationInvoicingPopupForm.vb</DependentUpon>
+    <EmbeddedResource Include="PreInvoicingPopupForm.resx">
+      <DependentUpon>PreInvoicingPopupForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeStatusPopupForm.resx">
+      <DependentUpon>ChangeStatusPopupForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReferencesTransferForm.resx">
       <DependentUpon>ReferencesTransferForm.vb</DependentUpon>

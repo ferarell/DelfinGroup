@@ -28,9 +28,8 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OPE001LView));
-            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsMenu = new System.Windows.Forms.ContextMenuStrip();
             this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmColumnas = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,8 +49,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDHBL_EsIMO = new System.Windows.Forms.Label();
-            this.txaENTC_CodTransportista = new Delfin.Controls.Entidad(this.components);
-            this.txaENTC_CodCustomer = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodTransportista = new Delfin.Controls.Entidad();
+            this.txaENTC_CodCustomer = new Delfin.Controls.Entidad();
             this.lblENTC_CodTransportista = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.mdtCCOT_FecRecDocsHasta = new Infrastructure.WinForms.Controls.MaskDateTime();
@@ -60,9 +59,9 @@
             this.lblCCOT_FecRecDocsHasta = new System.Windows.Forms.Label();
             this.lblENTC_CodCliente = new System.Windows.Forms.Label();
             this.lblCCOT_FecRecDocs = new System.Windows.Forms.Label();
-            this.txaENTC_CodCliente = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodCliente = new Delfin.Controls.Entidad();
             this.lblENTC_CodShipper = new System.Windows.Forms.Label();
-            this.txaENTC_CodShipper = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodShipper = new Delfin.Controls.Entidad();
             this.lblCONS_CodRGM = new System.Windows.Forms.Label();
             this.cmbCONS_CodRGM = new Delfin.Controls.Tipos.ComboBoxConstantes();
             this.lblCONS_CodVia = new System.Windows.Forms.Label();
@@ -70,7 +69,7 @@
             this.lblCONS_CodFLE = new System.Windows.Forms.Label();
             this.cmbCONS_CodFLE = new Delfin.Controls.Tipos.ComboBoxConstantes();
             this.lblENTC_CodEjecutivo = new System.Windows.Forms.Label();
-            this.txaENTC_CodEjecutivo = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodEjecutivo = new Delfin.Controls.Entidad();
             this.txaPUER_CodOrigen = new Delfin.Controls.AyudaPuerto();
             this.txaPUER_CodDestino = new Delfin.Controls.AyudaPuerto();
             this.lblPUER_CodOrigen = new System.Windows.Forms.Label();
@@ -117,13 +116,13 @@
             this.lblNVIA_FecETAZarpeHasta = new System.Windows.Forms.Label();
             this.txaNAVE_Codigo = new Delfin.Controls.AyudaNave();
             this.txaNVIA_NroViaje = new Delfin.Controls.AyudaViaje();
-            this.txaENTC_CodAgente = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodAgente = new Delfin.Controls.Entidad();
             this.lblENTC_CodAgente = new System.Windows.Forms.Label();
             this.lblENTC_CodCustomer = new System.Windows.Forms.Label();
             this.panelCaption2 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.grdItems = new Telerik.WinControls.UI.RadGridView();
             this.TitleView = new Infrastructure.WinForms.Controls.FormTitle();
-            this.navItems = new System.Windows.Forms.BindingNavigator(this.components);
+            this.navItems = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
@@ -133,9 +132,10 @@
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cmsItems = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
+            this.cmsItems = new System.Windows.Forms.ContextMenuStrip();
             this.insertarEventoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sbCambiarEstado = new DevExpress.XtraEditors.SimpleButton();
             this.cmsMenu.SuspendLayout();
             this.pnBotones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -182,6 +182,7 @@
             // pnBotones
             // 
             this.pnBotones.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pnBotones.Controls.Add(this.sbCambiarEstado);
             this.pnBotones.Controls.Add(this.btnDeshacer);
             this.pnBotones.Controls.Add(this.btnExportar);
             this.pnBotones.Controls.Add(this.btnBuscar);
@@ -1511,6 +1512,18 @@
             this.insertarEventoToolStripMenuItem.Text = "&Insertar Evento";
             this.insertarEventoToolStripMenuItem.Click += new System.EventHandler(this.insertarEventoToolStripMenuItem_Click);
             // 
+            // sbCambiarEstado
+            // 
+            this.sbCambiarEstado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sbCambiarEstado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("spCambiarEstado.ImageOptions.Image")));
+            this.sbCambiarEstado.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.sbCambiarEstado.Location = new System.Drawing.Point(308, 0);
+            this.sbCambiarEstado.Name = "sbCambiarEstado";
+            this.sbCambiarEstado.Size = new System.Drawing.Size(89, 50);
+            this.sbCambiarEstado.TabIndex = 4;
+            this.sbCambiarEstado.Text = "Cambiar Estado";
+            this.sbCambiarEstado.Click += new System.EventHandler(this.spCambiarEstado_Click);
+            // 
             // OPE001LView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1662,5 +1675,6 @@
       private System.Windows.Forms.Label lblCONS_CodEST;
         private System.Windows.Forms.ContextMenuStrip cmsItems;
         private System.Windows.Forms.ToolStripMenuItem insertarEventoToolStripMenuItem;
+        private DevExpress.XtraEditors.SimpleButton sbCambiarEstado;
     }
 }

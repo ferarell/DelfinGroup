@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <FullPath>Debug</FullPath>
     <OutputPath>bin\Debug</OutputPath>
     <ErrorLevel>2</ErrorLevel>
-    <OverwriteDatasets>True</OverwriteDatasets>
+    <OverwriteDatasets>False</OverwriteDatasets>
     <OverwriteDataSources>False</OverwriteDataSources>
-    <TargetServerVersion>SSRS2008R2</TargetServerVersion>
+    <TargetServerVersion>SSRS2016</TargetServerVersion>
     <Platform>Win32</Platform>
     <TargetReportFolder>Informes Comerciales</TargetReportFolder>
-    <TargetDatasetFolder>Conjuntos de datos</TargetDatasetFolder>
-    <TargetDatasourceFolder>Orígenes de datos</TargetDatasourceFolder>
+    <TargetDatasetFolder>DataSet</TargetDatasetFolder>
+    <TargetDatasourceFolder>DataSource</TargetDatasourceFolder>
     <TargetReportPartFolder>Elementos de informe</TargetReportPartFolder>
-    <TargetServerURL>http://apps.delfingroupco.com.pe:64999/ReportServer</TargetServerURL>
+    <TargetServerURL>http://apps.delfingroupco.com.pe:760/ReportServer</TargetServerURL>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'DebugLocal' ">
     <FullPath>DebugLocal</FullPath>

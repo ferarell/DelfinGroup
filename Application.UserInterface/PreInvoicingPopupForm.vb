@@ -2,29 +2,42 @@
 Imports DevExpress.XtraGrid.Views.Grid
 Imports DevExpress.XtraSplashScreen
 
-Public Class LogisticOperationInvoicingPopupForm
+Public Class PreInvoicingPopupForm
     Dim oAppService As New AppService.DelfinServiceClient
     Dim oMasterDataList As New MasterDataList
     Friend AppUser As String = "sistemas"
     Friend OperationsList As String = ""
+    Friend InternalCodeList As String = ""
     Friend CodigoMoneda As String
     Friend oProcessType As String = ""
+    Friend oQuerySource As String = ""
+    Friend IsMultiline As Boolean = Nothing
     Private Sub LogisticOperationInvoicingPopupForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim dtSource As New DataTable
         LoadTaxDocumentType()
         LoadPaymentType()
         deFechaEmision.EditValue = Now
-        dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasPorPreFacturar '" & OperationsList & "','" & CodigoMoneda & "'").Tables(0)
-        If IsDBNull(dtSource.Rows(0)("TIPC_Venta")) Then
-            XtraMessageBox.Show("No existe tipo de cambio, por favor coordine con el área contable.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            bbiGenerate.Enabled = False
+        If oProcessType = "PreInvoicing" Then
+            bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+            If oQuerySource = "OP" Then
+                dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasPorPreFacturar '" & OperationsList & "','" & CodigoMoneda & "'").Tables(0)
+            Else
+                dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasPorPreFacturar '" & OperationsList & "','" & CodigoMoneda & "'").Tables(0)
+            End If
+            If IsDBNull(dtSource.Rows(0)("TIPC_Venta")) Then
+                XtraMessageBox.Show("No existe tipo de cambio, por favor coordine con el área contable.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                bbiGenerate.Enabled = DevExpress.XtraBars.BarItemVisibility.Never
+            End If
         End If
-        If oProcessType = "Single" Then
+        If oProcessType = "Invoicing" Then
+            bbiGenerate.Visibility = False
+        End If
+        If Not IsMultiline Then
             'gcInvoicing.MainView = GridView1
             GridView1.Columns("TIPO_CodFPG").Visible = False
         End If
 
-        If oProcessType = "Multiple" Then
+        If IsMultiline Then
             lueMoneda.ReadOnly = True
             lueFormaPago.ReadOnly = True
             seDiasCredito.ReadOnly = True
@@ -87,6 +100,8 @@ Public Class LogisticOperationInvoicingPopupForm
             Dim oRow As DataRow = GridView1.GetDataRow(r)
             SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
             SplashScreenManager.Default.SetWaitFormDescription("PreFacturando (" & (r + 1).ToString & " de " & GridView1.RowCount.ToString & ") OP:  " & oRow("COPE_NumDoc"))
+            dsDocVta.Tables(0).Rows.Clear()
+            dsDocVta.Tables(1).Rows.Clear()
             dsDocVta = GetDataResult(dsDocVta, oRow)
             Try
                 aResponse.AddRange(oAppService.PreFacturar(oRow("COPE_Codigo"), dsDocVta))
@@ -180,8 +195,8 @@ Public Class LogisticOperationInvoicingPopupForm
         oRow("DDOV_PrecioUnitarioD") = drSource("DOPE_PrecioTotVta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
         oRow("DDOV_ValorVenta") = drSource("DOPE_PrecioTotVta") * IIf(drSource("TIPO_CodMND") = "002", drSource("TIPC_Venta"), 1)
         oRow("DDOV_ValorVentaD") = drSource("DOPE_PrecioTotVta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
-        oRow("DDOV_Impuesto1") = drSource("DOPE_PrecioTotVta") * IIf(drSource("TIPO_CodMND") = "002", drSource("TIPC_Venta"), 1)
-        oRow("DDOV_Impuesto1D") = drSource("DOPE_PrecioTotVta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
+        oRow("DDOV_Impuesto1") = oRow("DDOV_PrecioUnitario") * (drSource("VALOR_IGV") / 100)
+        oRow("DDOV_Impuesto1D") = oRow("DDOV_PrecioUnitarioD") * (drSource("VALOR_IGV") / 100)
         oRow("DDOV_Impuesto2") = 0
         oRow("DDOV_Impuesto2D") = 0
         oRow("DDOV_Impuesto3") = 0
@@ -220,5 +235,9 @@ Public Class LogisticOperationInvoicingPopupForm
                 GridView1.SetFocusedRowCellValue("DOCV_FechaVcmto", DateAdd(DateInterval.Day, GridView1.GetFocusedRowCellValue("ENLI_DiasDuracion"), deFechaEmision.DateTime))
             End If
         End If
+    End Sub
+
+    Private Sub bbiSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSave.ItemClick
+
     End Sub
 End Class

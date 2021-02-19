@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class LogisticOperationInvoicingPopupForm
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class PreInvoicingPopupForm
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,20 +17,21 @@ Partial Class LogisticOperationInvoicingPopupForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LogisticOperationInvoicingPopupForm))
-        Dim ColumnDefinition7 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition8 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition9 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim RowDefinition7 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition8 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition9 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PreInvoicingPopupForm))
+        Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition3 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition3 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
+        Me.bbiSave = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiGenerate = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
@@ -117,8 +118,8 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.bmActions.DockControls.Add(Me.BarDockControl3)
         Me.bmActions.DockControls.Add(Me.BarDockControl4)
         Me.bmActions.Form = Me
-        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.bbiGenerate, Me.bbiClose})
-        Me.bmActions.MaxItemId = 28
+        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.bbiGenerate, Me.bbiClose, Me.bbiSave})
+        Me.bmActions.MaxItemId = 29
         Me.bmActions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rpiProceso, Me.RepositoryItemImageComboBox1})
         '
         'bar5
@@ -147,10 +148,17 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.brBarraAcciones.DockRow = 0
         Me.brBarraAcciones.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
         Me.brBarraAcciones.FloatLocation = New System.Drawing.Point(279, 188)
-        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiGenerate, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
+        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSave, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiGenerate, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
         Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
         Me.brBarraAcciones.OptionsBar.UseWholeRow = True
         Me.brBarraAcciones.Text = "Custom 5"
+        '
+        'bbiSave
+        '
+        Me.bbiSave.Caption = "Guardar"
+        Me.bbiSave.Id = 28
+        Me.bbiSave.ImageOptions.Image = CType(resources.GetObject("bbiSave.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiSave.Name = "bbiSave"
         '
         'bbiGenerate
         '
@@ -173,31 +181,31 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(939, 41)
+        Me.BarDockControl1.Size = New System.Drawing.Size(939, 47)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 440)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 438)
         Me.BarDockControl2.Manager = Me.bmActions
-        Me.BarDockControl2.Size = New System.Drawing.Size(939, 27)
+        Me.BarDockControl2.Size = New System.Drawing.Size(939, 29)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 41)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 399)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 391)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(939, 41)
+        Me.BarDockControl4.Location = New System.Drawing.Point(939, 47)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 399)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 391)
         '
         'rpiProceso
         '
@@ -219,15 +227,15 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.None
         Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 41)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LayoutControl1)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.gcInvoicing)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(939, 399)
-        Me.SplitContainerControl1.SplitterPosition = 133
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(939, 391)
+        Me.SplitContainerControl1.SplitterPosition = 131
         Me.SplitContainerControl1.TabIndex = 4
         '
         'LayoutControl1
@@ -245,7 +253,7 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(361, 268, 650, 400)
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(935, 129)
+        Me.LayoutControl1.Size = New System.Drawing.Size(935, 127)
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
@@ -368,21 +376,21 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8})
         Me.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.Root.Name = "Root"
-        ColumnDefinition7.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition7.Width = 33.333333333333336R
-        ColumnDefinition8.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition8.Width = 33.333333333333336R
-        ColumnDefinition9.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition9.Width = 33.333333333333336R
-        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition7, ColumnDefinition8, ColumnDefinition9})
-        RowDefinition7.Height = 30.0R
-        RowDefinition7.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition8.Height = 30.0R
-        RowDefinition8.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition9.Height = 30.0R
-        RowDefinition9.SizeType = System.Windows.Forms.SizeType.Absolute
-        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition7, RowDefinition8, RowDefinition9})
-        Me.Root.Size = New System.Drawing.Size(935, 129)
+        ColumnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition1.Width = 33.333333333333336R
+        ColumnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition2.Width = 33.333333333333336R
+        ColumnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition3.Width = 33.333333333333336R
+        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition1, ColumnDefinition2, ColumnDefinition3})
+        RowDefinition1.Height = 30.0R
+        RowDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition2.Height = 30.0R
+        RowDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition3.Height = 30.0R
+        RowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute
+        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition1, RowDefinition2, RowDefinition3})
+        Me.Root.Size = New System.Drawing.Size(935, 127)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -459,7 +467,7 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 60)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
         Me.LayoutControlItem7.OptionsTableLayoutItem.RowIndex = 2
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(305, 49)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(305, 47)
         Me.LayoutControlItem7.Text = "Fecha Vencimiento"
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(92, 13)
         '
@@ -472,7 +480,7 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.LayoutControlItem8.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem8.OptionsTableLayoutItem.ColumnSpan = 2
         Me.LayoutControlItem8.OptionsTableLayoutItem.RowIndex = 2
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(610, 49)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(610, 47)
         Me.LayoutControlItem8.Text = "Socio de Negocio"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(92, 13)
         '
@@ -488,7 +496,7 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.gcInvoicing.MainView = Me.GridView1
         Me.gcInvoicing.Name = "gcInvoicing"
         Me.gcInvoicing.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
-        Me.gcInvoicing.Size = New System.Drawing.Size(939, 262)
+        Me.gcInvoicing.Size = New System.Drawing.Size(939, 255)
         Me.gcInvoicing.TabIndex = 172
         Me.gcInvoicing.UseEmbeddedNavigator = True
         Me.gcInvoicing.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -648,7 +656,7 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.GridColumn14.Visible = True
         Me.GridColumn14.VisibleIndex = 14
         '
-        'LogisticOperationInvoicingPopupForm
+        'PreInvoicingPopupForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -658,7 +666,7 @@ Partial Class LogisticOperationInvoicingPopupForm
         Me.Controls.Add(Me.BarDockControl4)
         Me.Controls.Add(Me.BarDockControl2)
         Me.Controls.Add(Me.BarDockControl1)
-        Me.Name = "LogisticOperationInvoicingPopupForm"
+        Me.Name = "PreInvoicingPopupForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Información Asociada a la PreFactura"
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()
@@ -746,4 +754,5 @@ Partial Class LogisticOperationInvoicingPopupForm
     Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents bbiSave As DevExpress.XtraBars.BarButtonItem
 End Class

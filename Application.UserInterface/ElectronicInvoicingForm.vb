@@ -34,7 +34,9 @@ Public Class ElectronicInvoicingForm
     End Sub
 
     Private Sub bbiEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEdit.ItemClick
-
+        Dim oForm As New PreInvoicingPopupForm
+        oForm.AppUser = AppUser
+        oForm.oProcessType = "Single"
     End Sub
 
     Private Sub bbiVoid_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiVoid.ItemClick

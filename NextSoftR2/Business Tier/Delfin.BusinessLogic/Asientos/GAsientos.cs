@@ -148,12 +148,12 @@ namespace Delfin.BusinessLogic
                   break;
 
                case TipoAsiento.AsientoCaja:
-                  DataAccessEnterpriseSQL.DAAsignarProcedure("CAJ_MOVISI_GenerarAsientoCaja");
-                  DataAccessEnterpriseSQL.DAAgregarParametro("@EMPR_Codigo", ItemMovimiento.EMPR_Codigo, SqlDbType.SmallInt, 2, ParameterDirection.Input);
-                  DataAccessEnterpriseSQL.DAAgregarParametro("@MOVI_Codigo", ItemMovimiento.MOVI_Codigo, SqlDbType.Int, 4, ParameterDirection.Input);
-                  DataAccessEnterpriseSQL.DAAgregarParametro("@AUDI_Usuario", x_usuario, SqlDbType.VarChar, 20, ParameterDirection.Input);
-                  return DataAccessEnterpriseSQL.DAExecuteNonQuery() > 0;
-                  break;
+                        DataAccessEnterpriseSQL.DAAsignarProcedure("CAJ_MOVISI_GenerarAsientoCaja");
+                        DataAccessEnterpriseSQL.DAAgregarParametro("@EMPR_Codigo", ItemMovimiento.EMPR_Codigo, SqlDbType.SmallInt, 2, ParameterDirection.Input);
+                        DataAccessEnterpriseSQL.DAAgregarParametro("@MOVI_Codigo", ItemMovimiento.MOVI_Codigo, SqlDbType.Int, 4, ParameterDirection.Input);
+                        DataAccessEnterpriseSQL.DAAgregarParametro("@AUDI_Usuario", x_usuario, SqlDbType.VarChar, 20, ParameterDirection.Input);
+                        return DataAccessEnterpriseSQL.DAExecuteNonQuery() > 0;
+                        break;
                case TipoAsiento.AsientoSTATEMENT:
                   DataAccessEnterpriseSQL.DAAsignarProcedure("COM_NVIASS_GenerarAsientoStatement");
                   DataAccessEnterpriseSQL.DAAgregarParametro("@EMPR_Codigo", ItemNaveViaje.EMPR_Codigo, SqlDbType.SmallInt, 2, ParameterDirection.Input);

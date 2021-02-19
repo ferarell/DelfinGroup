@@ -17,12 +17,14 @@ namespace Delfin.Principal
 {
    public partial class OPE001LView : UserControl, IOPE001LView
    {
-      #region [ Variables ]
+        Principal.AppService.DelfinServiceClient oAppService = new Principal.AppService.DelfinServiceClient();
 
-      #endregion
+        #region [ Variables ]
 
-      #region [ Formulario ]
-      public OPE001LView(Telerik.WinControls.UI.RadPageViewPage x_tabPageControl)
+        #endregion
+
+        #region [ Formulario ]
+        public OPE001LView(Telerik.WinControls.UI.RadPageViewPage x_tabPageControl)
       {
          InitializeComponent();
          try
@@ -98,6 +100,7 @@ namespace Delfin.Principal
       {
          try
          {
+            ApplyUserAccess();
             this.Text = "Operaciones - Órdenes de Venta";
             this.TitleView.Caption = "Operaciones - Órdenes de Venta";
 
@@ -270,7 +273,8 @@ namespace Delfin.Principal
             this.grdItems.Columns.Add("DDOV_FecEmbarque", "Fecha Embarque", "DDOV_FecEmbarque");
             this.grdItems.Columns.Add("CCOT_FecRecDocs", "Fecha Ingreso Documentos", "CCOT_FecRecDocs");
             this.grdItems.Columns.Add("CONS_DescEST", "Estado", "CONS_DescEST");
-
+            this.grdItems.Columns.Add("CONS_CodEST", "CodEstado", "CONS_CodEST");
+            this.grdItems.Columns["CONS_CodEST"].IsVisible = false;
 
             Telerik.WinControls.UI.GridViewCheckBoxColumn _checkColumn;
             _checkColumn = new Telerik.WinControls.UI.GridViewCheckBoxColumn("Bloqueado", "CCOT_Bloqueado");
@@ -751,6 +755,34 @@ namespace Delfin.Principal
         private void grdItems_RowPaint(object sender, GridViewRowPaintEventArgs e)
         {
             this.grdItems.TableElement.BackColor = Color.Red;
+        }
+
+        private void spCambiarEstado_Click(object sender, EventArgs e)
+        {
+            if (grdItems.RowCount == 0)
+            { return; }
+            ApplicationForm.ChangeStatusPopupForm oChangeStatusPopupForm;
+            oChangeStatusPopupForm = new ApplicationForm.ChangeStatusPopupForm();
+            oChangeStatusPopupForm.CCOT_NumDoc = grdItems.CurrentRow.Cells["CCOT_NumDoc"].Value.ToString(); 
+            oChangeStatusPopupForm.CONS_CodEST = grdItems.CurrentRow.Cells["CONS_CodEST"].Value.ToString();
+            oChangeStatusPopupForm.AUDI_UsrMod = Presenter.Session.UserName;
+            oChangeStatusPopupForm.OriginType = "OV";
+            if (oChangeStatusPopupForm.ShowDialog() == DialogResult.OK)
+            {
+                btnBuscar.PerformClick();
+            }
+        }
+        
+        private void ApplyUserAccess()
+        {
+            sbCambiarEstado.Enabled = false;
+            string Username = System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString();
+            DataTable dtUsers = new DataTable();
+            dtUsers = oAppService.ExecuteSQL("SELECT UserName FROM NextSoft.dgp.AplicacionesPermisosUsuario WHERE ApplicationName='NextSoft' AND UserName='" + Username + "' AND ApplicationOption='" + this.Name + "' AND ApplicationObject='sbCambiarEstado'").Tables[0];
+            if (dtUsers.Rows.Count > 0)
+            {
+                sbCambiarEstado.Enabled = true;
+            }
         }
     }
 }

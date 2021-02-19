@@ -297,7 +297,7 @@ Public Class LogisticOperationQueryForm
             XtraMessageBox.Show("Debe seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
-        Dim oForm As New LogisticOperationInvoicingPopupForm
+        Dim oForm As New PreInvoicingPopupForm
         Dim OpeList As String = ""
         Dim CodMon As String = ""
         Dim dtQuery As New DataTable
@@ -311,7 +311,9 @@ Public Class LogisticOperationQueryForm
         Next
         oForm.OperationsList = OpeList
         oForm.CodigoMoneda = CodMon
-        oForm.oProcessType = "Multiple"
+        oForm.oProcessType = "PreInvoicing"
+        oForm.oQuerySource = "OP"
+        oForm.IsMultiline = True
         If oForm.ShowDialog = DialogResult.OK Then
             bbiSearch.PerformClick()
         End If

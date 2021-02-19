@@ -178,6 +178,22 @@ namespace Delfin.Principal.AppService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDelfinService/UpdateLogisticOperation", ReplyAction="http://tempuri.org/IDelfinService/UpdateLogisticOperationResponse")]
         System.Threading.Tasks.Task<object[]> UpdateLogisticOperationAsync(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail, System.Data.DataTable dtOriginalChangeControl);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDelfinService/PreFacturar", ReplyAction="http://tempuri.org/IDelfinService/PreFacturarResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ApplicationForm.AppService.COM_Det_Cotizacion_OV_EventosTareas_BE))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[][]))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(string[]))]
+        object[] PreFacturar(int COPE_Codigo, System.Data.DataSet dsDocumentoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDelfinService/PreFacturar", ReplyAction="http://tempuri.org/IDelfinService/PreFacturarResponse")]
+        System.Threading.Tasks.Task<object[]> PreFacturarAsync(int COPE_Codigo, System.Data.DataSet dsDocumentoVenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDelfinService/InsertDocumentsProvider", ReplyAction="http://tempuri.org/IDelfinService/InsertDocumentsProviderResponse")]
+        string InsertDocumentsProvider(System.Data.DataSet dsDocumentsProvider, string Items);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDelfinService/InsertDocumentsProvider", ReplyAction="http://tempuri.org/IDelfinService/InsertDocumentsProviderResponse")]
+        System.Threading.Tasks.Task<string> InsertDocumentsProviderAsync(System.Data.DataSet dsDocumentsProvider, string Items);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -365,6 +381,22 @@ namespace Delfin.Principal.AppService {
         
         public System.Threading.Tasks.Task<object[]> UpdateLogisticOperationAsync(System.Data.DataSet dsLogisticOperation, System.Data.DataTable dtOriginalDetail, System.Data.DataTable dtOriginalChangeControl) {
             return base.Channel.UpdateLogisticOperationAsync(dsLogisticOperation, dtOriginalDetail, dtOriginalChangeControl);
+        }
+        
+        public object[] PreFacturar(int COPE_Codigo, System.Data.DataSet dsDocumentoVenta) {
+            return base.Channel.PreFacturar(COPE_Codigo, dsDocumentoVenta);
+        }
+        
+        public System.Threading.Tasks.Task<object[]> PreFacturarAsync(int COPE_Codigo, System.Data.DataSet dsDocumentoVenta) {
+            return base.Channel.PreFacturarAsync(COPE_Codigo, dsDocumentoVenta);
+        }
+        
+        public string InsertDocumentsProvider(System.Data.DataSet dsDocumentsProvider, string Items) {
+            return base.Channel.InsertDocumentsProvider(dsDocumentsProvider, Items);
+        }
+        
+        public System.Threading.Tasks.Task<string> InsertDocumentsProviderAsync(System.Data.DataSet dsDocumentsProvider, string Items) {
+            return base.Channel.InsertDocumentsProviderAsync(dsDocumentsProvider, Items);
         }
     }
 }

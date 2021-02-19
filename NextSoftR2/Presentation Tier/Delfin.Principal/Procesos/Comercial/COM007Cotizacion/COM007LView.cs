@@ -17,13 +17,15 @@ namespace Delfin.Principal
 {
    public partial class COM007LView : UserControl, ICOM007LView
    {
-      #region [ Variables ]
-      //private String m_sortColumnName;
-      //private Boolean m_sortAscending = false;
-      #endregion
+    Principal.AppService.DelfinServiceClient oAppService = new Principal.AppService.DelfinServiceClient();
 
-      #region [ Formulario ]
-      public COM007LView(Telerik.WinControls.UI.RadPageViewPage x_tabPageControl)
+    #region [ Variables ]
+        //private String m_sortColumnName;
+        //private Boolean m_sortAscending = false;
+        #endregion
+
+    #region [ Formulario ]
+        public COM007LView(Telerik.WinControls.UI.RadPageViewPage x_tabPageControl)
       {
          InitializeComponent();
          try
@@ -68,6 +70,7 @@ namespace Delfin.Principal
       {
          try
          {
+            ApplyUserAccess();
             ENTC_CodEjecutivo.ContainerService = Presenter.ContainerService;
             ENTC_CodCustomer.ContainerService = Presenter.ContainerService;
             ENTC_CodAgente.ContainerService = Presenter.ContainerService;
@@ -219,6 +222,8 @@ namespace Delfin.Principal
             //this.grdItemLViews.Columns["Delete"].AllowFiltering = false;
 
             this.grdItems.Columns.Add("CONS_DescEST", "Estado", "CONS_DescEST");
+            this.grdItems.Columns.Add("CONS_CodEST", "CodEstado", "CONS_CodEST");
+            this.grdItems.Columns["CONS_CodEST"].IsVisible = false;
             if (Presenter.CCOT_Tipo == Delfin.Controls.variables.CCOT_TipoCotizacion)
             { 
                this.grdItems.Columns.Add("CCOT_NumDocVersion", "Número/Versión Cotización", "CCOT_NumDocVersion"); 
@@ -632,6 +637,34 @@ namespace Delfin.Principal
         {
 
 
+        }
+
+        private void sbCambiarEstado_Click(object sender, EventArgs e)
+        {
+            if (grdItems.RowCount == 0)
+            { return; }
+            ApplicationForm.ChangeStatusPopupForm oChangeStatusPopupForm;
+            oChangeStatusPopupForm = new ApplicationForm.ChangeStatusPopupForm();
+            oChangeStatusPopupForm.CCOT_NumDoc = grdItems.CurrentRow.Cells["CCOT_NumDoc"].Value.ToString();
+            oChangeStatusPopupForm.CONS_CodEST = grdItems.CurrentRow.Cells["CONS_CodEST"].Value.ToString();
+            oChangeStatusPopupForm.AUDI_UsrMod = Presenter.Session.UserName;
+            oChangeStatusPopupForm.OriginType = "OV";
+            if (oChangeStatusPopupForm.ShowDialog() == DialogResult.OK)
+            {
+                btnBuscar.PerformClick();
+            }
+        }
+
+        private void ApplyUserAccess()
+        {
+            sbCambiarEstado.Enabled = false;
+            string Username = System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString();
+            DataTable dtUsers = new DataTable();
+            dtUsers = oAppService.ExecuteSQL("SELECT UserName FROM NextSoft.dgp.AplicacionesPermisosUsuario WHERE ApplicationName='NextSoft' AND UserName='" + Username + "' AND ApplicationOption='" + this.Name + "' AND ApplicationObject='sbCambiarEstado'").Tables[0];
+            if (dtUsers.Rows.Count > 0)
+            {
+                sbCambiarEstado.Enabled = true;
+            }
         }
     }
 }

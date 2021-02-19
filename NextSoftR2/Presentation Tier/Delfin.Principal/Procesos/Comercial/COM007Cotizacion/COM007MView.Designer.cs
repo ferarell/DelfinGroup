@@ -28,7 +28,6 @@
       /// </summary>
       private void InitializeComponent()
       {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(COM007MView));
             this.panel3 = new System.Windows.Forms.Panel();
             this.btActualizaServicioLogistico = new System.Windows.Forms.Button();
@@ -36,7 +35,7 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.errorProviderCab_Cotizacion_OV = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCab_Cotizacion_OV = new System.Windows.Forms.ErrorProvider();
             this.tabCab_Cotizacion_OV = new Dotnetrix.Controls.TabControlEX();
             this.pageGenerales = new Dotnetrix.Controls.TabPageEX();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -75,15 +74,15 @@
             this.TIPO_CodINC = new Delfin.Controls.Tipos.ComboBoxTipos();
             this.lblTIPO_CodINC = new System.Windows.Forms.Label();
             this.lblENTC_CodCustomer = new System.Windows.Forms.Label();
-            this.ENTC_CodCustomer = new Delfin.Controls.Entidad(this.components);
-            this.ENTC_CodBroker = new Delfin.Controls.Entidad(this.components);
+            this.ENTC_CodCustomer = new Delfin.Controls.Entidad();
+            this.ENTC_CodBroker = new Delfin.Controls.Entidad();
             this.lblENTC_CodBroker = new System.Windows.Forms.Label();
-            this.ENTC_CodEjecutivo = new Delfin.Controls.Entidad(this.components);
+            this.ENTC_CodEjecutivo = new Delfin.Controls.Entidad();
             this.lblENTC_CodEjecutivo = new System.Windows.Forms.Label();
             this.lblENTC_CodAgente = new System.Windows.Forms.Label();
-            this.txaENTC_CodAgente = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodAgente = new Delfin.Controls.Entidad();
             this.lblENTC_CodCliente = new System.Windows.Forms.Label();
-            this.ENTC_CodCliente = new Delfin.Controls.Entidad(this.components);
+            this.ENTC_CodCliente = new Delfin.Controls.Entidad();
             this.lblCONS_CodLNG = new System.Windows.Forms.Label();
             this.cmbCONS_CodLNG = new Delfin.Controls.Tipos.ComboBoxConstantes();
             this.lblCCOT_FecEmi = new System.Windows.Forms.Label();
@@ -116,8 +115,8 @@
             this.btnAddFlete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.CCOT_PagoMBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
-            this.CCOT_PagoHBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox(this.components);
+            this.CCOT_PagoMBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
+            this.CCOT_PagoHBL = new Infrastructure.WinForms.Controls.ComboBox.ComboBox();
             this.DCOT_Importe = new Infrastructure.WinForms.Controls.TextBoxNumerico();
             this.lblDCOT_Importe = new System.Windows.Forms.Label();
             this.lblCCOT_PagoHBL = new System.Windows.Forms.Label();
@@ -136,10 +135,10 @@
             this.txaPUER_CodOrigen = new Delfin.Controls.AyudaPuerto();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.CONT_Numero = new Infrastructure.WinForms.Controls.TextBoxAyuda(this.components);
+            this.CONT_Numero = new Infrastructure.WinForms.Controls.TextBoxAyuda();
             this.btnCambiarContrato = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.ENTC_CodTransportista = new Delfin.Controls.Entidad(this.components);
+            this.ENTC_CodTransportista = new Delfin.Controls.Entidad();
             this.lblENTC_CodTransportista = new System.Windows.Forms.Label();
             this.lblTIPO_CodMND = new System.Windows.Forms.Label();
             this.lblCONS_CodFLE = new System.Windows.Forms.Label();
@@ -177,9 +176,9 @@
             this.lblENTC_CodNotify = new System.Windows.Forms.Label();
             this.lblENTC_CodShipper = new System.Windows.Forms.Label();
             this.lblENTC_CodConsignee = new System.Windows.Forms.Label();
-            this.ENTC_CodShipper = new Delfin.Controls.Entidad(this.components);
-            this.ENTC_CodConsignee = new Delfin.Controls.Entidad(this.components);
-            this.ENTC_CodNotify = new Delfin.Controls.Entidad(this.components);
+            this.ENTC_CodShipper = new Delfin.Controls.Entidad();
+            this.ENTC_CodConsignee = new Delfin.Controls.Entidad();
+            this.ENTC_CodNotify = new Delfin.Controls.Entidad();
             this.DOOV_CodReferencia = new System.Windows.Forms.TextBox();
             this.pageObservaciones = new Dotnetrix.Controls.TabPageEX();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -211,6 +210,7 @@
             this.tableDatosViaje = new System.Windows.Forms.TableLayoutPanel();
             this.lblNVIA_FecETDMaster = new System.Windows.Forms.Label();
             this.NVIA_FecETDMaster = new Infrastructure.WinForms.Controls.MaskDateTime();
+            this.NVIA_FecETA = new Infrastructure.WinForms.Controls.MaskDateTime();
             this.lblNVIA_FecCutOff = new System.Windows.Forms.Label();
             this.NVIA_FecCutOff = new Infrastructure.WinForms.Controls.MaskDateTime();
             this.lblDOOV_Feeder_IMPO = new System.Windows.Forms.Label();
@@ -218,19 +218,15 @@
             this.lblNAVE_Nombre = new System.Windows.Forms.Label();
             this.NAVE_Nombre = new System.Windows.Forms.TextBox();
             this.lblNVIA_NroViaje = new System.Windows.Forms.Label();
-            this.NVIA_NroViaje = new Infrastructure.WinForms.Controls.TextBoxAyuda(this.components);
+            this.NVIA_NroViaje = new Infrastructure.WinForms.Controls.TextBoxAyuda();
             this.lblNVIA_FecETA = new System.Windows.Forms.Label();
-            this.NVIA_FecETA = new Infrastructure.WinForms.Controls.MaskDateTime();
             this.DOOV_FecETDFeeder_IMPO = new Infrastructure.WinForms.Controls.MaskDateTime();
             this.lblDOOV_FecETDFeeder_IMPO = new System.Windows.Forms.Label();
             this.panelCaption10 = new Infrastructure.WinForms.Controls.PanelCaption();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.label38 = new System.Windows.Forms.Label();
             this.DOOV_Cntr = new System.Windows.Forms.TextBox();
-            this.txtDDOV_NroBooking = new System.Windows.Forms.TextBox();
             this.lblDOOV_Cntr = new System.Windows.Forms.Label();
-            this.txaENTC_CodDepTemporal = new Delfin.Controls.Entidad(this.components);
+            this.txaENTC_CodDepTemporal = new Delfin.Controls.Entidad();
             this.lblTIPO_CodDTM = new System.Windows.Forms.Label();
             this.lblDOOV_HBL = new System.Windows.Forms.Label();
             this.DOOV_HBL = new System.Windows.Forms.TextBox();
@@ -238,8 +234,13 @@
             this.DOOV_MBL = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.chkDDOV_HBLNieto = new System.Windows.Forms.CheckBox();
-            this.panelCaption12 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.panelCaption18 = new Infrastructure.WinForms.Controls.PanelCaption();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtDDOV_NroBooking = new System.Windows.Forms.TextBox();
+            this.DDOV_FecRecBooking = new Infrastructure.WinForms.Controls.MaskDateTime();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panelCaption12 = new Infrastructure.WinForms.Controls.PanelCaption();
             this.pageArchivos = new Dotnetrix.Controls.TabPageEX();
             this.grdItemsArchivos = new Telerik.WinControls.UI.RadGridView();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -275,11 +276,9 @@
             this.EVEN_Usuario = new System.Windows.Forms.TextBox();
             this.panelEventoTarea = new Infrastructure.WinForms.Controls.PanelCaption();
             this.pageServicioLogistico = new Dotnetrix.Controls.TabPageEX();
-            this.errorProviderDet_Cotizacion_OV_Novedad = new System.Windows.Forms.ErrorProvider(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.errorEventoTarea = new System.Windows.Forms.ErrorProvider(this.components);
-            this.DDOV_FecRecBooking = new Infrastructure.WinForms.Controls.MaskDateTime();
-            this.label11 = new System.Windows.Forms.Label();
+            this.errorProviderDet_Cotizacion_OV_Novedad = new System.Windows.Forms.ErrorProvider();
+            this.toolTip1 = new System.Windows.Forms.ToolTip();
+            this.errorEventoTarea = new System.Windows.Forms.ErrorProvider();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCab_Cotizacion_OV)).BeginInit();
             this.tabCab_Cotizacion_OV.SuspendLayout();
@@ -313,8 +312,8 @@
             this.panel5.SuspendLayout();
             this.tableNovedad.SuspendLayout();
             this.tableDatosViaje.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.pageArchivos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdItemsArchivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdItemsArchivos.MasterTemplate)).BeginInit();
@@ -1450,7 +1449,7 @@
             // 
             this.grdItemsSeguro.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 27, 240, 150);
             this.grdItemsSeguro.RootElement.MinSize = new System.Drawing.Size(0, 0);
-            this.grdItemsSeguro.Size = new System.Drawing.Size(1092, 140);
+            this.grdItemsSeguro.Size = new System.Drawing.Size(1092, 141);
             this.grdItemsSeguro.TabIndex = 52;
             this.grdItemsSeguro.TabStop = false;
             // 
@@ -2743,7 +2742,7 @@
             // 
             // 
             // 
-            this.grdItemsNovedades.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 405, 240, 150);
+            this.grdItemsNovedades.RootElement.ControlBounds = new System.Drawing.Rectangle(0, 378, 240, 150);
             this.grdItemsNovedades.RootElement.MinSize = new System.Drawing.Size(0, 0);
             this.grdItemsNovedades.Size = new System.Drawing.Size(1096, 292);
             this.grdItemsNovedades.TabIndex = 9;
@@ -2977,6 +2976,21 @@
             this.NVIA_FecETDMaster.TabIndex = 9;
             this.NVIA_FecETDMaster.Tag = "DOOV_ETDMMSGERROR";
             // 
+            // NVIA_FecETA
+            // 
+            this.NVIA_FecETA.Location = new System.Drawing.Point(518, 30);
+            this.NVIA_FecETA.MinimumSize = new System.Drawing.Size(100, 22);
+            this.NVIA_FecETA.Name = "NVIA_FecETA";
+            this.NVIA_FecETA.NSActiveMouse = false;
+            this.NVIA_FecETA.NSActiveMsgFecha = false;
+            this.NVIA_FecETA.NSChangeDate = true;
+            this.NVIA_FecETA.NSDigitos = 4;
+            this.NVIA_FecETA.NSFecha = null;
+            this.NVIA_FecETA.NSSetDateNow = false;
+            this.NVIA_FecETA.Size = new System.Drawing.Size(100, 22);
+            this.NVIA_FecETA.TabIndex = 7;
+            this.NVIA_FecETA.Tag = "DOOV_ETAMSGERROR";
+            // 
             // lblNVIA_FecCutOff
             // 
             this.lblNVIA_FecCutOff.AutoSize = true;
@@ -3085,21 +3099,6 @@
             this.lblNVIA_FecETA.TabIndex = 6;
             this.lblNVIA_FecETA.Text = "ETA/ETD:";
             // 
-            // NVIA_FecETA
-            // 
-            this.NVIA_FecETA.Location = new System.Drawing.Point(518, 30);
-            this.NVIA_FecETA.MinimumSize = new System.Drawing.Size(100, 22);
-            this.NVIA_FecETA.Name = "NVIA_FecETA";
-            this.NVIA_FecETA.NSActiveMouse = false;
-            this.NVIA_FecETA.NSActiveMsgFecha = false;
-            this.NVIA_FecETA.NSChangeDate = true;
-            this.NVIA_FecETA.NSDigitos = 4;
-            this.NVIA_FecETA.NSFecha = null;
-            this.NVIA_FecETA.NSSetDateNow = false;
-            this.NVIA_FecETA.Size = new System.Drawing.Size(100, 22);
-            this.NVIA_FecETA.TabIndex = 7;
-            this.NVIA_FecETA.Tag = "DOOV_ETAMSGERROR";
-            // 
             // DOOV_FecETDFeeder_IMPO
             // 
             this.DOOV_FecETDFeeder_IMPO.Location = new System.Drawing.Point(883, 3);
@@ -3140,33 +3139,6 @@
             this.panelCaption10.Size = new System.Drawing.Size(1096, 27);
             this.panelCaption10.TabIndex = 4;
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.ColumnCount = 10;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.label38, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtDDOV_NroBooking, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.DDOV_FecRecBooking, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label11, 3, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 27);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1096, 27);
-            this.tableLayoutPanel2.TabIndex = 1;
-            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.AutoSize = true;
@@ -3206,17 +3178,6 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(1096, 81);
             this.tableLayoutPanel8.TabIndex = 3;
             // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(10, 7);
-            this.label38.Margin = new System.Windows.Forms.Padding(10, 7, 2, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(76, 13);
-            this.label38.TabIndex = 10;
-            this.label38.Text = "Nº Booking:";
-            // 
             // DOOV_Cntr
             // 
             this.tableLayoutPanel8.SetColumnSpan(this.DOOV_Cntr, 7);
@@ -3226,15 +3187,6 @@
             this.DOOV_Cntr.Size = new System.Drawing.Size(924, 21);
             this.DOOV_Cntr.TabIndex = 5;
             this.DOOV_Cntr.Tag = "DOOV_CntrMSGERROR";
-            // 
-            // txtDDOV_NroBooking
-            // 
-            this.txtDDOV_NroBooking.Location = new System.Drawing.Point(152, 3);
-            this.txtDDOV_NroBooking.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtDDOV_NroBooking.Name = "txtDDOV_NroBooking";
-            this.txtDDOV_NroBooking.Size = new System.Drawing.Size(195, 20);
-            this.txtDDOV_NroBooking.TabIndex = 11;
-            this.txtDDOV_NroBooking.Tag = "DOOV_MBLMSGERROR";
             // 
             // lblDOOV_Cntr
             // 
@@ -3340,20 +3292,6 @@
             this.chkDDOV_HBLNieto.Tag = "DDOV_HBLNietoMSGERROR";
             this.chkDDOV_HBLNieto.UseVisualStyleBackColor = true;
             // 
-            // panelCaption12
-            // 
-            this.panelCaption12.AllowActive = false;
-            this.panelCaption12.AntiAlias = false;
-            this.panelCaption12.Caption = "Datos Booking";
-            this.panelCaption12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCaption12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.panelCaption12.InactiveGradientHighColor = System.Drawing.Color.SteelBlue;
-            this.panelCaption12.InactiveGradientLowColor = System.Drawing.Color.MidnightBlue;
-            this.panelCaption12.Location = new System.Drawing.Point(0, 0);
-            this.panelCaption12.Name = "panelCaption12";
-            this.panelCaption12.Size = new System.Drawing.Size(1096, 27);
-            this.panelCaption12.TabIndex = 0;
-            // 
             // panelCaption18
             // 
             this.panelCaption18.AllowActive = false;
@@ -3367,6 +3305,93 @@
             this.panelCaption18.Name = "panelCaption18";
             this.panelCaption18.Size = new System.Drawing.Size(1096, 27);
             this.panelCaption18.TabIndex = 2;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.ColumnCount = 10;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.label38, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtDDOV_NroBooking, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.DDOV_FecRecBooking, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label11, 3, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 27);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1096, 27);
+            this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(10, 7);
+            this.label38.Margin = new System.Windows.Forms.Padding(10, 7, 2, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(76, 13);
+            this.label38.TabIndex = 10;
+            this.label38.Text = "Nº Booking:";
+            // 
+            // txtDDOV_NroBooking
+            // 
+            this.txtDDOV_NroBooking.Location = new System.Drawing.Point(152, 3);
+            this.txtDDOV_NroBooking.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.txtDDOV_NroBooking.Name = "txtDDOV_NroBooking";
+            this.txtDDOV_NroBooking.Size = new System.Drawing.Size(195, 20);
+            this.txtDDOV_NroBooking.TabIndex = 11;
+            this.txtDDOV_NroBooking.Tag = "DOOV_MBLMSGERROR";
+            // 
+            // DDOV_FecRecBooking
+            // 
+            this.DDOV_FecRecBooking.Location = new System.Drawing.Point(518, 3);
+            this.DDOV_FecRecBooking.MinimumSize = new System.Drawing.Size(100, 22);
+            this.DDOV_FecRecBooking.Name = "DDOV_FecRecBooking";
+            this.DDOV_FecRecBooking.NSActiveMouse = false;
+            this.DDOV_FecRecBooking.NSActiveMsgFecha = false;
+            this.DDOV_FecRecBooking.NSChangeDate = true;
+            this.DDOV_FecRecBooking.NSDigitos = 4;
+            this.DDOV_FecRecBooking.NSFecha = null;
+            this.DDOV_FecRecBooking.NSSetDateNow = false;
+            this.DDOV_FecRecBooking.Size = new System.Drawing.Size(100, 22);
+            this.DDOV_FecRecBooking.TabIndex = 7;
+            this.DDOV_FecRecBooking.Tag = "";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(375, 7);
+            this.label11.Margin = new System.Windows.Forms.Padding(10, 7, 3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(107, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Fecha Recepción:";
+            // 
+            // panelCaption12
+            // 
+            this.panelCaption12.AllowActive = false;
+            this.panelCaption12.AntiAlias = false;
+            this.panelCaption12.Caption = "Datos Booking";
+            this.panelCaption12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCaption12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.panelCaption12.InactiveGradientHighColor = System.Drawing.Color.SteelBlue;
+            this.panelCaption12.InactiveGradientLowColor = System.Drawing.Color.MidnightBlue;
+            this.panelCaption12.Location = new System.Drawing.Point(0, 0);
+            this.panelCaption12.Name = "panelCaption12";
+            this.panelCaption12.Size = new System.Drawing.Size(1096, 27);
+            this.panelCaption12.TabIndex = 0;
             // 
             // pageArchivos
             // 
@@ -3862,32 +3887,6 @@
             this.errorEventoTarea.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorEventoTarea.ContainerControl = this;
             // 
-            // DDOV_FecRecBooking
-            // 
-            this.DDOV_FecRecBooking.Location = new System.Drawing.Point(518, 3);
-            this.DDOV_FecRecBooking.MinimumSize = new System.Drawing.Size(100, 22);
-            this.DDOV_FecRecBooking.Name = "DDOV_FecRecBooking";
-            this.DDOV_FecRecBooking.NSActiveMouse = false;
-            this.DDOV_FecRecBooking.NSActiveMsgFecha = false;
-            this.DDOV_FecRecBooking.NSChangeDate = true;
-            this.DDOV_FecRecBooking.NSDigitos = 4;
-            this.DDOV_FecRecBooking.NSFecha = null;
-            this.DDOV_FecRecBooking.NSSetDateNow = false;
-            this.DDOV_FecRecBooking.Size = new System.Drawing.Size(100, 22);
-            this.DDOV_FecRecBooking.TabIndex = 7;
-            this.DDOV_FecRecBooking.Tag = "";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(375, 7);
-            this.label11.Margin = new System.Windows.Forms.Padding(10, 7, 3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 13);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Fecha Recepción:";
-            // 
             // COM007MView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3953,10 +3952,10 @@
             this.tableNovedad.PerformLayout();
             this.tableDatosViaje.ResumeLayout(false);
             this.tableDatosViaje.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.pageArchivos.ResumeLayout(false);
             this.pageArchivos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdItemsArchivos.MasterTemplate)).EndInit();
