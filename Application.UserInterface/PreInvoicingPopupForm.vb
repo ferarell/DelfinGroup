@@ -36,7 +36,6 @@ Public Class PreInvoicingPopupForm
             'gcInvoicing.MainView = GridView1
             GridView1.Columns("TIPO_CodFPG").Visible = False
         End If
-
         If IsMultiline Then
             lueMoneda.ReadOnly = True
             lueFormaPago.ReadOnly = True
