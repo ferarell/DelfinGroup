@@ -430,7 +430,7 @@ Public Class VendorDocumentRegisterForm
         If teCodigoInterno.EditValue.ToString() = "" Then
             CCCT_Codigo = oAppService.InsertDocumentsProvider(dsDocumentsProvider, DOPE_Items)
         Else
-            oAppService.ActualizarDocumentsProvider(dsDocumentsProvider, DOPE_Items)
+            'oAppService.ActualizarDocumentsProvider(dsDocumentsProvider, DOPE_Items)
         End If
 
 

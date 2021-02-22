@@ -78,6 +78,8 @@ Partial Class PreInvoicingPopupForm
         Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -503,7 +505,7 @@ Partial Class PreInvoicingPopupForm
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn45, Me.GridColumn8, Me.GridColumn9, Me.GridColumn41, Me.GridColumn2, Me.GridColumn3, Me.GridColumn6, Me.GridColumn1, Me.GridColumn7, Me.GridColumn4, Me.GridColumn15, Me.GridColumn5, Me.GridColumn10, Me.GridColumn12, Me.GridColumn14})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn45, Me.GridColumn8, Me.GridColumn9, Me.GridColumn41, Me.GridColumn2, Me.GridColumn3, Me.GridColumn6, Me.GridColumn1, Me.GridColumn7, Me.GridColumn4, Me.GridColumn15, Me.GridColumn5, Me.GridColumn10, Me.GridColumn12, Me.GridColumn14, Me.GridColumn11, Me.GridColumn13})
         Me.GridView1.GridControl = Me.gcInvoicing
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
@@ -560,8 +562,8 @@ Partial Class PreInvoicingPopupForm
         '
         'GridColumn3
         '
-        Me.GridColumn3.Caption = "Fecha Operación"
-        Me.GridColumn3.FieldName = "COPE_FecEmi"
+        Me.GridColumn3.Caption = "Fecha"
+        Me.GridColumn3.FieldName = "FecEmi"
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.OptionsColumn.ReadOnly = True
         Me.GridColumn3.Visible = True
@@ -606,7 +608,7 @@ Partial Class PreInvoicingPopupForm
         'GridColumn4
         '
         Me.GridColumn4.Caption = "HBL"
-        Me.GridColumn4.FieldName = "COPE_HBL"
+        Me.GridColumn4.FieldName = "HBL"
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.OptionsColumn.ReadOnly = True
         Me.GridColumn4.Visible = True
@@ -615,7 +617,7 @@ Partial Class PreInvoicingPopupForm
         'GridColumn15
         '
         Me.GridColumn15.Caption = "MBL"
-        Me.GridColumn15.FieldName = "COPE_MBL"
+        Me.GridColumn15.FieldName = "MBL"
         Me.GridColumn15.Name = "GridColumn15"
         Me.GridColumn15.OptionsColumn.ReadOnly = True
         Me.GridColumn15.Visible = True
@@ -650,11 +652,27 @@ Partial Class PreInvoicingPopupForm
         'GridColumn14
         '
         Me.GridColumn14.Caption = "Importe Venta"
-        Me.GridColumn14.FieldName = "DOPE_PrecioTotVta"
+        Me.GridColumn14.FieldName = "ValorVenta"
         Me.GridColumn14.Name = "GridColumn14"
         Me.GridColumn14.OptionsColumn.ReadOnly = True
         Me.GridColumn14.Visible = True
         Me.GridColumn14.VisibleIndex = 14
+        '
+        'GridColumn11
+        '
+        Me.GridColumn11.Caption = "Impuesto"
+        Me.GridColumn11.FieldName = "Impuesto"
+        Me.GridColumn11.Name = "GridColumn11"
+        Me.GridColumn11.Visible = True
+        Me.GridColumn11.VisibleIndex = 15
+        '
+        'GridColumn13
+        '
+        Me.GridColumn13.Caption = "Importe Total"
+        Me.GridColumn13.FieldName = "ValorTotal"
+        Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.Visible = True
+        Me.GridColumn13.VisibleIndex = 16
         '
         'PreInvoicingPopupForm
         '
@@ -755,4 +773,6 @@ Partial Class PreInvoicingPopupForm
     Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents bbiSave As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents GridColumn11 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn13 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

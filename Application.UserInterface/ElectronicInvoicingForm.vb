@@ -26,7 +26,7 @@ Public Class ElectronicInvoicingForm
         lueStatus.Properties.DataSource = dtQuery
         lueStatus.Properties.DisplayMember = "DescripcionEstadoFE"
         lueStatus.Properties.ValueMember = "CodigoEstadoFE"
-        lueStatus.ItemIndex = 0
+        lueStatus.ItemIndex = 1
     End Sub
 
     Private Sub bbiExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiExport.ItemClick
@@ -36,7 +36,17 @@ Public Class ElectronicInvoicingForm
     Private Sub bbiEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEdit.ItemClick
         Dim oForm As New PreInvoicingPopupForm
         oForm.AppUser = AppUser
-        oForm.oProcessType = "Single"
+        oForm.oProcessType = "Invoicing"
+        oForm.oQuerySource = GridView1.GetFocusedRowCellValue("Origen")
+        oForm.InternalCodeList = GridView1.GetFocusedRowCellValue("DOCV_Codigo")
+        oForm.IsMultiline = False
+        If oForm.ShowDialog() = DialogResult.OK Then
+            GridView1.SetFocusedRowCellValue("TIPO_TDO", oForm.lueTipoComprobante.Text)
+            GridView1.SetFocusedRowCellValue("DOCV_Serie", oForm.lueSerieComprobante.Text)
+            GridView1.SetFocusedRowCellValue("Cliente", oForm.lueSocioNegocio.Text)
+            GridView1.SetFocusedRowCellValue("TIPO_FPG", oForm.lueFormaPago.Text)
+        End If
+
     End Sub
 
     Private Sub bbiVoid_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiVoid.ItemClick

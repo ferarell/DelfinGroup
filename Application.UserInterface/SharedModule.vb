@@ -107,4 +107,18 @@ Module SharedModule
         End Using
     End Function
 
+    Friend Sub FormatGridView(oGridView As GridView)
+        oGridView.BestFitColumns()
+        For c = 0 To oGridView.Columns.Count - 1
+            If oGridView.Columns(c).ColumnType = GetType(Decimal) Then
+                oGridView.Columns(c).DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+                oGridView.Columns(c).DisplayFormat.FormatString = "###,###,##0.00"
+                oGridView.Columns(c).SummaryItem.SetSummary(DevExpress.Data.SummaryItemType.Sum, "{0:n2}")
+                oGridView.Columns(c).DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+                oGridView.Columns(c).DisplayFormat.FormatString = "n2"
+            End If
+        Next
+    End Sub
+
+
 End Module

@@ -34,6 +34,7 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmColumnas = new System.Windows.Forms.ToolStripMenuItem();
             this.pnBotones = new System.Windows.Forms.Panel();
+            this.sbCambiarEstado = new DevExpress.XtraEditors.SimpleButton();
             this.btnActualizarCRM = new System.Windows.Forms.Button();
             this.btnDeshacer = new System.Windows.Forms.Button();
             this.btnExportar = new System.Windows.Forms.Button();
@@ -91,7 +92,6 @@
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.sbCambiarEstado = new DevExpress.XtraEditors.SimpleButton();
             this.cmsMenu.SuspendLayout();
             this.pnBotones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -152,6 +152,18 @@
             this.pnBotones.Name = "pnBotones";
             this.pnBotones.Size = new System.Drawing.Size(1101, 50);
             this.pnBotones.TabIndex = 42;
+            // 
+            // sbCambiarEstado
+            // 
+            this.sbCambiarEstado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sbCambiarEstado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbCambiarEstado.ImageOptions.Image")));
+            this.sbCambiarEstado.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.sbCambiarEstado.Location = new System.Drawing.Point(934, 0);
+            this.sbCambiarEstado.Name = "sbCambiarEstado";
+            this.sbCambiarEstado.Size = new System.Drawing.Size(89, 50);
+            this.sbCambiarEstado.TabIndex = 14;
+            this.sbCambiarEstado.Text = "Cambiar Estado";
+            this.sbCambiarEstado.Click += new System.EventHandler(this.sbCambiarEstado_Click);
             // 
             // btnActualizarCRM
             // 
@@ -431,7 +443,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 268F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 422F));
             this.tableLayoutPanel1.Controls.Add(this.lblENTC_CodCustomer, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblENTC_CodEjecutivo, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.ENTC_CodEjecutivo, 1, 2);
@@ -975,18 +987,6 @@
             // 
             this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
             this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // sbCambiarEstado
-            // 
-            this.sbCambiarEstado.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sbCambiarEstado.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbCambiarEstado.ImageOptions.Image")));
-            this.sbCambiarEstado.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.sbCambiarEstado.Location = new System.Drawing.Point(934, 0);
-            this.sbCambiarEstado.Name = "sbCambiarEstado";
-            this.sbCambiarEstado.Size = new System.Drawing.Size(89, 50);
-            this.sbCambiarEstado.TabIndex = 14;
-            this.sbCambiarEstado.Text = "Cambiar Estado";
-            this.sbCambiarEstado.Click += new System.EventHandler(this.sbCambiarEstado_Click);
             // 
             // COM007LView
             // 

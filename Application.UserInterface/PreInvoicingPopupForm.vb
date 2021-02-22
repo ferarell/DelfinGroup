@@ -12,10 +12,23 @@ Public Class PreInvoicingPopupForm
     Friend oProcessType As String = ""
     Friend oQuerySource As String = ""
     Friend IsMultiline As Boolean = Nothing
+
+    Public Sub New()
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Me.Size = New Size(1200, 600)
+        Me.StartPosition = FormStartPosition.CenterScreen
+    End Sub
+
     Private Sub LogisticOperationInvoicingPopupForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim dtSource As New DataTable
         LoadTaxDocumentType()
         LoadPaymentType()
+        LoadCurrency()
+        LoadEntityDataList(1, "lueSocioNegocio")
         deFechaEmision.EditValue = Now
         If oProcessType = "PreInvoicing" Then
             bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -30,11 +43,21 @@ Public Class PreInvoicingPopupForm
             End If
         End If
         If oProcessType = "Invoicing" Then
-            bbiGenerate.Visibility = False
-        End If
-        If Not IsMultiline Then
-            'gcInvoicing.MainView = GridView1
-            GridView1.Columns("TIPO_CodFPG").Visible = False
+            bbiGenerate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+            dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.VEN_DDOVSS_TodosPorDOCV_Codigo " & InternalCodeList & ", '" & oQuerySource & "'").Tables(0)
+            lueMoneda.Properties.ReadOnly = True
+            deFechaEmision.Properties.ReadOnly = True
+            deFechaVencimiento.Properties.ReadOnly = True
+            If dtSource.Rows.Count > 0 Then
+                Dim oRow As DataRow = dtSource.Rows(0)
+                lueTipoComprobante.EditValue = oRow("TIPO_CodTDO")
+                lueSerieComprobante.EditValue = oRow("DOCV_Serie")
+                lueMoneda.EditValue = oRow("TIPO_CodMND")
+                lueSocioNegocio.EditValue = oRow("ENTC_Codigo")
+                seDiasCredito.EditValue = oRow("ENLI_DiasDuracion")
+                lueFormaPago.EditValue = oRow("TIPO_CodFPG")
+            End If
+
         End If
         If IsMultiline Then
             lueMoneda.ReadOnly = True
@@ -42,18 +65,24 @@ Public Class PreInvoicingPopupForm
             seDiasCredito.ReadOnly = True
             deFechaVencimiento.ReadOnly = True
             lueSocioNegocio.ReadOnly = True
-            'gcInvoicing.MainView = GridView1
+        Else
+            GridView1.Columns("TIPO_CodFPG").Visible = False
+            GridView1.Columns("Moneda").Visible = False
+            GridView1.Columns("Cliente").Visible = False
+            GridView1.Columns("ENLI_DiasDuracion").Visible = False
+            GridView1.Columns("DOCV_FechaVcmto").Visible = False
         End If
+
         lueTipoComprobante.ItemIndex = 0
         gcInvoicing.DataSource = dtSource
-        GridView1.BestFitColumns()
+        FormatGridView(GridView1)
 
     End Sub
 
     Private Sub LoadPaymentType()
         Dim dtQuery As New DataTable
         dtQuery = oMasterDataList.LoadMasterData("PayTerm", Nothing)
-        If oProcessType = "Single" Then
+        If Not IsMultiline Then
             lueFormaPago.Properties.DataSource = dtQuery
             lueFormaPago.Properties.DisplayMember = "DescripcionFormaPago"
             lueFormaPago.Properties.ValueMember = "CodigoFormaPago"
@@ -64,6 +93,28 @@ Public Class PreInvoicingPopupForm
         End If
     End Sub
 
+    Private Sub LoadCurrency()
+        Dim dtQuery As New DataTable
+        dtQuery = oMasterDataList.LoadMasterData("Currency", Nothing)
+        lueMoneda.Properties.DataSource = dtQuery
+        lueMoneda.Properties.DisplayMember = "DescripcionMoneda"
+        lueMoneda.Properties.ValueMember = "CodigoMoneda"
+    End Sub
+
+    Private Sub LoadEntityDataList(EntityType As Integer, ControlName As String)
+        Dim dtQuery As New DataTable
+        Dim aParams As New ArrayList
+        If EntityType > 0 Then
+            aParams.Add(EntityType.ToString)
+        End If
+        dtQuery = oMasterDataList.LoadMasterData("EntityByType", aParams)
+        If ControlName = "lueSocioNegocio" Then
+            lueSocioNegocio.Properties.DataSource = dtQuery
+            lueSocioNegocio.Properties.DisplayMember = "DescripcionEntidad"
+            lueSocioNegocio.Properties.ValueMember = "CodigoEntidad"
+        End If
+
+    End Sub
     Private Sub LoadTaxDocumentType()
         Dim dtQuery As New DataTable
         dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paListaTipoDocumentoContable").Tables(0)
@@ -134,8 +185,8 @@ Public Class PreInvoicingPopupForm
         oRow("DOCV_FechaEmision") = Now
         oRow("DOCV_FechaVcmto") = drSource("DOCV_FechaVcmto")
         oRow("DOCV_Estado") = "E"
-        oRow("DOCV_ValorTotal") = drSource("DOPE_PrecioTotVta") * IIf(drSource("TIPO_CodMND") = "002", drSource("TIPC_Venta"), 1)
-        oRow("DOCV_ValorTotalD") = drSource("DOPE_PrecioTotVta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
+        oRow("DOCV_ValorTotal") = drSource("ValorVenta") * IIf(drSource("TIPO_CodMND") = "002", drSource("TIPC_Venta"), 1)
+        oRow("DOCV_ValorTotalD") = drSource("ValorVenta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
         oRow("DOCV_Descuento") = 0
         oRow("DOCV_DescuentoD") = 0
         oRow("DOCV_Observaciones") = drSource("SERV_Nombre_SPA")
@@ -190,10 +241,10 @@ Public Class PreInvoicingPopupForm
         oRow = dsResult.Tables(1).Rows(iPos)
         oRow("DDOV_Item") = iPos + 1
         oRow("DDOV_Cantidad") = 1
-        oRow("DDOV_PrecioUnitario") = drSource("DOPE_PrecioTotVta") * IIf(drSource("TIPO_CodMND") = "002", drSource("TIPC_Venta"), 1)
-        oRow("DDOV_PrecioUnitarioD") = drSource("DOPE_PrecioTotVta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
-        oRow("DDOV_ValorVenta") = drSource("DOPE_PrecioTotVta") * IIf(drSource("TIPO_CodMND") = "002", drSource("TIPC_Venta"), 1)
-        oRow("DDOV_ValorVentaD") = drSource("DOPE_PrecioTotVta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
+        oRow("DDOV_PrecioUnitario") = drSource("ValorVenta") * IIf(drSource("TIPO_CodMND") = "002", drSource("TIPC_Venta"), 1)
+        oRow("DDOV_PrecioUnitarioD") = drSource("ValorVenta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
+        oRow("DDOV_ValorVenta") = drSource("ValorVenta") * IIf(drSource("TIPO_CodMND") = "002", drSource("TIPC_Venta"), 1)
+        oRow("DDOV_ValorVentaD") = drSource("ValorVenta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
         oRow("DDOV_Impuesto1") = oRow("DDOV_PrecioUnitario") * (drSource("VALOR_IGV") / 100)
         oRow("DDOV_Impuesto1D") = oRow("DDOV_PrecioUnitarioD") * (drSource("VALOR_IGV") / 100)
         oRow("DDOV_Impuesto2") = 0
@@ -210,8 +261,8 @@ Public Class PreInvoicingPopupForm
         'oRow("AUDI_FecCrea") =
         oRow("AUDI_UsrMod") = AppUser
         'oRow("AUDI_FecMod") =
-        oRow("DDOV_ValorTotal") = drSource("DOPE_PrecioTotVta") * IIf(drSource("TIPO_CodMND") = "002", drSource("TIPC_Venta"), 1)
-        oRow("DDOV_ValorTotalD") = drSource("DOPE_PrecioTotVta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
+        oRow("DDOV_ValorTotal") = drSource("ValorVenta") * IIf(drSource("TIPO_CodMND") = "002", drSource("TIPC_Venta"), 1)
+        oRow("DDOV_ValorTotalD") = drSource("ValorVenta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
 
         Return dsResult
     End Function
@@ -234,9 +285,33 @@ Public Class PreInvoicingPopupForm
                 GridView1.SetFocusedRowCellValue("DOCV_FechaVcmto", DateAdd(DateInterval.Day, GridView1.GetFocusedRowCellValue("ENLI_DiasDuracion"), deFechaEmision.DateTime))
             End If
         End If
+        Dim oRow As DataRow = GridView1.GetFocusedDataRow
+        'GridView1.SetFocusedRowCellValue("Impuesto1", oRow("ValorVenta") * (oRow("VALOR_IGV") / 100))
+        'GridView1.SetFocusedRowCellValue("ValorTotal", oRow("ValorVenta") + GridView1.GetFocusedRowCellValue("Impuesto1"))
     End Sub
 
     Private Sub bbiSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSave.ItemClick
+        If SaveChanges Then
+            DialogResult = DialogResult.OK
+        End If
+        Close()
+    End Sub
 
+    Function SaveChanges() As Boolean
+        Dim bResult As Boolean = True
+
+
+        Return bResult
+    End Function
+
+    Private Sub lueFormaPago_EditValueChanged(sender As Object, e As EventArgs) Handles lueFormaPago.EditValueChanged
+        If lueFormaPago.EditValue = "001" Then
+            seDiasCredito.EditValue = 0
+        End If
+        deFechaVencimiento.EditValue = DateAdd(DateInterval.Day, seDiasCredito.EditValue, deFechaEmision.DateTime)
+    End Sub
+
+    Private Sub seDiasCredito_EditValueChanged(sender As Object, e As EventArgs) Handles seDiasCredito.EditValueChanged
+        deFechaVencimiento.EditValue = DateAdd(DateInterval.Day, seDiasCredito.EditValue, deFechaEmision.DateTime)
     End Sub
 End Class
