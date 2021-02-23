@@ -840,6 +840,10 @@ Public Class LogisticOperationRegisterForm
 
     End Sub
 
+    Private Sub tsmiInvoiceBillsCreate_Click(sender As Object, e As EventArgs) Handles tsmiInvoiceBillsCreate.Click
+
+    End Sub
+
     Private Sub gcServiceRelated_ProcessGridKey(sender As Object, e As KeyEventArgs) Handles gcServiceRelated.ProcessGridKey
         If e.KeyCode = Keys.Delete AndAlso e.Modifiers = Keys.Control Then
             'If Mid(GridView1.GetFocusedRowCellValue("SERV_Tipo"), 1, 1) = "R" Then

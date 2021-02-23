@@ -148,6 +148,9 @@ Public Class ElectronicInvoicingForm
                 bbiResend.Enabled = False
             End If
         End If
+        If Not GridView1.GetFocusedRowCellValue("TIPO_CodTDO").ToString.Contains({"001", "003", "007"}) Then
+            bbiEdit.Enabled = False
+        End If
         If Mid(GridView1.GetFocusedRowCellValue("DOCV_EstadoStr"), 1, 1) = "A" Then
             bbiEdit.Enabled = False
             bbiPreview.Enabled = False

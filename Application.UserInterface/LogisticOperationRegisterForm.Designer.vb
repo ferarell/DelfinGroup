@@ -2074,7 +2074,7 @@ Partial Class LogisticOperationRegisterForm
         '
         Me.cmsChangeControl.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiChangeControlWR2, Me.ToolStripSeparator3, Me.tsmiChangeControlDelete, Me.ToolStripSeparator2, Me.tsmiEntryJournalCreate, Me.tsmiJournalEntryVoid, Me.ToolStripSeparator4, Me.tsmiInvoiceBillsCreate, Me.tsmiInvoiceBillsVoid})
         Me.cmsChangeControl.Name = "ContextMenuStrip1"
-        Me.cmsChangeControl.Size = New System.Drawing.Size(205, 154)
+        Me.cmsChangeControl.Size = New System.Drawing.Size(205, 176)
         '
         'tsmiChangeControlWR2
         '
