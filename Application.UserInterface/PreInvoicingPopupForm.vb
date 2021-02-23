@@ -12,7 +12,7 @@ Public Class PreInvoicingPopupForm
     Friend oProcessType As String = ""
     Friend oQuerySource As String = ""
     Friend IsMultiline As Boolean = Nothing
-
+    Dim dtSource As New DataTable
     Public Sub New()
 
         ' Esta llamada es exigida por el diseñador.
@@ -24,7 +24,6 @@ Public Class PreInvoicingPopupForm
     End Sub
 
     Private Sub LogisticOperationInvoicingPopupForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim dtSource As New DataTable
         LoadTaxDocumentType()
         LoadPaymentType()
         LoadCurrency()
@@ -34,8 +33,8 @@ Public Class PreInvoicingPopupForm
             bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
             If oQuerySource = "OP" Then
                 dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasPorPreFacturar '" & OperationsList & "','" & CodigoMoneda & "'").Tables(0)
-            Else
-                dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasPorPreFacturar '" & OperationsList & "','" & CodigoMoneda & "'").Tables(0)
+                'Else
+                '    dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasPorPreFacturar '" & OperationsList & "','" & CodigoMoneda & "'").Tables(0)
             End If
             If IsDBNull(dtSource.Rows(0)("TIPC_Venta")) Then
                 XtraMessageBox.Show("No existe tipo de cambio, por favor coordine con el área contable.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -285,7 +284,7 @@ Public Class PreInvoicingPopupForm
                 GridView1.SetFocusedRowCellValue("DOCV_FechaVcmto", DateAdd(DateInterval.Day, GridView1.GetFocusedRowCellValue("ENLI_DiasDuracion"), deFechaEmision.DateTime))
             End If
         End If
-        Dim oRow As DataRow = GridView1.GetFocusedDataRow
+        'Dim oRow As DataRow = GridView1.GetFocusedDataRow
         'GridView1.SetFocusedRowCellValue("Impuesto1", oRow("ValorVenta") * (oRow("VALOR_IGV") / 100))
         'GridView1.SetFocusedRowCellValue("ValorTotal", oRow("ValorVenta") + GridView1.GetFocusedRowCellValue("Impuesto1"))
     End Sub
@@ -298,9 +297,18 @@ Public Class PreInvoicingPopupForm
     End Sub
 
     Function SaveChanges() As Boolean
+        Validate()
         Dim bResult As Boolean = True
-
-
+        Dim oRow As DataRow = dtSource.Rows(0)
+        Dim Serie As String = IIf(lueSerieComprobante.Text = oRow("DOCV_Serie"), ",NULL", ",'" & lueSerieComprobante.Text & "'")
+        Dim FormaPago As String = IIf(lueFormaPago.EditValue = oRow("TIPO_CodFPG"), ",NULL", ",'" & lueFormaPago.EditValue & "'")
+        Dim FechaVcto As String = ",'" & Format(deFechaVencimiento.DateTime, "yyyy-MM-dd") & "'"
+        Dim CodCliente As String = IIf(lueSocioNegocio.EditValue = oRow("ENTC_Codigo"), ",0", "," & lueSocioNegocio.EditValue.ToString)
+        Try
+            bResult = oAppService.ExecuteSQLNonQuery("EXEC NextSoft.dgp.paActualizaDocumentoVentas " & InternalCodeList & Serie & FormaPago & FechaVcto & CodCliente)
+        Catch ex As Exception
+            XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
         Return bResult
     End Function
 
