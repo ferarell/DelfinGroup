@@ -6,6 +6,7 @@ Imports System.Data.SqlClient
 Imports System.Net
 Imports Application.BusinessLogic
 Imports Application.BusinessEntities
+Imports eFactDelfin
 
 Public Class DelfinService
     Implements IDelfinService
@@ -1226,11 +1227,18 @@ Public Class DelfinService
                 Command.CommandType = CommandType.StoredProcedure
                 Command.CommandText = "NextSoft.dgp.CAJ_CCCTSI_UnReg"
                 Command.Parameters.Clear()
+
+                Command.Parameters.Add("@psinEMPR_Codigo", SqlDbType.SmallInt, 2).Direction = ParameterDirection.InputOutput
+                Command.Parameters("@psinEMPR_Codigo").Value = oRowCtaCte("EMPR_Codigo")
+                Command.Parameters.Add("@pintCCCT_Codigo", SqlDbType.Int, 4).Direction = ParameterDirection.InputOutput
+                Command.Parameters("@pintCCCT_Codigo").Value = oRowCtaCte("CCCT_Codigo")
                 With Command.Parameters
 
 
-                    .Add("@psinEMPR_Codigo", SqlDbType.SmallInt, 2, ParameterDirection.InputOutput).Value = oRowCtaCte("EMPR_Codigo")
-                    .Add("@pintCCCT_Codigo", SqlDbType.Int, 4, ParameterDirection.InputOutput).Value = oRowCtaCte("CCCT_Codigo")
+
+
+                    '.Add("@psinEMPR_Codigo", SqlDbType.SmallInt, 2, ParameterDirection.InputOutput).Value = oRowCtaCte("EMPR_Codigo")
+                    '.Add("@pintCCCT_Codigo", SqlDbType.Int, 4, ParameterDirection.Output).Value = oRowCtaCte("CCCT_Codigo")
                     .Add("@psinSUCR_Codigo", SqlDbType.SmallInt, 2, ParameterDirection.Input).Value = oRowCtaCte("SUCR_Codigo")
                     .Add("@pintDOCV_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("DOCV_Codigo")
                     .Add("@psinTIPE_Codigo", SqlDbType.SmallInt, 2).Value = oRowCtaCte("TIPE_Codigo")
@@ -1329,13 +1337,14 @@ Public Class DelfinService
                     Dim _EMPR_Codigo As Int16
 
                     If Int16.TryParse(Command.Parameters("@psinEMPR_Codigo").Value.ToString(), _EMPR_Codigo) Then
-                        oRowCtaCte("EMPR_Codigo").Value = _EMPR_Codigo
+                        oRowCtaCte("EMPR_Codigo") = _EMPR_Codigo
                     End If
 
                     Dim _CCCT_Codigo As Int32
 
                     If Int32.TryParse(Command.Parameters("@pintCCCT_Codigo").Value.ToString(), _CCCT_Codigo) Then
-                        oRowCtaCte("CCCT_Codigo").Value = _CCCT_Codigo
+                        oRowCtaCte("CCCT_Codigo") = _CCCT_Codigo
+                        _NroVoucher = _CCCT_Codigo.ToString()
                     End If
                 End If
 
@@ -1345,29 +1354,29 @@ Public Class DelfinService
 
                 'x_usuario = Item.AUDI_UsrCrea;
                 'Item.TMovimiento = CtaCte.TipoMovimiento.Egreso;
-                oRowCtaCte("TMovimiento").Value = 1 'Egreso
+                oRowCtaCte("TMovimiento") = 1 'Egreso
                 '1 = Egreso
                 '0 = Ingreso
 
-                oRowDetCtaCte("CCCT_Codigo").Value = oRowCtaCte("CCCT_Codigo").Value
-                oRowDetCtaCte("EMPR_Codigo").Value = oRowCtaCte("EMPR_Codigo").Value
-                oRowDetCtaCte("DCCT_FechaTrans").Value = oRowCtaCte("CCCT_FechaRecepcion").Value
-                oRowDetCtaCte("DCCT_TipoCambio").Value = oRowCtaCte("CCCT_TipoCambio").Value
-                oRowDetCtaCte("TIPO_CodMND").Value = oRowCtaCte("TIPO_CodMND").Value
-                oRowDetCtaCte("TIPO_TabMND").Value = "MND"
-                oRowDetCtaCte("AUDI_UsrCrea").Value = oRowCtaCte("AUDI_UsrCrea").Value
+                oRowDetCtaCte("CCCT_Codigo") = oRowCtaCte("CCCT_Codigo")
+                oRowDetCtaCte("EMPR_Codigo") = oRowCtaCte("EMPR_Codigo")
+                oRowDetCtaCte("DCCT_FechaTrans") = oRowCtaCte("CCCT_FechaRecepcion")
+                oRowDetCtaCte("DCCT_TipoCambio") = oRowCtaCte("CCCT_TipoCambio")
+                oRowDetCtaCte("TIPO_CodMND") = oRowCtaCte("TIPO_CodMND")
+                oRowDetCtaCte("TIPO_TabMND") = "MND"
+                oRowDetCtaCte("AUDI_UsrCrea") = oRowCtaCte("AUDI_UsrCrea")
 
 
-                If oRowCtaCte("TIPO_CodTDO").Value.Equals("007") Then
-                    oRowDetCtaCte("DCCT_MontoHaber").Value = IIf(oRowCtaCte("TMovimiento").Value = 0, IIf(oRowCtaCte("TIPO_CodMND").Value = "001", oRowCtaCte("CCCT_Monto").Value, Math.Round(oRowCtaCte("CCCT_Monto").Value * oRowCtaCte("CCCT_TipoCambio").Value, 2, MidpointRounding.AwayFromZero)), 0)
-                    oRowDetCtaCte("DCCT_MontoHaberD").Value = IIf(oRowCtaCte("TMovimiento").Value = 0, IIf(oRowCtaCte("TIPO_CodMND").Value = "002", oRowCtaCte("CCCT_Monto").Value, Math.Round(oRowCtaCte("CCCT_Monto").Value * oRowCtaCte("CCCT_TipoCambio").Value, 2, MidpointRounding.AwayFromZero)), 0)
-                    oRowDetCtaCte("DCCT_MontoDebe").Value = IIf(oRowCtaCte("TMovimiento").Value = 1, IIf(oRowCtaCte("TIPO_CodMND").Value = "001", oRowCtaCte("CCCT_Monto").Value, Math.Round(oRowCtaCte("CCCT_Monto").Value * oRowCtaCte("CCCT_TipoCambio").Value, 2, MidpointRounding.AwayFromZero)), 0)
-                    oRowDetCtaCte("DCCT_MontoDebeD").Value = IIf(oRowCtaCte("TMovimiento").Value = 1, IIf(oRowCtaCte("TIPO_CodMND").Value = "002", oRowCtaCte("CCCT_Monto").Value, Math.Round(oRowCtaCte("CCCT_Monto").Value * oRowCtaCte("CCCT_TipoCambio").Value, 2, MidpointRounding.AwayFromZero)), 0)
+                If oRowCtaCte("TIPO_CodTDO").Equals("007") Then
+                    oRowDetCtaCte("DCCT_MontoHaber") = IIf(oRowCtaCte("TMovimiento") = 0, IIf(oRowCtaCte("TIPO_CodMND") = "001", oRowCtaCte("CCCT_Monto"), Math.Round(oRowCtaCte("CCCT_Monto") * oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero)), 0)
+                    oRowDetCtaCte("DCCT_MontoHaberD") = IIf(oRowCtaCte("TMovimiento") = 0, IIf(oRowCtaCte("TIPO_CodMND") = "002", oRowCtaCte("CCCT_Monto"), Math.Round(oRowCtaCte("CCCT_Monto") * oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero)), 0)
+                    oRowDetCtaCte("DCCT_MontoDebe") = IIf(oRowCtaCte("TMovimiento") = 1, IIf(oRowCtaCte("TIPO_CodMND") = "001", oRowCtaCte("CCCT_Monto"), Math.Round(oRowCtaCte("CCCT_Monto") * oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero)), 0)
+                    oRowDetCtaCte("DCCT_MontoDebeD") = IIf(oRowCtaCte("TMovimiento") = 1, IIf(oRowCtaCte("TIPO_CodMND") = "002", oRowCtaCte("CCCT_Monto"), Math.Round(oRowCtaCte("CCCT_Monto") * oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero)), 0)
                 Else
-                    oRowDetCtaCte("DCCT_MontoDebe").Value = IIf(oRowCtaCte("TMovimiento").Value = 0, IIf(oRowCtaCte("TIPO_CodMND").Value = "001", oRowCtaCte("CCCT_Monto").Value, Math.Round(oRowCtaCte("CCCT_Monto").Value * oRowCtaCte("CCCT_TipoCambio").Value, 2, MidpointRounding.AwayFromZero)), 0)
-                    oRowDetCtaCte("DCCT_MontoDebeD").Value = IIf(oRowCtaCte("TMovimiento").Value = 0, IIf(oRowCtaCte("TIPO_CodMND").Value = "002", oRowCtaCte("CCCT_Monto").Value, Math.Round(oRowCtaCte("CCCT_Monto").Value * oRowCtaCte("CCCT_TipoCambio").Value, 2, MidpointRounding.AwayFromZero)), 0)
-                    oRowDetCtaCte("DCCT_MontoHaber").Value = IIf(oRowCtaCte("TMovimiento").Value = 1, IIf(oRowCtaCte("TIPO_CodMND").Value = "001", oRowCtaCte("CCCT_Monto").Value, Math.Round(oRowCtaCte("CCCT_Monto").Value * oRowCtaCte("CCCT_TipoCambio").Value, 2, MidpointRounding.AwayFromZero)), 0)
-                    oRowDetCtaCte("DCCT_MontoHaberD").Value = IIf(oRowCtaCte("TMovimiento").Value = 1, IIf(oRowCtaCte("TIPO_CodMND").Value = "002", oRowCtaCte("CCCT_Monto").Value, Math.Round(oRowCtaCte("CCCT_Monto").Value * oRowCtaCte("CCCT_TipoCambio").Value, 2, MidpointRounding.AwayFromZero)), 0)
+                    oRowDetCtaCte("DCCT_MontoDebe") = IIf(oRowCtaCte("TMovimiento") = 0, IIf(oRowCtaCte("TIPO_CodMND") = "001", oRowCtaCte("CCCT_Monto"), Math.Round(oRowCtaCte("CCCT_Monto") * oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero)), 0)
+                    oRowDetCtaCte("DCCT_MontoDebeD") = IIf(oRowCtaCte("TMovimiento") = 0, IIf(oRowCtaCte("TIPO_CodMND") = "002", oRowCtaCte("CCCT_Monto"), Math.Round(oRowCtaCte("CCCT_Monto") * oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero)), 0)
+                    oRowDetCtaCte("DCCT_MontoHaber") = IIf(oRowCtaCte("TMovimiento") = 1, IIf(oRowCtaCte("TIPO_CodMND") = "001", oRowCtaCte("CCCT_Monto"), Math.Round(oRowCtaCte("CCCT_Monto") * oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero)), 0)
+                    oRowDetCtaCte("DCCT_MontoHaberD") = IIf(oRowCtaCte("TMovimiento") = 1, IIf(oRowCtaCte("TIPO_CodMND") = "002", oRowCtaCte("CCCT_Monto"), Math.Round(oRowCtaCte("CCCT_Monto") * oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero)), 0)
                 End If
 
 
@@ -1375,23 +1384,24 @@ Public Class DelfinService
 
 
 
-                Command.CommandType = CommandType.StoredProcedure
-                Command.CommandText = "NextSoft.dgp.SLI_DOPESS_ActualizarEstado"
-                Command.Parameters.Clear()
+
+
 
                 If dtOperacionDetail.Rows.Count > 0 Then
-
+                    Command.CommandType = CommandType.StoredProcedure
+                    Command.CommandText = "NextSoft.dgp.SLI_DOPESS_ActualizarEstado"
                     For Each item_det_operacion As DataRow In dtOperacionDetail.Rows
+                        Command.Parameters.Clear()
                         With Command.Parameters
-                            .Add("@pintCOPE_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("COPE_Codigo").Value
-                            .Add("@pvchCTAR_Tipo", SqlDbType.Char, 1).Value = item_det_operacion("CTAR_Tipo").Value
-                            .Add("@pintCCCT_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("CCCT_Codigo").Value
-                            .Add("@pintTIPE_Codigo", SqlDbType.Int, 4).Value = item_det_operacion("TIPE_Codigo").Value
-                            .Add("@pintENTC_Codigo", SqlDbType.Int, 4).Value = item_det_operacion("ENTC_Codigo").Value
-                            .Add("@pdecMonto", SqlDbType.Decimal, 10, 2).Value = item_det_operacion("DOPE_Costo").Value
-                            .Add("@pbitUltimoMonto", SqlDbType.Bit, 1).Value = IIf(item_det_operacion("DTAR_Item").Value = 1, True, False)
-                            .Add("@pvchUsuario", SqlDbType.VarChar, 20).Value = oRowCtaCte("AUDI_UsrCrea").Value
-                            .Add("@pvchDOPE_Items", SqlDbType.VarChar, 4000).Value = Items
+                            .Add("@pintCOPE_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("COPE_Codigo")
+                            .Add("@pvchCTAR_Tipo", SqlDbType.Char, 1).Value = item_det_operacion("CTAR_Tipo")
+                            .Add("@pintCCCT_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("CCCT_Codigo")
+                            .Add("@pintTIPE_Codigo", SqlDbType.Int, 4).Value = item_det_operacion("TIPE_Codigo")
+                            .Add("@pintENTC_Codigo", SqlDbType.Int, 4).Value = item_det_operacion("ENTC_Codigo")
+                            .Add("@pdecMonto", SqlDbType.Decimal, 10, 2).Value = item_det_operacion("DCTO_Costo")
+                            .Add("@pbitUltimoMonto", SqlDbType.Bit, 1).Value = IIf(item_det_operacion("DTAR_Item") = 1, True, False)
+                            .Add("@pvchUsuario", SqlDbType.VarChar, 20).Value = oRowCtaCte("AUDI_UsrCrea")
+                            .Add("@pvchDOPE_Item", SqlDbType.Int, 4).Value = item_det_operacion("DOPE_Item")
                             If Command.ExecuteNonQuery > 0 Then
 
                             End If
@@ -1404,115 +1414,51 @@ Public Class DelfinService
                     Command.Parameters.Clear()
 
                     With Command.Parameters
-                        .Add("@psinEMPR_Codigo", SqlDbType.SmallInt, 2).Value = oRowDetCtaCte("EMPR_Codigo").Value
-                        .Add("@pintCCCT_Codigo", SqlDbType.Int, 4).Value = oRowDetCtaCte("CCCT_Codigo").Value
-                        .Add("@psinDCCT_Item", SqlDbType.SmallInt, 2).Value = oRowDetCtaCte("DCCT_Item").Value
-                        .Add("@pintMOVI_Codigo", SqlDbType.Int, 4).Value = oRowDetCtaCte("MOVI_Codigo").Value
-                        .Add("@pchrTIPO_TabMND", SqlDbType.Char, 3).Value = oRowDetCtaCte("TIPO_TabMND").Value
-                        .Add("@pchrTIPO_CodMND", SqlDbType.Char, 3).Value = oRowDetCtaCte("TIPO_CodMND").Value
-                        .Add("@pchrCONS_TabTDC", SqlDbType.Char, 3).Value = oRowDetCtaCte("CONS_TabTDC").Value
-                        .Add("@pchrCONS_CodTDC", SqlDbType.Char, 3).Value = oRowDetCtaCte("CONS_CodTDC").Value
-                        .Add("@pintCCCT_CodReferencia", SqlDbType.Int, 4).Value = oRowDetCtaCte("CCCT_CodReferencia").Value
-                        .Add("@psinDCCT_ItemReferencia", SqlDbType.SmallInt, 2).Value = oRowDetCtaCte("DCCT_ItemReferencia").Value
-                        .Add("@pchrDCCT_TipoPago", SqlDbType.Char, 1).Value = oRowDetCtaCte("DCCT_TipoPago").Value
-                        .Add("@pdtmDCCT_FechaTrans", SqlDbType.DateTime, 8).Value = oRowDetCtaCte("DCCT_FechaTrans").Value
-                        .Add("@pnumDCCT_TipoCambio", SqlDbType.Decimal, 10, 4).Value = oRowDetCtaCte("DCCT_TipoCambio").Value
-                        .Add("@pdecDCCT_MontoDebe", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoDebe").Value
-                        .Add("@pdecDCCT_MontoHaber", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoHaber").Value
-                        .Add("@pdecDCCT_MontoDebeD", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoDebeD").Value
-                        .Add("@pdecDCCT_MontoHaberD", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoHaberD").Value
-                        .Add("@pdecDCCT_PPago", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_PPago").Value
-                        .Add("@pdecDCCT_PPagoD", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_PPagoD").Value
-                        .Add("@pbitDCCT_PagoDetraccion", SqlDbType.Bit, 1).Value = oRowDetCtaCte("DCCT_PagoDetraccion").Value
-                        .Add("@pvchAUDI_UsrCrea", SqlDbType.VarChar, 20).Value = oRowDetCtaCte("AUDI_UsrCrea").Value
-
-                        If Command.ExecuteNonQuery > 0 Then
-                            Dim _EMPR_Codigo As Int16
-
-                            If Int16.TryParse(Command.Parameters("@psinEMPR_Codigo").Value.ToString(), _EMPR_Codigo) Then
-                                oRowDetCtaCte("EMPR_Codigo").Value = _EMPR_Codigo
-                            End If
-
-                            Dim _CCCT_Codigo As Int32
-
-                            If Int32.TryParse(Command.Parameters("@pintCCCT_Codigo").Value.ToString(), _CCCT_Codigo) Then
-                                oRowDetCtaCte("CCCT_Codigo").Value = _CCCT_Codigo
-                            End If
-
-                            Dim _DCCT_Item As Int16
-
-                            If Int32.TryParse(Command.Parameters("@psinDCCT_Item").Value.ToString(), _DCCT_Item) Then
-                                oRowDetCtaCte("DCCT_Item").Value = _DCCT_Item
-                            End If
-
-
-                        End If
+                        .Add("@psinEMPR_Codigo", SqlDbType.SmallInt, 2).Value = oRowDetCtaCte("EMPR_Codigo")
+                        .Add("@pintCCCT_Codigo", SqlDbType.Int, 4).Value = oRowDetCtaCte("CCCT_Codigo")
+                        .Add("@psinDCCT_Item", SqlDbType.SmallInt, 2).Value = oRowDetCtaCte("DCCT_Item")
+                        .Add("@pintMOVI_Codigo", SqlDbType.Int, 4).Value = oRowDetCtaCte("MOVI_Codigo")
+                        .Add("@pchrTIPO_TabMND", SqlDbType.Char, 3).Value = oRowDetCtaCte("TIPO_TabMND")
+                        .Add("@pchrTIPO_CodMND", SqlDbType.Char, 3).Value = oRowDetCtaCte("TIPO_CodMND")
+                        .Add("@pchrCONS_TabTDC", SqlDbType.Char, 3).Value = oRowDetCtaCte("CONS_TabTDC")
+                        .Add("@pchrCONS_CodTDC", SqlDbType.Char, 3).Value = oRowDetCtaCte("CONS_CodTDC")
+                        .Add("@pintCCCT_CodReferencia", SqlDbType.Int, 4).Value = oRowDetCtaCte("CCCT_CodReferencia")
+                        .Add("@psinDCCT_ItemReferencia", SqlDbType.SmallInt, 2).Value = oRowDetCtaCte("DCCT_ItemReferencia")
+                        .Add("@pchrDCCT_TipoPago", SqlDbType.Char, 1).Value = oRowDetCtaCte("DCCT_TipoPago")
+                        .Add("@pdtmDCCT_FechaTrans", SqlDbType.DateTime, 8).Value = oRowDetCtaCte("DCCT_FechaTrans")
+                        .Add("@pnumDCCT_TipoCambio", SqlDbType.Decimal, 10, 4).Value = oRowDetCtaCte("DCCT_TipoCambio")
+                        .Add("@pdecDCCT_MontoDebe", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoDebe")
+                        .Add("@pdecDCCT_MontoHaber", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoHaber")
+                        .Add("@pdecDCCT_MontoDebeD", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoDebeD")
+                        .Add("@pdecDCCT_MontoHaberD", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoHaberD")
+                        .Add("@pdecDCCT_PPago", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_PPago")
+                        .Add("@pdecDCCT_PPagoD", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_PPagoD")
+                        .Add("@pbitDCCT_PagoDetraccion", SqlDbType.Bit, 1).Value = oRowDetCtaCte("DCCT_PagoDetraccion")
+                        .Add("@pvchAUDI_UsrCrea", SqlDbType.VarChar, 20).Value = oRowDetCtaCte("AUDI_UsrCrea")
                     End With
-
-
-
-
-
-
-
-
-
-                End If
-
-
-#End Region
-
-
-#Region "Generar el Detalle de Asiento"
-                Dim oRowDetCtaCteAsientos As DataRow = dtDetCtaCteAsientos.Rows(0)
-
-                Command.CommandType = CommandType.StoredProcedure
-                Command.CommandText = "NextSoft.dgp.CAJ_DCCASI_UnReg"
-                Command.Parameters.Clear()
-
-                With Command.Parameters
-
-                    .Add("@psinEMPR_Codigo", SqlDbType.SmallInt, 2).Value = oRowDetCtaCteAsientos("EMPR_Codigo").Value
-                    .Add("@pintCCCT_Codigo", SqlDbType.Int, 4).Value = oRowDetCtaCteAsientos("CCCT_Codigo").Value
-                    .Add("@psinDCCA_Item", SqlDbType.SmallInt, 2).Value = oRowDetCtaCteAsientos("DCCA_Item").Value
-                    .Add("@pvchDCCA_Cuenta", SqlDbType.VarChar, 20).Value = oRowDetCtaCteAsientos("DCCA_Cuenta").Value
-                    .Add("@pvchDCCA_Glosa", SqlDbType.VarChar, 100).Value = oRowDetCtaCteAsientos("DCCA_Glosa").Value
-                    .Add("@pdecDCCA_DebePorc", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCteAsientos("DCCA_DebePorc").Value
-                    .Add("@pdecDCCA_DebeMonto", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCteAsientos("DCCA_DebeMonto").Value
-                    .Add("@pdecDCCA_HaberPorc", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCteAsientos("DCCA_HaberPorc").Value
-                    .Add("@pdecDCCA_HaberMonto", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCteAsientos("DCCA_HaberMonto").Value
-                    .Add("@pchrCABP_Ano", SqlDbType.Char, 4).Value = oRowDetCtaCteAsientos("CABP_Ano").Value
-                    .Add("@pvchCABP_Codigo", SqlDbType.VarChar, 3).Value = oRowDetCtaCteAsientos("CABP_Codigo").Value
-                    .Add("@psinDETP_Item", SqlDbType.SmallInt, 2).Value = oRowDetCtaCteAsientos("DETP_Item").Value
-                    .Add("@pchrCENT_Ano", SqlDbType.Char, 4).Value = oRowDetCtaCteAsientos("CENT_Ano").Value
-                    .Add("@pvchCENT_Codigo", SqlDbType.VarChar, 17).Value = oRowDetCtaCteAsientos("CENT_Codigo").Value
-                    .Add("@pchrTIPO_TabOPE", SqlDbType.Char, 3).Value = oRowDetCtaCteAsientos("TIPO_TabOPE").Value
-                    .Add("@pchrTIPO_CodOPE", SqlDbType.Char, 3).Value = oRowDetCtaCteAsientos("TIPO_CodOPE").Value
-                    .Add("@pvchAUDI_UsrCrea", SqlDbType.VarChar, 20).Value = oRowDetCtaCteAsientos("AUDI_UsrCrea").Value
-
-
                     If Command.ExecuteNonQuery > 0 Then
                         Dim _EMPR_Codigo As Int16
 
                         If Int16.TryParse(Command.Parameters("@psinEMPR_Codigo").Value.ToString(), _EMPR_Codigo) Then
-                            oRowDetCtaCteAsientos("EMPR_Codigo").Value = _EMPR_Codigo
+                            oRowDetCtaCte("EMPR_Codigo") = _EMPR_Codigo
                         End If
 
                         Dim _CCCT_Codigo As Int32
 
                         If Int32.TryParse(Command.Parameters("@pintCCCT_Codigo").Value.ToString(), _CCCT_Codigo) Then
-                            oRowDetCtaCteAsientos("CCCT_Codigo").Value = _CCCT_Codigo
+                            oRowDetCtaCte("CCCT_Codigo") = _CCCT_Codigo
                         End If
 
-                        Dim _DCCA_Item As Int16
+                        Dim _DCCT_Item As Int16
 
-                        If Int32.TryParse(Command.Parameters("@psinDCCA_Item").Value.ToString(), _DCCA_Item) Then
-                            oRowDetCtaCteAsientos("DCCA_Item").Value = _DCCA_Item
+                        If Int32.TryParse(Command.Parameters("@psinDCCT_Item").Value.ToString(), _DCCT_Item) Then
+                            oRowDetCtaCte("DCCT_Item") = _DCCT_Item
                         End If
 
 
                     End If
-                End With
+
+                End If
 
 
 
@@ -1521,20 +1467,6 @@ Public Class DelfinService
 #End Region
 
 
-#Region "Generar Asiento "
-
-
-                Command.CommandType = CommandType.StoredProcedure
-                Command.CommandText = "NextSoft.dgp.CAJ_CCCTSI_GenerarAsientoCompras_SLI_V1"
-                Command.Parameters.Clear()
-
-                With Command.Parameters
-
-                    .Add("@psinEMPR_Codigo", SqlDbType.SmallInt, 2).Value = oRowCtaCte("EMPR_Codigo").Value
-                    .Add("@pintCCCT_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("CCCT_Codigo").Value
-                    .Add("@pvchAUDI_Usuario", SqlDbType.VarChar, 20).Value = oRowCtaCte("AUDI_UsrCrea").Value
-                End With
-                _NroVoucher = Command.ExecuteScalar.ToString()
 
 
 #End Region
@@ -1557,5 +1489,524 @@ Public Class DelfinService
 
 
 
+
+
+    Public Function ActualizarDocumentsProvider(dsDocumentsProvider As DataSet, Items As String) As String Implements IDelfinService.ActualizarDocumentsProvider
+        Dim aResult As New ArrayList
+        Dim dtCtaCte As DataTable = dsDocumentsProvider.Tables("CtaCte")
+        Dim dtCtaCteDetail As DataTable = dsDocumentsProvider.Tables("CtaCteDetail")
+        Dim dtOperacionDetail As DataTable = dsDocumentsProvider.Tables("dtOperacionDetail")
+
+        Dim _CodOper As String = ""
+        aResult.AddRange({2, ""})
+        Dim _NroVoucher As String = ""
+        Using connection As New SqlConnection(ConfigurationManager.AppSettings("dbSolution"))
+            connection.Open()
+            Dim Command As New SqlCommand
+            Dim transaction As SqlTransaction
+            transaction = connection.BeginTransaction("DocumentsProvider")
+            Command.Connection = connection
+            Command.Transaction = transaction
+            Try
+                'Cabecera
+                Dim oRowCtaCte As DataRow = dtCtaCte.Rows(0)
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "NextSoft.dgp.CAJ_CCCTSU_UnReg"
+                Command.Parameters.Clear()
+                With Command.Parameters
+
+
+                    .Add("@psinEMPR_Codigo", SqlDbType.SmallInt, 2, ParameterDirection.Input).Value = oRowCtaCte("EMPR_Codigo")
+                    .Add("@pintCCCT_Codigo", SqlDbType.Int, 4, ParameterDirection.Input).Value = oRowCtaCte("CCCT_Codigo")
+                    .Add("@psinSUCR_Codigo", SqlDbType.SmallInt, 2, ParameterDirection.Input).Value = oRowCtaCte("SUCR_Codigo")
+                    .Add("@pintDOCV_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("DOCV_Codigo")
+                    .Add("@psinTIPE_Codigo", SqlDbType.SmallInt, 2).Value = oRowCtaCte("TIPE_Codigo")
+                    .Add("@pintENTC_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("ENTC_Codigo")
+                    .Add("@pchrTIPO_TabTDO", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_TabTDO")
+                    .Add("@pchrTIPO_TabMND", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_TabMND")
+                    .Add("@pchrTIPO_TabFPG", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_TabFPG")
+                    .Add("@pchrTIPO_CodTDO", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_CodTDO")
+                    .Add("@pchrTIPO_CodMND", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_CodMND")
+                    .Add("@pchrTIPO_CodFPG", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_CodFPG")
+                    .Add("@pvchCCCT_Serie", SqlDbType.VarChar, 20).Value = oRowCtaCte("CCCT_Serie")
+                    .Add("@pvchCCCT_Numero", SqlDbType.VarChar, 20).Value = oRowCtaCte("CCCT_Numero")
+                    .Add("@pvchCCCT_AsientoContable", SqlDbType.VarChar, 50).Value = oRowCtaCte("CCCT_AsientoContable")
+                    .Add("@pdtmCCCT_FechaEmision", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FechaEmision")
+                    .Add("@pnumCCCT_TipoCambio", SqlDbType.Decimal, 10, 4).Value = oRowCtaCte("CCCT_TipoCambio")
+                    .Add("@pdtmCCCT_FechaRecepcion", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FechaRecepcion")
+                    .Add("@pdtmCCCT_FechaVcto", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FechaVcto")
+                    .Add("@pdtmCCCT_FechaPosPago", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FechaPosPago")
+                    .Add("@pdecCCCT_ValVta", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_ValVta")
+                    .Add("@pdecCCCT_Discrepancia", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_Discrepancia")
+                    .Add("@pdecCCCT_Imp1", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_Imp1")
+                    .Add("@pdecCCCT_Imp2", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_Imp2")
+                    .Add("@pdecCCCT_Imp3", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_Imp3")
+                    .Add("@pdecCCCT_Imp4", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_Imp4")
+                    .Add("@pdecCCCT_Monto", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_Monto")
+                    .Add("@pdecCCCT_Pendiente", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_Pendiente")
+                    .Add("@pdtmCCCT_FecReg", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FecReg")
+                    .Add("@pdtmCCCT_FecCancel", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FecCancel")
+                    .Add("@pdecCCCT_Adquisicion", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_Adquisicion")
+                    .Add("@pdecCCCT_Pago", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_Pago")
+                    .Add("@pdecCCCT_PagoReg", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_PagoReg")
+                    .Add("@pdecCCCT_Otros", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_Otros")
+                    .Add("@pvchCCCT_Glosa", SqlDbType.VarChar, 100).Value = oRowCtaCte("CCCT_Glosa")
+                    .Add("@pchrCCCT_Estado", SqlDbType.Char, 1).Value = oRowCtaCte("CCCT_Estado")
+                    .Add("@pintCCCT_NroTransRef", SqlDbType.Int, 4).Value = oRowCtaCte("CCCT_NroTransRef")
+                    .Add("@pchrCCCT_TipoLetra", SqlDbType.Char, 1).Value = oRowCtaCte("CCCT_TipoLetra")
+                    .Add("@pvchCCCT_Agrupacion", SqlDbType.VarChar, 15).Value = oRowCtaCte("CCCT_Agrupacion")
+                    .Add("@pbitCCCT_RegCompras", SqlDbType.Bit, 1).Value = oRowCtaCte("CCCT_RegCompras")
+                    .Add("@pvchCCCT_Anexo", SqlDbType.VarChar, 50).Value = oRowCtaCte("CCCT_Anexo")
+                    .Add("@pchrTIPO_TabREG", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_TabREG")
+                    .Add("@pchrTIPO_CodREG", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_CodREG")
+                    .Add("@pbitCCCT_CobranzaDudosa", SqlDbType.Bit, 1).Value = oRowCtaCte("CCCT_CobranzaDudosa")
+                    .Add("@pdecCCCT_TCHistorico", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_TCHistorico")
+                    .Add("@pdtmCCCT_FecCierre", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FecCierre")
+                    .Add("@pdecCCCT_TCCierre", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_TCCierre")
+                    .Add("@pdtmCCCT_FecCierreHistorico", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FecCierreHistorico")
+                    .Add("@pbitCCCT_UltimoCierre", SqlDbType.Bit, 1).Value = oRowCtaCte("CCCT_UltimoCierre")
+                    .Add("@pintSERV_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("SERV_Codigo")
+                    .Add("@pbitCCCT_PagoInmediato", SqlDbType.Bit, 1).Value = oRowCtaCte("CCCT_PagoInmediato")
+                    .Add("@pchrCCCT_SituacionLetra", SqlDbType.Char, 1).Value = oRowCtaCte("CCCT_SituacionLetra")
+                    .Add("@pbitCCCT_Aceptada1", SqlDbType.Bit, 1).Value = oRowCtaCte("CCCT_Aceptada1")
+                    .Add("@pbitCCCT_Aceptada2", SqlDbType.Bit, 1).Value = oRowCtaCte("CCCT_Aceptada2")
+                    .Add("@pbitCCCT_Protestada", SqlDbType.Bit, 1).Value = oRowCtaCte("CCCT_Protestada")
+                    .Add("@pintCCCT_NroProtesto", SqlDbType.Int, 4).Value = oRowCtaCte("CCCT_NroProtesto")
+                    .Add("@pchrCCCT_EstadoLetra", SqlDbType.Char, 1).Value = oRowCtaCte("CCCT_EstadoLetra")
+                    .Add("@pvchCCCT_NroUnicoBCO", SqlDbType.VarChar, 20).Value = oRowCtaCte("CCCT_NroUnicoBCO")
+                    .Add("@pdtmCCCT_FecAceptacion", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FecAceptacion")
+                    .Add("@pbitCCCT_SinDocOrigen", SqlDbType.Bit, 1).Value = oRowCtaCte("CCCT_SinDocOrigen")
+                    .Add("@pdtmCCCT_FecEnvioBanco", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FecEnvioBanco")
+                    .Add("@pdtmCCCT_FecEnvioProveedor", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FecEnvioProveedor")
+                    .Add("@pvchCCCT_NroDetraccion", SqlDbType.VarChar, 20).Value = oRowCtaCte("CCCT_NroDetraccion")
+                    .Add("@pdtmCCCT_FecDetraccion", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FecDetraccion")
+                    .Add("@pchrTIPO_TabDetrac", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_TabDetrac")
+                    .Add("@pchrTIPO_CodDetrac", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_CodDetrac")
+                    .Add("@pchrTIPO_TabBCO", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_TabBCO")
+                    .Add("@pchrTIPO_CodBCO", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_CodBCO")
+                    .Add("@pvchCCCT_GlosaCobranza", SqlDbType.VarChar, 100).Value = oRowCtaCte("CCCT_GlosaCobranza")
+                    .Add("@pdecCCCT_ValorReferencial", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_ValorReferencial")
+                    .Add("@pvchCCCT_Notas", SqlDbType.VarChar, 1000).Value = oRowCtaCte("CCCT_Notas")
+                    .Add("@pdecCCCT_PorDetraccion", SqlDbType.Decimal, 5, 2).Value = oRowCtaCte("CCCT_PorDetraccion")
+                    .Add("@pdecCCCT_MontoDetraccion", SqlDbType.Decimal, 15, 2).Value = oRowCtaCte("CCCT_MontoDetraccion")
+                    .Add("@pbitCCCT_ProvAsumeDetraccion", SqlDbType.Bit, 1).Value = oRowCtaCte("CCCT_Codigo")
+                    .Add("@pchrCABP_Ano", SqlDbType.Char, 4).Value = oRowCtaCte("CABP_Ano")
+                    .Add("@pvchCABP_Codigo", SqlDbType.VarChar, 3).Value = oRowCtaCte("CABP_Codigo")
+                    .Add("@pvchCCCT_Cuenta", SqlDbType.VarChar, 20).Value = oRowCtaCte("CCCT_Cuenta")
+                    .Add("@pvchCCCT_CuentaIGV", SqlDbType.VarChar, 20).Value = oRowCtaCte("CCCT_CuentaIGV")
+                    .Add("@pvchCCCT_CuentaBI", SqlDbType.VarChar, 20).Value = oRowCtaCte("CCCT_CuentaBI")
+                    .Add("@pintCCCT_CodReferencia", SqlDbType.Int, 4).Value = oRowCtaCte("CCCT_CodReferencia")
+                    .Add("@pvchCCCT_SerieReferencia", SqlDbType.VarChar, 20).Value = oRowCtaCte("CCCT_SerieReferencia")
+                    .Add("@pvchCCCT_NumeroReferencia", SqlDbType.VarChar, 20).Value = oRowCtaCte("CCCT_NumeroReferencia")
+                    .Add("@pdtmCCCT_FechaEmisionReferencia", SqlDbType.DateTime, 8).Value = oRowCtaCte("CCCT_FechaEmisionReferencia")
+                    .Add("@pchrTIPO_CodTDOReferencia", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_CodTDOReferencia")
+                    .Add("@pchrCCCT_Origen", SqlDbType.Char, 1).Value = oRowCtaCte("CCCT_Origen")
+                    .Add("@pdecCCCT_PorcImp1", SqlDbType.Decimal, 5, 2).Value = oRowCtaCte("CCCT_PorcImp1")
+                    .Add("@pdecCCCT_PorcImp2", SqlDbType.Decimal, 5, 2).Value = oRowCtaCte("CCCT_PorcImp2")
+                    .Add("@pdecCCCT_PorcImp3", SqlDbType.Decimal, 5, 2).Value = oRowCtaCte("CCCT_PorcImp3")
+                    .Add("@pdecCCCT_PorcImp4", SqlDbType.Decimal, 5, 2).Value = oRowCtaCte("CCCT_PorcImp4")
+                    .Add("@pbitCCCT_RetencionIGV", SqlDbType.Bit, 1).Value = oRowCtaCte("CCCT_RetencionIGV")
+                    .Add("@pchrTIPO_TabTI3", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_TabTI3")
+                    .Add("@pchrTIPO_CodTI3", SqlDbType.Char, 3).Value = oRowCtaCte("TIPO_CodTI3")
+                    .Add("@pvchAUDI_UsrMod", SqlDbType.VarChar, 20).Value = oRowCtaCte("AUDI_UsrMod")
+                End With
+
+
+                If Command.ExecuteNonQuery < 0 Then
+                    Throw New System.Exception("An exception has occurred.")
+                End If
+
+
+
+
+
+
+
+
+
+
+
+
+                If dtOperacionDetail.Rows.Count > 0 Then
+
+                    Command.CommandType = CommandType.StoredProcedure
+                    Command.CommandText = "NextSoft.dgp.VEN_DCTOSD_UnReg_PorFiltro"
+                    Command.Parameters.Clear()
+                    With Command.Parameters
+                        .Add("@pintCOPE_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("COPE_Codigo")
+                        .Add("@pintCCCT_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("CCCT_Codigo")
+                    End With
+                    If Command.ExecuteNonQuery > 0 Then
+
+                    End If
+
+                    Command.CommandType = CommandType.StoredProcedure
+                    Command.CommandText = "NextSoft.dgp.SLI_DOPESS_ActualizarEstado"
+
+
+
+                    For Each item_det_operacion As DataRow In dtOperacionDetail.Rows
+
+
+                        Command.Parameters.Clear()
+                        With Command.Parameters
+                            .Add("@pintCOPE_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("COPE_Codigo")
+                            .Add("@pvchCTAR_Tipo", SqlDbType.Char, 1).Value = item_det_operacion("CTAR_Tipo")
+                            .Add("@pintCCCT_Codigo", SqlDbType.Int, 4).Value = oRowCtaCte("CCCT_Codigo")
+                            .Add("@pintTIPE_Codigo", SqlDbType.Int, 4).Value = item_det_operacion("TIPE_Codigo")
+                            .Add("@pintENTC_Codigo", SqlDbType.Int, 4).Value = item_det_operacion("ENTC_Codigo")
+                            .Add("@pdecMonto", SqlDbType.Decimal, 10, 2).Value = item_det_operacion("DCTO_Costo")
+                            .Add("@pbitUltimoMonto", SqlDbType.Bit, 1).Value = IIf(item_det_operacion("DTAR_Item") = 1, True, False)
+                            .Add("@pvchUsuario", SqlDbType.VarChar, 20).Value = oRowCtaCte("AUDI_UsrCrea")
+                            .Add("@pvchDOPE_Item", SqlDbType.Int, 4).Value = item_det_operacion("DOPE_Item")
+                            If Command.ExecuteNonQuery > 0 Then
+
+                            End If
+                        End With
+                    Next
+
+
+
+
+#Region "Registro de Detalle CtaCte"
+
+                    Dim dsCtaCteDetail As DataSet = New DataSet()
+                    dsCtaCteDetail = ExecuteSQL("EXEC Nextsoft.dgp.CAJ_DCCTSS_UnReg " + oRowCtaCte("EMPR_Codigo").ToString() + ", " + oRowCtaCte("CCCT_Codigo").ToString() + ", 1")
+                    Dim oRowDetCtaCte As DataRow = Nothing
+                    If dsCtaCteDetail IsNot Nothing Then
+                        If dsCtaCteDetail.Tables.Count > 0 Then
+                            If dsCtaCteDetail.Tables(0).Rows.Count > 0 Then
+                                oRowDetCtaCte = dsCtaCteDetail.Tables(0).Rows(0)
+                            End If
+                        End If
+                    End If
+
+
+
+                    'x_usuario = Item.AUDI_UsrCrea;
+                    'Item.TMovimiento = CtaCte.TipoMovimiento.Egreso;
+                    oRowCtaCte("TMovimiento") = 1 'Egreso
+                    '1 = Egreso
+                    '0 = Ingreso
+
+
+                    If oRowDetCtaCte IsNot Nothing Then
+
+
+
+                        'oRowDetCtaCte("CCCT_Codigo").Value = oRowCtaCte("CCCT_Codigo").Value
+                        'oRowDetCtaCte("EMPR_Codigo").Value = oRowCtaCte("EMPR_Codigo").Value
+                        'oRowDetCtaCte("DCCT_FechaTrans").Value = oRowCtaCte("CCCT_FechaRecepcion").Value
+                        oRowDetCtaCte("DCCT_TipoCambio") = oRowCtaCte("CCCT_TipoCambio")
+                        'oRowDetCtaCte("TIPO_CodMND").Value = oRowCtaCte("TIPO_CodMND").Value
+                        'oRowDetCtaCte("TIPO_TabMND").Value = "MND"
+                        'oRowDetCtaCte("AUDI_UsrCrea").Value = oRowCtaCte("AUDI_UsrCrea").Value
+
+                        If oRowCtaCte("TIPO_CodMND") = "001" Then
+
+                            oRowDetCtaCte("DCCT_MontoDebe") = IIf(oRowCtaCte("TMovimiento") = 0, oRowCtaCte("CCCT_TipoCambio"), 0)
+                            oRowDetCtaCte("DCCT_MontoDebeD") = IIf(oRowCtaCte("TMovimiento") = 0, Math.Round(oRowCtaCte("CCCT_Monto") / oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero), 0)
+                            oRowDetCtaCte("DCCT_MontoHaber") = IIf(oRowCtaCte("TMovimiento") = 1, oRowCtaCte("CCCT_Monto"), 0)
+                            oRowDetCtaCte("DCCT_MontoHaberD") = IIf(oRowCtaCte("TMovimiento") = 1, Math.Round(oRowCtaCte("CCCT_Monto") / oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero), 0)
+
+                        Else
+
+                            oRowDetCtaCte("DCCT_MontoDebe") = IIf(oRowCtaCte("TMovimiento") = 0, Math.Round(oRowCtaCte("CCCT_Monto") * oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero), 0)
+                            oRowDetCtaCte("DCCT_MontoDebeD") = IIf(oRowCtaCte("TMovimiento") = 0, oRowCtaCte("CCCT_Monto"), 0)
+                            oRowDetCtaCte("DCCT_MontoHaber") = IIf(oRowCtaCte("TMovimiento") = 1, Math.Round(oRowCtaCte("CCCT_Monto") * oRowCtaCte("CCCT_TipoCambio"), 2, MidpointRounding.AwayFromZero), 0)
+                            oRowDetCtaCte("DCCT_MontoHaberD") = IIf(oRowCtaCte("TMovimiento") = 1, oRowCtaCte("CCCT_Monto"), 0)
+
+                        End If
+
+
+
+                        Command.CommandType = CommandType.StoredProcedure
+                        Command.CommandText = "NextSoft.dgp.CAJ_DCCTSU_UnReg"
+                        Command.Parameters.Clear()
+
+                        With Command.Parameters
+                            .Add("@psinEMPR_Codigo", SqlDbType.SmallInt, 2).Value = oRowDetCtaCte("EMPR_Codigo")
+                            .Add("@pintCCCT_Codigo", SqlDbType.Int, 4).Value = oRowDetCtaCte("CCCT_Codigo")
+                            .Add("@psinDCCT_Item", SqlDbType.SmallInt, 2).Value = oRowDetCtaCte("DCCT_Item")
+                            .Add("@pintMOVI_Codigo", SqlDbType.Int, 4).Value = oRowDetCtaCte("MOVI_Codigo")
+                            .Add("@pchrTIPO_TabMND", SqlDbType.Char, 3).Value = oRowDetCtaCte("TIPO_TabMND")
+                            .Add("@pchrTIPO_CodMND", SqlDbType.Char, 3).Value = oRowDetCtaCte("TIPO_CodMND")
+                            .Add("@pchrCONS_TabTDC", SqlDbType.Char, 3).Value = oRowDetCtaCte("CONS_TabTDC")
+                            .Add("@pchrCONS_CodTDC", SqlDbType.Char, 3).Value = oRowDetCtaCte("CONS_CodTDC")
+                            .Add("@pintCCCT_CodReferencia", SqlDbType.Int, 4).Value = oRowDetCtaCte("CCCT_CodReferencia")
+                            .Add("@psinDCCT_ItemReferencia", SqlDbType.SmallInt, 2).Value = oRowDetCtaCte("DCCT_ItemReferencia")
+                            .Add("@pchrDCCT_TipoPago", SqlDbType.Char, 1).Value = oRowDetCtaCte("DCCT_TipoPago").Value
+                            .Add("@pdtmDCCT_FechaTrans", SqlDbType.DateTime, 8).Value = oRowDetCtaCte("DCCT_FechaTrans")
+                            .Add("@pnumDCCT_TipoCambio", SqlDbType.Decimal, 10, 4).Value = oRowDetCtaCte("DCCT_TipoCambio")
+                            .Add("@pdecDCCT_MontoDebe", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoDebe")
+                            .Add("@pdecDCCT_MontoHaber", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoHaber")
+                            .Add("@pdecDCCT_MontoDebeD", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoDebeD")
+                            .Add("@pdecDCCT_MontoHaberD", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_MontoHaberD")
+                            .Add("@pdecDCCT_PPago", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_PPago")
+                            .Add("@pdecDCCT_PPagoD", SqlDbType.Decimal, 15, 2).Value = oRowDetCtaCte("DCCT_PPagoD")
+                            .Add("@pbitDCCT_PagoDetraccion", SqlDbType.Bit, 1).Value = oRowDetCtaCte("DCCT_PagoDetraccion")
+                            .Add("@pvchAUDI_UsrMod", SqlDbType.VarChar, 20).Value = oRowDetCtaCte("AUDI_UsrMod")
+                        End With
+                        If Command.ExecuteNonQuery > 0 Then
+                            'Dim _EMPR_Codigo As Int16
+
+                            'If Int16.TryParse(Command.Parameters("@psinEMPR_Codigo").Value.ToString(), _EMPR_Codigo) Then
+                            '    oRowDetCtaCte("EMPR_Codigo").Value = _EMPR_Codigo
+                            'End If
+
+                            'Dim _CCCT_Codigo As Int32
+
+                            'If Int32.TryParse(Command.Parameters("@pintCCCT_Codigo").Value.ToString(), _CCCT_Codigo) Then
+                            '    oRowDetCtaCte("CCCT_Codigo").Value = _CCCT_Codigo
+                            'End If
+
+                            'Dim _DCCT_Item As Int16
+
+                            'If Int32.TryParse(Command.Parameters("@psinDCCT_Item").Value.ToString(), _DCCT_Item) Then
+                            '    oRowDetCtaCte("DCCT_Item").Value = _DCCT_Item
+                            'End If
+
+
+                        End If
+
+                    End If
+
+
+
+
+                End If
+
+
+
 #End Region
+
+
+
+
+
+
+
+
+
+
+
+                transaction.Commit()
+            Catch ex As Exception
+                aResult(0) = 0
+                aResult(1) = ex.Message
+                transaction.Rollback()
+            Finally
+                connection.Close()
+            End Try
+            Return _NroVoucher
+        End Using
+        Return _NroVoucher
+    End Function
+
+
+
+    Public Function GetImpresionFEDSDocsVta(EMPR_Codigo As Integer, DOCV_Codigo As Integer, AUDI_UsrMod As String, Serie As String, SUCR_Codigo As Integer, Email As String, CCCT_Codigo As Integer) As DataSet Implements IDelfinService.GetImpresionFEDSDocsVta
+
+        Dim dsResultado As DataSet = New DataSet()
+        Dim x_generado As Boolean
+        Dim Adapter As New SqlDataAdapter
+        Dim dsCtaCte As DataSet = New DataSet()
+
+
+
+        Dim aResult As New ArrayList
+
+        'Dim dtCtaCteDetail As DataTable = dsDocumentsProvider.Tables("CtaCteDetail")
+        'Dim dtOperacionDetail As DataTable = dsDocumentsProvider.Tables("dtOperacionDetail")
+        'Dim dtDetCtaCteAsientos As DataTable = dsDocumentsProvider.Tables("dtDetCtaCteAsientos")
+        Dim _CodOper As String = ""
+        aResult.AddRange({2, ""})
+        Dim _NroVoucher As String = ""
+        Using connection As New SqlConnection(ConfigurationManager.AppSettings("dbSolution"))
+            connection.Open()
+            Dim Command As New SqlCommand
+            Dim transaction As SqlTransaction
+            transaction = connection.BeginTransaction("FacturasVenta")
+            Command.Connection = connection
+            Command.Transaction = transaction
+            Try
+                'Cabecera
+                'Dim oRowCtaCte As DataRow = dtCtaCte.Rows(0)
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "NextSoft.dgp.VEN_DDOVSS_TodosImpresionByDOCV_Codigo"
+
+                Command.Parameters.Clear()
+
+                Command.Parameters.Add("@AsientoGenerado", SqlDbType.Bit, 1).Direction = ParameterDirection.InputOutput
+                Command.Parameters("@AsientoGenerado").Value = x_generado
+                Command.Parameters.Add("@EMPR_Codigo", SqlDbType.SmallInt, 2).Direction = ParameterDirection.InputOutput
+                Command.Parameters("@EMPR_Codigo").Value = EMPR_Codigo
+                Command.Parameters.Add("@CCCT_Codigo", SqlDbType.Int, 4).Direction = ParameterDirection.InputOutput
+                Command.Parameters("@CCCT_Codigo").Value = CCCT_Codigo
+
+
+
+                With Command.Parameters
+                    .Add("@psinEMPR_Codigo", SqlDbType.Int, 2, ParameterDirection.Input).Value = EMPR_Codigo
+                    .Add("@pintDOCV_Codigo", SqlDbType.Int, 4).Value = DOCV_Codigo
+                    .Add("@pvchAUDI_UsrMod", SqlDbType.VarChar, 20).Value = AUDI_UsrMod
+                    .Add("@Serie", SqlDbType.VarChar, 20).Value = Serie
+
+                End With
+
+                Adapter.SelectCommand = Command
+                Adapter.Fill(dsResultado)
+
+                If dsResultado IsNot Nothing > 0 Then
+                    If dsResultado.Tables.Count > 0 Then
+
+                        Dim _x_generado As Boolean
+                        If Boolean.TryParse(Command.Parameters("@AsientoGenerado").Value.ToString(), _x_generado) Then
+                            x_generado = _x_generado
+                        End If
+
+                        Dim _EMPR_Codigo As Int16
+
+                        If Int16.TryParse(Command.Parameters("@psinEMPR_Codigo").Value.ToString(), _EMPR_Codigo) Then
+                            EMPR_Codigo = _EMPR_Codigo
+                        End If
+
+
+                        Dim _CCCT_Codigo As Integer
+                        If Int32.TryParse(Command.Parameters("@CCCT_Codigo").Value.ToString(), _CCCT_Codigo) Then
+                            CCCT_Codigo = _CCCT_Codigo
+                        End If
+                    End If
+                End If
+
+
+
+
+                'FACTURACION ELECTRONICA
+
+
+                Dim facturacionElectronica As New eFacturacionElectronica
+
+                Dim dtResultadoFacturacionElectronica As New DataTable()
+                dtResultadoFacturacionElectronica = facturacionElectronica.ProcesarFacturacionElectronica(dsResultado.Tables(0).Rows(0)("DOCV_Codigo").ToString(), Email, AUDI_UsrMod)
+                dsResultado.Tables.Add(dtResultadoFacturacionElectronica)
+                Dim Resultado As String = dtResultadoFacturacionElectronica.Rows(0)("resultado").ToString()
+                Dim ResultadoDetalle As String = dtResultadoFacturacionElectronica.Rows(0)("mensajeerror").ToString()
+                If Resultado = "ERROR" Then
+                    Throw New System.Exception(ResultadoDetalle)
+                End If
+
+
+
+
+
+
+
+                transaction.Commit()
+            Catch ex As Exception
+                aResult(0) = 0
+                aResult(1) = ex.Message
+                transaction.Rollback()
+            Finally
+                connection.Close()
+            End Try
+            Return dsResultado
+        End Using
+        Return dsResultado
+    End Function
+
+
+    Public Function EnviarOSE(DOCV_Codigo As Integer, Email As String, AUDI_UsrMod As String) As DataSet Implements IDelfinService.EnviarOSE
+        Dim aResult As New ArrayList
+        Dim dsResultado As DataSet = New DataSet()
+        Dim facturacionElectronica As New eFacturacionElectronica
+        aResult.AddRange({2, ""})
+        Try
+            Dim dtResultadoFacturacionElectronica As New DataTable()
+            dtResultadoFacturacionElectronica = facturacionElectronica.ProcesarFacturacionElectronica(DOCV_Codigo.ToString(), Email, AUDI_UsrMod)
+            dsResultado.Tables.Add(dtResultadoFacturacionElectronica)
+            Dim Resultado As String = dtResultadoFacturacionElectronica.Rows(0)("resultado").ToString()
+            Dim ResultadoDetalle As String = dtResultadoFacturacionElectronica.Rows(0)("mensajeerror").ToString()
+            If Resultado = "ERROR" Then
+                Throw New System.Exception(ResultadoDetalle)
+            End If
+
+        Catch ex As Exception
+            aResult(0) = 0
+            aResult(1) = ex.Message
+
+        End Try
+
+        Return dsResultado
+    End Function
+
+
+    Public Function GetImpresionRC(EMPR_Codigo As Integer, CCCT_Codigo As Integer, AUDI_UsrMod As String) As DataSet Implements IDelfinService.GetImpresionRC
+
+        Dim dsResultado As DataSet = New DataSet()
+        Dim x_generado As Boolean
+        Dim Adapter As New SqlDataAdapter
+        Dim dsCtaCte As DataSet = New DataSet()
+
+
+
+        Dim aResult As New ArrayList
+
+        'Dim dtCtaCteDetail As DataTable = dsDocumentsProvider.Tables("CtaCteDetail")
+        'Dim dtOperacionDetail As DataTable = dsDocumentsProvider.Tables("dtOperacionDetail")
+        'Dim dtDetCtaCteAsientos As DataTable = dsDocumentsProvider.Tables("dtDetCtaCteAsientos")
+        Dim _CodOper As String = ""
+        aResult.AddRange({2, ""})
+        Dim _NroVoucher As String = ""
+        Using connection As New SqlConnection(ConfigurationManager.AppSettings("dbSolution"))
+            connection.Open()
+            Dim Command As New SqlCommand
+            Dim transaction As SqlTransaction
+            transaction = connection.BeginTransaction("FacturasVenta")
+            Command.Connection = connection
+            Command.Transaction = transaction
+            Try
+                'Cabecera
+                'Dim oRowCtaCte As DataRow = dtCtaCte.Rows(0)
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = "NextSoft.dgp.CAJ_CCCTSS_ImprimirNuevoReciboCaja"
+
+                Command.Parameters.Clear()
+
+
+
+                With Command.Parameters
+                    .Add("@psinEMPR_Codigo", SqlDbType.Int, 2, ParameterDirection.Input).Value = EMPR_Codigo
+                    .Add("@pintCCCT_Codigo", SqlDbType.Int, 4).Value = CCCT_Codigo
+                    .Add("@pvchAUDI_UsrMod", SqlDbType.VarChar, 20).Value = AUDI_UsrMod
+
+
+                End With
+
+                Adapter.SelectCommand = Command
+                Adapter.Fill(dsResultado)
+
+
+
+
+
+
+
+
+
+                transaction.Commit()
+            Catch ex As Exception
+                aResult(0) = 0
+                aResult(1) = ex.Message
+                transaction.Rollback()
+            Finally
+                connection.Close()
+            End Try
+            Return dsResultado
+        End Using
+        Return dsResultado
+    End Function
+
+
+
 End Class

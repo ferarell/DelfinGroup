@@ -77,4 +77,19 @@ Public Interface IDelfinService
     <OperationContract>
     Function InsertDocumentsProvider(dsDocumentsProvider As DataSet, Items As String) As String
 
+
+    <OperationContract>
+    Function ActualizarDocumentsProvider(dsDocumentsProvider As DataSet, Items As String) As String
+
+
+    <OperationContract>
+    Function GetImpresionFEDSDocsVta(EMPR_Codigo As Integer, DOCV_Codigo As Integer, AUDI_UsrMod As String, Serie As String, SUCR_Codigo As Integer, Email As String, CCCT_Codigo As Integer) As DataSet
+
+
+
+    <OperationContract>
+    Function GetImpresionRC(EMPR_Codigo As Integer, CCCT_Codigo As Integer, AUDI_UsrMod As String) As DataSet
+    <OperationContract>
+    Function EnviarOSE(DOCV_Codigo As Integer, Email As String, AUDI_UsrMod As String) As DataSet
+
 End Interface
