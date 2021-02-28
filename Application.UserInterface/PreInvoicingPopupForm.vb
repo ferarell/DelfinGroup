@@ -6,12 +6,13 @@ Public Class PreInvoicingPopupForm
     Dim oAppService As New AppService.DelfinServiceClient
     Dim oMasterDataList As New MasterDataList
     Friend AppUser As String = "sistemas"
-    Friend OperationsList As String = ""
+    'Friend OperationsList As String = ""
     Friend InternalCodeList As String = ""
     Friend CodigoMoneda As String
     Friend oProcessType As String = ""
     Friend oQuerySource As String = ""
     Friend IsMultiline As Boolean = Nothing
+    Dim dsSource As New DataSet
     Dim dtSource As New DataTable
     Public Sub New()
 
@@ -32,16 +33,18 @@ Public Class PreInvoicingPopupForm
         If oProcessType = "PreInvoicing" Then
             bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
             If oQuerySource = "OP" Then
-                dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasPorPreFacturar '" & OperationsList & "','" & CodigoMoneda & "'").Tables(0)
+                dsSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasPorPreFacturar '" & InternalCodeList & "','" & CodigoMoneda & "'")
+                dtSource = dsSource.Tables(0)
                 'Else
                 '    dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneOperacionesLogisticasPorPreFacturar '" & OperationsList & "','" & CodigoMoneda & "'").Tables(0)
             End If
             If IsDBNull(dtSource.Rows(0)("TIPC_Venta")) Then
                 XtraMessageBox.Show("No existe tipo de cambio, por favor coordine con el área contable.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                bbiGenerate.Enabled = DevExpress.XtraBars.BarItemVisibility.Never
+                bbiGenerate.Enabled = False
             End If
         End If
         If oProcessType = "Invoicing" Then
+            SplitContainerControl2.PanelVisibility = SplitPanelVisibility.Panel1
             bbiGenerate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
             dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.VEN_DDOVSS_TodosPorDOCV_Codigo " & InternalCodeList & ", '" & oQuerySource & "'").Tables(0)
             lueMoneda.Properties.ReadOnly = True
@@ -144,9 +147,11 @@ Public Class PreInvoicingPopupForm
         dtDetail.TableName = "Detail"
         dsDocVta.Tables.Add(dtHeader.Copy)
         dsDocVta.Tables.Add(dtDetail.Copy)
+        dsDocVta.Tables(1).Columns.Add("ItemList", GetType(String))
         For r = 0 To GridView1.RowCount - 1
             Dim aResponse As New ArrayList
             Dim oRow As DataRow = GridView1.GetDataRow(r)
+            GridView1.FocusedRowHandle = r
             SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
             SplashScreenManager.Default.SetWaitFormDescription("PreFacturando (" & (r + 1).ToString & " de " & GridView1.RowCount.ToString & ") OP:  " & oRow("COPE_NumDoc"))
             dsDocVta.Tables(0).Rows.Clear()
@@ -173,6 +178,7 @@ Public Class PreInvoicingPopupForm
 
     Function GetDataResult(dsResult As DataSet, drSource As DataRow) As DataSet
         Validate()
+        'ShowServiceDetail()
         Dim iPos As Integer = 0
         'CABECERA
         dsResult.Tables(0).Rows.Add()
@@ -221,7 +227,7 @@ Public Class PreInvoicingPopupForm
         oRow("AUDI_UsrMod") = AppUser
         'oRow("AUDI_FecMod") =
         oRow("ENTC_Codigo") = drSource("ENTC_CodCliente")
-        oRow("DOCV_HBL") = drSource("COPE_HBL")
+        oRow("DOCV_HBL") = drSource("HBL")
         oRow("DOCV_NroOperacion") = drSource("COPE_NumDoc")
         'oRow("DOCV_CodigoPadre") =
         'oRow("AUDI_UsrConfirmacion") =
@@ -262,9 +268,19 @@ Public Class PreInvoicingPopupForm
         'oRow("AUDI_FecMod") =
         oRow("DDOV_ValorTotal") = drSource("ValorVenta") * IIf(drSource("TIPO_CodMND") = "002", drSource("TIPC_Venta"), 1)
         oRow("DDOV_ValorTotalD") = drSource("ValorVenta") / IIf(drSource("TIPO_CodMND") = "001", drSource("TIPC_Venta"), 1)
-
+        oRow("ItemList") = GetItmList(GridView2)
         Return dsResult
     End Function
+
+    Function GetItmList(oGridView As GridView) As String
+        Dim sResult As String = ""
+        For r = 0 To oGridView.RowCount - 1
+            Dim oRow As DataRow = oGridView.GetDataRow(r)
+            sResult += IIf(sResult.Length > 0, ",", "") & oRow("DOPE_Item")
+        Next
+        Return sResult
+    End Function
+
     Private Sub bbiClose_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiClose.ItemClick
         Close()
     End Sub
@@ -284,7 +300,6 @@ Public Class PreInvoicingPopupForm
                 GridView1.SetFocusedRowCellValue("DOCV_FechaVcmto", DateAdd(DateInterval.Day, GridView1.GetFocusedRowCellValue("ENLI_DiasDuracion"), deFechaEmision.DateTime))
             End If
         End If
-        'Dim oRow As DataRow = GridView1.GetFocusedDataRow
         'GridView1.SetFocusedRowCellValue("Impuesto1", oRow("ValorVenta") * (oRow("VALOR_IGV") / 100))
         'GridView1.SetFocusedRowCellValue("ValorTotal", oRow("ValorVenta") + GridView1.GetFocusedRowCellValue("Impuesto1"))
     End Sub
@@ -300,8 +315,8 @@ Public Class PreInvoicingPopupForm
         Validate()
         Dim bResult As Boolean = True
         Dim oRow As DataRow = dtSource.Rows(0)
-        Dim Serie As String = IIf(lueSerieComprobante.Text = oRow("DOCV_Serie"), ",NULL", ",'" & lueSerieComprobante.Text & "'")
-        Dim FormaPago As String = IIf(lueFormaPago.EditValue = oRow("TIPO_CodFPG"), ",NULL", ",'" & lueFormaPago.EditValue & "'")
+        Dim Serie As String = IIf(lueSerieComprobante.Text = oRow("DOCV_Serie"), ", NULL", ",'" & lueSerieComprobante.Text & "'")
+            Dim FormaPago As String = IIf(lueFormaPago.EditValue = oRow("TIPO_CodFPG"), ",NULL", ",'" & lueFormaPago.EditValue & "'")
         Dim FechaVcto As String = ",'" & Format(deFechaVencimiento.DateTime, "yyyy-MM-dd") & "'"
         Dim CodCliente As String = IIf(lueSocioNegocio.EditValue = oRow("ENTC_Codigo"), ",0", "," & lueSocioNegocio.EditValue.ToString)
         Try
@@ -321,5 +336,18 @@ Public Class PreInvoicingPopupForm
 
     Private Sub seDiasCredito_EditValueChanged(sender As Object, e As EventArgs) Handles seDiasCredito.EditValueChanged
         deFechaVencimiento.EditValue = DateAdd(DateInterval.Day, seDiasCredito.EditValue, deFechaEmision.DateTime)
+    End Sub
+
+    Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
+        If dsSource.Tables.Count = 0 Then
+            Return
+        End If
+        ShowServiceDetail()
+    End Sub
+
+    Private Sub ShowServiceDetail()
+        Dim oRow As DataRow = GridView1.GetFocusedDataRow
+        gcServiceDetail.DataSource = dsSource.Tables(1).Select("COPE_Codigo=" & oRow("COPE_Codigo").ToString & " AND SERV_Codigo_Grouped=" & oRow("SERV_Codigo").ToString).CopyToDataTable
+        FormatGridView(GridView2)
     End Sub
 End Class

@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="16.0">
  <Targets>
-  <Target Name="C:\Users\ferar\AppData\Local\Temp\tmp894B.tmp.cadir\bin\App_Code.dll">
+  <Target Name="C:\Users\ferar\AppData\Local\Temp\tmpEF6.tmp.cadir\bin\App_Code.dll">
    <Modules>
     <Module Name="app_code.dll">
      <Namespaces>
@@ -12,7 +12,7 @@
          <Members>
           <Member Name="#ExecuteSQL(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2021-02-04 16:26:16Z" FixCategory="DependsOnFix">
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2021-02-27 16:13:44Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\ferar\Documents\My Solutions\DelfinGroup\OnLine.WebServices\App_Code" File="DataAccess.vb" Line="14">La cadena de consulta pasada a 'SqlCommand.CommandText.Set(String)' en 'DataAccess.ExecuteSQL(String)' podría contener las siguientes variables: 'QueryString'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\ferar\Documents\My Solutions\DelfinGroup\OnLine.WebServices\App_Code" File="DataAccess.vb" Line="11">La cadena de consulta pasada a 'SqlCommand.New(String, SqlConnection)' en 'DataAccess.ExecuteSQL(String)' podría contener las siguientes variables: 'QueryString'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
             </Message>
@@ -20,7 +20,7 @@
           </Member>
           <Member Name="#ExecuteSQLNonQuery(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2021-02-04 16:26:16Z" FixCategory="DependsOnFix">
+            <Message TypeName="Revisar consultas SQL para comprobar si tienen vulnerabilidades de seguridad" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2021-02-27 16:13:44Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\ferar\Documents\My Solutions\DelfinGroup\OnLine.WebServices\App_Code" File="DataAccess.vb" Line="36">La cadena de consulta pasada a 'SqlCommand.New(String, SqlConnection)' en 'DataAccess.ExecuteSQLNonQuery(String)' podría contener las siguientes variables: 'QueryString'. Si alguna de estas variables puede proceder de datos proporcionados por el usuario, considere el uso de un procedimiento almacenado o una consulta SQL parametrizada en lugar de compilar la consulta con concatenaciones de cadenas.</Issue>
             </Message>
            </Messages>

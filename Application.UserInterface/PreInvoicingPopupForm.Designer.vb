@@ -21,12 +21,12 @@ Partial Class PreInvoicingPopupForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PreInvoicingPopupForm))
-        Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition3 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition3 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim ColumnDefinition7 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition8 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition9 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim RowDefinition7 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition8 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition9 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
@@ -60,6 +60,7 @@ Partial Class PreInvoicingPopupForm
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.gcInvoicing = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn45 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -80,6 +81,11 @@ Partial Class PreInvoicingPopupForm
         Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.gcServiceDetail = New DevExpress.XtraGrid.GridControl()
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn18 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,9 +113,13 @@ Partial Class PreInvoicingPopupForm
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainerControl2.SuspendLayout()
         CType(Me.gcInvoicing, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gcServiceDetail, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'bmActions
@@ -234,7 +244,7 @@ Partial Class PreInvoicingPopupForm
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LayoutControl1)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
-        Me.SplitContainerControl1.Panel2.Controls.Add(Me.gcInvoicing)
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
         Me.SplitContainerControl1.Size = New System.Drawing.Size(939, 391)
         Me.SplitContainerControl1.SplitterPosition = 131
@@ -378,20 +388,20 @@ Partial Class PreInvoicingPopupForm
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8})
         Me.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.Root.Name = "Root"
-        ColumnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition1.Width = 33.333333333333336R
-        ColumnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition2.Width = 33.333333333333336R
-        ColumnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition3.Width = 33.333333333333336R
-        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition1, ColumnDefinition2, ColumnDefinition3})
-        RowDefinition1.Height = 30.0R
-        RowDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition2.Height = 30.0R
-        RowDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition3.Height = 30.0R
-        RowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute
-        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition1, RowDefinition2, RowDefinition3})
+        ColumnDefinition7.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition7.Width = 33.333333333333336R
+        ColumnDefinition8.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition8.Width = 33.333333333333336R
+        ColumnDefinition9.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition9.Width = 33.333333333333336R
+        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition7, ColumnDefinition8, ColumnDefinition9})
+        RowDefinition7.Height = 30.0R
+        RowDefinition7.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition8.Height = 30.0R
+        RowDefinition8.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition9.Height = 30.0R
+        RowDefinition9.SizeType = System.Windows.Forms.SizeType.Absolute
+        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition7, RowDefinition8, RowDefinition9})
         Me.Root.Size = New System.Drawing.Size(935, 127)
         Me.Root.TextVisible = False
         '
@@ -486,6 +496,20 @@ Partial Class PreInvoicingPopupForm
         Me.LayoutControlItem8.Text = "Socio de Negocio"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(92, 13)
         '
+        'SplitContainerControl2
+        '
+        Me.SplitContainerControl2.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2
+        Me.SplitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl2.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl2.Name = "SplitContainerControl2"
+        Me.SplitContainerControl2.Panel1.Controls.Add(Me.gcInvoicing)
+        Me.SplitContainerControl2.Panel1.Text = "Panel1"
+        Me.SplitContainerControl2.Panel2.Controls.Add(Me.gcServiceDetail)
+        Me.SplitContainerControl2.Panel2.Text = "Panel2"
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(939, 255)
+        Me.SplitContainerControl2.SplitterPosition = 782
+        Me.SplitContainerControl2.TabIndex = 173
+        '
         'gcInvoicing
         '
         Me.gcInvoicing.Dock = System.Windows.Forms.DockStyle.Fill
@@ -498,7 +522,7 @@ Partial Class PreInvoicingPopupForm
         Me.gcInvoicing.MainView = Me.GridView1
         Me.gcInvoicing.Name = "gcInvoicing"
         Me.gcInvoicing.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1})
-        Me.gcInvoicing.Size = New System.Drawing.Size(939, 255)
+        Me.gcInvoicing.Size = New System.Drawing.Size(782, 255)
         Me.gcInvoicing.TabIndex = 172
         Me.gcInvoicing.UseEmbeddedNavigator = True
         Me.gcInvoicing.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -674,6 +698,57 @@ Partial Class PreInvoicingPopupForm
         Me.GridColumn13.Visible = True
         Me.GridColumn13.VisibleIndex = 16
         '
+        'gcServiceDetail
+        '
+        Me.gcServiceDetail.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcServiceDetail.EmbeddedNavigator.Buttons.Append.Visible = False
+        Me.gcServiceDetail.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
+        Me.gcServiceDetail.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.gcServiceDetail.EmbeddedNavigator.Buttons.EndEdit.Visible = False
+        Me.gcServiceDetail.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.gcServiceDetail.Location = New System.Drawing.Point(0, 0)
+        Me.gcServiceDetail.MainView = Me.GridView2
+        Me.gcServiceDetail.Name = "gcServiceDetail"
+        Me.gcServiceDetail.Size = New System.Drawing.Size(152, 255)
+        Me.gcServiceDetail.TabIndex = 180
+        Me.gcServiceDetail.UseEmbeddedNavigator = True
+        Me.gcServiceDetail.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn16, Me.GridColumn17, Me.GridColumn18})
+        Me.GridView2.GridControl = Me.gcServiceDetail
+        Me.GridView2.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "###,###,###", New Decimal(New Integer() {0, 0, 0, 131072}))})
+        Me.GridView2.Name = "GridView2"
+        Me.GridView2.OptionsBehavior.Editable = False
+        Me.GridView2.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
+        Me.GridView2.OptionsView.ShowFooter = True
+        Me.GridView2.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn16
+        '
+        Me.GridColumn16.Caption = "Item"
+        Me.GridColumn16.FieldName = "DOPE_Item"
+        Me.GridColumn16.Name = "GridColumn16"
+        Me.GridColumn16.Visible = True
+        Me.GridColumn16.VisibleIndex = 0
+        '
+        'GridColumn17
+        '
+        Me.GridColumn17.Caption = "Servicio"
+        Me.GridColumn17.FieldName = "SERV_Nombre_SPA"
+        Me.GridColumn17.Name = "GridColumn17"
+        Me.GridColumn17.Visible = True
+        Me.GridColumn17.VisibleIndex = 1
+        '
+        'GridColumn18
+        '
+        Me.GridColumn18.Caption = "Importe Venta"
+        Me.GridColumn18.FieldName = "DOPE_PrecioTotVta"
+        Me.GridColumn18.Name = "GridColumn18"
+        Me.GridColumn18.Visible = True
+        Me.GridColumn18.VisibleIndex = 2
+        '
         'PreInvoicingPopupForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -714,9 +789,13 @@ Partial Class PreInvoicingPopupForm
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainerControl2.ResumeLayout(False)
         CType(Me.gcInvoicing, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gcServiceDetail, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -775,4 +854,10 @@ Partial Class PreInvoicingPopupForm
     Friend WithEvents bbiSave As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents GridColumn11 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn13 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents SplitContainerControl2 As DevExpress.XtraEditors.SplitContainerControl
+    Friend WithEvents gcServiceDetail As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridColumn16 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn17 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn18 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

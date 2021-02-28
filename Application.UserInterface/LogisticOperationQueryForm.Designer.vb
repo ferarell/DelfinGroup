@@ -1238,7 +1238,6 @@ Partial Class LogisticOperationQueryForm
         Me.Controls.Add(Me.BarDockControl1)
         Me.Name = "LogisticOperationQueryForm"
         Me.Text = "Operaciones Logísticas"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).EndInit()

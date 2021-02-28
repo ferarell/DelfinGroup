@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.VisualBasic
 
-Public Class VoyageQueryDTO
+Public Class VoyageListDTO
 
     Public Property CodigoNave() As String
     Public Property NombreNave() As String

@@ -550,59 +550,59 @@
     <Content Include="Plantillas\COMUNICADO No.08.PDF">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoArriboMaritimoFcl_New.rpt">
+    <Content Include="Reportes\AvisoArriboMaritimoFcl.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoArriboMaritimoFcl1.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoArriboAereo_New.rpt">
+    <Content Include="Reportes\AvisoArriboAereo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoArriboAereo1.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoArriboMaritimoFcl_CLARI_New.rpt">
+    <Content Include="Reportes\AvisoArriboMaritimoFcl_CLARI.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoArriboMaritimoFcl_CLARI.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoArriboMaritimoLcl_New.rpt">
+    <Content Include="Reportes\AvisoArriboMaritimoLcl.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoArriboMaritimoLcl1.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoSalidaAereo_New.rpt">
+    <Content Include="Reportes\AvisoSalidaAereo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoSalidaAereo.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoZarpeMaritimoFcl_New.rpt">
+    <Content Include="Reportes\AvisoZarpeMaritimoFcl.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoZarpeMaritimoFcl.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoZarpeMaritimoLcl_New.rpt">
+    <Content Include="Reportes\AvisoZarpeMaritimoLcl.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoZarpeMaritimoLcl.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Service References\AppService\DelfinService.disco" />
-    <None Include="Service References\AppService\DelfinService.wsdl" />
-    <None Include="Service References\AppService\DelfinService.xsd">
+    <None Include="Service References\AppService\DelfinService1.disco" />
+    <None Include="Service References\AppService\DelfinService1.wsdl" />
+    <None Include="Service References\AppService\DelfinService6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService1.xsd">
+    <None Include="Service References\AppService\DelfinService61.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService2.xsd">
+    <None Include="Service References\AppService\DelfinService62.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService3.xsd">
+    <None Include="Service References\AppService\DelfinService63.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService4.xsd">
+    <None Include="Service References\AppService\DelfinService64.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\DelfinService5.xsd">
+    <None Include="Service References\AppService\DelfinService65.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\NextSoftService\NextSoftService1.disco" />
@@ -700,37 +700,37 @@
     <Content Include="Plantillas\ContenidoCorreoAvisosImpoFcl.htm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoArriboAereo.rpt">
+    <Content Include="Reportes\AvisoArriboAereoOld.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoArriboAereo1.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoArriboMaritimoFcl.rpt">
+    <Content Include="Reportes\AvisoArriboMaritimoFclOld.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoArriboMaritimoFcl1.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoArriboMaritimoLcl.rpt">
+    <Content Include="Reportes\AvisoArriboMaritimoLclOld.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoArriboMaritimoLcl1.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoSalidaAereo.rpt">
+    <Content Include="Reportes\AvisoSalidaAereoOld.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoSalidaAereo.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoZarpeMaritimoFcl.rpt">
+    <Content Include="Reportes\AvisoZarpeMaritimoFclOld.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoZarpeMaritimoFcl.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoZarpeMaritimoLcl.rpt">
+    <Content Include="Reportes\AvisoZarpeMaritimoLclOld.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoZarpeMaritimoLcl.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\AvisoArriboMaritimoFcl_CLARI.rpt">
+    <Content Include="Reportes\AvisoArriboMaritimoFcl_CLARIOld.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AvisoArriboMaritimoFcl_CLARI.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

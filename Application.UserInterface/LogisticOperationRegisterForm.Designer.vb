@@ -224,6 +224,8 @@ Partial Class LogisticOperationRegisterForm
         Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn70 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn29 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn43 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.GridColumn30 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit5 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.GridColumn31 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -426,6 +428,7 @@ Partial Class LogisticOperationRegisterForm
         CType(Me.gcChangeControlRelated, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmsChangeControl.SuspendLayout()
         CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -949,6 +952,7 @@ Partial Class LogisticOperationRegisterForm
         '
         Me.NavBarGroup1.Caption = "Datos de la Operación"
         Me.NavBarGroup1.ControlContainer = Me.NavBarGroupControlContainer1
+        Me.NavBarGroup1.Expanded = True
         Me.NavBarGroup1.GroupClientHeight = 283
         Me.NavBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.ControlContainer
         Me.NavBarGroup1.Name = "NavBarGroup1"
@@ -2064,7 +2068,7 @@ Partial Class LogisticOperationRegisterForm
         Me.gcChangeControlRelated.Location = New System.Drawing.Point(0, 0)
         Me.gcChangeControlRelated.MainView = Me.GridView5
         Me.gcChangeControlRelated.Name = "gcChangeControlRelated"
-        Me.gcChangeControlRelated.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit5, Me.RepositoryItemLookUpEdit7, Me.RepositoryItemLookUpEdit8, Me.RepositoryItemLookUpEdit6, Me.RepositoryItemLookUpEdit10, Me.RepositoryItemLookUpEdit12})
+        Me.gcChangeControlRelated.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit5, Me.RepositoryItemLookUpEdit7, Me.RepositoryItemLookUpEdit8, Me.RepositoryItemLookUpEdit6, Me.RepositoryItemLookUpEdit10, Me.RepositoryItemLookUpEdit12, Me.RepositoryItemCheckEdit1})
         Me.gcChangeControlRelated.Size = New System.Drawing.Size(900, 213)
         Me.gcChangeControlRelated.TabIndex = 175
         Me.gcChangeControlRelated.UseEmbeddedNavigator = True
@@ -2074,7 +2078,7 @@ Partial Class LogisticOperationRegisterForm
         '
         Me.cmsChangeControl.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiChangeControlWR2, Me.ToolStripSeparator3, Me.tsmiChangeControlDelete, Me.ToolStripSeparator2, Me.tsmiEntryJournalCreate, Me.tsmiJournalEntryVoid, Me.ToolStripSeparator4, Me.tsmiInvoiceBillsCreate, Me.tsmiInvoiceBillsVoid})
         Me.cmsChangeControl.Name = "ContextMenuStrip1"
-        Me.cmsChangeControl.Size = New System.Drawing.Size(205, 176)
+        Me.cmsChangeControl.Size = New System.Drawing.Size(205, 154)
         '
         'tsmiChangeControlWR2
         '
@@ -2129,7 +2133,7 @@ Partial Class LogisticOperationRegisterForm
         '
         'GridView5
         '
-        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn70, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn68, Me.GridColumn33, Me.GridColumn34, Me.GridColumn66, Me.GridColumn35, Me.GridColumn36, Me.GridColumn38, Me.GridColumn39, Me.GridColumn40, Me.GridColumn41, Me.GridColumn73, Me.GridColumn56, Me.GridColumn58, Me.GridColumn59, Me.GridColumn71})
+        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn70, Me.GridColumn29, Me.GridColumn43, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn68, Me.GridColumn33, Me.GridColumn34, Me.GridColumn66, Me.GridColumn35, Me.GridColumn36, Me.GridColumn38, Me.GridColumn39, Me.GridColumn40, Me.GridColumn41, Me.GridColumn73, Me.GridColumn56, Me.GridColumn58, Me.GridColumn59, Me.GridColumn71})
         Me.GridView5.GridControl = Me.gcChangeControlRelated
         Me.GridView5.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView5.Name = "GridView5"
@@ -2138,6 +2142,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridView5.OptionsClipboard.AllowCopy = DevExpress.Utils.DefaultBoolean.[True]
         Me.GridView5.OptionsEditForm.ShowOnF2Key = DevExpress.Utils.DefaultBoolean.[True]
         Me.GridView5.OptionsNavigation.AutoFocusNewRow = True
+        Me.GridView5.OptionsSelection.MultiSelect = True
         Me.GridView5.OptionsView.BestFitMaxRowCount = 10
         Me.GridView5.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
         Me.GridView5.OptionsView.ShowFooter = True
@@ -2159,6 +2164,21 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn29.FieldName = "SERV_Codigo"
         Me.GridColumn29.Name = "GridColumn29"
         '
+        'GridColumn43
+        '
+        Me.GridColumn43.Caption = "PreFacturar"
+        Me.GridColumn43.ColumnEdit = Me.RepositoryItemCheckEdit1
+        Me.GridColumn43.FieldName = "Checked"
+        Me.GridColumn43.Name = "GridColumn43"
+        Me.GridColumn43.Visible = True
+        Me.GridColumn43.VisibleIndex = 1
+        '
+        'RepositoryItemCheckEdit1
+        '
+        Me.RepositoryItemCheckEdit1.AutoHeight = False
+        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
+        Me.RepositoryItemCheckEdit1.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked
+        '
         'GridColumn30
         '
         Me.GridColumn30.Caption = "Descripción"
@@ -2166,7 +2186,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn30.FieldName = "SERV_Codigo"
         Me.GridColumn30.Name = "GridColumn30"
         Me.GridColumn30.Visible = True
-        Me.GridColumn30.VisibleIndex = 1
+        Me.GridColumn30.VisibleIndex = 2
         '
         'RepositoryItemLookUpEdit5
         '
@@ -2189,7 +2209,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn32.FieldName = "CONS_CodBas"
         Me.GridColumn32.Name = "GridColumn32"
         Me.GridColumn32.Visible = True
-        Me.GridColumn32.VisibleIndex = 2
+        Me.GridColumn32.VisibleIndex = 3
         '
         'RepositoryItemLookUpEdit6
         '
@@ -2207,7 +2227,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn68.FieldName = "CONS_CodLNG"
         Me.GridColumn68.Name = "GridColumn68"
         Me.GridColumn68.Visible = True
-        Me.GridColumn68.VisibleIndex = 3
+        Me.GridColumn68.VisibleIndex = 4
         '
         'RepositoryItemLookUpEdit12
         '
@@ -2224,7 +2244,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn33.FieldName = "TIPE_Codigo"
         Me.GridColumn33.Name = "GridColumn33"
         Me.GridColumn33.Visible = True
-        Me.GridColumn33.VisibleIndex = 4
+        Me.GridColumn33.VisibleIndex = 5
         '
         'RepositoryItemLookUpEdit7
         '
@@ -2241,7 +2261,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn34.FieldName = "ENTC_Codigo"
         Me.GridColumn34.Name = "GridColumn34"
         Me.GridColumn34.Visible = True
-        Me.GridColumn34.VisibleIndex = 5
+        Me.GridColumn34.VisibleIndex = 6
         '
         'RepositoryItemLookUpEdit8
         '
@@ -2258,7 +2278,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn66.FieldName = "TIPO_CodMnd"
         Me.GridColumn66.Name = "GridColumn66"
         Me.GridColumn66.Visible = True
-        Me.GridColumn66.VisibleIndex = 6
+        Me.GridColumn66.VisibleIndex = 7
         '
         'RepositoryItemLookUpEdit10
         '
@@ -2275,7 +2295,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn35.Name = "GridColumn35"
         Me.GridColumn35.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioUnitCosto", "{0:###,##0.00}")})
         Me.GridColumn35.Visible = True
-        Me.GridColumn35.VisibleIndex = 7
+        Me.GridColumn35.VisibleIndex = 8
         '
         'GridColumn36
         '
@@ -2284,7 +2304,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn36.Name = "GridColumn36"
         Me.GridColumn36.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioUnitVta", "{0:###,##0.00}")})
         Me.GridColumn36.Visible = True
-        Me.GridColumn36.VisibleIndex = 8
+        Me.GridColumn36.VisibleIndex = 9
         '
         'GridColumn38
         '
@@ -2292,7 +2312,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn38.FieldName = "DOPE_Cantidad"
         Me.GridColumn38.Name = "GridColumn38"
         Me.GridColumn38.Visible = True
-        Me.GridColumn38.VisibleIndex = 9
+        Me.GridColumn38.VisibleIndex = 10
         '
         'GridColumn39
         '
@@ -2301,7 +2321,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn39.Name = "GridColumn39"
         Me.GridColumn39.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioTotCosto", "{0:###,##0.00}")})
         Me.GridColumn39.Visible = True
-        Me.GridColumn39.VisibleIndex = 10
+        Me.GridColumn39.VisibleIndex = 11
         '
         'GridColumn40
         '
@@ -2311,7 +2331,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn40.OptionsColumn.ReadOnly = True
         Me.GridColumn40.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "DOPE_PrecioTotVta", "{0:###,##0.00}")})
         Me.GridColumn40.Visible = True
-        Me.GridColumn40.VisibleIndex = 11
+        Me.GridColumn40.VisibleIndex = 12
         '
         'GridColumn41
         '
@@ -2326,7 +2346,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn73.Name = "GridColumn73"
         Me.GridColumn73.OptionsColumn.ReadOnly = True
         Me.GridColumn73.Visible = True
-        Me.GridColumn73.VisibleIndex = 12
+        Me.GridColumn73.VisibleIndex = 13
         '
         'GridColumn56
         '
@@ -2335,7 +2355,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn56.Name = "GridColumn56"
         Me.GridColumn56.OptionsColumn.ReadOnly = True
         Me.GridColumn56.Visible = True
-        Me.GridColumn56.VisibleIndex = 13
+        Me.GridColumn56.VisibleIndex = 14
         '
         'GridColumn58
         '
@@ -2356,7 +2376,7 @@ Partial Class LogisticOperationRegisterForm
         Me.GridColumn71.Name = "GridColumn71"
         Me.GridColumn71.OptionsColumn.ReadOnly = True
         Me.GridColumn71.Visible = True
-        Me.GridColumn71.VisibleIndex = 14
+        Me.GridColumn71.VisibleIndex = 15
         '
         'XtraTabPage3
         '
@@ -3108,6 +3128,7 @@ Partial Class LogisticOperationRegisterForm
         CType(Me.gcChangeControlRelated, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cmsChangeControl.ResumeLayout(False)
         CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3411,4 +3432,6 @@ Partial Class LogisticOperationRegisterForm
     Friend WithEvents GridColumn62 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents tsmiInvoiceBillsCreate As ToolStripMenuItem
     Friend WithEvents tsmiInvoiceBillsVoid As ToolStripMenuItem
+    Friend WithEvents GridColumn43 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
 End Class

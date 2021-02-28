@@ -68,6 +68,9 @@ Public Class LogisticOperationQueryForm
     End Sub
 
     Private Sub bbiEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEdit.ItemClick
+        If GridView1.RowCount = 0 Then
+            Return
+        End If
         Dim oEditForm As New LogisticOperationRegisterForm
         oEditForm.InternalCode = GridView1.GetFocusedRowCellValue("COPE_Codigo")
         oEditForm.drSource = GridView1.GetFocusedDataRow
@@ -309,7 +312,7 @@ Public Class LogisticOperationQueryForm
             End If
             OpeList += IIf(r = 0, "", ",") & oRow("COPE_Codigo").ToString
         Next
-        oForm.OperationsList = OpeList
+        oForm.InternalCodeList = OpeList
         oForm.CodigoMoneda = CodMon
         oForm.oProcessType = "PreInvoicing"
         oForm.oQuerySource = "OP"
@@ -339,19 +342,6 @@ Public Class LogisticOperationQueryForm
             End If
         End If
     End Sub
-
-    Friend Function RowSelectedCount(oGridView As GridView) As Integer
-        Dim iChecked As Integer = 0
-        For i = 0 To oGridView.RowCount - 1
-            If IsDBNull(oGridView.GetRowCellValue(i, "Checked")) Then
-                Continue For
-            End If
-            If oGridView.GetRowCellValue(i, "Checked") Then
-                iChecked += 1
-            End If
-        Next
-        Return iChecked
-    End Function
 
     Private Sub SelectRowsByType(oGridView As GridView, SelectType As Integer)
         For i = 0 To oGridView.RowCount - 1

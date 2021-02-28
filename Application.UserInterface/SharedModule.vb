@@ -120,5 +120,17 @@ Module SharedModule
         Next
     End Sub
 
+    Friend Function RowSelectedCount(oGridView As GridView) As Integer
+        Dim iChecked As Integer = 0
+        For i = 0 To oGridView.RowCount - 1
+            If IsDBNull(oGridView.GetRowCellValue(i, "Checked")) Then
+                Continue For
+            End If
+            If oGridView.GetRowCellValue(i, "Checked") Then
+                iChecked += 1
+            End If
+        Next
+        Return iChecked
+    End Function
 
 End Module

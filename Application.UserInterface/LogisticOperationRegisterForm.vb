@@ -379,7 +379,9 @@ Public Class LogisticOperationRegisterForm
         GridView1.BestFitColumns()
         'End If
         'Change Controls
+        dsOperationRelated.Tables(6).Columns.Add("Checked", GetType(Boolean)).DefaultValue = False
         dtOriginalChangeControl = dsOperationRelated.Tables(6).Copy()
+        'dtOriginalChangeControl.Columns.Add("Checked", GetType(Boolean)).DefaultValue = False
         gcChangeControlRelated.DataSource = dsOperationRelated.Tables(6)
         GridView5.BestFitColumns()
         'End If
@@ -841,7 +843,52 @@ Public Class LogisticOperationRegisterForm
     End Sub
 
     Private Sub tsmiInvoiceBillsCreate_Click(sender As Object, e As EventArgs) Handles tsmiInvoiceBillsCreate.Click
+        Validate()
+        If GridView1.RowCount = 0 Then
+            Return
+        End If
+        Dim dtRegistered As New DataTable
+        Dim iCurrentRow As Integer = 0
+        Dim iSelected As Integer = RowSelectedCount(GridView5)
+        If iSelected = 0 Then
+            XtraMessageBox.Show("Debe seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+        Dim oForm As New PreInvoicingPopupForm
+        Dim OpeList As String = ""
+        Dim CodMon As String = ""
+        Dim dtQuery As New DataTable
+        dtQuery = dsOperationRelated.Tables(6).Select("Checked = 1").CopyToDataTable
+        For r = 0 To dtQuery.Rows.Count - 1
+            Dim oRow As DataRow = dtQuery.Rows(r)
+            If r = 0 Then
+                CodMon = oRow("TIPO_CodMND")
+            End If
+            OpeList += IIf(r = 0, "", ",") & oRow("COPE_Codigo").ToString
+        Next
+        oForm.InternalCodeList = OpeList
+        oForm.CodigoMoneda = CodMon
+        oForm.oProcessType = "PreInvoicing"
+        oForm.oQuerySource = "OP"
+        oForm.IsMultiline = True
+        If oForm.ShowDialog = DialogResult.OK Then
+            'bbiSearch.PerformClick()
+        End If
+    End Sub
 
+    Private Sub tsmiInvoiceBillsVoid_Click(sender As Object, e As EventArgs) Handles tsmiInvoiceBillsVoid.Click
+        If XtraMessageBox.Show("Está seguro de anular la operación seleccionada?", "Confirmación", MessageBoxButtons.YesNo) <> DialogResult.Yes Then
+            Return
+        End If
+        Try
+            If oAppService.ExecuteSQLNonQuery("EXEC NextSoft.dgp.paActualizaEstadoOperacionLogistica " & GridView1.GetFocusedRowCellValue("COPE_Codigo").ToString & ", " & GridView1.GetFocusedRowCellValue("COPE_Version").ToString & ", '004'") Then
+                XtraMessageBox.Show("La operación ha sido anulada satisfactoriamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                XtraMessageBox.Show("Ocurrió un error al anular la operación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            XtraMessageBox.Show("Ocurrió un error al anular la operación." & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub gcServiceRelated_ProcessGridKey(sender As Object, e As KeyEventArgs) Handles gcServiceRelated.ProcessGridKey

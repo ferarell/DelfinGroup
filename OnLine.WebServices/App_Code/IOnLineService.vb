@@ -28,8 +28,10 @@ Public Interface IOnLineService
     Function VoyageQuery(ByVal Days As Integer) As DataTable
 
     <OperationContract()>
-    Function VoyageQueryList() As List(Of VoyageQueryDTO)
+    Function VoyageQueryList() As List(Of VoyageListDTO)
 
+    <OperationContract()>
+    Function TariffQueryList() As List(Of TariffListDTO)
 
 #End Region
 

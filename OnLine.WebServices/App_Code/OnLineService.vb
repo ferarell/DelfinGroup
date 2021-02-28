@@ -50,8 +50,7 @@ Public Class OnLineService
 
 #End Region
 
-#Region "Extranet"
-
+#Region "Web"
     Public Function VoyageQuery(ByVal Days As Integer) As DataTable Implements IOnLineService.VoyageQuery
         Dim dtResult As New DataTable
         Dim oDataAccess As New DataAccess
@@ -64,15 +63,15 @@ Public Class OnLineService
 
     End Function
 
-    Public Property VoyageList() As New List(Of VoyageQueryDTO)
+    Public Property VoyageList() As New List(Of VoyageListDTO)
 
-    Public Function VoyageQueryList() As List(Of VoyageQueryDTO) Implements IOnLineService.VoyageQueryList
+    Public Function VoyageQueryList() As List(Of VoyageListDTO) Implements IOnLineService.VoyageQueryList
         Dim dtResult As New DataTable
         Dim oDataAccess As New DataAccess
         dtResult = oDataAccess.ExecuteSQL("EXEC NextSoft.web.upVoyageList ").Tables("Result")
         Try
             For Each row As DataRow In dtResult.Rows
-                VoyageList.Add(New VoyageQueryDTO With {.CodigoNave = IIf(row("CodigoNave") Is DBNull.Value, "", row("CodigoNave")),
+                VoyageList.Add(New VoyageListDTO With {.CodigoNave = IIf(row("CodigoNave") Is DBNull.Value, "", row("CodigoNave")),
                                                         .ETA_ETD = IIf(row("ETA_ETD") Is DBNull.Value, Nothing, row("ETA_ETD")),
                                                         .FechaCierreDireccionamiento = IIf(row("FechaCierreDireccionamiento") Is DBNull.Value, Nothing, row("FechaCierreDireccionamiento")),
                                                         .NombreNave = IIf(row("NombreNave") Is DBNull.Value, "", row("NombreNave")),
@@ -87,6 +86,9 @@ Public Class OnLineService
         End Try
 
     End Function
+#End Region
+
+#Region "Extranet"
 
     Public Function InvoicingQuery(ByVal CustomerCode As Integer, ByVal DateFrom As Date, ByVal DateTo As Date) As DataTable Implements IOnLineService.InvoicingQuery
         Dim dtResult As New DataTable
@@ -336,4 +338,25 @@ Public Class OnLineService
 
 #End Region
 
+#Region "Consulta Tarifario"
+    Public Property TariffList() As New List(Of TariffListDTO)
+
+    Public Function TariffQueryList() As List(Of TariffListDTO) Implements IOnLineService.TariffQueryList
+        Dim dtResult As New DataTable
+        Dim oDataAccess As New DataAccess
+        dtResult = oDataAccess.ExecuteSQL("EXEC NextSoft.web.upGetPublicTariff ").Tables("Result")
+        Try
+            For Each row As DataRow In dtResult.Rows
+                TariffList.Add(New TariffListDTO With {.Concepto = IIf(row("Concepto") Is DBNull.Value, "", row("Concepto")),
+                                                        .BaseCobro = IIf(row("BaseCobro") Is DBNull.Value, Nothing, row("BaseCobro")),
+                                                        .Moneda = IIf(row("Moneda") Is DBNull.Value, Nothing, row("Moneda")),
+                                                        .Tarifa = row("Tarifa")})
+            Next row
+            Return TariffList
+        Catch ex As Exception
+            Throw
+        End Try
+
+    End Function
+#End Region
 End Class

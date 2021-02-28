@@ -259,29 +259,29 @@ namespace Delfin.Principal
 
             Item = Client.GetOneCab_Cotizacion_OV(Delfin.Controls.Entorno.ItemEmpresa.EMPR_Codigo, Delfin.Controls.Entorno.ItemSucursal.SUCR_Codigo, ItemLView.CCOT_Numero, ItemLView.CCOT_Tipo);
 
-            ReportPath = System.Windows.Forms.Application.StartupPath + @"\Reportes\rptCOM007OrdenVentaExpo.rdlc";
+                //ReportPath = System.Windows.Forms.Application.StartupPath + @"\Reportes\rptCOM007OrdenVentaExpo.rdlc";
+                ReportPath = System.Windows.Forms.Application.StartupPath + @"\Reportes\rptCOM007OrdenVentaExpoNew.rdlc"; 
+                this.Parameters = new Microsoft.Reporting.WinForms.ReportParameter[18];
+                Parameters[0] = new Microsoft.Reporting.WinForms.ReportParameter("DOOV_MBL", (String.IsNullOrEmpty(Item.DOOV_MBL) ? "" : Item.DOOV_MBL.Trim()));
+                Parameters[1] = new Microsoft.Reporting.WinForms.ReportParameter("CCOT_NumDoc", Item.CCOT_NumDoc);
+                Parameters[2] = new Microsoft.Reporting.WinForms.ReportParameter("ENTC_NomCliente", Item.ENTC_NomCliente);
+                Parameters[3] = new Microsoft.Reporting.WinForms.ReportParameter("NAVE_Nombre", Item.NAVE_Nombre);
+                Parameters[4] = new Microsoft.Reporting.WinForms.ReportParameter("NVIA_FecETDMaster", Item.NVIA_FecETDMaster.HasValue ? Item.NVIA_FecETDMaster.Value.ToShortDateString() : "");
+                Parameters[5] = new Microsoft.Reporting.WinForms.ReportParameter("NVIA_FecCutOff", Item.NVIA_FecCutOff.HasValue ? Item.NVIA_FecCutOff.Value.ToString() : "");
+                Parameters[6] = new Microsoft.Reporting.WinForms.ReportParameter("DCOT_Producto", Item.DCOT_Producto);
+                Parameters[7] = new Microsoft.Reporting.WinForms.ReportParameter("PUER_NombreOrigen", Item.PUER_NombreOrigen);
+                Parameters[8] = new Microsoft.Reporting.WinForms.ReportParameter("PUER_NombreDestino", Item.PUER_NombreDestino);
+                Parameters[9] = new Microsoft.Reporting.WinForms.ReportParameter("DCOT_Peso", Item.DCOT_Peso.HasValue ? Item.DCOT_Peso.Value.ToString("0,0.00") + " TN APROX." : "0.00 TN APROX.");
+                Parameters[10] = new Microsoft.Reporting.WinForms.ReportParameter("PACK_DescC", Item.PACK_DescC);
+                Parameters[11] = new Microsoft.Reporting.WinForms.ReportParameter("DCOT_Cantidad", Item.DCOT_Cantidad.HasValue ? Convert.ToInt32(Item.DCOT_Cantidad.Value).ToString() : "");
+                Parameters[12] = new Microsoft.Reporting.WinForms.ReportParameter("CCOT_PagoMBL", String.IsNullOrEmpty(Item.CCOT_PagoMBL) ? "" : Item.CCOT_PagoMBL == "C" ? "COLLECT" : "PREPAID");
+                Parameters[13] = new Microsoft.Reporting.WinForms.ReportParameter("DCOT_PrecioUniVenta", Item.DCOT_PrecioUniVenta.HasValue ? Item.DCOT_PrecioUniVenta.Value.ToString("0.00") : "");
+                Parameters[14] = new Microsoft.Reporting.WinForms.ReportParameter("ENTC_NomAgentePort", Item.ENTC_NomAgentePort);
+                Parameters[15] = new Microsoft.Reporting.WinForms.ReportParameter("TIPO_DescDTM", Item.ENTC_NomDepTemporal);
+                Parameters[16] = new Microsoft.Reporting.WinForms.ReportParameter("DOOV_MBL2", Item.DDOV_NroBooking);
+                Parameters[17] = new Microsoft.Reporting.WinForms.ReportParameter("ENTC_NomEjecutivo", Item.ENTC_NomEjecutivo);
 
-            this.Parameters = new Microsoft.Reporting.WinForms.ReportParameter[18];
-            Parameters[0] = new Microsoft.Reporting.WinForms.ReportParameter("DOOV_MBL", (String.IsNullOrEmpty(Item.DOOV_MBL) ? "" : Item.DOOV_MBL.Trim()));
-            Parameters[1] = new Microsoft.Reporting.WinForms.ReportParameter("CCOT_NumDoc", Item.CCOT_NumDoc);
-            Parameters[2] = new Microsoft.Reporting.WinForms.ReportParameter("ENTC_NomCliente", Item.ENTC_NomCliente);
-            Parameters[3] = new Microsoft.Reporting.WinForms.ReportParameter("NAVE_Nombre", Item.NAVE_Nombre);
-            Parameters[4] = new Microsoft.Reporting.WinForms.ReportParameter("NVIA_FecETDMaster", Item.NVIA_FecETDMaster.HasValue ? Item.NVIA_FecETDMaster.Value.ToShortDateString() : "");
-            Parameters[5] = new Microsoft.Reporting.WinForms.ReportParameter("NVIA_FecCutOff", Item.NVIA_FecCutOff.HasValue ? Item.NVIA_FecCutOff.Value.ToString() : "");
-            Parameters[6] = new Microsoft.Reporting.WinForms.ReportParameter("DCOT_Producto", Item.DCOT_Producto);
-            Parameters[7] = new Microsoft.Reporting.WinForms.ReportParameter("PUER_NombreOrigen", Item.PUER_NombreOrigen);
-            Parameters[8] = new Microsoft.Reporting.WinForms.ReportParameter("PUER_NombreDestino", Item.PUER_NombreDestino);
-            Parameters[9] = new Microsoft.Reporting.WinForms.ReportParameter("DCOT_Peso", Item.DCOT_Peso.HasValue ? Item.DCOT_Peso.Value.ToString("0,0.00") + " TN APROX." : "0.00 TN APROX.");
-            Parameters[10] = new Microsoft.Reporting.WinForms.ReportParameter("PACK_DescC", Item.PACK_DescC);
-            Parameters[11] = new Microsoft.Reporting.WinForms.ReportParameter("DCOT_Cantidad", Item.DCOT_Cantidad.HasValue ? Convert.ToInt32(Item.DCOT_Cantidad.Value).ToString() : "");
-            Parameters[12] = new Microsoft.Reporting.WinForms.ReportParameter("CCOT_PagoMBL", String.IsNullOrEmpty(Item.CCOT_PagoMBL) ? "" : Item.CCOT_PagoMBL == "C" ? "COLLECT" : "PREPAID");
-            Parameters[13] = new Microsoft.Reporting.WinForms.ReportParameter("DCOT_PrecioUniVenta", Item.DCOT_PrecioUniVenta.HasValue ? Item.DCOT_PrecioUniVenta.Value.ToString("0.00") : "");
-            Parameters[14] = new Microsoft.Reporting.WinForms.ReportParameter("ENTC_NomAgentePort", Item.ENTC_NomAgentePort);
-            Parameters[15] = new Microsoft.Reporting.WinForms.ReportParameter("TIPO_DescDTM", Item.ENTC_NomDepTemporal);
-            Parameters[16] = new Microsoft.Reporting.WinForms.ReportParameter("DOOV_MBL2", Item.DDOV_NroBooking);
-            Parameters[17] = new Microsoft.Reporting.WinForms.ReportParameter("ENTC_NomEjecutivo", Item.ENTC_NomEjecutivo);
-
-            RView.ShowItems();
+                RView.ShowItems();
                 GenerarEventosTareas("Se Imprime Booking", PARA_BOOKING_GENERADO.PARA_Valor, Item);
             }
          catch (Exception ex)

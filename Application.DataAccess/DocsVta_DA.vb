@@ -158,6 +158,7 @@ Public Class DocsVta_DA
 
                         .Add(New SqlParameter("@pdecDDOV_ValorTotal", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DDOV_ValorTotal")
                         .Add(New SqlParameter("@pdecDDOV_ValorTotalD", SqlDbType.Decimal) With {.Precision = 15, .Scale = 2}).Value = oRowD("DDOV_ValorTotalD")
+                        .Add("@DOPE_Item_List", SqlDbType.VarChar, 100).Value = oRowD("ItemList")
 
                     End With
                     Command.ExecuteNonQuery()

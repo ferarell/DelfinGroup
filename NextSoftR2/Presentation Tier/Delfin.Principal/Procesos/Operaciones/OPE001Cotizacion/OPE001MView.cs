@@ -12,19 +12,21 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Telerik.WinControls.UI;
 using DevExpress.XtraEditors;
+using ApplicationForm.IntegrationService;
 
 namespace Delfin.Principal
 {
    public partial class OPE001MView : Form, IOPE001MView
    {
         Principal.AppService.DelfinServiceClient oAppService = new Principal.AppService.DelfinServiceClient();
+        Principal.IntegrationService.IntegradorSBOClient oIntegrationService = new IntegrationService.IntegradorSBOClient();
 
       #region [ Variables ]
 
-      #endregion
+        #endregion
 
-      #region [ Formulario ]
-      public OPE001MView()
+        #region [ Formulario ]
+        public OPE001MView()
       {
          InitializeComponent();
          try
@@ -8520,6 +8522,11 @@ namespace Delfin.Principal
             int _CCCT_Codigo = Convert.ToInt32(grdItemsServiciosChangeControl.CurrentRow.Cells["CCCT_Codigo"].Value);
             if (_CCCT_Codigo == 0)
             { return; }
+            if (grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value.ToString() == "")
+            {
+                if (GetDocSAP() == true)
+                    return;
+            }
             DataSet dsQuery = new DataSet();
             ApplicationForm.JournalEntryViewerForm oJournalEntryViewerForm = new ApplicationForm.JournalEntryViewerForm();           
             DateTime _SCOT_FechaOperacion = Convert.ToDateTime(grdItemsServiciosChangeControl.CurrentRow.Cells["SCOT_FechaOperacion"].Value);
@@ -8531,6 +8538,31 @@ namespace Delfin.Principal
                 grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value = oJournalEntryViewerForm.sDocSAP;
             }
             grdItemsServiciosChangeControl_SelectionChanged(sender, e);
+        }
+
+        private bool GetDocSAP()
+        {
+            bool bResult = false;
+            Respuesta oRespuesta = new Respuesta();
+            //List<Respuesta> listRespuestas = new List<Respuesta>();
+            int iCodigoViaje = Convert.ToInt32(grdItemsServiciosChangeControl.CurrentRow.Cells["NVIA_Codigo"].Value); //GridView1.GetFocusedRowCellValue("NVIA_Codigo");
+            string sLineaNegocio = grdItemsServiciosChangeControl.CurrentRow.Cells["CONS_DescLNG"].Value.ToString(); // GridView1.GetFocusedRowCellValue("CONS_DescLNG");
+            oIntegrationService.VerificarExistenciaDocumento("JE", "", "", "", "", "", iCodigoViaje.ToString(), sLineaNegocio);
+            if (oRespuesta.Existe == "SI")
+            {
+                string DocNumber = oRespuesta.d.results[0].Number.ToString();
+                int DocCode = oRespuesta.d.results[0].TransId;
+                bResult = true;
+                if (!oAppService.ExecuteSQLNonQuery("EXEC NextSoft.sap.upUpdateSynchronizedJournalEntry " + DocCode.ToString() + ",'" + DocNumber + "','JournalEntry','COM_NaveViaje'," + iCodigoViaje.ToString() + ",'" + grdItemsServiciosChangeControl.CurrentRow.Cells["CONS_DescLNG"].Value.ToString() + "',NULL,'" + Presenter.Session.UserName + "'"))
+                {
+                    XtraMessageBox.Show("Ocurrió un error al actualizar la tabla de control de asientos SAP", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+                grdItemsServiciosChangeControl.CurrentRow.Cells["DocumentoSAP"].Value = DocNumber;
+                //GridView1.SetFocusedRowCellValue("DocumentoSAP", DocNumber);
+                XtraMessageBox.Show("La provisión que intenta generar ya existe en SAP, por favor verifique el documento SAP asignado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            return bResult;
         }
 
         private void grdItemsServiciosChangeControl_SelectionChanged(object sender, EventArgs e)

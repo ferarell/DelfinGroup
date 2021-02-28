@@ -1670,7 +1670,7 @@
             this.tabServiciosAdicionales.Location = new System.Drawing.Point(0, 284);
             this.tabServiciosAdicionales.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabServiciosAdicionales.Name = "tabServiciosAdicionales";
-            this.tabServiciosAdicionales.SelectedIndex = 0;
+            this.tabServiciosAdicionales.SelectedIndex = 1;
             this.tabServiciosAdicionales.SelectedTabColor = System.Drawing.Color.SteelBlue;
             this.tabServiciosAdicionales.Size = new System.Drawing.Size(1105, 210);
             this.tabServiciosAdicionales.TabIndex = 2;

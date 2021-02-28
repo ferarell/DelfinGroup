@@ -419,28 +419,28 @@ Public Class MailCargoNoticeForm
                     _TipoAviso = "AVISO DE ARRIBO"
                     If oRow("EsLCL") = 0 Then 'FCL
                         If oRow("Puerto").ToString.Contains("ARICA") Then 'Arica
-                            oDocumento.RptFile = _RptPath & "AvisoArriboMaritimoFcl_CLARI_New.rpt"
+                            oDocumento.RptFile = _RptPath & "AvisoArriboMaritimoFcl_CLARI.rpt"
                             richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoFcl_CLARI.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
                         Else 'Todo Destino
-                            oDocumento.RptFile = _RptPath & "AvisoArriboMaritimoFcl_New.rpt"
+                            oDocumento.RptFile = _RptPath & "AvisoArriboMaritimoFcl.rpt"
                             richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoFcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
                         End If
                     End If
                     If oRow("EsLCL") = 1 Then 'LCL
                         'Todo Destino
-                        oDocumento.RptFile = _RptPath & "AvisoArriboMaritimoLcl_New.rpt"
+                        oDocumento.RptFile = _RptPath & "AvisoArriboMaritimoLcl.rpt"
                         richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoLcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
                     End If
                 ElseIf oRow("CONS_CodRGM") = "002" Then 'Expo
                     _LabelNotice = "Aviso de Zarpe de Exportación Marítima"
                     _TipoAviso = "AVISO DE ZARPE"
                     If oRow("EsLCL") = 0 Then 'FCL
-                        oDocumento.RptFile = _RptPath & "AvisoZarpeMaritimoFcl_New.rpt"
+                        oDocumento.RptFile = _RptPath & "AvisoZarpeMaritimoFcl.rpt"
                         richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosExpoFcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
                     End If
                     If oRow("EsLCL") = 1 Then 'LCL
                         'Todo Destino
-                        oDocumento.RptFile = _RptPath & "AvisoZarpeMaritimoLcl_New.rpt"
+                        oDocumento.RptFile = _RptPath & "AvisoZarpeMaritimoLcl.rpt"
                         richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosExpoLcl.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
                     End If
                 End If
@@ -451,23 +451,23 @@ Public Class MailCargoNoticeForm
                     _LabelNotice = "Aviso de Arribo de Importación Aérea"
                     _TipoAviso = "AVISO DE ARRIBO"
                     If oRow("EsLCL") = 0 Then 'FCL
-                        oDocumento.RptFile = _RptPath & "AvisoArriboAereo_New.rpt"
+                        oDocumento.RptFile = _RptPath & "AvisoArriboAereo.rpt"
                         richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoAereo.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
                     End If
                     If oRow("EsLCL") = 1 Then 'LCL
-                        oDocumento.RptFile = _RptPath & "AvisoArriboAereo_New.rpt"
+                        oDocumento.RptFile = _RptPath & "AvisoArriboAereo.rpt"
                         richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosImpoAereo.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
                     End If
                 ElseIf oRow("CONS_CodRGM") = "002" Then 'Expo
                     _LabelNotice = "Aviso de Salida"
                     _TipoAviso = "AVISO DE SALIDA"
                     If oRow("EsLCL") = 0 Then 'FCL
-                        oDocumento.RptFile = _RptPath & "AvisoSalidaAereo_New.rpt"
+                        oDocumento.RptFile = _RptPath & "AvisoSalidaAereo.rpt"
                         richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosExpoAereo.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
                     End If
                     If oRow("EsLCL") = 1 Then 'LCL
                         'Todo Destino
-                        oDocumento.RptFile = _RptPath & "AvisoSalidaAereo_New.rpt"
+                        oDocumento.RptFile = _RptPath & "AvisoSalidaAereo.rpt"
                         richEditControl.LoadDocument(IO.Directory.GetCurrentDirectory & "\Plantillas\ContenidoCorreoAvisosExpoAereo.htm", DevExpress.XtraRichEdit.DocumentFormat.Html)
                     End If
                 End If
