@@ -83,7 +83,7 @@ Public Interface IDelfinService
 
 
     <OperationContract>
-    Function GetImpresionFEDSDocsVta(EMPR_Codigo As Integer, DOCV_Codigo As Integer, AUDI_UsrMod As String, Serie As String, SUCR_Codigo As Integer, Email As String, CCCT_Codigo As Integer) As DataSet
+    Function GetImpresionFEDSDocsVta(EMPR_Codigo As Integer, DOCV_Codigo As Integer, AUDI_UsrMod As String, Serie As String, SUCR_Codigo As Integer, Email As String, ByRef CCCT_Codigo As Integer) As DataSet
 
 
 

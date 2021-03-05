@@ -1805,7 +1805,7 @@ Public Class DelfinService
 
 
 
-    Public Function GetImpresionFEDSDocsVta(EMPR_Codigo As Integer, DOCV_Codigo As Integer, AUDI_UsrMod As String, Serie As String, SUCR_Codigo As Integer, Email As String, CCCT_Codigo As Integer) As DataSet Implements IDelfinService.GetImpresionFEDSDocsVta
+    Public Function GetImpresionFEDSDocsVta(EMPR_Codigo As Integer, DOCV_Codigo As Integer, AUDI_UsrMod As String, Serie As String, SUCR_Codigo As Integer, Email As String, ByRef CCCT_Codigo As Integer) As DataSet Implements IDelfinService.GetImpresionFEDSDocsVta
 
         Dim dsResultado As DataSet = New DataSet()
         Dim x_generado As Boolean
@@ -1857,7 +1857,7 @@ Public Class DelfinService
                 Adapter.SelectCommand = Command
                 Adapter.Fill(dsResultado)
 
-                If dsResultado IsNot Nothing > 0 Then
+                If dsResultado IsNot Nothing Then
                     If dsResultado.Tables.Count > 0 Then
 
                         Dim _x_generado As Boolean
@@ -1885,16 +1885,16 @@ Public Class DelfinService
                 'FACTURACION ELECTRONICA
 
 
-                Dim facturacionElectronica As New eFacturacionElectronica
+                'Dim facturacionElectronica As New eFacturacionElectronica
 
-                Dim dtResultadoFacturacionElectronica As New DataTable()
-                dtResultadoFacturacionElectronica = facturacionElectronica.ProcesarFacturacionElectronica(dsResultado.Tables(0).Rows(0)("DOCV_Codigo").ToString(), Email, AUDI_UsrMod)
-                dsResultado.Tables.Add(dtResultadoFacturacionElectronica)
-                Dim Resultado As String = dtResultadoFacturacionElectronica.Rows(0)("resultado").ToString()
-                Dim ResultadoDetalle As String = dtResultadoFacturacionElectronica.Rows(0)("mensajeerror").ToString()
-                If Resultado = "ERROR" Then
-                    Throw New System.Exception(ResultadoDetalle)
-                End If
+                'Dim dtResultadoFacturacionElectronica As New DataTable()
+                'dtResultadoFacturacionElectronica = facturacionElectronica.ProcesarFacturacionElectronica(dsResultado.Tables(0).Rows(0)("DOCV_Codigo").ToString(), Email, AUDI_UsrMod)
+                'dsResultado.Tables.Add(dtResultadoFacturacionElectronica)
+                'Dim Resultado As String = dtResultadoFacturacionElectronica.Rows(0)("resultado").ToString()
+                'Dim ResultadoDetalle As String = dtResultadoFacturacionElectronica.Rows(0)("mensajeerror").ToString()
+                'If Resultado = "ERROR" Then
+                '    Throw New System.Exception(ResultadoDetalle)
+                'End If
 
 
 
