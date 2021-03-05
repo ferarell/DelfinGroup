@@ -1,4 +1,8 @@
-﻿Imports DevExpress.XtraEditors
+﻿Imports System.IO
+Imports System.Net.Mail
+Imports CrystalDecisions.Windows.Forms
+Imports DevExpress.XtraEditors
+Imports DevExpress.XtraRichEdit
 Imports DevExpress.XtraSplashScreen
 Imports eFactDelfin
 Imports IntegrationService
@@ -92,10 +96,166 @@ Public Class ElectronicInvoicingForm
     End Sub
 
     Private Sub bbiGenerate_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiGenerate.ItemClick
+        Dim TipoDocumento As String = Convert.ToString(GridView1.GetFocusedRowCellValue("TIPO_CodTDO"))
+        Dim DOCV_Serie As String = Convert.ToString(GridView1.GetFocusedRowCellValue("DOCV_Serie"))
+        Dim DOCV_Codigo As Integer = Convert.ToInt32(GridView1.GetFocusedRowCellValue("DOCV_Codigo"))
+        Dim emailFE As String = Convert.ToString(GridView1.GetFocusedRowCellValue("emailFE"))
+        Dim CCCT_Codigo As Integer = Convert.ToInt32(GridView1.GetFocusedRowCellValue("CCCT_Codigo"))
+        Dim Estado As String = Convert.ToString(GridView1.GetFocusedRowCellValue("DOCV_EstadoStr"))
 
+
+
+
+        If Estado.Equals("ANULADO") Then
+            XtraMessageBox.Show("No se puede imprimir el item anulado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+
+        If emailFE.Equals("") Then
+            XtraMessageBox.Show("Debe Especificar un Email para el Cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+        'If Not ItemDocsVta.DOCV_Estado.Equals("I") Then
+
+        '    If Not ValidarTipoCambio(Session.Fecha.Year.ToString() + Session.Fecha.Month.ToString().PadLeft(2, "0"c).Trim() + Session.Fecha.Day.ToString().PadLeft(2, "0"c).Trim()) Then
+        '        Return
+        '    End If
+        'End If
+
+
+
+        Dim DSReporte As DataSet = New DataSet()
+        If CInt(TipoDocumento) < 100 Then
+            DSReporte = oAppService.GetImpresionFEDSDocsVta(1, DOCV_Codigo, "sistemas", DOCV_Serie, 1, emailFE, CCCT_Codigo)
+            'If DSReporte IsNot Nothing Then
+
+            '    If DSReporte.Tables(2) IsNot Nothing Then
+            '        Dim dtFacturacionElectronica As DataTable = New DataTable()
+            '        dtFacturacionElectronica = DSReporte.Tables(2)
+            '        Dim pathpdf As String = dtFacturacionElectronica.Rows(0)("pathpdf").ToString()
+            '        Dim resultado As String = dtFacturacionElectronica.Rows(0)("resultado").ToString()
+            '        Dim mensajeerror As String = dtFacturacionElectronica.Rows(0)("mensajeerror").ToString()
+
+            '        If resultado = "OK" Then
+            '            Dim dr As DialogResult = New DialogResult()
+            '            Dim oForm As New PdfViewerForm
+            '            oForm.pathpdf = pathpdf
+            '            oForm.ShowDialog()
+            '        Else
+            '            XtraMessageBox.Show(mensajeerror, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            '        End If
+            '    End If
+            'End If
+        Else
+            Dim Directorio As String = "D:\RecibosCaja\" 'My.Settings.pathpdfRecibos
+            Dim oForm As New PdfViewerForm
+            Dim RptFile As String = "ReciboCaja.rpt"
+            DSReporte = oAppService.GetImpresionRC(1, CCCT_Codigo, "sistemas")
+
+            If DSReporte IsNot Nothing Then
+                Dim drPrint As CrystalDecisions.CrystalReports.Engine.ReportDocument = New CrystalDecisions.CrystalReports.Engine.ReportDocument()
+                Dim dtPrint As DataTable = New DataTable()
+                dtPrint = DSReporte.Tables(0)
+
+                Dim oRow As DataRow = dtPrint.Rows(0)
+                Dim sFile As String = Directorio & "RC-" + oRow("DOCV_Serie") & "-" + oRow("DOCV_Numero") & ".pdf"
+
+                Try
+                    drPrint.FileName = Directory.GetCurrentDirectory() & "\Reportes\" & RptFile
+                    drPrint.SetDataSource(dtPrint)
+                    Dim aParams As ArrayList = New ArrayList()
+                    Dim Auditoria As String = "Usuario: " + "sistemas" + "   Fecha: " + DateTime.Now.ToString()
+                    aParams.Add("")
+                    aParams.Add("")
+                    aParams.Add(Auditoria)
+
+
+                    For p As Integer = 0 To aParams.Count - 1
+                        drPrint.SetParameterValue(p, aParams(p))
+                    Next
+
+                    If Not File.Exists(sFile) Then
+                        drPrint.ExportToDisk(CrystalDecisions.[Shared].ExportFormatType.PortableDocFormat, sFile)
+                        'SendMessage(sFile, oRow, emailFE)
+                    End If
+
+                    'CrystalReportViewer.ReportSource = drPrint
+                Catch ex As Exception
+                    DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+                End Try
+
+
+                oForm.pathpdf = sFile 'Directorio & "RC-" & GridView1.GetFocusedRowCellValue("DOCV_Serie") & "-" & GridView1.GetFocusedRowCellValue("DOCV_Numero") & ".pdf"
+                oForm.ShowDialog()
+            End If
+
+        End If
     End Sub
 
+    Private Sub SendMessage(ByVal sFile As String, ByVal drSource As DataRow, eMail As String)
+        Dim oSendMail As MessageSender.SendMessage = New MessageSender.SendMessage()
+        Dim _message As MailMessage = New MailMessage()
+        Dim _BodyHtml As RichEditControl = New RichEditControl()
+        _BodyHtml.LoadDocument("MensajeEmisionRecibo.doc", DevExpress.XtraRichEdit.DocumentFormat.Doc)
+        _message.Subject = drSource("TipoDocumento") & " Nº " + drSource("DOCV_Serie") & "-" + drSource("DOCV_Numero")
+        _message.From = New MailAddress("delfin@delfingroupco.com.pe", "Delfin Group Co. SAC")
+        _message.IsBodyHtml = True
+        _message.Body = _BodyHtml.HtmlText
+        _message.Priority = MailPriority.Normal
+        _message.[To].Add(eMail)
+        '_message.To.Add("ferarell@hotmail.com");
+        '_message.Bcc.Add("itsupport@delfingroupco.com.pe");
+        If Not Equals(sFile, Nothing) Then _message.Attachments.Add(New Attachment(sFile))
+        oSendMail.SendMail(_message, False, Nothing)
+    End Sub
+
+
+
     Private Sub bbiResend_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiResend.ItemClick
+        Dim DSReporte As DataSet = New DataSet()
+        Dim TipoDocumento As String = Convert.ToString(GridView1.GetFocusedRowCellValue("TIPO_CodTDO"))
+
+        Dim DOCV_Codigo As Integer = Convert.ToInt32(GridView1.GetFocusedRowCellValue("DOCV_Codigo"))
+        Dim emailFE As String = Convert.ToString(GridView1.GetFocusedRowCellValue("emailFE"))
+
+        Dim Estado As Integer = Convert.ToInt32(GridView1.GetFocusedRowCellValue("DOCV_EstadoStr"))
+
+        If Estado.Equals("ANULADO") Then
+            XtraMessageBox.Show("No se puede imprimir el item anulado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+
+        If emailFE.Equals("") Then
+            XtraMessageBox.Show("Debe Especificar un Email para el Cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+
+
+
+
+        DSReporte = oAppService.EnviarOSE(DOCV_Codigo, emailFE, "sistemas")
+        If DSReporte IsNot Nothing Then
+
+            If DSReporte.Tables(2) IsNot Nothing Then
+                Dim dtFacturacionElectronica As DataTable = New DataTable()
+                dtFacturacionElectronica = DSReporte.Tables(2)
+                Dim pathpdf As String = dtFacturacionElectronica.Rows(0)("pathpdf").ToString()
+                Dim resultado As String = dtFacturacionElectronica.Rows(0)("resultado").ToString()
+                Dim mensajeerror As String = dtFacturacionElectronica.Rows(0)("mensajeerror").ToString()
+
+                If resultado = "OK" Then
+                    Dim dr As DialogResult = New DialogResult()
+                    Dim oForm As New PdfViewerForm
+                    oForm.pathpdf = pathpdf
+                    oForm.ShowDialog()
+                Else
+                    XtraMessageBox.Show(mensajeerror, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        End If
 
     End Sub
 
@@ -148,9 +308,13 @@ Public Class ElectronicInvoicingForm
                 bbiResend.Enabled = False
             End If
         End If
-        If Not GridView1.GetFocusedRowCellValue("TIPO_CodTDO").ToString.Contains({"001", "003", "007"}) Then
-            bbiEdit.Enabled = False
+
+        If GridView1.RowCount > 0 Then
+            If Not GridView1.GetFocusedRowCellValue("TIPO_CodTDO").ToString.Contains({"001", "003", "007"}) Then
+                bbiEdit.Enabled = False
+            End If
         End If
+
         If Mid(GridView1.GetFocusedRowCellValue("DOCV_EstadoStr"), 1, 1) = "A" Then
             bbiEdit.Enabled = False
             bbiPreview.Enabled = False

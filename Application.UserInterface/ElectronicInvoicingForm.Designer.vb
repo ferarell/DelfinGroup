@@ -92,6 +92,7 @@ Partial Class ElectronicInvoicingForm
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemCheckEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
+        Me.GridColumn31 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -231,31 +232,35 @@ Partial Class ElectronicInvoicingForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(1001, 47)
+        Me.BarDockControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.BarDockControl1.Size = New System.Drawing.Size(1168, 57)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 399)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 491)
         Me.BarDockControl2.Manager = Me.bmActions
-        Me.BarDockControl2.Size = New System.Drawing.Size(1001, 29)
+        Me.BarDockControl2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.BarDockControl2.Size = New System.Drawing.Size(1168, 36)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 57)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 352)
+        Me.BarDockControl3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 434)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(1001, 47)
+        Me.BarDockControl4.Location = New System.Drawing.Point(1168, 57)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 352)
+        Me.BarDockControl4.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 434)
         '
         'BarButtonItem1
         '
@@ -332,7 +337,8 @@ Partial Class ElectronicInvoicingForm
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 57)
+        Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.Label3)
@@ -344,74 +350,75 @@ Partial Class ElectronicInvoicingForm
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.gcSalesInvoice)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(1001, 352)
-        Me.SplitContainerControl1.SplitterPosition = 53
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1168, 434)
+        Me.SplitContainerControl1.SplitterPosition = 65
         Me.SplitContainerControl1.TabIndex = 5
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(53, 17)
+        Me.Label3.Location = New System.Drawing.Point(62, 21)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 13)
+        Me.Label3.Size = New System.Drawing.Size(86, 17)
         Me.Label3.TabIndex = 43
         Me.Label3.Text = "Fecha Desde"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(252, 17)
+        Me.Label1.Location = New System.Drawing.Point(294, 21)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(67, 13)
+        Me.Label1.Size = New System.Drawing.Size(82, 17)
         Me.Label1.TabIndex = 44
         Me.Label1.Text = "Fecha Hasta"
         '
         'deDateTo
         '
         Me.deDateTo.EditValue = Nothing
-        Me.deDateTo.Location = New System.Drawing.Point(324, 14)
+        Me.deDateTo.Location = New System.Drawing.Point(378, 17)
         Me.deDateTo.Margin = New System.Windows.Forms.Padding(2)
         Me.deDateTo.Name = "deDateTo"
         Me.deDateTo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deDateTo.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deDateTo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret
-        Me.deDateTo.Size = New System.Drawing.Size(98, 20)
+        Me.deDateTo.Size = New System.Drawing.Size(114, 22)
         Me.deDateTo.TabIndex = 1
         '
         'deDateFrom
         '
         Me.deDateFrom.EditValue = Nothing
-        Me.deDateFrom.Location = New System.Drawing.Point(127, 14)
+        Me.deDateFrom.Location = New System.Drawing.Point(148, 17)
         Me.deDateFrom.Margin = New System.Windows.Forms.Padding(2)
         Me.deDateFrom.Name = "deDateFrom"
         Me.deDateFrom.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deDateFrom.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deDateFrom.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret
-        Me.deDateFrom.Size = New System.Drawing.Size(98, 20)
+        Me.deDateFrom.Size = New System.Drawing.Size(114, 22)
         Me.deDateFrom.TabIndex = 0
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(462, 17)
+        Me.Label4.Location = New System.Drawing.Point(539, 21)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.Size = New System.Drawing.Size(50, 17)
         Me.Label4.TabIndex = 42
         Me.Label4.Text = "Estado"
         '
         'lueStatus
         '
-        Me.lueStatus.Location = New System.Drawing.Point(507, 14)
+        Me.lueStatus.Location = New System.Drawing.Point(591, 17)
+        Me.lueStatus.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.lueStatus.Name = "lueStatus"
         Me.lueStatus.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueStatus.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
         Me.lueStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoEstadoFE", "Código", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DescripcionEstadoFE", "Descripción")})
         Me.lueStatus.Properties.NullText = ""
-        Me.lueStatus.Size = New System.Drawing.Size(98, 20)
+        Me.lueStatus.Size = New System.Drawing.Size(114, 22)
         Me.lueStatus.TabIndex = 2
         '
         'gcSalesInvoice
@@ -422,18 +429,21 @@ Partial Class ElectronicInvoicingForm
         Me.gcSalesInvoice.EmbeddedNavigator.Buttons.Edit.Visible = False
         Me.gcSalesInvoice.EmbeddedNavigator.Buttons.EndEdit.Visible = False
         Me.gcSalesInvoice.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.gcSalesInvoice.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gcSalesInvoice.Location = New System.Drawing.Point(0, 0)
         Me.gcSalesInvoice.MainView = Me.GridView1
+        Me.gcSalesInvoice.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.gcSalesInvoice.Name = "gcSalesInvoice"
         Me.gcSalesInvoice.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemCheckEdit2})
-        Me.gcSalesInvoice.Size = New System.Drawing.Size(1001, 294)
+        Me.gcSalesInvoice.Size = New System.Drawing.Size(1168, 363)
         Me.gcSalesInvoice.TabIndex = 171
         Me.gcSalesInvoice.UseEmbeddedNavigator = True
         Me.gcSalesInvoice.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn29, Me.GridColumn28, Me.GridColumn2, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15, Me.GridColumn16, Me.GridColumn17, Me.GridColumn18, Me.GridColumn30, Me.GridColumn19, Me.GridColumn20, Me.GridColumn21, Me.GridColumn22, Me.GridColumn23, Me.GridColumn24, Me.GridColumn25, Me.GridColumn26, Me.GridColumn27, Me.GridColumn3})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn29, Me.GridColumn28, Me.GridColumn2, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn15, Me.GridColumn16, Me.GridColumn17, Me.GridColumn18, Me.GridColumn30, Me.GridColumn19, Me.GridColumn20, Me.GridColumn21, Me.GridColumn22, Me.GridColumn23, Me.GridColumn24, Me.GridColumn25, Me.GridColumn26, Me.GridColumn27, Me.GridColumn3, Me.GridColumn31})
+        Me.GridView1.DetailHeight = 431
         Me.GridView1.GridControl = Me.gcSalesInvoice
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
@@ -447,266 +457,324 @@ Partial Class ElectronicInvoicingForm
         '
         Me.GridColumn1.Caption = "Origen"
         Me.GridColumn1.FieldName = "Origen"
+        Me.GridColumn1.MinWidth = 23
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.ToolTip = "Unidad de Negocio"
         Me.GridColumn1.Visible = True
         Me.GridColumn1.VisibleIndex = 0
-        Me.GridColumn1.Width = 41
+        Me.GridColumn1.Width = 48
         '
         'GridColumn29
         '
         Me.GridColumn29.Caption = "Línea Negocio"
         Me.GridColumn29.FieldName = "LineaNegocio"
+        Me.GridColumn29.MinWidth = 23
         Me.GridColumn29.Name = "GridColumn29"
         Me.GridColumn29.Visible = True
         Me.GridColumn29.VisibleIndex = 1
-        Me.GridColumn29.Width = 161
+        Me.GridColumn29.Width = 188
         '
         'GridColumn28
         '
         Me.GridColumn28.Caption = "Código Interno"
         Me.GridColumn28.FieldName = "DOCV_Codigo"
+        Me.GridColumn28.MinWidth = 23
         Me.GridColumn28.Name = "GridColumn28"
         Me.GridColumn28.ToolTip = "Código Interno (ERP)"
         Me.GridColumn28.Visible = True
         Me.GridColumn28.VisibleIndex = 2
+        Me.GridColumn28.Width = 87
         '
         'GridColumn2
         '
         Me.GridColumn2.Caption = "Tipo Comprobante"
         Me.GridColumn2.FieldName = "TIPO_TDO"
+        Me.GridColumn2.MinWidth = 23
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.ToolTip = "Tipo de Comprobante SUNAT"
         Me.GridColumn2.Visible = True
         Me.GridColumn2.VisibleIndex = 3
+        Me.GridColumn2.Width = 87
         '
         'GridColumn4
         '
         Me.GridColumn4.Caption = "Serie"
         Me.GridColumn4.FieldName = "DOCV_Serie"
+        Me.GridColumn4.MinWidth = 23
         Me.GridColumn4.Name = "GridColumn4"
         Me.GridColumn4.ToolTip = "Número de Serie del Comprobante"
         Me.GridColumn4.Visible = True
         Me.GridColumn4.VisibleIndex = 4
+        Me.GridColumn4.Width = 87
         '
         'GridColumn5
         '
         Me.GridColumn5.Caption = "Número"
         Me.GridColumn5.FieldName = "DOCV_Numero"
+        Me.GridColumn5.MinWidth = 23
         Me.GridColumn5.Name = "GridColumn5"
         Me.GridColumn5.ToolTip = "Número del Comprobante"
         Me.GridColumn5.Visible = True
         Me.GridColumn5.VisibleIndex = 5
+        Me.GridColumn5.Width = 87
         '
         'GridColumn6
         '
         Me.GridColumn6.Caption = "Fecha Emisión"
         Me.GridColumn6.FieldName = "DOCV_FechaEmision"
+        Me.GridColumn6.MinWidth = 23
         Me.GridColumn6.Name = "GridColumn6"
         Me.GridColumn6.ToolTip = "Fecha de Emisión del Comprobante"
         Me.GridColumn6.Visible = True
         Me.GridColumn6.VisibleIndex = 6
+        Me.GridColumn6.Width = 87
         '
         'GridColumn7
         '
         Me.GridColumn7.Caption = "NIT"
         Me.GridColumn7.FieldName = "ENTC_DocIden"
+        Me.GridColumn7.MinWidth = 23
         Me.GridColumn7.Name = "GridColumn7"
         Me.GridColumn7.ToolTip = "Número de Identificación Tributaria"
         Me.GridColumn7.Visible = True
         Me.GridColumn7.VisibleIndex = 7
+        Me.GridColumn7.Width = 87
         '
         'GridColumn8
         '
         Me.GridColumn8.Caption = "Razón Social"
         Me.GridColumn8.FieldName = "Cliente"
+        Me.GridColumn8.MinWidth = 23
         Me.GridColumn8.Name = "GridColumn8"
         Me.GridColumn8.ToolTip = "Razón Social del Cliente"
         Me.GridColumn8.Visible = True
         Me.GridColumn8.VisibleIndex = 8
+        Me.GridColumn8.Width = 87
         '
         'GridColumn9
         '
         Me.GridColumn9.Caption = "Correo FE"
         Me.GridColumn9.FieldName = "emailFE"
+        Me.GridColumn9.MinWidth = 23
         Me.GridColumn9.Name = "GridColumn9"
         Me.GridColumn9.ToolTip = "Correo de Facturación Electrónica"
         Me.GridColumn9.Visible = True
         Me.GridColumn9.VisibleIndex = 9
+        Me.GridColumn9.Width = 87
         '
         'GridColumn10
         '
         Me.GridColumn10.Caption = "Forma de Pago"
         Me.GridColumn10.FieldName = "TIPO_FPG"
+        Me.GridColumn10.MinWidth = 23
         Me.GridColumn10.Name = "GridColumn10"
         Me.GridColumn10.ToolTip = "Forma de Pago"
         Me.GridColumn10.Visible = True
         Me.GridColumn10.VisibleIndex = 10
+        Me.GridColumn10.Width = 87
         '
         'GridColumn11
         '
         Me.GridColumn11.Caption = "Fecha Vencimiento"
         Me.GridColumn11.FieldName = "CCCT_FechaVcto"
+        Me.GridColumn11.MinWidth = 23
         Me.GridColumn11.Name = "GridColumn11"
         Me.GridColumn11.ToolTip = "Fecha de Vencimiento"
         Me.GridColumn11.Visible = True
         Me.GridColumn11.VisibleIndex = 11
+        Me.GridColumn11.Width = 87
         '
         'GridColumn12
         '
         Me.GridColumn12.Caption = "Moneda"
         Me.GridColumn12.FieldName = "Moneda"
+        Me.GridColumn12.MinWidth = 23
         Me.GridColumn12.Name = "GridColumn12"
         Me.GridColumn12.ToolTip = "Moneda del Comprobante"
         Me.GridColumn12.Visible = True
         Me.GridColumn12.VisibleIndex = 12
+        Me.GridColumn12.Width = 87
         '
         'GridColumn13
         '
         Me.GridColumn13.Caption = "Importe Total"
         Me.GridColumn13.FieldName = "DOCV_ValorVtaTotal"
+        Me.GridColumn13.MinWidth = 23
         Me.GridColumn13.Name = "GridColumn13"
         Me.GridColumn13.ToolTip = "Importe Total en Moneda del Comprobante"
         Me.GridColumn13.Visible = True
         Me.GridColumn13.VisibleIndex = 13
+        Me.GridColumn13.Width = 87
         '
         'GridColumn14
         '
         Me.GridColumn14.Caption = "HBL / MBL"
         Me.GridColumn14.FieldName = "HBL_MBL"
+        Me.GridColumn14.MinWidth = 23
         Me.GridColumn14.Name = "GridColumn14"
         Me.GridColumn14.ToolTip = "House Bill of Lading / Master Bill of Lading"
         Me.GridColumn14.Visible = True
         Me.GridColumn14.VisibleIndex = 14
+        Me.GridColumn14.Width = 87
         '
         'GridColumn15
         '
         Me.GridColumn15.Caption = "OV / OP"
         Me.GridColumn15.FieldName = "OV_OP"
+        Me.GridColumn15.MinWidth = 23
         Me.GridColumn15.Name = "GridColumn15"
         Me.GridColumn15.ToolTip = "Orden de Venta / Operación Logística"
         Me.GridColumn15.Visible = True
         Me.GridColumn15.VisibleIndex = 15
+        Me.GridColumn15.Width = 87
         '
         'GridColumn16
         '
         Me.GridColumn16.Caption = "Estado"
         Me.GridColumn16.FieldName = "DOCV_EstadoStr"
+        Me.GridColumn16.MinWidth = 23
         Me.GridColumn16.Name = "GridColumn16"
         Me.GridColumn16.ToolTip = "Estado del Comprobante"
         Me.GridColumn16.Visible = True
         Me.GridColumn16.VisibleIndex = 16
+        Me.GridColumn16.Width = 87
         '
         'GridColumn17
         '
         Me.GridColumn17.Caption = "Concepto"
         Me.GridColumn17.FieldName = "CCCT_Glosa"
+        Me.GridColumn17.MinWidth = 23
         Me.GridColumn17.Name = "GridColumn17"
         Me.GridColumn17.ToolTip = "Concepto a Facturar"
         Me.GridColumn17.Visible = True
         Me.GridColumn17.VisibleIndex = 17
+        Me.GridColumn17.Width = 87
         '
         'GridColumn18
         '
         Me.GridColumn18.Caption = "Asiento Contable"
         Me.GridColumn18.FieldName = "AsientoContable"
+        Me.GridColumn18.MinWidth = 23
         Me.GridColumn18.Name = "GridColumn18"
         Me.GridColumn18.ToolTip = "Asiento Contable"
         Me.GridColumn18.Visible = True
         Me.GridColumn18.VisibleIndex = 18
+        Me.GridColumn18.Width = 87
         '
         'GridColumn30
         '
         Me.GridColumn30.Caption = "Documento SAP"
         Me.GridColumn30.FieldName = "DocumentoSAP"
+        Me.GridColumn30.MinWidth = 23
         Me.GridColumn30.Name = "GridColumn30"
         Me.GridColumn30.Visible = True
         Me.GridColumn30.VisibleIndex = 19
+        Me.GridColumn30.Width = 87
         '
         'GridColumn19
         '
         Me.GridColumn19.Caption = "Base Imponible"
         Me.GridColumn19.FieldName = "Base"
+        Me.GridColumn19.MinWidth = 23
         Me.GridColumn19.Name = "GridColumn19"
         Me.GridColumn19.ToolTip = "Base Imponible del Comprobante"
         Me.GridColumn19.Visible = True
         Me.GridColumn19.VisibleIndex = 20
+        Me.GridColumn19.Width = 87
         '
         'GridColumn20
         '
         Me.GridColumn20.Caption = "Importe IGV"
         Me.GridColumn20.FieldName = "IGV"
+        Me.GridColumn20.MinWidth = 23
         Me.GridColumn20.Name = "GridColumn20"
         Me.GridColumn20.ToolTip = "Importe del Impuesto del Comprobante"
         Me.GridColumn20.Visible = True
         Me.GridColumn20.VisibleIndex = 21
+        Me.GridColumn20.Width = 87
         '
         'GridColumn21
         '
         Me.GridColumn21.Caption = "Importe ML"
         Me.GridColumn21.FieldName = "CCCT_Monto_S"
+        Me.GridColumn21.MinWidth = 23
         Me.GridColumn21.Name = "GridColumn21"
         Me.GridColumn21.ToolTip = "Importe en Moneda Local del Comprobante"
         Me.GridColumn21.Visible = True
         Me.GridColumn21.VisibleIndex = 22
+        Me.GridColumn21.Width = 87
         '
         'GridColumn22
         '
         Me.GridColumn22.Caption = "Importe ME"
         Me.GridColumn22.FieldName = "CCCT_Monto_D"
+        Me.GridColumn22.MinWidth = 23
         Me.GridColumn22.Name = "GridColumn22"
         Me.GridColumn22.ToolTip = "Importe en Moneda Extranjera del Comprobante"
         Me.GridColumn22.Visible = True
         Me.GridColumn22.VisibleIndex = 23
+        Me.GridColumn22.Width = 87
         '
         'GridColumn23
         '
         Me.GridColumn23.Caption = "Tipo Cambio"
         Me.GridColumn23.FieldName = "TipoCambio"
+        Me.GridColumn23.MinWidth = 23
         Me.GridColumn23.Name = "GridColumn23"
         Me.GridColumn23.ToolTip = "Tipo de Cambio"
         Me.GridColumn23.Visible = True
         Me.GridColumn23.VisibleIndex = 24
+        Me.GridColumn23.Width = 87
         '
         'GridColumn24
         '
         Me.GridColumn24.Caption = "Código Viaje"
         Me.GridColumn24.FieldName = "NVIA_Codigo"
+        Me.GridColumn24.MinWidth = 23
         Me.GridColumn24.Name = "GridColumn24"
         Me.GridColumn24.ToolTip = "Código de Viaje Interno (ERP)"
+        Me.GridColumn24.Width = 87
         '
         'GridColumn25
         '
         Me.GridColumn25.Caption = "Nave"
         Me.GridColumn25.FieldName = "NAVE_Nombre"
+        Me.GridColumn25.MinWidth = 23
         Me.GridColumn25.Name = "GridColumn25"
         Me.GridColumn25.ToolTip = "Nombre de la Nave"
         Me.GridColumn25.Visible = True
         Me.GridColumn25.VisibleIndex = 25
+        Me.GridColumn25.Width = 87
         '
         'GridColumn26
         '
         Me.GridColumn26.Caption = "Viaje"
         Me.GridColumn26.FieldName = "NVIA_NroViaje"
+        Me.GridColumn26.MinWidth = 23
         Me.GridColumn26.Name = "GridColumn26"
         Me.GridColumn26.ToolTip = "Número de Viaje"
         Me.GridColumn26.Visible = True
         Me.GridColumn26.VisibleIndex = 26
+        Me.GridColumn26.Width = 87
         '
         'GridColumn27
         '
         Me.GridColumn27.Caption = "ETA / ETD"
         Me.GridColumn27.FieldName = "ETA_ETD"
+        Me.GridColumn27.MinWidth = 23
         Me.GridColumn27.Name = "GridColumn27"
         Me.GridColumn27.ToolTip = "Fecha de Arribo o Zarpe de la Nave/Viaje"
         Me.GridColumn27.Visible = True
         Me.GridColumn27.VisibleIndex = 27
+        Me.GridColumn27.Width = 87
         '
         'GridColumn3
         '
         Me.GridColumn3.Caption = "GridColumn3"
         Me.GridColumn3.FieldName = "TIPO_CodTDO"
+        Me.GridColumn3.MinWidth = 23
         Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.Width = 87
         '
         'RepositoryItemLookUpEdit1
         '
@@ -723,16 +791,27 @@ Partial Class ElectronicInvoicingForm
         Me.RepositoryItemCheckEdit2.Caption = "Check"
         Me.RepositoryItemCheckEdit2.Name = "RepositoryItemCheckEdit2"
         '
+        'GridColumn31
+        '
+        Me.GridColumn31.Caption = "CCCT_Codigo"
+        Me.GridColumn31.FieldName = "CCCT_Codigo"
+        Me.GridColumn31.MinWidth = 25
+        Me.GridColumn31.Name = "GridColumn31"
+        Me.GridColumn31.Visible = True
+        Me.GridColumn31.VisibleIndex = 28
+        Me.GridColumn31.Width = 109
+        '
         'ElectronicInvoicingForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1001, 428)
+        Me.ClientSize = New System.Drawing.Size(1168, 527)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.Controls.Add(Me.BarDockControl3)
         Me.Controls.Add(Me.BarDockControl4)
         Me.Controls.Add(Me.BarDockControl2)
         Me.Controls.Add(Me.BarDockControl1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "ElectronicInvoicingForm"
         Me.Text = "Facturación Ventas"
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()
@@ -826,4 +905,5 @@ Partial Class ElectronicInvoicingForm
     Friend WithEvents GridColumn29 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents bbiSyncSAP As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents GridColumn30 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn31 As DevExpress.XtraGrid.Columns.GridColumn
 End Class
