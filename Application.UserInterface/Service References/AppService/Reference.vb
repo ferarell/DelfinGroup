@@ -486,7 +486,96 @@ Namespace AppService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/InsertDocumentsProvider", ReplyAction:="http://tempuri.org/IDelfinService/InsertDocumentsProviderResponse")>  _
         Function InsertDocumentsProviderAsync(ByVal dsDocumentsProvider As System.Data.DataSet, ByVal Items As String) As System.Threading.Tasks.Task(Of String)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/ActualizarDocumentsProvider", ReplyAction:="http://tempuri.org/IDelfinService/ActualizarDocumentsProviderResponse")>  _
+        Function ActualizarDocumentsProvider(ByVal dsDocumentsProvider As System.Data.DataSet, ByVal Items As String) As String
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/ActualizarDocumentsProvider", ReplyAction:="http://tempuri.org/IDelfinService/ActualizarDocumentsProviderResponse")>  _
+        Function ActualizarDocumentsProviderAsync(ByVal dsDocumentsProvider As System.Data.DataSet, ByVal Items As String) As System.Threading.Tasks.Task(Of String)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/GetImpresionFEDSDocsVta", ReplyAction:="http://tempuri.org/IDelfinService/GetImpresionFEDSDocsVtaResponse")>  _
+        Function GetImpresionFEDSDocsVta(ByVal request As AppService.GetImpresionFEDSDocsVtaRequest) As AppService.GetImpresionFEDSDocsVtaResponse
+        
+        'CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/GetImpresionFEDSDocsVta", ReplyAction:="http://tempuri.org/IDelfinService/GetImpresionFEDSDocsVtaResponse")>  _
+        Function GetImpresionFEDSDocsVtaAsync(ByVal request As AppService.GetImpresionFEDSDocsVtaRequest) As System.Threading.Tasks.Task(Of AppService.GetImpresionFEDSDocsVtaResponse)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/GetImpresionRC", ReplyAction:="http://tempuri.org/IDelfinService/GetImpresionRCResponse")>  _
+        Function GetImpresionRC(ByVal EMPR_Codigo As Integer, ByVal CCCT_Codigo As Integer, ByVal AUDI_UsrMod As String) As System.Data.DataSet
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/GetImpresionRC", ReplyAction:="http://tempuri.org/IDelfinService/GetImpresionRCResponse")>  _
+        Function GetImpresionRCAsync(ByVal EMPR_Codigo As Integer, ByVal CCCT_Codigo As Integer, ByVal AUDI_UsrMod As String) As System.Threading.Tasks.Task(Of System.Data.DataSet)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/EnviarOSE", ReplyAction:="http://tempuri.org/IDelfinService/EnviarOSEResponse")>  _
+        Function EnviarOSE(ByVal DOCV_Codigo As Integer, ByVal Email As String, ByVal AUDI_UsrMod As String) As System.Data.DataSet
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IDelfinService/EnviarOSE", ReplyAction:="http://tempuri.org/IDelfinService/EnviarOSEResponse")>  _
+        Function EnviarOSEAsync(ByVal DOCV_Codigo As Integer, ByVal Email As String, ByVal AUDI_UsrMod As String) As System.Threading.Tasks.Task(Of System.Data.DataSet)
     End Interface
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(WrapperName:="GetImpresionFEDSDocsVta", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class GetImpresionFEDSDocsVtaRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public EMPR_Codigo As Integer
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=1)>  _
+        Public DOCV_Codigo As Integer
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=2)>  _
+        Public AUDI_UsrMod As String
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=3)>  _
+        Public Serie As String
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=4)>  _
+        Public SUCR_Codigo As Integer
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=5)>  _
+        Public Email As String
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=6)>  _
+        Public CCCT_Codigo As Integer
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal EMPR_Codigo As Integer, ByVal DOCV_Codigo As Integer, ByVal AUDI_UsrMod As String, ByVal Serie As String, ByVal SUCR_Codigo As Integer, ByVal Email As String, ByVal CCCT_Codigo As Integer)
+            MyBase.New
+            Me.EMPR_Codigo = EMPR_Codigo
+            Me.DOCV_Codigo = DOCV_Codigo
+            Me.AUDI_UsrMod = AUDI_UsrMod
+            Me.Serie = Serie
+            Me.SUCR_Codigo = SUCR_Codigo
+            Me.Email = Email
+            Me.CCCT_Codigo = CCCT_Codigo
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ServiceModel.MessageContractAttribute(WrapperName:="GetImpresionFEDSDocsVtaResponse", WrapperNamespace:="http://tempuri.org/", IsWrapped:=true)>  _
+    Partial Public Class GetImpresionFEDSDocsVtaResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public GetImpresionFEDSDocsVtaResult As System.Data.DataSet
+        
+        <System.ServiceModel.MessageBodyMemberAttribute([Namespace]:="http://tempuri.org/", Order:=1)>  _
+        Public CCCT_Codigo As Integer
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal GetImpresionFEDSDocsVtaResult As System.Data.DataSet, ByVal CCCT_Codigo As Integer)
+            MyBase.New
+            Me.GetImpresionFEDSDocsVtaResult = GetImpresionFEDSDocsVtaResult
+            Me.CCCT_Codigo = CCCT_Codigo
+        End Sub
+    End Class
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Public Interface IDelfinServiceChannel
@@ -693,6 +782,53 @@ Namespace AppService
         
         Public Function InsertDocumentsProviderAsync(ByVal dsDocumentsProvider As System.Data.DataSet, ByVal Items As String) As System.Threading.Tasks.Task(Of String) Implements AppService.IDelfinService.InsertDocumentsProviderAsync
             Return MyBase.Channel.InsertDocumentsProviderAsync(dsDocumentsProvider, Items)
+        End Function
+        
+        Public Function ActualizarDocumentsProvider(ByVal dsDocumentsProvider As System.Data.DataSet, ByVal Items As String) As String Implements AppService.IDelfinService.ActualizarDocumentsProvider
+            Return MyBase.Channel.ActualizarDocumentsProvider(dsDocumentsProvider, Items)
+        End Function
+        
+        Public Function ActualizarDocumentsProviderAsync(ByVal dsDocumentsProvider As System.Data.DataSet, ByVal Items As String) As System.Threading.Tasks.Task(Of String) Implements AppService.IDelfinService.ActualizarDocumentsProviderAsync
+            Return MyBase.Channel.ActualizarDocumentsProviderAsync(dsDocumentsProvider, Items)
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function AppService_IDelfinService_GetImpresionFEDSDocsVta(ByVal request As AppService.GetImpresionFEDSDocsVtaRequest) As AppService.GetImpresionFEDSDocsVtaResponse Implements AppService.IDelfinService.GetImpresionFEDSDocsVta
+            Return MyBase.Channel.GetImpresionFEDSDocsVta(request)
+        End Function
+        
+        Public Function GetImpresionFEDSDocsVta(ByVal EMPR_Codigo As Integer, ByVal DOCV_Codigo As Integer, ByVal AUDI_UsrMod As String, ByVal Serie As String, ByVal SUCR_Codigo As Integer, ByVal Email As String, ByRef CCCT_Codigo As Integer) As System.Data.DataSet
+            Dim inValue As AppService.GetImpresionFEDSDocsVtaRequest = New AppService.GetImpresionFEDSDocsVtaRequest()
+            inValue.EMPR_Codigo = EMPR_Codigo
+            inValue.DOCV_Codigo = DOCV_Codigo
+            inValue.AUDI_UsrMod = AUDI_UsrMod
+            inValue.Serie = Serie
+            inValue.SUCR_Codigo = SUCR_Codigo
+            inValue.Email = Email
+            inValue.CCCT_Codigo = CCCT_Codigo
+            Dim retVal As AppService.GetImpresionFEDSDocsVtaResponse = CType(Me,AppService.IDelfinService).GetImpresionFEDSDocsVta(inValue)
+            CCCT_Codigo = retVal.CCCT_Codigo
+            Return retVal.GetImpresionFEDSDocsVtaResult
+        End Function
+        
+        Public Function GetImpresionFEDSDocsVtaAsync(ByVal request As AppService.GetImpresionFEDSDocsVtaRequest) As System.Threading.Tasks.Task(Of AppService.GetImpresionFEDSDocsVtaResponse) Implements AppService.IDelfinService.GetImpresionFEDSDocsVtaAsync
+            Return MyBase.Channel.GetImpresionFEDSDocsVtaAsync(request)
+        End Function
+        
+        Public Function GetImpresionRC(ByVal EMPR_Codigo As Integer, ByVal CCCT_Codigo As Integer, ByVal AUDI_UsrMod As String) As System.Data.DataSet Implements AppService.IDelfinService.GetImpresionRC
+            Return MyBase.Channel.GetImpresionRC(EMPR_Codigo, CCCT_Codigo, AUDI_UsrMod)
+        End Function
+        
+        Public Function GetImpresionRCAsync(ByVal EMPR_Codigo As Integer, ByVal CCCT_Codigo As Integer, ByVal AUDI_UsrMod As String) As System.Threading.Tasks.Task(Of System.Data.DataSet) Implements AppService.IDelfinService.GetImpresionRCAsync
+            Return MyBase.Channel.GetImpresionRCAsync(EMPR_Codigo, CCCT_Codigo, AUDI_UsrMod)
+        End Function
+        
+        Public Function EnviarOSE(ByVal DOCV_Codigo As Integer, ByVal Email As String, ByVal AUDI_UsrMod As String) As System.Data.DataSet Implements AppService.IDelfinService.EnviarOSE
+            Return MyBase.Channel.EnviarOSE(DOCV_Codigo, Email, AUDI_UsrMod)
+        End Function
+        
+        Public Function EnviarOSEAsync(ByVal DOCV_Codigo As Integer, ByVal Email As String, ByVal AUDI_UsrMod As String) As System.Threading.Tasks.Task(Of System.Data.DataSet) Implements AppService.IDelfinService.EnviarOSEAsync
+            Return MyBase.Channel.EnviarOSEAsync(DOCV_Codigo, Email, AUDI_UsrMod)
         End Function
     End Class
 End Namespace

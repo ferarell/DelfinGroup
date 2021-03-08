@@ -9,6 +9,7 @@ Public Class PreInvoicingPopupForm
     'Friend OperationsList As String = ""
     Friend InternalCodeList As String = ""
     Friend CodigoMoneda As String
+    Friend CodigoUnidadNegocio As String
     Friend oProcessType As String = ""
     Friend oQuerySource As String = ""
     Friend IsMultiline As Boolean = Nothing
@@ -21,6 +22,7 @@ Public Class PreInvoicingPopupForm
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         Me.Size = New Size(1200, 600)
+        SplitContainerControl2.SplitterPosition = Me.Size.Width - 300
         Me.StartPosition = FormStartPosition.CenterScreen
     End Sub
 
@@ -28,7 +30,7 @@ Public Class PreInvoicingPopupForm
         LoadTaxDocumentType()
         LoadPaymentType()
         LoadCurrency()
-        LoadEntityDataList(1, "lueSocioNegocio")
+        LoadEntityDataList("1,6", "lueSocioNegocio")
         deFechaEmision.EditValue = Now
         If oProcessType = "PreInvoicing" Then
             bbiSave.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
@@ -42,11 +44,15 @@ Public Class PreInvoicingPopupForm
                 XtraMessageBox.Show("No existe tipo de cambio, por favor coordine con el área contable.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 bbiGenerate.Enabled = False
             End If
+            lueTipoComprobante.ItemIndex = 0
         End If
         If oProcessType = "Invoicing" Then
-            SplitContainerControl2.PanelVisibility = SplitPanelVisibility.Panel1
             bbiGenerate.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-            dtSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.VEN_DDOVSS_TodosPorDOCV_Codigo " & InternalCodeList & ", '" & oQuerySource & "'").Tables(0)
+            If oQuerySource = "OV" Then
+                SplitContainerControl2.Collapsed = True
+            End If
+            dsSource = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paObtieneDetalleDocumentoFacturacion " & InternalCodeList & ",'" & oQuerySource & "'")
+            dtSource = dsSource.Tables(0)
             lueMoneda.Properties.ReadOnly = True
             deFechaEmision.Properties.ReadOnly = True
             deFechaVencimiento.Properties.ReadOnly = True
@@ -75,7 +81,6 @@ Public Class PreInvoicingPopupForm
             GridView1.Columns("DOCV_FechaVcmto").Visible = False
         End If
 
-        lueTipoComprobante.ItemIndex = 0
         gcInvoicing.DataSource = dtSource
         FormatGridView(GridView1)
 
@@ -103,11 +108,11 @@ Public Class PreInvoicingPopupForm
         lueMoneda.Properties.ValueMember = "CodigoMoneda"
     End Sub
 
-    Private Sub LoadEntityDataList(EntityType As Integer, ControlName As String)
+    Private Sub LoadEntityDataList(aEntityType As String, ControlName As String)
         Dim dtQuery As New DataTable
         Dim aParams As New ArrayList
-        If EntityType > 0 Then
-            aParams.Add(EntityType.ToString)
+        If aEntityType.Count > 0 Then
+            aParams.Add("'" & aEntityType & "'")
         End If
         dtQuery = oMasterDataList.LoadMasterData("EntityByType", aParams)
         If ControlName = "lueSocioNegocio" Then
@@ -120,7 +125,7 @@ Public Class PreInvoicingPopupForm
     Private Sub LoadTaxDocumentType()
         Dim dtQuery As New DataTable
         dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paListaTipoDocumentoContable").Tables(0)
-        dtQuery = dtQuery.Select("CodigoTipoDocumento IN ('001','003','007')").CopyToDataTable
+        dtQuery = dtQuery.Select("CodigoTipoDocumento IN ('001','003','007','100','105')").CopyToDataTable
         lueTipoComprobante.Properties.DataSource = dtQuery
         lueTipoComprobante.Properties.DisplayMember = "DescripcionTipoDocumento"
         lueTipoComprobante.Properties.ValueMember = "CodigoTipoDocumento"
@@ -128,7 +133,7 @@ Public Class PreInvoicingPopupForm
 
     Private Sub LoadTaxDocumentSerie()
         Dim dtQuery As New DataTable
-        dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paListaSerieFacturacion '" & lueTipoComprobante.EditValue & "','003'").Tables(0)
+        dtQuery = oAppService.ExecuteSQL("EXEC NextSoft.dgp.paListaSerieFacturacion '" & lueTipoComprobante.EditValue & "','" & CodigoUnidadNegocio & "'").Tables(0)
         lueSerieComprobante.Properties.DataSource = dtQuery
         lueSerieComprobante.Properties.DisplayMember = "SERI_Serie"
         lueSerieComprobante.Properties.ValueMember = "SERI_Serie"
@@ -305,7 +310,7 @@ Public Class PreInvoicingPopupForm
     End Sub
 
     Private Sub bbiSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSave.ItemClick
-        If SaveChanges Then
+        If SaveChanges() Then
             DialogResult = DialogResult.OK
         End If
         Close()
@@ -316,7 +321,7 @@ Public Class PreInvoicingPopupForm
         Dim bResult As Boolean = True
         Dim oRow As DataRow = dtSource.Rows(0)
         Dim Serie As String = IIf(lueSerieComprobante.Text = oRow("DOCV_Serie"), ", NULL", ",'" & lueSerieComprobante.Text & "'")
-            Dim FormaPago As String = IIf(lueFormaPago.EditValue = oRow("TIPO_CodFPG"), ",NULL", ",'" & lueFormaPago.EditValue & "'")
+        Dim FormaPago As String = IIf(lueFormaPago.EditValue = oRow("TIPO_CodFPG"), ",NULL", ",'" & lueFormaPago.EditValue & "'")
         Dim FechaVcto As String = ",'" & Format(deFechaVencimiento.DateTime, "yyyy-MM-dd") & "'"
         Dim CodCliente As String = IIf(lueSocioNegocio.EditValue = oRow("ENTC_Codigo"), ",0", "," & lueSocioNegocio.EditValue.ToString)
         Try
@@ -346,8 +351,15 @@ Public Class PreInvoicingPopupForm
     End Sub
 
     Private Sub ShowServiceDetail()
+        If dsSource.Tables(1).Rows.Count = 0 Then
+            Return
+        End If
         Dim oRow As DataRow = GridView1.GetFocusedDataRow
-        gcServiceDetail.DataSource = dsSource.Tables(1).Select("COPE_Codigo=" & oRow("COPE_Codigo").ToString & " AND SERV_Codigo_Grouped=" & oRow("SERV_Codigo").ToString).CopyToDataTable
+        If oProcessType = "Invoicing" Then
+            gcServiceDetail.DataSource = dsSource.Tables(1).Select("DOCV_Codigo=" & oRow("DOCV_Codigo").ToString).CopyToDataTable
+        Else
+            gcServiceDetail.DataSource = dsSource.Tables(1).Select("COPE_Codigo=" & oRow("COPE_Codigo").ToString & " AND SERV_Codigo_Grouped=" & oRow("SERV_Codigo").ToString).CopyToDataTable
+        End If
         FormatGridView(GridView2)
     End Sub
 End Class

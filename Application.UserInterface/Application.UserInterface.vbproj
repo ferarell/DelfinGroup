@@ -159,6 +159,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\NextSoftR2\FacturacionElectronica\bin\Debug\eFactDelfin.dll</HintPath>
     </Reference>
+    <Reference Include="MessageSender">
+      <HintPath>..\NextSoftR2\Presentation Tier\Delfin.Principal\bin\Debug\MessageSender.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -340,6 +343,12 @@
     </Compile>
     <Compile Include="RelatedCompanyRequestForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReciboCaja.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReciboCaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="RoutingOrderServiceAssignForm.Designer.vb">
       <DependentUpon>RoutingOrderServiceAssignForm.vb</DependentUpon>
@@ -585,6 +594,9 @@
       <LastGenOutput>AvisoZarpeMaritimoLcl.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\AppService\ApplicationForm.AppService.GetImpresionFEDSDocsVtaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AppService\DelfinService1.disco" />
     <None Include="Service References\AppService\DelfinService1.wsdl" />
     <None Include="Service References\AppService\DelfinService6.xsd">
@@ -735,6 +747,10 @@
       <LastGenOutput>AvisoArriboMaritimoFcl_CLARI.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Reportes\ReciboCaja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReciboCaja.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoutingOrderServiceAssignForm.resx">
       <DependentUpon>RoutingOrderServiceAssignForm.vb</DependentUpon>
     </EmbeddedResource>

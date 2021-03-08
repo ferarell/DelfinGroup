@@ -142,6 +142,30 @@
   <wsdl:message name="IDelfinService_InsertDocumentsProvider_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertDocumentsProviderResponse" />
   </wsdl:message>
+  <wsdl:message name="IDelfinService_ActualizarDocumentsProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDocumentsProvider" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinService_ActualizarDocumentsProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarDocumentsProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinService_GetImpresionFEDSDocsVta_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImpresionFEDSDocsVta" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinService_GetImpresionFEDSDocsVta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImpresionFEDSDocsVtaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinService_GetImpresionRC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImpresionRC" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinService_GetImpresionRC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImpresionRCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinService_EnviarOSE_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarOSE" />
+  </wsdl:message>
+  <wsdl:message name="IDelfinService_EnviarOSE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarOSEResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDelfinService">
     <wsdl:operation name="ExecuteSQL">
       <wsdl:input wsaw:Action="http://tempuri.org/IDelfinService/ExecuteSQL" message="tns:IDelfinService_ExecuteSQL_InputMessage" />
@@ -230,6 +254,22 @@
     <wsdl:operation name="InsertDocumentsProvider">
       <wsdl:input wsaw:Action="http://tempuri.org/IDelfinService/InsertDocumentsProvider" message="tns:IDelfinService_InsertDocumentsProvider_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDelfinService/InsertDocumentsProviderResponse" message="tns:IDelfinService_InsertDocumentsProvider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDocumentsProvider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinService/ActualizarDocumentsProvider" message="tns:IDelfinService_ActualizarDocumentsProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinService/ActualizarDocumentsProviderResponse" message="tns:IDelfinService_ActualizarDocumentsProvider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImpresionFEDSDocsVta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinService/GetImpresionFEDSDocsVta" message="tns:IDelfinService_GetImpresionFEDSDocsVta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinService/GetImpresionFEDSDocsVtaResponse" message="tns:IDelfinService_GetImpresionFEDSDocsVta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImpresionRC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinService/GetImpresionRC" message="tns:IDelfinService_GetImpresionRC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinService/GetImpresionRCResponse" message="tns:IDelfinService_GetImpresionRC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarOSE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDelfinService/EnviarOSE" message="tns:IDelfinService_EnviarOSE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDelfinService/EnviarOSEResponse" message="tns:IDelfinService_EnviarOSE_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDelfinService" type="tns:IDelfinService">
@@ -425,6 +465,42 @@
     </wsdl:operation>
     <wsdl:operation name="InsertDocumentsProvider">
       <soap:operation soapAction="http://tempuri.org/IDelfinService/InsertDocumentsProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDocumentsProvider">
+      <soap:operation soapAction="http://tempuri.org/IDelfinService/ActualizarDocumentsProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImpresionFEDSDocsVta">
+      <soap:operation soapAction="http://tempuri.org/IDelfinService/GetImpresionFEDSDocsVta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImpresionRC">
+      <soap:operation soapAction="http://tempuri.org/IDelfinService/GetImpresionRC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarOSE">
+      <soap:operation soapAction="http://tempuri.org/IDelfinService/EnviarOSE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
